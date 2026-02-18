@@ -1,0 +1,1700 @@
+\documentclass[a4paper,11pt,oneside]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage[big]{layaureo}
+\usepackage{amssymb,amsmath,amsthm,amsfonts,mathtools,eucal}
+\numberwithin{equation}{section}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{algorithm,algpseudocode}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage{enumitem}
+%\setlist[itemize]{noitemsep}
+
+\usepackage{microtype}
+\usepackage{parskip}
+
+\usepackage{newpxtext,eulerpx}
+
+\usepackage{float}
+\floatstyle{plaintop}
+\newfloat{alg}{tbp}{loc}
+\floatname{alg}{Algorithm}
+
+\usepackage{quoting}
+\quotingsetup{font=small}
+
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bib.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{hobby,patterns}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{defi}[prop]{Definition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{cor}[prop]{Corollary}
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem{rmk}[prop]{Remark}
+\newtheorem*{cod*}{Code}
+\newtheorem{ex}[prop]{Example}
+\newtheorem{prb}[prop]{Problem}
+\newtheorem*{prb*}{Problem}
+\newtheorem*{rmk*}{Remark}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{ex*}{Example}
+
+\DeclareMathOperator{\dev}{dev}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\Grad}{Grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\Diver}{Div}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\are}{area}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\so}{SO}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sym}{sym}
+\DeclareMathOperator{\ske}{skew}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\essinf}{essinf}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\sign}{sign}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\dual}{\langle}{\rangle}
+
+\newcommand{\dind}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\threedots}{\mathbin{\vdots}}
+
+\newcommand{\omissis}{[\textellipsis\unkern]}
+
+\begin{document}
+
+\author{Bernardo Ardini [2146900]}
+\date{Padova, 5 febbraio 2026}
+\title{\textbf{Proposal of a viscoelastic-viscoplastic model for strain localization in geomaterials}}
+
+\frontmatter
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+
+
+\mainmatter
+
+\chapter*{Plan}
+
+My plan is to study strain localization in a plasticity model using the tools of bifurcation theory in Banach spaces. Large strain models are too much difficult and until now I never found theorems ensuring sufficient smoothness in time to apply the tools of bifurcation theory. For that reason I looked for a strain localization phenomenon of mechanical interests also in a small deformation regime. In the field of metal plasticity the necking is a classical example of strain localization. Since Von Mises plasticity with hardening at small strain does not exhibit bifurcation (uniqueness is guaranteed) then to detect the necking instability it is necessary to consider the geometric nonlinearities making the problem very difficult. Since I am interested in geophysics I decided to study instead shear band formation in geomaterials or more in general with material with pressure dependent yield strength. I developed a new model by adapting the classical Drucker--Prager plasticity model to the framework of strain gradient plasticity of Gurtin and Anand based on the principle of virtual powers and on macroforce and microforce balances. Now I am carrying out the mathematical analysis of that model. Until now I have proved the local in time existence and uniqueness and the global in time existence of the discretized in time (this last existence result under the assumption of vanishing dilatancy). I plan to complete the proof of the global in time existence result and to carry a bifurcation analysis using the Lyapunov--Smidth procedure and the Crandall--Rabinowitz theorem. Moreover I would like to confirm the mathematical analysis by a numerical study of the problem using the FEM. I would like to develop a method to detect bifurcation points during time evolution and to approximate the various branches of solutions that departs from them.
+
+\chapter{Small deformation model}
+
+This chapter is devoted to the development of a mechanical model to describe the behavior of geomaterials in drained conditions. Even thought the model is not derived from any particular micromechanical description of a geomaterial it is useful to keep in mind that the material is composed by interlocked grains that can rotate and deform.
+
+\section{Formulation}
+
+\subsection{Kinematics}
+
+Let $\Omega\subset\mathbb{R}^d$ be the reference configuration of the body. The macroscopic displacement is a map $u\colon\Omega\to\mathbb{R}^d$. We set $E=\sym\grad u$ and $M=\grad^2 u$. We subdivide $\partial\Omega$ in two disjoint parts $\Gamma_D$ and $\Gamma_N$. On $\Gamma_D$ we impose the kinematical constrain $u=\overline u$. To impose this constrain we add the Lagrange multiplier $r\colon\Gamma_D\to\mathbb{R}^d$. The constrain can be written in weak form as
+\[
+\int_{\Gamma_D}\left(u-\overline{u}\right)\cdot\tilde rda=0\quad\text{for all $\tilde r$}.
+\]
+The motion of the grains of the geomaterial is described by the plastic distortion $H_p\colon\Omega\to\text{Lin}$. The skew symmetric part $W_p=\ske H_p$ describes the rotation of the grains and for simplicity we assume that it vanish. The symmetric part is the plastic strain $E_p=\sym H_p\colon\Omega\to\text{Sym}$ which describes the deformation of the grains. The volumetric deformation of the grains is described by $\lambda_p=\tr E_p$ while the deviatoric deformation by $U_p=\dev E_p$. We call $M_p=\grad U_p$ and we set $\mathbb{U}_p=(U_p,l\,M_p)\in\text{DevPla}$ where $l>0$ is an internal length scale reflecting the size of the grains. Here $\text{DevPla}=\text{Sym}\otimes(\text{Sym}\otimes\mathbb{R})$ is the vector space of the deviatoric plastic rates and their gradients. To describe the dilatant behavior of the geomaterial during plastic deformation we add the kinematical constrain
+\[
+\dot\lambda_p=F(\lambda_p,\dot U_p)
+\]
+where $F\colon\mathbb{R}\times\text{DevSym}\to\mathbb{R}$. To impose this constrain we add the Lagrange multiplier $p\colon\Omega\to\mathbb{R}$. The constrain can be written in weak form as
+\[
+\int_\Omega\left(F(\lambda_p,\dot U_p)-\dot\lambda_p\right)\tilde pdx=0\quad\text{for all $\tilde p$}.
+\]
+We can regard $H_p$ as the elastically relaxed strain of the body so we define the elastic strain as $E_e=E-E_p$.
+
+\subsection{Statics}
+
+We choose an internal virtual power of the form
+\[
+\begin{split}
+\tilde{\mathcal{W}}&=\int_\Omega\left(T:\tilde{\dot E}_e+K\threedots\tilde{\dot M}\right)dx+\int_\Omega\left(T_p:\tilde{\dot U}_p+K_p\threedots\tilde{\dot M}_p\right)dx=\\
+&=\int_\Omega\left(T:\tilde{\dot E}_e+K\threedots\tilde{\dot M}\right)dx+\int_\Omega\mathbb{T}_p\circ\tilde{\dot{\mathbb{U}}}_pdx.
+\end{split}
+\]
+Here $T\in\text{Sym}$ is the macrostress and $K\in\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress, $T_p\in\text{DevSym}$ is the microforce and $K_p\in\text{DevSym}\otimes\mathbb{R}$ is the microstress. We have used the notation $\mathbb{T}_p=(T_p,l^{-1}\,K_p)$. The symbol $\circ$ denotes the natural scalar product in $\text{DevPla}$. We assume an external virtual power of the form
+\[
+\tilde{\mathcal{P}}=\int_\Omega f\cdot\tilde{\dot u}dx+\int_{\Gamma_N}h\cdot\tilde{\dot u}da.
+\]
+and a reaction virtual power of the form
+\[
+\tilde{\mathscr{R}}=\int_{\Gamma_D}r\cdot\tilde{\dot u}da+\int_\Omega p\tr\tilde{\dot E}_pdx.
+\]
+\begin{defi}[Principle of Virtual Powers]
+Equilibrium holds when $\tilde{\mathscr{W}}=\tilde{\mathscr{P}}+\tilde{\mathscr{R}}$ for all virtual rates.
+\end{defi}
+To get the local form of the equilibrium condition we apply the principle of virtual powers.
+\begin{rmk*}
+I still need to update this part since now I added the second gradient term.
+\end{rmk*}
+\begin{lemma}
+The local form of the equilibrium condition is
+\begin{align*}
+&\diver T+f=0\quad\text{in $\Omega$} \\
+&Tn=r\quad\text{in $\Gamma_D$} \\
+&Tn=h\quad\text{in $\Gamma_N$} \\
+&-\dev T-\diver K_p+T_p=0\quad\text{in $\Omega$} \\
+&\frac{1}{d}\tr T+p=0\quad\text{in $\Omega$} \\
+&K_p\cdot n=0\quad\text{in $\partial\Omega$}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+We first write the internal virtual power as
+\[
+\begin{split}
+\tilde{\mathcal{W}}=-\int_\Omega\diver T\cdot\tilde{\dot u}dx+\int_{\partial\Omega}TN\cdot\tilde{\dot u}da+\int_\Omega\left(-\dev T-\diver K_p+T_p\right):\tilde{\dot U}_pdx-\\
+-\int_\Omega\frac{1}{d}\tr T\tr\tilde{\dot E}_pdx+\int_{\partial\Omega}\left(K_p\cdot n\right):\tilde{\dot U}_pda.
+\end{split}
+\]
+Then the results follows directly from the fundamental theorem of the calculus of variations.
+\end{proof}
+
+\subsection{Dissipation inequality}
+
+Let $\psi$ be the free energy per unit volume in the reference configuration. Then the free energy contained in a portion $\Lambda$ of $\Omega$ is
+\[
+\Psi=\int_\Lambda\psi dx.
+\]
+Let now $\mathcal{W}$ the internal power absorbed by the portion $\Lambda$. We define the dissipation power in $\Lambda$ as
+\[
+\mathcal{D}=\mathcal{W}-\dot\Psi.
+\]
+The dissipation inequality impose that $\mathcal{D}\ge 0$ for all $\Lambda$.
+
+\subsection{Constitutive relations}
+
+We assume a constitutive relation for the free energy of the form
+\[
+\psi=\frac{1}{2}\mathfrak{C}E_e:E_e+\frac{1}{2}\mathfrak{A}M\threedots M+\frac{1}{2}\mathfrak{B}\mathbb{U}_p\circ\mathbb{U}_p.
+\]
+with $\mathfrak{C}$, $\mathfrak{A}$ and $\mathfrak{B}$ a symmetric and positive definite linear operators on $\text{Sym}$, $\text{Lin}\otimes\mathbb{R}$ and $\text{DevPla}$ respectively. To describe the viscoelastic response we use a constitutive relation of the form
+\[
+T=\mathfrak{C}E_e+\mathfrak{D}\dot E_e\quad\text{and}\quad K=\mathfrak{A}M+\mathfrak{E}\dot M
+\]
+with $\mathfrak{D}$ and $\mathfrak{E}$ symmetric and positive definite tensors on $\text{Sym}$ and $\text{Lin}\otimes\mathbb{R}$ respectively. The viscoplastic response is obtained with a constitutive relation of the form
+\[
+\mathbb{T}_p=\mathfrak{B}\mathbb{U}_p+\mathfrak{F}\dot{\mathbb{U}}_p+Y(p)\partial_{\dot{\mathbb{U}}_p}G(\dot{\mathbb{U}}_p)
+\]
+where $\mathfrak{F}$ is a symmetric positive definite tensor on $\text{DevPla}$, $G\colon\text{DevSym}\to\mathbb{R}$ is the plastic dissipation potential satisfying $\partial_{\dot{\mathbb{E}}_p}G(\dot{\mathbb{E}}_p):\dot{\mathbb{E}}_p\ge0$ and $Y\colon\mathbb{R}\to(0,\infty)$ is the pressure dependent yield strength. We notice that using these constitutive relations the dissipation inequality is satisfied.
+
+\subsection{Refinements of the model}
+
+Until now the model is not able to describe compaction but only dilatancy so we could refine this aspect. We could add a field $\delta_p$ representing the volumetric deformation of the grains. Then the void level is represented by $\lambda_p-\delta_p$. In this case the constrain is $\dot\lambda_p-\dot\delta_p=F(\lambda_p-\delta_p,\dot U_p)$. Now $p$ would be power conjugate to $\tilde{\dot\lambda}_p-\tilde{\dot\delta}_p$. An additional microscopic force $\tau_p$ would appear power conjugate to $\tilde{\dot\delta}_p$. We get the additional microforce balance
+\[
+p+\tau_p=0.
+\]
+The constitutive relation could be $\tau_p=\partial\gamma_p(\dot\delta_p)$ to describe a dissipative effect.
+
+A further refinement could be the addition of plastic spin $W_p\in\text{Skew}$. We notice that since the second gradient elasticity that we have introduced is independent of the plastic behavior\footnote{Because $K$ is conjugate to $\tilde{\dot M}$ and not to $\tilde{\dot M}_e$ with $M_e=\grad H_e$ and $H_e=H-H_p$)} (this was done for mathematical reasons, since we needed compactness to apply Schauder theorem) then the rotational force would come only from the plastic behavior in the sense that: the macroscopic stress only exert a symmetric microforce that in principle only change $E_p$ but the plastic response can cause also a nonsymmetric zero microforce so that $W_p$ can became nonzero.
+
+\section{Mathematical analysis}
+
+In what follows we write simply $U$ and $\lambda$ in place of $U_p$ and $\lambda_p$ respectively.
+
+\subsection{Hypotheses}
+
+To get the global existence result we will assume the following hypotheses.
+\begin{itemize}
+\item[(S)]
+\begin{itemize}[noitemsep]
+\item[(a)] $\Omega\subset\mathbb{R}^d$ with $d\in\{2,3\}$ is open, bounded and Lipschitz
+\item[(b)] $\Gamma_D$ and $\Gamma_N$ are relatively open disjoint subsets of $\partial\Omega$
+\end{itemize}
+\item[(F)]
+\begin{itemize}[noitemsep]
+\item[(a)] $F\in C^0(\mathbb{R}\times\text{DevSym},[0,\infty))$
+\item[(b)] there exists $\gamma_F\in C^{0,1}_c(\mathbb{R},[0,\infty))$ such that $F(\lambda,\cdot)$ is Lipschitz in $\text{DevSym}$ with Lipschitz constant $\gamma_F(\lambda)$
+\item[(c)] $F(\cdot,0)=0$ and $F(\cdot,\dot U)$ is nonincreasing for all $\dot U\in\text{DevSym}$
+\end{itemize}
+\item[(Y)]
+\begin{itemize}[noitemsep]
+\item[(a)] $Y\in C^{0,1}(\mathbb{R})$
+\item[(b)] there exist $c_Y>0$ such that $Y(p)\ge c_Y$ for all $p\in\mathbb{R}$
+\end{itemize}
+\item[(G)]
+\begin{itemize}[noitemsep]
+\item[(a)] $G\in C^{1,0}(\text{DevPla},\mathbb{R})$ is convex
+\item[(b)] $\partial G\in L^\infty(\text{DevPla},\text{DevPla})$
+\item[(c)] $\partial G(\dot{\mathbb{U}}):\dot{\mathbb{U}}\ge0$ for all $\dot{\mathbb{U}}\in\text{DevPla}$
+\end{itemize}
+\item[(L)]
+\begin{itemize}[noitemsep]
+\item[(a)] $f\in C^1([0,T],L^2(\Omega)^d)$
+\item[(b)] $h\in C^1([0,T],L^2(\Gamma_N)^d)$
+\end{itemize}
+\item[(E)]
+\begin{itemize}[noitemsep]
+\item[(a)] $\mathfrak{C}$ and $\mathfrak{D}$ are in $\text{Sym}\otimes\text{Sym}$, $\mathfrak{B}$ and $\mathfrak{F}$ are in $\text{DevPla}\otimes\text{DevPla}$, $\mathfrak{A}$ and $\mathfrak{E}$ are in $(\text{Lin}\otimes\mathbb{R})\otimes(\text{Lin}\otimes\mathbb{R})$ and $\mathfrak{F}$ is in $\text{DevPla}\otimes\text{DevPla}$
+\item[(b)] there exist $\gamma>0$ and $\delta>0$ such that $\mathfrak{C}E:E\ge\gamma|E|^2$ and $\mathfrak{D}E:E\ge\delta|E|^2$ for all $E\in\text{Sym}$, there exist $\beta>0$ and $\phi$ such that $\mathfrak{B}\mathbb{U}\circ\mathbb{U}\ge\beta|\mathbb{U}|^2$ and $\mathfrak{F}\mathbb{U}\circ\mathbb{U}\ge\phi|\mathbb{U}|^2$, there exists $\alpha>0$ and $\epsilon>0$ such that $\mathfrak{A}M\threedots M\ge\alpha|\sym M|^2$ and $\mathfrak{E}M\threedots M\ge\epsilon|\sym M|^2$ for all $M\in\text{Lin}\otimes\mathbb{R}$ where $\sym$ denote the symmetrization of the first two indices
+\end{itemize}
+\end{itemize}
+The local existence and uniqueness theorem and the bifurcation analysis is made under the following additional hypotheses.
+\begin{itemize}
+\item[(F)]
+\begin{itemize}[noitemsep]
+\item[(d)] $F\in C^{1,1}(\mathbb{R}\times\text{DevSym},[0,\infty))$
+\item[(e)] $\partial_{\dot U}F(\lambda,0)=0$ for all $\lambda\in\mathbb{R}$
+\end{itemize}
+\item[(Y)]
+\begin{itemize}[noitemsep]
+\item[(a)] $Y\in C^1(\mathbb{R})$
+\end{itemize}
+\item[(G)]
+\begin{itemize}[noitemsep]
+\item[(d)] $G\in C^2(\text{DevPla})$ and $\partial^2G$ is bounded
+\item[(e)] there exists $\gamma_G\colon\text{DevPla}\to(0,\infty)$ such that $\partial^2G(\dot{\mathbb U})\mathbb{V}\circ\mathbb{V}\ge\gamma_G(\dot{\mathbb U})|\mathbb{V}|^2$ for all $\dot{\mathbb U}$ and $\mathbb V$ in DevPla
+\item[(f)] $\partial G(0)=0$
+\end{itemize}
+\end{itemize}
+
+\subsection{Function spaces}
+
+We now introduce the function spaces that we use to formulate the problem. Let
+\[
+\mathscr{Z}=\left\{y=(u,U,\lambda)\middle|\substack{\text{$u\in H^2(\Omega)^d$ and $u=0$ on $\Gamma_D$}\\U\in H^1(\Omega,\text{DevSym})\\\lambda\in L^2(\Omega)}\right\}\quad\text{and}\quad\mathscr{Q}=\left\{p\in L^2(\Omega)\right\}.
+\]
+The rates of $y=(u,U,\lambda)\in\mathscr{Z}$ will be denoted by $\dot y=(\dot u,\dot U,\dot\lambda)\in\mathscr{Z}$. The variations of $\dot y=(\dot u,\dot\xi,\dot\lambda)\in\mathscr{Z}$ and $p\in\mathscr{Q}$ will be denoted as $z=(v,V,\mu)\in\mathscr{Z}$ and $q\in\mathscr{Q}$. We define also the spaces of test functions as
+\[
+\tilde{\mathscr{Z}}=\left\{\tilde z=(\tilde v,\tilde V,\tilde\mu)\middle|\substack{\text{$\tilde v\in H^2(\Omega)^d$ and $\tilde v=0$ on $\Gamma_D$}\\\tilde V\in H^1(\Omega,\text{DevSym})\\\tilde\mu\in L^2(\Omega)}\right\}\quad\text{and}\quad\tilde{\mathscr{Q}}=\left\{\tilde q\in L^2(\Omega)\right\}.
+\]
+
+
+
+\subsection{Formulation of the problem}
+
+We define $\mathcal{F}\colon\mathscr{Z}\times\mathscr{Q}\times\mathscr{Z}\times[0,T]\to\tilde{\mathscr Z}'\times\tilde{\mathscr Q}'$ by
+\begin{multline*}
+\dual{\mathcal{F}(\dot y,p,y,t),(\tilde z,\tilde q)}=\int_\Omega\left[\mathfrak{C}\left(Eu-U-\frac{\lambda}{d}I\right)+\mathfrak{D}\left(E\dot u-\dot U-\frac{\dot\lambda}{d}I\right)\right]:\left(E\tilde v-\tilde V-\frac{\tilde\mu}{d}I\right)dx+\\
++\int_\Omega(\mathfrak{A}\grad^2 u+\mathfrak{E}\grad^2\dot u)\threedots\grad^2\tilde vdx+\int_\Omega\left[(\mathfrak{B}\mathbb{U}+\mathfrak{F}\dot{\mathbb{U}}\circ\tilde{\mathbb{V}}+Y(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}\right]dx-\\
+-\int_\Omega p\tilde\mu dx+\int_\Omega(F(\lambda,\dot U)-\dot\lambda)\tilde qdx-\\
+-\int_\Omega f(t)\cdot\tilde vdx-\int_{\Gamma_N}h(t)\cdot\tilde vdx.
+\end{multline*}
+\begin{lemma}
+\label{lemma:F-well}
+The map $\mathcal{F}$ is well defined.
+\end{lemma}
+\begin{proof}
+The linear terms are trivially well defined so we need to check only
+\begin{equation}
+\label{eqn:nonlinear-terms-F}
+\int_{\Omega}Y(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}dx\quad\text{and}\quad\int_\Omega F(\lambda,\dot U)\tilde qdx.
+\end{equation}
+But
+\[
+\int_{\Omega}|Y(p)||\partial G(\dot{\mathbb{U}})||\tilde{\mathbb V}|dx\le\norm{\partial G}_\infty\int_{\Omega}(|Y(p)|+\text{Lip}(Y)|p|)|\tilde{\mathbb V}|dx\lesssim(1+\norm{p}_2)\norm{\tilde V}_{1,2}
+\]
+and
+\[
+\int_\Omega|F(\lambda,\dot U)-\dot\lambda||\tilde q|dx\le\int_\Omega\left[\norm{\gamma_F}_\infty|\dot U|+|\dot\lambda|\right]|\tilde q|dx\lesssim(\norm{\dot U}_2+\norm{\dot\lambda}_2)\norm{\tilde q}_2.
+\]
+This concludes the proof.
+\end{proof}
+Now we can formulate the evolution problem as follows.
+\begin{prb}
+\label{prb:problem}
+Find $(y,p)\in\text{AC}([0,T],\mathscr{Z}\times\mathscr{Q})$ (maybe we will need to change this space, for example maybe the time regularity of $p$ can be worser) such that $y(0)=0$ and
+\[
+\mathcal{F}(\dot y(t),p(t),y(t),t)=0
+\]
+for almost every $t\in(0,T)$.
+\end{prb}
+
+\subsection{Global existence theorem}
+
+\begin{rmk*}
+We plan to use the Rothe method. Until now I have proved the existence of the time discrete solution. Now I am trying to pass to the time continuous limit in the case of no dilatancy ($F=0$).
+\end{rmk*}
+Let $N\in\mathbb{N}$. We define $\tau=N^{-1}T$ and $t_n=n\tau$ for $n\in\{0,\dots,N\}$. We consider the discrete in time version of Problem~\ref{prb:problem}.
+\begin{prb}[Discrete problem]
+\label{prb:discrete-problem}
+Let $y_0=0\in\mathscr{Z}$. Find $y_n\in\mathscr{Z}$ and $p_n\in\mathscr{Q}$ for $n\in\{1,\dots,N\}$ such that
+\begin{equation}
+\label{eqn:incremental-step-n}
+\mathcal{F}\left(\frac{y_n-y_{n-1}}{\tau},p_n,y_n,t_n\right)=0
+\end{equation}
+for all $n\in\{1,\dots,N\}$.
+\end{prb}
+We first prove the existence of a solution to Problem~\ref{prb:discrete-problem}. Reasoning by induction we reduce to find $y_n\in\mathscr{Z}$ and $p_n\in\mathscr{Q}$ that satisfy~\eqref{eqn:incremental-step-n} given $y_{n-1}\in\mathscr{Z}$. We fix any $t\in[0,T-\tau]$ and $y\in\mathscr{Z}$. It is enough to prove that there exists $\dot y\in\mathscr{Z}$ and $p\in Q$ such that
+\begin{equation}
+\label{eqn:time-step-abstract}
+\mathcal{F}(\dot y,p,y+h\dot y,t)=0.
+\end{equation}
+We define the operator $\mathcal{A}\colon\mathscr Q\times\mathscr{Z}\to\tilde{\mathscr{Z}}'$ by
+\[
+\begin{split}
+\dual{\mathcal{A}(p,\dot y),\tilde z}=\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U-\frac{\dot\lambda}{d}I\right):\left(E\tilde v-\tilde V-\frac{\tilde\mu}{d}I\right)dx+\\
++\int_\Omega(\mathfrak{E}+\tau \mathfrak{A})\grad^2\dot u\threedots\grad^2\tilde vdx+\int_\Omega\left[(\mathfrak{F}+\tau\mathfrak{B})\mathbb{\dot U}\circ\tilde{\mathbb{V}}+Y(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}\right]dx
+\end{split}
+\]
+the linear operator $\mathcal{B}\colon\mathscr{Q}\to\tilde{\mathscr{Z}}'$ by
+\[
+\dual{\mathcal{B}p,\tilde z}=-\int_\Omega p\tilde\mu dx
+\]
+and the operator $\mathcal{C}\colon\mathscr{Z}\to\tilde{\mathscr{Q}}'$ by
+\[
+\dual{\mathcal{C}(\dot y),\tilde q}=\int_\Omega(F(\lambda+\tau\dot\lambda,\dot U)-\dot\lambda)\tilde qdx=0.
+\]
+Moreover we introduce the linear form $l\in\tilde{\mathscr{Z}}'$
+\[
+\begin{split}
+\dual{l,\tilde z}=\int_\Omega f(t)\cdot\tilde vdx+\int_{\Gamma_N}h(t)\cdot\tilde vdx-\\
+-\int_\Omega\mathfrak{C}\left(Eu-U-\frac{\lambda}{d}I\right):\left(E\tilde v-\tilde V-\frac{\tilde\mu}{d}I\right)dx-\\
+-\int_\Omega\mathfrak{A}\grad^2 u\threedots\grad^2\tilde vdx-\int_\Omega\mathfrak{B}\mathbb{U}\circ\tilde{\mathbb{V}}dx.
+\end{split}
+\]
+Now equation~\eqref{eqn:time-step-abstract} can be written as
+\begin{equation*}
+\begin{cases}
+\mathscr{A}(p,\dot y)+Bp=l(t) \\
+\mathscr{C}(\dot y)=0.
+\end{cases}
+\end{equation*}
+We first solve the second equation.
+\begin{lemma}
+\label{lemma:phi}
+There exists $\Phi\in C^{0,1}(\text{DevSym})\cap L^\infty(\text{DevSym})$ such that $\dot y\in\mathscr{Z}$ solves $\mathscr{C}(\dot y)=0$ if and only if $\dot\lambda=\Phi(\dot U)$. Moreover $\text{Lip}(\Phi)\le\norm{\gamma_F}_\infty$.
+\end{lemma}
+\begin{proof}
+By hypotheses (F, a) for each $\dot U\in\text{DevSym}$ the function $\dot\lambda\mapsto\dot\lambda-F(\lambda+\tau\dot\lambda,\dot U)$ is continuous, strictly increasing and tends to $\pm\infty$ when $\dot\lambda\to\pm\infty$. Then there exists a unique $\Phi(\dot U)\in[0,\infty)$ such that $\Phi(\dot U)=F(\lambda+\tau\Phi(\dot U),\dot U)$. Moreover
+\[
+\Phi(\dot U)\le F(\Phi(\dot U),0)+\gamma_F(\lambda+\tau\Phi(\dot U))|\dot U|\le\gamma_F(\lambda+\tau\Phi(\dot U))|\dot U|.
+\]
+Since $\gamma_F$ has compact support then $\Phi\in L^\infty$. This implies that given $\dot U\in H^1$ we have $\Phi(\dot U)\in L^\infty\subset L^2$. Then $\mathscr{C}(\dot y)=0$ if and only if $\dot\lambda=\Phi(\dot U)$. We now prove that $\Phi$ is Lipschitz. Let $\dot\lambda_2=\Phi(\dot U_2)$ and $\dot\lambda_1=\Phi(\dot U_1)$. Without loss of generality assume that $\dot\lambda_2>\dot\lambda_1$. Then we have
+\[
+\begin{split}
+\dot\lambda_2-\dot\lambda_1&=F(\lambda+\tau\dot\lambda_2,\dot U_2)-F(\lambda+\tau\dot\lambda_1,\dot U_1)=\\
+&=F(\lambda+\tau\dot\lambda_2,\dot U_2)-F(\lambda+\tau\dot\lambda_1,\dot U_2)+F(\lambda+\tau\dot\lambda_1,\dot U_2)-F(\lambda+\tau\dot\lambda_1,\dot U_1)\le\\
+&\le F(\lambda+\tau\dot\lambda_1,\dot U_2)-F(\lambda+\tau\dot\lambda_1,\dot U_1)\le\norm{\gamma_F}_\infty|\dot U_2-\dot U_1|
+\end{split}
+\]
+and
+\[
+\begin{split}
+\dot\lambda_1-\dot\lambda_2&=F(\lambda+\tau\dot\lambda_2,\dot U_2)-F(\lambda+\tau\dot\lambda_1,\dot U_1)=\\
+&=F(\lambda+\tau\dot\lambda_2,\dot U_2)-F(\lambda+\tau\dot\lambda_2,\dot U_1)+F(\lambda+\tau\dot\lambda_2,\dot U_1)-F(\lambda+\tau\dot\lambda_1,\dot U_1)\le\\
+&\le F(\lambda+\tau\dot\lambda_2,\dot U_2)-F(\lambda+\tau\dot\lambda_2,\dot U_1)\le\norm{\gamma_F}_\infty|\dot U_2-\dot U_1|.
+\end{split}
+\]
+This concludes the proof.
+\end{proof}
+We call
+\[
+\mathscr{N}=\left\{\dot y=(\dot u,\dot U,\Phi(\dot U))\;\middle|\;\substack{\text{$\dot u\in H^2(\Omega)^d$ and $\dot u=0$ on $\Gamma_D$}\\\dot U\in H^1(\Omega,\text{DevSym})}\right\}
+\]
+and
+\[
+\tilde{\mathscr{N}}=\left\{\tilde{z}\in\tilde{\mathscr{Z}}\;\middle|\;\text{$\dual{\mathscr{B}q,\tilde{z}}=0$ for all $q\in Q$}\right\}=\left\{\tilde{z}\in\tilde{\mathscr{Z}}\;\middle|\;\tilde\mu=0\right\}.
+\]
+Now we study the first equation in~\eqref{eqn:time-step-abstract}. We first study the solvability of that equation in $\dot y\in\mathscr{N}$ given $p\in\mathscr{Q}$. If we test the first equation with $\tilde{z}\in\tilde{\mathscr{N}}$ we get
+\[
+\dual{\mathcal{A}(p,\dot y),\tilde{z}}=\dual{l,\tilde{z}}\quad\text{for all $\tilde{z}\in\tilde{\mathscr{N}}$}.
+\]
+Now we define the space
+\[
+\mathscr{X}=\left\{\xi=(\dot u,\dot U)\;\middle|\;\substack{\text{$\dot u\in H^2(\Omega)^d$ and $\dot u=0$ on $\Gamma_D$}\\\dot U\in H^1(\Omega,\text{DevSym})}\right\}
+\]
+and we can consider the natural bijections $\mathcal{J}$ and $\tilde{\mathcal{J}}$ from $\mathscr{X}$ to $\mathscr{N}$ and $\tilde{\mathscr{N}}$ respectively. In particular if $\xi=(\dot u,\dot U)$ and $\tilde{\zeta}=(\tilde{v},\tilde{V})$ are in $\mathscr{X}$ we define
+\[
+\mathcal{J}(\xi)=(\dot u,\dot U,\Phi(\dot U))\quad\text{and}\quad\tilde{\mathcal{J}}\tilde\zeta=(\tilde v,\tilde V,0).
+\]
+Now we introduce the operator $\mathcal{T}_p$ from $\mathscr{X}$ to $\mathscr{X}'$ as follows. Given $\xi=(\dot u,\dot U)$ and $\tilde{\zeta}=(\tilde{v},\tilde{V})$ in $\mathscr{X}$ we set
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi),\tilde{\zeta}}=\dual{\mathscr{A}(p,\mathscr{J}(\xi)),\tilde{\mathscr{J}}(\tilde\zeta)}=\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U-\frac{\Phi(\dot U)}{d}I\right):\left(E\tilde v-\tilde V\right)dx+\\
++\int_\Omega(\mathfrak{E}+\tau \mathfrak{A})\grad^2\dot u\threedots\grad^2\tilde vdx+\int_\Omega\left[(\mathfrak{F}+\tau\mathfrak{B})\mathbb{\dot U}\circ\tilde{\mathbb{V}}+Y(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}\right]dx.
+\end{split}
+\]
+Now for each $p\in\mathscr{Q}$ we are reduced to find $\xi\in\mathscr{X}$ such that
+\begin{equation}
+\label{eqn:T}
+\dual{\mathcal{T}_p(\xi),\tilde\zeta}=\dual{l,\tilde{\mathcal{J}}\tilde\zeta}\quad\text{for all $\tilde\zeta\in\mathscr{X}$}.
+\end{equation}
+We want to apply the Browder--Minty theorem (Theorem~\ref{thm:browder-minty}). We need to establish the boundedness, continuity, coercivity and monotonicity of $\mathcal{T}_p$. This done in the following lemmas.
+\begin{lemma}
+The operator $\mathcal{T}_p\colon\mathscr{X}\to\mathscr{X}'$ is bounded and continuous.
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lemma:phi} we know that if $\dot U_n\to\dot U$ in $H^1$ then
+\[
+\norm{\Phi(\dot U_n)-\Phi(\dot U)}_2\le\text{Lip}(\Phi)\norm{\dot U_n-\dot U}_2\to0.
+\]
+Moreover since $\Phi\in L^\infty$ we have that $\mathcal{T}_p$ is bounded. Now
+\[
+\begin{split}
+|\dual{\mathcal{T}_p(\xi),\tilde{\zeta}}|\lesssim\left(\norm{E\dot u}_2+\norm{\dot U}_2+\norm{\Phi}_\infty\right)\left(\norm{E\tilde v}_2+\norm{\tilde V}_2\right)+\\
++\norm{\grad^2\dot u}_2\norm{\grad^2\tilde v}_2+\norm{\mathbb{\dot U}}_2\norm{\tilde{\mathbb{V}}}_2+\norm{p}_2\norm{\tilde{\mathbb{V}}}_2.
+\end{split}
+\]
+and this proves that $\mathcal{T}_p$ is bounded. Now it is enough to prove the continuity of the nonlinear term only. Let $\xi_n\to\xi$ in $\mathscr{X}$. Then $\dot{\mathbb{U}}_n\to\dot{\mathbb{U}}$ in $L^2$. We have
+\[
+\left|\int_\Omega Y(p)(\partial G(\dot{\mathbb{U}}_n)-\partial G(\dot{\mathbb{U}}))\circ\tilde{\mathbb{V}}dx\right|\le\norm{Y(p)(\partial G(\dot{\mathbb{U}}_n)-\partial G(\dot{\mathbb{U}}))}_2\norm{\tilde{\mathbb{V}}}_2
+\]
+and
+\[
+\norm{Y(p)(\partial G(\dot{\mathbb{U}}_n)-\partial G(\dot{\mathbb{U}}))}_2^2=\int_\Omega Y(p)^2(\partial G(\dot{\mathbb{U}}_n)-\partial G(\dot{\mathbb{U}}))^2dx\to0.
+\]
+Indeed for every subsequence there exists a further subsequence such that $\dot{\mathbb{U}}_n\to\dot{\mathbb{U}}$ and we can apply the dominated convergence theorem to pass to the limit.
+\end{proof}
+\begin{lemma}
+\label{lemma:coercivity-T}
+The operator $\mathcal{T}_p\colon\mathscr{X}\to\mathscr{X}'$ is coercive uniformly in $p$.
+\end{lemma}
+\begin{proof}
+For any $\xi\in\mathscr{X}$ we have
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi),\xi}=\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U\right):\left(E\dot u-\dot U-\frac{\Phi(\dot U)}{d}I\right)dx+\\
++\int_\Omega(\mathfrak{E}+\tau \mathfrak{A})\grad^2\dot u\threedots\grad^2\dot udx+\int_\Omega\left[(\mathfrak{F}+\tau\mathfrak{B})\mathbb{\dot U}\circ\mathbb{\dot U}+Y(p)\partial G(\dot{\mathbb{U}})\circ\dot{\mathbb{U}}\right]dx.
+\end{split}
+\]
+Using the hypotheses (E, b) and (G, b) and using that $\dot U:I=0$ since $\dot U\in\text{Dev}$ we have
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi),\xi}\ge(\delta+\tau\gamma)\left\lVert E\dot u-\dot U\right\rVert_2^2+(\alpha+\tau\epsilon)\norm{\grad E\dot u}_2^2+(\phi+\tau\beta)\norm{\dot{\mathbb{U}}}_2^2-\\
+-\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})E\dot u:\frac{\Phi(\dot U)}{d}Idx.
+\end{split}
+\]
+Now
+\[
+\begin{split}
+\left|\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})E\dot u:\frac{\Phi(\dot U)}{d}Idx\right|&\le\frac{\norm{\Phi}_\infty}{d}|\mathfrak{D}+\tau\mathfrak{C}|\int_\Omega|E\dot u|dx\le C\norm{Eu}_2
+\end{split}
+\]
+for some constant $C>0$. Moreover by the Young inequality
+\[
+\left\lVert E\dot u-\dot U\right\rVert_2^2\ge(1-\theta)\norm{E\dot u}_2^2+\left(1-\frac{1}{\theta}\right)\norm{\dot U}_2^2
+\]
+for any $\theta>0$. Then
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi),\xi}\ge(1-\theta)(\delta+\tau\gamma)\norm{E\dot u}_2^2+(\alpha+\tau\epsilon)\norm{\grad E\dot u}_2^2-C\norm{E\dot u}_2+\\
++\left(1-\frac{1}{\theta}\right)(\delta+\tau\gamma)\norm{\dot U}_2^2+(\phi+\tau\beta)\norm{\dot{\mathbb{U}}}_2^2.
+\end{split}
+\]
+We choose $\theta<1$ sufficiently close to 1 such there exists a constant $C_1>0$ with the property that
+\[
+\left(1-\frac{1}{\theta}\right)(\delta+\tau\gamma)\norm{\dot U}_2^2+(\phi+\tau\beta)\norm{\dot{\mathbb{U}}}_2^2\ge C_1\norm{\dot{\mathbb{U}}}_2^2\ge C_2\norm{\dot U}_{1,2}^2.
+\]
+Noticing that $C\norm{E\dot u}_2$ has subquadratic growth the thesis follows by application of Korn inequality.
+\end{proof}
+\begin{lemma}
+\label{lemma:monotone-T}
+We can write $\mathcal{T}_p=\mathcal{R}_p+\mathcal{Q}$ with $\mathcal{R}_p\colon\mathscr{X}\to\mathscr{X}'$ and $\mathcal{Q}\colon\mathscr{X}\to\mathscr{X}'$ continuous and bounded operators such that
+\begin{itemize}
+\item[(i)] $\mathcal{R}_p$ strongly monotone uniformly in $p$, i.e., there exists $M>0$ such that
+\[
+\dual{\mathcal{R}_p(\xi_2)-\mathcal{R}_p(\xi_1),\xi_2-\xi_1}\ge M\norm{\xi_2-\xi_1}_\mathscr{X}^2
+\]
+for all $p\in\mathscr{Q}$ and $\xi_1$, $\xi_2$ in $\mathscr{X}$
+\item[(ii)] $\mathcal{Q}$ has the property that if $\xi_n\rightharpoonup\xi$ in $\mathscr{X}$ then $\mathcal{Q}(\xi_n)\to\mathcal{Q}(\xi)$ in $\mathscr{X}'$ so in particular is pseudomonotone and
+\item[(iii)] there exists a constant $C_\mathcal{Q}$ such that $\mathcal{Q}$ is Lipschitz continuous with Lipschitz constant $C_\mathcal{Q}\norm{\gamma_F}_\infty$.
+\end{itemize}
+In particular $\mathcal{T}_p$ is pseudomonotone.
+\end{lemma}
+\begin{proof}
+Let
+\begin{multline*}
+\dual{\mathcal{R}_p(\xi),\tilde\zeta}=\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U\right):\left(E\tilde v-\tilde V\right)dx+\\
++\int_\Omega(\mathfrak{E}+\tau \mathfrak{A})\grad^2\dot u\threedots\grad^2\tilde vdx+\int_\Omega\left[(\mathfrak{F}+\tau\mathfrak{B})\mathbb{\dot U}\circ\tilde{\mathbb{V}}+Y(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}\right]dx
+\end{multline*}
+and
+\[
+\dual{\mathcal{Q}(\xi),\tilde\zeta}=-\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\frac{\Phi(\dot U)}{d}I:\left(E\tilde v-\tilde V\right)dx.
+\]
+First we prove that $\mathcal{R}_p$ is strongly monotone uniformly in $p$. For all $\xi_1$ and $\xi_2$ in $\mathscr{X}$ we have
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi_2)-\mathcal{T}_p(\xi_1),\xi_2-\xi_1}=\\
+=\int_\Omega(\mathfrak{D}+\tau\mathfrak{C})\left(E(\dot u_2-\dot u_1)-(\dot U_2-\dot U_1)\right):\left(E(\dot u_2-\dot u_1)-(U_2-U_1)\right)dx+\\
++\int_\Omega(\mathfrak{E}+\tau \mathfrak{A})(\grad^2\dot u_2-\grad^2\dot u_1)\threedots(\grad^2\dot u_2-\grad^2\dot u_1)dx+\\
++\int_\Omega\left[(\mathfrak{F}+\tau\mathfrak{B})(\mathbb{\dot U}_2-\mathbb{\dot U}_1)\circ(\mathbb{\dot U}_2-\mathbb{\dot U}_1)+Y(p)(\partial G(\dot{\mathbb{U}}_2)-\partial G(\dot{\mathbb{U}}_1))\circ(\dot{\mathbb{U}}_2-\dot{\mathbb{U}}_1)\right]dx\ge\\
+\ge(\delta+\tau\gamma)\norm{E(\dot u_2-\dot u_1)-(\dot U_2-\dot U_1)}_2^2+(\phi+\tau\beta)\norm{\dot{\mathbb{U}}_2-\dot{\mathbb{U}}_1}_2^2.
+\end{split}
+\]
+We have used that since $G$ is convex then $\partial G$ is monotone. Reasoning as in the proof of Lemma~\ref{lemma:coercivity-T} we have
+\[
+\begin{split}
+\dual{\mathcal{T}_p(\xi_2)-\mathcal{T}_p(\xi_1),\xi_2-\xi_1}\ge(1-\theta)(\delta+\tau\gamma)\norm{E(\dot u_2-\dot u_1)}_2^2+(\alpha+\tau\epsilon)\norm{\grad E(\dot u_2-\dot u_1)}_2^2+\\
++\left(1-\frac{1}{\theta}\right)(\delta+\tau\gamma)\norm{\dot U_2-\dot U_1}_2^2+\\
++(\phi+\tau\beta)\norm{\dot{\mathbb{U}}_2-\dot{\mathbb{U}}_1}_2^2.
+\end{split}
+\]
+Choosing $0<\theta<1$ sufficiently close to 1 and using Korn inequality we conclude. Next we prove the properties of $\mathcal{Q}$. Let $\xi_n\rightharpoonup\xi$ in $\mathscr{X}$. Then $\dot U_n\rightharpoonup\dot U$ in $H^1$ and by Proposition~\ref{prop:sobolev-weak-lp-strong} we have $\dot U_n\to\dot U$ in $L^2$. Since $\Phi$ is Lipschitz we have $\Phi(\dot U_n)\to\Phi(\dot U)$ in $L^2$. This establish she first property which in turns implies that $\mathcal{Q}$ is pseudomonotone. Next we observe that
+\[
+|\dual{\mathcal{Q}(\xi_2)-\mathcal{Q}(\xi_1),\tilde\zeta}|\le\int_\Omega|(\mathfrak{D}+\tau\mathfrak{C}|\text{Lip}(\Phi)|\dot U_2-\dot U_1|(|E\tilde v|+|\tilde V|)dx\le C\norm{\gamma_F}_\infty\norm{\xi_2-\xi_1}_\mathscr{X}\norm{\tilde\zeta}_\mathscr{X}.
+\]
+This establish also the second property. Now by Proposition~\ref{prop:monotono-pseudomonotone} and Proposition~\ref{prop:sum-pseudomonotone} we have that $\mathcal{T}_p$ is pseudomonotone.
+\end{proof}
+Now applying Theorem~\ref{thm:browder-minty} for each $p\in\mathscr{Q}$ there exists $\xi\in\mathscr{X}$ such that
+\[
+\dual{\mathcal{T}_p(\xi),\tilde{\zeta}}=\dual{l,\tilde{\mathscr{J}}(\tilde{\zeta})}\quad\text{for all $\tilde{\zeta}\in\mathscr{X}$}.
+\]
+Moreover $\xi$ is unique if $\norm{\gamma_F}_\infty$ is sufficiently small. Indeed if $\xi_1$ and $\xi_2$ are two solutions we have
+\[
+\begin{split}
+M\norm{\xi_2-\xi_1}_\mathscr{X}^2&\le\dual{\mathcal{R}_p(\xi_2)-\mathcal{R}_p(\xi_1),\xi_2-\xi_1}\le\\
+&=\dual{\mathcal{T}_p(\xi_2)-\mathcal{T}_p(\xi_1),\xi_2-\xi_1}-\dual{\mathcal{Q}(\xi_2)-\mathcal{Q}(\xi_1),\xi_2-\xi_1}=\\
+&=-\dual{\mathcal{Q}(\xi_2)-\mathcal{Q}(\xi_1),\xi_2-\xi_1}\le C_\mathcal{Q}\norm{\gamma_F}_\infty\norm{\xi_2-\xi_1}_\mathscr{X}^2.
+\end{split}
+\]
+We call $\Xi\colon\mathscr{Q}\to\mathscr{X}$ the map that assign to $p\in\mathscr{Q}$ the unique $\xi$. Now to conclude the existence of a solution to Problem~\ref{prb:discrete-problem} we need to solve in $p\in\mathscr{Q}$ the equation
+\[
+\dual{\mathcal{A}(p,\mathscr{J}(\Xi(p))),(0,0,\tilde\mu)}+\dual{Bp,(0,0,\tilde\mu)}=\dual{l,(0,0,\tilde\mu)}\quad\text{for all $\tilde\mu\in L^2(\Omega)$}
+\]
+that is
+\[
+\int_\Omega\tr\left[(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U-\frac{\dot\lambda}{d}I\right)\right]\frac{\tilde\mu}{d}dx-\int_\Omega p\tilde{\mu}dx=\int_\Omega\tr\left[\mathfrak{C}\left(Eu-U-\frac{\lambda}{d}I\right)\right]\frac{\tilde\mu}{d}dx
+\]
+for all $\tilde{\mu}\in L^2(\Omega)$, where $\dot y=(\dot u,\dot U,\dot\lambda)=\mathscr{J}(\Xi(p))$. This is equivalent to
+\[
+p=\frac{1}{d}\tr\left[(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U-\frac{\dot\lambda}{d}I\right)\right]-\frac{1}{d}\tr\left[\mathfrak{C}\left(Eu-U-\frac{\lambda}{d}I\right)\right]=\mathcal{S}(p)
+\]
+where we have introduced the operator $\mathcal{S}\colon\mathscr{Q}\to\mathscr{Q}$. We want to prove the existence of a fixed point of $\mathcal{S}$ using the Schauder fixed point theorem (Theorem~\ref{thm:schauder}). To prove that $\mathcal{S}$ satisfy the required hypotheses we need to establish some regularity results regarding $\Xi$ and $\mathcal{J}$. We first need the following lemma.
+\begin{lemma}
+\label{lemma:lipschitz-A-p}
+The operator $\mathcal{A}$ is Lipschitz continuous in $p$ uniformly in $\dot y$.
+\end{lemma}
+\begin{proof}
+By (Y, a) and (G, c) we have
+\[
+\begin{split}
+|\dual{\mathcal{A}(p,\dot y)-\mathcal{A}(q,\dot y),\tilde z}|&\le\int_\Omega|Y(p)-Y(q)||\partial G(\dot{\mathbb{U}})||\tilde{\mathbb{V}}|dx\le\\
+&\le\text{Lip}(Y)\norm{\partial G}_\infty\int_\Omega|p-q||\tilde{\mathbb{V}}|dx\le L\norm{p-q}_{2}\norm{\tilde V}_{1,2}
+\end{split}
+\]
+for some constant $L>0$.
+Then we have
+\[
+\norm{\mathcal{A}(p,\dot y)-\mathcal{A}(q,\dot y)}_{\tilde{\mathscr Z}'}\le L\norm{p-q}_\mathscr{Q}
+\]
+This concludes the proof.
+\end{proof}
+Now we can prove the continuity of $\Xi$.
+\begin{lemma}
+\label{lemma:Xi-regularity}
+The operator $\Xi$ is continuous and has bounded range.
+\end{lemma}
+\begin{proof}
+First we prove that $\Xi$ has bounded range. We assume by contradiction that there exists $p_n\in\mathscr{Q}$ such that $\norm{\Xi(p_n)}_\mathscr{X}\ge n$. Let $\xi_n=\Xi(p_n)$. Now
+\[
+\frac{\dual{\mathcal{T}_{p_n}(\xi_n),\xi_n}}{\norm{\xi_n}_\mathscr{X}}\le\norm{\dual{l,\tilde{\mathscr{J}}(\cdot)}}_{\mathscr{X}'}.
+\]
+But by Lemma~\ref{lemma:coercivity-T}
+\[
+\frac{\dual{\mathcal{T}_p(\xi_n),\xi_n}}{\norm{\xi_n}_\mathscr{X}}\to\infty
+\]
+and this is a contradiction. Now we prove that $\Xi$ is continuous. Let $pn\to p$ in $\mathscr{Q}$ and let $\xi_n=\Xi(p_n)$, $\xi=\Xi(p)$. By the first part of the proof we know that $\xi_n$ are bounded in $\mathscr{X}$. Then for every subsequence of $\xi_n$ there exists a further subsequence that converges weakly in $\mathscr{X}$. If we prove that each of this weakly convergent subsequences converges strongly to $\xi$ we have done. So taking a subsequence we assume that $\xi_n\rightharpoonup\zeta$ in $\mathscr{X}$ for some $\zeta\in\mathscr{X}$. We have to prove that $\xi_n\to\xi$ in $\mathscr{X}$. Now using strong monotonicity of $\mathcal{R}_p$ uniformly in $p$ and that $\mathcal{T}_p(\xi)=\mathcal{T}_{p_n}(\xi_n)$ we have
+\[
+\begin{split}
+M\norm{\xi_n-\xi}^2_\mathscr{X}&\le\dual{\mathcal{R}_{p}(\xi_n)-\mathcal{R}_p(\xi),\xi_n-\xi}=\\
+&=\dual{\mathcal{T}_{p}(\xi_n)-\mathcal{T}_p(\xi),\xi_n-\xi}-\dual{\mathcal{Q}(\xi_n)-\mathcal{Q}(\xi),\xi_n-\xi}\le\\
+&\le\dual{\mathcal{T}_{p}(\xi_n)-\mathcal{T}_{p_n}(\xi_n),\xi_n-\xi_n}-\dual{\mathcal{Q}(\xi_n)-\mathcal{Q}(\xi),\xi_n-\xi}.
+\end{split}
+\]
+But since $\mathcal{A}$ is Lipschitz in $p$ uniformly in $\dot y$ we have
+\[
+\dual{\mathcal{T}_{p}(\xi_n)-\mathcal{T}_{p_n}(\xi_n),\xi_n-\xi_n}\le L\norm{p_n-p}_\mathscr{Q}\norm{\xi_n-\xi}_\mathscr{X}\to0
+\]
+where we use that $\xi_n$ are bounded since they converge weakly. Moreover by Proposition~\ref{lemma:monotone-T} we know that $\mathcal{Q}(\xi_n)\to\mathcal{Q}(\zeta)$ in $\mathscr{X}'$. Then by a standard result we have $\dual{\mathcal{Q}(\xi_n),\xi_n}$. It follows that
+\[
+\dual{\mathcal{Q}(\xi_n)-\mathcal{Q}(\xi),\xi_n-\xi}\to0.
+\]
+We have proved that $\xi_n\to\xi$ in $\mathscr{X}$.
+\end{proof}
+The following lemma establish the regularity of $\mathcal{J}$.
+\begin{lemma}
+\label{lemma:J-regularity}
+The map $\mathscr{J}\colon\mathscr{X}\to\mathscr{\mathscr{Z}}$ is continuous and bounded.
+\end{lemma}
+\begin{proof}
+We recall that if $\xi=(\dot u,\dot U)\in\mathscr{X}$ then $\mathcal{J}(\xi)=(\dot u,\dot U,\Phi(\dot U))$. It is enough to prove that $\phi\colon H^1\to L^2$ is continuous and bounded. Boundedness follows immediately from the estimates of Lemma~\ref{lemma:phi}. Continuity follows from the fact that $\Phi$ is Lipschitz as a function from $\text{DevSym}$ to $\mathbb{R}$.
+\end{proof}
+Now we are ready to prove the desired properties of $\mathcal{S}$.
+\begin{lemma}
+The map $\mathcal{S}\colon\mathscr{Q}\to\mathscr{Q}$ is continuous and has a bounded and compact range.
+\end{lemma}
+\begin{proof}
+Notice that the map
+\[
+\mathcal{I}(\dot y)=\frac{1}{d}\tr\left[(\mathfrak{D}+\tau\mathfrak{C})\left(E\dot u-\dot U-\frac{1}{d}\frac{\dot\lambda}{d}I\right)\right]-\tr\left[\mathfrak{C}\left(Eu-U-\frac{\lambda}{d}I\right)\right]
+\]
+is continuous, compact and bounded from $\mathscr{Z}$ to $\mathscr{Q}$. The compactness follows since $H^1$ is compactly embedded in $L^2$ by Rellich--Kondrachov theorem. Then by Lemma~\ref{lemma:Xi-regularity} and Lemma~\ref{lemma:Xi-regularity} we have that $\mathcal{S}$ is continuous and has a compact and bounded range. Indeed the continuity follows since $\mathcal{S}$ is a composition of continuous functions. The boundedness of the range is a trivial consequence of the boundedness of the range of $\Xi$ and the fact that both $\mathcal{J}$ and $\mathcal{I}$ are bounded. Moreover the compactness of the range is established as follows. Let $p_n\in\text{range}(\mathcal{S})$ and let $q_n\in\mathscr{Q}$ such that $p_n=\mathcal{S}(q_n)$. We know that $\dot y_n=\mathcal{J}(\Xi(q_n))$ is bounded in $\mathscr{Z}$. By compactness of $\mathcal{I}$ then $p_n=\mathcal{I}(\dot y_n)$ admits a convergent subsequence.
+\end{proof}
+Now we are in position to apply Schauder fixed point theorem and we get the existence of a fixed point of $\mathcal{S}$. We have obtained the desired result.
+\begin{prop}
+If $\norm{\gamma_F}_\infty$ is sufficiently small then Problem~\ref{prb:discrete-problem} admits at least a solution.
+\end{prop}
+Now we need to pass to the limit $N\to\infty$. We will try to get the a priori estimates needed to apply Aubin--Lions lemma. For simplicity we start with the case $F=0$. Our problem is of the form
+\[
+\begin{cases}
+Ay+E\dot y+D(p,\dot y)+Bp=f \\
+B^T\dot y=0.
+\end{cases}
+\]
+We have obtained
+\[
+\begin{cases}
+Ay_n+E\dot y_n+D(p_n,\dot y_n)+Bp_n=f_n \\
+B^T\dot y_n=0
+\end{cases}
+\]
+where $y_n=y_{n-1}+\tau y_n$. We test the first equation with $\dot y_n$ and we notice that $\dual{D(p_n,\dot y_n),\dot y_n}\ge0$ and $\dual{Bp_n,\dot y_n}=0$. Then
+\[
+\dual{\tau A\dot y_n,\dot y_n}+\dual{E\dot y_n,\dot y_n}\le\dual{f_n,\dot y_n}-\dual{Ay_{n-1},\dot y_n}.
+\]
+Since $A$ and $E$ are coercive we have
+\[
+\tau\alpha\norm{\dot y_n}_Z+\epsilon\norm{\dot y_n}_Z\le\norm{f_n}_{Z'}+M\norm{y_{n-1}}_Z.
+\]
+By Gronwall inequality we have that $y_n$ is bounded in $Z$ uniformly in $n$ and $\tau$. Then also $\dot y_n$ is bounded in $Z$ uniformly in $n$ and $\tau$. Moreover since $p_n$ is given by the expression above it is bounded in $Q$ uniformly in $n$ and $\tau$.
+
+\subsection{Local existence and uniqueness theorem}
+
+\begin{lemma}
+\label{lemma:mensa-piovego}
+Let $\Omega\subset\mathbb{R}^d$ be open and bounded. Let $\phi\colon\mathbb{R}^m\to\mathbb{R}^l$ be Lipschitz continuous and bounded. Let $f_n\to f$ in $L^p(\Omega,\mathbb{R}^m)$ for some $p\in[1,\infty)$. Then $\phi(f_n)\to \phi(f)$ in $L^q(\Omega,\mathbb{R}^l)$ for all $q\in[p,\infty)$.
+\end{lemma}
+\begin{proof}
+Let $A_n=\left\{x\in\Omega\;\middle|\;|f_n(x)-f(x)|<1\right\}$. Since convergence in $L^p$ implies convergence in measure then $|\Omega\setminus A_n|\to0$. Now let $q\in[p,\infty)$. Then if we call $L>0$ the Lipschitz constant of $\phi$ and $C=\sup_{\mathbb{R}^m}|\phi|$ we have
+\[
+\begin{split}
+\norm{\phi(f_n)-\phi(f)}_q^q&=\int_{A_n}|\phi(f_n)-\phi(f)|^qdx+\int_{\Omega\setminus A_n}|\phi(f_n)-\phi(f)|^qdx\le\\
+&\le\int_{A_n}L|f_n-f|^qdx+2C|\Omega\setminus A_n|.
+\end{split}
+\]
+But on $A_n$ we have $|f_n-f|^q\le|f_n-f|^p$ so that
+\[
+\norm{\phi(f_n)-\phi(f)}_q^q\le\int_{A_n}L|f_n-f|^pqdx+2C|\Omega\setminus A_n|\le L\norm{f_n-f}_p^p+2C|\Omega\setminus A_n|.
+\]
+This proves that $\phi(f_n)\to \phi(f)$ in $L^q(\Omega,\mathbb{R}^l)$.
+\end{proof}
+Now we call $\mathscr{X}=\mathscr{Z}\times\mathscr{Q}$ and $\tilde{\mathscr{X}}=\tilde{\mathscr{Z}}\times\tilde{\mathscr{Q}}$. We will write $\xi=(\dot y,p)\in\mathscr{X}$, $\zeta=(z,q)\in\mathscr{X}$ and $\tilde\zeta=(\tilde z,\tilde q)\in\tilde{\mathscr{X}}$. Now we can view $\mathcal{F}\colon\mathscr{X}\times\mathscr{Z}\times[0,T]\to\tilde{\mathscr{X}}'$.
+\begin{prop}
+\label{prop:F-regularity}
+The map $\mathcal{F}$ is of class $C^1$.
+\end{prop}
+\begin{proof}
+We need to check the thesis only for the nonlinear terms~\eqref{eqn:nonlinear-terms-F}. We first study the Fréchet differentiability of the second term in~\eqref{eqn:nonlinear-terms-F} with respect to $\lambda$. By the dominated convergence theorem we have
+\[
+\int_\Omega\left(\frac{F(\lambda+\tau\mu,\dot U)-F(\lambda,\dot U)}{\tau}-\partial_\lambda F(\lambda,\dot U)\mu\right)\tilde qdx\to0
+\]
+for $\tau\to0$. Indeed
+\[
+\left|\frac{F(\lambda+\tau\mu,\dot U)-F(\lambda,\dot U)}{\tau}-\partial_\lambda F(\lambda,\dot U)\mu\right||\tilde q|\le2\text{Lip}(F)|\mu||\tilde q|\in L^1.
+\]
+So we have proved the Gateaux differentiability. Now we prove that the Gateaux derivative is continuous. Let $\dot y_n\to\dot y$ in $\mathscr{Z}$, $p_n\to p$ in $\mathscr{Q}$ and $y_n\to y$ in $\mathscr{Z}$. Then
+\[
+\left|\int_\Omega\left(\partial_\lambda F(\lambda_n,\dot U_n)-\partial_\lambda F(\lambda,\dot U)\right)\mu\tilde qdx\right|\le\int_\Omega\text{Lip}(\partial_\lambda F)
+\]
+We claim that the Gateaux derivative of $\mathcal{F}$ with respect to $\xi$ is
+\[
+\begin{split}
+\dual{D_\xi\mathcal{F}(\xi,y,t)\zeta,\tilde\zeta}=\int_\Omega\mathfrak{D}\left(Ev-V-\frac{\mu}{d}I\right):\left(E\tilde v-\tilde V-\frac{\tilde\mu}{d}I\right)dx+\\
++\int_\Omega\mathfrak{E}\grad^2 v\threedots\grad^2\tilde vdx+\int_{\Omega}Y(p)\partial^2G(\dot{\mathbb{U}})\mathbb{V}\circ\tilde{\mathbb{V}}dx+\int_{\Omega}Y'(p)q\partial G(\dot{\mathbb U})\circ\tilde{\mathbb{V}}dx-\\
+-\int_\Omega q\tilde\mu dx+\int_\Omega(\partial_{\dot{U}}F(\lambda,\dot U):V-\mu)\tilde qdx.
+\end{split}
+\]
+We need only to check the claim for the terms~\eqref{eqn:nonlinear-terms-F}. We start with the Gateaux derivative with respect to $p$ of the first term. We notice that by H\"older inequality an by the continuous embedding of $H^1$ in $L^6$
+\begin{multline*}
+\int_\Omega\left|\frac{Y(p+\epsilon q)-Y(p)}{\epsilon}-Y'(p)\right||G'(\dot\xi)||\tilde{\eta}|dx\le\left\lVert\frac{Y(p+\epsilon q)-Y(p)}{\epsilon}-Y'(p)\right\rVert_{3/2}\norm{G'(\dot\xi)}_{6}\norm{\tilde{\eta}}_6\lesssim\\
+\lesssim\left(\int_\Omega\left|\frac{Y(p+\epsilon q)-Y(p)}{\epsilon}-Y'(p)\right|^{3/2}dx\right)^{2/3}(1+\norm{\dot\xi}_{1,2})\norm{\tilde{\eta}}_{1,2}.
+\end{multline*}
+Since
+\[
+\lim_{\epsilon\to0}\left(\int_\Omega\left|\frac{Y(p+\epsilon q)-Y(p)}{\epsilon}-Y'(p)\right|^{3/2}dx\right)^{2/3}=0
+\]
+by dominated convergence we conclude the check by applying Lemma~\ref{lemma:check-gateaux}. Now we turn to the Gateaux derivative of the first term in~\eqref{eqn:nonlinear-terms-F} with respect to $\dot\xi$. We have
+\begin{multline*}
+\int_\Omega Y(p)\left|\frac{G'(\dot\xi+\epsilon\eta)-G'(\dot\xi)}{\epsilon}-G''(\xi)\eta\right||\tilde\eta|dx\le C_Y\left\lVert\frac{G'(\dot\xi+\epsilon\eta)-G'(\dot\xi)}{\epsilon}-G''(\xi)\eta\right\rVert_{6/5}\norm{\tilde\eta}_6\lesssim\\
+\lesssim\left(\int_\Omega\left|\frac{G'(\dot\xi+\epsilon\eta)-G'(\dot\xi)}{\epsilon}-G''(\xi)\eta\right|^{6/5}dx\right)^{5/6}\norm{\tilde\eta}_{1,2}.
+\end{multline*}
+By hypotheses (G, c) we know that
+\[
+\left|\frac{G'(\dot\xi+\epsilon\eta)-G'(\dot\xi)}{\epsilon}-G''(\xi)\eta\right|\le2L_G|\eta|\in L^{6/5}(\Omega).
+\]
+Then by dominated convergence
+\[
+\lim_{\epsilon\to0}\left(\int_\Omega\left|\frac{G'(\dot\xi+\epsilon\eta)-G'(\dot\xi)}{\epsilon}-G''(\xi)\eta\right|^{6/5}dx\right)^{5/6}=0
+\]
+and we conclude the check by Lemma~\ref{lemma:check-gateaux}. Eventually we check the Gateaux derivative with respect to $\dot\xi$ of the third term in~\eqref{eqn:nonlinear-terms-F}. We have
+\[
+\int_\Omega\left|\frac{F(\dot\xi+\epsilon\eta)-F(\dot\xi)}{\epsilon}-F'(\dot\xi):\eta\right||\tilde q|dx\le\left(\int_\Omega\left|\frac{F(\dot\xi+\epsilon\eta)-F(\dot\xi)}{\epsilon}-F'(\dot\xi):\eta\right|^2dx\right)^{1/2}\norm{\tilde q}_2.
+\]
+Using hypotheses (F, c) we have
+\[
+\left|\frac{F(\dot\xi+\epsilon\eta)-F(\dot\xi)}{\epsilon}-F'(\dot\xi):\eta\right|\le2L_F|\eta|\in L^2(\Omega).
+\]
+Then by dominated convergence and the application of Lemma~\ref{lemma:check-gateaux} we complete also this check.
+
+\emph{Step 4}. To check that $\mathcal{F}$ is also Fréchet differentiable with respect to $\alpha$ it is enough to prove the continuity of the Gateaux derivative. We need to prove it only for the terms
+\[
+\int_{\Omega}Y(p)G''(\dot\xi)\eta:\tilde\eta dx,\qquad\int_{\Omega}Y'(p)qG'(\dot\xi):\tilde\eta dx\quad\text{and}\quad\int_\Omega(F'(\dot\xi):\eta-\mu)\tilde qdx.
+\]
+Let $p_n\to p$ in $L^2(\Omega)$ and $\dot\xi_n\to\dot\xi$ in $H^1(\Omega,\text{DevSym})$. We study the continuity of the first term. Using the H\"older inequality we have
+\begin{multline*}
+\int_\Omega|Y(p_n)G''(\dot\xi_n)-Y(p)G''(\dot\xi)||\eta||\tilde\eta|dx\le\norm{Y(p_n)G''(\dot\xi_n)-Y(p)G''(\dot\xi)}_{3/2}\norm{\eta}_6\norm{\tilde\eta}_6\lesssim\\
+\lesssim\norm{Y(p_n)G''(\dot\xi_n)-Y(p)G''(\dot\xi)}_{3/2}\norm{\eta}_{1,2}\norm{\tilde\eta}_{1,2}.
+\end{multline*}
+Now
+\begin{multline*}
+\norm{Y(p_n)G''(\dot\xi_n)-Y(p)G''(\dot\xi)}_{3/2}\le\\
+\le\norm{\left(Y(p_n)-Y(p)\right)G''(\dot\xi)}_{3/2}+\norm{Y(p_n)\left(G''(\dot\xi_n)-G''(\dot\xi)\right)}_{3/2}\le\\
+\le L_YL_G\norm{p_n-p}_{3/2}+C_Y\text{Lip}(G'')\norm{\dot\xi_n-\dot\xi}_{3/2}\lesssim\\
+\lesssim\norm{p_n-p}_2+\norm{\dot\xi_n-\dot\xi}_{1,2}\to0.
+\end{multline*}
+Using Lemma~\ref{lemma:check-continuity-gateaux} we have the continuity of the first term. Next we study the second term. We have
+\begin{multline*}
+\int_{\Omega}|Y'(p_n)G'(\dot\xi_n)-Y'(p)G'(\dot\xi)||q||\tilde\eta|dx\le\norm{Y'(p_n)G'(\dot\xi_n)-Y'(p)G'(\dot\xi)}_{3}\norm{q}_2\norm{\tilde\eta}_6\lesssim\\
+\lesssim\norm{Y'(p_n)G'(\dot\xi_n)-Y'(p)G'(\dot\xi)}_{3}\norm{q}_2\norm{\tilde\eta}_{1,2}.
+\end{multline*}
+Now
+\begin{multline*}
+\norm{Y'(p_n)G'(\dot\xi_n)-Y'(p)G'(\dot\xi)}_{3}\le\norm{\left(Y'(p_n)-Y'(p)\right)G'(\dot\xi)}_3+\norm{Y'(p_n)\left(G'(\dot\xi_n)-G'(\dot\xi)\right)}_3\le\\
+\le C_G\norm{(1+|\dot\xi|)\left(Y'(p_n)-Y'(p)\right)}_3+L_YL_G\norm{\dot\xi_n-\dot\xi}_3\le\\
+\lesssim(1+\norm{\dot\xi}_6)\norm{Y'(p_n)-Y'(p)}_6+\norm{\dot\xi_n-\dot\xi}_{1,2}\to0
+\end{multline*}
+where the last limit holds because by Lemma~\ref{lemma:mensa-piovego} we have $Y'(p_n)\to Y'(p)$ in $L^6(\Omega)$. By Lemma~\ref{lemma:check-continuity-gateaux} we get that also the second term is continuous. We now turn to the check of the continuity of the last term. We have
+\[
+\begin{split}
+\int_\Omega|F'(\dot\xi)-F'(\dot\xi_n)||\eta||\tilde q|dx&\le\norm{F'(\dot\xi)-F'(\dot\xi_n)}_3\norm{\eta}_6\norm{\tilde q}_2\le\\
+&\le\text{Lip}(F')\norm{\dot\xi-\dot\xi_n}_3\norm{\eta}_6\norm{\tilde q}_2\lesssim\norm{\dot\xi-\dot\xi_n}_{1,2}\norm{\eta}_{1,2}\norm{\tilde q}_2.
+\end{split}
+\]
+Applying Lemma~\ref{lemma:check-continuity-gateaux} we get the continuity of the last term.
+\end{proof}
+\begin{prop}
+\label{prop:DF-iso}
+For any $\dot y\in\mathscr{Z}$, $p\in\mathscr{Q}$ and $y\in\mathscr{Z}$ with $\norm{\dot U}_{1,2}$ sufficiently small we have $D_\xi\mathcal{F}(\xi,y,t)\in\text{Iso}(\mathscr{X},\tilde{\mathscr{X}}')$.
+\end{prop}
+\begin{proof}
+We define the bilinear form $a\colon\mathscr{Z}\times\tilde{\mathscr{Z}}\to\mathbb{R}$ by
+\[
+\begin{split}
+a(z,\tilde z)=\int_\Omega\mathfrak{D}\left(Ev-V-\frac{\mu}{d}I\right):\left(E\tilde v-\tilde V-\frac{\tilde\mu}{d}I\right)dx+\\
++\int_\Omega\mathfrak{E}\grad^2 v\threedots\grad^2\tilde vdx+\int_{\Omega}Y(p)\partial^2G(\dot{\mathbb{U}})\mathbb{V}\circ\tilde{\mathbb V}dx.
+\end{split}
+\]
+We define also the bilinear forms $b\colon\mathscr{Q}\times\tilde{\mathscr{Z}}\to\mathbb{R}$ and $c\colon\tilde{\mathscr{Q}}\times\mathscr{Z}\to\mathbb{R}$ by
+\[
+b(p,\tilde z)=\int_{\Omega}(Y'(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb V}-\tilde\mu)qdx
+\]
+and
+\[
+c(\tilde q,z)=\int_\Omega(\partial_{\dot U}F(\lambda,\dot U):V-\mu)\tilde qdx=0.
+\]
+To prove that $D_\xi\mathcal{F}(\xi,y,t)\in\text{Iso}(\mathscr{X},\tilde{\mathscr{B}}')$ we can prove that the mixed elliptic problem
+\begin{gather*}
+a(z,\tilde z)+b(p,\tilde z)=\dual{l,\tilde z}\quad\text{for all $\tilde v\in\tilde{\mathscr{V}}$} \\
+c(\tilde q,z)=\dual{m,\tilde q}\quad\text{for all $\tilde q\in\tilde{\mathscr{Q}}$}
+\end{gather*}
+is well posed for all $l\in\tilde{\mathscr{V}}'$ and $m\in\tilde{\mathscr{Q}}'$. To this aim it is sufficient to check the hypotheses of Theorem~\ref{thm:mixed-elliptic}. We first check the hypotheses on $b$. We have
+\[
+\tilde{\mathscr{N}}=\left\{\tilde z\in\tilde{\mathcal Z}\middle|\text{$b(p,\tilde z)=0$ for all $p\in\mathscr{Q}$}\right\}=\left\{\tilde z\in\tilde{\mathcal Z}\middle|\tilde\mu=Y'(p)\partial G(\dot{\mathbb U}):\tilde{\mathbb V}\right\}.
+\]
+Notice that $|Y'(p)\partial G(\dot{\mathbb U}):\tilde{\mathbb V}|\le\text{Lip}(Y)\norm{\partial G}_\infty|\mathbb{V}|\in L^2$. Now
+\[
+\sup_{q\in\mathscr{Q}\setminus\{0\}}\frac{\int_{\Omega}(Y'(p)\partial G(\dot{\mathbb U})\circ\tilde{\mathbb V}-\tilde\mu)qdx}{\norm{q}_Q}=\norm{Y'(p)\partial G(\dot{\mathbb{U}})\circ\tilde{\mathbb{V}}-\tilde\mu}_2.
+\]
+On the other hand since $\tilde z_0=(\tilde v_0,\tilde V_0,\tilde\mu_0)\in\tilde{\mathscr N}$ if and only if $\tilde\mu_0=Y'(p)\partial G(\dot{\mathbb U}):\tilde{\mathbb V}_0$ we have
+\[
+\begin{split}
+\norm{\tilde z}_{\tilde{\mathscr{Z}}/\tilde{\mathscr{N}}}&=\inf_{\tilde z_0\in\tilde{\mathscr N}}\left[\norm{\tilde v+\tilde v_0}_{1,2}+\norm{\tilde V+\tilde V_0}_{1,2}+\norm{\tilde\mu+Y'(p)\partial G(\dot{\mathbb{U}}):\tilde{\mathbb V}_0}_2\right]=\\
+&=\inf_{\tilde V_0\in H^1}\left[\norm{\tilde V+\tilde V_0}_{1,2}+\norm{\tilde\mu+Y'(p)\partial G(\dot{\mathbb{U}}):\tilde{\mathbb V}_0}_2\right]\le\\
+&\le\norm{\tilde\mu-Y'(p)\partial G(\dot{\mathbb U}):\tilde{\mathbb V}}_2
+\end{split}
+\]
+where the last inequality holds since we can choose $\tilde{\mathbb V}_0=-\tilde{\mathbb V}$. Then we have
+\[
+\sup_{q\in\mathscr{Q}\setminus\{0\}}\frac{\int_{\Omega}(Y'(p)\partial G(\dot{\mathbb U})\circ\tilde{\mathbb V}-\tilde\mu)qdx}{\norm{q}_Q}\ge\norm{\tilde z}_{\tilde{\mathscr{Z}}/\tilde{\mathscr{N}}}.
+\]
+Moreover $q\in\mathscr Q$ such that
+\[
+b(p,\tilde z)=\int_{\Omega}(Y'(p)\partial G(\dot{\mathbb U})\circ\tilde{\mathbb{V}}-\tilde\mu)qdx=0\quad\text{for all $\tilde z\in\tilde{\mathscr Z}$}.
+\]
+Choosing $\tilde V=0$ and $\tilde\mu\in L^2(\Omega)$ arbitrary we have $q=0$. This completes the check of the hypotheses on $b$. The check of the hypotheses on $c$ is similar. In particular we have
+\[
+\mathscr{N}=\left\{z\in\mathcal Z\middle|\text{$c(\tilde q,z)=0$ for all $\tilde q\in\tilde{\mathscr{Q}}$}\right\}=\left\{z\in\mathcal Z\middle|\mu=\partial_{\dot U}F(\lambda,\dot U):V\right\}
+\]
+and
+\[
+\sup_{\tilde q\in\tilde{\mathscr{Q}}\setminus\{0\}}\frac{\int_{\Omega}(\partial_{\dot U}F(\lambda,\dot U):V-\mu)\tilde qdx}{\norm{\tilde q}_{\tilde Q}}\ge\norm{z}_{\mathscr{Z}/\mathscr{N}}
+\]
+and if $\tilde q\in\tilde{\mathscr Q}$ satisfies
+\[
+\int_{\Omega}(\partial_{\dot U}F(\lambda,\dot U):V-\mu)\tilde qdx=0\quad\text{for all $z\in\mathscr{Z}$}
+\]
+then $\tilde q=0$. Now we check the hypotheses on $a$. Let $z\in\mathscr{Z}=\tilde{\mathscr{Z}}$. Then
+\[
+\begin{split}
+a(z,z)&\ge\delta\left\lVert Ev-V-\frac{\mu}{d}I\right\rVert_2^2+\epsilon\norm{\grad Ev}_2^2+c_Y\gamma_G(\dot{\mathbb U})\norm{\mathbb{V}}_2^2\ge\\
+&\ge(1-\theta)\delta\norm{Ev}_2^2+\epsilon\norm{\grad Ev}_2^2+\left(1-\frac{1}{\theta}\right)\delta\left\lVert V+\frac{\mu}{d}I\right\rVert_2^2+c_Y\gamma_G(\dot{\mathbb U})\norm{\mathbb{V}}_2^2=\\
+&=(1-\theta)\delta\norm{Ev}_2^2+\epsilon\norm{\grad Ev}_2^2+\left(1-\frac{1}{\theta}\right)\delta\norm{V}_2^2+\left(1-\frac{1}{\theta}\right)\frac{\delta}{d}\norm{\mu}_2^2+c_Y\gamma_G(\dot{\mathbb U})\norm{\mathbb{V}}_2^2
+\end{split}
+\]
+for any $\theta>0$. We have used Young inequality and the fact that $V:I=0$ since $V\in\text{Dev}$. Now if $\dot U=0$ by (F, e) and (G, f) we have
+\[
+\mathscr{N}=\tilde{\mathscr{N}}=\left\{z\in\mathcal Z\middle|\mu=0\right\}.
+\]
+This implies that if $z\in\mathscr{N}$ then
+\[
+a(z,z)\ge(1-\theta)\delta\norm{Ev}_2^2+\epsilon\norm{\grad Ev}_2^2+\left(1-\frac{1}{\theta}\right)\delta\norm{V}_2^2+c_Y\gamma_G(0)\norm{\mathbb{V}}_2^2.
+\]
+choosing $\theta<1$ sufficiently close to 1 such that
+\[
+c_Y\gamma_G(0)+\left(1-\frac{1}{\theta}\right)\delta>0
+\]
+by applying the second order Korn inequality we get that $a$ is coercive in $\mathscr{N}$. Then also the hypotheses on $a$ are verified. This implies that if $\dot U=0$ then $D_\xi\mathcal{F}(\dot y,p,y,t)\in\text{Iso}(\mathscr{X},\tilde{\mathscr{X}}')$. But since $\mathcal{F}$ is of class $C^1$ then for $\norm{\dot U}_{1,2}$ sufficiently small we still have $D_\xi\mathcal{F}(\dot y,p,y,t)\in\text{Iso}(\mathscr{X},\tilde{\mathscr{X}}')$.
+\end{proof}
+\begin{rmk*}
+Let $z\in\mathscr{N}$ and $\tilde z\in\tilde{\mathscr{N}}$ such that $\tilde v=v$ and $\tilde V=V$. Then
+\[
+\begin{split}
+a(z,\tilde z)&=\int_\Omega\mathfrak{D}\left(Ev-V-\frac{\partial_{\dot U}F(\lambda,\dot U):V}{d}I\right):\left(Ev-V-\frac{Y'(p)\partial G(\dot{\mathbb{U}})\circ\mathbb{V}}{d}I\right)dx+\\
+&+\int_\Omega\mathfrak{E}\grad^2v\threedots\grad^2vdx+\int_{\Omega}Y(p)\partial^2G(\dot{\mathbb{U}})\mathbb{V}\circ\tilde{\mathbb V}dx\ge\\
+&\ge\delta(1-\theta)\norm{Ev}_2^2+\delta\left(1-\frac{1}{\theta}\right)\norm{V}_2^2-C\norm{Ev}_2\norm{\mathbb V}_2+\epsilon\norm{\grad Ev}_2^2+c_Y\gamma_G(\dot{\mathbb{U}})\norm{\mathbb V}_2^2
+\end{split}
+\]
+for some $C>0$ and all $\theta>0$. Then
+\[
+a(z,\tilde z)\ge\left[\delta(1-\theta)-C\eta\right]\norm{Ev}_2^2+\epsilon\norm{\grad Ev}_2^2+\delta\left(1-\frac{1}{\theta}\right)\norm{V}_2^2+\left(c_Y\gamma_G(\dot{\mathbb{U}})-\frac{C}{\eta}\right)\norm{\mathbb V}_2^2.
+\]
+This guarantees the hypotheses of Theorem~\ref{thm:babuska} on $a$ only if $c_Y\gamma_G(\dot{\mathbb U})$ is sufficiently large. This suggest suggests that $D_\alpha\mathcal{F}$ tends to become singular during the time evolution. This inevitably leads to the loss of uniqueness of the solution. We hope that the bifurcation is associated with the formation of shear bands according to the mechanism we now describe. When the body is subjected to an external load, it begins to flow uniformly plastically, and $\dot U$ grows uniformly across the entire domain. When $\dot U$ becomes too large, the coercivity of $a$ is lost, and the bifurcation occurs. In the new stable branch, $\dot U$ decreases near to zero almost everywhere except at the shear band. This restores the coercivity of $a$ because where $\dot U$ is small, the plastic dissipation anchors $V$, preventing it from growing indefinitely, while in the shear band region, $V$ clings to adjacent through the nonlocal dissipation.
+\end{rmk*}
+\begin{rmk*}
+Consider the particular case
+\[
+\mathscr{N}=\tilde{\mathscr{N}}=\left\{(v,V,\mu)\in\mathscr{Z}\middle|\mu=H\circ\mathbb{V}\right\}
+\]
+for some $H\in\text{DevPla}$. This correspond to the associative case in the classical Drucker--Prager model. Then given $z\in\mathscr{N}$ we have
+\[
+a(z,z)\ge(1-\theta)\delta\norm{Ev}_2^2+\epsilon\norm{\grad Ev}_2^2+C\left(1-\frac{1}{\theta}\right)\norm{V}_2^2+c_Y\gamma_G(\dot{\mathbb{U}})\norm{\mathbb{V}}_2^2
+\]
+for some $C>0$ and $\theta>0$. Then the coercivity of $a$ in $\mathscr{N}$ is guaranteed independently of $c_Y\gamma_G(\dot{\mathbb U})$. This suggests that in this case bifurcations cannot occur.
+\end{rmk*}
+By Proposition~\ref{prop:DF-iso} in a neighborhood of $(\dot y,p,y,t)=(0,0,0,0)$ we can solve uniquely
+\[
+\mathcal{F}(\dot y,p,y,t)=0
+\]
+in $\xi=(\dot y,p)$ to get
+\[
+\dot y=\mathcal{G}(y,t)\quad\text{and}\quad p=\mathcal{H}(y,t)
+\]
+where $\mathcal G$ and $\mathcal H$ are maps of class $C^1$ from a neighborhood of $(0,0)$ in $\mathscr{Z}\times\mathbb{R}$ to $\mathscr{Z}$ and $\mathscr{Q}$ respectively. Then we can apply Theorem~\ref{thm:cauchy-lipschitz} to get locally in time a unique solution $y$ of class $C^2$ to the Cauchy problem
+\[
+\begin{cases}
+\dot y=\mathscr{G}(y,t) \\
+y(0)=0.
+\end{cases}
+\]
+Then we set $p=\mathscr{H}(y,t)$ which is of class $C^1$. It is clear that $\mathcal{F}(\dot y,p,y,t)=0$. In conclusion we have obtained the following theorem.
+\begin{thm}
+There exists $S\in(0,T]$ and unique $y\in C^2([0,S],\mathscr{Z})$ and $p\in C^1([0,S],\mathscr{Q})$ such that $(y,p)$ is a solution to Problem~\ref{prb:problem} with $S$ in place of $T$.
+\end{thm}
+
+\subsection{Bifurcation analysis}
+
+I plan to apply the Lyapunov--Scmidth procedure and the Crandall--Rabinowitz theorem to study the bifurcations of the equation
+\[
+\mathcal{F}(\dot y,p,y,t)=0
+\]
+to be solved in $\xi=(\dot y,p)$.
+
+\subsection{Example of constitutive relations}
+
+We now give an example of constitutive relations that satisfy the hypotheses. We choose
+\[
+F(\dot\xi)=\beta\left[(|\dot\xi|^2+a_F^2)^{1/2}-a_F\right]
+\]
+for some $a_F>0$ and $\beta\in\mathbb{R}$. This is a regularization of $F(\dot\xi)=\beta|\dot\xi|$.
+\begin{rmk}
+The parameter $\beta$ is the dilatancy. The mechanical interpretation is as follows. When $\beta>0$ then $\dot\lambda>0$ where the material flows plastically. This is the behavior of dilative materials such as dense sand: since the grains are very tightly packed when they slide over each other they space out from each other. On the contrary when $\beta<0$ then $\dot\lambda<0$ where the material flows plastically. This is the behavior of contractive materials such as loose sand: since the grains are not very tightly packed they tend to compact as they slide over each other.
+\end{rmk}
+We choose the usual isotropic elastic and viscoelastic tensors
+\[
+\mathfrak{C}=\lambda_\mathfrak{C}I_{d\times d}\otimes I_{d\times d}+2\mu_\mathfrak{C}I_{(d\times d)\times(d\times d)}\quad\text{and}\quad\mathfrak{D}=\lambda_\mathfrak{D}I_{d\times d}\otimes I_{d\times d}+2\mu_\mathfrak{D}I_{(d\times d)\times(d\times d)}
+\]
+where
+\[
+d\,\lambda_\mathfrak{C}+2\mu_\mathfrak{C}>0,\quad\mu_\mathfrak{C}>0\qquad\text{and}\qquad d\,\lambda_\mathfrak{D}+2\mu_\mathfrak{D}>0,\quad\mu_\mathfrak{D}>0.
+\]
+We expect that when the micropressure $p$ grows the friction between the grains of the material increases. When $p\le0$ there is a residual cohesion between them. Then we choose
+\[
+Y(p)=Y_0+H\Phi(p)
+\]
+where
+\[
+\Phi(p)=
+\begin{cases}
+0 & \text{if $p<0$} \\
+\frac{p^2}{2p_0^2} & \text{if $p\in[0,p_0]$} \\
+1-\frac{p^2_0}{2p^2} & \text{if $p\in(p_0,\infty)$}.
+\end{cases}
+\]
+with $H>0$ and $p_0>0$. Then we choose
+\[
+g(r)=\frac{1}{m}\left[(r^2+c^2)^{m/2}-c^m\right],\qquad G(\dot\xi)=g(|\dot\xi|)
+\]
+where $m\in(1,2)$ and $c>0$. We have
+\[
+g'(r)=r(r^2+c^2)^{\frac{m-2}{2}},\qquad G'(\dot\xi)=g'(|\dot\xi|)\frac{\dot\xi}{|\dot\xi|}=(|\dot\xi|^2+c^2)^{\frac{m-2}{2}}\dot\xi.
+\]
+\begin{rmk*}
+When $c$ is close to 0 and $m$ is close to 1 we approximate the classical behavior of a plastic material in which $\dot\xi\neq0$ only when $|\sigma_p|$ reach the yield strength $Y$.
+\end{rmk*}
+\begin{lemma*}
+We have
+\[
+G''(\dot\xi)=(|\dot\xi|^2+c^2)^\frac{m-2}{2}\left[I-(2-m)\frac{1}{|\dot\xi|^2+c^2}\dot\xi\otimes\dot\xi\right].
+\]
+Moreover the smallest eigenvalue of $G''(\dot\xi)$ is
+\[
+\gamma_G(\dot\xi)=(|\dot\xi|^2+c^2)^\frac{m-2}{2}\left(1-(2-m)\frac{|\dot\xi|^2}{|\dot\xi|^2+c^2}\right)>0.
+\]
+\end{lemma*}
+\begin{proof}
+We have
+\[
+g''(r)=\left(1-(2-m)\frac{r^2}{r^2+c^2}\right)(r^2+c^2)^\frac{m-2}{m}.
+\]
+so that
+\[
+\begin{split}
+G''(\dot\xi)&=g''(|\dot\xi|)\frac{\dot\xi}{|\dot\xi|}\otimes\frac{\dot\xi}{|\dot\xi|}+\frac{g'(|\dot\xi|)}{|\dot\xi|}\left(I-\frac{\dot\xi}{|\dot\xi|}\otimes\frac{\dot\xi}{|\dot\xi|}\right)=\\
+&=\frac{g'(|\dot\xi|)}{|\dot\xi|}I+\left(g''(|\dot\xi|)-\frac{g'(|\dot\xi|)}{|\dot\xi|}\right)\frac{\dot\xi}{|\dot\xi|}\otimes\frac{\dot\xi}{|\dot\xi|}=\\
+&=(|\dot\xi|^2+c^2)^\frac{m-2}{2}\left[I-(2-m)\frac{|\dot\xi|^2}{|\dot\xi|^2+c^2}\frac{\dot\xi}{|\dot\xi|}\otimes\frac{\dot\xi}{|\dot\xi|}\right].
+\end{split}
+\]
+Then notice that $G''(\dot\xi)$ is of the form $M=a(I-cn\otimes n)$ with $a>0$, $c\in(0,1)$ and $n\in\mathbb{R}^m$ with $|n|=1$. Here $m$ is the dimension of $\text{DevSym}$. We notice that
+\[
+Mn=a(n-cn)=a(1-c)n
+\]
+and if $v\in\text{span}(n)^\perp$ then
+\[
+Mv=av.
+\]
+This means that the smallest eigenvalues of $M$ is $a(1-c)$. The thesis follows.
+\end{proof}
+
+\subsection{Old ideas}
+
+Suppose that for $t=0$ we have
+\[
+\mathcal{F}(0,0,0,0)=0.
+\]
+Now we have to solve
+\[
+\mathcal{G}_1(a,h)=\mathcal{G}_1(\dot u,p,h)=\mathcal{F}(\dot u,p,h\dot u,h)=0,
+\]
+where $a=(\dot u,p)$. Notice that $\mathcal{G}_1(0,0)=0$. If we prove that
+\[
+D_a\mathcal{G}_1(0,0)
+\]
+is an isomorphism then we find a unique small $h_1$ and a unique small $a_1$ such that
+\[
+\mathcal{G}_1(a_1,h_1)=\mathcal{F}(\dot u_1,p_1,u_1,t_1)=0
+\]
+where $u_1=h_1\dot u_1$ and $t_1=h_1$. Now we have to solve
+\[
+\mathcal{G}_2(a,h)=\mathcal{G}_2(\dot u,p,h)=\mathcal{F}(\dot u,p,u_1+h\dot u,t_1+h)=0.
+\]
+We notice that
+\[
+\mathcal{G}_2(a_1,0)=\mathcal{F}(\dot u_1,p_1,u_1,t_1)=0.
+\]
+So if we prove that
+\[
+D_a\mathcal{G}_2(a_1,0)
+\]
+is a isomorphism we find a unique small $h_2$ and a unique $a_2$ near $a_1$ such that
+\[
+\mathcal{G}_2(a_2,h_2)=\mathcal{F}(\dot u_2,p_2,u_2,t_2)
+\]
+where $u_2=u_1+h_2\dot u_2$ and $t_2=t_1+h_2$. Now suppose that we have obtained $\dot u_{n-1}$, $p_{n-1}$, $u_{n-1}$ and $t_{n-1}$ such that
+\[
+\mathcal{F}(\dot u_{n-1},p_{n-1},u_{n-1},t_{n-1})=0.
+\]
+We define
+\[
+\mathcal{G}_n(a,h)=\mathcal{F}(\dot u,p,u_{n-1}+h\dot u,t_{n-1}+h).
+\]
+Notice that
+\[
+\mathcal{G}_n(a_{n-1},0)=\mathcal{F}(\dot u_{n-1},p_{n-1},u_{n-1},t_{n-1})=0.
+\]
+So if we prove that
+\[
+D_a\mathcal{G}_n(a_{n-1},0)
+\]
+is an isomorphism then we find a unique small $h_n$ and a unique $a_n$ near $a_{n-1}$ such that
+\[
+\mathcal{G}_n(a_n,h_n)=\mathcal{F}(\dot u_n,p_n,u_n,t_n)=0
+\]
+where $u_n=u_{n-1}+h_n\dot u_n$ and $t_n=t_{n-1}+h$.
+
+\section{Numerical approximation}
+
+I plan to study numerically the problem using the FEM. The main branch of the solution will be computed using the Newton method. When the stiffness matrix is approximately singular I will try to generalize the method that I used in nonlinear elasticity to detect the bifurcation points and approximate the various branches of solutions that departs from it.
+
+\chapter{Large deformation model}
+
+\section{Formulation}
+
+\subsection{Kinematics}
+
+Let $\Omega\subset\mathbb{R}^3$ be the reference configuration of the body. The deformation of the body is a map $\chi\colon\Omega\to\mathbb{R}^d$. We set $v=\dot\chi$ and $F=\Grad\chi$ and $L=\dot FF^{-1}$. We subdivide $\partial\Omega$ into disjoint parts $\Gamma_D$ and $\Gamma_N$. On $\Gamma_D$ we impose the kinematical constrain $\chi=\overline{\chi}$. To impose this constrain we add the Lagrange multiplier $r\colon\Gamma_D\to\mathbb{R}^d$. The constrain can be written in weak form as
+\[
+\int_{\Gamma_C}(\chi-\overline{\chi})\cdot\tilde rdA=0.
+\]
+The plastic distortion is a map $F_p\colon\Omega\to\text{Lin}^+$. We set $L_p=\dot F_pF_p^{-1}$ and we assume that $L_p=D_p\in\text{Sym}$. We set $U_p=\dev D_p$ and $M_p=\Grad U_p\cdot F_p^{-1}$. The elastic distortion is $F_e=FF_p^{-1}$ and we set $L_e=\dot F_eF_e^{-1}$.
+\begin{lemma}
+\label{lem:L-Le-Lp}
+It holds $L=L_e+F_eD_pF_e^{-1}$.
+\end{lemma}
+\begin{proof}
+We have $L=\dot FF^{-1}=(\dot F_eF_p+F_e\dot F_p)F_p^{-1}F_e^{-1}=\dot F_eF_e^{-1}+F_e\dot F_pF_p^{-1}F_e^{-1}=L_e+F_eD_pF_e^{-1}$.
+\end{proof}
+We add the kinematical constrain $\tr D_p=F(U_p)$ where $F\colon\text{DevSym}\to\mathbb{R}$. To impose this constrain we consider a Lagrange multiplier $p\colon\Omega\to\mathbb{R}$. The constrain can be written in weak form as
+\[
+\int_\Omega(F(U_p)-\tr L_p)\tilde pdX=0.
+\]
+
+\subsection{Statics}
+
+We choose an internal virtual power of the form
+\[
+\tilde{\mathcal{W}}=\int_\Omega T:\tilde L_edX+\int_\Omega\left(T_p:\tilde U_p-p\tr\tilde L_p+K_p\threedots\tilde{M}_p\right)dX.
+\]
+Here $T$ is the macrostress, $T_p$ is the microstress which can be assumed deviatoric and $K_p$ is the microhyperstress. We choose an external virtual power of the form
+\[
+\tilde{\mathcal{P}}=\int_\Omega f\cdot\tilde vdX+\int_{\Gamma_N}h\cdot\tilde vdA+\int_{\Gamma_D}r\cdot\tilde vdA.
+\]
+\begin{defi}[Principle of Virtual Powers]
+Equilibrium holds when $\tilde{\mathscr{W}}=\tilde{\mathscr{P}}$ for all virtual rates.
+\end{defi}
+To get the local version of the equilibrium condition we apply Lemma~\ref{lem:L-Le-Lp} and we write the internal virtual power as
+\[
+\tilde{\mathcal{W}}=\int_\Omega TF^{-T}:\Grad\tilde v dX+\int_\Omega\left(-T_e:\tilde L_p+T_p:\tilde U_p-p\tr\tilde L_p+K_p\threedots\tilde{M}_p\right)dX
+\]
+where $T_e=F_e^TTF_e^{-T}$ is the Mandel stress. Then we apply the Green theorem
+\begin{multline*}
+\tilde{\mathcal{W}}=-\int_\Omega\Diver(TF^{-T}):\Grad\tilde vdX+\int_{\partial\Omega}(TF^{-T})N\cdot\tilde vdA+\\
++\int_\Omega\left\{\left[T_p-\dev T_e-\Diver\left(K_p\cdot F_p^{-T}\right)\right]:\tilde U_p-\left[\frac{1}{d}\tr T_e+p\right]\tr\tilde L_p\right\}dX+\\
++\int_{\partial\Omega}\left(K_p\cdot F_p^{-T}N\right):\tilde U_pdA.
+\end{multline*}
+Then the local form of the equilibrium condition is
+\begin{align*}
+&\Diver(TF^{-T})+f=0\quad\text{in $\Omega$} \\
+&(TF^{-T})N=r\quad\text{in $\Gamma_D$} \\
+&(TF^{-T})N=h\quad\text{in $\Gamma_N$} \\
+&T_p-\dev T_e-\Diver\left(K_p\cdot F_p^{-T}\right)=0\quad\text{in $\Omega$} \\
+&\frac{1}{d}\tr T_e+p=0\quad\text{in $\Omega$} \\
+&K_p\cdot F_p^{-T}N=0\quad\text{in $\partial\Omega$}.
+\end{align*}
+
+\subsection{Constitutive relations}
+
+QUI VA ANCORA COMPLETATO. IN OGNI CASO NON MI ASPETTO DI RIUSCIRE AD ESTENDERE L'ANALISI ANCHE AL MODELLO A GRANDI DEFORMAZIONI. SE AVRÒ TEMPO TRATTERÒ IL PROBLEMA NUMERICAMENTE ESTENDENDO I METODI SVILUPPATI PER IL MODELLO A PICCOLE DEFORMAZIONI IN MODO FORMALE.
+
+\appendix
+
+\chapter{Notation}
+
+\section{Tensors}
+
+\begin{tabular}{cc}
+\toprule
+$\text{Lin}=\mathbb{R}^{d\times d}$ & $d\times d$ matrices \\
+$\text{Lin}^+$ & $d\times d$ matrices with positive determinant \\
+$\text{Sym}$ & $d\times d$ symmetric matrices \\
+$\text{Dev}$ & $d\times d$ deviatoric matrices \\
+$\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
+\bottomrule
+\end{tabular}
+
+\chapter{Functional analysis}
+
+\section{Linear functional analysis}
+
+\subsection{Other}
+
+\begin{prop}
+\label{prop:sobolev-weak-lp-strong}
+Let $\Omega\subset\mathbb{R}^d$ be open and bounded. Let $p\in[1,\infty]$. Let $u_n\rightharpoonup u$ in $W^{1,p}(\Omega)$. Then $u_n\to u$ in $L^p(\Omega)$.
+\end{prop}
+\begin{proof}
+Since $u_n\rightharpoonup u$ in $W^{1,p}(\Omega)$ then $u_n$ are bounded in $W^{1,p}(\Omega)$. By Rellich--Kondrakov theorem each subsequence of $u_n$ admits a further subsequence that converges strongly in $L^p(\Omega)$. Since we already know the weak convergence in $W^{1,p}(\Omega)$ then the limit is always $u$. Then necessarily the whole sequence $u_n$ converges strongly to $u$ in $L^2(\Omega)$.
+\end{proof}
+
+\subsection{Generalized mixed elliptic problems}
+
+We start with the following theorem.
+\begin{thm}[Babu\^ska]
+\label{thm:babuska}
+Let $V$ and $Q$ be reflexive Banach spaces. Let $b\colon Q\times V\to\mathbb{R}$ be bilinear form. Let $Z=\left\{z\in V\middle|\text{$b(q,z)=0$ for all $q\in Q$}\right\}$ and define $W=V/Z$. Assume that $b$ is continuous so that there exists $M>0$ such that
+\[
+b(q,v)\le M\norm{q}_Q\norm{v}_V\quad\text{for all $(q,v)\in Q\times V$},
+\]
+Assume also that there exists $\beta>0$ such that
+\[
+\sup_{q\in Q\setminus\{0\}}\frac{b(q,w)}{\norm{q}_Q}\ge\beta\norm{w}_W
+\]
+for all $w\in W$ and that if $q\in Q$ satisfies
+\[
+b(q,v)=0\quad\text{for all $v\in V$}
+\]
+then $q=0$. Then for each $f\in Q'$ there exists a unique $w\in W$ such that
+\[
+b(q,w)=\dual{f,q}\quad\text{for all $q\in Q$}
+\]
+and
+\[
+\norm{w}_W\le\frac{1}{\beta}\norm{f}_{Q'}.
+\]
+\end{thm}
+\begin{proof}
+\emph{Step 1}. Consider the linear operator $B\colon W\to Q'$ defined by
+\[
+\dual{Bw,q}=b(w,q).
+\]
+We notice that
+\[
+|\dual{Bw,q}|=\inf_{z\in Z}|b(w+z,q)|\le M\norm{q}_Q\inf_{z\in Z}\norm{w+z}_V=M\norm{q}_Q\norm{w}_W
+\]
+so that $B\in\mathscr{L}(W,Q')$.
+
+\emph{Step 2}. We prove that $B$ is injective. Indeed if $w\in W$ satisfies $Bw=0$ we have
+\[
+\beta\norm{w}_W\le\sup_{q\in Q\setminus\{0\}}\frac{\dual{Bw,q}}{\norm{q}_Q}=0
+\]
+so that $w=0$.
+
+\emph{Step 3}. We prove that $\text{range}(B)$ is closed. Indeed let $f_n=Bw_n$ be such that $f_n\to f$ in $Q$. Then $f_n$ is a Cauchy sequence. Now
+\[
+\beta\norm{w_n-w_m}\le\sup_{q\in Q\setminus\{0\}}\frac{\dual{B(w_n-w_m),q}}{\norm{q}_Q}\le\norm{f_n-f_m}_{Q'}.
+\]
+Then also $w_n$ is a Cauchy sequence in $W$ and $w_n\to w$ in $W$ for some $w\in W$. Now by continuity of $B$ we have $Bw=f$ so that $f\in\text{range}(B)$.
+
+\emph{Step 4}. We prove that $\text{range}(B)=Q'$. Indeed let $\null(B^T)=\left\{q\in Q\middle|\text{$b(q,v)=0$ for all $v\in V$}\right\}=\{0\}$ by hypotheses. On the other hand $\null(B^T)=\text{range}(B)^\perp$. Since $Q$ is reflexive $\text{range}(B)=(\text{range}(B)^\perp)^\perp=Q'$.
+
+\emph{Step 5}. We have proved that $B$ is a bijection from $W$ to $Q'$. Then for each $f\in Q'$ there exists a unique $w\in W$ such that $Bw=f$. Moreover
+\[
+\beta\norm{w}_W\le\sup_{q\in Q\setminus\{0\}}\frac{\dual{Bw,q}}{\norm{q}_Q}=\sup_{q\in Q\setminus\{0\}}\frac{\dual{f,q}}{\norm{q}_Q}\le\norm{f}_{Q'}.
+\]
+This completes the proof.
+\end{proof}
+\begin{lemma}
+\label{lemma:babuska}
+Assume that the hypotheses of Theorem~\ref{thm:babuska} holds. Then
+\[
+\sup_{w\in W\setminus\{0\}}\frac{b(q,w)}{\norm{w}_W}\ge\beta\norm{q}_Q
+\]
+for all $q\in Q$.
+\end{lemma}
+\begin{proof}
+For each $f\in Q'$ let $w_f\in W$ the solution to
+\[
+b(q,w)=\dual{f,q}\quad\text{for all $q\in Q$}.
+\]
+Notice that $\norm{f}_{Q'}\ge\beta\norm{w}_W$. Now
+\[
+\norm{q}_Q=\sup_{f\in Q'\setminus\{0\}}\frac{\dual{f,q}}{\norm{f}_{Q'}}=\sup_{f\in Q'\setminus\{0\}}\frac{b(q,w_f)}{\norm{f}_{Q'}}\le\sup_{f\in Q'\setminus\{0\}}\frac{b(q,w_f)}{\beta\norm{w}_{W}}\le\sup_{w\in W\setminus\{0\}}\frac{b(q,w)}{\beta\norm{w}_W}.
+\]
+This completes the proof.
+\end{proof}
+Then we get immediately the following proposition.
+\begin{cor}
+\label{cor:babuska}
+Assume the hypotheses of Theorem~\ref{thm:babuska}. Then for each $g\in W'$ there exists a unique $p\in Q$ such that
+\[
+b(p,w)=\dual{g,w}\quad\text{for all $w\in W$}
+\]
+and
+\[
+\norm{p}_Q\le\frac{1}{\beta}\norm{g}_{W'}.
+\]
+\end{cor}
+\begin{proof}
+Apply first Lemma~\ref{lemma:babuska} and then Theorem~\ref{thm:babuska} with the role of $W$ and $Q$ swapped.
+\end{proof}
+\begin{rmk}
+\label{rmk:babuska}
+Assume that $g\in V'$ is such that $\dual{g,z}=0$ for all $z\in Z$. Then we can define $g$ as an element of $W'$. Indeed for each $w\in W$ we take a representative $v\in V$ still denoted with $w$ and we define $\dual{g,w}=\dual{g,v}$. The definition does not depend on the choice of the representative. Moreover
+\[
+\norm{g}_{W}=\sup_{w\in W\setminus\{0\}}\frac{\dual{g,w}}{\norm{w}_W}=\sup_{v\in V\setminus\{0\}}\frac{\dual{g,v}}{\norm{v}_V}=\norm{g}_{V'}.
+\]
+where we use that since $V$ is reflexive for each $w\in W$ there exists a representative $v\in V$ such that $\norm{w}_W=\norm{v}_V$ and that for any other representative $u\in V$ we have $\norm{w}_W\le\norm{u}_V$. In this case the Corollary~\ref{cor:babuska} can be formulated as follows. There exists a unique $p\in Q$ such that
+\[
+b(p,v)=\dual{g,v}\quad\text{for all $v\in V$}
+\]
+and
+\[
+\norm{p}_Q\le\frac{1}{\beta}\norm{g}_{V'}.
+\]
+\end{rmk}
+The following theorem is the main result of this Section.
+\begin{thm}
+\label{thm:mixed-elliptic}
+Let $V$, $\tilde V$, $Q$ and $\tilde Q$ be reflexive Banach spaces. Let $b\colon Q\times\tilde V\to\mathbb{R}$ be a bilinear form. Let $\tilde{Z}=\left\{\tilde{z}\in\tilde V\middle|\text{$b(q,\tilde z)=0$ for all $q\in Q$}\right\}$ and define $\tilde W=\tilde V/\tilde Z$. Assume that there exists $M>0$ such that
+\[
+b(q,\tilde v)\le M\norm{q}_Q\norm{\tilde v}_{\tilde V}\quad\text{for all $q\in Q$ and $\tilde v\in\tilde V$}.
+\]
+Assume also that there exists $\beta>0$ such that
+\[
+\sup_{q\in Q\setminus\{0\}}\frac{b(q,\tilde w)}{\norm{q}_Q}\ge\beta\norm{\tilde w}_{\tilde W}\quad\text{for all $\tilde w\in\tilde W$}
+\]
+and that if $q\in Q$ satisfies
+\[
+b(q,\tilde v)=0\quad\text{for all $\tilde v\in\tilde V$}
+\]
+then $q=0$. Let $c\colon\tilde Q\times V\to\mathbb{R}$ be a bilinear form. Let $Z=\left\{z\in V\middle|\text{$b(\tilde q,z)=0$ for all $\tilde q\in\tilde Q$}\right\}$ and define $W=V/Z$. Assume that there exists $N>0$ such that
+\[
+c(\tilde q,v)\le N\norm{\tilde q}_{\tilde Q}\norm{v}_{V}\quad\text{for all $\tilde q\in\tilde Q$ and $v\in V$}.
+\]
+Assume also that there exists $\gamma>0$ such that
+\[
+\sup_{\tilde q\in \tilde Q\setminus\{0\}}\frac{c(\tilde q,w)}{\norm{\tilde q}_{\tilde Q}}\ge\gamma\norm{w}_{W}\quad\text{for all $w\in W$}
+\]
+and that if $\tilde q\in\tilde Q$ satisfies
+\[
+c(\tilde q,v)=0\quad\text{for all $v\in V$}
+\]
+then $\tilde q=0$. Let $a\colon V\times\tilde V\to\mathbb{R}$ be a bilinear form. Assume that there exists a constant $L$ such that
+\[
+a(v,\tilde v)\le L\norm{v}_V\norm{\tilde v}_{\tilde V}\quad\text{for all $v\in V$ and $\tilde v\in\tilde V$}.
+\]
+Assume also that there exists $\alpha>0$ such that
+\[
+\sup_{\tilde v\in\tilde V\setminus\{0\}}\frac{a(z,\tilde v)}{\norm{\tilde v}_{\tilde V}}\ge\alpha\norm{z}_V\quad\text{for all $z\in Z$}
+\]
+and that if $\tilde z\in\tilde Z$ satisfies
+\[
+a(v,\tilde z)=0\quad\text{for all $v\in V$}
+\]
+then $\tilde z=0$. Then for all $f\in\tilde V'$ and $g\in\tilde Q'$ there exists a unique $(u,p)\in V\times Q$ such that
+\begin{gather*}
+a(u,\tilde v)+b(p,\tilde v)=\dual{f,\tilde v}\quad\text{for all $\tilde v\in\tilde V$} \\
+c(\tilde q,u)=\dual{g,\tilde q}\quad\text{for all $\tilde q\in\tilde Q$}.
+\end{gather*}
+Moreover
+\begin{gather*}
+\norm{u}_V\le\frac{1}{\gamma}\left(1+\frac{L}{\alpha}\right)\norm{g}_{\tilde Q'}+\frac{1}{\alpha}\norm{f}_{\tilde V'} \\
+\norm{p}_Q\le\frac{1}{\beta}\left(1+\frac{L}{\alpha}\right)\norm{f}_{\tilde V'}+\frac{L\beta}{\gamma}\left(1+\frac{L}{\alpha}\right)\norm{g}_{\tilde Q'}.
+\end{gather*}
+\end{thm}
+\begin{proof}
+By Theorem~\ref{thm:babuska} there exists a unique $w\in W$ such that
+\[
+c(\tilde q,w)=\dual{g,\tilde q}\quad\text{for all $\tilde q\in\tilde Q$}
+\]
+and
+\[
+\norm{w}_W\le\frac{1}{\gamma}\norm{g}_{\tilde Q'}.
+\]
+We identify $w$ with one of its representative in $V$ and we can choose it such that $\norm{w}_V=\norm{w}_W$. We notice that
+\[
+a(w,\tilde v)\le L\norm{w}_V\norm{\tilde v}_{\tilde V}.
+\]
+Then $a(w,\cdot)\in\tilde V'\subset\tilde Z'$. Then $\dual{f,\cdot}-a(w,\cdot)\in\tilde Z'$. Then by Theorem~\ref{thm:babuska} the equation
+\[
+a(z,\tilde z)=\dual{f,\tilde z}-a(w,\tilde z)\quad\text{for all $\tilde z\in\tilde Z$}
+\]
+has a unique solution $z\in Z$ that satisfies
+\[
+\norm{z}_V\le\frac{1}{\alpha}\left(\norm{f}_{\tilde V'}+\frac{L}{\gamma}\norm{g}_{\tilde Q'}\right).
+\]
+Now define $u=w+z\in V$ and we notice that
+\begin{equation}
+\label{eqn:u-eqn}
+a(u,\tilde z)=\dual{f,\tilde z}\quad\text{for all $\tilde z\in\tilde Z$}
+\end{equation}
+and
+\[
+\norm{u}_V\le\frac{1}{\gamma}\left(1+\frac{L}{\alpha}\right)\norm{g}_{\tilde Q'}+\frac{1}{\alpha}\norm{f}_{\tilde V'}.
+\]
+Now we notice by~\eqref{eqn:u-eqn} we have
+\[
+\dual{f,\tilde z}-a(u,\tilde z)=\dual{f,\tilde z}-a(w,\tilde z)-a(z,\tilde z)=0\quad\text{for all $\tilde z\in\tilde Z$}.
+\]
+Then by Remark~\ref{rmk:babuska} we have $\dual{f,\cdot}-a(u,\cdot)\in\tilde{W}'$ and the equation
+\[
+b(p,\tilde v)=\dual{f,\tilde v}-a(u,\tilde v)\quad\text{for all $v\in\tilde V$}
+\]
+has a unique solution $p\in Q$ that satisfies
+\[
+\norm{p}_Q\le\frac{1}{\beta}\left(\norm{f}_{\tilde V'}+L\norm{u}_V\right)\le\frac{1}{\beta}\left(1+\frac{L}{\alpha}\right)\norm{f}_{\tilde V'}+\frac{L\beta}{\gamma}\left(1+\frac{L}{\alpha}\right)\norm{g}_{\tilde Q'}.
+\]
+This concludes the proof.
+\end{proof}
+
+\section{Nonlinear functional analysis}
+
+\subsection{Other}
+
+\begin{lemma}
+\label{lemma:check-gateaux}
+Let $X$ and $Y$ be Banach spaces. Let $U$ an open subset of $X$ and $F\colon U\to Y'$. Let $x\in U$. Assume that there exists $A\in\mathscr{L}(X,Y')$ and for all $v\in X$ there exists $\omega\colon\mathbb{R}\to[0,\infty)$ with $\omega(\epsilon)\to0$ as $\epsilon\to0$ such that
+\[
+\left|\left\langle\frac{F(x+\epsilon v)-F(x)}{\epsilon}-Av,y\right\rangle\right|\le\omega(\epsilon)\norm{y}_Y
+\]
+for all $y\in Y$ and $\epsilon\in\mathbb{R}$ sufficiently small. Then $F$ is Gateaux differentiable in $x$ with Gateaux differential $A$.
+\end{lemma}
+\begin{proof}
+Fix $v\in X$. Then by hypotheses there exists $\omega\colon\mathbb{R}\to[0,\infty)$ with $\omega(\epsilon)\to0$ as $\epsilon\to0$ such that
+\[
+\left\lVert\frac{F(x+\epsilon v)-F(x)}{\epsilon}-Av\right\lVert_{Y'}=\sup_{y\in Y\setminus\{0\}}\frac{\left\langle\frac{F(x+\epsilon v)-F(x)}{\epsilon}-Av,y\right\rangle}{\norm{y}_Y}\le\omega(\epsilon).
+\]
+Then
+\[
+\left\lVert\frac{F(x+\epsilon v)-F(x)}{\epsilon}-Av\right\lVert_{Y'}\to0
+\]
+as $\epsilon\to 0$. This is exactly the thesis.
+\end{proof}
+
+\begin{lemma}
+\label{lemma:check-continuity-gateaux}
+Let $X$ and $Y$ be two Banach spaces. Let $A_n$ and $A$ in $\mathscr{L}(X,Y')$ such that for all $x\in X$ and $y\in Y$ we have
+\[
+|\dual{A_nx-Ax,y}|\le\omega_n\norm{x}_X\norm{y}_Y
+\]
+where $\omega_n\to0$. Then $A_n\to A$ in $\mathscr{L}(X,Y')$.
+\end{lemma}
+\begin{proof}
+We have
+\[
+\norm{A_n-A}_{\mathscr{L}(X,Y')}=\sup_{x\in X\setminus\{0\}}\frac{\norm{A_nx-Ax}_{Y'}}{\norm{x}_X}=\sup_{x\in X\setminus\{0\}}\sup_{y\in Y\setminus\{0\}}\frac{\dual{A_nx-Ax,y}}{\norm{x}_X\norm{y}_Y}\le\omega_n\to 0.
+\]
+This concludes the proof.
+\end{proof}
+
+\subsection{Implicit function theorem}
+
+\begin{thm}
+\label{thm:IFT}
+Let $X$, $Y$ and $E$ be Banach spaces. Let $U$ and open set of $X\times Y$ and $(x_0,y_0)\in U$. Let $F\in C^1(U,E)$ such that $F(x_0,y_0)=0$ and $D_x F(x_0,y_0)\in\text{Iso}(X,E)$. Then we can find $r>0$ and $s>0$ with $B(x_0,r)\times B(y_0,s)\subset U$ such that there exist a unique $\chi\in C^1(B(y_0,s),B(x_0,r))$ satisfying
+\[
+F(\chi(y),y)=0\quad\text{for all $y\in B(y_0,s)$}.
+\]
+Moreover if $F$ is of class $C^r$ with $r\ge2$ also $\chi$ is of class $C^r$.
+\end{thm}
+
+\subsection{Local existence theorem for Cauchy problems in Banach spaces}
+
+\begin{thm}
+\label{thm:cauchy-lipschitz}
+Let $X$ be a Banach space and let $U$ be an open subset of $X\times\mathbb{R}$ with $(x_0,0)\in U$. Let $G\in C^1(U,X)$. Then there exists $T>0$ such that the Cauchy problem
+\[
+\begin{cases}
+\dot x(t)=G(x(t),t) & \text{for $t\in[0,T]$} \\
+x(0)=x_0
+\end{cases}
+\]
+admits a unique solution $x\in C^2([0,T],X)$.
+\end{thm}
+\begin{proof}
+Since $G$ is of class $C^1$ there there exists a neighborhood $V\subset U$ of $(x_0,0)$ such that $G$ and $D_xG$ are bounded in $V$. Let $M=\sup_V\norm{G}_X<\infty$ and $L=\sup_V\norm{D_x G}_{\mathscr{L}(X,X)}$. We notice that $G$ is Lipschitz continuous with respect to $x$ and uniformly in $t$ on $V$ with Lipschitz constant $L$. Let $B=B(x_0,r)$ for some $r>0$ and $T>0$ such that $B(x_0,r)\times(-T,T)\subset V$. We introduce the normed space $\mathscr{X}=C^0([0,T],B)$ endowed with the norm $\norm{x}_\mathscr{X}=\sup_{t\in[0,T]}\norm{x(t)}_X$. Since $\mathscr{X}$ is a closed subset of $C^0([0,T],B)$ it is a complete metric space. Now introduce the map
+\[
+T\colon B\to C^0([0,T],B)
+\]
+defined by
+\[
+T(x)(t)=x_0+\int_0^tG(x(s),s)ds.
+\]
+We notice that $\norm{T(x)-x_0}_X\le TM$. Up to choose a smaller $T$ we can assume that $TM<r$ so that actually $T\colon B\to B$. Moreover for any $x_1$ and $x_2$ in $X$ we have
+\[
+\norm{T(x_2)-T(x_1)}_{\mathscr{X}}\le\int_0^T\norm{G(x_2(s),s)-G(x_1(s),s)}_Xds\le TL\norm{x_2-x_1}_\mathscr{X}.
+\]
+Up to choose a smaller $T$ we can assume that $TL<1$. In this case $T$ is a strict contraction. By the Banach--Caccioppoli fixed point theorem there exists a unique $x\in B$ such that $Tx=x$. Since $Tx$ is of class $C^2$ then also $x$ is of class $C^2$.
+\end{proof}
+
+\subsection{Fixed point theorems}
+
+\begin{thm}[Schauder fixed point theorem]
+\label{thm:schauder}
+Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous and with compact range. Then $F$ admits a fixed point.
+\end{thm}
+
+\subsection{Browder--Minty theorem}
+
+Let $X$ be a Banach space and $T\colon X\to X'$ be a nonlinear operator and $f\in X'$. The Browder--Minty theorem allows to study the existence of solutions to the equation $T(x)=f$ when there is not any variational formulation. The key assumption is that $T$ is coercive and monotone, a property that makes $T$ similar in some sense to an elliptic operator.
+\begin{defi}
+Let $X$ be a Banach space and let $T\colon X\to X'$. We say that
+\begin{itemize}
+\item[(i)] $T$ is bounded if maps bounded sets of $X$ into bounded sets of $X'$,
+\item[(ii)] $T$ is coercive if
+\[
+\frac{\dual{T(x),x}}{\norm{x}}\to\infty\quad\text{as $\norm{x}\to\infty$}
+\]
+and that
+\item[(iii)] $T$ is monotone if
+\[
+\dual{T(x)-T(y),x-y}\ge 0\quad\text{for all $x$ and $y$ in $X$}.
+\]
+\end{itemize}
+\end{defi}
+We now prove a lemma that establish the equivalence between the equation $T(x)=f$ and a variational inequality under the assumption that $T$ is monotone.
+\begin{lemma}
+\label{lemma:equality-inequality}
+Let $T\colon X\to X'$ be continuous and $f\in X'$. Then if $x\in X$ is a solution to the variational inequality
+\[
+\dual{T(y)-f,y-x}\ge0\quad\text{for all $y\in X$}
+\]
+it is also a solution to te equation $T(x)=f$. Moreover if $T$ is monotone then any solution to the equation $T(x)=f$ is also a solution to the variational inequality.
+\end{lemma}
+\begin{proof}
+Let $y=x+tv$ with $t>0$ and $v\in X$. Then if $x\in X$ is a solution to the variational inequality we have
+\[
+\dual{T(x+tv)-f,v}\ge 0.
+\]
+Letting $t\to0$ we have $\dual{T(x)-f,v}\ge0$. By arbitrariness of $v$ we have $T(x)=f$. Conversely let $x\in X$ be such that $T(x)=f$. By monotonicity
+\[
+\dual{T(y)-f,y-x}=\dual{T(y)-T(x),y-x}\ge 0.
+\]
+Then $x$ is a solution to the variational inequality.
+\end{proof}
+Now we study the equation $T(x)=f$ when the Banach space is finite dimensional. This results will be used to get the general result using the Galerkin method.
+\begin{prop}
+\label{prop:elliptic-finite-dimensional}
+Let $T\colon\mathbb{R}^n\to\mathbb{R}^n$ be continuous and coercive. Then for every $f\in\mathbb{R}^n$ the equation $T(x)=f$ has al least one solution.
+\end{prop}
+\begin{proof}
+Without loss of generality we cn assume that $f=0$. Indeed otherwise define $S(x)=T(x)-f$ and notice that $S$ is still continuous and coercive. Indeed
+\[
+\frac{S(x)\cdot x}{|x|}=\frac{T(x)\cdot x}{|x|}-\frac{f\cdot x}{|x|}\ge\frac{T(x)\cdot x}{|x|}-|f|.
+\]
+Now define $G\colon\mathbb{R}^n\to\mathbb{R}^n$ by $G(x)=x-T(x)$. We notice that
+\[
+G(x)\cdot x=|x|^2-T(x)\cdot x.
+\]
+Since $T$ is coercive there exists an $r>0$ such that $|x|^2-G(x)\cdot x=T(x)\cdot x>0$ for all $x\in\mathbb{R}\setminus B(0,r)$. We define $\Pi\colon\mathbb{R}^n\to C$ with $C=\overline{B}(0,r)$ by
+\[
+\Pi(x)=
+\begin{cases}
+x & \text{if $|x|\le r$} \\
+r\frac{x}{|x|} & \text{if $|x|>r$}.
+\end{cases}
+\]
+We set $H(x)=\Pi(G(x))$ and we notice that $H\colon C\to C$ and it is continuous. By Brouwer fixed point theorem there exists $x\in C$ such that $H(x)=x$. If $x\in\mathring{C}$ then $x=H(x)=\Pi(G(x))=G(x)$ so that $T(x)=0$. If we prove that $x\notin\partial C$ we have concluded. By contradiction assume that $|x|=r$. Then $|G(x)|\ge r$ and
+\[
+|x|^2=x\cdot x=H(x)\cdot x=\frac{r}{|G(x)|}G(x)\cdot x<\frac{r}{|G(x)|}|x|^2\le|x|^2
+\]
+where we used that $|x|^2>G(x)\cdot x$ for $|x|\ge r$. This is the a contradiction.
+\end{proof}
+We are now in position to prove the Browder--Minty theorem.
+\begin{thm}
+\label{thm:browder-minty}
+Let $X$ be a reflexive and separable Banach space. Let $T\colon X\to X'$ be bounded, continuous, coercive and monotone. Then for every $f\in X'$ there exists a solution $x\in X$ to the equation $T(x)=f$.
+\end{thm}
+\begin{proof}
+As anticipated the proof relies on the Galerkin method.
+
+\emph{Step 1}. Let $\{y_n\}\subset X$ such that the linear combinations of $y_n$ are dense in $X$. Let
+\[
+X_n=\text{span}\left\{y_m\right\}_{m=1}^n.
+\]
+We define $f_n\in X_n'$ by $\dual{f_n,x}=\dual{f,x}$ for all $x\in X_n$. We also define $T_n\colon X_n\to X_n'$ by $\dual{T_n(x),y}=\dual{T(x),y}$ for all $x$ and $y$ in $X_n$.
+
+\emph{Step 2}. We prove that $T_n$ are still bounded, continuous and coercive. For all $x\in X_n$ we have
+\[
+\norm{T_n(x)}_{X_n'}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x),y}}{\norm{y}_{X_n}}\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(xx),y}}{\norm{y}_X}=\norm{T(x)}_X
+\]
+so the boundedness of $T_n$ follows form the boundedness of $T$. Moreover let $x_k\to x$ in $X_n$. Then
+\[
+\begin{split}
+\norm{T_n(x_k)-T_n(x)}_{X_n'}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x_k)-T_n(x),y}}{\norm{y}_{X_n}}&\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(x_k)-T(x),y}}{\norm{y}_X}=\\
+&=\norm{T(x_k)-T(x)}_{X'}\to0
+\end{split}
+\]
+and this proves that $T_n$ is continuous. Moreover for $x\in X_n$
+\[
+\frac{\dual{T_n(x),x}}{\norm{x}_{X_n}}=\frac{\dual{T(x),x}}{\norm{x}_{X}}
+\]
+so the coercivity of $T_n$ follows immediately from the coercivity of $T$. By~\ref{prop:elliptic-finite-dimensional} we have that for each $n$ there exists $x_n\in X_n$ that solves $T_n(x_n)=f_n$.
+
+\emph{Step 3}. We have the estimate
+\[
+\frac{\dual{T(x_n),x_n}}{\norm{x_n}_X}\le\frac{\dual{T_n(x_n),x_n}}{\norm{x_n}_X}=\frac{\dual{f_n,x_n}}{\norm{x_n}_X}=\frac{\dual{f,x_n}}{\norm{x_n}_X}\le\norm{f}.
+\]
+Since $T$ is coercive then $x_n$ are bounded in $X$ and since $T$ is bounded then $T(x_n)$ are bounded in $X'$. Then up to a subsequence
+\begin{gather*}
+x_n\rightharpoonup x\quad\text{in $X$} \\
+T(x_n)\overset{*}{\rightharpoonup}g\quad\text{in $X'$}
+\end{gather*}
+for some $x\in X$ and $g\in X'$.
+
+\emph{Step 4}. We first prove that $g=f$. To this aim we fix any $y_m$ and we notice that
+\[
+\dual{g-f,y_m}=\lim_{n\to\infty}\dual{T(x_n)-f,y_m}=0.
+\]
+Then by density we have indeed $g=f$. Next we have
+\[
+\dual{T(x_n),x_n}=\dual{T_n(x_n),x_n}=\dual{g_n,x_n}=\dual{g,x_n}\to\dual{g,x}.
+\]
+\emph{Step 5}. Eventually using the monotonicity of $T$ we have
+\[
+0\ge\dual{T(y)-T(x_n),y-x_n}\to\dual{T(y)-g,y-x}=\dual{T(y)-f,y-x}.
+\]
+Applying Lemma~\ref{lemma:equality-inequality} we get the thesis.
+\end{proof}
+Actually to obtain the same existence result the monotonicity assumption can be weakened.
+\begin{defi}
+Let $X$ be a Banach space and let $T\colon X\to X'$. We say that $T$ is pseudomonotone if it is bounded and every time
+\[
+\text{$x_k\rightharpoonup x$ in $X$}\quad\text{and}\quad\limsup_{k\to\infty}\dual{T(x_k),x_k-x}\le0
+\]
+then
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x_k-y}\ge\dual{T(x),x-y}
+\]
+for all $y\in X$.
+\end{defi}
+\begin{thm}
+\label{thm:browder-minty-generalized}
+Let $X$ be a separable and reflexive Banach space. Let $T\colon X\to X'$ be continuous, coercive and pseudomonotone. Then for every $f\in X'$ there exists $x\in X$ such that $T(x)=f$.
+\end{thm}
+\begin{proof}
+The proof is exactly the same as the one of Theorem~\ref{thm:browder-minty} except to Step 5. We know that $x_k\rightharpoonup x$ in $X$, that $T(x_k)\overset{*}{\rightharpoonup}f$ in $X'$ and $\dual{T(x_k),x_k}\to\dual{f,x}$. Then in particular
+\[
+\dual{T(x_k),x_k-x}=\dual{T(x_k),x_k}-\dual{T(x_k),x}\to\dual{f,x}-\dual{f,x}=0.
+\]
+Since $T$ is pseudomonotone then
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x_k-y}\ge\dual{T(x),x-y}
+\]
+for all $y\in X$. But
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x_k-y}=\dual{f,x-y}.
+\]
+Then
+\[
+\dual{f,x-y}\ge\dual{T(x),x-y}
+\]
+for all $y\in X$. By arbitrariness of $y$ we have $T(x)=f$.
+\end{proof}
+The following proposition establish the relationship between monotone and pseudomonotone operators.
+\begin{prop}
+\label{prop:monotono-pseudomonotone}
+Let $X$ be a Banach space. Let $T\colon X\to X'$ be continuous, bounded and monotone. Then $T$ is pseudomonotone.
+\end{prop}
+\begin{proof}
+Let $x_k\rightharpoonup x$ with
+\[
+\limsup_{k\to\infty}\dual{T(x_k),x_k-x}\le0.
+\]
+Since $T$ is monotone then
+\[
+\dual{T(x_k),x_k-x}\ge\dual{T(x),x_k-x}\to0.
+\]
+This implies also
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x_k-x}\ge0.
+\]
+Then
+\[
+\lim_{k\to\infty}\dual{T(x_k),x_k-x}=0.
+\]
+Now let $y\in X$ and set $y_\epsilon=(1-\epsilon)x+\epsilon y$ for $\epsilon>0$. By monotonicity
+\[
+0\le\dual{T(x_k)-T(y_\epsilon),x_k-y_\epsilon}=\dual{T(x_k)-T(y_\epsilon),\epsilon(x-y)+x_k-x}.
+\]
+Rearranging the terms we have
+\[
+\epsilon\dual{T(x_k),x-y}\ge\dual{T(y_\epsilon),x_k-x}-\dual{T(x_k),x_k-x}+\epsilon\dual{T(y_\epsilon),x-y}.
+\]
+Passing to le limit $k\to\infty$ with $\epsilon>0$ fixed
+\[
+\epsilon\liminf_{k\to\infty}\dual{T(x_k),x-y}\ge\epsilon\dual{T(y_\epsilon),x-y}.
+\]
+Dividing by $\epsilon$ and passing to the limit $\epsilon\to0^+$ we obtain using the continuity of $T$ that
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x-y}\ge\dual{T(x),x-y}.
+\]
+Eventually
+\[
+\liminf_{k\to\infty}\dual{T(x_k),x_k-y}=\lim_{k\to\infty}\dual{T(x_k),x_k-x}+\liminf_{k\to\infty}\dual{T(x_k),x-y}\ge0.
+\]
+This proves that $T$ is pseudomonotone.
+\end{proof}
+The following result is useful.
+\begin{prop}
+\label{prop:sum-pseudomonotone}
+Let $X$ be a Banach space. Let $T_1$ and $T_2$ from $X$ into $X'$ be pseudomonotone operators. Then also $T_1+T_2$ is pseudomonotone.
+\end{prop}
+\begin{proof}
+Let $x_k\rightharpoonup x$ with
+\[
+\limsup_{k\to\infty}\dual{T_1(x_k)+T_2(x_k),x_k-x}\le0.
+\]
+We claim that
+\begin{equation}
+\label{eqn:desired-pseudo-sum}
+\limsup_{k\to\infty}\dual{T_i(x_k),x_k-x}\le0
+\end{equation}
+for both $i=1$ and $i=2$. By contradiction
+\[
+\limsup_{k\to\infty}\dual{T_2(x_k),x_k-x}=\epsilon>0.
+\]
+Up to taking a subsequence we can assume that
+\[
+\lim_{k\to\infty}\dual{T_2(x_k),x_k-x}=\epsilon>0.
+\]
+Then
+\begin{equation}
+\label{eqn:absurb-pseudo-sum}
+\limsup_{k\to\infty}\dual{T_1(x_k),x_k-x}\le-\epsilon<0.
+\end{equation}
+Then since $T_1$ is pseudomonotone
+\[
+\liminf_{k\to\infty}\dual{T_1(x_k),x_k-x}\ge0
+\]
+but this contradicts~\eqref{eqn:absurb-pseudo-sum}. Then~\eqref{eqn:desired-pseudo-sum} holds. Since $T_i$ is pseudomonotone then for all $y\in X$ we have
+\[
+\liminf_{k\to\infty}\dual{T_i(x_k),x_k-y}\ge\dual{T_i(x),x-y}.
+\]
+It follows that
+\[
+\liminf_{k\to\infty}\dual{T_1(x_k)+T_2(x_k),x_k-y}\ge\dual{T_1(x)+T_2(x),x-y}.
+\]
+This means that $T_1+T_2$ is pseudomonotone.
+\end{proof}
+
+\backmatter
+\nocite{bifurcation-geomechanics}
+\nocite{intro-pde}
+\nocite{quarteronivalli}
+\nocite{gurtin-anand-small}
+\nocite{gurtin-anand-large}
+\nocite{gurtin}
+\nocite{gurtin-anand-fried}
+\nocite{ciarlet}
+\nocite{brenner-scott}
+\nocite{bonet-wood}
+\nocite{nicolaides}
+\nocite{boffi-brezzi-fortin}
+\nocite{roubicek-pde}
+\nocite{antman}
+\nocite{gurtin-fried}
+\printbibliography
+
+\end{document}
