@@ -1,15 +1,15 @@
-[0] Config.pm:306> INFO - This is Biber 2.18
-[1] Config.pm:309> INFO - Logfile is 'text.blg'
-[156] biber:340> INFO - === mer feb 18, 2026, 02:14:29
-[178] Biber.pm:418> INFO - Reading 'text.bcf'
-[277] Biber.pm:978> INFO - Found 15 citekeys in bib section 0
-[297] Biber.pm:4401> INFO - Processing section 0
-[312] Biber.pm:4592> INFO - Looking for bibtex file 'bib.bib' for section 0
-[315] bibtex.pm:1713> INFO - LaTeX decoding ...
-[352] bibtex.pm:1518> INFO - Found BibTeX data source 'bib.bib'
-[537] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[538] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[538] Biber.pm:4221> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[538] Biber.pm:4227> INFO - No sort tailoring available for locale 'en-US'
-[558] bbl.pm:654> INFO - Writing 'text.bbl' with encoding 'UTF-8'
-[567] bbl.pm:757> INFO - Output to text.bbl
+[0] Config.pm:308> INFO - This is Biber 2.20
+[0] Config.pm:311> INFO - Logfile is 'text.blg'
+[121] biber:340> INFO - === mar mar 24, 2026, 13:05:40
+[181] Biber.pm:420> INFO - Reading 'text.bcf'
+[253] Biber.pm:994> INFO - Found 33 citekeys in bib section 0
+[271] Biber.pm:4463> INFO - Processing section 0
+[313] Biber.pm:4654> INFO - Looking for bibtex file 'bib.bib' for section 0
+[314] bibtex.pm:1713> INFO - LaTeX decoding ...
+[351] bibtex.pm:1519> INFO - Found BibTeX data source 'bib.bib'
+[604] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[604] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[604] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[604] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[660] bbl.pm:676> INFO - Writing 'text.bbl' with encoding 'UTF-8'
+[672] bbl.pm:779> INFO - Output to text.bbl
