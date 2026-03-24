@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  24 MAR 2026 18:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  24 MAR 2026 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1817,36 +1817,36 @@ LaTeX Font Info:    Font shape `U/zeus/m/n' will be
 
 [7]
 
-[8
+[8]
+
+[9]
+
+[10
 
 ]
 Chapter 2.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 310
+LaTeX Font Info:    Trying to load font information for U+eus on input line 421
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
 
-[9
+[11
 
 ]
 
-[10]
+[12]
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 403.
+(Font)              scaled to size 10.95pt on input line 514.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 403.
+(Font)              scaled to size 8.0pt on input line 514.
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 403.
+(Font)              scaled to size 6.1pt on input line 514.
 
-
-[11]
-
-[12]
 
 [13]
 
@@ -1859,24 +1859,24 @@ LaTeX Font Info:    Font shape `U/euf/m/n' will be
 [17]
 
 [18]
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 8
-85.
- (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeuex.fd
-File: uzeuex.fd 2005/01/11 v4.0 (WaS)
-)
-LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 10.95pt on input line 885.
-LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 8.0pt on input line 885.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 885.
-LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 6.0pt on input line 885.
-
 
 [19]
 
 [20]
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 9
+96.
+ (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeuex.fd
+File: uzeuex.fd 2005/01/11 v4.0 (WaS)
+)
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 10.95pt on input line 996.
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 8.0pt on input line 996.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 996.
+LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
+(Font)              scaled to size 6.0pt on input line 996.
+
 
 [21]
 
@@ -1899,36 +1899,36 @@ LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
 [30]
 
 [31]
-Chapter 3.
 
-
-[32
-
-]
+[32]
 
 [33]
-Appendix A.
+Chapter 3.
 
 
 [34
 
 ]
-Appendix B.
 
-
-[35
-
-]
-Appendix C.
+[35]
+Appendix A.
 
 
 [36
 
 ]
+Appendix B.
 
-[37]
 
-[38]
+[37
+
+]
+Appendix C.
+
+
+[38
+
+]
 
 [39]
 
@@ -1946,12 +1946,16 @@ Appendix C.
 
 [46]
 
-[47
+[47]
+
+[48]
+
+[49
 
 
 ]
 
-[48] (./text.aux)
+[50] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1981,10 +1985,10 @@ newtx/txexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (51 pages, 365568 bytes).
+Output written on text.pdf (53 pages, 374137 bytes).
 PDF statistics:
- 253 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 259 PDF objects out of 1000 (max. 8388607)
+ 172 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  45069 words of extra memory for PDF output out of 51595 (max. 10000000)
 

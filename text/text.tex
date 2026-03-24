@@ -258,9 +258,9 @@ This implies~\eqref{eqn:local-form-5}.
 
 We choose the free energy for unit axial length
 \[
-\psi=\frac{1}{2}\kappa(e_1+(d-1)e_2)^2+\frac{1}{2}\mu(e_1-e_2)^2+\frac{1}{2}l^2\mu|u_2'|^2+\frac{1}{2}Hp^2.
+\psi=\frac{1}{2}\kappa(e_1+(d-1)e_2)^2+\frac{1}{2}\mu(e_1-e_2)^2+\frac{1}{2}l^2\mu|u_2'|^2+\frac{1}{2}Bp^2.
 \]
-and the dissipation potential for unit axial length
+where $\kappa$ is a bulk modulus, $\mu$ is a shear modulus, $l$ is length parameter related to the geometry of the section and $B$ is the hardening parameter. We also choose the dissipation potential for unit axial length
 \[
 \phi=R(\dot p)
 \]
@@ -269,22 +269,133 @@ where $R\colon\mathbb{R}\to[0,\infty]$ satisfy $R(0)=0$. A possible choice could
 \zeta=\mu l^2u_2' \\
 \sigma_1=\kappa(e_1+(d-1)e_2)+\mu(e_1-e_2) \\
 \sigma_2=(d-1)\kappa(e_1+(d-1)e_2)-\mu(e_1-e_2) \\
-\tau\in Hp+\partial R(\dot p).
+\tau\in Bp+\partial R(\dot p).
 \end{gather*}
 \begin{lemma}
 Every process that obeys the constitutive relations satisfy the dissipation inequality.
 \end{lemma}
 \begin{proof}
-Let $\tau=Hp+\xi$ with $\xi\in\partial R(\dot p)$. The dissipation per unit axial length is given by
+Let $\tau=Bp+\xi$ with $\xi\in\partial R(\dot p)$. The dissipation per unit axial length is given by
 \[
 \zeta\dot u_2'+\sigma_1\dot e_1+\sigma_2\dot e_2+\tau\dot p-\dot\psi=\xi\dot p.
 \]
 By definition of subdifferential we have $0=R(0)\ge R(\dot p)-\xi\dot p$ so that $\xi\dot p\ge R(\dot p)\ge0$. This implies that the dissipation is nonnegative.
 \end{proof}
+We notice that introducing the constitutive relations into~\eqref{eqn:local-form-5} we get
+\[
+\frac{d}{d-1}\mu(e_1-e_2)-Bp\in\partial R(\dot p).
+\]
+We refer to
+\[
+m=\frac{d}{d-1}\mu(e_1-e_2)
+\]
+as the Mandel stress. It is the elastic force acting on the microscopic configuration and we notice that it depends on the shear modulus only.
 
 \section{Some analytical solutions}
 
-\subsection{Traction with stick extremities in the elastic range}
+\subsection{Traction with free end sections}
+
+Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $h_2(L,t)=h_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. We assume that $F(0)=0$ and that $F$ is monotonically increasing. From equation~\eqref{eqn:local-form-1} and~\eqref{eqn:local-form-2} we have that $\sigma_1=F$ on all $(0,L)$. Then
+\[
+\kappa(e_1+(d-1)e_2)=F-\mu(e_1-e_2)\quad\text{and}\quad e_1=\frac{F-(d-1)\kappa e_2+\mu e_2}{\kappa+\mu}.
+\]
+Moreover
+\[
+e_1-e_2=\frac{F-d\kappa e_2}{\kappa+\mu}.
+\]
+Then
+\[
+\begin{split}
+\sigma_2&=(d-1)\left(F-\mu(e_1-e_2)\right)-\mu(e_1-e_2)=(d-1)F-d\mu(e_1-e_2)=\\
+&=(d-1)F-d\frac{\mu}{\kappa+\mu}F+d^2\frac{\kappa\mu}{\kappa+\mu}e_2=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+d^2\frac{\kappa\mu}{\kappa+\mu}e_2=\\
+&=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}p+d^2\frac{\kappa\mu}{\kappa+\mu}u_2.
+\end{split}
+\]
+Now from equation~\eqref{eqn:local-form-3} we have
+\[
+l^2\mu u_2''=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}p+d^2\frac{\kappa\mu}{\kappa+\mu}u_2.
+\]
+The solution is given by
+\[
+u_2=-\frac{p}{d-1}-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F.
+\]
+since conditions $h_2(L,t)=h_2(0,t)$ are satisfied because $u_2'=0$. Notice that
+\[
+e_2=u_2+\frac{p}{d-1}=-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F.
+\]
+Now the Mandel stress is given by
+\[
+m=\frac{d}{d-1}\frac{\mu}{\kappa+\mu}(F-d\kappa e_2)=F.
+\]
+When $F\le Y$ then the response is purely elastic and $p=0$. When $F>Y$ then $\dot p>0$ and
+\[
+F-Bp=Y.
+\]
+This implies $p=B^{-1}(F-Y)$.
+
+\subsection{Traction with clamped end sections}
+
+Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. By the same computations of previous section we find the equation
+\[
+l^2\mu u_2''=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}p+d^2\frac{\kappa\mu}{\kappa+\mu}u_2.
+\]
+In the elastic range $p=0$ everywhere in $(0,L)$. In this case a particular solution is given by
+\[
+x\mapsto-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F
+\]
+and a solution of the homogeneous equation which is also symmetric with respect to $x=L/2$ is
+\[
+x\mapsto\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right).
+\]
+Then taking into account the boundary condition we find the solution
+\[
+u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
+\]
+To simplify the notation we define
+\[
+Z(x)=\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}\quad\text{and}\quad E=\frac{d^2\kappa\mu}{(d-1)\kappa-\mu}.
+\]
+Then
+\[
+u_2=e_2=(Z-1)\frac{F}{E}.
+\]
+We find that the Mandel stress is
+\[
+m=
+\]
+
+Assume that the cylindrical bar has a purely elastic response. Then the only unknowns are $u_1$ and $u_2$. Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. From equation~\eqref{eqn:local-form-1} and~\eqref{eqn:local-form-2} we have $\sigma_1=F$. Then
+\[
+\kappa(u_1'+(d-1)u_2)=F-\mu(u_1'-u_2)\quad\text{and}\quad u_1'=\frac{F-(d-1)\kappa u_2+\mu u_2}{\kappa+\mu}.
+\]
+From~\eqref{eqn:local-form-3} we get
+\[
+-(d-1)\left(F-\mu(u_1'-u_2)\right)+\mu(u_1'-u_2)+l^2\mu u_2''=0
+\]
+\[
+-(d-1)\left(F-\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)\right)+\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)+l^2\mu u_2''=0
+\]
+\[
+-(d-1)\frac{\kappa}{\kappa+\mu}\left(F+d\mu u_2\right)+\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)+l^2\mu u_2''=0
+\]
+\[
+\frac{\mu-(d-1)\kappa}{\kappa+\mu}F-d^2\frac{\kappa\mu}{\kappa+\mu}u_2+l^2\mu u_2''=0
+\]
+\[
+u_2''=\frac{d^2}{l^2}\frac{\kappa}{\kappa+\mu}u_2+\frac{(d-1)\kappa-\mu}{l^2\mu(\kappa+\mu)}F.
+\]
+A solution of the homogeneous equation which is also symmetric with respect to $x=L/2$ is
+\[
+x\mapsto\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right).
+\]
+A particular solution to the nonhomogeneous equation is
+\[
+x\mapsto-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F.
+\]
+Then taking into account the boundary condition we find the solution
+\[
+u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
+\]
 
 \part{Shear band localization in cohesive materials}
 
