@@ -8,38 +8,38 @@
 \contentsline {section}{\numberline {1.2}Some analytical solutions}{8}{}%
 \contentsline {subsection}{\numberline {1.2.1}Traction with free end sections}{8}{}%
 \contentsline {subsection}{\numberline {1.2.2}Traction with clamped end sections}{8}{}%
-\contentsline {part}{II\hspace {1em}Shear band localization in cohesive materials}{10}{}%
-\contentsline {chapter}{\numberline {2}Small deformation model}{11}{}%
-\contentsline {section}{\numberline {2.1}Formulation}{11}{}%
-\contentsline {subsection}{\numberline {2.1.1}Kinematics}{11}{}%
-\contentsline {subsection}{\numberline {2.1.2}Statics}{11}{}%
-\contentsline {subsection}{\numberline {2.1.3}Dissipation inequality}{13}{}%
-\contentsline {subsection}{\numberline {2.1.4}Constitutive relations}{13}{}%
-\contentsline {section}{\numberline {2.2}Mathematical analysis}{14}{}%
-\contentsline {subsection}{\numberline {2.2.1}Hypotheses}{14}{}%
-\contentsline {subsection}{\numberline {2.2.2}Function spaces}{15}{}%
-\contentsline {subsection}{\numberline {2.2.3}Formulation of the problem}{15}{}%
-\contentsline {subsection}{\numberline {2.2.4}Global existence}{15}{}%
-\contentsline {subsection}{\numberline {2.2.5}Example of constitutive relations}{26}{}%
-\contentsline {subsection}{\numberline {2.2.6}Further regularity hypotheses}{27}{}%
-\contentsline {subsection}{\numberline {2.2.7}Local existence and uniqueness and global uniqueness}{27}{}%
-\contentsline {subsection}{\numberline {2.2.8}Bifurcation analysis}{29}{}%
-\contentsline {section}{\numberline {2.3}Numerical approximation}{33}{}%
-\contentsline {chapter}{\numberline {3}Large deformation model}{34}{}%
-\contentsline {section}{\numberline {3.1}Formulation}{34}{}%
-\contentsline {subsection}{\numberline {3.1.1}Kinematics}{34}{}%
-\contentsline {subsection}{\numberline {3.1.2}Statics}{34}{}%
-\contentsline {chapter}{\numberline {A}Notation}{36}{}%
-\contentsline {section}{\numberline {A.1}Tensors}{36}{}%
-\contentsline {chapter}{\numberline {B}Modeling in continuum mechanics}{37}{}%
-\contentsline {chapter}{\numberline {C}Tools from functional analysis}{38}{}%
-\contentsline {section}{\numberline {C.1}Linear functional analysis}{38}{}%
-\contentsline {subsection}{\numberline {C.1.1}Other}{38}{}%
-\contentsline {subsection}{\numberline {C.1.2}The Aubin--Lions--Simon lemma}{38}{}%
-\contentsline {subsection}{\numberline {C.1.3}Generalized mixed elliptic problems}{38}{}%
-\contentsline {section}{\numberline {C.2}Nonlinear functional analysis}{42}{}%
-\contentsline {subsection}{\numberline {C.2.1}Other}{42}{}%
-\contentsline {subsection}{\numberline {C.2.2}Implicit function theorem}{43}{}%
-\contentsline {subsection}{\numberline {C.2.3}Fixed point theorems}{43}{}%
-\contentsline {subsection}{\numberline {C.2.4}Local existence theorem for Cauchy problems in Banach spaces}{43}{}%
-\contentsline {subsection}{\numberline {C.2.5}Browder--Minty theorem}{44}{}%
+\contentsline {part}{II\hspace {1em}Shear band localization in cohesive materials}{13}{}%
+\contentsline {chapter}{\numberline {2}Small deformation model}{14}{}%
+\contentsline {section}{\numberline {2.1}Formulation}{14}{}%
+\contentsline {subsection}{\numberline {2.1.1}Kinematics}{14}{}%
+\contentsline {subsection}{\numberline {2.1.2}Statics}{14}{}%
+\contentsline {subsection}{\numberline {2.1.3}Dissipation inequality}{16}{}%
+\contentsline {subsection}{\numberline {2.1.4}Constitutive relations}{16}{}%
+\contentsline {section}{\numberline {2.2}Mathematical analysis}{17}{}%
+\contentsline {subsection}{\numberline {2.2.1}Hypotheses}{17}{}%
+\contentsline {subsection}{\numberline {2.2.2}Function spaces}{18}{}%
+\contentsline {subsection}{\numberline {2.2.3}Formulation of the problem}{18}{}%
+\contentsline {subsection}{\numberline {2.2.4}Global existence}{18}{}%
+\contentsline {subsection}{\numberline {2.2.5}Example of constitutive relations}{29}{}%
+\contentsline {subsection}{\numberline {2.2.6}Further regularity hypotheses}{30}{}%
+\contentsline {subsection}{\numberline {2.2.7}Local existence and uniqueness and global uniqueness}{30}{}%
+\contentsline {subsection}{\numberline {2.2.8}Bifurcation analysis}{32}{}%
+\contentsline {section}{\numberline {2.3}Numerical approximation}{36}{}%
+\contentsline {chapter}{\numberline {3}Large deformation model}{37}{}%
+\contentsline {section}{\numberline {3.1}Formulation}{37}{}%
+\contentsline {subsection}{\numberline {3.1.1}Kinematics}{37}{}%
+\contentsline {subsection}{\numberline {3.1.2}Statics}{37}{}%
+\contentsline {chapter}{\numberline {A}Notation}{39}{}%
+\contentsline {section}{\numberline {A.1}Tensors}{39}{}%
+\contentsline {chapter}{\numberline {B}Modeling in continuum mechanics}{40}{}%
+\contentsline {chapter}{\numberline {C}Tools from functional analysis}{41}{}%
+\contentsline {section}{\numberline {C.1}Linear functional analysis}{41}{}%
+\contentsline {subsection}{\numberline {C.1.1}Other}{41}{}%
+\contentsline {subsection}{\numberline {C.1.2}The Aubin--Lions--Simon lemma}{41}{}%
+\contentsline {subsection}{\numberline {C.1.3}Generalized mixed elliptic problems}{41}{}%
+\contentsline {section}{\numberline {C.2}Nonlinear functional analysis}{45}{}%
+\contentsline {subsection}{\numberline {C.2.1}Other}{45}{}%
+\contentsline {subsection}{\numberline {C.2.2}Implicit function theorem}{46}{}%
+\contentsline {subsection}{\numberline {C.2.3}Fixed point theorems}{46}{}%
+\contentsline {subsection}{\numberline {C.2.4}Local existence theorem for Cauchy problems in Banach spaces}{46}{}%
+\contentsline {subsection}{\numberline {C.2.5}Browder--Minty theorem}{47}{}%

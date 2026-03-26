@@ -294,6 +294,7 @@ as the Mandel stress. It is the elastic force acting on the microscopic configur
 \section{Some analytical solutions}
 
 \subsection{Traction with free end sections}
+\label{subsec:homogeneous-solution}
 
 Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $h_2(L,t)=h_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. We assume that $F(0)=0$ and that $F$ is monotonically increasing. From equation~\eqref{eqn:local-form-1} and~\eqref{eqn:local-form-2} we have that $\sigma_1=F$ on all $(0,L)$. Then
 \[
@@ -331,14 +332,15 @@ When $F\le Y$ then the response is purely elastic and $p=0$. When $F>Y$ then $\d
 \[
 F-Bp=Y.
 \]
-This implies $p=B^{-1}(F-Y)$.
+This implies $p=B^{-1}(F-Y)$. Assuming $(d-1)\kappa-\mu>0$ the sections constricts in traction.
 
 \subsection{Traction with clamped end sections}
 
-Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. By the same computations of previous section we find the equation
-\[
+Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. We assume that $F(0)=0$ and that $F$ is monotonically increasing. By the same computations of Section~\ref{subsec:homogeneous-solution} we find the equation
+\begin{equation}
+\label{eqn:ode-u2}
 l^2\mu u_2''=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}p+d^2\frac{\kappa\mu}{\kappa+\mu}u_2.
-\]
+\end{equation}
 In the elastic range $p=0$ everywhere in $(0,L)$. In this case a particular solution is given by
 \[
 x\mapsto-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F
@@ -349,53 +351,83 @@ x\mapsto\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\righ
 \]
 Then taking into account the boundary conditions we find the solution
 \[
-u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
+u_2=e_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
 \]
-To simplify the notation we define
+When $(d-1)\kappa-\mu>0$ the sections constricts in traction. The middle section is the most affected by the constriction. The Mandel stress is the elastic range is given by
 \[
-C(x)=\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)\quad\text{and}\quad C_0=C(0)=\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right).
+m=\frac{d}{d-1}\frac{\mu}{\kappa+\mu}(F-d\kappa e_2)=\frac{d}{d-1}\frac{\mu}{\kappa+\mu}\left(1-\frac{(d-1)\kappa-\mu}{d\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)\right)F.
 \]
-Then
+Its maximum is reached in the middle section so we conclude that the Mandel stress reach yield strength here first. Then we claim that the region where there is a nonzero plastic distortion is an interval $(L/2-\epsilon,L/2+\epsilon)$ where $\epsilon\ge0$ is a function of time. Since the Mandel stress is positive we claim also that $p>0$ in that interval. We now focus on the half of the bar corresponding to interval $(0,L/2)$. On $(0,L/2-\epsilon)$ the solution is of the form
 \[
-u_2=e_2=(Z-1)\frac{F}{E}.
+\begin{cases}
+u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F+C_1\sinh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}x\right) \\
+p=0
+\end{cases}
 \]
-We find that the Mandel stress is
+where $C_1\in\mathbb{R}$. On $(L/2-\epsilon,L/2)$ we have
 \[
-m=
-\]
-
-Assume that the cylindrical bar has a purely elastic response. Then the only unknowns are $u_1$ and $u_2$. Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. From equation~\eqref{eqn:local-form-1} and~\eqref{eqn:local-form-2} we have $\sigma_1=F$. Then
-\[
-\kappa(u_1'+(d-1)u_2)=F-\mu(u_1'-u_2)\quad\text{and}\quad u_1'=\frac{F-(d-1)\kappa u_2+\mu u_2}{\kappa+\mu}.
-\]
-From~\eqref{eqn:local-form-3} we get
-\[
--(d-1)\left(F-\mu(u_1'-u_2)\right)+\mu(u_1'-u_2)+l^2\mu u_2''=0
+m-Bp=Y
 \]
 \[
--(d-1)\left(F-\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)\right)+\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)+l^2\mu u_2''=0
+\frac{d}{d-1}\frac{\mu}{\kappa+\mu}(F-d\kappa u_2-\frac{d\kappa}{d-1}p)-Bp=Y.
 \]
+Then we find
+\begin{equation}
+\label{eqn:p-as-function-of-y}
+p=\frac{\frac{d}{d-1}\frac{\mu}{\kappa+\mu}F-\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}u_2-Y}{\frac{d^2}{(d-1)^2}\frac{\mu\kappa}{\kappa+\mu}+B}.
+\end{equation}
+Substituting that identity into equation~\eqref{eqn:ode-u2} we have obtained a differential equation in $y$ of the form
 \[
--(d-1)\frac{\kappa}{\kappa+\mu}\left(F+d\mu u_2\right)+\frac{\mu}{\kappa+\mu}(F-d\kappa u_2)+l^2\mu u_2''=0
+y''=ay+b
 \]
+where $a$ and $b$ are two constants. A solution which is symmetric with respect to $x=L/2$ is of the form
 \[
-\frac{\mu-(d-1)\kappa}{\kappa+\mu}F-d^2\frac{\kappa\mu}{\kappa+\mu}u_2+l^2\mu u_2''=0
+y=-\frac{b}{a}+C_2\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right).
 \]
+\begin{rmk}
+Since the computations became to long to be done by hand we perform them with an automatic algebraic manipulator (the MATLAB Symbolic Math Toolbox). Since most of the resultant expressions are too long we do not report them.
+\end{rmk}
+We now show explicitly that there exists a solution $u_2\in C^2([0,L])$. To this aim we impose the continuity of $u_2$ and $u_2'$ at $x=L/2-\epsilon$ and solving a linear system we find the constants $C_1$ and $C_2$. We need only to find $\epsilon$. To determine it we consider the Mandel stress computed the elastic range at $x=L/2$. We call $F_Y$ the smallest value of $F$ for which that Mandel stress reach $Y$. For $F\le F_y$ we have $\epsilon=\eta(F)=0$. To determine $\epsilon$ when $F>F_Y$ we impose that $m(L/2-\epsilon)=Y$. Since the resultant equation cannot be solved analytically in $\epsilon$ we find $F$ as a smooth function $f=\colon[0,\epsilon_0)\to\mathbb{R}$ of $\epsilon$. Here
 \[
-u_2''=\frac{d^2}{l^2}\frac{\kappa}{\kappa+\mu}u_2+\frac{(d-1)\kappa-\mu}{l^2\mu(\kappa+\mu)}F.
+\epsilon_0=\sup_{F\in[0,\infty)}\eta(F).
 \]
-A solution of the homogeneous equation which is also symmetric with respect to $x=L/2$ is
+We notice that by continuity $F_Y=f(0)$. We find
 \[
-x\mapsto\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right).
+F_Y=\frac{d-1}{d}\frac{k+\mu}{\mu}\left(-\frac{(d-1)\kappa-\mu}{d\mu}\left(\frac{1}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)+1\right)^{-1}Y.
+%=\frac{Y(\kappa + \mu)(d - 1)}{d\mu \left[ \frac{1}{d\mu} \left( \frac{1}{\cosh(Ld\sqrt{\kappa} / 2l\sqrt{\kappa + \mu})} - 1 \right)(\kappa + \mu - d\kappa) + 1 \right]}.
 \]
-A particular solution to the nonhomogeneous equation is
-\[
-x\mapsto-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F.
-\]
-Then taking into account the boundary condition we find the solution
-\[
-u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
-\]
+After a meticulous analysis of the analytical expression of $f$ we find that $\epsilon_0>L/2$. This means that when the load reach the value $F=f(L/2)$ to the plastic distortion satisfies $p>0$ in the entire interval $(0,L)$. An explicit expression of $\epsilon_0$ is not available. To get further insight on the solution we look at the limit $l\to0^+$.
+\begin{prop}
+In the limit $l\to0^+$ the solution $u_2$ that we have found converges at least pointwise on $(0,L)\times[0,T]$ to the homogeneous solution of Section~\ref{subsec:homogeneous-solution}.
+\end{prop}
+\begin{proof}
+It is a direct computation.
+\end{proof}
+Further information on the solution can be obtained looking at particular values of the parameters. We fix $d=3$, $L=1$, $l=0.1$, $\kappa=100$, $\mu=100$, $B=0.1$, $Y=1$.
+\begin{figure}[p]
+\includegraphics[width=0.48\textwidth]{figures/epsilon2F.png}
+\hfill
+\includegraphics[width=0.48\textwidth]{figures/epsilon2u2endmiddle.png}
+\caption{The plot on the right show the function $f$. The plot on the right show the value of $u_2$ at $x=L/2$ (at the middle of the bar) and $x=L/100$ (near the end of the bar).}
+\label{fig:epsilon2F}
+\end{figure}
+In Figure~\ref{fig:epsilon2F} on the left we reported the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. On the right we report as a function of $\epsilon$ the value of $u_2$ computed at $x=L/2$ and $x=L/100$ that means at the middle and at the end of the bar respectively. This last plot suggest that the shrinkage of the cross section has no limit and happens everywhere along the bar.
+\begin{rmk}
+From the information obtained so far, we conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section seems to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
+\end{rmk}
+For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_1$, $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar in the same situation. On the top there is the result obtained with a purely elastic bar while on the top the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{figures/plotu2p.png}
+\caption{Plot of $u_2$ (left) and $p$ (right) for $\epsilon=0.3$.}
+\label{fig:plotu2p}
+\end{figure}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\textwidth]{figures/bar.png}
+\caption{Picture of the half $(0,L/2)$ of the bar when $\epsilon=0.493$. The bar on the bottom is plastic, the one on the top is purely elastic and subject to the same load. The transversal displacement is magnified with a factor 7. The color represents $p$.}
+\label{fig:bar}
+\end{figure}
 
 \part{Shear band localization in cohesive materials}
 
