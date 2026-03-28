@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  28 MAR 2026 03:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  28 MAR 2026 14:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1912,31 +1912,35 @@ Package pdftex.def Info: figures/bar.png  used on input line 536.
 otu2p.png>]
 
 [14 <./figures/bar.png (PNG copy)>]
+Chapter 2.
+
 
 [15
 
 ]
-Chapter 2.
-
 
 [16
 
 ]
+Chapter 3.
 
-[17]
+
+[17
+
+]
+
+[18]
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 10.95pt on input line 655.
+(Font)              scaled to size 10.95pt on input line 698.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-euf.cfg
 File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
 
 )
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 655.
+(Font)              scaled to size 8.0pt on input line 698.
 LaTeX Font Info:    Font shape `U/euf/m/n' will be
-(Font)              scaled to size 6.1pt on input line 655.
+(Font)              scaled to size 6.1pt on input line 698.
 
-
-[18]
 
 [19]
 
@@ -1951,22 +1955,22 @@ LaTeX Font Info:    Font shape `U/euf/m/n' will be
 [24]
 
 [25]
+
+[26]
 LaTeX Font Info:    Trying to load font information for U+zeuex on input line 1
-137.
+180.
  (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
 LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 10.95pt on input line 1137.
+(Font)              scaled to size 10.95pt on input line 1180.
 LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 8.0pt on input line 1137.
+(Font)              scaled to size 8.0pt on input line 1180.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1137.
+(Font)              scaled to size 6.0pt on input line 1180.
 LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
-(Font)              scaled to size 6.0pt on input line 1137.
+(Font)              scaled to size 6.0pt on input line 1180.
 
-
-[26]
 
 [27]
 
@@ -1991,34 +1995,34 @@ LaTeX Font Info:    Font shape `U/zeuex/m/n' will be
 [37]
 
 [38]
-Chapter 3.
+
+[39]
+Chapter 4.
 
 
-[39
+[40
 
 ]
 
-[40]
+[41]
 Appendix A.
-
-
-[41
-
-]
-Appendix B.
 
 
 [42
 
 ]
-Appendix C.
+Appendix B.
 
 
 [43
 
 ]
+Appendix C.
 
-[44]
+
+[44
+
+]
 
 [45]
 
@@ -2038,12 +2042,14 @@ Appendix C.
 
 [53]
 
-[54
+[54]
+
+[55
 
 
 ]
 
-[55] (./text.aux)
+[56] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2055,7 +2061,7 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 Here is how much of TeX's memory you used:
  37440 strings out of 473197
  767905 string characters out of 5718605
- 1538172 words of memory out of 5000000
+ 1538173 words of memory out of 5000000
  59840 multiletter control sequences out of 15000+600000
  730739 words of font info for 428 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2075,10 +2081,10 @@ xexs.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsym.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (58 pages, 496184 bytes).
+Output written on text.pdf (59 pages, 498518 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 189 compressed objects within 2 object streams
+ 293 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  48673 words of extra memory for PDF output out of 51595 (max. 10000000)
 

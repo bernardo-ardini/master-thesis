@@ -538,6 +538,49 @@ For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$
 \label{fig:bar}
 \end{figure}
 
+\chapter{Large deformation model}
+
+\section{Formulation}
+
+\subsection{Motivation}
+
+Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
+\[
+(X,Y)\mapsto\begin{pmatrix}
+\chi_1(X) \\
+\chi_2(X)Y
+\end{pmatrix}
+\]
+where $\chi_1\colon(0,L)\to\mathbb{R}$ satisfy $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. The corresponding deformation gradient is
+\[
+F=\begin{pmatrix}
+\chi_1' & 0 \\
+\chi_2'Y & \chi_2I
+\end{pmatrix}.
+\]
+We define $\epsilon_1=\log\chi_1'$ and $\epsilon_2=\log\chi_2$. The plastic distortion is assumed to be of the form
+\[
+F_p=\begin{pmatrix}
+P & 0 \\
+0 & P^{-\frac{1}{d-1}}I
+\end{pmatrix}
+\]
+where $P\colon(0,L)\to(0,\infty)$. This choice implies plastic incompressibility. We define $p=\log P$. The elastic distortion is then given by
+\[
+F_e=FF_p^{-1}=\begin{pmatrix}
+\chi_1'P^{-1} & 0 \\
+\chi_2'P^{-1}Y & \chi_2P^\frac{1}{d-1}I
+\end{pmatrix}=
+\begin{pmatrix}
+E_1 & 0 \\
+GY & E_2I
+\end{pmatrix}.
+\]
+We define
+\[
+e_1=\log E_1=\epsilon_1-p\quad\text{and}\quad e_2=\log E_2=\epsilon_2+(d-1)^{-1}p.
+\]
+
 \part{Shear band localization in cohesive materials}
 
 \chapter{Small deformation model}
