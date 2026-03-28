@@ -44,6 +44,7 @@
 \newtheorem{cor}[prop]{Corollary}
 \newtheorem{lemma}[prop]{Lemma}
 \newtheorem{rmk}[prop]{Remark}
+\newtheorem{clm}[prop]{Claim}
 \newtheorem*{cod*}{Code}
 \newtheorem{ex}[prop]{Example}
 \newtheorem{prb}[prop]{Problem}
@@ -136,6 +137,7 @@ I would like also to confirm the above considerations by a numerical study of th
 \chapter{Small deformation model}
 
 \section{Formulation}
+\label{sec:small-model-1d}
 
 \subsection{Motivation}
 
@@ -291,6 +293,110 @@ m=\frac{d}{d-1}\mu(e_1-e_2)
 \]
 as the Mandel stress. It is the elastic force acting on the microscopic configuration and we notice that it depends on the shear modulus only.
 
+\section{Existence and uniqueness result}
+
+In this section we discuss the existence and uniqueness of solutions. For simplicity we will assume homogeneous Dirichlet boundary conditions $u(x)=0$ for $x\in\{0,L\}$.
+
+\subsection{Function spaces and hypotheses}
+\label{sec:hypotheses-necking}
+
+We define the spaces $\boldsymbol{U}=H^1((0,L),\mathbb{R}\times\mathbb{R})$ and $\boldsymbol{P}=L^2((0,L))$. Let also $\boldsymbol{Z}=\boldsymbol{U}\times\boldsymbol{P}$. We will write $z=(u,p)\in\boldsymbol{Z}$ with $u\in\boldsymbol{U}$ and $p\in\boldsymbol{P}$ and $w=(v,q)\in\boldsymbol{Z}$ with $v\in\boldsymbol{U}$ and $q\in\boldsymbol{P}$.
+
+The existence and uniqueness result will be obtained under the following hypotheses.
+\begin{itemize}
+\item[(G)] $L>0$ and $d=2$ or $d=3$
+\item[($\psi$)] $\kappa$, $\mu$, $l$ and $B$ are positive constants
+\item[(R)] $R\colon\mathbb{R}\to\mathbb{R}$ is given by $R(q)=Y|q|$ for some $Y>0$
+\item[($f$)] $f\in H^1((0,T),\boldsymbol{U}^*)$ and $f(0)=0$
+\end{itemize}
+
+\subsection{Formulation of the problem}
+
+We introduce the linear operator $\mathcal{A}\colon\boldsymbol{Z}\to\boldsymbol{Z}^*$ defined by
+\[
+\dual{\mathcal{A}z,w}=
+\begin{multlined}[t]
+\int_0^Ll^2\mu u_2'v_2'dx+\int_0^L\left[\kappa(u_1'+(d-1)u_2)+\mu\left(u_1'-u_2-\frac{d}{d-1}p\right)\right](v_1'-q)dx+\\
++\int_0^L\left[(d-1)\kappa(u_1'+(d-1)u_2)-\mu\left(u_1'-u_2-\frac{d}{d-1}q\right)\right]\left(v_2+(d-1)^{-1}p\right)dx+\\
++\int_0^LBpqdx
+\end{multlined}
+\]
+and the functional $\mathcal{R}\colon\boldsymbol{Z}\to\mathbb{R}\cup\{\infty\}$ defined by
+\[
+\mathcal{R}(w)=\int_0^LR(q)dx.
+\]
+We define also $\mathcal{F}\colon[0,T]\to\boldsymbol{Z}^*$ by
+\[
+\dual{\mathcal{F}(t),w}=\int_0^Tf\cdot vdx.
+\]
+Now the boundary value problem associated to the model introduced in Section~\ref{sec:small-model-1d} can be formulated as follows.
+\begin{prb}
+\label{prb:necking}
+Find $z=(u,p)\in\text{AC}([0,T],\boldsymbol{Z})$ such that $z(0)=0$ and for almost every $t\in(0,T)$
+\[
+\dual{\mathcal{A}z(t),w-\dot z(t)}+\mathcal{R}(w)-\mathcal{R}(\dot z(t))\ge\dual{\mathscr{F}(t),w-\dot z(t)}\quad\text{for all $w\in\boldsymbol{Z}$}.
+\]
+\end{prb}
+
+\subsection{Existence and uniqueness theorem}
+
+To prove the existence and uniqueness result we make use of the following general theorem.
+\begin{thm}
+\label{thm:han-reddy}
+Let $\boldsymbol{Z}$ be a reflexive and separable Banach space. Let $\mathcal{A}\colon\boldsymbol{Z}\to\boldsymbol{Z}^*$ be a linear and continuous functional which is also coercive, meaning that
+\[
+\frac{\dual{\mathcal{A}z,z}}{\norm{z}_{\boldsymbol Z}}\to\infty\quad\text{as $\norm{z}_{\boldsymbol{Z}}\to\infty$}.
+\]
+Let $\mathcal{R}\colon\boldsymbol{Z}\to\mathbb{R}\cup\{\infty\}$ be convex, proper, l.s.c., 1-homogeneous and Lipchitz continuous on its domain. Let $\mathcal{F}\in H^1((0,T),\boldsymbol{Z}^*)$ such that $\mathcal{F}(0)=0$. Then there exists a unique $z\in\text{AC}([0,T],\boldsymbol{Z})$ such that for almost every $t\in(0,T)$
+\[
+\dual{\mathcal{A}z(t),w-\dot z(t)}+\mathcal{R}(w)-\mathcal{R}(\dot z(t))\ge\dual{\mathscr{F}(t),w-\dot z(t)}\quad\text{for all $w\in\boldsymbol{Z}$}.
+\]
+\end{thm}
+\begin{proof}
+See~\cite{han-reddy}.
+\end{proof}
+The main result of this section is the following theorem.
+\begin{thm}
+Assume the hypotheses of Section~\ref{sec:hypotheses-necking}. Then there exists a unique solution to Problem~\ref{prb:necking}.
+\end{thm}
+\begin{proof}
+We verify the hypothesis of Theorem~\ref{thm:han-reddy}.
+
+\emph{Step 1.} It is trivial to check that $\mathcal{A}$ is linear and continuous. To prove coercivity we show that there exists $\alpha>0$ such that $\dual{\mathcal{A}z,z}\ge\alpha\norm{z}_{\boldsymbol{Z}}^2$. If we call $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$ we have by applying Young inequality repeatedly
+\[
+\begin{split}
+\dual{\mathcal{A}z,z}=2\int_0^L\psi dx&=\kappa\norm{e_1+(d-1)e_2}_2^2+\mu\norm{e_1-e_2}_2^2+l^2\mu\norm{u_2'}_2^2+B\norm{p}_2^2=\\
+&=\kappa\norm{u_1'+(d-1)u_2}_2^2+\mu\left\lVert u_1'-u_2-\frac{d}{d-1}p\right\rVert_2^2+l^2\mu\norm{u_2'}_2^2+B\norm{p}_2^2\ge\\
+&\ge\begin{multlined}[t]
+\left(1-\theta\right)\kappa\norm{u_1'}_2^2+\left(1-\frac{1}{\theta}\right)(d-1)^2\kappa\norm{u_2}_2^2+(1-\tau)\mu\norm{u_1'-u_2}_2^2+\\
+l^2\mu\norm{u_2'}_2^2+\left[\left(1-\frac{1}{\tau}\right)\left(\frac{d}{d-1}\right)^2\mu+B\right]\norm{p}_2^2
+\end{multlined}\\
+&\ge
+\begin{multlined}[t]
+\left[\left(1-\theta\right)\kappa+(1-\eta)(1-\tau)\mu\right]\norm{u_1'}_2^2+\\
++\left[\left(1-\frac{1}{\theta}\right)(d-1)^2\kappa+\left(1-\frac{1}{\eta}\right)(1-\tau)\mu\right]\norm{u_2}_2^2+l^2\mu\norm{u_2'}_2^2+\\
++\left[\left(1-\frac{1}{\tau}\right)\left(\frac{d}{d-1}\right)^2\mu+B\right]\norm{p}_2^2
+\end{multlined}
+\end{split}
+\]
+for all $\theta$, $\tau$ and $\eta$ in $(0,\infty)$. We restrict to $\theta$, $\tau$ and $\eta$ in $(0,1)$. Then by Poincarè inequality there exist $C_1>0$ and $C_2>0$ such that
+\[
+\begin{split}
+\dual{\mathcal{A}z,z}\ge
+\begin{multlined}[t]
+C_1\left[\left(1-\theta\right)\kappa+(1-\eta)(1-\tau)\mu\right]\norm{u_1}_{1,2}^2+\\
++\left[C_2l^2\mu+\left(1-\frac{1}{\theta}\right)(d-1)^2\kappa+\left(1-\frac{1}{\eta}\right)(1-\tau)\mu\right]\norm{u_2}_{1,2}^2+\\
++\left[\left(1-\frac{1}{\tau}\right)\left(\frac{d}{d-1}\right)^2\mu+B\right]\norm{p}_2^2
+\end{multlined}
+\end{split}
+\]
+Now we choose $\theta$, $\tau$ and $\eta$ sufficiently close to 1 so that the coefficients multiplying $\norm{u_1}_{1,2}^2$, $\norm{u_2}_{1,2}^2$ and $\norm{p}_2^2$ are positive and we get the desired coercivity.
+
+\emph{Step 2.} Since $\mathcal{R}(w)=Y\norm{q}_1$ we see immediately that $\mathcal{R}$ is convex, proper, continuous and 1-homogeneous.
+
+\emph{Step 3.} Since $f\in H^1((0,T),\boldsymbol{U}^*)$ and $f(0)=0$ then $\mathcal{F}\in H^1((0,T),\boldsymbol{Z}^*)$ and $\mathcal{F}(0)=0$.
+\end{proof}
+
 \section{Some analytical solutions}
 
 \subsection{Traction with free end sections}
@@ -398,7 +504,7 @@ F_Y=\frac{d-1}{d}\frac{k+\mu}{\mu}\left(-\frac{(d-1)\kappa-\mu}{d\mu}\left(\frac
 \]
 After a meticulous analysis of the analytical expression of $f$ we find that $\epsilon_0>L/2$. This means that when the load reach the value $F=f(L/2)$ to the plastic distortion satisfies $p>0$ in the entire interval $(0,L)$. An explicit expression of $\epsilon_0$ is not available. To get further insight on the solution we look at the limit $l\to0^+$.
 \begin{prop}
-In the limit $l\to0^+$ the solution $u_2$ that we have found converges at least pointwise on $(0,L)\times[0,T]$ to the homogeneous solution of Section~\ref{subsec:homogeneous-solution}.
+In the limit $l\to0^+$ the solution $u_2$ that we have found converges at least pointwise on $(0,L)\times[0,T]$ to the homogeneous solution of Section~\ref{subsec:homogeneous-solution}. This convergence is also uniform on compact subsets of $(0,L)$. 
 \end{prop}
 \begin{proof}
 It is a direct computation.
@@ -411,11 +517,14 @@ Further information on the solution can be obtained looking at particular values
 \caption{The plot on the right show the function $f$. The plot on the right show the value of $u_2$ at $x=L/2$ (at the middle of the bar) and $x=L/100$ (near the end of the bar).}
 \label{fig:epsilon2F}
 \end{figure}
-In Figure~\ref{fig:epsilon2F} on the left we reported the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. On the right we report as a function of $\epsilon$ the value of $u_2$ computed at $x=L/2$ and $x=L/100$ that means at the middle and at the end of the bar respectively. This last plot suggest that the shrinkage of the cross section has no limit and happens everywhere along the bar.
+In Figure~\ref{fig:epsilon2F} on the left we reported the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. On the right we report as a function of $\epsilon$ the value of $u_2$ computed at $x=L/2$ and $x=L/100$ that means at the middle and near the end of the bar respectively. This last plot suggest that the shrinkage of the cross section has no limit and happens everywhere along the bar. In particular we have evidences for the following claim.
+\begin{clm}
+The solution $u_2$ converges to $-\infty$ uniformly on compact sets contained in $(0,L)$.
+\end{clm}
 \begin{rmk}
 From the information obtained so far, we conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section seems to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
 \end{rmk}
-For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_1$, $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar in the same situation. On the top there is the result obtained with a purely elastic bar while on the top the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
+For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar in the same situation. On the top there is the result obtained with a purely elastic bar while on the top the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
 \begin{figure}[p]
 \centering
 \includegraphics[width=\textwidth]{figures/plotu2p.png}
