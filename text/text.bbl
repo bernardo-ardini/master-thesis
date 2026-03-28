@@ -677,6 +677,38 @@
       \field{title}{Plasticity - Mathematical Theory and Numerical Analysis}
       \field{year}{2013}
     \endentry
+    \entry{mielke}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9826cbf73625293c7c7f714a7fda32e9}{%
+           family={Mainik},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ef9126649c813582bd42a81657d1d9e9}{%
+           family={Mielke},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{fullhash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{fullhashraw}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{bibnamehash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{authorbibnamehash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{authornamehash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{authorfullhash}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \strng{authorfullhashraw}{a7d46c65ab042b48a5cd4efb8f5723df}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Nonlinear Science}
+      \field{title}{Global Existence for Rate-Independent Gradient Plasticity at Finite Strain}
+      \field{year}{2009}
+    \endentry
     \entry{micro-geo}{article}{}{}
       \name{author}{2}{}{%
         {{hash=0ad36821ee31f8959c184d9979424244}{%

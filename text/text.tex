@@ -135,6 +135,7 @@ I would like also to confirm the above considerations by a numerical study of th
 \part{Necking of a metallic cylindrical bar}
 
 \chapter{Small deformation model}
+\label{chap:small-neck}
 
 \section{Formulation}
 \label{sec:small-model-1d}
@@ -213,7 +214,7 @@ are the polar and the polar second order moment of area.
 
 \subsection{Kinematics}
 
-Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the displacement of the sections in the axis direction and $u_2$ is the quantity describing the expansion of the sections. The configuration of the microscopic structure of the bar is described by $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$.
+Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$.
 
 \subsection{Statics}
 
@@ -225,10 +226,7 @@ The first integral describes a purely macroscopic response and it is introduced 
 \[
 \tilde{\mathscr P}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
-\begin{defi}[Principle of Virtual Powers]
-Equilibrium holds when $\tilde{\mathscr{W}}+\tilde{\mathscr{P}}=\tilde{\mathscr{R}}$ for all virtual rates.
-\end{defi}
-\begin{lemma}
+\begin{prop}
 The local form of the equilibrium condition is equivalent to
 \begin{subequations}
 \begin{gather}
@@ -239,7 +237,7 @@ h_2(x)=\zeta(x)\quad\text{for $x\in\{0,L\}$} \label{eqn:local-form-4}\\
 \sigma_1-(d-1)^{-1}\sigma_2-\tau=0\quad\text{in $(0,L)$} \label{eqn:local-form-5}
 \end{gather}
 \end{subequations}
-\end{lemma}
+\end{prop}
 \begin{proof}
 First we choose $\tilde v_2=0$ and $\tilde q=0$ and $\tilde v_1$ arbitrary. Then we get
 \[
@@ -273,9 +271,9 @@ where $R\colon\mathbb{R}\to[0,\infty]$ satisfy $R(0)=0$. A possible choice could
 \sigma_2=(d-1)\kappa(e_1+(d-1)e_2)-\mu(e_1-e_2) \\
 \tau\in Bp+\partial R(\dot p).
 \end{gather*}
-\begin{lemma}
+\begin{prop}
 Every process that obeys the constitutive relations satisfy the dissipation inequality.
-\end{lemma}
+\end{prop}
 \begin{proof}
 Let $\tau=Bp+\xi$ with $\xi\in\partial R(\dot p)$. The dissipation per unit axial length is given by
 \[
@@ -580,6 +578,106 @@ We define
 \[
 e_1=\log E_1=\epsilon_1-p\quad\text{and}\quad e_2=\log E_2=\epsilon_2+(d-1)^{-1}p.
 \]
+Now the spatial velocity gradient is given by
+\[
+L=\dot FF^{-1}=\begin{pmatrix}
+\dot\epsilon_1 & 0 \\
+\left(\frac{\dot\chi_2'}{\chi_1'}-\frac{\chi_2'}{\chi_1'}\dot\epsilon_2\right) & \dot\epsilon_2I
+\end{pmatrix}
+\]
+and the plastic rate is
+\[
+L_p=\dot F_pF_p^{-1}=\begin{pmatrix}
+\dot p & 0 \\
+0 & -\frac{\dot p}{d-1}I
+\end{pmatrix}.
+\]
+Then the elastic rate is
+\[
+L_e=\dot F_eF_e^{-1}=L-F_eL_pF_e^{-1}=\begin{pmatrix}
+\dot e_1 & 0 \\
+\left(\frac{\dot G}{E_1}-\frac{G}{E_1}\dot e_2\right)Y & \dot e_2I
+\end{pmatrix}.
+\]
+
+\subsection{Kinematics}
+
+Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. We define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
+
+\subsection{Statics}
+
+We assume that the internal power is given by
+\[
+\mathcal{W}=\int_0^L\left(\zeta\dot G+\sigma_1\dot E_1+\sigma_2\dot E_2\right)dX+\int_0^L\left(\tau\dot P+\kappa\dot P'\right)dX.
+\]
+Here $\zeta$ is the transversal elastic stress, $\sigma_1$ is the longitudinal elastic stress and $\sigma_2$ is the transversal elastic force while $\tau$ is the microscopic force and $\kappa$ the microscopic stress.
+\begin{rmk}
+In the small strain model of Chapter~\ref{chap:small-neck} we did not included the microscopic stress $\kappa$. However, we are now including it because we expect that in the large-strain regime, it is necessary to obtain an existence result in Sobolev spaces. This is suggested by the existence theorem for three-dimensional elastoplasticity at large strains presented in~\cite{mielke}.
+\end{rmk} 
+We notice that
+\begin{gather*}
+G^{-1}\dot G=(\chi_2')^{-1}\dot\chi_2'-P^{-1}\dot P \\
+E_1^{-1}\dot E_1=(\chi_1')^{-1}\dot\chi_1'-P^{-1}\dot P \\
+E_2^{-1}\dot E_2=\chi_2^{-1}\dot\chi_2+(d-1)^{-1}P^{-1}\dot P.
+\end{gather*}
+Then if we call $\tilde v_i$ the virtual rate of $\chi_i$ and $\tilde Q$ the virtual rate of $P$ we are let to consider the internal virtual power
+\begin{multline*}
+\tilde{\mathcal{W}}=\int_0^LG\zeta\left((\chi_2')^{-1}\tilde v_2'-P^{-1}\tilde Q\right)dX+\\
++\int_0^L\left[E_1\sigma_1\left((\chi_1')^{-1}\tilde v_1'-P^{-1}\tilde Q\right)+E_2\sigma_2\left(\chi_2^{-1}\tilde v_2+(d-1)^{-1}P^{-1}\tilde Q\right)\right]dX+\\
++\int_0^L\left[\tau\tilde Q+\kappa\tilde Q'\right]dX.
+\end{multline*}
+The external longitudinal and transversal forces distributed along the length of the bar and the external longitudinal and transversal forces acting on the extremities of the bar are included choosing the external power
+\[
+\tilde{\mathscr P}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
+\]
+\begin{prop}
+The local form of the equilibrium condition is
+\begin{gather*}
+(P^{-1}\sigma_1)'+f_1=0\quad\text{in $(0,L)$} \\
+h_1(x)=P(x)^{-1}\sigma_1(x)\quad\text{for $x\in\{0,L\}$} \\
+-P^{\frac{1}{d-1}}+(P^{-1}\zeta)'+f_2=0\quad\text{in $(0,L)$} \\
+h_2(x)=P(x)^{-1}\zeta(x)\quad\text{for $x\in\{0,L\}$} \\
+\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta-\tau+\kappa'=0\quad\text{for $x\in\{0,L\}$} \\
+\kappa(x)=0\quad\text{for $x\in\{0,L\}$}
+\end{gather*}
+\end{prop}
+\begin{proof}
+Rearranging the terms we have
+\begin{multline*}
+\tilde{\mathcal{W}}=\int_0^L\left[P^{-1}\sigma_1\tilde v_1'+P^{\frac{1}{d-1}}\sigma_2\tilde v_2+P^{-1}\zeta\tilde v_2'\right]dX+\\
++\int_0^L\left[\left(\tau-\chi_1'P^{-2}\sigma_1+(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2-\chi_2'P^{-2}\zeta\right)\tilde Q+\kappa\tilde Q'\right]dX.
+\end{multline*}
+By integration by parts and application of the fundamental lemma of the calculus of variation we get the thesis.
+\end{proof}
+
+\subsection{Constitutive relations}
+
+We choose a free energy for unit axial length of the form
+\[
+\psi=W(E_1,E_2,G)+H(P,P')
+\]
+where $W\colon(0,\infty)\times(0,\infty)\times\mathbb{R}\to\mathbb{R}$ is elastic free energy density and $H\colon(0,\infty)\times\mathbb{R}\to\mathbb{R}$ is the hardening free energy density. The plastic response is obtained by introducing a dissipation potential per unit axial length of the form
+\[
+\phi=R(P^{-1}\dot P)
+\]
+where $R\colon\mathbb{R}\to[0,\infty]$ satisfies $R(0)=0$. Consistently with that choice of $\psi$ and $\phi$ we impose the following constitutive relations
+\begin{subequations}
+\label{eqn:constitutive-neck-large}
+\begin{gather}
+\sigma_i=\dind{W}{E_i}\quad\text{and}\quad\zeta=\dind{W}{G} \\
+\tau\in\dind{H}{P}+P^{-1}\partial R(P^{-1}\dot P)\quad\text{and}\quad\kappa=\dind{H}{P'}.
+\end{gather}
+\end{subequations}
+\begin{prop}
+The constitutive relations~\eqref{eqn:constitutive-neck-large} satisfy the dissipation inequality.
+\end{prop}
+\begin{proof}
+Let $\tau=\dind{H}{P}+P^{-1}\xi$ with $\xi\in\partial R(\dot PP^{-1})$. Then dissipation per unit axial length is given by
+\[
+\zeta\dot G+\sigma_2\dot E_2+\sigma_2\dot E_2+\tau\dot P+\kappa\dot P'-\dot\psi=\xi P^{-1}\dot P.
+\]
+By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
+\end{proof}
 
 \part{Shear band localization in cohesive materials}
 
@@ -1940,6 +2038,60 @@ $\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
 \end{tabular}
 
 \chapter{Modeling in continuum mechanics}
+
+In this chapter we describe the general procedure to develop a thermodynamically consistent mechanical model. The discussion will be purposely informal since the emphasis of this chapter is on modeling.
+
+\section{General procedure to build thermodynamically consistent mechanical models}
+
+We subdivide the discussion in three parts corresponding to the treatment of kinematics, statics and constitutive relations.
+
+\paragraph{Kinematics} Consider a general mechanical system. Its kinematical configuration is described by elements $z\in\boldsymbol{Z}$ of a vector space $\boldsymbol{Z}$.
+
+\paragraph{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in\boldsymbol{Z}^*$ and $\mathcal{P}\in\boldsymbol{Z}^*$ respectively. The equilibrium between internal and external actions is written as $\mathscr{W}=\mathscr{P}$. This can be written as
+\[
+\tilde{\mathscr{W}}\doteq\dual{\mathscr{W},\tilde w}=\dual{\mathscr{P},\tilde w}\doteq\tilde{\mathscr{P}}\quad\text{for all $\tilde w\in\boldsymbol{Z}$}
+\]
+which is the classical statement of the principle of virtual powers. We refer to the test vector $\tilde w\in\boldsymbol{Z}$ as the virtual velocity and to $\tilde{\mathscr{W}}$ and $\tilde{\mathscr{P}}$ as the virtual internal end external power respectively.
+
+\paragraph{Constitutive relations}
+
+While the external actions $\mathscr{P}$ are assigned as a function $\mathscr{P}\colon[0,T]\to\boldsymbol{Z}^*$ the internal actions are put in relation with the kinematics of the system through constitutive relations. Since we always neglect inertial effects we assume a constitutive relation giving the internal actions as a set valued map $\mathscr{W}\colon\boldsymbol{Z}\times\boldsymbol{Z}\rightsquigarrow\boldsymbol{Z}$ of $z$ and $\dot z$. To obtain constitutive relations compatible with thermodynamics we postulate the existence of a
+\begin{itemize}
+\item[(i)] free energy functional $\Psi\colon\boldsymbol{Z}\to(-\infty,\infty]$ which is differentiable on its domain,
+\item[(i)] a subdifferentiable dissipation potential $\Phi\colon\boldsymbol{Z}\to[0,\infty]$ satisfying $\Phi(0)=0$,
+\end{itemize}
+and we define
+\[
+\mathscr{W}(z,\dot z)=\partial\Psi(z)+\partial\Phi(\dot z).
+\]
+\begin{prop}
+Let $z\colon[0,T]\to\boldsymbol{Z}$ be a process satisfying the equilibrium condition
+\[
+\partial\Psi(z(t))+\partial\Phi(\dot z(t))\ni\mathcal{P}(t)
+\]
+for every $t\in[0,T]$. Let the dissipation rate be defined as $\mathscr{D}=\dual{\mathcal{W},\dot z}-\frac{d}{dt}\Psi(z)$. Then $\mathcal{D}\ge0$.
+\end{prop}
+\begin{proof}
+Let $\xi(t)\in\partial\Phi(\dot z(t))$ such that $\partial\Psi(t)+\xi(t)=\mathcal{P}(t)$ for all $t\in[0,T]$. Then
+\[
+\mathcal{D}=\dual{\partial\Psi(z),\dot z}+\dual{\xi,\dot z}-\frac{d}{dt}\Psi(z)=\dual{\xi,\dot z}.
+\]
+But by definition of subdifferential we have $\Phi(0)\ge\Phi(\dot z)-\dual{\xi,\dot z}$ so that $\dual{\xi,\dot z}\ge\Phi(\dot z)\ge0$. This completes the thesis.
+\end{proof}
+\begin{rmk}
+The inequality $\mathscr{D}\ge0$ is known as the dissipation inequality and has the following meaning: the power $\dual{\mathscr{W},\dot z}$ absorbed by the system is stored reversibly as free energy up to a positive irreversible dissipation.
+\end{rmk}
+
+\section{Treating constrains with the methods of Lagrange multipliers}
+
+Linear constraints can be added in the system by substituting a $\boldsymbol{Z}$ with a subspace. Nonlinear constrains can be handled by choosing appropriately the free energy or the dissipation potential. However sometimes it can be useful to treat the constrain reaction as an additional unknown of the system. This happen especially if it is appropriate to include constitutive relations depending on the reactions.
+
+\paragraph{Kinematics of constrain} Let $\boldsymbol{\Gamma}$ be a vector space. We consider the constrain $\mathcal{C}(z)=0$ where $\mathcal{C}\colon\boldsymbol{Z}\to\boldsymbol{\Gamma}^*$ is a subdifferentiable function. We notice that the constrain can be written as
+\[
+\dual{\mathcal{C}(z),\tilde\delta}=0\quad\text{for all $\tilde\delta\in\boldsymbol{\Gamma}$}.
+\]
+
+\paragraph{Constrain reaction} In addiction to the internal and external actions, when we treat a constrain with the method of Lagrange multipliers we must add also the constrain reaction $\mathcal{R}\in\boldsymbol{Z}^*$. We make the assumption that the power expanded by the reaction on velocities compatible with the constrain.
 
 \chapter{Tools from functional analysis}
 
