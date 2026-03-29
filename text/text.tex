@@ -747,7 +747,7 @@ The action of the plastic pressure is obtained by considering the reaction virtu
 \]
 We notice that this power vanish on virtual rates that satisfy the constrain that is $\tilde\mu_p=0$. The external actions of the volume force $f$ on $\Omega$ and the traction $h$ on $\Gamma_N$ are included choosing the external virtual power
 \[
-\tilde{\mathcal{P}}=\int_\Omega f\cdot\tilde vdx+\int_{\Gamma_N}h\cdot\tilde vda.
+\tilde{\mathcal{P}}=\int_\Omega f\cdot\tilde vdx+\int_{\Gamma_N}h\cdot\tilde vdx.
 \]
 For simplicity we assume that no external torque is applied to the body and that there is no external action on the microscopic configuration. (Maybe these external actions could be added to describe better the boundary conditions imposed on the body.) 
 \begin{defi}[Principle of Virtual Powers]
@@ -760,33 +760,45 @@ I reported the local form of the equilibrium in the case $K=0$ only. I will repo
 \begin{lemma}
 The local form of the equilibrium condition is
 \begin{align*}
-&\diver(T+T_e)+f=0\quad\text{in $\Omega$} \\
-&(T+T_e)n=h\quad\text{in $\Gamma_N$} \\
+&\diver(T+T_e-\diver K)+f=0\quad\text{in $\Omega$} \\
+&(T+T_e-\diver K)n-\diver_P((Kn)P)=h\quad\text{in $\Gamma_N\cap\partial^{d-1}\Omega$} \\
+&\{\!\!\{(Kn)\tau\}\!\!\}=0\quad\text{in $\partial^{d-2}\Omega$} \\
 &-\dev T_e+T_p-\diver K_p=0\quad\text{in $\Omega$} \\
 &p=-\frac{1}{d}\tr T_e\quad\text{in $\Omega$} \\
-&K_p n=0\quad\text{in $\partial\Omega$}.
+&K_p n=0\quad\text{in $\partial^{d-1}\Omega$}.
 \end{align*}
 \end{lemma}
 \begin{proof}
-We can write the virtual power as
+By integration by parts we can write
 \begin{multline*}
-\tilde{\mathcal W}=-\int_\Omega\diver(T+T_e):\tilde vdx+\int_{\Gamma_N}(T+T_e)n\cdot\tilde vdx+\int_\Omega(T_p-\dev T_e-\diver K_p):\tilde V_pdx+\\
-+\int_{\partial\Omega}K_pn:\tilde V_pdx.
+\int_\Omega\left(T:\grad\tilde v+K\threedots\grad^2\tilde v\right)dx=\\
+=-\int_\Omega\diver(T-\diver K)\cdot\tilde vdx+\int_{\partial^{d-1}\Omega}\left[(T-\diver K)n\cdot\tilde v+Kn:\grad\tilde v\right]dx.
 \end{multline*}
-Then the results follows from the fundamental theorem of the calculus of variations.
+Now denoting with $P=I-n\otimes n$ the projector on $\partial^{d-1}\Omega$ we have
+\[
+Kn:\grad\tilde v=Kn:\left(\dind{\tilde v}{n}\otimes n+\grad_P\tilde v\right)=(Kn)n\cdot\dind{\tilde v}{n}+Kn:\grad_P\tilde v
+\]
+and
+\[
+Kn:\grad_P\tilde v=(Kn)P:\grad_P\tilde v=\diver_P(P(Kn)^T\tilde v)-\diver_P((Kn)P)\cdot\tilde v.
+\]
+But by integration by parts
+\[
+\int_{\partial^{d-1}\Omega}\diver_P(P(Kn)^T\tilde v)dx=\int_{\partial^{d-2}\Omega}\{\!\!\{P(Kn)^T\tilde v\cdot\tau\}\!\!\}dx=\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\tau\}\!\!\}\cdot\tilde vdx.
+\]
+Here $\{\!\!\{\cdot\}\!\!\}$ denotes sum of its argument evaluated on both sides of $\partial^{d-2}\Omega$ and $\tau$ denotes the unit outer normal vector to $\partial^{d-2}\Omega$ and tangent to $\partial^{d-1}\Omega$. We have obtained
+\begin{multline*}
+\int_\Omega\left(T:\grad\tilde v+K\threedots\grad^2\tilde v\right)dx=\\
+=-\int_\Omega\diver(T-\diver K)\cdot\tilde vdx+\int_{\partial^{d-1}\Omega}\left[(T-\diver K)n-\diver_P((Kn)P)\right]\cdot\tilde vdx+\\
++\int_{\partial^{d-1}\Omega}(Kn)n\cdot\dind{\tilde v}{n}dx+\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\tau\}\!\!\}\cdot\tilde vdx.
+\end{multline*}
+Moreover the remaining terms of the virtual power can be written as
+\begin{multline*}
+-\int_\Omega\diver T_e:\tilde vdx+\int_{\partial^{d-1}\Omega}T_en\cdot\tilde vdx+\int_\Omega(T_p-\dev T_e-\diver K_p):\tilde V_pdx+\\
++\int_{\partial^{d-1}\Omega}K_pn:\tilde V_pdx-\int_\Omega\frac{1}{d}\tr T_e\tilde\mu dx.
+\end{multline*}
+Now the results follows from the fundamental lemma of the calculus of variations.
 \end{proof}
-
-\subsection{Dissipation inequality}
-
-Let $\psi$ be the free energy per unit volume in the reference configuration. Then the free energy contained in a portion $\Lambda$ of $\Omega$ is
-\[
-\Psi=\int_\Lambda\psi dx.
-\]
-Let now $\mathcal{W}$ the internal power absorbed by the portion $\Lambda$. We define the dissipation rate in $\Lambda$ as
-\[
-\mathcal{D}=\mathcal{W}-\dot\Psi.
-\]
-The dissipation inequality impose that $\mathcal{D}\ge 0$ for all $\Lambda$.
 
 \subsection{Constitutive relations}
 \label{subsec:constitutive}
@@ -834,6 +846,10 @@ Taking the difference we find that the dissipation rate per unit volume is
 \]
 This concludes the proof.
 \end{proof}
+
+\subsection{Refinements of the model}
+
+To include the dilatancy in the model we could do the following. We put the unilateral constrain $\lambda_p\ge F(U_p)$, meaning that when the microscopic structure suffer shear distortions it must suffer also an expansion. This constrain is still imposed through the Lagrange multiplier $p$ representing the microscopic pressure. To make the expansion irreversible (once the microscopic structure expanded it can not be compacted again) we add a microscopic force $\xi$ conjugate to $\tilde\mu_p$ in the internal virtual power and in the dissipation potential density we add $\iota_{[0,\infty)}(\dot\xi)$. In this way $\xi$ opposes to the compaction of the microscopic structure.
 
 %\subsection{Refinements of the model}
 %
@@ -1975,6 +1991,15 @@ This chapter is not updated and incomplete. If I have time I will try to get an 
 
 \subsection{Kinematics}
 
+Let $\Omega\subset\mathbb{R}^d$ be the reference configuration of the body. The macroscopic deformation is a map $\chi\colon\Omega\to\mathbb{R}^d$ satisfying $\det\grad\chi>0$. We set $F=\grad\chi$, $E=(F^TF-I)/2$ and $M=\grad^2\chi$. We subdivide $\partial\Omega$ in two disjoint parts, $\Gamma_D$ and $\Gamma_N$. On $\Gamma_D$ we impose the kinematical constrain $\chi=\overline{\chi}$. The distortion of the microscopic structure is described by the plastic distortion $F_p\colon\Omega\to\text{Lin}^+$. We regard $F_p$ as the elastically relaxed distortion so we define the elastic distortion as $F_e=FF_p^{-1}$. The volumetric distortion of the microscopic structure is described by $J_p=\det F_p$ while the shear distortion by $U_p=J_p^{-1}F_p$. We impose the kinematical constrain $J_p=1$ and to this aim we introduce the Lagrange multiplier $p$ with the meaning of a plastic pressure. The kinematical constrain can be written also as
+\[
+\int_\Omega(J_p-1)\tilde qdx=0\quad\text{for all $\tilde q\colon\Omega\to\mathbb{R}$}.
+\]
+
+\subsection{Statics}
+
+We denote with $\tilde v$ the virtual rate of $u$.
+
 Let $\Omega\subset\mathbb{R}^3$ be the reference configuration of the body. The deformation of the body is a map $\chi\colon\Omega\to\mathbb{R}^d$. We set $v=\dot\chi$ and $F=\Grad\chi$ and $L=\dot FF^{-1}$. We subdivide $\partial\Omega$ into disjoint parts $\Gamma_D$ and $\Gamma_N$. The plastic distortion is a map $F_p\colon\Omega\to\text{Lin}^+$. We set $L_p=\dot F_pF_p^{-1}$ and we assume that $L_p=D_p\in\text{Sym}$. We set $U_p=\dev D_p$ and $M_p=\Grad U_p\cdot F_p^{-1}$. The elastic distortion is $F_e=FF_p^{-1}$ and we set $L_e=\dot F_eF_e^{-1}$.
 \begin{lemma}
 \label{lem:L-Le-Lp}
@@ -2039,6 +2064,10 @@ $\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
 
 \chapter{Modeling in continuum mechanics}
 
+%\begin{rmk}
+%What I have written below so far is not suitable for large strain models. In particular the dissipation potential should be dependent also on $z$, $\Phi=\Phi(z,\dot z)$, and can be also nonconvex in $\dot z$. I should choose if is necessary to write the things in terms of Lie groups, that is assuming that $\boldsymbol{Z}$ is a Lie group and $\Phi=\Phi(\dot zz^{-1})$.
+%\end{rmk}
+
 In this chapter we describe the general procedure to develop a thermodynamically consistent mechanical model. The discussion will be purposely informal since the emphasis of this chapter is on modeling.
 
 \section{General procedure to build thermodynamically consistent mechanical models}
@@ -2058,40 +2087,54 @@ which is the classical statement of the principle of virtual powers. We refer to
 While the external actions $\mathscr{P}$ are assigned as a function $\mathscr{P}\colon[0,T]\to\boldsymbol{Z}^*$ the internal actions are put in relation with the kinematics of the system through constitutive relations. Since we always neglect inertial effects we assume a constitutive relation giving the internal actions as a set valued map $\mathscr{W}\colon\boldsymbol{Z}\times\boldsymbol{Z}\rightsquigarrow\boldsymbol{Z}$ of $z$ and $\dot z$. To obtain constitutive relations compatible with thermodynamics we postulate the existence of a
 \begin{itemize}
 \item[(i)] free energy functional $\Psi\colon\boldsymbol{Z}\to(-\infty,\infty]$ which is differentiable on its domain,
-\item[(i)] a subdifferentiable dissipation potential $\Phi\colon\boldsymbol{Z}\to[0,\infty]$ satisfying $\Phi(0)=0$,
+\item[(i)] subdifferentiable dissipation potential $\Phi\colon\boldsymbol{Z}\times\boldsymbol{Z}\to[0,\infty]$ such that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$,
 \end{itemize}
 and we define
 \[
-\mathscr{W}(z,\dot z)=\partial\Psi(z)+\partial\Phi(\dot z).
+\mathscr{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(z,\dot z).
 \]
 \begin{prop}
 Let $z\colon[0,T]\to\boldsymbol{Z}$ be a process satisfying the equilibrium condition
 \[
-\partial\Psi(z(t))+\partial\Phi(\dot z(t))\ni\mathcal{P}(t)
+\partial\Psi(z(t))+\partial_{\dot z}\Phi(z(t),\dot z(t))\ni\mathcal{P}(t)
 \]
 for every $t\in[0,T]$. Let the dissipation rate be defined as $\mathscr{D}=\dual{\mathcal{W},\dot z}-\frac{d}{dt}\Psi(z)$. Then $\mathcal{D}\ge0$.
 \end{prop}
 \begin{proof}
-Let $\xi(t)\in\partial\Phi(\dot z(t))$ such that $\partial\Psi(t)+\xi(t)=\mathcal{P}(t)$ for all $t\in[0,T]$. Then
+Let $\xi(t)\in\partial_{\dot z}\Phi(z(t),\dot z(t))$ such that $\partial\Psi(t)+\xi(t)=\mathcal{P}(t)$ for all $t\in[0,T]$. Then
 \[
 \mathcal{D}=\dual{\partial\Psi(z),\dot z}+\dual{\xi,\dot z}-\frac{d}{dt}\Psi(z)=\dual{\xi,\dot z}.
 \]
-But by definition of subdifferential we have $\Phi(0)\ge\Phi(\dot z)-\dual{\xi,\dot z}$ so that $\dual{\xi,\dot z}\ge\Phi(\dot z)\ge0$. This completes the thesis.
+But by definition of subdifferential we have $\Phi(z,0)\ge\Phi(z,\dot z)-\dual{\xi,\dot z}$ so that $\dual{\xi,\dot z}\ge\Phi(z,\dot z)\ge0$. This completes the thesis.
 \end{proof}
 \begin{rmk}
-The inequality $\mathscr{D}\ge0$ is known as the dissipation inequality and has the following meaning: the power $\dual{\mathscr{W},\dot z}$ absorbed by the system is stored reversibly as free energy up to a positive irreversible dissipation.
+The inequality $\mathscr{D}\ge0$ is known as the dissipation inequality and has the following meaning: the power $\dual{\mathscr{W},\dot z}$ absorbed (or released) by the system is stored reversibly as (or extracted from the) free energy up to a positive irreversible dissipation.
 \end{rmk}
 
 \section{Treating constrains with the methods of Lagrange multipliers}
 
 Linear constraints can be added in the system by substituting a $\boldsymbol{Z}$ with a subspace. Nonlinear constrains can be handled by choosing appropriately the free energy or the dissipation potential. However sometimes it can be useful to treat the constrain reaction as an additional unknown of the system. This happen especially if it is appropriate to include constitutive relations depending on the reactions.
 
-\paragraph{Kinematics of constrain} Let $\boldsymbol{\Gamma}$ be a vector space. We consider the constrain $\mathcal{C}(z)=0$ where $\mathcal{C}\colon\boldsymbol{Z}\to\boldsymbol{\Gamma}^*$ is a subdifferentiable function. We notice that the constrain can be written as
-\[
-\dual{\mathcal{C}(z),\tilde\delta}=0\quad\text{for all $\tilde\delta\in\boldsymbol{\Gamma}$}.
-\]
+\paragraph{Kinematics of constrain} Let $\boldsymbol{K}$ be a convex subset of $\boldsymbol{Z}$. We consider the constrain $z\in\boldsymbol{K}$.
 
-\paragraph{Constrain reaction} In addiction to the internal and external actions, when we treat a constrain with the method of Lagrange multipliers we must add also the constrain reaction $\mathcal{R}\in\boldsymbol{Z}^*$. We make the assumption that the power expanded by the reaction on velocities compatible with the constrain.
+\paragraph{Constrain reaction} In addiction to the internal and external actions, when we treat a constrain with the method of Lagrange multipliers we must add also the constrain reaction $\mathcal{R}\in\boldsymbol{Z}^*$. Then the equilibrium condition can be written as
+\[
+\mathcal{W}=\mathcal{P}+\mathcal{R}.
+\]
+We make the assumption that the power expanded by the reaction vanish requiring that $\mathcal{R}\in N_{\boldsymbol{K}}(z)$. The constrain reaction is an additional descriptor of the system together with the kinematical descriptor $z$.
+
+\paragraph{Constitutive relations} In presence of Lagrange multipliers the constitutive relation for $\mathcal{W}$ can be formulated as
+\[
+\mathcal{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(\mathcal{R},z,\dot z).
+\]
+Here the free energy $\Psi$ is exactly as in the unconstrained case and the dissipation potential $\Phi$ is exactly as before but include a dependence on $\mathcal{R}$. The dissipation inequality is still valid in the following version.
+\begin{prop}
+Let $z\colon[0,T]\to\boldsymbol{Z}$ and $\mathcal{R}\colon[0,T]\to\boldsymbol{Z}^*$ satisfying
+\[
+z(t)\in\boldsymbol{K},\quad\mathcal{R}(t)\in N_{\boldsymbol{K}}(z(t))\quad\text{and}\quad\partial\Psi(z(t))+\partial_{\dot z}\Phi(\mathcal{R}(t),z(t),\dot z(t))\ni\mathcal{P}(t)+\mathcal{R}(t)
+\]
+for all $t\in[0,T]$. Let the dissipation rate be defined as $\mathscr{D}=\dual{\mathcal{W},\dot z}-\frac{d}{dt}\Psi(z)$. Then $\mathcal{D}\ge0$.
+\end{prop}
 
 \chapter{Tools from functional analysis}
 
