@@ -85,7 +85,7 @@
 \begin{document}
 
 \author{Bernardo Ardini [2146900]}
-\date{Padova, 5 febbraio 2026}
+\date{Padova, 14 marzo 2026}
 \title{\textbf{On localization phenomena in plasticity models}}
 
 \frontmatter
@@ -100,47 +100,51 @@
 
 \mainmatter
 
-\chapter*{Summary of what I already done and plan for what I would like to do}
-
-\section*{Introduction}
-
-The thesis should be concerned with the study of a strain localization in a plasticity model. To make the analysis more tractable it would be better if the localization is captured also by a small strain model. In the field of metal plasticity the necking is an example of strain localization. Since Von Mises plasticity with hardening at small strain does not exhibit bifurcation (uniqueness and stability are is guaranteed) then to detect the necking instability it is necessary to consider the geometric nonlinearity. Instead in materials whose yield strength depends on the pressure (for example granular materials), localization is evident also in the small strain regime (the formation of shear bands). This behavior is for example exhibited by the nonassociative Drucker--Prager model~\cite{bigoni-non-associative}, also at small strain and in presence of hardening. For that reason I decided to focus my attention to that model.
-
-\section*{What I have already done}
-
-Instead of adopting the usual formulation of the nonassociative Drucker--Prager model I reformulated it in an alternative way for the following two reasons
-\begin{itemize}
-\item[-] \emph{Mechanical reason}. The Drucker--Prager model is formulated by formally adopting the same framework used in metal plasticity to materials whose yield strength depend on pressure. The difference from metal plasticity is that volumetric plastic strains are allowed and the yield region is chosen in the space $\text{Sym}$ of all symmetric stress tensors instead of $\text{DevSym}$. This means that the deviatoric and volumetric plastic response are described as a unique plasticity mechanism. This is actually nonphysical since while the deviatoric plastic response is a friction mechanism (that increases with the pressure, a sort of internal Coulomb friction), the change in the volumetric plastic strain (the dilatancy) is due to a kinematical constrain (the grains must distance themselves from each other to be able to slide over each other). Since the Drucker--Prager model associative overestimates dilatancy the nonassociative behavior is introduced. This ad hoc modification is a clear sign that the deviatoric plastic response should be treated independently from the changes in the volumetric plastic strain instead.
-\item[-] \emph{Mathematical reason}. Non associative plasticity is difficult to be handled mathematically since it has a not evident variational structure~\cite{morafrancfort}.
-\end{itemize} 
-In the alternative model the volumetric plastic strain is kinematically constrained (for simplicity I have considered only the case in which it constrained to zero\footnote{Actually I started to study also the general case but I still finish.}, i.e., the material is non dilatant), a Lagrange multiplier (a sort of ``plastic pressure'' that in practice coincides with the macroscopic pressure) is introduced to impose that constrain, and the yield strength is made constitutively dependent on the microscopic pressure. To formulate the model I started from the framework of plastic strain gradient viscoplasticity of Gurtin and Anand (developed for metals) based on the principle of virtual powers and on macroforce and microforce balances.
-
-I have proved the existence of a global in time solution using the Rothe method (up to errors in the proof). First we need to solve the discrete in time problem. At each time step there is a nonlinear mixed elliptic (saddle point) problem to solve (it is mixed due to the presence of the constrain). It is solved by analogy with the linear mixed elliptic problem: first the constrained is solved, then knowing the constrained space we solve the leading elliptic problem, then the Lagrange multiplier is determined. The leading elliptic problem is solved using the Minty--Browder theorem (the minimization works as well but it fails when the material is dilatant because the potential structure is lost, for that reason I opted for the Minty--Browder theorem). Due to the pressure dependent yield strength the leading elliptic problem gives a pressure dependent solution. The existence of the pressure is obtained with the Schauder fixed point theorem. The need of compactness, necessary to apply the Schauder fixed point theorem, obliged us to add a further regularization term depending on the gradient of the macroscopic strain (in this way we have constructed a second gradient mechanical model~\cite{gurtin-fried}). Maybe without the second gradient regularization the solution could be found in $BD(\Omega)$ has happen in~\cite{daldessol09} but I decided to not investigate this possibility. To get the time continuous solution we need to pass to the vanishing time step limit. This is done by first obtaining a priori estimates on the kinematical variables and their rates and then weakly convergent subsequences are extracted. To handle the nonlinear dependence on the pressure in the limit passage, we establish the strong convergence of the pressure using the Aubin--Lions lemma. To get the a priori estimates on the rates I added both a macroscopic and a microscopic viscosity.
-
-Assuming further regularity on the constitutive relations I obtained local existence and uniqueness of solutions (again up to error in the proof). This is done locally recasting the problem as an ODE using the implicit function theorem and then proving the local existence, uniqueness and regularity in time using the Cauchy--Lipschitz--Picard theorem. This ensure that the global solution is unique and regular in time.
-
-
-\section*{What I would like to do}
-
-Since viscosity makes the solution unique the system does not have bifurcation. However we expect that for small viscosity the solution became strongly dependent on the problem data. In particular small perturbations of the data leads to a completely different localization pattern. For example if the shape of a cylindrical specimen in compression is not perfectly symmetric the shear bands that appear are not symmetric at all. In the vanishing viscosity limit the problems admits multiple solution and jumps in the time evolution.
-
-I would like to understand better the phenomenon of localization trying to obtain some qualitative or quantitative insight. Until now I have studied the stiffness operator in absence of viscosity (the Fréchet derivative of the residual functional that arise at each step in the Rothe discretization) and I have clues to claim that it tends to became singular at a certain stage of the time evolution if hardening is small enough, suggesting that the evolution experience a bifurcation or a jump. In Section~\ref{subsec:bifurcation} I have reported more considerations and details. In particular the computation reported there reveal how the dependence of the yield strength on the plastic pressure seems to make our problem more prone to instabilities then Von Mises plasticity where that dependence is not present. Anyway I have no other ideas how to make clearer that analysis. If it is useful I will try to obtain the existence of solutions in absence of viscosity. Since the solution probably has jumps we cannot prove the existence without some selection criteria. A possibility is to adopt the notion of energetic solution, but I would prefer to avoid it because it is nonphysical, being based on a global minimization at each time step. Moreover the saddle point structure of the problem complicates the situation. What I would prefer to do is to study the limit with vanishing viscosity, perhaps trying to understand and apply to this model the time rescaling procedure used in~\cite{daldessol09} and~\cite{mierosBV}. However, if is it is possible, I would like to keep a positive viscosity and 
-\begin{itemize}
-\item[-] study the sensitivity of the solution to perturbation of the data (in some sense to be understood),
-\item[-] make clear the fact that during localization there are some modes that evolves faster (the shear band that is quickly forming) and other modes that evolves slower (the distributed deformation), maybe one understand this looking at the spectrum of the stiffness operator and look the eigenspace associated to the smaller eigenvalue, or the kernel (maybe it is finite dimensional) of the stiffness operator without viscosity when it became singular.
-\end{itemize}
- 
-I would like also to confirm the above considerations by a numerical study of the problem using the finite element method. The proof of the existence theorem is close to the numerical scheme that would be used, so we have in part established the convergence of the numerical method. I would use the monolithic approach proposed in~\cite{panteghini-bardella} and to obviate the need of globally $C^1$ finite element to handle the second gradient I would adopt the mortar method (we use discontinuous Lagrange polynomial of order two and we impose weakly the continuity and the continuity of the gradient across the elements with Lagrange multipliers supported on the element edges representing tractions and torques exchanged between the elements)\footnote{I saw this method applied for the numerical treatment of Navier--Stokes-$\alpha\beta$ model of Gurtin and Fried but I cannot find the paper any more.}. If the viscosity is kept positive the problem could be solved with a standard Newton--Raphson procedure applying a time step size adaptivity procedure to slow down during the fast localization process. This should work until the viscosity is so small that the problem requires a too small time step to be solved.
+%\chapter*{Summary of what I already done and plan for what I would like to do}
+%
+%\section*{Introduction}
+%
+%The thesis should be concerned with the study of a strain localization in a plasticity model. To make the analysis more tractable it would be better if the localization is captured also by a small strain model. In the field of metal plasticity the necking is an example of strain localization. Since Von Mises plasticity with hardening at small strain does not exhibit bifurcation (uniqueness and stability are is guaranteed) then to detect the necking instability it is necessary to consider the geometric nonlinearity. Instead in materials whose yield strength depends on the pressure (for example granular materials), localization is evident also in the small strain regime (the formation of shear bands). This behavior is for example exhibited by the nonassociative Drucker--Prager model~\cite{bigoni-non-associative}, also at small strain and in presence of hardening. For that reason I decided to focus my attention to that model.
+%
+%\section*{What I have already done}
+%
+%Instead of adopting the usual formulation of the nonassociative Drucker--Prager model I reformulated it in an alternative way for the following two reasons
+%\begin{itemize}
+%\item[-] \emph{Mechanical reason}. The Drucker--Prager model is formulated by formally adopting the same framework used in metal plasticity to materials whose yield strength depend on pressure. The difference from metal plasticity is that volumetric plastic strains are allowed and the yield region is chosen in the space $\text{Sym}$ of all symmetric stress tensors instead of $\text{DevSym}$. This means that the deviatoric and volumetric plastic response are described as a unique plasticity mechanism. This is actually nonphysical since while the deviatoric plastic response is a friction mechanism (that increases with the pressure, a sort of internal Coulomb friction), the change in the volumetric plastic strain (the dilatancy) is due to a kinematical constrain (the grains must distance themselves from each other to be able to slide over each other). Since the Drucker--Prager model associative overestimates dilatancy the nonassociative behavior is introduced. This ad hoc modification is a clear sign that the deviatoric plastic response should be treated independently from the changes in the volumetric plastic strain instead.
+%\item[-] \emph{Mathematical reason}. Non associative plasticity is difficult to be handled mathematically since it has a not evident variational structure~\cite{morafrancfort}.
+%\end{itemize} 
+%In the alternative model the volumetric plastic strain is kinematically constrained (for simplicity I have considered only the case in which it constrained to zero\footnote{Actually I started to study also the general case but I still finish.}, i.e., the material is non dilatant), a Lagrange multiplier (a sort of ``plastic pressure'' that in practice coincides with the macroscopic pressure) is introduced to impose that constrain, and the yield strength is made constitutively dependent on the microscopic pressure. To formulate the model I started from the framework of plastic strain gradient viscoplasticity of Gurtin and Anand (developed for metals) based on the principle of virtual powers and on macroforce and microforce balances.
+%
+%I have proved the existence of a global in time solution using the Rothe method (up to errors in the proof). First we need to solve the discrete in time problem. At each time step there is a nonlinear mixed elliptic (saddle point) problem to solve (it is mixed due to the presence of the constrain). It is solved by analogy with the linear mixed elliptic problem: first the constrained is solved, then knowing the constrained space we solve the leading elliptic problem, then the Lagrange multiplier is determined. The leading elliptic problem is solved using the Minty--Browder theorem (the minimization works as well but it fails when the material is dilatant because the potential structure is lost, for that reason I opted for the Minty--Browder theorem). Due to the pressure dependent yield strength the leading elliptic problem gives a pressure dependent solution. The existence of the pressure is obtained with the Schauder fixed point theorem. The need of compactness, necessary to apply the Schauder fixed point theorem, obliged us to add a further regularization term depending on the gradient of the macroscopic strain (in this way we have constructed a second gradient mechanical model~\cite{gurtin-fried}). Maybe without the second gradient regularization the solution could be found in $BD(\Omega)$ has happen in~\cite{daldessol09} but I decided to not investigate this possibility. To get the time continuous solution we need to pass to the vanishing time step limit. This is done by first obtaining a priori estimates on the kinematical variables and their rates and then weakly convergent subsequences are extracted. To handle the nonlinear dependence on the pressure in the limit passage, we establish the strong convergence of the pressure using the Aubin--Lions lemma. To get the a priori estimates on the rates I added both a macroscopic and a microscopic viscosity.
+%
+%Assuming further regularity on the constitutive relations I obtained local existence and uniqueness of solutions (again up to error in the proof). This is done locally recasting the problem as an ODE using the implicit function theorem and then proving the local existence, uniqueness and regularity in time using the Cauchy--Lipschitz--Picard theorem. This ensure that the global solution is unique and regular in time.
+%
+%
+%\section*{What I would like to do}
+%
+%Since viscosity makes the solution unique the system does not have bifurcation. However we expect that for small viscosity the solution became strongly dependent on the problem data. In particular small perturbations of the data leads to a completely different localization pattern. For example if the shape of a cylindrical specimen in compression is not perfectly symmetric the shear bands that appear are not symmetric at all. In the vanishing viscosity limit the problems admits multiple solution and jumps in the time evolution.
+%
+%I would like to understand better the phenomenon of localization trying to obtain some qualitative or quantitative insight. Until now I have studied the stiffness operator in absence of viscosity (the Fréchet derivative of the residual functional that arise at each step in the Rothe discretization) and I have clues to claim that it tends to became singular at a certain stage of the time evolution if hardening is small enough, suggesting that the evolution experience a bifurcation or a jump. In Section~\ref{subsec:bifurcation} I have reported more considerations and details. In particular the computation reported there reveal how the dependence of the yield strength on the plastic pressure seems to make our problem more prone to instabilities then Von Mises plasticity where that dependence is not present. Anyway I have no other ideas how to make clearer that analysis. If it is useful I will try to obtain the existence of solutions in absence of viscosity. Since the solution probably has jumps we cannot prove the existence without some selection criteria. A possibility is to adopt the notion of energetic solution, but I would prefer to avoid it because it is nonphysical, being based on a global minimization at each time step. Moreover the saddle point structure of the problem complicates the situation. What I would prefer to do is to study the limit with vanishing viscosity, perhaps trying to understand and apply to this model the time rescaling procedure used in~\cite{daldessol09} and~\cite{mierosBV}. However, if is it is possible, I would like to keep a positive viscosity and 
+%\begin{itemize}
+%\item[-] study the sensitivity of the solution to perturbation of the data (in some sense to be understood),
+%\item[-] make clear the fact that during localization there are some modes that evolves faster (the shear band that is quickly forming) and other modes that evolves slower (the distributed deformation), maybe one understand this looking at the spectrum of the stiffness operator and look the eigenspace associated to the smaller eigenvalue, or the kernel (maybe it is finite dimensional) of the stiffness operator without viscosity when it became singular.
+%\end{itemize}
+% 
+%I would like also to confirm the above considerations by a numerical study of the problem using the finite element method. The proof of the existence theorem is close to the numerical scheme that would be used, so we have in part established the convergence of the numerical method. I would use the monolithic approach proposed in~\cite{panteghini-bardella} and to obviate the need of globally $C^1$ finite element to handle the second gradient I would adopt the mortar method (we use discontinuous Lagrange polynomial of order two and we impose weakly the continuity and the continuity of the gradient across the elements with Lagrange multipliers supported on the element edges representing tractions and torques exchanged between the elements)\footnote{I saw this method applied for the numerical treatment of Navier--Stokes-$\alpha\beta$ model of Gurtin and Fried but I cannot find the paper any more.}. If the viscosity is kept positive the problem could be solved with a standard Newton--Raphson procedure applying a time step size adaptivity procedure to slow down during the fast localization process. This should work until the viscosity is so small that the problem requires a too small time step to be solved.
 
 \part{Necking of a metallic cylindrical bar}
 
 \chapter{Small deformation model}
 \label{chap:small-neck}
 
+In this chapter we develop and analyze a small deformation model of a bar whose sections can only translate and change their size. In particular bending is not allowed. We split our discussion into three parts. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section is devoted to the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
+
 \section{Formulation}
 \label{sec:small-model-1d}
 
-\subsection{Motivation}
+\subsection{Motivation from the multidimensional kinematics}
+
+In this section we describe the kinematics of the bar from a multidimensional perspective. This will serve as a motivation for the development of the purely one dimensional model discussed in the forthcoming sections.
 
 Let $\Omega=(0,L)\times\Sigma$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ be the reference configuration of the cylindrical bar. We denote the generic point in $\Omega$ as $(x,y)$ with $x\in(0,L)$ and $y\in\Sigma$. We assume a macroscopic displacement of the form
 \[
@@ -214,7 +218,9 @@ are the polar and the polar second order moment of area.
 
 \subsection{Kinematics}
 
-Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$.
+We now develop a purely one dimensional model of the bar taking inspiration from the multidimensional kinematics.
+
+Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by the plastic distortion $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$ the elastic distortions.
 
 \subsection{Statics}
 
@@ -222,7 +228,7 @@ We denote with $\tilde v$ and $\tilde q$ the virtual rates of $u$ and $p$ respec
 \[
 \tilde{\mathscr W}=\int_0^L\zeta\tilde v_2'dx+\int_0^L\left(\sigma_1(\tilde v_1'-\tilde q)+\sigma_2(\tilde v_2+(d-1)^{-1}\tilde q)\right)dx+\int_0^L\tau\tilde qdx.
 \]
-The first integral describes a purely macroscopic response and it is introduced to gain regularity of $u_2$. Here $\zeta$ is the transversal stress. The second integral describes the elastic response that couples the macroscopic and the microscopic configurations. Here $\sigma_1$ is the longitudinal elastic stress and $\sigma_2$ the longitudinal elastic force. The last integral describes the microscopic response and $\tau$ is the microscopic force. The external longitudinal and transversal forces distributed along the length of the bar and the external longitudinal and transversal forces acting on the extremities of the bar are included choosing the external power
+The first integral describes a purely macroscopic response.. Here $\zeta$ is the transversal stress. The second integral describes the elastic response that couples the macroscopic and the microscopic configurations. Here $\sigma_1$ is the longitudinal elastic stress and $\sigma_2$ the longitudinal elastic force. The last integral describes the microscopic response and $\tau$ is the microscopic force. The external longitudinal and transversal forces distributed along the length of the bar and the external longitudinal and transversal forces acting on the extremities of the bar are included choosing the external power
 \[
 \tilde{\mathscr P}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
@@ -440,11 +446,16 @@ This implies $p=B^{-1}(F-Y)$. Assuming $(d-1)\kappa-\mu>0$ the sections constric
 
 \subsection{Traction with clamped end sections}
 
+\subsubsection*{Setup of the problem}
+
 Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $u_2(L,t)=u_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. We assume that $F(0)=0$ and that $F$ is monotonically increasing. By the same computations of Section~\ref{subsec:homogeneous-solution} we find the equation
 \begin{equation}
 \label{eqn:ode-u2}
 l^2\mu u_2''=\frac{(d-1)\kappa-\mu}{\kappa+\mu}F+\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}p+d^2\frac{\kappa\mu}{\kappa+\mu}u_2.
 \end{equation}
+
+\subsubsection*{Solution in the elastic range}
+
 In the elastic range $p=0$ everywhere in $(0,L)$. In this case a particular solution is given by
 \[
 x\mapsto-\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}F
@@ -454,20 +465,27 @@ and a solution of the homogeneous equation which is also symmetric with respect 
 x\mapsto\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right).
 \]
 Then taking into account the boundary conditions we find the solution
-\[
+\begin{equation}
+\label{eqn:elastic-solution}
 u_2=e_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F.
-\]
+\end{equation}
 When $(d-1)\kappa-\mu>0$ the sections constricts in traction. The middle section is the most affected by the constriction. The Mandel stress is the elastic range is given by
 \[
 m=\frac{d}{d-1}\frac{\mu}{\kappa+\mu}(F-d\kappa e_2)=\frac{d}{d-1}\frac{\mu}{\kappa+\mu}\left(1-\frac{(d-1)\kappa-\mu}{d\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)\right)F.
 \]
-Its maximum is reached in the middle section so we conclude that the Mandel stress reach yield strength here first. Then we claim that the region where there is a nonzero plastic distortion is an interval $(L/2-\epsilon,L/2+\epsilon)$ where $\epsilon\ge0$ is a function of time. Since the Mandel stress is positive we claim also that $p>0$ in that interval. We now focus on the half of the bar corresponding to interval $(0,L/2)$. On $(0,L/2-\epsilon)$ the solution is of the form
-\[
-\begin{cases}
-u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F+C_1\sinh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}x\right) \\
-p=0
-\end{cases}
-\]
+Its maximum is reached in the middle section so we conclude that the Mandel stress reach yield strength here first.
+
+\subsubsection*{Solution in the plastic range}
+
+From the above considerations we are let to seek for a solution where $p>0$ in the interval $(L/2-\epsilon,L/2+\epsilon)$ where $\epsilon\in[0,L/2]$ is a function of time.
+\begin{rmk}
+Since the solution is symmetric with respect to $x=L/2$ from now on we focus on the $(0,L/2)$ half of the bar only.
+\end{rmk}
+On $(0,L/2-\epsilon)$ the solution is given by $p=0$ and $u_2$ of the form
+\begin{equation}
+\label{eqn:epsilon-small-u2}
+u_2=\frac{(d-1)\kappa-\mu}{d^2\kappa\mu}\left(\frac{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{x-\frac{L}{2}}{l}\right)}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)F+C_1\sinh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}x\right)
+\end{equation}
 where $C_1\in\mathbb{R}$. On $(L/2-\epsilon,L/2)$ we have
 \[
 m-Bp=Y
@@ -476,53 +494,73 @@ m-Bp=Y
 \frac{d}{d-1}\frac{\mu}{\kappa+\mu}(F-d\kappa u_2-\frac{d\kappa}{d-1}p)-Bp=Y.
 \]
 Then we find
-\begin{equation}
+\begin{equation*}
 \label{eqn:p-as-function-of-y}
 p=\frac{\frac{d}{d-1}\frac{\mu}{\kappa+\mu}F-\frac{d^2}{d-1}\frac{\kappa\mu}{\kappa+\mu}u_2-Y}{\frac{d^2}{(d-1)^2}\frac{\mu\kappa}{\kappa+\mu}+B}.
-\end{equation}
-Substituting that identity into equation~\eqref{eqn:ode-u2} we have obtained a differential equation in $y$ of the form
+\end{equation*}
+Substituting that identity into equation~\eqref{eqn:ode-u2} we have obtain a differential equation in $y$ of the form
 \[
 y''=ay+b
 \]
-where $a$ and $b$ are two constants. A solution which is symmetric with respect to $x=L/2$ is of the form
-\[
+where $a$ and $b$ depends on time only. A solution which is symmetric with respect to $x=L/2$ is of the form
+\begin{equation}
+\label{eqn:epsilon-large-u2}
 y=-\frac{b}{a}+C_2\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right).
-\]
+\end{equation}
 \begin{rmk}
 Since the computations became to long to be done by hand we perform them with an automatic algebraic manipulator (the MATLAB Symbolic Math Toolbox). Since most of the resultant expressions are too long we do not report them.
 \end{rmk}
-We now show explicitly that there exists a solution $u_2\in C^2([0,L])$. To this aim we impose the continuity of $u_2$ and $u_2'$ at $x=L/2-\epsilon$ and solving a linear system we find the constants $C_1$ and $C_2$. We need only to find $\epsilon$. To determine it we consider the Mandel stress computed the elastic range at $x=L/2$. We call $F_Y$ the smallest value of $F$ for which that Mandel stress reach $Y$. For $F\le F_y$ we have $\epsilon=\eta(F)=0$. To determine $\epsilon$ when $F>F_Y$ we impose that $m(L/2-\epsilon)=Y$. Since the resultant equation cannot be solved analytically in $\epsilon$ we find $F$ as a smooth function $f=\colon[0,\epsilon_0)\to\mathbb{R}$ of $\epsilon$. Here
+We now look for a solution $u_2\in C^2([0,L])$. When $\epsilon=L/2$ the solution is simply given by
 \[
-\epsilon_0=\sup_{F\in[0,\infty)}\eta(F).
+u_2=\frac{b}{a}\left(\frac{\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right)}{\cosh\left(\sqrt{a}\frac{L}{2}\right)}-1\right)
 \]
-We notice that by continuity $F_Y=f(0)$. We find
+When $\epsilon\in(0,L/2)$ we consider~\eqref{eqn:epsilon-small-u2} on $(0,L/2-\epsilon)$ and~\eqref{eqn:epsilon-large-u2} on $(L/2-\epsilon,L/2)$ and we impose the continuity of $u_2$ and $u_2'$ at $x=L/2-\epsilon$. Solving the resultant linear system we find the constants $C_1$ and $C_2$.
+
+\subsubsection*{Determination of $\epsilon$}
+
+We are left with the determination of $\epsilon\in[0,L/2]$ as a function of time. To this aim we consider the Mandel stress computed the elastic range at $x=L/2$. We call $F_Y$ the value of $F$ for which that Mandel stress reach $Y$. We find
 \[
 F_Y=\frac{d-1}{d}\frac{k+\mu}{\mu}\left(-\frac{(d-1)\kappa-\mu}{d\mu}\left(\frac{1}{\cosh\left(d\sqrt{\frac{\kappa}{\kappa+\mu}}\frac{L}{2l}\right)}-1\right)+1\right)^{-1}Y.
 %=\frac{Y(\kappa + \mu)(d - 1)}{d\mu \left[ \frac{1}{d\mu} \left( \frac{1}{\cosh(Ld\sqrt{\kappa} / 2l\sqrt{\kappa + \mu})} - 1 \right)(\kappa + \mu - d\kappa) + 1 \right]}.
 \]
-After a meticulous analysis of the analytical expression of $f$ we find that $\epsilon_0>L/2$. This means that when the load reach the value $F=f(L/2)$ to the plastic distortion satisfies $p>0$ in the entire interval $(0,L)$. An explicit expression of $\epsilon_0$ is not available. To get further insight on the solution we look at the limit $l\to0^+$.
+For $F\le F_Y$ we have $\epsilon=0$. To determine $\epsilon$ when $F>F_Y$ we consider the equation $m(L/2-\epsilon)=Y$. That equation cannot be solved analytically in $\epsilon$. Instead we can find explicitly $F$ as a function $f=\colon[0,\epsilon_0)\to\mathbb{R}$ of $\epsilon$. Here $[0,\epsilon_0)$ is the maximal interval where $f$ is well defined. After a meticulous analysis of the analytical expression of $f$ we find that $\epsilon_0>L/2$. This means that when the load $F$ reach the value
+\[
+f(L/2)=\frac{d-1}{d}\frac{\kappa+\mu}{\mu}Y,
+\]
+the plastic distortion satisfies $p>0$ in the entire interval $(0,L)$. We conclude that
+\[
+\epsilon=\begin{cases}
+0 & \text{if $F\le F_Y$} \\
+f^{-1}(F) & \text{if $F_Y<F\le f(L/2)$} \\
+L/2 & \text{if $F>f(L/2)$}.
+\end{cases}
+\]
+
+\subsubsection*{Absence of necking}
+
+From the analytical expression one can see that for $F>f(L/2)$ the solution $u_2$ depends linearly on $F$. In particular as $F\to\infty$ we have that $u_2\to-\infty$ uniformly on all compact sets contained in $(0,L)$. We conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section seems to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
+
+\subsubsection*{The limit of thin bar}
+
+To get further insight on the solution we look at the limit $l\to0^+$.
 \begin{prop}
-In the limit $l\to0^+$ the solution $u_2$ that we have found converges at least pointwise on $(0,L)\times[0,T]$ to the homogeneous solution of Section~\ref{subsec:homogeneous-solution}. This convergence is also uniform on compact subsets of $(0,L)$. 
+In the limit $l\to0^+$ the solution $u_2$ that we have found converges pointwise on $(0,L)\times[0,T]$ to the homogeneous solution of Section~\ref{subsec:homogeneous-solution}. This convergence is also uniform on compact subsets of $(0,L)\times[0,T]$.
 \end{prop}
 \begin{proof}
 It is a direct computation.
 \end{proof}
-Further information on the solution can be obtained looking at particular values of the parameters. We fix $d=3$, $L=1$, $l=0.1$, $\kappa=100$, $\mu=100$, $B=0.1$, $Y=1$.
+This results confirm the absence of necking in the small deformation model. Indeed it says that a thin bar deforms almost uniformly. 
+
+\subsubsection*{Some plots}
+
+For completeness we report some plots illustrating the solution that we have found. We fix $d=3$, $L=1$, $l=0.1$, $\kappa=100$, $\mu=100$, $B=0.1$, $Y=1$.
 \begin{figure}[p]
+\centering
 \includegraphics[width=0.48\textwidth]{figures/epsilon2F.png}
-\hfill
-\includegraphics[width=0.48\textwidth]{figures/epsilon2u2endmiddle.png}
-\caption{The plot on the right show the function $f$. The plot on the right show the value of $u_2$ at $x=L/2$ (at the middle of the bar) and $x=L/100$ (near the end of the bar).}
+\caption{Graph of the function $f$.}
 \label{fig:epsilon2F}
 \end{figure}
-In Figure~\ref{fig:epsilon2F} on the left we reported the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. On the right we report as a function of $\epsilon$ the value of $u_2$ computed at $x=L/2$ and $x=L/100$ that means at the middle and near the end of the bar respectively. This last plot suggest that the shrinkage of the cross section has no limit and happens everywhere along the bar. In particular we have evidences for the following claim.
-\begin{clm}
-The solution $u_2$ converges to $-\infty$ uniformly on compact sets contained in $(0,L)$.
-\end{clm}
-\begin{rmk}
-From the information obtained so far, we conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section seems to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
-\end{rmk}
-For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar in the same situation. On the top there is the result obtained with a purely elastic bar while on the top the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
+In Figure~\ref{fig:epsilon2F} on the left we port the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. In Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar when $\epsilon=0.493$. On the top there is the result obtained with a purely elastic bar while on the bottom the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
 \begin{figure}[p]
 \centering
 \includegraphics[width=\textwidth]{figures/plotu2p.png}
@@ -538,9 +576,11 @@ For completeness in Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$
 
 \chapter{Large deformation model}
 
+As we showed in the previous chapter, a small strain model of a bar is not able to predict necking. This leads us to consider a geometrically exact model that allows large deformations.
+
 \section{Formulation}
 
-\subsection{Motivation}
+\subsection{Motivation form the multidimensional kinematics}
 
 Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
 \[
@@ -749,14 +789,7 @@ We notice that this power vanish on virtual rates that satisfy the constrain tha
 \[
 \tilde{\mathcal{P}}=\int_\Omega f\cdot\tilde vdx+\int_{\Gamma_N}h\cdot\tilde vdx.
 \]
-For simplicity we assume that no external torque is applied to the body and that there is no external action on the microscopic configuration. (Maybe these external actions could be added to describe better the boundary conditions imposed on the body.) 
-\begin{defi}[Principle of Virtual Powers]
-Equilibrium holds when $\tilde{\mathscr{W}}+\tilde{\mathscr{P}}=\tilde{\mathscr{R}}$ for all virtual rates.
-\end{defi}
-To get the local form of the equilibrium condition we apply the principle of virtual powers.
-\begin{rmk*}
-I reported the local form of the equilibrium in the case $K=0$ only. I will report the general case following~\cite{gurtin-fried}.
-\end{rmk*}
+For simplicity we assume that no external torque is applied to the body and that there is no external action on the microscopic configuration. These external actions could be added to describe more accurately the boundary conditions imposed on the body.
 \begin{lemma}
 The local form of the equilibrium condition is
 \begin{align*}
@@ -786,7 +819,7 @@ But by integration by parts
 \[
 \int_{\partial^{d-1}\Omega}\diver_P(P(Kn)^T\tilde v)dx=\int_{\partial^{d-2}\Omega}\{\!\!\{P(Kn)^T\tilde v\cdot\tau\}\!\!\}dx=\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\tau\}\!\!\}\cdot\tilde vdx.
 \]
-Here $\{\!\!\{\cdot\}\!\!\}$ denotes sum of its argument evaluated on both sides of $\partial^{d-2}\Omega$ and $\tau$ denotes the unit outer normal vector to $\partial^{d-2}\Omega$ and tangent to $\partial^{d-1}\Omega$. We have obtained
+Here $\{\!\!\{\cdot\}\!\!\}$ denotes sum of its argument evaluated on both sides of $\partial^{d-2}\Omega$ and $\tau$ denotes the unit normal vector to $\partial^{d-2}\Omega$ and outer tangent to $\partial^{d-1}\Omega$. We have obtained
 \begin{multline*}
 \int_\Omega\left(T:\grad\tilde v+K\threedots\grad^2\tilde v\right)dx=\\
 =-\int_\Omega\diver(T-\diver K)\cdot\tilde vdx+\int_{\partial^{d-1}\Omega}\left[(T-\diver K)n-\diver_P((Kn)P)\right]\cdot\tilde vdx+\\
@@ -803,11 +836,16 @@ Now the results follows from the fundamental lemma of the calculus of variations
 \subsection{Constitutive relations}
 \label{subsec:constitutive}
 
-We assume a constitutive relation for the free energy of the form
+We assume a constitutive relation for the free energy density of the form
 \[
 \psi=\frac{1}{2}\mathfrak{C}E_e:E_e+\frac{1}{2}\mathfrak{A}M\threedots M+\frac{1}{2}\mathfrak{B}\mathbb{U}_p\circ\mathbb{U}_p.
 \]
-with $\mathfrak{C}$, $\mathfrak{A}$ and $\mathfrak{B}$ a symmetric and positive definite linear operators on $\text{Sym}$, $\text{Lin}\otimes\mathbb{R}$ and $\text{DevPla}$ respectively. The macroscopic response is described by
+with $\mathfrak{C}$, $\mathfrak{A}$ and $\mathfrak{B}$ a symmetric and positive definite linear operators on $\text{Sym}$, $\text{Lin}\otimes\mathbb{R}$ and $\text{DevPla}$ respectively. Moreover we choose a dissipation potential density of the form
+\[
+\phi=\frac{1}{2}\mathfrak{D}\dot E:\dot E+\frac{1}{2}\mathfrak{E}\dot M\threedots\dot M+\frac{1}{2}\mathfrak{F}\dot{\mathbb{U}}_p\circ\dot{\mathbb{U}}_p+Y(p)G(\dot U_p).
+\]
+Here $\mathfrak{D}$, $\mathfrak{E}$, $\mathfrak{F}$ are symmetric and positive definite linear operators on $\text{Sym}$, $\text{Lin}\otimes\mathbb{R}$ and $\text{DevPla}$ respectively. Moreover $G\colon\text{DevSym}\to[0,\infty]$ is the convex and subdifferentiable plastic dissipation potential satisfying $G(0)=0$ and $Y\colon\mathbb{R}\to[0,\infty)$ is the pressure dependent yield strength.
+Consistently with these choices of the free energy density and of the dissipation potential density we impose the following constitutive relations. The macroscopic response is described by
 \[
 T=\mathfrak{D}\dot E\quad\text{and}\quad K=\mathfrak{A}M+\mathfrak{E}\dot M.
 \]
@@ -817,35 +855,35 @@ T_e=\mathfrak{C}E_e
 \]
 and the viscoplastic response by
 \[
-\mathbb{T}_p=\mathfrak{B}\mathbb{U}_p+\mathfrak{F}\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p)
+\mathbb{T}_p\in\mathfrak{B}\mathbb{U}_p+\mathfrak{F}\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p)
 \]
 where $\mathfrak{F}$ is a symmetric positive definite tensor on $\text{DevPla}$, $G\colon\text{DevSym}\to\mathbb{R}$ is the plastic dissipation potential satisfying $\partial_{\dot U_p}G(\dot U_p):\dot U_p\ge0$ and $Y\colon\mathbb{R}\to[0,\infty)$ is the pressure dependent yield strength.
 \begin{rmk}
 In the above expression we are viewing $Y(p)\partial_{\dot U_p}G(\dot U_p)\in\text{DevSym}$ as an element of $\text{DevPla}$ by considering $\text{DevSym}$ as a subspace of $\text{DevPla}$.
 \end{rmk}
-\begin{lemma}
-The constitutive relations satisfy the dissipation inequality.
-\end{lemma}
-\begin{proof}
-The rate of the free energy per unit volume is
-\[
-\dot\psi=\mathfrak{C}E_e:\dot E_e+\mathfrak{A}M\threedots\grad^2\dot u+\mathfrak{B}\mathbb{U}_p\circ\dot{\mathbb{U}}_p
-\]
-We notice that
-\[
-T_p:\dot U_p+K_p\threedots\grad\dot U_p=\mathbb{T}_p\circ\dot{\mathbb{U}}_p
-\]
-Then the internal power per unit volume is
-\begin{multline*}
-\mathfrak{D}\dot E:\dot E+\mathfrak{A}M\threedots\grad^2\dot u+\mathfrak{E}\grad^2\dot u\threedots\grad^2\dot u+\mathfrak{C}E_e:\dot E_e+\\
-+\mathfrak{B}\mathbb{U}_p\circ\dot{\mathbb{U}}_p+\mathfrak{F}\dot{\mathbb{U}}_p\circ\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p):\dot{U}_p.
-\end{multline*}
-Taking the difference we find that the dissipation rate per unit volume is
-\[
-\mathfrak{D}\dot E:\dot E+\mathfrak{F}\dot{\mathbb{U}}_p\circ\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p):\dot{U}_p\ge0.
-\]
-This concludes the proof.
-\end{proof}
+%\begin{lemma}
+%The constitutive relations satisfy the dissipation inequality.
+%\end{lemma}
+%\begin{proof}
+%The rate of the free energy per unit volume is
+%\[
+%\dot\psi=\mathfrak{C}E_e:\dot E_e+\mathfrak{A}M\threedots\grad^2\dot u+\mathfrak{B}\mathbb{U}_p\circ\dot{\mathbb{U}}_p
+%\]
+%We notice that
+%\[
+%T_p:\dot U_p+K_p\threedots\grad\dot U_p=\mathbb{T}_p\circ\dot{\mathbb{U}}_p
+%\]
+%Then the internal power per unit volume is
+%\begin{multline*}
+%\mathfrak{D}\dot E:\dot E+\mathfrak{A}M\threedots\grad^2\dot u+\mathfrak{E}\grad^2\dot u\threedots\grad^2\dot u+\mathfrak{C}E_e:\dot E_e+\\
+%+\mathfrak{B}\mathbb{U}_p\circ\dot{\mathbb{U}}_p+\mathfrak{F}\dot{\mathbb{U}}_p\circ\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p):\dot{U}_p.
+%\end{multline*}
+%Taking the difference we find that the dissipation rate per unit volume is
+%\[
+%\mathfrak{D}\dot E:\dot E+\mathfrak{F}\dot{\mathbb{U}}_p\circ\dot{\mathbb{U}}_p+Y(p)\partial_{\dot U_p}G(\dot U_p):\dot{U}_p\ge0.
+%\]
+%This concludes the proof.
+%\end{proof}
 
 \subsection{Refinements of the model}
 
