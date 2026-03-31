@@ -1,0 +1,11 @@
+\contentsline {section}{\tocsection {}{1}{Introduction}}{1}{}%
+\contentsline {section}{\tocsection {}{2}{The tensile test at small deformations}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Multidimensional kinematics}}{1}{}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{One dimensional kinematics}}{2}{}%
+\contentsline {section}{\tocsection {}{3}{The tensile test at large deformations}}{2}{}%
+\contentsline {section}{\tocsection {}{4}{Shear band localization in cohesive materials}}{2}{}%
+\contentsline {section}{\tocsection {Appendix}{A}{Modeling in continuum mechanics}}{2}{}%
+\contentsline {section}{\tocsection {Appendix}{B}{Tools from functional analysis}}{2}{}%
+\contentsline {subsection}{\tocsubsection {}{B.1}{Convex analysis}}{2}{}%
+\contentsline {section}{\tocsection {Appendix}{C}{Balanced-viscosity solutions}}{4}{}%
+\contentsline {section}{\tocsection {Appendix}{D}{Energetic solutions}}{5}{}%

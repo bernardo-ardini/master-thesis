@@ -70,6 +70,7 @@
       \field{journaltitle}{Material Instabilities in Elastic and Plastic Solids}
       \field{title}{Bifurcation and Instability of Non-Associative Elastoplastic Solids}
       \field{year}{2000}
+      \true{nocite}
     \endentry
     \entry{bigoni-thesis}{thesis}{}{}
       \name{author}{1}{}{%
@@ -466,6 +467,7 @@
       \field{labeltitlesource}{title}
       \field{title}{Quasistatic evolution in non-associative plasticity revisited}
       \field{year}{2017}
+      \true{nocite}
     \endentry
     \entry{non-smooth-thermomechanics}{book}{}{}
       \name{author}{1}{}{%
@@ -645,6 +647,7 @@
       \field{journaltitle}{Archive for Rational Mechanics and Analysis}
       \field{title}{Tractions, Balances, and Boundary Conditions for Nonsimple Materials with Application to Liquid Flow at Small-Length Scales}
       \field{year}{2006}
+      \true{nocite}
     \endentry
     \entry{han-reddy}{book}{}{}
       \name{author}{2}{}{%
@@ -878,6 +881,7 @@
       \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
       \field{title}{On the Finite Element implementation of higher-order gradient plasticity, with focus on theories based on plastic distortion incompatibility}
       \field{year}{2016}
+      \true{nocite}
     \endentry
     \entry{structural-geology}{book}{}{}
       \name{author}{2}{}{%
