@@ -166,18 +166,31 @@ are the polar and the polar second order moment of area.
 
 \subsection{Convex analysis}
 
+\begin{ex}
+Let $f(v)=\frac{1}{2}\norm{v}^2$. Then $f^*(\xi)=\frac{1}{2}\norm{\xi}^2$. Indeed
+\[
+\dual{\xi,v}-\frac{1}{2}\norm{v}^2\le\frac{2\norm{\xi}\norm{v}-\norm{v}^2}{2}\le\frac{\norm{\xi}^2}{2}.
+\]
+This implies $f^*(\xi)\le\frac{\norm{\xi}^2}{2}$. To get the opposite inequality, fix $\epsilon>0$ and let $v\in V$ such that $\norm{v}=\norm{\xi}$ and $\dual{\xi,v}\ge\norm{\xi}^2-\epsilon$. Then
+\[
+f^*(\xi)\ge\norm{\xi}^2-\epsilon-\frac{1}{2}\norm{\xi}^2\ge\frac{1}{2}\norm{\xi}^2-\epsilon.
+\]
+By arbitrariness of $\epsilon$ we conclude.
+\end{ex}
+
 Let $f$ and $g$ from $V$ to $(-\infty,\infty]$. Their inf-convolution $f\square g\colon V\to(-\infty,\infty]$ is
 \[
 f\square g(v)=\inf_{w\in V}(f(w)+g(v-w)).
 \]
-\begin{thm}
+\begin{prop}(inf-convolution duality formula)
+\label{prop:inf-convolution-duality-formula}
 Let $f$ and $g$ from $V$ to $(-\infty,\infty]$. Then
 \begin{itemize}
 \item[(i)] $(f\square g)^*=f^*+g^*$
 \item[(ii)] $\quad(f+g)^*\le f^*\square g^*$
 \item[(iii)] if there exists $v\in\dom f\cap\dom g$ and $f$ is continuous at $v$ then $(f+g)^*=f^*\square g^*$.
 \end{itemize}
-\end{thm}
+\end{prop}
 \begin{proof}
 \emph{Step 1.} It holds that
 \[
@@ -208,7 +221,7 @@ This proves (ii).
 \[
 A=\{(a,v)\in\mathbb{R}\times V\;|\;a\le\dual{\xi,v}-g(v)-c\}.
 \]
-Clearly $A$ is nonempty and convex. We show that $A$ and $\inter(\epi f)$ are disjoint. Indeed if by contradiction $(\alpha,v)\in A\cap\inter(\epi f)$ then
+Clearly $A$ is nonempty and convex. We show that $A$ and $\inter(\epi f)$ are disjoint. Indeed if by contradiction $(a,v)\in A\cap\inter(\epi f)$ then
 \[
 f(v)<a\le\dual{\xi,v}-g(v)-c
 \]
@@ -221,10 +234,10 @@ Then by Hahn--Banach theorem there exists $(\gamma,\zeta)\in\mathbb{R}\times V^*
 \label{eqn:inequality-hahn-banach}
 \gamma a+\dual{\zeta,v}\le\gamma b+\dual{\zeta,w}
 \end{equation}
-for all $(a,v)\in\inter(\epi f)$ and $(b,w)\in A$. If we fix $v=w\in\dom f\cap\dom g$, $b\in\mathbb{R}$ sufficiently small such that $(b,v)\in A$ and we let $a\to\infty$, we discover that $\gamma\le0$ necessarily. If $\gamma=0$ then inequality~\eqref{eqn:inequality-hahn-banach} and Hahn--Banach theorem imply that $\int(\dom f)$ and $\dom g$ are separated by an hyperplane. This in turn implies that $\dom f$ and $\dom g$ are disjoint. This is a contradiction so that $\beta<0$. In this case we set $\theta=|\beta|^{-1}f\zeta$ and from inequality~\eqref{eqn:inequality-hahn-banach} we get
+for all $(a,v)\in\inter(\epi f)$ and $(b,w)\in A$. If we fix $v=w\in\dom f\cap\dom g$, $b\in\mathbb{R}$ sufficiently small such that $(b,v)\in A$ and we let $a\to\infty$, we discover that $\gamma\le0$ necessarily. If $\gamma=0$ then inequality~\eqref{eqn:inequality-hahn-banach} and Hahn--Banach theorem imply that $\dom f$ and $\dom g$ are separated by a closed hyperplane. This in turn implies that $\inter(\dom f)$ and $\dom g$ are disjoint, but this contradicts the hypotheses so that $\beta<0$. In this case we set $\theta=|\beta|^{-1}f\zeta$ and from inequality~\eqref{eqn:inequality-hahn-banach} we get
 \[
 \begin{split}
-f^*(\theta)&=\sup_{v\in V}\left(\dual{\theta,v}-f(v)\right)=\\
+f^*(\theta)&=\sup\left\{\dual{\theta,v}-f(v)\;|\;v\in V\right\}=\\
 &=\sup\left\{\dual{\theta,v}-a\;|\;(a,v)\in\epi f\right\}\le\\
 &\le\inf\left\{\dual{\theta,v}-a\;|\;(a,v)\in A\right\}=\\
 &=c+\inf\{\dual{\theta-\xi,v}+g(v)\;|\;v\in V\}=c-g^*(\xi-\theta).
@@ -239,7 +252,7 @@ This concludes the proof.
 
 \begin{prop}[properties of positively 1-homogeneous convex functions]
 \label{prop:prop-pos-1-hom-convx}
-Let $f\colon\boldsymbol{V}\to(-\infty,\infty]$ be a proper, l.s.c., positively 1-homogeneous and convex function. Then
+Let $f\colon V\to(-\infty,\infty]$ be a proper, l.s.c., positively 1-homogeneous and convex function. Then
 \begin{itemize}
 \item[(i)] $f(0)=0$ and $f$ is subadditive
 \item[(ii)] for each $x\in\dom f$ it holds $\partial f(x)=\{\xi\in\partial f(0)\;|\;f(x)=\dual{\xi,x}\}$
@@ -257,9 +270,9 @@ By positively 1-homogeneity and convexity we have
 \]
 This proves (i).
 
-\emph{Step 2.} We prove that for all $\xi\in\boldsymbol{V}^*$ it holds that $f^*(\xi)\in\left\{0,\infty\right\}$. Indeed let $\xi\in\boldsymbol{V}^*$ such that $f^*(\xi)<\infty$. Then since $f$ is positively 1-homogeneous, it holds $f^*(\xi)=2^{-1}f^*(\xi)$ and this implies~$f^*(\xi)=0$.
+\emph{Step 2.} We prove that for all $\xi\in V^*$ it holds that $f^*(\xi)\in\left\{0,\infty\right\}$. Indeed let $\xi\in V^*$ such that $f^*(\xi)<\infty$. Then since $f$ is positively 1-homogeneous, it holds $f^*(\xi)=2^{-1}f^*(\xi)$ and this implies~$f^*(\xi)=0$.
 
-\emph{Step 3.} Let $v\in\dom f$ and $\xi\in\partial f(v)$. This is equivalent to the equality $f(v)+f^*(\xi)=\dual{\xi,v}$ which in turn implies that $f^*(\xi)<\infty$ and by previous step $f^*(\xi)=0$. Then $f(v)=\dual{\xi,v}$ and for all $w\in\boldsymbol{V}$
+\emph{Step 3.} Let $v\in\dom f$ and $\xi\in\partial f(v)$. This is equivalent to the equality $f(v)+f^*(\xi)=\dual{\xi,v}$ which in turn implies that $f^*(\xi)<\infty$ and by previous step $f^*(\xi)=0$. Then $f(v)=\dual{\xi,v}$ and for all $w\in V$
 \[
 f(w)\ge f(v)+\dual{\xi,w-v}=\dual{\xi,w}.
 \]
@@ -272,13 +285,13 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 
 \begin{equation}
 \label{eqn:bv-space}
-\text{$\boldsymbol{V}$ is a separable and reflexive Banach space}
+\text{$V$ is a separable and reflexive Banach space}
 \tag{S}
 \end{equation}
 
 \begin{equation}
 \label{eqn:bv-dissipation-1}
-\text{$\mathcal{R}$ and $\mathcal{V}$ from $\boldsymbol{V}$ into $[0,\infty)$ are continuous, convex and strictly positive in $\boldsymbol{V}\setminus\{0\}$}
+\text{$\mathcal{R}$ and $\mathcal{V}$ from $V$ into $[0,\infty)$ are continuous, convex and strictly positive in $V\setminus\{0\}$}
 \tag{D.1}
 \end{equation}
 From Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$.
@@ -287,21 +300,22 @@ From Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$.
 \text{$\mathcal{R}$ is positively 1-homogeneous}
 \tag{D.2}
 \end{equation}
-
 \begin{equation}
 \label{eqn:bv-dissipation-3}
 \parbox[c]{0.8\textwidth}{$\mathcal{V}(v)=\phi(\norm{v})$ with $\phi\in C^1([0,\infty))$ convex such that $\phi(0)=0$, $\phi'(0)=0$, $\phi(r)>0$ for $r>0$ and $\lim_{r\to\infty}\phi'(r)=\infty$}
 \tag{D.3}
 \end{equation}
+We can extend $\phi$ to an even $C^1(\mathbb{R})$ function.
+
 Let 
 \[
 \Phi(v)=\mathcal{R}(v)+\mathcal{V}(v)
 \]
 and for $\eta>0$
 \[
-\Phi_\eta(v)=\eta^{-1}\Phi_1(\eta v)=\mathcal{R}(v)+\eta^{-1}\mathcal{V}(\eta v).
+\Phi_\eta(v)=\eta^{-1}\Phi_1(\eta v)=\mathcal{R}(v)+\eta^{-1}\mathcal{V}(\eta v)=\mathcal{R}(v)+\mathcal{V}_\eta(v).
 \]
-It holds that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in\boldsymbol{V}$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
+It holds that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in V$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
 \[
 \Phi_0(v)=\lim_{\eta\to0^+}\Phi_\eta(v)=\inf_{\eta>0}\Phi_\eta(v)=\mathcal{R}(v).
 \]
@@ -311,7 +325,7 @@ Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} i
 
 \begin{equation}
 \label{eqn:bv-energy-1}
-\text{$\mathcal{E}\colon D\times[0,T]\to\mathbb{R}$ with $D\subset\boldsymbol{V}$}
+\text{$\mathcal{E}\colon D\times[0,T]\to\mathbb{R}$ with $D\subset V$}
 \tag{E.1}
 \end{equation}
 We set $\mathcal{E}(u,t)=\infty$ if $u\notin D$
@@ -322,7 +336,7 @@ We set $\mathcal{E}(u,t)=\infty$ if $u\notin D$
 \end{equation}
 \begin{equation}
 \label{eqn:bv-energy-3}
-\parbox[c]{0.8\textwidth}{regularity property of $\mathcal{E}$, I will find a simplified version of the properties stated in the article}
+\parbox[c]{0.8\textwidth}{regularity property of $\mathcal{E}$, I will find a simplified version of the properties stated in the article. For the moment I assume that $\mathcal{E}(u,t)=\Psi(u)+\mathcal{F}(t)$ with $\Psi$ Fréchet differentiable and coercive and $\mathcal{F}\in C^1([0,T],V^*)$}
 %\parbox[c]{0.8\textwidth}{for all $u\in D$ the map $t\mapsto\mathcal{E}(u,t)$ is differentiable on $[0,T]$, for all $t\in[0,T]$ and $E>0$ the map $u\mapsto\partial_t\mathcal{E}$ is u.s.c. on $D_E$ and there exists a constant $C_E$ such that $\mathcal{E}(u,t)\le C_E(\mathcal{R}(u)+\mathcal{E}(u,t))$ for all $t\in[0,T]$ and $u\in D$.}
 \tag{E.3}
 \end{equation}
@@ -347,10 +361,76 @@ It holds that $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
 \emph{Step 2.} By previous step $\text{Var}_\mathcal{R}([0,T],V)\le C\,\text{Var}([0,T],V)$. This completes the proof.
 \end{proof}
 
+By the inf-convolution duality formula
+\begin{equation}
+\label{eqn:dual-dissipation}
+\Phi_\epsilon^*(\xi)=\left(\mathcal{R}+\mathcal{V}_\eta\right)^*(\xi)=\inf_{\zeta\in V}\left(\mathcal{R}^*(\zeta)+\mathcal{V}_\eta^*(\xi-\zeta)\right)=\eta^{-1}\inf_{\zeta\in K}\mathcal{V}^*(\xi-\zeta)=\eta^{-1}\min_{\zeta\in K}\mathcal{V}^*(\xi-\zeta).
+\end{equation}
+Last equality holds true because, since $K$ is closed and convex, it is also weakly closed, $\mathcal{V}$ is convex and coercive, then the infimum is actually a minimum. Now $\mathcal{V}^*(\xi)=\phi^*(\norm{\xi})$. \begin{lemma}
+The function $\phi^*$ satisfies $\phi^*(0)=0$, $(\phi^*)'(0)=0$ and is monotone.
+\end{lemma}
+\begin{proof}
+Let $r=\rho(\gamma)$ the solution to $\gamma-\phi'(\rho(\gamma))=0$. Clearly $\rho\in C^1(\mathbb{R})$ and $\rho(0)=0$. Then $\phi^*(\gamma)=\gamma\rho(\gamma)-\phi(\rho(\gamma))$. Now $\phi^*(0)=-\phi(0)=0$ and $(\phi^*)'(0)=-\phi'(0)=0$.
+\end{proof}
+Using that lemma and~\eqref{eqn:dual-dissipation}
+\begin{equation}
+\label{eqn:dual-dissipation-1}
+\Phi_\epsilon^*(\xi)=\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta}).
+\end{equation}
+
 The dissipation contact potential $\mathfrak{p}\colon V\times V^*\to[0,\infty)$ is
 \[
-\mathfrak{p}(v,\xi)=\inf_{\epsilon>0}\left(\Phi_\epsilon(v)+\Phi_\epsilon^*(\xi)\right).
+\mathfrak{p}(v,\xi)=\inf_{\eta>0}\left(\Phi_\eta(v)+\Phi_\eta^*(\xi)\right)=\inf_{\eta>0}\eta^{-1}\left(\Phi(\eta v)+\Phi^*(\xi)\right).
 \]
+By~\eqref{eqn:dual-dissipation-1}
+\[
+\begin{split}
+\mathfrak{p}(v,\xi)&=\inf_{\eta>0}\left(\mathcal{R}(v)+\eta^{-1}\phi(\eta\norm{v})+\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta})\right)=\\
+&=\mathcal{R}(v)+\inf_{\eta>0}\left[\eta^{-1}\min_{\zeta\in K}\left(\phi(\eta\norm{v})+\phi^*(\norm{\xi-\zeta})\right)\right]=\\
+&=\mathcal{R}(v)+\min_{\zeta\in K}\inf_{\eta>0}\frac{\phi(\eta\norm{v})+\phi^*(\norm{\xi-\zeta})}{\eta}
+\end{split}
+\]
+where last equality holds because the minimum point does not depends on $\eta$. But for all $r$ and $\gamma$ in $\mathbb{R}$
+\[
+\inf_{\eta>0}\frac{\phi(\eta r)+\phi^*(\gamma)}{\eta}=\gamma r.
+\]
+Indeed by Young--Fenchel inequality
+\[
+\frac{\phi(\eta r)+\phi^*(\gamma)}{\eta}\ge\gamma r
+\]
+and the identity holds for $\eta$ such that $\gamma=\phi'(\eta r)$. Then
+\begin{equation}
+\label{eqn:contact-dissipation-potantial-split}
+\mathfrak{p}(v,\xi)=\mathcal{R}(v)+\norm{v}\min_{\zeta\in K}\norm{\xi-\zeta}.
+\end{equation}
+
+\begin{ex}
+Let $V=L^2(\Omega)$ with $\Omega\subset\mathbb{R}^d$ open and bounded. Let
+\[
+\mathcal{R}(v)=\int_\Omega|v|dx\quad\text{and}\quad\mathcal{V}(v)=\frac{1}{2}\int_\Omega|v|^2dx.
+\]
+They satisfy the assumptions~(D). In particular the continuity of $\mathcal{R}$ follows from H\"older inequality
+\[
+|\mathcal{R}(v)-\mathcal{R}(w)|\le\int_\Omega\left||v|-|w|\right|dx\le\int_\Omega|v-w|dx\le C\norm{v-w}_2.
+\]
+It holds that $K$ is the closed unit ball in $L^\infty(\Omega)$. Indeed if $\xi\in V^*=L^2(\Omega)$ satisfy $\norm{\xi}_\infty\le1$ then
+\[
+\mathcal{R}^*(\xi)=\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega(|\xi|-1)|v|dx\le0
+\]
+and $\mathcal{R}^*(\xi)\ge0$ trivially. If $\norm{\xi}_\infty>1$ then there exists $\epsilon>0$ and $w\in L^1(\Omega)$ such that $\dual{\xi,w}\ge1+\epsilon$. Since $L^2(\Omega)$ is dense in $L^1(\Omega)$ then for all $\delta>0$ there exist $v\in L^2(\Omega)$ such that $\norm{w-v}\le\delta$. Then for all $\lambda>0$
+\[
+\mathcal{R}^*(\xi)\ge\dual{\xi,\lambda v}-\norm{\lambda v}_1\ge\lambda\left(\dual{\xi,w}-\norm{w}_1-\delta(1+\norm{\xi})\right)\ge\lambda\left(\epsilon-\delta(1+\norm{\xi})\right).
+\]
+Choosing $\delta$ such that $\epsilon-\delta(1+\norm{\xi})>0$ and letting $\lambda\to\infty$ we get $\mathcal{R}(\xi)=\infty$. Since $\mathcal{V}^*=\frac{1}{2}\norm{\cdot}_2^2$ and by~\eqref{eqn:dual-dissipation}
+\[
+\Phi_\epsilon^*(\xi)=\frac{1}{2\eta}\min_{\zeta\in K}\norm{\xi-\zeta}_2^2=\frac{1}{2\eta}\int_\Omega\min_{|\zeta|\le1}|\xi-\zeta|^2dx.
+\]
+By~\eqref{eqn:contact-dissipation-potantial-split} it follows
+\[
+\mathfrak{p}(v,\xi)=\norm{v}_1+\norm{v}_2\min_{\zeta\in K}\norm{\xi-\zeta}_2.
+\]
+\end{ex}
+
 
 \section{Energetic solutions}
 
