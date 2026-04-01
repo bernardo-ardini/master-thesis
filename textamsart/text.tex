@@ -166,9 +166,10 @@ are the polar and the polar second order moment of area.
 
 \subsection{Nonlinear analysis}
 
-\begin{thm}
-Let $V$ a Banach space and let $f\in C^1(V)$ and $K\subset V$ compact. Then $f$ is Lipchitz continuous on $K$.
-\end{thm}
+\begin{prop}
+\label{prop:Lipschitz-c1-compact}
+Let $V$ a Banach space and let $f\in C^1(V)$ and $K\subset V$ compact. Then $f$ is Lipschitz continuous on $K$.
+\end{prop}
 \begin{proof}
 By contradiction let $u_n$ and $v_n$ two sequences in $K$ such that
 \[
@@ -176,11 +177,11 @@ By contradiction let $u_n$ and $v_n$ two sequences in $K$ such that
 \]
 By compactness of $K$ up to extracting subsequences we can assume that $u_n\to u$ and $v_n\to v$. If $u\neq v$ then
 \[
-\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\to\frac{|F(u)-F(v)|}{\norm{u-v}}\infty
+\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\to\frac{|F(u)-F(v)|}{\norm{u-v}}<\infty
 \]
 which is a contradiction. If $u=v$ then
 \[
-\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}=\frac{|\dual{DF(u),u_n-v_n}+o(\norm{u_n-v_n})|}{\norm{u_n-v_n}}\le\norm{DF(u)}+o(1)\to\norm{DF(u)}\le\infty
+\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}=\frac{|\dual{DF(u),u_n-v_n}+o(\norm{u_n-v_n})|}{\norm{u_n-v_n}}\le\norm{DF(u)}+o(1)\to\norm{DF(u)}<\infty
 \]
 which is a contradiction.
 \end{proof}
@@ -302,6 +303,56 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 \emph{Step 4}. It holds that $\xi\in K$ if and only if $f^*(\xi)=f(0)+f^*(\xi)=\dual{\xi,0}=0$. This proves that $f^*=\iota_K$. Since $f$ is l.s.c. then $f=f^**=\iota_K^*=\sigma_K$. This establishes (iii).
 \end{proof}
 
+\subsection{Bochner spaces}
+
+\begin{defi}
+\label{defi:ac-bv}
+Let $V$ be a Banach space. We say that $u\colon[0,T]\to V$ is absolutely continuous and we write $u\in AC([0,T],V)$ if there exists $m\in L^1((0,T),(0,\infty))$ such that
+\[
+\norm{u(t)-u(s)}\le\int_0^Tm(r)dr\quad\text{for all $0\le s<t\le T$.}
+\]
+Given $u\colon[0,T]\to V$ and $0\le a<b\le T$ we define the total variation on $[a,b]$
+\[
+\text{Var}(u,[a,b])=\sup\left\{\sum_{k=1}^N\norm{u(t_k)-u(t_{k-1})}\;\middle|\;\substack{N\in\mathbb{N}\\[0.5em]a=t_0<\dots<t_N=b}\right\}.
+\]
+We say that $u$ has bounded variation and we write $u\in BV([0,T],V)$ if $\text{Var}(u,[0,T])<\infty$.
+\end{defi}
+
+\begin{prop}
+\label{prop:ac-w}
+Let $V$ be a Banach space. Then $W^{1,1}((0,T),V)\subset AC([0,T],V)$. If $V$ is separable and reflexive the equality holds.
+\end{prop}
+\begin{proof}
+Let $u\in W^{1,1}((0,T),V)$. Then
+\[
+\norm{u(t)-u(s)}=\left\lVert\int_s^t\dot u(r)dr\right\rVert\le\int_s^t\norm{\dot u(r)}dr.
+\]
+This proves that $u\in AC([0,T],V)$ with $m=\norm{\dot u}$.
+
+Now suppose that $V$ is reflexive. We have that
+\[
+\left\lVert\frac{u(t+h)-u(t)}{h}\right\rVert\le\frac{1}{h}\int_t^{t+h}m(r)dr.
+\]
+By the Lebesgue differentiation theorem the left hand side is bounded as $h\to 0$ for a.e.\ $t\in(0,T)$. Then for each $h_n\to 0$, up to extracting a subsequence,
+\[
+\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{for some $v\in V$}.
+\]
+We prove that $v$ is common to each sequence. Since $V^*$ is separable and reflexive then there exists $\xi_i$ dense in $V^*$. Now for each $i$ the map $t\mapsto\dual{\xi_i,u(t)}$ is $AC([0,T])$. Then for a.e. $t\in(0,T)$
+\begin{equation}
+\label{eqn:convergence-test-derivivative-ac}
+\lim_{h\to0}\left\langle\xi_i,\frac{u(t+h)-u(t)}{h}\right\rangle\quad\text{exists for all $i$.}
+\end{equation}
+Then if $h_n\to0$ and $k_n\to 0$ are such that
+\[
+\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{and}\quad\frac{u(t+k_n)-u(t)}{k_n}\rightharpoonup w
+\]
+from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v-w}=0$ for all $i$. This implies $v=w$. Up to now we have proved that there exists $v\colon(0,T)\to V$ such that
+\[
+\frac{u(t+h)-u(t)}{h}\rightharpoonup v(t)\quad\text{for a.e. $t\in(0,T)$}.
+\]
+\textbf{Now one should prove that this convergence is actually strong. This will show automatically that $u\in W^{1,1}((0,T),V)$.}
+\end{proof}
+
 \section{Balanced-viscosity solutions}
 
 \begin{equation}
@@ -384,14 +435,23 @@ It holds that $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
 
 \begin{prop}
 Let $u\in AC([0,T],V)$. Then $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$ and
-\[
+\begin{equation}
+\label{eqn:chain-rule}
 \frac{d}{dt}\mathcal{E}(u(t),t)=\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}+\dual{\dot{\mathcal{F}}(t),u(t)}\quad\text{for a.e. $t\in(0,T)$}.
-\]
+\end{equation}
 \end{prop}
 \begin{proof}
-\emph{Step 1.} Since $u$ is continuous then $u([0,T])$ is compact. Indeed let $u_n=u(t_n)$ be a sequence in $u([0,T])$. Then up to a subsequence $t_n\to t$ and by continuity $u_n=u(t_n)\to u(t)$.
+\emph{Step 1.} Since $u$ is continuous then $K=u([0,T])$ is compact. Indeed let $u_n=u(t_n)$ be a sequence in $K$. Then up to a subsequence $t_n\to t$ and by continuity $u_n=u(t_n)\to u(t)$.
 
-\emph{Step 2.} Since $\mathcal{E}\in C^1(V\times[0,T])$ then by Weierstrass theorem $\mathcal{E}$ and $\partial_t\mathcal{E}$ is bounded 
+\emph{Step 2.} Since $\mathcal{E}\in C^1(V\times[0,T])$ then by Proposition~\ref{prop:Lipschitz-c1-compact} it is Lipschitz in $K\times[0,T]$. Let $L>0$ be the Lipschitz constant.
+
+\emph{Step 3.} Let $0\le s<t\le T$ and $m\in L^1((0,T),(0,\infty))$ as in Definition~\ref{defi:ac-bv}. Then
+\[
+|\mathcal{E}(u(t),t)-\mathcal{E}(u(s),s)|\le L\left(\norm{u(t)-u(s)}+|t-s|\right)\le L\int_s^t\left(m(r)+r\right)dr.
+\]
+This proves that $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$.
+
+\emph{Step 4.} By Proposition~\ref{prop:ac-w} it follows that $u$ is a.e.\ differentiable in $(0,T)$. This implies formula~\eqref{eqn:chain-rule}.
 \end{proof}
 
 By the inf-convolution duality formula
@@ -462,6 +522,22 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 \[
 \mathfrak{p}(v,\xi)=\norm{v}_1+\norm{v}_2\min_{\zeta\in K}\norm{\xi-\zeta}_2.
 \]
+
+Doubly nonlinear equation
+\begin{equation}
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\epsilon(\dot u(t))\ni0.
+\end{equation}
+\begin{prop}
+Let $u_0\in V$. Then there exists $u\in\text{AC}([0,T],V)$ such that $u(0)=u_0$ and
+\[
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\epsilon(\dot u(t))\ni0\quad\text{for a.e. $t\in(0,T)$}.
+\]
+Moreover the identity
+\[
+\mathcal{E}(u(t),t)=\mathcal{E}(u(s),s)+\int_s^t\dual{\dot{\mathcal{F}}(r),u(r)}dr-\int_s^t\left(\Phi_\epsilon(\dot u(r))+\Phi_\epsilon^*(-\partial_u\mathcal{E}(u(r),r)\right)dr
+\]
+holds for every $0\le s t\le T$.
+\end{prop}
 \end{ex}
 
 
@@ -822,7 +898,7 @@ Let $\boldsymbol{Z}$ be a reflexive and separable Banach space. Let $\mathcal{A}
 \[
 \frac{\dual{\mathcal{A}z,z}}{\norm{z}_{\boldsymbol Z}}\to\infty\quad\text{as $\norm{z}_{\boldsymbol{Z}}\to\infty$}.
 \]
-Let $\mathcal{R}\colon\boldsymbol{Z}\to\mathbb{R}\cup\{\infty\}$ be convex, proper, l.s.c., 1-homogeneous and Lipchitz continuous on its domain. Let $\mathcal{F}\in H^1((0,T),\boldsymbol{Z}^*)$ such that $\mathcal{F}(0)=0$. Then there exists a unique $z\in\text{AC}([0,T],\boldsymbol{Z})$ such that for almost every $t\in(0,T)$
+Let $\mathcal{R}\colon\boldsymbol{Z}\to\mathbb{R}\cup\{\infty\}$ be convex, proper, l.s.c., 1-homogeneous and Lipschitz continuous on its domain. Let $\mathcal{F}\in H^1((0,T),\boldsymbol{Z}^*)$ such that $\mathcal{F}(0)=0$. Then there exists a unique $z\in\text{AC}([0,T],\boldsymbol{Z})$ such that for almost every $t\in(0,T)$
 \[
 \dual{\mathcal{A}z(t),w-\dot z(t)}+\mathcal{R}(w)-\mathcal{R}(\dot z(t))\ge\dual{\mathscr{F}(t),w-\dot z(t)}\quad\text{for all $w\in\boldsymbol{Z}$}.
 \]
