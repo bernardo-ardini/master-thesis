@@ -164,6 +164,27 @@ are the polar and the polar second order moment of area.
 
 \section{Tools from functional analysis}
 
+\subsection{Nonlinear analysis}
+
+\begin{thm}
+Let $V$ a Banach space and let $f\in C^1(V)$ and $K\subset V$ compact. Then $f$ is Lipchitz continuous on $K$.
+\end{thm}
+\begin{proof}
+By contradiction let $u_n$ and $v_n$ two sequences in $K$ such that
+\[
+\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\ge n.
+\]
+By compactness of $K$ up to extracting subsequences we can assume that $u_n\to u$ and $v_n\to v$. If $u\neq v$ then
+\[
+\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\to\frac{|F(u)-F(v)|}{\norm{u-v}}\infty
+\]
+which is a contradiction. If $u=v$ then
+\[
+\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}=\frac{|\dual{DF(u),u_n-v_n}+o(\norm{u_n-v_n})|}{\norm{u_n-v_n}}\le\norm{DF(u)}+o(1)\to\norm{DF(u)}\le\infty
+\]
+which is a contradiction.
+\end{proof}
+
 \subsection{Convex analysis}
 
 \begin{ex}
@@ -359,6 +380,18 @@ It holds that $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
 \textbf{My proof is wrong, but in the case $V=L^2(\Omega)$ with $\Omega$ bounded and $\mathcal{R}=\norm{\cdot}_1$ for example the result is trivially true.}
 
 \emph{Step 2.} By previous step $\text{Var}_\mathcal{R}([0,T],V)\le C\,\text{Var}([0,T],V)$. This completes the proof.
+\end{proof}
+
+\begin{prop}
+Let $u\in AC([0,T],V)$. Then $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$ and
+\[
+\frac{d}{dt}\mathcal{E}(u(t),t)=\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}+\dual{\dot{\mathcal{F}}(t),u(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\]
+\end{prop}
+\begin{proof}
+\emph{Step 1.} Since $u$ is continuous then $u([0,T])$ is compact. Indeed let $u_n=u(t_n)$ be a sequence in $u([0,T])$. Then up to a subsequence $t_n\to t$ and by continuity $u_n=u(t_n)\to u(t)$.
+
+\emph{Step 2.} Since $\mathcal{E}\in C^1(V\times[0,T])$ then by Weierstrass theorem $\mathcal{E}$ and $\partial_t\mathcal{E}$ is bounded 
 \end{proof}
 
 By the inf-convolution duality formula
