@@ -72,7 +72,7 @@
 
 \tableofcontents
 
-\section{Introduction}
+\section{Introduction and notation}
 
 \section{The tensile test at small deformations}
 
@@ -163,6 +163,41 @@ are the polar and the polar second order moment of area.
 \section{Modeling in continuum mechanics}
 
 \section{Tools from functional analysis}
+
+\subsection{Other results}
+
+\begin{prop}(Gronwall inequality)
+Let $z\in L^\infty((0,T))$. Let $C\in\mathbb{R}$ and $\alpha$, $\beta$ in $L^1((0,T),[0,\infty))$ such that
+\[
+y(t)\le C+\int_0^t\left(\alpha(s)y(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
+\]
+Then
+\[
+z(t)\le e^{\int_0^t\alpha(s)ds}\left(C+\int_0^t\beta(s)e^{-\int_0^s\alpha(r)dr}\right)\quad\text{for a.e. $t\in(0,T)$}.
+\]
+\end{prop}
+\begin{proof}
+Let
+\[
+Z(t)=C+\int_0^t\left(\alpha(s)z(s)+\beta(s)\right)ds
+\]
+so that $z(t)\le Z(t)$. Clearly $Z\in\text{AC}([0,T])$. It holds that
+\[
+\dot Z(t)=\alpha(t)z(t)+\beta(t)\le\alpha Z(t)+\beta(t)\quad\text{for a.e. $t\in(0,T)$}.
+\]
+Multiplying by $e^{-\int_0^t\alpha(s)ds}$ one gets
+\[
+\frac{d}{dt}\left(Z(t)e^{-\int_0^t\alpha(s)ds}\right)\le\beta(t)e^{-\int_0^t\alpha(s)ds}
+\]
+and integrating on $(0,t)$
+\[
+Z(t)e^{-\int_0^t\alpha(s)ds}\le C+\int_0^t\beta(s)e^{-\int_0^s\alpha(r)dr}ds
+\]
+Then
+\[
+z(t)\le Z(t)\le e^{\int_0^t\alpha(s)ds}\left(C+\int_0^t\beta(s)e^{-\int_0^s\alpha(r)dr}\right)\quad\text{for a.e. $t\in(0,T)$}.
+\]
+\end{proof}
 
 \subsection{Nonlinear analysis}
 
@@ -355,63 +390,101 @@ from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v
 
 \section{Balanced-viscosity solutions}
 
+\subsection{Introduction}
+Let
 \begin{equation}
 \label{eqn:bv-space}
-\text{$V$ is a separable and reflexive Banach space}
-\tag{S}
+\text{$V$ a separable and reflexive Banach space}.
+\tag{$V$}
 \end{equation}
+Consider an evolution $u\colon[0,T]\to V$ and the doubly nonlinear equation for the evolution
+\begin{equation}
+\label{eqn:doubly-nonlinear}
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi(\dot u(t))\ni0\quad\text{for $t\in(0,T)$}.
+\end{equation}
+Here $\mathcal{E}$ is the energy and $\Phi$ is the dissipation potential. In application usually $\mathcal{E}(u,t)=\Psi(u)-\dual{\mathcal F(t),u}$ where $\Psi$ is the free energy and $\mathcal{F}$ is the external action. For a given $\eta>0$ consider the time-rescaled evolution $u\colon(0,\eta^{-1}T)\to V$ and the time-rescaled equation
+\begin{equation}
+\label{eqn:doubly-nonlinear-eta}
+\partial_u\mathcal{E}(u(t),\eta t)+\partial\Phi(\dot u(t))\ni0\quad\text{for $t\in(0,\eta^{-1}T)$}.
+\end{equation}
+For $\eta\to0$ this describe the situation in which the external actions are mush slower with respect to the characteristic relaxation time of the system. Equation~\eqref{eqn:doubly-nonlinear-eta} can be written as
+\begin{equation}
+\label{eqn:doubly-nonlinear-rescaled}
+\partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for $t\in(0,T)$}
+\end{equation}
+where $u_\eta(t)=u(\eta^{-1}t)$ and $\Phi_\eta(v)=\eta^{-1}\Phi(\eta v)$.
 
+\subsection{Assumptions}
+
+The energy $\mathcal{E}$ is supposed to satisfy the following assumptions.
+\begin{equation}
+\label{eqn:energy-regularity}
+\parbox[c]{0.8\textwidth}{$\mathcal{E}\in C^1(V\times[0,T])$}
+\tag{$\mathcal{E}$.1}
+\end{equation}
+\begin{equation}
+\label{eqn:energy-coercivity}
+\parbox[c]{0.8\textwidth}{$\mathcal{E}(\cdot,t)$ has compact sublevels for all $t\in[0,T]$}
+\tag{$\mathcal{E}$.2}
+\end{equation}
+\begin{equation}
+\label{eqn:power-control}
+\parbox[c]{0.8\textwidth}{there exists $C>0$ such that $|\partial_t\mathcal{E}(u,t)|\le C(1+\mathcal{E}(u,t))$ for all $u\in V$ and $t\in[0,T]$}
+\tag{$\mathcal{E}$.3}
+\end{equation}
+The dissipation potential is defined by
+\[
+\Phi(v)=\mathcal{R}(v)+\mathcal{V}(v)
+\]
+and for $\eta>0$ its rescaled version is
+\[
+\Phi_\eta(v)=\eta^{-1}\Phi_1(\eta v)=\mathcal{R}(v)+\eta^{-1}\mathcal{V}(\eta v)=\mathcal{R}(v)+\mathcal{V}_\eta(v).
+\]
+Here $\mathcal{R}$ is a rate-independent dissipation potential and $\mathcal{V}$ is a rate-dependent dissipation potential that models viscosity. It is assumed that $\mathcal{R}$ and $\mathcal{V}$ satisfy the following assumptions.
 \begin{equation}
 \label{eqn:bv-dissipation-1}
-\text{$\mathcal{R}$ and $\mathcal{V}$ from $V$ into $[0,\infty)$ are continuous, convex and strictly positive in $V\setminus\{0\}$}
-\tag{D.1}
+\parbox[c]{0.8\textwidth}{$\mathcal{R}$ and $\mathcal{V}$ from $V$ into $[0,\infty)$ are continuous, convex and strictly positive in $V\setminus\{0\}$}
+\tag{$\Phi$.1}
 \end{equation}
 From Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$.
 \begin{equation}
 \label{eqn:bv-dissipation-2}
-\text{$\mathcal{R}$ is positively 1-homogeneous}
-\tag{D.2}
+\parbox[c]{0.8\textwidth}{$\mathcal{R}$ is positively 1-homogeneous}
+\tag{$\Phi$.2}
 \end{equation}
 \begin{equation}
 \label{eqn:bv-dissipation-3}
 \parbox[c]{0.8\textwidth}{$\mathcal{V}(v)=\phi(\norm{v})$ with $\phi\in C^1([0,\infty))$ convex such that $\phi(0)=0$, $\phi'(0)=0$, $\phi(r)>0$ for $r>0$ and $\lim_{r\to\infty}\phi'(r)=\infty$}
-\tag{D.3}
+\tag{$\Phi$.3}
 \end{equation}
 We can extend $\phi$ to an even $C^1(\mathbb{R})$ function.
 
-Let 
-\[
-\Phi(v)=\mathcal{R}(v)+\mathcal{V}(v)
-\]
-and for $\eta>0$
-\[
-\Phi_\eta(v)=\eta^{-1}\Phi_1(\eta v)=\mathcal{R}(v)+\eta^{-1}\mathcal{V}(\eta v)=\mathcal{R}(v)+\mathcal{V}_\eta(v).
-\]
-It holds that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in V$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
+\subsection{Preliminary results regarding the dissipation potential}
+
+Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in V$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
 \[
 \Phi_0(v)=\lim_{\eta\to0^+}\Phi_\eta(v)=\inf_{\eta>0}\Phi_\eta(v)=\mathcal{R}(v).
 \]
 Last inequality holds true since $\phi(0)=0$ and $\phi'(0)=0$.
 
-Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} it follows that $\mathcal{R}=\sigma_K$ and $\mathcal{R}^*=\iota_K$.
+Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} it follows that $\mathcal{R}=\sigma_K$ and $\mathcal{R}^*=\iota_K$. It simply to check that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. It is possible to obtain a more explicit representation formula for $\Phi^*$. By the inf-convolution duality formula
+\begin{equation}
+\label{eqn:dual-dissipation}
+\Phi_\eta^*(\xi)=\left(\mathcal{R}+\mathcal{V}_\eta\right)^*(\xi)=\inf_{\zeta\in V}\left(\mathcal{R}^*(\zeta)+\mathcal{V}_\eta^*(\xi-\zeta)\right)=\eta^{-1}\inf_{\zeta\in K}\mathcal{V}^*(\xi-\zeta)=\eta^{-1}\min_{\zeta\in K}\mathcal{V}^*(\xi-\zeta).
+\end{equation}
+Last equality holds true because, since $K$ is closed and convex, it is also weakly closed, $\mathcal{V}$ is convex and coercive, then the infimum is actually a minimum. Now $\mathcal{V}^*(\xi)=\phi^*(\norm{\xi})$. \begin{lemma}
+The function $\phi^*$ satisfies $\phi^*(0)=0$, $(\phi^*)'(0)=0$ and is monotone.
+\end{lemma}
+\begin{proof}
+Let $r=\rho(\gamma)$ the solution to $\gamma-\phi'(\rho(\gamma))=0$. Clearly $\rho\in C^1(\mathbb{R})$ and $\rho(0)=0$. Then $\phi^*(\gamma)=\gamma\rho(\gamma)-\phi(\rho(\gamma))$. Now $\phi^*(0)=-\phi(0)=0$ and $(\phi^*)'(0)=-\phi'(0)=0$.
+\end{proof}
+Using that lemma and~\eqref{eqn:dual-dissipation}
+\begin{equation}
+\label{eqn:dual-dissipation-1}
+\Phi_\eta^*(\xi)=\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta}).
+\end{equation}
 
-\begin{equation}
-\label{eqn:bv-energy-1}
-\text{$\mathcal{E}\colon D\times[0,T]\to\mathbb{R}$ with $D\subset V$}
-\tag{E.1}
-\end{equation}
-We set $\mathcal{E}(u,t)=\infty$ if $u\notin D$
-\begin{equation}
-\label{eqn:bv-energy-2}
-\parbox[c]{0.8\textwidth}{$\mathcal{G}(u)=\mathcal{R}(u)+\sup_{t\in[0,T]}\mathcal{E}(u,t)$ has compact sublevels $D_E=\{u\in D\;|\;\mathcal{G}(u)\le E\}$ for all $E>0$}
-\tag{E.2}
-\end{equation}
-\begin{equation}
-\label{eqn:bv-energy-3}
-\parbox[c]{0.8\textwidth}{regularity property of $\mathcal{E}$, I will find a simplified version of the properties stated in the article. For the moment I assume that $\mathcal{E}(u,t)=\Psi(u)+\mathcal{F}(t)$ with $\Psi$ Fréchet differentiable and coercive and $\mathcal{F}\in C^1([0,T],V^*)$}
-%\parbox[c]{0.8\textwidth}{for all $u\in D$ the map $t\mapsto\mathcal{E}(u,t)$ is differentiable on $[0,T]$, for all $t\in[0,T]$ and $E>0$ the map $u\mapsto\partial_t\mathcal{E}$ is u.s.c. on $D_E$ and there exists a constant $C_E$ such that $\mathcal{E}(u,t)\le C_E(\mathcal{R}(u)+\mathcal{E}(u,t))$ for all $t\in[0,T]$ and $u\in D$.}
-\tag{E.3}
-\end{equation}
+\subsection{Non so se questa cosa serve a qualcosa}
 
 Let $\mathcal{R}\colon V\to[0,\infty)$ satisfying~\eqref{eqn:bv-dissipation-1} and~\eqref{eqn:bv-dissipation-2}. We say that a map $u\colon[0,T]\to V$ is $\text{AC}_\mathcal{R}([0,T],V)$ if there exists $m\in L^1((0,T),[0,\infty))$ such that
 \[
@@ -419,7 +492,7 @@ Let $\mathcal{R}\colon V\to[0,\infty)$ satisfying~\eqref{eqn:bv-dissipation-1} a
 \]
 Given a map $u\colon[0,T]\to V$ we define the total variation on $[a,b]\subset[0,T]$ as
 \[
-\text{Var}_\mathcal{R}(u,[a,b])=\sup\left\{\sum_{k=1}^N\mathcal{R}(u(t_k-t_{k-1}))\;\middle|\;\substack{N\in\mathbb{N}\\[0.5em]a=t_0<\dots<t_N=b}\right\}.
+\text{Var}_\mathcal{R}(u,[a,b])=\sup\left\{\sum_{k=1}^N\mathcal{R}(u(t_k))-\mathcal{R}(u(t_{k-1}))\;\middle|\;\substack{N\in\mathbb{N}\\[0.5em]a=t_0<\dots<t_N=b}\right\}.
 \]
 We say that $u\in\text{BV}_\mathcal{R}([0,T],V)$ if $\text{Var}_\mathcal{R}(u,[0,T])<\infty$. When $\mathcal{R}=\norm{\cdot}$ we omit the subscript.
 \begin{lemma}
@@ -433,11 +506,13 @@ It holds that $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
 \emph{Step 2.} By previous step $\text{Var}_\mathcal{R}([0,T],V)\le C\,\text{Var}([0,T],V)$. This completes the proof.
 \end{proof}
 
+\subsection{A chain-rule formula for the energy}
+
 \begin{prop}
 Let $u\in AC([0,T],V)$. Then $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$ and
 \begin{equation}
 \label{eqn:chain-rule}
-\frac{d}{dt}\mathcal{E}(u(t),t)=\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}+\dual{\dot{\mathcal{F}}(t),u(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\frac{d}{dt}\mathcal{E}(u(t),t)=\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}+\partial_t\mathcal{E}(u(t),t)\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation}
 \end{prop}
 \begin{proof}
@@ -454,22 +529,37 @@ This proves that $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T
 \emph{Step 4.} By Proposition~\ref{prop:ac-w} it follows that $u$ is a.e.\ differentiable in $(0,T)$. This implies formula~\eqref{eqn:chain-rule}.
 \end{proof}
 
-By the inf-convolution duality formula
+\subsection{Existence results in presence of positive viscosity}
+
+Doubly nonlinear equation
 \begin{equation}
-\label{eqn:dual-dissipation}
-\Phi_\epsilon^*(\xi)=\left(\mathcal{R}+\mathcal{V}_\eta\right)^*(\xi)=\inf_{\zeta\in V}\left(\mathcal{R}^*(\zeta)+\mathcal{V}_\eta^*(\xi-\zeta)\right)=\eta^{-1}\inf_{\zeta\in K}\mathcal{V}^*(\xi-\zeta)=\eta^{-1}\min_{\zeta\in K}\mathcal{V}^*(\xi-\zeta).
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\eta(\dot u(t))\ni0.
 \end{equation}
-Last equality holds true because, since $K$ is closed and convex, it is also weakly closed, $\mathcal{V}$ is convex and coercive, then the infimum is actually a minimum. Now $\mathcal{V}^*(\xi)=\phi^*(\norm{\xi})$. \begin{lemma}
-The function $\phi^*$ satisfies $\phi^*(0)=0$, $(\phi^*)'(0)=0$ and is monotone.
-\end{lemma}
+\begin{prop}
+Let $u_0\in V$. Then there exists $u\in\text{AC}([0,T],V)$ such that $u(0)=u_0$ and
+\[
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\eta(\dot u(t))\ni0\quad\text{for a.e. $t\in(0,T)$}.
+\]
+Moreover the identity
+\begin{equation}
+\label{eqn:energy-identity}
+\mathcal{E}(u(t),t)+\int_s^t\left(\Phi_\eta(\dot u(r))+\Phi_\eta^*(-\partial_u\mathcal{E}(u(r),r)\right)dr=\mathcal{E}(u(s),s)+\int_s^t\partial_t\mathcal{E}(u(t),t)dr
+\end{equation}
+holds for every $0\le s<t\le T$.
+\end{prop}
 \begin{proof}
-Let $r=\rho(\gamma)$ the solution to $\gamma-\phi'(\rho(\gamma))=0$. Clearly $\rho\in C^1(\mathbb{R})$ and $\rho(0)=0$. Then $\phi^*(\gamma)=\gamma\rho(\gamma)-\phi(\rho(\gamma))$. Now $\phi^*(0)=-\phi(0)=0$ and $(\phi^*)'(0)=-\phi'(0)=0$.
+I still have to report the proof of existence. We prove the identity~\eqref{eqn:energy-identity}. By the properties of subdifferentials
+\[
+\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u(t),t))=-\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\]
+By~\eqref{eqn:chain-rule} we have
+\[
+\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u(t),t))=-\frac{d}{dt}\mathcal{E}(u(t),t)+\partial_t\mathcal{E}(u(t),t)\quad\text{for a.e. $t\in(0,T)$}.
+\]
+Integrating this identity in $(s,t)$ we get the thesis.
 \end{proof}
-Using that lemma and~\eqref{eqn:dual-dissipation}
-\begin{equation}
-\label{eqn:dual-dissipation-1}
-\Phi_\epsilon^*(\xi)=\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta}).
-\end{equation}
+
+\subsection{Contact dissipation potential}
 
 The dissipation contact potential $\mathfrak{p}\colon V\times V^*\to[0,\infty)$ is
 \[
@@ -497,7 +587,52 @@ and the identity holds for $\eta$ such that $\gamma=\phi'(\eta r)$. Then
 \mathfrak{p}(v,\xi)=\mathcal{R}(v)+\norm{v}\min_{\zeta\in K}\norm{\xi-\zeta}.
 \end{equation}
 
-\begin{ex}
+\subsection{Parametrized balanced-viscosity solutions}
+
+Let $u_\eta\in\text{AC}([0,T],V)$ be the solution to the doubly nonlinear equation
+\begin{equation*}
+\partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for $t\in(0,T)$}
+\end{equation*}
+Let
+\[
+\xi_\eta(t)=-\partial_u\mathcal{E}(u_\eta(t),t)\quad\text{and}\quad p_\eta(t)=-\partial_t\mathcal{E}(u_\eta(t),t).
+\]
+The identity~\eqref{eqn:energy-identity} implies
+\begin{equation}
+\label{eqn:energy-inequality}
+\mathcal{E}(u_\eta(t),t)+\int_s^t\mathfrak{p}(\dot u_\eta(t),\xi_\eta(t))dr\le\mathcal{E}(u_\eta(s),s)+\int_s^t\partial_t\mathcal{E}(u_\eta(t),t)dr
+\end{equation}
+for all $0\le s<t\le T$.
+\begin{lemma}
+\label{lemma:dissipation-bound}
+There exists a constant $C>0$ such that
+\[
+\int_0^T\mathfrak{p}(\dot u_\eta(t),\xi_\eta(t))dt\le C\quad\text{for all $\eta>0$}.
+\]
+\end{lemma}
+\begin{proof}
+Since $\mathfrak{p}\ge0$ by~\eqref{eqn:power-control} then inequality~\eqref{eqn:energy-inequality} implies
+\[
+\mathcal{E}(u_\eta(t),t)\le\mathcal{E}(u_0,0)+\int_0^t\partial_t\mathcal{E}(u(s),s)ds\le\mathcal{E}(u_0,0)+C\int_0^t(1+\mathcal{E}(u_\eta(s),s))ds.
+\]
+By~\eqref{eqn:power-control} and Gronwall inequality $-1\le\mathcal{E}(u_\eta(t),t)\le C_1$ for all $t\in[0,T]$ and $\eta>0$. Then~\eqref{eqn:energy-inequality} implies
+\[
+\int_0^T\mathfrak{p}(\dot u_\eta(t),-\partial_u\mathcal{E}(u_\eta(t),t))dt\le1+\mathcal{E}(u_0,0)+CT(1+C_1).
+\]
+This concludes the proof.
+\end{proof}
+Let $\mathbf{s}_\eta\colon[0,T]\to[0,\mathbf{S}_\eta]$ defined by
+\[
+\mathbf{s}_\eta(t)=t+\int_0^t\mathfrak{p}(\dot u_\eta(s),-\partial_t\mathcal{E}(u_\eta(s),s))ds\quad\text{and}\quad\mathbf{S}_\eta=\mathbf{s}_\eta(T).
+\]
+Let also
+\[
+\mathbf{t}_\eta=\mathbf{s}_\eta^{-1}\colon[0,\mathbf{S}_\eta]\to[0,T]\quad\text{and}\quad\mathbf{u}_\eta=u_\eta(\mathbf{t}_\eta)\colon[0,\mathbf{S}_\eta]\to V.
+\]
+
+
+\subsection{An example}
+
 Let $V=L^2(\Omega)$ with $\Omega\subset\mathbb{R}^d$ open and bounded. Let
 \[
 \mathcal{R}(v)=\int_\Omega|v|dx\quad\text{and}\quad\mathcal{V}(v)=\frac{1}{2}\int_\Omega|v|^2dx.
@@ -522,24 +657,6 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 \[
 \mathfrak{p}(v,\xi)=\norm{v}_1+\norm{v}_2\min_{\zeta\in K}\norm{\xi-\zeta}_2.
 \]
-
-Doubly nonlinear equation
-\begin{equation}
-\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\epsilon(\dot u(t))\ni0.
-\end{equation}
-\begin{prop}
-Let $u_0\in V$. Then there exists $u\in\text{AC}([0,T],V)$ such that $u(0)=u_0$ and
-\[
-\partial_u\mathcal{E}(u(t),t)+\partial\Phi_\epsilon(\dot u(t))\ni0\quad\text{for a.e. $t\in(0,T)$}.
-\]
-Moreover the identity
-\[
-\mathcal{E}(u(t),t)=\mathcal{E}(u(s),s)+\int_s^t\dual{\dot{\mathcal{F}}(r),u(r)}dr-\int_s^t\left(\Phi_\epsilon(\dot u(r))+\Phi_\epsilon^*(-\partial_u\mathcal{E}(u(r),r)\right)dr
-\]
-holds for every $0\le s t\le T$.
-\end{prop}
-\end{ex}
-
 
 \section{Energetic solutions}
 
