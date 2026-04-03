@@ -65,10 +65,10 @@
 
 \date{30 March 2026}
 
-\maketitle
-
 \begin{abstract}
 \end{abstract}
+
+\maketitle
 
 \tableofcontents
 
@@ -638,72 +638,112 @@ and the identity holds for $\eta$ such that $\gamma=\phi'(\eta r)$. Then
 \mathfrak{p}(v,\xi)=\mathcal{R}(v)+\norm{v}\min_{\zeta\in K}\norm{\xi-\zeta}.
 \end{equation}
 
+Let $\mathfrak{f}\colon V\times V\times[0,T]\to[0,\infty)$ defined by
+\begin{equation}
+\mathfrak{f}(u,v,t)=\mathfrak{p}(v,-\partial_u\mathcal{E}(u,t))=\mathcal{R}(v)+\mathfrak{e}(u,t)\norm{v}
+\end{equation}
+where $\mathfrak{e}\colon V\times[0,T]\to[0,\infty)$ is defined by
+\[
+\mathfrak{e}(u,t)=\min_{\zeta\in K}\norm{\partial_u\mathcal{E}(u,t)+\zeta}.
+\]
+Notice that $\mathfrak{e}(u,t)=0$ if and only if $-\partial_u\mathcal{E}(u,t)\in K$.
+
 \subsection{Parametrized balanced-viscosity solutions}
 
 Let $u_\eta\in\text{AC}([0,T],V)$ be the solution to the doubly nonlinear equation
 \begin{equation*}
 \partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for $t\in(0,T)$}
 \end{equation*}
-Let
-\begin{equation*}
-\xi_\eta(t)=-\partial_u\mathcal{E}(u_\eta(t),t)\quad\text{and}\quad \gamma_\eta(t)=-\partial_t\mathcal{E}(u_\eta(t),t).
-\end{equation*}
 The identity~\eqref{eqn:energy-identity} implies
 \begin{equation}
 \label{eqn:energy-inequality}
-\mathcal{E}(u_\eta(t),t)+\int_s^t\mathfrak{p}(\dot u_\eta(t),\xi_\eta(t))dr\le\mathcal{E}(u_\eta(s),s)+\int_s^t\partial_t\mathcal{E}(u_\eta(t),t)dr
+\mathcal{E}(u_\eta(t),t)+\int_s^t\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dr\le\mathcal{E}(u_\eta(s),s)+\int_s^t\partial_t\mathcal{E}(u_\eta(t),t)dr
 \end{equation}
 for all $0\le s<t\le T$.
 \begin{lemma}
 \label{lemma:dissipation-bound}
 There exists a constant $C>0$ such that
 \begin{equation*}
-\int_0^T\mathfrak{p}(\dot u_\eta(t),\xi_\eta(t))dt\le C\quad\text{for all $\eta>0$}.
+\int_0^T\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dt\le C\quad\text{for all $\eta>0$}.
 \end{equation*}
 \end{lemma}
 \begin{proof}
-Since $\mathfrak{p}\ge0$ by~\eqref{eqn:power-control} then inequality~\eqref{eqn:energy-inequality} implies
+Since $\mathfrak{f}\ge0$ by~\eqref{eqn:power-control} then inequality~\eqref{eqn:energy-inequality} implies
 \begin{equation*}
 \mathcal{E}(u_\eta(t),t)\le\mathcal{E}(u_0,0)+\int_0^t\partial_t\mathcal{E}(u(s),s)ds\le\mathcal{E}(u_0,0)+C\int_0^t(1+\mathcal{E}(u_\eta(s),s))ds.
 \end{equation*}
 By~\eqref{eqn:power-control} and Gronwall inequality $-1\le\mathcal{E}(u_\eta(t),t)\le C_1$ for all $t\in[0,T]$ and $\eta>0$. Then~\eqref{eqn:energy-inequality} implies
 \begin{equation*}
-\int_0^T\mathfrak{p}(\dot u_\eta(t),-\partial_u\mathcal{E}(u_\eta(t),t))dt\le1+\mathcal{E}(u_0,0)+CT(1+C_1).
+\int_0^T\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dt\le1+\mathcal{E}(u_0,0)+CT(1+C_1).
 \end{equation*}
 This concludes the proof.
 \end{proof}
-Let $\boldsymbol{s}_\eta\colon[0,T]\to[0,\boldsymbol{S}_\eta]$ defined by
+Let $\boldsymbol{s}_\eta\colon[0,T]\to[0,S_\eta]$ defined by
 \begin{equation}
 \label{eqn:energy-arc-lenght}
-\boldsymbol{s}_\eta(t)=t+\int_0^t\mathfrak{p}(\dot u_\eta(s),-\partial_t\mathcal{E}(u_\eta(s),s))ds\quad\text{and}\quad\boldsymbol{S}_\eta=\boldsymbol{s}_\eta(T).
+\boldsymbol{s}_\eta(t)=t+\int_0^t\mathfrak{f}(u_\eta(s),\dot u_\eta(s),s)ds\quad\text{and}\quad S_\eta=\boldsymbol{s}_\eta(T).
 \end{equation}
 Let also
 \begin{equation*}
-\boldsymbol{t}_\eta=\boldsymbol{s}_\eta^{-1}\colon[0,\boldsymbol{S}_\eta]\to[0,T],\quad\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)\colon[0,\boldsymbol{S}_\eta]\to V
+\boldsymbol{t}_\eta=\boldsymbol{s}_\eta^{-1}\colon[0,S_\eta]\to[0,T]\quad\text{and}\quad\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)\colon[0,S_\eta]\to V.
 \end{equation*}
-and
+To write the time-rescaled energy identity we introduce the map $\mathfrak{P}_\eta\colon(0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\infty]$ defined by
 \begin{equation*}
-\boldsymbol{\gamma}_\eta=\gamma_\eta(\boldsymbol{t}_\eta)\colon[0,\boldsymbol{S}_\eta]\to\mathbb{R},\quad\boldsymbol{\xi}_\eta=\xi_\eta(\boldsymbol{t}_\eta)\colon[0,\boldsymbol{S}_\eta]\to V^*.
+\mathfrak{P}_\eta(a,v;\gamma,\xi)=a\Phi_\eta(a^{-1}v)+a\Phi_\eta^*(\xi)+a\gamma
 \end{equation*}
-To write the time-rescaled energy identity we introduce the map $\mathfrak{P}_\eta\colon(0,\infty)\times V\times\mathbb{R}\times V^*\to\mathbb{R}$ defined by
-\begin{equation*}
-\mathfrak{P}_\eta(a,v;\gamma,\xi)=a\Phi_\eta(a^{-1}v)+a\Phi_\eta^*(\xi)+a\gamma.
-\end{equation*}
+and $\mathfrak{F}_\eta\colon[0,T]\times V\times[0,\infty]\times V\to[0,\infty]$ defined by
+\[
+\mathfrak{F}_\eta(t,u;a,v)=\mathfrak{P}_\eta(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t))
+\]
 Then~\eqref{eqn:energy-identity} becomes
 \begin{equation*}
-\mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{P}_\eta(\dot{\boldsymbol{t}}_\eta(r),\dot{\boldsymbol{u}}_\eta(r);\boldsymbol{\gamma}_\eta(r),\boldsymbol{\xi}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le\boldsymbol{S}_\eta$}.
+\mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{F}_\eta(\boldsymbol{t}_\eta(r),\boldsymbol{u}_\eta(r);\dot{\boldsymbol{t}}_\eta(r),\dot{\boldsymbol{u}}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le S_\eta$}.
 \end{equation*}
 Identity~\eqref{eqn:energy-arc-lenght} implies
 \begin{equation*}
-1=\dot{\boldsymbol{t}}_\eta+\mathfrak{p}(\dot{\boldsymbol{u}}_\eta,\boldsymbol{\xi}_\eta)\quad\text{a.e. in $(0,T)$}.
+1=\dot{\boldsymbol{t}}_\eta(s)+\mathfrak{p}(\boldsymbol{u}_\eta(s),\dot{\boldsymbol{u}}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for a.e.\ $s\in(0,S_\eta)$}.
 \end{equation*}
-Now let $\mathfrak{P}_\eta\colon[0,\infty)\times V\times\mathbb{R}\times V^*\to\mathbb{R}$ defined by
+Now let $\mathfrak{P}\colon[0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\infty]$ defined by
 \begin{equation*}
 \mathfrak{P}(a,v;\gamma,\xi)=\begin{cases}
 \mathcal{R}(v)+\iota_K(\xi)+a\gamma & \text{if $a>0$} \\
 \mathfrak{p}(v,\xi) & \text{if $a=0$}.
 \end{cases}
 \end{equation*}
+and $\mathfrak{F}\colon[0,T]\times V\times[0,\infty)\times V\to[0,\infty]$ defined by
+\[
+\mathfrak{F}(t,v;a,u)=\mathfrak{P}(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t)).
+\]
+\begin{defi}
+We say that a pair $(\boldsymbol{u},\boldsymbol{t})\colon[0,S]\to V\times[0,T]$ is an admissible parametrized curve if
+\begin{itemize}
+\item[(i)] $\boldsymbol{t}$ is non decreasing and absolutely continuous, $\boldsymbol{u}\in\text{AC}_\mathcal{R}([0,S],V)$ and $\sup_{t\in[0,S]}\boldsymbol{u}(s)<\infty$
+\item[(ii)] $\boldsymbol{u}$ locally absolutely continuous (with respect to $\norm{\cdot}$) in the open set
+\[
+G=\{s\in[0,S]\;|\;\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))>0\}=\{s\in[0,S]\;|\;-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\notin K\}
+\]
+\item[(iii)] the estimate
+\[
+\int_0^S\mathfrak{f}[\boldsymbol{u},\dot{\boldsymbol{u}},\boldsymbol{t}](s)ds=\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}](s)ds+\int_G\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}ds<\infty
+\]
+holds.
+\end{itemize}
+For every admissible parametrized curve and for a.e.\ $s\in[0,S]$ is well defined
+\[
+\mathfrak{F}[\boldsymbol{t},\boldsymbol{u};\dot{\boldsymbol{t}},\dot{\boldsymbol{u}}](s)=\begin{cases}
+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\iota_K(-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s)))-\dot{\boldsymbol{t}}(s)\partial_t\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(s)) & \text{if $\dot{\boldsymbol{t}}(s)>0$} \\
+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)} & \text{if $\boldsymbol{t}(s)=0$}.
+\end{cases}
+\]
+where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}=0$.
+
+We denote with $\mathsf{A}([0,S],V\times[0,T])$ the set of all admissible parametrized curves and we say that $(\boldsymbol{u},\boldsymbol{t})$ is
+\begin{itemize}
+\item[(i)] non degenerate if $\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)$ for a.e.\ $s\in[0,S]$
+
+\item COMPLETE!!!
+\end{itemize}
+\end{defi}
 
 \subsection{An example}
 
