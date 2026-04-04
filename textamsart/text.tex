@@ -1,6 +1,6 @@
 \documentclass[letterpaper,oneside]{amsart}
 
-\usepackage{mathtools}
+\usepackage{mathtools,mathrsfs}
 \usepackage{geometry}
 \geometry{letterpaper}
 
@@ -461,13 +461,15 @@ We can extend $\phi$ to an even $C^1(\mathbb{R})$ function.
 
 \subsection{Preliminary results regarding the dissipation potential}
 
+Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} it follows that $\mathcal{R}=\sigma_K$ and $\mathcal{R}^*=\iota_K$. Notice that there exists a constant $M>0$ such that $\mathcal{R}(v)\le M\norm{v}$ for all $v\in V$. Indeed by contradiction assume that there exist $v_n\in V\setminus\{0\}$ such that $\mathcal{R}(v_n)\ge n\norm{v_n}$. Since $\mathcal{R}$ is positively homogeneous the inequality implies $\mathcal{R}(n^{-1}v_n/\norm{v_n})\ge1$ so $\liminf_{n\to\infty}\mathcal{R}(n^{-1}v_n/\norm{v_n})\ge1$. But $n^{-1}v_n/\norm{v_n}\to0$ so by continuity of $\mathcal{R}$ it follows $\lim_{n\to\infty}\mathcal{R}(n^{-1}v_n/\norm{v_n})=0$. This is the desired contradiction.
+
 Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in V$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
 \begin{equation*}
 \Phi_0(v)=\lim_{\eta\to0^+}\Phi_\eta(v)=\inf_{\eta>0}\Phi_\eta(v)=\mathcal{R}(v).
 \end{equation*}
 Last inequality holds true since $\phi(0)=0$ and $\phi'(0)=0$.
 
-Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} it follows that $\mathcal{R}=\sigma_K$ and $\mathcal{R}^*=\iota_K$. It simply to check that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. It is possible to obtain a more explicit representation formula for $\Phi^*$. By the inf-convolution duality formula
+It simple to check that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. It is possible to obtain a more explicit representation formula for $\Phi^*$. By the inf-convolution duality formula
 \begin{equation}
 \label{eqn:dual-dissipation}
 \Phi_\eta^*(\xi)=\left(\mathcal{R}+\mathcal{V}_\eta\right)^*(\xi)=\inf_{\zeta\in V}\left(\mathcal{R}^*(\zeta)+\mathcal{V}_\eta^*(\xi-\zeta)\right)=\eta^{-1}\inf_{\zeta\in K}\mathcal{V}^*(\xi-\zeta)=\eta^{-1}\min_{\zeta\in K}\mathcal{V}^*(\xi-\zeta).
@@ -551,14 +553,18 @@ Given a map $u\colon[0,T]\to V$ we define the total variation on $[a,b]\subset[0
 \end{equation*}
 We say that $u\in\text{BV}_\mathcal{R}([0,T],V)$ if $\text{Var}_\mathcal{R}(u,[0,T])<\infty$.
 \begin{lemma}
-It holds that $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
+It holds that $\text{AC}([0,T],V)\subset\text{AC}_\mathcal{R}([0,T],V)$ and $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
 \end{lemma}
 \begin{proof}
-\emph{Step 1.} We first prove that there exists $C>0$ such that $\mathcal{R}(v)\le C\norm{v}$. Indeed by contradiction suppose that there exists a sequence such that $\mathcal{R}(v_k)\ge k\norm{v_k}$. By 1-homogeneity we can suppose that $\norm{v_k}=1$ without loss of generality. Moreover up to extracting a subsequence $v_k\rightharpoonup v$.
-
-\textbf{My proof is wrong, but in the case $V=L^2(\Omega)$ with $\Omega$ bounded and $\mathcal{R}=\norm{\cdot}_1$ for example the result is trivially true.}
-
-\emph{Step 2.} By previous step $\text{Var}_\mathcal{R}([0,T],V)\le C\,\text{Var}([0,T],V)$. This completes the proof.
+Recall that there exists $M>0$ such that $\mathcal{R}(v)\le M\norm{v}$. Let $u\in AC([0,T],V)$. Then
+\[
+\mathcal{R}(u(t_1)-u(t_0))\le M\norm{u(t_1)-u(t_0)}\le\int_{t_0}^{t_1}Mm(s)ds.
+\]
+This shows that $u\in\text{AC}_\mathcal{R})([0,T],V)$. Next let $u\in\text{BV}([0,T],V)$. Then
+\[
+\text{Var}_\mathcal{R}(u,[0,T])\le M\text{Var}(u,[0,T]).
+\]
+This implies that $u\in\text{BV}_\mathcal{R}([0,T],V)$.
 \end{proof}
 
 \subsection{A chain rule formula for the energy functional}
@@ -700,9 +706,10 @@ Then~\eqref{eqn:energy-identity} becomes
 \mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{F}_\eta(\boldsymbol{t}_\eta(r),\boldsymbol{u}_\eta(r);\dot{\boldsymbol{t}}_\eta(r),\dot{\boldsymbol{u}}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le S_\eta$}.
 \end{equation*}
 Identity~\eqref{eqn:energy-arc-lenght} implies
-\begin{equation*}
-1=\dot{\boldsymbol{t}}_\eta(s)+\mathfrak{p}(\boldsymbol{u}_\eta(s),\dot{\boldsymbol{u}}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for a.e.\ $s\in(0,S_\eta)$}.
-\end{equation*}
+\begin{equation}
+\label{eqn:normalization-rescaling}
+1=\dot{\boldsymbol{t}}_\eta(s)+\mathfrak{f}(\boldsymbol{u}_\eta(s),\dot{\boldsymbol{u}}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for a.e.\ $s\in(0,S_\eta)$}.
+\end{equation}
 Now let $\mathfrak{P}\colon[0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\infty]$ defined by
 \begin{equation*}
 \mathfrak{P}(a,v;\gamma,\xi)=\begin{cases}
@@ -712,7 +719,7 @@ Now let $\mathfrak{P}\colon[0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\in
 \end{equation*}
 and $\mathfrak{F}\colon[0,T]\times V\times[0,\infty)\times V\to[0,\infty]$ defined by
 \[
-\mathfrak{F}(t,v;a,u)=\mathfrak{P}(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t)).
+\mathfrak{F}(t,u;a,v)=\mathfrak{P}(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t)).
 \]
 \begin{defi}
 We say that a pair $(\boldsymbol{u},\boldsymbol{t})\colon[0,S]\to V\times[0,T]$ is an admissible parametrized curve if
@@ -732,18 +739,52 @@ For every admissible parametrized curve and for a.e.\ $s\in[0,S]$ is well define
 \[
 \mathfrak{F}[\boldsymbol{t},\boldsymbol{u};\dot{\boldsymbol{t}},\dot{\boldsymbol{u}}](s)=\begin{cases}
 \mathcal{R}[\dot{\boldsymbol{u}}](s)+\iota_K(-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s)))-\dot{\boldsymbol{t}}(s)\partial_t\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(s)) & \text{if $\dot{\boldsymbol{t}}(s)>0$} \\
-\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)} & \text{if $\boldsymbol{t}(s)=0$}.
+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)} & \text{if $\dot{\boldsymbol{t}}(s)=0$}.
 \end{cases}
 \]
 where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}=0$.
 
-We denote with $\mathsf{A}([0,S],V\times[0,T])$ the set of all admissible parametrized curves and we say that $(\boldsymbol{u},\boldsymbol{t})$ is
+We denote with $\mathscr{A}([0,S],V\times[0,T])$ the set of all admissible parametrized curves and we say that $(\boldsymbol{u},\boldsymbol{t})$ is
 \begin{itemize}
 \item[(i)] non degenerate if $\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)$ for a.e.\ $s\in[0,S]$
-
-\item COMPLETE!!!
+\item[(ii)] surjective if $\boldsymbol{t}(0)=0$ and $\boldsymbol{t}(S)=T$
+\item[(iii)] $\boldsymbol{m}$-normalized with $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$ if $(\boldsymbol{u},\boldsymbol{t})$ fulfills
+\[
+\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}=\boldsymbol{m}(s)\quad\text{for a.e.\ $s\in(0,S)$}
+\]
 \end{itemize}
 \end{defi}
+\begin{defi}
+A parametrized balanced-viscosity solution is a non degenerate and surjective curve $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$ satisfying
+\[
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{t},\boldsymbol{u};\dot{\boldsymbol{t}},\dot{\boldsymbol{u}}](r)dr=\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $0\le s<t\le S$}.
+\]
+\end{defi}
+\begin{lemma}
+\label{lemma:compactness-parametrized}
+Let $E>0$ and $\boldsymbol{t}_n\in\text{AC}([0,S],[0,T])$ non decreasing and surjective. Let $u_n\in\text{AC}([0,S],D_E)$. Assume that there exists $L>0$ such that
+\[
+\dot{\boldsymbol{t}}_n(s)+\mathcal{R}[\dot u_n](s)+\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\]
+where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}=0$. Then up to a extracting a subsequence $(\boldsymbol{u}_n,\boldsymbol{u}_n)$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],D_E\times[0,T])$. Moreover
+\[
+\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot u](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\]
+and the following lower semicontinuity properties holds
+\begin{gather*}
+\liminf_{n\to\infty}\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}_n](s)ds\ge\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}](s)ds \\
+\liminf_{n\to\infty}\int_0^S\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}ds\ge\int_0^S\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}ds \\
+\text{QUI PROBABILMENTE VA AGGIUNTA ANCHE L'ULTIMA}
+\end{gather*}
+E POI BISOGNA COMPLETARE ANCHE IL RESTO DEL LEMMA
+\end{lemma}
+
+\begin{thm}[existence of parametrized solutions]
+SCRIVERE LO STATEMENT
+\end{thm}
+\begin{proof}
+Let $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)\in\text{AC}([0,S],V)$ as defined previously. CAPIRE COSA METTERE PER $S$. Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since also~\eqref{eqn:normalization-rescaling} holds, the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied. CONTINUARE QUESTA PROVA.
+\end{proof}
 
 \subsection{An example}
 
