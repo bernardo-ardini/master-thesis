@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  4 APR 2026 02:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  4 APR 2026 18:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -352,20 +352,22 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 
 [13]
 
-[14] (./text.aux)
+[14]
+
+[15] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4023 strings out of 473197
- 60429 string characters out of 5718605
- 477071 words of memory out of 5000000
- 27069 multiletter control sequences out of 15000+600000
+ 4027 strings out of 473197
+ 60536 string characters out of 5718605
+ 479192 words of memory out of 5000000
+ 27073 multiletter control sequences out of 15000+600000
  570091 words of font info for 80 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 71i,16n,79p,757b,271s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 71i,16n,79p,763b,277s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
@@ -387,10 +389,10 @@ ts/type1/public/amsfonts/euler/eufm10.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/rsfs/rsfs10.pfb>
-Output written on text.pdf (14 pages, 298247 bytes).
+Output written on text.pdf (15 pages, 302146 bytes).
 PDF statistics:
- 160 PDF objects out of 1000 (max. 8388607)
- 99 compressed objects within 1 object stream
+ 164 PDF objects out of 1000 (max. 8388607)
+ 101 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

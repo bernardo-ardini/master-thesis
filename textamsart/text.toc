@@ -19,5 +19,5 @@
 \contentsline {subsection}{\tocsubsection {}{C.6}{Existence results in presence of positive viscosity}}{10}{}%
 \contentsline {subsection}{\tocsubsection {}{C.7}{Contact dissipation potential}}{10}{}%
 \contentsline {subsection}{\tocsubsection {}{C.8}{Parametrized balanced-viscosity solutions}}{11}{}%
-\contentsline {subsection}{\tocsubsection {}{C.9}{An example}}{13}{}%
-\contentsline {section}{\tocsection {Appendix}{D}{Energetic solutions}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{C.9}{An example}}{14}{}%
+\contentsline {section}{\tocsection {Appendix}{D}{Energetic solutions}}{15}{}%

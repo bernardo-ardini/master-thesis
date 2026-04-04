@@ -607,11 +607,11 @@ holds for every $0\le s<t\le T$.
 \begin{proof}
 I still have to report the proof of existence. We prove the identity~\eqref{eqn:energy-identity}. By the properties of subdifferentials
 \begin{equation*}
-\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u(t),t))=-\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\dual{\partial_u\mathcal{E}(u_\eta(t),t),\dot u_\eta(t)}\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
 By~\eqref{eqn:chain-rule} we have
 \begin{equation*}
-\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u(t),t))=-\frac{d}{dt}\mathcal{E}(u(t),t)+\partial_t\mathcal{E}(u(t),t)\quad\text{for a.e. $t\in(0,T)$}.
+\Phi_\eta(\dot u_\eta(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\frac{d}{dt}\mathcal{E}(u_\eta(t),t)+\partial_t\mathcal{E}(u_\eta(t),t)\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
 Integrating this identity in $(s,t)$ we get the thesis.
 \end{proof}
@@ -762,28 +762,79 @@ A parametrized balanced-viscosity solution is a non degenerate and surjective cu
 \end{defi}
 \begin{lemma}
 \label{lemma:compactness-parametrized}
-Let $E>0$ and $\boldsymbol{t}_n\in\text{AC}([0,S],[0,T])$ non decreasing and surjective. Let $u_n\in\text{AC}([0,S],D_E)$. Assume that there exists $L>0$ such that
+Let $\boldsymbol{t}_n\in\text{AC}([0,S],[0,T])$ non decreasing and surjective. Let $E>0$ and $\boldsymbol{u}_n\in\text{AC}([0,S],D_E)$. Assume that there exists $L>0$ such that
 \[
-\dot{\boldsymbol{t}}_n(s)+\mathcal{R}[\dot u_n](s)+\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\dot{\boldsymbol{t}}_n(s)+\mathfrak{f}(\boldsymbol{u}_n(s),\dot{\boldsymbol{u}}_n(s),\boldsymbol{t}_n(s))\le L\quad\text{for a.e.\ $s\in(0,S)$}
 \]
 where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}=0$. Then up to a extracting a subsequence $(\boldsymbol{u}_n,\boldsymbol{u}_n)$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],D_E\times[0,T])$. Moreover
 \[
-\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot u](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\dot{\boldsymbol{t}}(s)+\mathfrak{f}[\boldsymbol{u},\dot{\boldsymbol{u}},\boldsymbol{t}](s)\le L\quad\text{for a.e.\ $s\in(0,S)$}
 \]
 and the following lower semicontinuity properties holds
 \begin{gather*}
-\liminf_{n\to\infty}\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}_n](s)ds\ge\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}](s)ds \\
-\liminf_{n\to\infty}\int_0^S\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}ds\ge\int_0^S\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}ds \\
+\liminf_{n\to\infty}\int_s^t\mathcal{R}(\dot{\boldsymbol{u}}_n(r))dr\ge\int_s^t\mathcal{R}[\dot{\boldsymbol{u}}](r)dr \\
+\liminf_{n\to\infty}\int_s^t\mathfrak{e}(\boldsymbol{u}_n(r),\boldsymbol{t}_n(r))\norm{\dot{\boldsymbol{u}}_n(r)}dr\ge\int_s^t\mathfrak{e}(\boldsymbol{u}(r),\boldsymbol{t}(r))\norm{\dot{\boldsymbol{u}}(r)}dr \\
 \text{QUI PROBABILMENTE VA AGGIUNTA ANCHE L'ULTIMA}
 \end{gather*}
 E POI BISOGNA COMPLETARE ANCHE IL RESTO DEL LEMMA
 \end{lemma}
 
 \begin{thm}[existence of parametrized solutions]
-SCRIVERE LO STATEMENT
+Let $u_\eta\in\text{AC}([0,T])$ be solutions to the doubly nonlinear equation~\eqref{eqn:doubly-nonlinear-rescaled} with fixed initial condition $u_0\in V$. Consider non decreasing and surjective absolutely continuous time rescalings $\boldsymbol{t}_\eta\colon[0,S]\to[0,T]$ and let $\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)$. Suppose that
+\begin{equation}
+\label{eqn:normalization-hp}
+\boldsymbol{m}_\eta=\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)\overset{*}{\rightharpoonup}\boldsymbol{m}\quad\text{in $L^\infty((0,S))$}
+\end{equation}
+for some $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$. Then there exists a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)$ converges uniformly on $[0,S]$ to a parametrized balanced viscosity solution $(\boldsymbol{u},\boldsymbol{t})\in\text{AC}([0,S],V\times[0,T])$.
 \end{thm}
 \begin{proof}
-Let $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)\in\text{AC}([0,S],V)$ as defined previously. CAPIRE COSA METTERE PER $S$. Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since also~\eqref{eqn:normalization-rescaling} holds, the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied. CONTINUARE QUESTA PROVA.
+Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since also~\eqref{eqn:normalization-hp} then there exists $L>0$ such that $\norm{\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)}_\infty\le L$. Then the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied and we can find a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_{\eta_n},\boldsymbol{t}_{\eta_n})$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Since $\mathcal{E}\in C^1(V\times[0,T])$ then
+\begin{equation}
+\label{eqn:energy-convergence}
+\mathcal{E}(\boldsymbol{u}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))\to\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $s\in[0,S]$}.
+\end{equation}
+Now, since $\dot{\boldsymbol{t}}_\eta$ are bounded in $L^\infty((0,S))$, up to extracting a subsequence it holds that $\dot{\boldsymbol{t}}_{\eta_n}\overset{*}{\rightharpoonup}\dot{\boldsymbol{t}}$ in $L^\infty((0,T))$. In particular $\dot{\boldsymbol{t}}_{\eta_n}\rightharpoonup\dot{\boldsymbol{t}}$ in $L^1((0,T))$. Then by Lemma~\ref{lemma:technical-convergence-integral}
+\begin{equation}
+\label{eqn:power-convergence}
+\liminf_{n\to\infty}\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr\ge\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr.
+\end{equation}
+Now the energy identity and the definition of $\mathfrak{f}$ yields
+\[
+\mathcal{E}(\boldsymbol{u}_{\eta_n}(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{f}(\boldsymbol{u}_{\eta_n}(r),\dot{\boldsymbol{u}}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr\le\mathcal{E}(\boldsymbol{t}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr
+\]
+for all $0\le s<t\le T$. Taking the inferior limit as $n\to\infty$ and taking into account~\eqref{eqn:energy-convergence},~\eqref{eqn:power-convergence} and the lower semicontinuity estimates of Lemma~\ref{lemma:compactness-parametrized}
+\[
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{f}(\boldsymbol{u}(r),\dot{\boldsymbol{u}}(r),\boldsymbol{t}(r))dr\le\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr
+\]
+for all $0\le s<t\le T$.
+\end{proof}
+
+\begin{lemma}
+\label{lemma:technical-convergence-integral}
+Let $f_n,f,m_n,m\colon(0,T)\to[0,\infty]$ be measurable functions that satisfy
+\begin{gather*}
+\liminf_{n\to\infty}f_n(s)\ge f(s)\quad\text{for a.e.\ $s\in(0,T)$} \\
+m_n\rightharpoonup m\quad\text{in $L^1((0,T))$}.
+\end{gather*}
+Then
+\[
+\liminf_{n\to\infty}\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tf(s)m(s)ds.
+\]
+\end{lemma}
+\begin{proof}
+Let $g_k(s)=\inf_{n\ge k}\min\{f_n(s),n\}$. Notice that $g_k\in L^\infty((0,T))$. Fix $k$ and notice that for all $n\ge k$
+\[
+\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tg_k(s)m_n(s)ds.
+\]
+Taking the inferior limit as $n\to\infty$
+\[
+\liminf_{n\to\infty}\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tg_k(s)m(s)ds.
+\]
+Now $g_k$ is an increasing sequence and
+\[
+\lim_{k\to\infty}g_k(s)=\lim_{k\to\infty}\inf_{n\ge k}\min\{f_n(s),n\}=\liminf_{n\to\infty}f_n(s)\ge f(s)\quad\text{for a.e.\ $s\in(0,S)$}.
+\]
+The passing to the limit $k\to\infty$ and using monotone convergence the proof is concluded.
 \end{proof}
 
 \subsection{An example}
