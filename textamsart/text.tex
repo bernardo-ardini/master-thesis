@@ -424,7 +424,7 @@ The energy $\mathcal{E}$ is supposed to satisfy the following assumptions.
 \end{equation}
 \begin{equation}
 \label{eqn:energy-coercivity}
-\parbox[c]{0.8\textwidth}{$\mathcal{E}(\cdot,t)$ has compact sublevels for all $t\in[0,T]$}
+\parbox[c]{0.8\textwidth}{for all $E>0$ the sublevel $D_E=\{u\in V\;|\;\sup_{t\in[0,T]}\mathcal{E}(u,t)\le D_E\}$ is weakly compact}
 \tag{$\mathcal{E}$.2}
 \end{equation}
 \begin{equation}
@@ -446,18 +446,18 @@ Here $\mathcal{R}$ is a rate-independent dissipation potential and $\mathcal{V}$
 \parbox[c]{0.8\textwidth}{$\mathcal{R}$ and $\mathcal{V}$ from $V$ into $[0,\infty)$ are continuous, convex and strictly positive in $V\setminus\{0\}$}
 \tag{$\Phi$.1}
 \end{equation}
-From Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$.
 \begin{equation}
 \label{eqn:bv-dissipation-2}
 \parbox[c]{0.8\textwidth}{$\mathcal{R}$ is positively 1-homogeneous}
 \tag{$\Phi$.2}
 \end{equation}
+Notice that from Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$.
 \begin{equation}
 \label{eqn:bv-dissipation-3}
 \parbox[c]{0.8\textwidth}{$\mathcal{V}(v)=\phi(\norm{v})$ with $\phi\in C^1([0,\infty))$ convex such that $\phi(0)=0$, $\phi'(0)=0$, $\phi(r)>0$ for $r>0$ and $\lim_{r\to\infty}\phi'(r)=\infty$}
 \tag{$\Phi$.3}
 \end{equation}
-We can extend $\phi$ to an even $C^1(\mathbb{R})$ function.
+Notice that $\phi$ can be extended to an even $C^1(\mathbb{R})$ function.
 
 \subsection{Preliminary results regarding the dissipation potential}
 
@@ -560,7 +560,7 @@ Recall that there exists $M>0$ such that $\mathcal{R}(v)\le M\norm{v}$. Let $u\i
 \[
 \mathcal{R}(u(t_1)-u(t_0))\le M\norm{u(t_1)-u(t_0)}\le\int_{t_0}^{t_1}Mm(s)ds.
 \]
-This shows that $u\in\text{AC}_\mathcal{R})([0,T],V)$. Next let $u\in\text{BV}([0,T],V)$. Then
+This shows that $u\in\text{AC}_\mathcal{R}([0,T],V)$. Next let $u\in\text{BV}([0,T],V)$. Then
 \[
 \text{Var}_\mathcal{R}(u,[0,T])\le M\text{Var}(u,[0,T]).
 \]
@@ -607,7 +607,7 @@ holds for every $0\le s<t\le T$.
 \begin{proof}
 I still have to report the proof of existence. We prove the identity~\eqref{eqn:energy-identity}. By the properties of subdifferentials
 \begin{equation*}
-\Phi_\eta(\dot u(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\dual{\partial_u\mathcal{E}(u_\eta(t),t),\dot u_\eta(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\Phi_\eta(\dot u_\eta(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\dual{\partial_u\mathcal{E}(u_\eta(t),t),\dot u_\eta(t)}\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
 By~\eqref{eqn:chain-rule} we have
 \begin{equation*}
@@ -786,7 +786,37 @@ for every $0\le s<t\le S$ and $\eta_n\in(0,T)$ with $\eta_n\to0$.
 \begin{proof}
 \emph{Step 1}. From the fact that $\boldsymbol{t}_n(0)=0$ and that $\dot{\boldsymbol{t}}_n$ are uniformly bounded (by~\eqref{eqn:parametrized-curves-estimate-for-compactness}), it follows that $\boldsymbol{t}_n$ are uniformly Lipschitz continuous. Then by Ascoli--Arzelà up to extracting a subsequence, $\boldsymbol{t}_n$ converges uniformly to some $\boldsymbol{t}\in C^{0,1}([0,T])$. VERIFICARE CHE $\boldsymbol{t}$ SODDISFA LE PROPRIETÀ RICHIESTE. 
 
-\emph{Step 2}. Now since $\mathcal{R}$ is continuous and $D_E$ is compact, then $\mathcal{R}$ is uniformly continuous on $D_E$. Let $\omega$ the corresponding continuity modulus. RIPARTIRE DA QUI.
+\emph{Step 2}. Since $\mathcal{R}$ is continuous and $D_E$ is weakly compact we can prove that for all $\delta>0$ there exists $M_\delta>0$ such that
+\[
+|v-w|\le\delta+M_\delta\mathcal{R}(v-w).
+\]
+Indeed by contradiction assume that there is some $\delta>0$ such that for all $n$ there exist $v_n$ and $w_n$ with
+\[
+|v_n-w_n|\ge\delta+n\mathcal{R}(v-w).
+\]
+Since $D_E$ is weakly compact, we can assume that $v_n\rightharpoonup v$ and $w_n\rightharpoonup w$. Up to extracting a subsequence we can also assume that $v_n\to v$ and $w_n\to w$ in $H$. QUI VA SISTEMATA LA SITUAZIONE. IL MOTIVO È CHE SERVIREBBE CONVERGENZA FORTE NELLA (SEMI)NORMA IN CUI $\mathcal{R}$ È CONTINUA. Then
+\[
+|v-w|\ge\delta+\limsup_{n\to\infty}n\mathcal{R}(v_n-w_n).
+\]
+This is a contradiction because necessarily $v\neq w$ so that $\mathcal{R}(v-w)>0$ and in this case
+\[
+\limsup_{n\to\infty}n\mathcal{R}(v_n-w_n)=\infty.
+\]
+Let $\omega\colon[0,\infty)\to[0,\infty)$ defined by $\omega(r)=\inf_{\delta>0}\left(\delta+M_\delta r\right)$. Notice that $\omega$ is non decreasing and  $\lim_{r\to0}\omega(r)=0$.
+
+\emph{Step 3}. By Jensen inequality and assumption~\eqref{eqn:parametrized-curves-estimate-for-compactness}
+\[
+\mathcal{R}(\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s))=|t-s|\mathcal{R}\left(\frac{1}{|t-r|}\int_s^t\dot{\boldsymbol{u}}_n(r)dr\right)\le\int_s^t\mathcal{R}(\dot{\boldsymbol{u}}_n(r))drl\le L|t-s|.
+\]
+Then
+\[
+|\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s)|\le\omega(\mathcal{R}(\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s)))\le\omega(L|t-s|).
+\]
+This implies that $\boldsymbol{u}_n$ are equicontinuous. Then up to extracting a subsequence
+\[
+\lim_{n\to\infty}\sup_{s\in[0,S]}|\boldsymbol{u}(s)-\boldsymbol{u}_n(s)|=0
+\]
+for some $\boldsymbol{u}\in\text{AC}_{|\cdot|}([0,T],V)$. It follows thatB
 \end{proof}
 
 \begin{thm}[existence of parametrized solutions]
