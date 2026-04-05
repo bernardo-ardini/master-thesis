@@ -245,7 +245,7 @@ Let $f$ and $g$ from $V$ to $(-\infty,\infty]$. Then
 \begin{itemize}
 \item[(i)] $(f\square g)^*=f^*+g^*$
 \item[(ii)] $(f+g)^*\le f^*\square g^*$
-\item[(iii)] if there exists $v\in\dom f\cap\dom g$ and $f$ is continuous at $v$ then $(f+g)^*=f^*\square g^*$.
+\item[(iii)] if $f$ and $g$ are convex and proper and there exists $v\in\dom f\cap\dom g$ and $f$ is continuous at $v$ then $(f+g)^*=f^*\square g^*$.
 \end{itemize}
 \end{prop}
 \begin{proof}
@@ -693,38 +693,42 @@ Let also
 \begin{equation*}
 \boldsymbol{t}_\eta=\boldsymbol{s}_\eta^{-1}\colon[0,S_\eta]\to[0,T]\quad\text{and}\quad\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)\colon[0,S_\eta]\to V.
 \end{equation*}
-To write the time-rescaled energy identity we introduce the map $\mathfrak{P}_\eta\colon(0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\infty]$ defined by
-\begin{equation*}
-\mathfrak{P}_\eta(a,v;\gamma,\xi)=a\Phi_\eta(a^{-1}v)+a\Phi_\eta^*(\xi)+a\gamma
-\end{equation*}
-and $\mathfrak{F}_\eta\colon[0,T]\times V\times[0,\infty]\times V\to[0,\infty]$ defined by
+To write the time-rescaled energy identity we introduce the map $\mathfrak{F}_\eta\colon V\times[0,T]\times V\times(0,\infty)\to[0,\infty)$ defined by
 \[
-\mathfrak{F}_\eta(t,u;a,v)=\mathfrak{P}_\eta(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t))
+\mathfrak{F}_\eta(u,t,v,a)=a\Phi_\eta(v/a)+\Phi_\eta^*(-\partial_u\mathcal{E}(u,t))-a\partial_t\mathcal{E}(u,t)=\mathcal{R}(v)+\mathfrak{E}_\eta(u,t,v,a)-a\partial_t\mathcal{E}(u,t),
+\]
+where $\mathfrak{E}_\eta\colon V\times[0,T]\times V\times(0,\infty)\to[0,\infty)$ is given by
+\[
+\begin{split}
+\mathfrak{E}_\eta(u,t,v,a)&=a\mathcal{V}_\eta(v/a)+a\Phi_\eta^*(-\partial_u\mathcal{E}(u,t))=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\min_{\zeta\in V^*}\phi^*(\norm{\partial_u\mathcal{E}(u,t)+\zeta})=\\
+&=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\phi^*\left(\min_{\zeta\in V^*}\norm{\partial_u\mathcal{E}(u,t)+\zeta}\right)=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\phi^*(\mathfrak{e}(u,t)).
+\end{split}
 \]
 Then~\eqref{eqn:energy-identity} becomes
 \begin{equation*}
-\mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{F}_\eta(\boldsymbol{t}_\eta(r),\boldsymbol{u}_\eta(r);\dot{\boldsymbol{t}}_\eta(r),\dot{\boldsymbol{u}}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le S_\eta$}.
+\mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{F}_\eta(\boldsymbol{u}_\eta(r),\boldsymbol{t}_\eta(r),\dot{\boldsymbol{u}}_\eta(r),\dot{\boldsymbol{t}}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le S_\eta$}.
 \end{equation*}
 Identity~\eqref{eqn:energy-arc-lenght} implies
 \begin{equation}
 \label{eqn:normalization-rescaling}
 1=\dot{\boldsymbol{t}}_\eta(s)+\mathfrak{f}(\boldsymbol{u}_\eta(s),\dot{\boldsymbol{u}}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for a.e.\ $s\in(0,S_\eta)$}.
 \end{equation}
-Now let $\mathfrak{P}\colon[0,\infty)\times V\times\mathbb{R}\times V^*\to[0,\infty]$ defined by
-\begin{equation*}
-\mathfrak{P}(a,v;\gamma,\xi)=\begin{cases}
-\mathcal{R}(v)+\iota_K(\xi)+a\gamma & \text{if $a>0$} \\
-\mathfrak{p}(v,\xi) & \text{if $a=0$}.
-\end{cases}
-\end{equation*}
-and $\mathfrak{F}\colon[0,T]\times V\times[0,\infty)\times V\to[0,\infty]$ defined by
+Now let $\mathfrak{F}\colon V\times[0,T]\times V\times[0,\infty)\to[0,\infty]$ defined by
 \[
-\mathfrak{F}(t,u;a,v)=\mathfrak{P}(a,v;-\partial_t\mathcal{E}(u,t),-\partial_u\mathcal{E}(u,t)).
+\mathfrak{F}(u,t,v,a)=\mathcal{R}(v)+\mathfrak{E}(u,t,v,a)-a\partial_t\mathcal{E}(u,t)
+\]
+where $\mathfrak{E}\colon V\times[0,T]\times V\times[0,\infty)\to[0,\infty]$
+\[
+\mathfrak{E}(u,t,v,a)=
+\begin{cases}
+\iota_K(-\partial_u\mathcal{E}(u,t)) & \text{if $a>0$} \\
+\mathfrak{e}(u,t)\norm{v} & \text{if $a=0$}.
+\end{cases}
 \]
 \begin{defi}
 We say that a pair $(\boldsymbol{u},\boldsymbol{t})\colon[0,S]\to V\times[0,T]$ is an admissible parametrized curve if
 \begin{itemize}
-\item[(i)] $\boldsymbol{t}$ is non decreasing and absolutely continuous, $\boldsymbol{u}\in\text{AC}_\mathcal{R}([0,S],V)$ and $\sup_{t\in[0,S]}\boldsymbol{u}(s)<\infty$
+\item[(i)] $\boldsymbol{t}$ is non decreasing and absolutely continuous, $\boldsymbol{u}\in\text{AC}_\mathcal{R}([0,S],D_E)$ for some $E>0$
 \item[(ii)] $\boldsymbol{u}$ locally absolutely continuous (with respect to $\norm{\cdot}$) in the open set
 \[
 G=\{s\in[0,S]\;|\;\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))>0\}=\{s\in[0,S]\;|\;-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\notin K\}
@@ -737,7 +741,7 @@ holds.
 \end{itemize}
 For every admissible parametrized curve and for a.e.\ $s\in[0,S]$ is well defined
 \[
-\mathfrak{F}[\boldsymbol{t},\boldsymbol{u};\dot{\boldsymbol{t}},\dot{\boldsymbol{u}}](s)=\begin{cases}
+\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](s)=\begin{cases}
 \mathcal{R}[\dot{\boldsymbol{u}}](s)+\iota_K(-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s)))-\dot{\boldsymbol{t}}(s)\partial_t\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(s)) & \text{if $\dot{\boldsymbol{t}}(s)>0$} \\
 \mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)} & \text{if $\dot{\boldsymbol{t}}(s)=0$}.
 \end{cases}
@@ -746,7 +750,7 @@ where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}(s),\bold
 
 We denote with $\mathscr{A}([0,S],V\times[0,T])$ the set of all admissible parametrized curves and we say that $(\boldsymbol{u},\boldsymbol{t})$ is
 \begin{itemize}
-\item[(i)] non degenerate if $\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)$ for a.e.\ $s\in[0,S]$
+\item[(i)] non degenerate if $\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)>0$ for a.e.\ $s\in[0,S]$
 \item[(ii)] surjective if $\boldsymbol{t}(0)=0$ and $\boldsymbol{t}(S)=T$
 \item[(iii)] $\boldsymbol{m}$-normalized with $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$ if $(\boldsymbol{u},\boldsymbol{t})$ fulfills
 \[
@@ -757,16 +761,17 @@ We denote with $\mathscr{A}([0,S],V\times[0,T])$ the set of all admissible param
 \begin{defi}
 A parametrized balanced-viscosity solution is a non degenerate and surjective curve $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$ satisfying
 \[
-\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{t},\boldsymbol{u};\dot{\boldsymbol{t}},\dot{\boldsymbol{u}}](r)dr=\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $0\le s<t\le S$}.
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](r)dr=\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $0\le s<t\le S$}.
 \]
 \end{defi}
 \begin{lemma}
 \label{lemma:compactness-parametrized}
 Let $\boldsymbol{t}_n\in\text{AC}([0,S],[0,T])$ non decreasing and surjective. Let $E>0$ and $\boldsymbol{u}_n\in\text{AC}([0,S],D_E)$. Assume that there exists $L>0$ such that
-\[
+\begin{equation}
+\label{eqn:parametrized-curves-estimate-for-compactness}
 \dot{\boldsymbol{t}}_n(s)+\mathfrak{f}(\boldsymbol{u}_n(s),\dot{\boldsymbol{u}}_n(s),\boldsymbol{t}_n(s))\le L\quad\text{for a.e.\ $s\in(0,S)$}
-\]
-where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}_n(s),\boldsymbol{t}_n(s))\norm{\dot{\boldsymbol{u}}_n(s)}=0$. Then up to a extracting a subsequence $(\boldsymbol{u}_n,\boldsymbol{u}_n)$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],D_E\times[0,T])$. Moreover
+\end{equation}
+Then up to a extracting a subsequence, $(\boldsymbol{u}_n,\boldsymbol{t}_n)$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],D_E\times[0,T])$. Moreover
 \[
 \dot{\boldsymbol{t}}(s)+\mathfrak{f}[\boldsymbol{u},\dot{\boldsymbol{u}},\boldsymbol{t}](s)\le L\quad\text{for a.e.\ $s\in(0,S)$}
 \]
@@ -774,21 +779,26 @@ and the following lower semicontinuity properties holds
 \begin{gather*}
 \liminf_{n\to\infty}\int_s^t\mathcal{R}(\dot{\boldsymbol{u}}_n(r))dr\ge\int_s^t\mathcal{R}[\dot{\boldsymbol{u}}](r)dr \\
 \liminf_{n\to\infty}\int_s^t\mathfrak{e}(\boldsymbol{u}_n(r),\boldsymbol{t}_n(r))\norm{\dot{\boldsymbol{u}}_n(r)}dr\ge\int_s^t\mathfrak{e}(\boldsymbol{u}(r),\boldsymbol{t}(r))\norm{\dot{\boldsymbol{u}}(r)}dr \\
-\text{QUI PROBABILMENTE VA AGGIUNTA ANCHE L'ULTIMA}
+\liminf_{n\to\infty}\int_s^t\mathfrak{E}_{\eta_n}(\boldsymbol{u}_n(r),\boldsymbol{t}_n(r),\dot{\boldsymbol{u}}_n(r),\dot{\boldsymbol{t}}_n(r))dr\ge\int_s^t\mathfrak{E}(\boldsymbol{u}(r),\boldsymbol{t}(r),\dot{\boldsymbol{u}}(r),\dot{\boldsymbol{t}}(r))dr
 \end{gather*}
-E POI BISOGNA COMPLETARE ANCHE IL RESTO DEL LEMMA
+for every $0\le s<t\le S$ and $\eta_n\in(0,T)$ with $\eta_n\to0$.
 \end{lemma}
+\begin{proof}
+\emph{Step 1}. From the fact that $\boldsymbol{t}_n(0)=0$ and that $\dot{\boldsymbol{t}}_n$ are uniformly bounded (by~\eqref{eqn:parametrized-curves-estimate-for-compactness}), it follows that $\boldsymbol{t}_n$ are uniformly Lipschitz continuous. Then by Ascoli--Arzelà up to extracting a subsequence, $\boldsymbol{t}_n$ converges uniformly to some $\boldsymbol{t}\in C^{0,1}([0,T])$. VERIFICARE CHE $\boldsymbol{t}$ SODDISFA LE PROPRIETÀ RICHIESTE. 
+
+\emph{Step 2}. Now since $\mathcal{R}$ is continuous and $D_E$ is compact, then $\mathcal{R}$ is uniformly continuous on $D_E$. Let $\omega$ the corresponding continuity modulus. RIPARTIRE DA QUI.
+\end{proof}
 
 \begin{thm}[existence of parametrized solutions]
-Let $u_\eta\in\text{AC}([0,T])$ be solutions to the doubly nonlinear equation~\eqref{eqn:doubly-nonlinear-rescaled} with fixed initial condition $u_0\in V$. Consider non decreasing and surjective absolutely continuous time rescalings $\boldsymbol{t}_\eta\colon[0,S]\to[0,T]$ and let $\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)$. Suppose that
+Let $u_\eta\in\text{AC}([0,T],V)$ be solutions to the doubly nonlinear equation~\eqref{eqn:doubly-nonlinear-rescaled} with fixed initial condition $u_0\in V$. Consider non decreasing and surjective absolutely continuous time rescalings $\boldsymbol{t}_\eta\colon[0,S]\to[0,T]$ and let $\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)$. Suppose that as $\eta\to0$
 \begin{equation}
 \label{eqn:normalization-hp}
 \boldsymbol{m}_\eta=\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)\overset{*}{\rightharpoonup}\boldsymbol{m}\quad\text{in $L^\infty((0,S))$}
 \end{equation}
-for some $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$. Then there exists a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)$ converges uniformly on $[0,S]$ to a parametrized balanced viscosity solution $(\boldsymbol{u},\boldsymbol{t})\in\text{AC}([0,S],V\times[0,T])$.
+for some $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$. Then there exists a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)$ converges uniformly on $[0,S]$ to a parametrized balanced viscosity solution $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Moreover $(\boldsymbol{u},\boldsymbol{t})$ is $\boldsymbol{m}$-normalized.
 \end{thm}
 \begin{proof}
-Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since also~\eqref{eqn:normalization-hp} then there exists $L>0$ such that $\norm{\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)}_\infty\le L$. Then the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied and we can find a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_{\eta_n},\boldsymbol{t}_{\eta_n})$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Since $\mathcal{E}\in C^1(V\times[0,T])$ then
+Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since~\eqref{eqn:normalization-hp} holds, there exists $L>0$ such that $\norm{\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)}_\infty\le L$. Then the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied and we can find a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_{\eta_n},\boldsymbol{t}_{\eta_n})$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Since $\mathcal{E}\in C^1(V\times[0,T])$ then
 \begin{equation}
 \label{eqn:energy-convergence}
 \mathcal{E}(\boldsymbol{u}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))\to\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $s\in[0,S]$}.
@@ -798,15 +808,15 @@ Now, since $\dot{\boldsymbol{t}}_\eta$ are bounded in $L^\infty((0,S))$, up to e
 \label{eqn:power-convergence}
 \liminf_{n\to\infty}\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr\ge\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr.
 \end{equation}
-Now the energy identity and the definition of $\mathfrak{f}$ yields
+Now taking the inferior limit as $n\to\infty$ of the energy identity
 \[
-\mathcal{E}(\boldsymbol{u}_{\eta_n}(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{f}(\boldsymbol{u}_{\eta_n}(r),\dot{\boldsymbol{u}}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr\le\mathcal{E}(\boldsymbol{t}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr
+\mathcal{E}(\boldsymbol{u}_{\eta_n}(t),\boldsymbol{t}_{\eta_n}(t))+\int_s^t\mathfrak{F}_{\eta_n}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r),\dot{\boldsymbol{u}}_{\eta_n}(r),\dot{\boldsymbol{t}}_{\eta_n}(r))dr\le\mathcal{E}(\boldsymbol{u}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))\quad\text{for all $0\le s<t\le T$}
 \]
-for all $0\le s<t\le T$. Taking the inferior limit as $n\to\infty$ and taking into account~\eqref{eqn:energy-convergence},~\eqref{eqn:power-convergence} and the lower semicontinuity estimates of Lemma~\ref{lemma:compactness-parametrized}
+taking into account~\eqref{eqn:energy-convergence},~\eqref{eqn:power-convergence} and the lower semicontinuity estimates of Lemma~\ref{lemma:compactness-parametrized}
 \[
-\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{f}(\boldsymbol{u}(r),\dot{\boldsymbol{u}}(r),\boldsymbol{t}(r))dr\le\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](r)dr\le\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr
 \]
-for all $0\le s<t\le T$.
+for all $0\le s<t\le T$. ADESSO MANCA DA OTTENERE L'ALTRA STIMA (E VOLENDO MOSTRARE CHE SODDISFA LA GIUSTA NORMALIZZAZIONE).
 \end{proof}
 
 \begin{lemma}
@@ -847,7 +857,7 @@ They satisfy the assumptions~(D). In particular the continuity of $\mathcal{R}$ 
 \begin{equation*}
 |\mathcal{R}(v)-\mathcal{R}(w)|\le\int_\Omega\left||v|-|w|\right|dx\le\int_\Omega|v-w|dx\le C\norm{v-w}_2.
 \end{equation*}
-It holds that $K$ is the closed unit ball in $L^\infty(\Omega)$. Indeed if $\xi\in V^*=L^2(\Omega)$ satisfy $\norm{\xi}_\infty\le1$ then
+It holds that $K$ is the closed unit ball in $L^\infty(\Omega)$. Indeed if $\xi\in V^*=L^2(\Omega)$ satisfies $\norm{\xi}_\infty\le1$ then
 \begin{equation*}
 \mathcal{R}^*(\xi)=\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega(|\xi|-1)|v|dx\le0
 \end{equation*}
