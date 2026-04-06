@@ -639,6 +639,32 @@ L_e=\dot F_eF_e^{-1}=L-F_eL_pF_e^{-1}=\begin{pmatrix}
 \left(\frac{\dot G}{E_1}-\frac{G}{E_1}\dot e_2\right)Y & \dot e_2I
 \end{pmatrix}.
 \]
+%Consider the case $d=2$. In this case the first principal invariant of $C_e=F_e^TF_e$ is
+%\begin{gather*}
+%I_1=\tr(C_e)=E_1^2+G^2|Y|^2+(d-1)E_2^2 \\
+%I_2=\frac{1}{2}\left(\tr(C_e)^2-\tr(C_e^2)\right)=\frac{(d-1)(d-2)E_2^4+2(d-1)E_2^2(E_1^2+G^2|Y|^2)-2G^2E_2^2|Y|^2}{2} \\
+%I_3=\det(C_e)=E_1^2E_2^{2(d-1)}.
+%\end{gather*}
+%A possible elastic free energy density is the neo-Hookeian free energy density
+%\[
+%\psi=\begin{cases}
+%a(I_1-d)+b(I_2-d) & \text{if $d=2$} \\
+%a(I_1-d)+b(I_2-d)+w(I_3) & \text{if $d=3$}.
+%\end{cases}
+%\]
+Consider the case $d=2$. In this case the first principal invariant of $C_e=F_e^TF_e$ is
+\[
+I_e=\tr(C_e)=E_1^2+G^2|Y|^2+E_2^2 \\
+\]
+and
+\[
+J_e=\det F_e=E_1E_2.
+\]
+The compressible neo-Hookean constitutive model is based on the elastic free energy density
+\[
+\psi_e=C\left(\frac{I_e}{J_e}-2\right)+w(J)=C\left(\frac{E_1^2+G^2|Y|^2+E_2^2}{E_1E_2}-2\right)+w(E_1E_2)
+\]
+
 
 \subsection{Kinematics}
 
@@ -675,7 +701,7 @@ The local form of the equilibrium condition is
 \begin{gather*}
 (P^{-1}\sigma_1)'+f_1=0\quad\text{in $(0,L)$} \\
 h_1(x)=P(x)^{-1}\sigma_1(x)\quad\text{for $x\in\{0,L\}$} \\
--P^{\frac{1}{d-1}}+(P^{-1}\zeta)'+f_2=0\quad\text{in $(0,L)$} \\
+-P^{\frac{1}{d-1}}\sigma_2+(P^{-1}\zeta)'+f_2=0\quad\text{in $(0,L)$} \\
 h_2(x)=P(x)^{-1}\zeta(x)\quad\text{for $x\in\{0,L\}$} \\
 \chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta-\tau+\kappa'=0\quad\text{for $x\in\{0,L\}$} \\
 \kappa(x)=0\quad\text{for $x\in\{0,L\}$}
@@ -718,6 +744,27 @@ Let $\tau=\dind{H}{P}+P^{-1}\xi$ with $\xi\in\partial R(\dot PP^{-1})$. Then dis
 \]
 By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
 \end{proof}
+Particular constitutive relations, can be obtained taking inspiration from the neo-Hookeian constitutive model. Specifically we choose the elastic free energy density
+\[
+W(E_1,E_2,G)=C\left(\frac{E_1^2+l^2G^2+E_2^2}{E_1E_2}-2\right)+w(E_1E_2).
+\]
+In this case
+\begin{gather*}
+\sigma_1=C\left(\frac{1}{E_2}-\frac{l^2G^2}{E_1^2E_2}-\frac{E_2}{E_1^2}\right)+E_2w'(E_1E_2),\quad\sigma_2=C\left(-\frac{E_1}{E_2^2}-\frac{l^2G^2}{E_1E_2^2}+\frac{1}{E_1}\right)+E_1w'(E_1E_2) \\
+\zeta=2C\frac{l^2G}{E_1E_2}
+\end{gather*}
+
+\section{Tensile test}
+
+Equations in the elastic range
+\begin{align*}
+C\left(\frac{1}{\chi_2}-\frac{l^2(\chi_2')^2}{(\chi_1')^2\chi_2}-\frac{\chi_2}{(\chi_1')^2}\right)+\chi_2w'(\chi_1'\chi_2)&=F \\
+-C\left(-\frac{\chi_1'}{\chi_2^2}-\frac{l^2(\chi_2')^2}{\chi_1'\chi_2^2}+\frac{1}{\chi_1'}\right)-\chi_1'w'(\chi_1'\chi_2)+2Cl^2\left(\frac{\chi_2'}{\chi_1'\chi_2}\right)'&=0.
+\end{align*}
+From the first equation we get the following third order algebraic equation for $\chi_1'$
+\[
+2A\chi_2^2(\chi_1')^3+\left(\frac{C}{\chi_2}-2A\chi_2-F\right)(\chi_1')^2-C\left(l^2\frac{(\chi_2')^2}{\chi_2}+\chi_2\right)=0.
+\]
 
 \part{Shear band localization in cohesive materials}
 
