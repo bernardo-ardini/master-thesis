@@ -771,6 +771,47 @@
       \field{title}{Balanced-Viscosity Solutions to Infinite-Dimensional Multi-Rate Systems}
       \field{year}{2023}
     \endentry
+    \entry{MieRosSav13}{misc}{}{}
+      \name{author}{3}{}{%
+        {{hash=ef9126649c813582bd42a81657d1d9e9}{%
+           family={Mielke},
+           familyi={M\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=bbf5f6966881e2117d4237c81efbe195}{%
+           family={Rossi},
+           familyi={R\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7dac69264dd2c8263424744836d3da22}{%
+           family={Savaré},
+           familyi={S\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{fullhash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{fullhashraw}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{bibnamehash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{authorbibnamehash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{authornamehash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{authorfullhash}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \strng{authorfullhashraw}{abd6f346b90d8faa2deac0e4277e0b3d}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{cvgmt preprint}
+      \field{title}{Balanced Viscosity (BV) solutions to infinite-dimensional rate-independent systems}
+      \field{year}{2013}
+      \true{nocite}
+      \verb{urlraw}
+      \verb http://cvgmt.sns.it/paper/2242/
+      \endverb
+      \verb{url}
+      \verb http://cvgmt.sns.it/paper/2242/
+      \endverb
+    \endentry
     \entry{rate-independent-systems}{book}{}{}
       \name{author}{2}{}{%
         {{hash=ef9126649c813582bd42a81657d1d9e9}{%

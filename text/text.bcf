@@ -2417,6 +2417,7 @@
     <bcf:citekey order="43" intorder="30">niremberg</bcf:citekey>
     <bcf:citekey order="44" intorder="31" nocite="1">rate-independent-systems</bcf:citekey>
     <bcf:citekey order="45" intorder="32" nocite="1">francfort</bcf:citekey>
+    <bcf:citekey order="46" intorder="33" nocite="1">MieRosSav13</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
