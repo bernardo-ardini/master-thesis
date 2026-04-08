@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  8 APR 2026 03:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  8 APR 2026 20:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -220,7 +220,24 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count294
 \enitdp@description=\count295
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+)
+Couldn't patch \@starttoc
+) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -282,14 +299,14 @@ Package: pgfsys 2023-01-15 v3.1.10 (3.1.10)
 \pgf@yd=\dimen198
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count296
-\c@pgf@countb=\count297
-\c@pgf@countc=\count298
-\c@pgf@countd=\count299
+\c@pgf@counta=\count297
+\c@pgf@countb=\count298
+\c@pgf@countc=\count299
+\c@pgf@countd=\count300
 \t@pgf@toka=\toks37
 \t@pgf@tokb=\toks38
 \t@pgf@tokc=\toks39
-\pgf@sys@id@count=\count300
+\pgf@sys@id@count=\count301
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2023-01-15 v3.1.10 (3.1.10)
 )
@@ -304,8 +321,8 @@ File: pgfsys-common-pdf.def 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfsyssoftpath@smallbuffer@items=\count301
-\pgfsyssoftpath@bigbuffer@items=\count302
+\pgfsyssoftpath@smallbuffer@items=\count302
+\pgfsyssoftpath@bigbuffer@items=\count303
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -336,7 +353,7 @@ Package: pgfcore 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen199
-\pgfmath@count=\count303
+\pgfmath@count=\count304
 \pgfmath@box=\box58
 \pgfmath@toks=\toks40
 \pgfmath@stack@operand=\toks41
@@ -361,7 +378,7 @@ tex)
 thmetics.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count304
+\c@pgfmathroundto@lastzeros=\count305
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
@@ -400,7 +417,7 @@ File: pgfcorescopes.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfpic=\box59
 \pgf@hbox=\box60
 \pgf@layerbox@main=\box61
-\pgf@picture@serial@count=\count305
+\pgf@picture@serial@count=\count306
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -433,8 +450,8 @@ File: pgfcorearrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@max=\dimen279
-\pgf@sys@shading@range@num=\count306
-\pgf@shadingcount=\count307
+\pgf@sys@shading@range@num=\count307
+\pgf@shadingcount=\count308
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2023-01-15 v3.1.10 (3.1.10)
@@ -492,7 +509,7 @@ Package: tikz 2023-01-15 v3.1.10 (3.1.10)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgf@plot@mark@count=\count308
+\pgf@plot@mark@count=\count309
 \pgfplotmarksize=\dimen284
 )
 \tikz@lastx=\dimen285
@@ -507,18 +524,18 @@ File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \tikz@figbox@bg=\box65
 \tikz@tempbox=\box66
 \tikz@tempbox@bg=\box67
-\tikztreelevel=\count309
-\tikznumberofchildren=\count310
-\tikznumberofcurrentchild=\count311
-\tikz@fig@count=\count312
+\tikztreelevel=\count310
+\tikznumberofchildren=\count311
+\tikznumberofcurrentchild=\count312
+\tikz@fig@count=\count313
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2023-01-15 v3.1.10 (3.1.10)
-\pgfmatrixcurrentrow=\count313
-\pgfmatrixcurrentcolumn=\count314
-\pgf@matrix@numberofcolumns=\count315
+\pgfmatrixcurrentrow=\count314
+\pgfmatrixcurrentcolumn=\count315
+\pgf@matrix@numberofcolumns=\count316
 )
-\tikz@expandcount=\count316
+\tikz@expandcount=\count317
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -533,17 +550,17 @@ Package: expl3 2025-01-18 L3 programming layer (loader)
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count317
+\l__color_backend_stack_int=\count318
 \l__pdf_internal_box=\box68
 ))
-\l_array_base_int=\count318
-\l_array_top_int=\count319
-\l_array_tmp_int=\count320
-\g_array_map_int=\count321
-\g_array_base_int=\count322
+\l_array_base_int=\count319
+\l_array_top_int=\count320
+\l_array_tmp_int=\count321
+\g_array_map_int=\count322
+\g_array_base_int=\count323
 )
-\g__hobby_npoints_int=\count323
-\g__hobby_draw_int=\count324
+\g__hobby_npoints_int=\count324
+\g__hobby_draw_int=\count325
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarypatterns.code.tex
@@ -564,7 +581,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen295
 \pgfdecoratedinputsegmentremainingdistance=\dimen296
 \pgf@decorate@distancetomove=\dimen297
-\pgf@decorate@repeatstate=\count325
+\pgf@decorate@repeatstate=\count326
 \pgfdecorationsegmentamplitude=\dimen298
 \pgfdecorationsegmentlength=\dimen299
 )
@@ -586,23 +603,10 @@ Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 (/usr/share/texlive/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count326
-)
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-
-(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-))
 (/usr/share/texlive/texmf-dist/tex/latex/logreq/logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count327
@@ -848,33 +852,33 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
  (./text.aux)
 \openout1 = `text.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 71.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 71.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 70
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 71
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
@@ -950,8 +954,8 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'text.bbl' found.
  (./text.bbl)
-Package biblatex Info: Reference section=0 on input line 70.
-Package biblatex Info: Reference segment=0 on input line 70.
+Package biblatex Info: Reference section=0 on input line 71.
+Package biblatex Info: Reference segment=0 on input line 71.
 
 
 [1
@@ -995,13 +999,18 @@ Chapter 2
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 216
+Chapter 3
+
+
+[4
+
+
+]
+LaTeX Font Info:    Trying to load font information for U+eus on input line 219
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
-
-[4]
 
 [5]
 
@@ -1010,85 +1019,305 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 [7]
 
 [8]
-<figures/epsilon2F.png, id=65, 363.759pt x 358.4592pt>
-File: figures/epsilon2F.png Graphic file (type png)
-<use figures/epsilon2F.png>
-Package pdftex.def Info: figures/epsilon2F.png  used on input line 546.
-(pdftex.def)             Requested size: 204.85802pt x 201.87346pt.
-<figures/plotu2p.png, id=66, 546.843pt x 289.5618pt>
-File: figures/plotu2p.png Graphic file (type png)
-<use figures/plotu2p.png>
-Package pdftex.def Info: figures/plotu2p.png  used on input line 553.
-(pdftex.def)             Requested size: 426.79135pt x 226.00308pt.
-<figures/bar.png, id=67, 453.3738pt x 550.2156pt>
-File: figures/bar.png Graphic file (type png)
-<use figures/bar.png>
-Package pdftex.def Info: figures/bar.png  used on input line 559.
-(pdftex.def)             Requested size: 426.79135pt x 517.98354pt.
-
 
 [9]
 
-[10 <./figures/epsilon2F.png> <./figures/plotu2p.png>]
+[10]
+<figures/epsilon2F.png, id=72, 363.759pt x 358.4592pt>
+File: figures/epsilon2F.png Graphic file (type png)
+<use figures/epsilon2F.png>
+Package pdftex.def Info: figures/epsilon2F.png  used on input line 549.
+(pdftex.def)             Requested size: 204.85802pt x 201.87346pt.
+<figures/plotu2p.png, id=73, 546.843pt x 289.5618pt>
+File: figures/plotu2p.png Graphic file (type png)
+<use figures/plotu2p.png>
+Package pdftex.def Info: figures/plotu2p.png  used on input line 556.
+(pdftex.def)             Requested size: 426.79135pt x 226.00308pt.
+<figures/bar.png, id=74, 453.3738pt x 550.2156pt>
+File: figures/bar.png Graphic file (type png)
+<use figures/bar.png>
+Package pdftex.def Info: figures/bar.png  used on input line 562.
+(pdftex.def)             Requested size: 426.79135pt x 517.98354pt.
 
-[11 <./figures/bar.png (PNG copy)>]
-Chapter 3
+
+[11]
+
+[12 <./figures/epsilon2F.png> <./figures/plotu2p.png>]
+
+[13 <./figures/bar.png (PNG copy)>]
+Chapter 4
 
 
-[12
+[14
 
 
 ]
 
-[13]
-Underfull \hbox (badness 3547) in paragraph at lines 754--754
+[15]
+Underfull \hbox (badness 3547) in paragraph at lines 765--765
 []\T1/cmr/m/n/10 there ex-ists $\U/msb/m/n/10 W [] [] R[] \OMS/cmsy/m/n/10 ! \O
 T1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 1\OT1/c
 mr/m/n/10 ]$ \T1/cmr/m/n/10 con-tin-u-ous and con-vex such that
  []
 
 
-Underfull \hbox (badness 3547) in paragraph at lines 754--754
+Underfull \hbox (badness 3547) in paragraph at lines 765--765
 []\T1/cmr/m/n/10 there ex-ists $\U/msb/m/n/10 W [] [] R[] \OMS/cmsy/m/n/10 ! \O
 T1/cmr/m/n/10 (\OMS/cmsy/m/n/10 ^^@1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 1\OT1/c
 mr/m/n/10 ]$ \T1/cmr/m/n/10 con-tin-u-ous and con-vex such that
  []
 
 
-Overfull \hbox (1.17102pt too wide) detected at line 779
- []$[]  \U/eus/m/n/10 E\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 y; P; t\OT1/cmr/m/n/10
- ) = [][] \OML/cmm/m/it/10 W [] dX \OT1/cmr/m/n/10 + [][] \OML/cmm/m/it/10 H\OT
-1/cmr/m/n/10 (\OML/cmm/m/it/10 P; P[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 dX\OMS/c
-msy/m/n/10 ^^@$ 
+
+[16]
+
+[17]
+
+[18]
+
+[19]
+
+[20
+
+
+]
+Chapter 5
+
+
+[21
+
+
+]
+Chapter 6
+
+
+[22
+
+
+]
+
+[23]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 102
+5.
+ (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+
+[24]
+
+[25]
+
+[26]
+
+[27]
+
+[28]
+
+[29]
+Overfull \hbox (10.8673pt too wide) in paragraph at lines 1490--1492
+\T1/cmr/m/n/10 Proposition 6.14[] en-sures that that for each $\OML/cmm/m/it/10
+ N$ \T1/cmr/m/n/10 there ex-ists $[][]$ such that $\OT1/cmr/m/n/10 ([]\OML/cmm/
+m/it/10 ; p[]; y[]\OT1/cmr/m/n/10 ) =
  []
 
 
 
-[14])
-Runaway argument?
-{\}_{q} \] From (W1) and (H1) it follows \[ \begin {split} \mathcal {\ETC.
-! File ended while scanning use of \\MT_delim_norm_nostar:.
-<inserted text> 
-                \par 
-<*> text.tex
-            
-I suspect you have forgotten a `}', causing me
-to read past where you wanted me to stop.
-I'll try to recover; but if the error is serious,
-you'd better type `E' or `X' now and fix your file.
+[30]
 
-! Emergency stop.
-<*> text.tex
-            
-*** (job aborted, no legal \end found)
+[31]
 
- 
+[32]
+
+[33]
+
+[34]
+
+[35]
+
+[36]
+
+[37]
+
+[38]
+
+[39]
+
+[40]
+
+[41]
+Chapter 7
+
+
+[42
+
+
+]
+
+[43]
+Appendix A
+
+
+[44
+
+
+]
+Appendix B
+
+
+[45
+
+
+]
+
+[46]
+Appendix C
+
+Overfull \hbox (11.07594pt too wide) in paragraph at lines 2371--2374
+[][]\T1/cmr/m/sc/10 Proposition \T1/cmr/m/n/10 C.1\T1/cmr/m/sc/10 . []\T1/cmr/m
+/n/10 (Gron-wall in-equal-ity) []Let $\OML/cmm/m/it/10 z \OMS/cmsy/m/n/10 2 \OM
+L/cmm/m/it/10 L[]\OT1/cmr/m/n/10 ((0\OML/cmm/m/it/10 ; T\OT1/cmr/m/n/10 ))$\T1/
+cmr/m/n/10 . Let $\OML/cmm/m/it/10 C \OMS/cmsy/m/n/10 2 \U/msb/m/n/10 R$ \T1/cm
+r/m/n/10 and $\OML/cmm/m/it/10 $\T1/cmr/m/n/10 , $\OML/cmm/m/it/10 ^^L$ \T1/cm
+r/m/n/10 in $\OML/cmm/m/it/10 L[]\OT1/cmr/m/n/10 ((0\OML/cmm/m/it/10 ; T\OT1/cm
+r/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n
+/10 1\OT1/cmr/m/n/10 ))$
+ []
+
+
+
+[47
+
+
+]
+
+[48]
+
+[49]
+
+[50]
+
+[51]
+
+[52]
+
+[53]
+
+[54]
+
+[55]
+
+[56]
+
+[57]
+Overfull \hbox (6.275pt too wide) in paragraph at lines 3132--3134
+[][]\T1/cmr/m/sc/10 Proposition \T1/cmr/m/n/10 C.27 (prop-er-ties of pos-i-tive
+ly 1-ho-mo-ge-neous con-vex func-tions)\T1/cmr/m/sc/10 . []\T1/cmr/m/n/10 Let $
+\OML/cmm/m/it/10 f [] [] V \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10
+ ^^@1\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 1\OT1/cmr/m/n/10 ]$
+ []
+
+
+
+[58]
+
+[59]
+Appendix D
+
+
+[60
+
+
+]
+
+[61]
+
+[62]
+
+[63]
+
+[64]
+
+[65]
+
+[66]
+
+[67]
+Overfull \hbox (10.59532pt too wide) detected at line 3725
+\U/eus/m/n/10 E\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )) + [][] \U
+/euf/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cmm/m/it/1
+0 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 ))\OML/cmm/m/it/10 d
+r \OMS/cmsy/m/n/10 ^^T \U/eus/m/n/10 E\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 s\
+OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s\OT1/
+cmr/m/n/10 )) []
+ []
+
+
+
+[68]
+
+[69]
+Bibliography
+
+
+[70
+
+
+
+
+]
+
+[71] (./text.aux)
+ ***********
+LaTeX2e <2024-11-01> patch level 2
+L3 programming layer <2025-01-18>
+ ***********
+Package logreq Info: Writing requests to 'text.run.xml'.
+\openout1 = `text.run.xml'.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24925 strings out of 473197
- 497136 string characters out of 5718605
- 1310340 words of memory out of 5000000
- 47618 multiletter control sequences out of 15000+600000
- 576111 words of font info for 84 fonts, out of 8000000 for 9000
+ 25224 strings out of 473197
+ 505309 string characters out of 5718605
+ 1318462 words of memory out of 5000000
+ 47903 multiletter control sequences out of 15000+600000
+ 577132 words of font info for 88 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 102i,23n,107p,1899b,1262s stack positions out of 10000i,1000n,20000p,200000b,200000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 102i,24n,107p,1899b,1390s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eusm7.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/rsfs/rsfs7.pfb></usr/share/texmf/fonts/type1/public/
+cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pf
+b></usr/share/texmf/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texmf/
+fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/c
+m-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
+></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/f
+onts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm
+-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+
+Output written on text.pdf (74 pages, 753840 bytes).
+PDF statistics:
+ 408 PDF objects out of 1000 (max. 8388607)
+ 263 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 28 words of extra memory for PDF output out of 10000 (max. 10000000)
+

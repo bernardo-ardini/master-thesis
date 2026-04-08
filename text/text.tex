@@ -10,6 +10,7 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
+\usepackage{parskip}
 
 \usepackage{tikz}
 \usetikzlibrary{hobby,patterns,patterns,decorations.pathmorphing,calc}
@@ -120,6 +121,8 @@
 \chapter{Introduction}
 
 \part{Existence results for a one-dimensional model of a plastic cylindrical bar}
+
+\chapter{Introduction}
 
 \chapter{Small deformation model}
 \label{chap:small-neck}
@@ -743,22 +746,33 @@ In this case
 
 \section{Existence result}
 
-Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$.
+Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$.
+
+\begin{equation}
+\tag{G}
+\parbox{0.8\textwidth}{$g_1\in C^1(\mathbb{R})$, $g_2\in C^1(\mathbb{R},(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.}
+\end{equation}
 
 \begin{gather}
 \parbox{0.8\textwidth}{there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that $W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)$ for all $E_1,E_2,G\in\mathbb{R}$}
 \tag{W0}
 \\
-\parbox{0.8\textwidth}{there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$}
+\parbox{0.8\textwidth}{there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$}
 \tag{W1}
+\\
+\parbox{0.8\textwidth}{$W(E_1,E_2,G)=\infty$ if $E_1\le0$ or $E_2\le0$}
+\tag{W2}
 \end{gather}
 
 \begin{gather}
 \parbox{0.8\textwidth}{$H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$}
 \tag{H0}
 \\
-\parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(1+|P|^{q_H}+|P|^{-q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
+\parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P|^{-q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
 \tag{H1}
+\\
+\parbox{0.8\textwidth}{$H(P,P')=\infty$ if $P\le0$}
+\tag{H2}
 \end{gather}
 
 \begin{gather}
@@ -774,32 +788,32 @@ Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}\cap W^
 
 Energy
 \begin{multline*}
-\mathcal{E}(y,P,t)=\int_0^L W\left(\dind{g_1}{y_1}(y_1,t)y_1'P^{-1},g_2(y_1,y_2,t)P,\dind{g_2}{y_1}(y_1,y_2,t)y_2'P^{-1}\right)dX+\int_0^LH(P,P')dX-\\
--\int_0^L\left(f_1g_1(y_1,t)+f_2g_2(y_2,t)\right)dX.
+\mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
++\int_0^LH(P,P')dX-\int_0^L\left(f_1(t)g_1(y_1,t)+f_2(t)g_2(y_1,t)y_2\right)dX.
 \end{multline*}
-
 \begin{lemma}
+\label{lemma:inverse-young}
 Let $a,b>0$. Then for all $\delta>0$ and $\rho>1$
 \[
 \frac{a}{b}\ge\rho\delta^\frac{\rho-1}{\rho}a^\frac{1}{\rho}-(\rho-1)\delta b^\frac{1}{\rho-1}
 \]
 \end{lemma}
 \begin{proof}
-By Young inequality if $A,B>0$ then
+By Young inequality, if $A,B>0$ then
 \[
-AB\le\frac{A^\rho}{\rho}+\frac{B^{\rho'}}{\rho'}
+AB\le\frac{A^\rho}{\rho}+\frac{B^{\rho^*}}{\rho^*}
 \]
 and
 \[
-A^\frac{1}{\rho}B^\frac{1}{\rho'}\le\frac{A}{\rho}+\frac{B}{\rho'}.
+A^\frac{1}{\rho}B^\frac{1}{\rho^*}\le\frac{A}{\rho}+\frac{B}{\rho^*}.
 \]
 It follows that
 \[
-A\ge\rho A^\frac{1}{\rho}B^\frac{1}{\rho'}-\frac{\rho}{\rho'}B.
+A\ge\rho A^\frac{1}{\rho}B^\frac{1}{\rho^*}-\frac{\rho}{\rho^*}B.
 \]
 If we put $A=a/b$ and $B$ such that
 \[
-B^\frac{1}{\rho'}=\delta^\frac{1}{\rho'}b^\frac{1}{\rho}
+B^\frac{1}{\rho^*}=\delta^\frac{1}{\rho^*}b^\frac{1}{\rho}
 \]
 the thesis follows.
 \end{proof}
@@ -811,21 +825,65 @@ We assume that
 The sublevels of $\mathcal{E}$ are bounded in $Q$.
 \end{prop}
 \begin{proof}
-First notice that for $i\in\{1,2\}$
-\[
-%a|y_iP^{-1}|=|\dind{g_i}{y_1}(y_i,t)|^{-1}|\dind{g_i}{y_1}(y_i,t)y_i'P^{-1}|\le C|\dind{g_i}{y_1}(y_i,t)y_i'P^{-1}|.
-\]
-Moreover by H\"older inequality
-\[
-\norm{\}_{q}
-\]
 From (W1) and (H1) it follows
+\begin{equation}
+\label{eqn:LS-neck-coercivity-1}
+\mathcal{E}(y,P,t)\ge
+\begin{multlined}[t]
+C\Big(-1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}+\\
++\norm{g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P^{-1}}_{q_H}^{q_H}+\norm{P'}_r^r\Big).
+\end{multlined}
+\end{equation}
+By H\"older inequality
+\[
+\norm{y_1'}_q=\norm{y_1'P^{-1}P}_q\le\norm{y_1'P^{-1}}_{q_W}\norm{P}_{q_H}
+\]
+so that using Lemma~\ref{lemma:inverse-young} with $\rho=q_W/q$ one gets
+\[
+\norm{y_1'P^{-1}}_{q_W}^{q_W}\ge\frac{\norm{y_1'}_q^{q_W}}{\norm{P}_{q_H}^{q_W}}\ge\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_q^q-(\rho-1)\delta\norm{P}_{q_H}^{q_H}
+\]
+for all $\delta>0$. We have used that $q_W/(\rho-1)=q_H$. Moreover
+\[
+\norm{y_1'P^{-1}}_{q_W}=\norm{g_1'(y_1,t)^{-1}g_1'(y_1,t)y_1'P^{-1}}_{q_W}\le\gamma^{-1}\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}.
+\]
+This implies that
+\begin{equation}
+\label{eqn:bound-y1'}
+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_q^q-\gamma^{q_W}(\rho-1)\delta\norm{P}_{q_H}^{q_H}.
+\end{equation}
+Similarly by H\"older and Young inequalities, for all $\delta>0$
+\[
+\norm{y_2}_q^q=\norm{y_2PP^{-1}}_q^q\le\norm{y_2P}_{q_W}^q\norm{P^{-1}}_{q_H}^q\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}
+\]
+where now $\rho=1+q_W/q_H$. Then
+\begin{equation}
+\label{eqn:bound-y2}
+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}\norm{P^{-1}}_{q_H}^{q_H}.
+\end{equation}
+Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_q$, $\norm{y}_q$, $\norm{P}_{q_H}$ and $\norm{P'}_r$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,q}$ is bounded. It remains to prove that $\norm{y_2'}_q$ is bounded. Let
+\[
+G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
+\]
+Then
+\[
+y_2'=\frac{GP-g_2'(y_1,t)y_1'y_2}{g_2(y_1,t)}.
+\]
+Il follows that
 \[
 \begin{split}
-\mathcal{E}(y,P,t)&\ge C(1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{y_2'P}_{q_W}^{q_W}+\norm{g_2'(y_2,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r)\\
-&\ge C(1+\norm{y_1'P^{-1}}_{q_W}^{q_W}+\norm{y_2'P}_{q_W}^{q_W}+\norm{y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r)
+\norm{y_2'}_q&\le\frac{1}{\gamma}\norm{GP}_q+\frac{1}{\gamma}\norm{g_2'(y_1,t)y_1'y_2}_q\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'y_2}_q\le\\
+&\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_q\norm{y_2}_\infty.
 \end{split}
 \]
+Since $L^\infty((0,T))$ is continuously embedded in $W^{1,q}((0,L))$, it follows that for all $\epsilon>0$ there exists $C>0$ such that
+\[
+\norm{y_2}_\infty\le C(\norm{y_2}_q+\epsilon\norm{y_2'}_q)\quad\text{for all $y_2\in W^{1,q}((0,L))$}.
+\]
+On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_q$ and $\norm{y_2}_q$ are bounded, so that there exists $M>0$ such that
+\[
+\norm{y_2'}_q\le M(1+\epsilon\norm{y_2'}_q).
+\]
+Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_q$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
 \end{proof}
 
 \section{Tensile test}
@@ -844,6 +902,8 @@ A classical choice for the dissipation potential is $R(L)=Y|L|$ where $Y>0$ is t
 
 
 \part{Existence results for a model describing pressure sensitive plastic materials}
+
+\chapter{Introduction}
 
 \chapter{Small deformation model}
 
