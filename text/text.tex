@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{geometry}
-\geometry{a4paper,margin=2.7cm,heightrounded}
+\geometry{a4paper,margin=3cm,heightrounded}
 
 \usepackage{amssymb,amsmath,amsthm,amsfonts,mathtools,eucal}
 \numberwithin{equation}{chapter}
@@ -741,6 +741,93 @@ In this case
 \zeta=2C\frac{l^2G}{E_1E_2}
 \end{gather*}
 
+\section{Existence result}
+
+Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$.
+
+\begin{gather}
+\parbox{0.8\textwidth}{there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that $W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)$ for all $E_1,E_2,G\in\mathbb{R}$}
+\tag{W0}
+\\
+\parbox{0.8\textwidth}{there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$}
+\tag{W1}
+\end{gather}
+
+\begin{gather}
+\parbox{0.8\textwidth}{$H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$}
+\tag{H0}
+\\
+\parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(1+|P|^{q_H}+|P|^{-q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
+\tag{H1}
+\end{gather}
+
+\begin{gather}
+\parbox{0.8\textwidth}{$D\colon\mathbb{R}^2\to[0,\infty]$ is continuous}
+\tag{D0}
+\\
+\parbox{0.8\textwidth}{there exist $C_D>0$ and $q_D\in[1,q_H)$ such that $D(P_0,P_1)\le C_D(1+|P_0|^{q_D}+|P_1|^{q_D})$}
+\tag{D1}
+\\
+\parbox{0.8\textwidth}{$D$ is a quasidistance in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$.}
+\tag{D2}
+\end{gather}
+
+Energy
+\begin{multline*}
+\mathcal{E}(y,P,t)=\int_0^L W\left(\dind{g_1}{y_1}(y_1,t)y_1'P^{-1},g_2(y_1,y_2,t)P,\dind{g_2}{y_1}(y_1,y_2,t)y_2'P^{-1}\right)dX+\int_0^LH(P,P')dX-\\
+-\int_0^L\left(f_1g_1(y_1,t)+f_2g_2(y_2,t)\right)dX.
+\end{multline*}
+
+\begin{lemma}
+Let $a,b>0$. Then for all $\delta>0$ and $\rho>1$
+\[
+\frac{a}{b}\ge\rho\delta^\frac{\rho-1}{\rho}a^\frac{1}{\rho}-(\rho-1)\delta b^\frac{1}{\rho-1}
+\]
+\end{lemma}
+\begin{proof}
+By Young inequality if $A,B>0$ then
+\[
+AB\le\frac{A^\rho}{\rho}+\frac{B^{\rho'}}{\rho'}
+\]
+and
+\[
+A^\frac{1}{\rho}B^\frac{1}{\rho'}\le\frac{A}{\rho}+\frac{B}{\rho'}.
+\]
+It follows that
+\[
+A\ge\rho A^\frac{1}{\rho}B^\frac{1}{\rho'}-\frac{\rho}{\rho'}B.
+\]
+If we put $A=a/b$ and $B$ such that
+\[
+B^\frac{1}{\rho'}=\delta^\frac{1}{\rho'}b^\frac{1}{\rho}
+\]
+the thesis follows.
+\end{proof}
+We assume that
+\[
+\frac{1}{q}=\frac{1}{q_W}+\frac{1}{q_H}.
+\]
+\begin{prop}[Coercivity of the energy]
+The sublevels of $\mathcal{E}$ are bounded in $Q$.
+\end{prop}
+\begin{proof}
+First notice that for $i\in\{1,2\}$
+\[
+%a|y_iP^{-1}|=|\dind{g_i}{y_1}(y_i,t)|^{-1}|\dind{g_i}{y_1}(y_i,t)y_i'P^{-1}|\le C|\dind{g_i}{y_1}(y_i,t)y_i'P^{-1}|.
+\]
+Moreover by H\"older inequality
+\[
+\norm{\}_{q}
+\]
+From (W1) and (H1) it follows
+\[
+\begin{split}
+\mathcal{E}(y,P,t)&\ge C(1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{y_2'P}_{q_W}^{q_W}+\norm{g_2'(y_2,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r)\\
+&\ge C(1+\norm{y_1'P^{-1}}_{q_W}^{q_W}+\norm{y_2'P}_{q_W}^{q_W}+\norm{y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r)
+\end{split}
+\]
+\end{proof}
+
 \section{Tensile test}
 
 Equations in the elastic range
@@ -753,6 +840,8 @@ From the first equation we get the following third order algebraic equation for 
 2A\chi_2^2(\chi_1')^3+\left(\frac{C}{\chi_2}-2A\chi_2-F\right)(\chi_1')^2-C\left(l^2\frac{(\chi_2')^2}{\chi_2}+\chi_2\right)=0.
 \]
 A classical choice for the dissipation potential is $R(L)=Y|L|$ where $Y>0$ is the yield strength.
+
+
 
 \part{Existence results for a model describing pressure sensitive plastic materials}
 
