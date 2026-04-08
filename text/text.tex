@@ -746,11 +746,11 @@ In this case
 
 \section{Existence result}
 
-Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$.
+Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$. PER ORA IL VINCOLO SUGLI ESPONENTI È CHE DEVONO ESSERE TUTTI MAGGIORI DI  E MINORI DI INFINITO E $\frac{1}{q}+\frac{1}{q_H}<1$.
 
 \begin{equation}
 \tag{G}
-\parbox{0.8\textwidth}{$g_1\in C^1(\mathbb{R})$, $g_2\in C^1(\mathbb{R},(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.}
+\parbox{0.8\textwidth}{$g_1\in C^2(\mathbb{R}\times[0,T])$, $g_2\in C^2(\mathbb{R}\times[0,T],(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.}
 \end{equation}
 
 \begin{gather}
@@ -768,10 +768,10 @@ Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))
 \parbox{0.8\textwidth}{$H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$}
 \tag{H0}
 \\
-\parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P|^{-q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
+\parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
 \tag{H1}
 \\
-\parbox{0.8\textwidth}{$H(P,P')=\infty$ if $P\le0$}
+\parbox{0.8\textwidth}{there exists $p>0$ such that $H(P,P')=\infty$ if $P\le p$}
 \tag{H2}
 \end{gather}
 
@@ -831,7 +831,7 @@ From (W1) and (H1) it follows
 \mathcal{E}(y,P,t)\ge
 \begin{multlined}[t]
 C\Big(-1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}+\\
-+\norm{g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P^{-1}}_{q_H}^{q_H}+\norm{P'}_r^r\Big).
++\norm{g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r\Big).
 \end{multlined}
 \end{equation}
 By H\"older inequality
@@ -853,12 +853,12 @@ This implies that
 \end{equation}
 Similarly by H\"older and Young inequalities, for all $\delta>0$
 \[
-\norm{y_2}_q^q=\norm{y_2PP^{-1}}_q^q\le\norm{y_2P}_{q_W}^q\norm{P^{-1}}_{q_H}^q\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}
+\norm{y_2}_q^q=\norm{y_2PP^{-1}}_q^q\le\norm{y_2P}_{q_W}^q\norm{P^{-1}}_{q_H}^q\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}Lp^{-q_H}
 \]
-where now $\rho=1+q_W/q_H$. Then
+where now $\rho=1+q_W/q_H$. Last inequality holds since $P>p$ a.e.\ on the sublevels of $\mathcal{E}$. Then
 \begin{equation}
 \label{eqn:bound-y2}
-\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}\norm{P^{-1}}_{q_H}^{q_H}.
+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}p^{-q_H}.
 \end{equation}
 Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_q$, $\norm{y}_q$, $\norm{P}_{q_H}$ and $\norm{P'}_r$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,q}$ is bounded. It remains to prove that $\norm{y_2'}_q$ is bounded. Let
 \[
@@ -884,6 +884,115 @@ On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$
 \norm{y_2'}_q\le M(1+\epsilon\norm{y_2'}_q).
 \]
 Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_q$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
+\end{proof}
+
+\begin{prop}[convergence of elastic strain measures]
+\label{prop:convergence-minors}
+Let $q,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in L^s((0,L))$ such that
+\begin{gather*}
+y^k\rightharpoonup y\quad\text{in $W^{1,q}((0,L))$} \\
+P_k\to P\quad\text{in $L^s((0,L))$}.
+\end{gather*}
+Assume also that $P_k,P\ge p>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_1,\gamma_2^k,\gamma_2,\rho_2^k,\rho_2\in L^\infty((0,L))$ such that
+\begin{align*}
+\gamma_1^k\to\gamma_1\quad\text{in $L^\infty((0,L))$} \\
+\gamma_2^k\to\gamma_2\quad\text{in $L^\infty((0,L))$} \\
+\rho_2^k\to\rho_2\quad\text{in $L^\infty((0,L))$}
+\end{align*}
+Then, up to extracting a subsequence,
+\begin{align*}
+\gamma_1^k(y_1^k)'P_k^{-1}&\rightharpoonup \gamma_1y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
+\gamma_2^ky_2^kP_k&\rightharpoonup \gamma_2y_2P\quad&\text{in $L^1((0,L))$} \\
+\rho_2^k(y_1^k)'y_2^kP_k^{-1}+\gamma_2^k(y_2^k)'P_k^{-1}&\rightharpoonup \rho_2y_1'y_2P^{-1}+\gamma_2y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
+\gamma_1^k(y_1^k)'\gamma_2^ky_2^k&\rightharpoonup \gamma_1y_1'\gamma_2y_2\quad&\text{in $L^1((0,L))$}
+\end{align*}
+\end{prop}
+\begin{proof}
+First notice that $P_k^{-1}\to P^{-1}$ in $L^s((0,L))$. Indeed
+\[
+|P_k^{-1}-P^{-1}|=\frac{|P_k-P|}{|P_kP|}\le\frac{|P_k-P|}{p^2}.
+\]
+Notice also that, up to extracting a subsequence, $y_2^k\to y_2$ in $C^0([0,L])$. Now the results follows from Lemma~\ref{lemma:lemmetto-cretino} below.
+\end{proof}
+\begin{lemma}
+\label{lemma:lemmetto-cretino}
+Let $q,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $f_k,f\in L^q((0,L))$, $g_k,g\in L^q((0,L))$, $h_k,h\in L^s((0,L))$ such that
+\begin{gather*}
+f_k\rightharpoonup f\quad\text{in $L^q((0,L))$} \\
+g_k\to g\quad\text{in $L^\infty((0,L))$} \\
+h_k\to h\quad\text{in $L^s((0,L))$}.
+\end{gather*}
+Then $f_kg_kh_k\rightharpoonup fgh$ in $L^1((0,L))$.
+\end{lemma}
+\begin{proof}
+Let $\phi\in L^\infty((0,L))$. Then
+\begin{multline*}
+\left|\int_0^L(f_kg_kh_k-fgh)\phi dX\right|\le\\
+\le\left|\int_0^L(g_k-g)f_kh_k\phi dX\right|+\left|\int_0^Lgf_k(h_k-h)\phi dX\right|+\left|\int_0^Lg(f_k-f)h\phi dX\right|.
+\end{multline*}
+Since $f_k$ are bounded in $L^q((0,L))$, $h_k$ are bounded in $L^s((0,L))$ and $\frac{1}{q}+\frac{1}{s}=1$, then $f_kh_k\phi$ are bounded in $L^1((0,L))$ and $gf_k\phi$ are bounded in $L^{s^*}((0,L))$. Moreover $gh\phi\in L^{q^*}((0,L))$. Then the thesis follows.
+\end{proof}
+
+\begin{thm}[Lower semicontinuity of integral functionals]
+\label{thm:lower-semicontinuity-integral-functional}
+Let $\Omega\subset\mathbb{R}^d$ open bounded. Let $f\colon\Omega\times\mathbb{R}^n\times\mathbb{R}^m\to(-\infty,\infty]$ such that
+\begin{itemize}
+\item[(i)] $f(\cdot,z,p)$ is measurable for all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$
+\item[(ii)] $f(x,\cdot,\cdot)$ is continuous for a.e.\ $x\in\Omega$
+\item[(iii)] $f(x,z,\cdot)$ is convex for all $x\in\Omega$ and $z\in\mathbb{R}^n$
+\item[(iv)] there exists $\phi\in L^1(\Omega)$ such that $f(x,z,p)\ge\phi(x)$ for a.e. $x\in\Omega$ and all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$.
+\end{itemize}
+Then for all measurable $y\colon\Omega\to\mathbb{R}^n$ and $u\colon\Omega\to\mathbb{R}^m$ is well defined
+\[
+I(y,u)=\int_\Omega f(x,y,u)dx.
+\]
+Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy
+\[
+y_k\to y\quad\text{in measure} 
+\]
+and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy
+\[
+u_k\to u\quad\text{in $L^1(\Omega,\mathbb{R}^n)$}
+\]
+then
+\[
+I(y,u)\le\liminf_{k\to\infty}I(y_k,u_k).
+\]
+\end{thm}
+
+\begin{prop}[Lower semicontinuity of the energy]
+For all $t\in[0,T]$ the map $\mathcal{E}(\cdot,t)$ is lower semicontinuous.
+\end{prop}
+\begin{proof}
+Let $(y^k,P_k)\rightharpoonup(y,P)$ in $Y\times Z$. We have to prove that
+\[
+\mathcal{E}(y,P)\le\liminf_{k\to\infty}\mathcal{E}(y_k,P_k).
+\]
+We take a (not relabeled) subsequence such that $\mathcal{E}(y_k,P_k)$ has a limit. Then we need to show that
+\begin{equation}
+\label{eqn:lower-semicontinuity-E-limit}
+\mathcal{E}(y,P)\le\lim_{k\to\infty}\mathcal{E}(y_k,P_k).
+\end{equation}
+If $\mathcal{E}(y_k,P_k)\to\infty$ we have nothing to prove. Then we assume that instead it converges to a finite limit. In this case we can assume that $\mathcal{E}(y_k,P_k)<\infty$ for all $k$. This implies that $P_k\ge p$ a.e.\ in $(0,L)$. In particular also $P\ge c$ a.e.\ in $(0,L)$.
+
+By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_1^k\to y_1$ and $P_k\to P$ in $C^0([0,L])$. Moreover $g_1'(y_1^k,t)\to g_1'(y_1,t)$, $g_2(y_1^k,t)\to g_2(y_1,t)$ and $g_2'(y_1^k,t)\to g_2'(y_1,t)$ in $C^0([0,L])$. Indeed if $\gamma\in C^1(\mathbb{R})$ then
+\begin{equation}
+\label{eqn:bound-gamma}
+\begin{split}
+|\gamma(y_1^k)-\gamma(y_1)|&=\left|\int_0^1\frac{d}{d\lambda}\gamma((1-\lambda)y_1^k+\lambda y_1)d\lambda\right|=\left|\int_0^1\gamma'((1-\lambda)y_1^k+\lambda y_1)(y_1-y_1^k)d\lambda\right|\le\\
+&\le\norm{y_1-y_1^k}_\infty\int_0^1|\gamma'((1-\lambda)y_1^k+\lambda y_1)|d\lambda.
+\end{split}
+\end{equation}
+Since $y_1^k$ converges to $y_1$ uniformly, then $y_1^k(t)$ takes values in a bounded set as $k\in\mathbb{N}$ and $t\in[0,T]$. Then the continuity of $\gamma'$ implies that the last integral in~\eqref{eqn:bound-gamma}. We have proved that $\gamma(y_1^k)\to\gamma(y_1)$ in $C^0([0,T])$, and this provides the desired results.
+
+Applying Proposition~\ref{prop:convergence-minors} it follows that up to extracting a subsequence
+\begin{align*}
+g_1'(y_1^k,t)(y_1^k)'P_k^{-1}&\rightharpoonup g_1(y_1,t)y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
+g_2(y_1^k,t)y_2^kP_k&\rightharpoonup g_2(y_1,t)y_2P\quad&\text{in $L^1((0,L))$} \\
+g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
+g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)^ky_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
+\end{align*}
+By these convergence results together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
 
 \section{Tensile test}

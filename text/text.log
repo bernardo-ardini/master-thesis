@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  8 APR 2026 20:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.24)  9 APR 2026 01:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1072,38 +1072,48 @@ mr/m/n/10 ]$ \T1/cmr/m/n/10 con-tin-u-ous and con-vex such that
 [16]
 
 [17]
+Overfull \hbox (6.57637pt too wide) detected at line 857
+\OMS/cmsy/m/n/10 k\OML/cmm/m/it/10 y[]\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 = \O
+MS/cmsy/m/n/10 k\OML/cmm/m/it/10 y[]PP[]\OMS/cmsy/m/n/10 k[] ^^T k\OML/cmm/m/it
+/10 y[]P\OMS/cmsy/m/n/10 k[]k\OML/cmm/m/it/10 P[]\OMS/cmsy/m/n/10 k[] ^^T []k\O
+ML/cmm/m/it/10 y[]P\OMS/cmsy/m/n/10 k[] \OT1/cmr/m/n/10 + []\OMS/cmsy/m/n/10 k\
+OML/cmm/m/it/10 P[]\OMS/cmsy/m/n/10 k[] ^^T []k\OML/cmm/m/it/10 y[]P\OMS/cmsy/m
+/n/10 k[] \OT1/cmr/m/n/10 + []\OML/cmm/m/it/10 Lp[]
+ []
+
+
 
 [18]
 
 [19]
 
-[20
+[20]
+
+[21
 
 
 ]
 Chapter 5
 
 
-[21
+[22
 
 
 ]
 Chapter 6
 
 
-[22
+[23
 
 
 ]
 
-[23]
-LaTeX Font Info:    Trying to load font information for U+euf on input line 102
-5.
+[24]
+LaTeX Font Info:    Trying to load font information for U+euf on input line 113
+4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueuf.fd
 File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 )
-
-[24]
 
 [25]
 
@@ -1114,15 +1124,15 @@ File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
 [28]
 
 [29]
-Overfull \hbox (10.8673pt too wide) in paragraph at lines 1490--1492
+
+[30]
+Overfull \hbox (10.8673pt too wide) in paragraph at lines 1599--1601
 \T1/cmr/m/n/10 Proposition 6.14[] en-sures that that for each $\OML/cmm/m/it/10
  N$ \T1/cmr/m/n/10 there ex-ists $[][]$ such that $\OT1/cmr/m/n/10 ([]\OML/cmm/
 m/it/10 ; p[]; y[]\OT1/cmr/m/n/10 ) =
  []
 
 
-
-[30]
 
 [31]
 
@@ -1145,34 +1155,36 @@ m/it/10 ; p[]; y[]\OT1/cmr/m/n/10 ) =
 [40]
 
 [41]
+
+[42]
 Chapter 7
 
 
-[42
+[43
 
 
 ]
 
-[43]
+[44]
 Appendix A
-
-
-[44
-
-
-]
-Appendix B
 
 
 [45
 
 
 ]
+Appendix B
 
-[46]
+
+[46
+
+
+]
+
+[47]
 Appendix C
 
-Overfull \hbox (11.07594pt too wide) in paragraph at lines 2371--2374
+Overfull \hbox (11.07594pt too wide) in paragraph at lines 2480--2483
 [][]\T1/cmr/m/sc/10 Proposition \T1/cmr/m/n/10 C.1\T1/cmr/m/sc/10 . []\T1/cmr/m
 /n/10 (Gron-wall in-equal-ity) []Let $\OML/cmm/m/it/10 z \OMS/cmsy/m/n/10 2 \OM
 L/cmm/m/it/10 L[]\OT1/cmr/m/n/10 ((0\OML/cmm/m/it/10 ; T\OT1/cmr/m/n/10 ))$\T1/
@@ -1185,12 +1197,10 @@ r/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n
 
 
 
-[47
+[48
 
 
 ]
-
-[48]
 
 [49]
 
@@ -1209,7 +1219,9 @@ r/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 [0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n
 [56]
 
 [57]
-Overfull \hbox (6.275pt too wide) in paragraph at lines 3132--3134
+
+[58]
+Overfull \hbox (6.275pt too wide) in paragraph at lines 3241--3243
 [][]\T1/cmr/m/sc/10 Proposition \T1/cmr/m/n/10 C.27 (prop-er-ties of pos-i-tive
 ly 1-ho-mo-ge-neous con-vex func-tions)\T1/cmr/m/sc/10 . []\T1/cmr/m/n/10 Let $
 \OML/cmm/m/it/10 f [] [] V \OMS/cmsy/m/n/10 ! \OT1/cmr/m/n/10 (\OMS/cmsy/m/n/10
@@ -1218,18 +1230,16 @@ ly 1-ho-mo-ge-neous con-vex func-tions)\T1/cmr/m/sc/10 . []\T1/cmr/m/n/10 Let $
 
 
 
-[58]
-
 [59]
+
+[60]
 Appendix D
 
 
-[60
+[61
 
 
 ]
-
-[61]
 
 [62]
 
@@ -1242,7 +1252,9 @@ Appendix D
 [66]
 
 [67]
-Overfull \hbox (10.59532pt too wide) detected at line 3725
+
+[68]
+Overfull \hbox (10.59532pt too wide) detected at line 3834
 \U/eus/m/n/10 E\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )\OML/cm
 m/m/it/10 ; [][]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 t\OT1/cmr/m/n/10 )) + [][] \U
 /euf/m/n/10 F[]\OT1/cmr/m/n/10 ([][](\OML/cmm/m/it/10 r\OT1/cmr/m/n/10 )\OML/cm
@@ -1256,20 +1268,20 @@ cmr/m/n/10 )) []
 
 
 
-[68]
-
 [69]
+
+[70]
 Bibliography
 
 
-[70
+[71
 
 
 
 
 ]
 
-[71] (./text.aux)
+[72] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1279,10 +1291,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 25224 strings out of 473197
- 505309 string characters out of 5718605
- 1318462 words of memory out of 5000000
- 47903 multiletter control sequences out of 15000+600000
+ 25229 strings out of 473197
+ 505455 string characters out of 5718605
+ 1318594 words of memory out of 5000000
+ 47908 multiletter control sequences out of 15000+600000
  577132 words of font info for 88 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  102i,24n,107p,1899b,1390s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1314,10 +1326,10 @@ m-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
 onts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
 
-Output written on text.pdf (74 pages, 753840 bytes).
+Output written on text.pdf (75 pages, 762058 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
- 263 compressed objects within 3 object streams
+ 411 PDF objects out of 1000 (max. 8388607)
+ 265 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  28 words of extra memory for PDF output out of 10000 (max. 10000000)
 
