@@ -17,9 +17,8 @@
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{bib.bib}
-
-%\usepackage{newpxtext,newpxmath}
-\usepackage{mathrsfs}
+\usepackage{newpxtext,newpxmath}
+%\usepackage{mathrsfs}
 
 \theoremstyle{definition}
 \newtheorem{prop}{Proposition}[chapter]
@@ -760,7 +759,7 @@ Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))
 \parbox{0.8\textwidth}{there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$}
 \tag{W1}
 \\
-\parbox{0.8\textwidth}{$W(E_1,E_2,G)=\infty$ if $E_1\le0$ or $E_2\le0$}
+\parbox{0.8\textwidth}{$W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$}
 \tag{W2}
 \end{gather}
 
@@ -771,7 +770,7 @@ Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))
 \parbox{0.8\textwidth}{there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$}
 \tag{H1}
 \\
-\parbox{0.8\textwidth}{there exists $p>0$ such that $H(P,P')=\infty$ if $P\le p$}
+\parbox{0.8\textwidth}{there exists $p>0$ such that $H(P,P')=\infty$ if and only if $P\le p$}
 \tag{H2}
 \end{gather}
 
@@ -990,7 +989,7 @@ Applying Proposition~\ref{prop:convergence-minors} it follows that up to extract
 g_1'(y_1^k,t)(y_1^k)'P_k^{-1}&\rightharpoonup g_1(y_1,t)y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 g_2(y_1^k,t)y_2^kP_k&\rightharpoonup g_2(y_1,t)y_2P\quad&\text{in $L^1((0,L))$} \\
 g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)^ky_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
+g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
 \end{align*}
 By these convergence results together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
