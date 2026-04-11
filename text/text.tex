@@ -745,7 +745,7 @@ In this case
 
 \section{Existence result}
 
-Let $Y=W^{1,q}((0,L),\mathbb{R}^2)$ with $q\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$. PER ORA IL VINCOLO SUGLI ESPONENTI È CHE DEVONO ESSERE TUTTI MAGGIORI DI  E MINORI DI INFINITO E $\frac{1}{q}+\frac{1}{q_H}<1$.
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$. PER ORA IL VINCOLO SUGLI ESPONENTI È CHE DEVONO ESSERE TUTTI MAGGIORI DI  E MINORI DI INFINITO E $\frac{1}{q_Y}+\frac{1}{q_H}<1$.
 
 \begin{equation}
 \tag{G}
@@ -818,7 +818,7 @@ the thesis follows.
 \end{proof}
 We assume that
 \[
-\frac{1}{q}=\frac{1}{q_W}+\frac{1}{q_H}.
+\frac{1}{q_Y}=\frac{1}{q_W}+\frac{1}{q_H}.
 \]
 \begin{prop}[Coercivity of the energy]
 The sublevels of $\mathcal{E}$ are bounded in $Q$.
@@ -835,11 +835,11 @@ C\Big(-1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{g_2(y_1,t)y_2P}_{q_W}^{q
 \end{equation}
 By H\"older inequality
 \[
-\norm{y_1'}_q=\norm{y_1'P^{-1}P}_q\le\norm{y_1'P^{-1}}_{q_W}\norm{P}_{q_H}
+\norm{y_1'}_{q_Y}=\norm{y_1'P^{-1}P}_{q_Y}\le\norm{y_1'P^{-1}}_{q_W}\norm{P}_{q_H}
 \]
-so that using Lemma~\ref{lemma:inverse-young} with $\rho=q_W/q$ one gets
+so that using Lemma~\ref{lemma:inverse-young} with $\rho=q_W/q_Y$ one gets
 \[
-\norm{y_1'P^{-1}}_{q_W}^{q_W}\ge\frac{\norm{y_1'}_q^{q_W}}{\norm{P}_{q_H}^{q_W}}\ge\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_q^q-(\rho-1)\delta\norm{P}_{q_H}^{q_H}
+\norm{y_1'P^{-1}}_{q_W}^{q_W}\ge\frac{\norm{y_1'}_q^{q_W}}{\norm{P}_{q_H}^{q_W}}\ge\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_{q_Y}^{q_Y}-(\rho-1)\delta\norm{P}_{q_H}^{q_H}
 \]
 for all $\delta>0$. We have used that $q_W/(\rho-1)=q_H$. Moreover
 \[
@@ -852,14 +852,14 @@ This implies that
 \end{equation}
 Similarly by H\"older and Young inequalities, for all $\delta>0$
 \[
-\norm{y_2}_q^q=\norm{y_2PP^{-1}}_q^q\le\norm{y_2P}_{q_W}^q\norm{P^{-1}}_{q_H}^q\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}Lp^{-q_H}
+\norm{y_2}_{q_Y}^{q_Y}=\norm{y_2PP^{-1}}_{q_Y}^{q_Y}\le\norm{y_2P}_{q_W}^{q_Y}\norm{P^{-1}}_{q_H}^{q_Y}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}Lp^{-q_H}
 \]
 where now $\rho=1+q_W/q_H$. Last inequality holds since $P>p$ a.e.\ on the sublevels of $\mathcal{E}$. Then
 \begin{equation}
 \label{eqn:bound-y2}
 \norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}p^{-q_H}.
 \end{equation}
-Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_q$, $\norm{y}_q$, $\norm{P}_{q_H}$ and $\norm{P'}_r$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,q}$ is bounded. It remains to prove that $\norm{y_2'}_q$ is bounded. Let
+Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_{q_Y}$, $\norm{y}_{q_Y}$, $\norm{P}_{q_H}$ and $\norm{P'}_r$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,{q_Y}}$ is bounded. It remains to prove that $\norm{y_2'}_{q_Y}$ is bounded. Let
 \[
 G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
 \]
@@ -870,26 +870,26 @@ y_2'=\frac{GP-g_2'(y_1,t)y_1'y_2}{g_2(y_1,t)}.
 Il follows that
 \[
 \begin{split}
-\norm{y_2'}_q&\le\frac{1}{\gamma}\norm{GP}_q+\frac{1}{\gamma}\norm{g_2'(y_1,t)y_1'y_2}_q\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'y_2}_q\le\\
-&\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_q\norm{y_2}_\infty.
+\norm{y_2'}_{q_Y}&\le\frac{1}{\gamma}\norm{GP}_{q_Y}+\frac{1}{\gamma}\norm{g_2'(y_1,t)y_1'y_2}_{q_Y}\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'y_2}_{q_Y}\le\\
+&\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_{q_Y}\norm{y_2}_\infty.
 \end{split}
 \]
 Since $L^\infty((0,T))$ is continuously embedded in $W^{1,q}((0,L))$, it follows that for all $\epsilon>0$ there exists $C>0$ such that
 \[
 \norm{y_2}_\infty\le C(\norm{y_2}_q+\epsilon\norm{y_2'}_q)\quad\text{for all $y_2\in W^{1,q}((0,L))$}.
 \]
-On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_q$ and $\norm{y_2}_q$ are bounded, so that there exists $M>0$ such that
+On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_{q_Y}$ and $\norm{y_2}_{q_Y}$ are bounded, so that there exists $M>0$ such that
 \[
-\norm{y_2'}_q\le M(1+\epsilon\norm{y_2'}_q).
+\norm{y_2'}_{q_Y}\le M(1+\epsilon\norm{y_2'}_{q_Y}).
 \]
-Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_q$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
+Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_{q_Y}$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
 \end{proof}
 
 \begin{prop}[convergence of elastic strain measures]
 \label{prop:convergence-minors}
-Let $q,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in L^s((0,L))$ such that
+Let $q_Y,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in L^s((0,L))$ such that
 \begin{gather*}
-y^k\rightharpoonup y\quad\text{in $W^{1,q}((0,L))$} \\
+y^k\rightharpoonup y\quad\text{in $W^{1,q_Y}((0,L))$} \\
 P_k\to P\quad\text{in $L^s((0,L))$}.
 \end{gather*}
 Assume also that $P_k,P\ge p>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_1,\gamma_2^k,\gamma_2,\rho_2^k,\rho_2\in L^\infty((0,L))$ such that
@@ -911,7 +911,7 @@ First notice that $P_k^{-1}\to P^{-1}$ in $L^s((0,L))$. Indeed
 \[
 |P_k^{-1}-P^{-1}|=\frac{|P_k-P|}{|P_kP|}\le\frac{|P_k-P|}{p^2}.
 \]
-Notice also that, up to extracting a subsequence, $y_2^k\to y_2$ in $C^0([0,L])$. Now the results follows from Lemma~\ref{lemma:lemmetto-cretino} below.
+Notice also that, since $W^{1,q}((0,L))$ is compactly embedded in $C^0([0,L])$, up to extracting a subsequence $y_2^k\to y_2$ in $C^0([0,L])$. Now the results follows from Lemma~\ref{lemma:lemmetto-cretino} below.
 \end{proof}
 \begin{lemma}
 \label{lemma:lemmetto-cretino}
@@ -929,7 +929,7 @@ Let $\phi\in L^\infty((0,L))$. Then
 \left|\int_0^L(f_kg_kh_k-fgh)\phi dX\right|\le\\
 \le\left|\int_0^L(g_k-g)f_kh_k\phi dX\right|+\left|\int_0^Lgf_k(h_k-h)\phi dX\right|+\left|\int_0^Lg(f_k-f)h\phi dX\right|.
 \end{multline*}
-Since $f_k$ are bounded in $L^q((0,L))$, $h_k$ are bounded in $L^s((0,L))$ and $\frac{1}{q}+\frac{1}{s}=1$, then $f_kh_k\phi$ are bounded in $L^1((0,L))$ and $gf_k\phi$ are bounded in $L^{s^*}((0,L))$. Moreover $gh\phi\in L^{q^*}((0,L))$. Then the thesis follows.
+Since $f_k$ are bounded in $L^q((0,L))$, $h_k$ are bounded in $L^s((0,L))$ and $\frac{1}{q}+\frac{1}{s}\le1$, then $f_kh_k\phi$ are bounded in $L^1((0,L))$ and $gf_k\phi$ are bounded in $L^{s^*}((0,L))$. Moreover $gh\phi\in L^{q^*}((0,L))$. Then the thesis follows.
 \end{proof}
 
 \begin{thm}[Lower semicontinuity of integral functionals]
@@ -993,6 +993,11 @@ g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)
 \end{align*}
 By these convergence results together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
+
+NOW I WILL FOCUS ON A PARTICULAR CONSTITUTIVE RELATION. I WILL FOCUS ON
+\[
+W(E_1,E_2,G)=C(E_1^2+E_2^2-2\log(E_1E_2)-2)+\frac{1}{2}l^2C G^2
+\]
 
 \section{Tensile test}
 
@@ -1067,7 +1072,7 @@ T_p:\tilde V_p+K_p\threedots\grad\tilde V_p=\mathbb{T}_p\circ\tilde{\mathbb{V}}_
 \draw (2,-0.75) -- (3,-0.75) -- (3,-1.25) -- (2,-1.25); % Cilindro
 \node[anchor=north] at (2.5,-1.25) {$T_p$};
 \end{tikzpicture}
-\caption{Rheological model describing the choice of the internal virtual power $\tilde{\mathscr W}$. The
+\caption{Rheological model describing the choice of the internal virtual power $\tilde{\mathcal W}$. The
 box in upper branch represents the (generic) macroscopic response. In the lower branch,
 the spring represents the elastic response and the piston represents the microscopic response. We
 notice that the microscopic response besides the usual dissipative plastic microforce force can include conservative microforces to model hardening. A more detailed discussion on constitutive relations is in Section~\ref{subsec:constitutive}.}
