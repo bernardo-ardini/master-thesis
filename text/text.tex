@@ -994,10 +994,17 @@ g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)
 By these convergence results together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
 
-NOW I WILL FOCUS ON A PARTICULAR CONSTITUTIVE RELATION. I WILL FOCUS ON
+\begin{prop}
+There exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
+\begin{itemize}
+\item[(i)] for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$,
+\item[(ii)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
+\item[(iii)] there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}$ and $t,s\in[0,T]$,
 \[
-W(E_1,E_2,G)=C(E_1^2+E_2^2-2\log(E_1E_2)-2)+\frac{1}{2}l^2C G^2
+|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega(|t-s|)(C_0^E+\mathcal{E}(q,t)).
 \]
+\end{itemize}
+\end{prop}
 
 \section{Tensile test}
 
@@ -3304,7 +3311,7 @@ Set $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumption
 \tag{E2}
 \\
 \label{eqn:ES-energy-time-regularity}
-\parbox[c]{0.8\textwidth}{for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$, uniformly continuous on $\mathscr{D}\times[0,T]$, and there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $t\in[0,T]$.}
+\parbox[c]{0.8\textwidth}{for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$, uniformly continuous on $\mathscr{D}\times[0,T]$, and there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$.}
 \tag{E3}
 \end{gather}
 Notice that~\eqref{eqn:ES-energy-space-regularity} implies that $\mathcal{E}$ is weakly lower semicontinuous and that~\eqref{eqn:ES-energy-time-regularity} implies the existence of a modulus of continuity $\omega^E$ (this means $\omega^E\colon[0,\infty)\to[0,\infty)$ is continuous, nondecreasing and $\omega^E(0)=0$) such that
