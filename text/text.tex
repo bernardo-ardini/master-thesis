@@ -11,7 +11,7 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
-%\usepackage{parskip}
+\usepackage[indent=0.5em,skip=0em]{parskip}
 \usepackage{bookmark}
 
 \usepackage{tikz}
@@ -119,7 +119,7 @@
 % 
 %I would like also to confirm the above considerations by a numerical study of the problem using the finite element method. The proof of the existence theorem is close to the numerical scheme that would be used, so we have in part established the convergence of the numerical method. I would use the monolithic approach proposed in~\cite{panteghini-bardella} and to obviate the need of globally $C^1$ finite element to handle the second gradient I would adopt the mortar method (we use discontinuous Lagrange polynomial of order two and we impose weakly the continuity and the continuity of the gradient across the elements with Lagrange multipliers supported on the element edges representing tractions and torques exchanged between the elements)\footnote{I saw this method applied for the numerical treatment of Navier--Stokes-$\alpha\beta$ model of Gurtin and Fried but I cannot find the paper any more.}. If the viscosity is kept positive the problem could be solved with a standard Newton--Raphson procedure applying a time step size adaptivity procedure to slow down during the fast localization process. This should work until the viscosity is so small that the problem requires a too small time step to be solved.
 
-\chapter{Introduction}
+\chapter*{Introduction}
 
 \part{Existence results for a one-dimensional model of a plastic cylindrical bar}
 
@@ -747,39 +747,118 @@ In this case
 
 \section{Existence result}
 
-Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(??,\infty)$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$. Set $Q=Y\times Z$. PER ORA IL VINCOLO SUGLI ESPONENTI È CHE DEVONO ESSERE TUTTI MAGGIORI DI  E MINORI DI INFINITO E $\frac{1}{q_Y}+\frac{1}{q_H}<1$. Some times the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used.
+\subsection{Introduction}
 
-\begin{itemize}[itemsep=1em]
-\item[(G)] $g_1\in C^2(\mathbb{R}\times[0,T])$, $g_2\in C^2(\mathbb{R}\times[0,T],(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.
-\end{itemize}
 
-\begin{itemize}[itemsep=1em]
-\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that $W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)$ for all $E_1,E_2,G\in\mathbb{R}$,
-\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$,
-\item[(W3)] $W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
-\item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$ and $C^W_1>0$ such that for all $E\in\dom W$ and $i\in\{1,2,3\}$,
-\begin{equation*}
-\left|E_i\dind{W}{E_i}(E)\right|\le C_1^W(C_0^W+W(E)).
-\end{equation*} 
-\end{itemize}
 
-\begin{itemize}[itemsep=1em]
-\item[(H1)] $H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$,
-\item[(H2)] there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$,
-\item[(H3)] there exists $p>0$ such that $H(P,P')=\infty$ if and only if $P\le p$.
-\end{itemize}
-
-\begin{itemize}[itemsep=1em]
-\item[(D1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is continuous,
-\item[(D2)] there exist $C_D>0$ and $q_D\in[1,q_H)$ such that $D(P_0,P_1)\le C_D(1+|P_0|^{q_D}+|P_1|^{q_D})$ for all $P_1,P_2\in\mathbb{R}$,
-\item[(D3)] $D$ is a quasidistance in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$.
-\end{itemize}
+Sometimes the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$ then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
 
 Energy
 \begin{multline*}
 \mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
 +\int_0^LH(P,P')dX-\int_0^L\left(f_1(t)g_1(y_1,t)+f_2(t)g_2(y_1,t)y_2\right)dX.
 \end{multline*}
+
+\subsection{Assumptions and preliminary results}
+
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$ with $q_h,r\in(1,\infty)$ the space of $P$. Set $Q=Y\times Z$.
+
+The assumption on the Dirichlet data is
+\begin{itemize}[itemsep=1em]
+\item[(G)] $g_1\in C^2(\mathbb{R}\times[0,T])$, $g_2\in C^2(\mathbb{R}\times[0,T],(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.
+\end{itemize}
+
+The elastic free energy density is supposed to satisfy
+\begin{itemize}[itemsep=1em]
+\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that $W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)$ for all $E_1,E_2,G\in\mathbb{R}$,
+\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$,
+\item[(W3)] $W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
+\item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$, $C^W_1>0$ and a modulus of continuity $\omega^W$ such that
+\begin{itemize}
+\item[(i)] for all $E\in\dom W$ and $i\in\{1,2,3\}$ it holds $\left|E_i\dind{W}{E_i}(E)\right|\le C_1^W(C_0^W+W(E))$,
+\item[(ii)] let $K(E)=E\cdot\dind{W}{E}(E)$, then $|K(NE)-K(E)|\le\omega^W(|N-1|)(W(E)+C_0^W)$ for all $N\in(0,\infty)^3$.
+\end{itemize}
+\end{itemize}
+Assumption (W1) is a sort policonvexity requirement necessary to ensure lower semicontinuity, (W2) is a growth condition, (W3) is an incompenetrability condition for the elastic distortion and (W4) is a further regularity assumption which is needed to get suitable a priori estimates. Later on we will use the following consequence of (W4).
+\begin{lemma}
+\label{lemma:tipo-ball-kirchhoff-control}
+Fix $0<\delta<1$ small enough. Then there exists $C>0$ such that
+\[
+W(NE)+\max_{i\in\{1,2,3\}}\left|E_i\dind{W}{E_i}(NE)\right|\le C(W(E)+C_0^W)
+\]
+for all $E\in(0,\infty)\times(0,\infty)\times\mathbb{R}$ and $N\in(1-\delta,1+\delta)^3$. Here $NE\in\mathbb{R}^3$ denotes the component-wise multiplication, i.e., $(NE)_i=N_iE_i$ for all $i\in\{1,2,3\}$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1.} For all $i\in\{1,2,3\}$, by (W4, i)
+\[
+\begin{split}
+\left|E_i\dind{W}{E_i}(NE)\right|=|N_i|^{-1}\left|N_iE_i\dind{W}{E_i}(NE)\right|&\le|N_i|^{-1}C_1^W(C_0^W+W(NE))\le\\
+&\le\frac{C_1^W}{1-\delta}(C_0^W+W(NE)).
+\end{split}
+\]
+
+\emph{Step 2.} We have that
+\[
+|W(NE)-W(E)|=\left|\int_0^1\frac{d}{d\lambda}W(\tilde N(\lambda)E)d\lambda\right|,
+\]
+where $\tilde N(\lambda)=(1-\lambda)+\lambda N$, i.e., $\tilde N_i(\lambda)=(1-\lambda)+\lambda N_i\in(1-\delta,1+\delta)$ for all $i\in\{1,2,3\}$. Then
+\[
+\begin{split}
+|W(NE)-W(E)|&=\left|\int_0^1\dind{W}{E}(\tilde N(\lambda)E)\cdot(N-1)d\lambda\right|\le\sum_{i=1}^3\int_0^1\left|\tilde N_i(\lambda)E_i\dind{W}{E_i}(\tilde N(\lambda)E)\right|\frac{|N_i-1|}{\tilde N_i(\lambda)}d\lambda\le\\
+&\le\frac{\delta}{1-\delta}C_1^W\int_0^1(W(\tilde N(\lambda)E)+C_0^W)d\lambda.
+\end{split}
+\]
+
+\emph{Step 3.} Let $\theta(E)=\sup_{N\in(1-\delta,1+\delta)^3}W(NE)$. From Step 2
+\[
+|W(NE)-W(E)|\le\theta(E)-W(E)\le\frac{\delta}{1-\delta}C_1^W(\theta(E)+C_0^W).
+\]
+This implies
+\[
+\left(1-\frac{\delta}{1-\delta}C_1^W\right)\theta(E)\le W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W.
+\]
+If $\delta$ is small enough then
+\[
+\theta(E)\le\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}.
+\]
+
+\emph{Step 4.} From Step 3
+\[
+|W(NE)-W(E)|\le\frac{\delta}{1-\delta}C_1^W\left(\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}+C_0^W\right)\le\left(\frac{1}{\frac{\delta}{1-\delta}C_1^W}-1\right)^{-1}(W(E)+C_0^W).
+\]
+
+\emph{Step 5.} From Step 1
+\[
+\begin{split}
+\max_{i\in\{1,2,3\}}\left|E_i\dind{W}{E_i}(NE)\right|\le\frac{C_1^W}{1-\delta}(C_0^W+\theta(E))&\le\frac{C_1^W}{1-\delta}\left(\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}+C_0^W\right)=\\
+&=\frac{C_1^W}{1-\delta(1+C_1^W)}(W(E)+C_0^W).
+\end{split}
+\]
+\emph{Step 6.} Summing together the results of Step 4 and Step 5 we get the thesis.
+\end{proof}
+The plastic free energy density satisfies
+\begin{itemize}[itemsep=1em]
+\item[(H1)] $H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$,
+\item[(H2)] there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$,
+\item[(H3)] there exists $p>0$ such that $H(P,P')=\infty$ if and only if $P\le p$.
+\end{itemize}
+The convexity assumption (H1) is required for lower semicontinuity, (H2) is a growth condition ensuring that the hardening and the plastic gradient regularization is sufficiently strong. Assumption (H3) is a strong incompenetrability condition for the plastic distortion.
+
+To handle correctly the nonlinear coupling between elastic and plastic distortions, we require the following compatibility condition on the H\"older exponents
+\begin{itemize}
+\item[(\"O)] it holds $\frac{1}{q_Y}=\frac{1}{q_W}+\frac{1}{q_H}$.
+\end{itemize}
+
+The requirements on the dissipation potential density are
+\begin{itemize}[itemsep=1em]
+\item[(d1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is continuous,
+\item[(d2)] there exist $C_D>0$ and $q_D\in[1,q_H)$ such that $D(P_0,P_1)\le C_D(1+|P_0|^{q_D}+|P_1|^{q_D})$ for all $P_1,P_2\in\mathbb{R}$,
+\item[(d3)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$.
+\end{itemize}
+
+\subsection{Verification the properties of the energy functional}
+
+We start with the following lemma which is necessary to handle the nonlinear coupling between elastic and plastic distortion.
 \begin{lemma}
 \label{lemma:inverse-young}
 Let $a,b>0$. Then for all $\delta>0$ and $\rho>1$
@@ -806,12 +885,9 @@ B^\frac{1}{\rho^*}=\delta^\frac{1}{\rho^*}b^\frac{1}{\rho}
 \]
 the thesis follows.
 \end{proof}
-We assume that
-\[
-\frac{1}{q_Y}=\frac{1}{q_W}+\frac{1}{q_H}.
-\]
-\begin{prop}[Coercivity of the energy]
-The sublevels of $\mathcal{E}$ are bounded in $Q$.
+We now prove that (E2) is satisfied. We start with proving the boundedness of sublevels.
+\begin{prop}[Boundedness of energy sublevels]
+The sublevels of $\mathcal{E}(\cdot,t)$ are bounded in $Q$ for all $t\in[0,T]$.
 \end{prop}
 \begin{proof}
 From (W1) and (H1) it follows
@@ -874,13 +950,13 @@ On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$
 \]
 Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_{q_Y}$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
 \end{proof}
-
-\begin{prop}[convergence of elastic strain measures]
+We now move to the proof of the weak lower semicontinuity of $\mathcal E$. We first need the following technical result.
+\begin{prop}[convergence of elastic distortion]
 \label{prop:convergence-minors}
-Let $q_Y,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in L^s((0,L))$ such that
+Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in C^0([0,L])$ such that
 \begin{gather*}
 y^k\rightharpoonup y\quad\text{in $W^{1,q_Y}((0,L))$} \\
-P_k\to P\quad\text{in $L^s((0,L))$}.
+P_k\to P\quad\text{in $C^0([0,L])$}.
 \end{gather*}
 Assume also that $P_k,P\ge p>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_1,\gamma_2^k,\gamma_2,\rho_2^k,\rho_2\in L^\infty((0,L))$ such that
 \begin{align*}
@@ -897,7 +973,7 @@ Then, up to extracting a subsequence,
 \end{align*}
 \end{prop}
 \begin{proof}
-First notice that $P_k^{-1}\to P^{-1}$ in $L^s((0,L))$. Indeed
+First notice that $P_k^{-1}\to P^{-1}$ in $L^\infty((0,L))$. Indeed
 \[
 |P_k^{-1}-P^{-1}|=\frac{|P_k-P|}{|P_kP|}\le\frac{|P_k-P|}{p^2}.
 \]
@@ -905,11 +981,11 @@ Notice also that, since $W^{1,q}((0,L))$ is compactly embedded in $C^0([0,L])$, 
 \end{proof}
 \begin{lemma}
 \label{lemma:lemmetto-cretino}
-Let $q,s\in(1,\infty)$ such that $\frac{1}{q}+\frac{1}{s}\le1$. Let $f_k,f\in L^q((0,L))$, $g_k,g\in L^q((0,L))$, $h_k,h\in L^s((0,L))$ such that
+Let $f_k,f\in L^q((0,L))$, $g_k,g\in L^\infty((0,L))$ with $q\in(1,\infty)$ and $h_k,h\in C^0([0,L])$ such that
 \begin{gather*}
 f_k\rightharpoonup f\quad\text{in $L^q((0,L))$} \\
 g_k\to g\quad\text{in $L^\infty((0,L))$} \\
-h_k\to h\quad\text{in $L^s((0,L))$}.
+h_k\to h\quad\text{in $C^0([0,L])$}.
 \end{gather*}
 Then $f_kg_kh_k\rightharpoonup fgh$ in $L^1((0,L))$.
 \end{lemma}
@@ -919,52 +995,25 @@ Let $\phi\in L^\infty((0,L))$. Then
 \left|\int_0^L(f_kg_kh_k-fgh)\phi dX\right|\le\\
 \le\left|\int_0^L(g_k-g)f_kh_k\phi dX\right|+\left|\int_0^Lgf_k(h_k-h)\phi dX\right|+\left|\int_0^Lg(f_k-f)h\phi dX\right|.
 \end{multline*}
-Since $f_k$ are bounded in $L^q((0,L))$, $h_k$ are bounded in $L^s((0,L))$ and $\frac{1}{q}+\frac{1}{s}\le1$, then $f_kh_k\phi$ are bounded in $L^1((0,L))$ and $gf_k\phi$ are bounded in $L^{s^*}((0,L))$. Moreover $gh\phi\in L^{q^*}((0,L))$. Then the thesis follows.
+Since $f_k$ are bounded in $L^q((0,L))$, $h_k$ are bounded in $C^0([0,L])$, then $f_kh_k\phi$ and $gf_k\phi$ are bounded in $L^1((0,L))$. Moreover $gh\phi\in L^{q^*}((0,L))$. Then the thesis follows.
 \end{proof}
-
-\begin{thm}[Lower semicontinuity of integral functionals]
-\label{thm:lower-semicontinuity-integral-functional}
-Let $\Omega\subset\mathbb{R}^d$ open bounded. Let $f\colon\Omega\times\mathbb{R}^n\times\mathbb{R}^m\to(-\infty,\infty]$ such that
-\begin{itemize}
-\item[(i)] $f(\cdot,z,p)$ is measurable for all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$
-\item[(ii)] $f(x,\cdot,\cdot)$ is continuous for a.e.\ $x\in\Omega$
-\item[(iii)] $f(x,z,\cdot)$ is convex for all $x\in\Omega$ and $z\in\mathbb{R}^n$
-\item[(iv)] there exists $\phi\in L^1(\Omega)$ such that $f(x,z,p)\ge\phi(x)$ for a.e. $x\in\Omega$ and all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$.
-\end{itemize}
-Then for all measurable $y\colon\Omega\to\mathbb{R}^n$ and $u\colon\Omega\to\mathbb{R}^m$ is well defined
-\[
-I(y,u)=\int_\Omega f(x,y,u)dx.
-\]
-Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy
-\[
-y_k\to y\quad\text{in measure} 
-\]
-and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy
-\[
-u_k\to u\quad\text{in $L^1(\Omega,\mathbb{R}^n)$}
-\]
-then
-\[
-I(y,u)\le\liminf_{k\to\infty}I(y_k,u_k).
-\]
-\end{thm}
-
-\begin{prop}[Lower semicontinuity of the energy]
+We are now ready to get the weakly lower semicontinuity of $\mathcal{E}$.
+\begin{prop}[lower semicontinuity of the energy]
 For all $t\in[0,T]$ the map $\mathcal{E}(\cdot,t)$ is lower semicontinuous.
 \end{prop}
 \begin{proof}
 Let $(y^k,P_k)\rightharpoonup(y,P)$ in $Y\times Z$. We have to prove that
 \[
-\mathcal{E}(y,P)\le\liminf_{k\to\infty}\mathcal{E}(y_k,P_k).
+\mathcal{E}(y,P,t)\le\liminf_{k\to\infty}\mathcal{E}(y_k,P_k,t).
 \]
-We take a (not relabeled) subsequence such that $\mathcal{E}(y_k,P_k)$ has a limit. Then we need to show that
+We take a (not relabeled) subsequence such that $\mathcal{E}(y_k,P_k,t)$ has a limit. Then we need to show that
 \begin{equation}
 \label{eqn:lower-semicontinuity-E-limit}
-\mathcal{E}(y,P)\le\lim_{k\to\infty}\mathcal{E}(y_k,P_k).
+\mathcal{E}(y,P,t)\le\lim_{k\to\infty}\mathcal{E}(y_k,P_k,t).
 \end{equation}
-If $\mathcal{E}(y_k,P_k)\to\infty$ we have nothing to prove. Then we assume that instead it converges to a finite limit. In this case we can assume that $\mathcal{E}(y_k,P_k)<\infty$ for all $k$. This implies that $P_k\ge p$ a.e.\ in $(0,L)$. In particular also $P\ge c$ a.e.\ in $(0,L)$.
+If $\mathcal{E}(y_k,P_k,t)\to\infty$ we have nothing to prove. Then we assume that instead it converges to a finite limit. In this case we can assume that $\mathcal{E}(y_k,P_k,t)<\infty$ for all $k$. This implies that $P_k>p$ a.e.\ in $(0,L)$, so that also $P\ge p$ a.e.\ in $(0,L)$.
 
-By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_1^k\to y_1$ and $P_k\to P$ in $C^0([0,L])$. Moreover $g_1'(y_1^k,t)\to g_1'(y_1,t)$, $g_2(y_1^k,t)\to g_2(y_1,t)$ and $g_2'(y_1^k,t)\to g_2'(y_1,t)$ in $C^0([0,L])$. Indeed if $\gamma\in C^1(\mathbb{R})$ then
+By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_1^k\to y_1$ and $P_k\to P$ in $C^0([0,L])$.  Moreover $g_1'(y_1^k,t)\to g_1'(y_1,t)$, $g_2(y_1^k,t)\to g_2(y_1,t)$ and $g_2'(y_1^k,t)\to g_2'(y_1,t)$ in $C^0([0,L])$. Indeed if $\gamma\in C^1(\mathbb{R})$ then
 \begin{equation}
 \label{eqn:bound-gamma}
 \begin{split}
@@ -974,16 +1023,16 @@ By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_1^k\to y_1$ a
 \end{equation}
 Since $y_1^k$ converges to $y_1$ uniformly, then $y_1^k(t)$ takes values in a bounded set as $k\in\mathbb{N}$ and $t\in[0,T]$. Then the continuity of $\gamma'$ implies that the last integral in~\eqref{eqn:bound-gamma}. We have proved that $\gamma(y_1^k)\to\gamma(y_1)$ in $C^0([0,T])$, and this provides the desired results.
 
-Applying Proposition~\ref{prop:convergence-minors} it follows that up to extracting a subsequence
+Applying Proposition~\ref{prop:convergence-minors}, it follows that, up to extracting a subsequence,
 \begin{align*}
 g_1'(y_1^k,t)(y_1^k)'P_k^{-1}&\rightharpoonup g_1(y_1,t)y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 g_2(y_1^k,t)y_2^kP_k&\rightharpoonup g_2(y_1,t)y_2P\quad&\text{in $L^1((0,L))$} \\
 g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
 \end{align*}
-By these convergence results together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
+By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
-
+Until now we have established (E1) and (E2). We now prove (E3) and (E4).
 \begin{prop}
 Assume that $g_2'=0$. Then there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
 \begin{itemize}
@@ -991,7 +1040,7 @@ Assume that $g_2'=0$. Then there exists $\mathscr{D}\subset\mathscr{Q}$ such tha
 \item[(ii)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
 \item[(iii)] there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}$ and $t,s\in[0,T]$,
 \[
-|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|)(C_0^E+\mathcal{E}(q,t)).
+|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|)\min\{\mathcal{E}(q,t)+C_0^W,\mathcal{E}(q,s)+C_0^W\}.
 \]
 \end{itemize}
 \end{prop}
@@ -1000,11 +1049,12 @@ Since $g_1'>0$ and $g_2>0$, it is clear that
 \[
 \mathscr{D}=\left\{(y,P)\in Y\times Z\;\middle|\;\text{$y_1',y_2,P>0$ a.e.\ on $(0,L)$}\right\}.
 \]
-Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $G=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,G)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,G)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
+
+\emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $G=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,G)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,G)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
 \[
 \frac{d}{dt}W(E_1,E_2,G)=E_1\dind{W}{E_1}(E_1,E_2,G)\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)}+E_2\dind{W}{E_2}(E_1,E_2,G)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}+G\dind{W}{G}(E_1,E_2,G)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}
 \]
-there. We first prove that for all $t\in[0,T]$, there exists
+there. We have to prove that for all $t\in[0,T]$, there exists
 \begin{equation}
 \label{eqn:partial-time-derivative-energy}
 \partial_t\mathcal{E}(q,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(q,t+\epsilon)-\mathcal{E}(q,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,G)dX.
@@ -1019,68 +1069,40 @@ For $\epsilon$ small, $g_1'(y_1,t+\eta\epsilon)/g_1'(y_1,t)$ and $g_2(y_1,t+\eta
 \le C(W(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2(y_1,t)y_2'P^{-1})+C_0^W)\in L^1((0,L)).
 \end{multline*}
 Then, by dominated convergence theorem, we can pass to the limit $\epsilon\to 0$ and we get~\eqref{eqn:partial-time-derivative-energy}.
-Taking into account the fact that $\frac{\dot{g}'_1}{g'_1}$ and $\frac{\dot{g}_2}{g_2}$ are bounded in $\mathbb{R}\times[0,T]$, assumption (W4) yields
+
+\emph{Proof of (ii).} Taking into account the fact that $\frac{\dot{g}'_1}{g'_1}$ and $\frac{\dot{g}_2}{g_2}$ are bounded in $\mathbb{R}\times[0,T]$, assumption (W4, i) yields
 \[
 |\partial_t\mathcal{E}(y,P,t)|\le 3C_1^W\max\left\{\bigg\lVert\frac{\dot{g}'_1}{g'_1}\bigg\rVert_\infty,\bigg\lVert\frac{\dot{g}_2}{g_2}\bigg\rVert_\infty\right\}\int_\Omega(C_0^W+W(E_1,E_2,G))dX.
 \]
 This implies the existence of $C_0^E\in\mathbb{R}$ and $C_1^E>0$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $(q,t)\in\mathscr{D}\times[0,T]$.
+
+\emph{Proof of (iii).} Let
+\[
+K_i=E_i\dind{W}{E_i}\quad\text{for $i\in\{1,2,3\}$}\quad\text{and}\quad V=\left(\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)},\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)},\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}\right)
+\]
+as functions of $(X,t)\in(0,L)\times[0,T]$. Then
+\[
+\frac{d}{dt}W(E)=K\cdot V.
+\]
+Let $E\in\mathbb{R}$ and $q\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(q,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $q$ such that
+\[
+|V(t)-V(s)|\le\omega^V(|t-s|)\quad\text{and}\quad\max\left\{\frac{g_1'(y_1,s)}{g_1'(y_1,t)},\frac{g_2(y_1,s)}{g_2(y_1,t)}\right\}\le\omega^V(|t-s|)
+\]
+on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent of $q$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
+\[
+\begin{split}
+|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|&\le\int_0^L|K(t)\cdot V(t)-K(s)\cdot V(s)|dX\le\\
+&\le\int_0^L|K(t)-K(s)||V(s)|dX+\int_0^L|K(t)||V(t)-V(s)|dX\le\\
+&\le \left(L\omega^W(\omega^G(|t-s|))M+3C_1^W\omega^V(|t-s|)\right)\int_0^L(W(E(t))+C_0^W)dX\\
+&\le\left(L\omega^W(\omega^G(|t-s|))M+3C_1^W\omega^V(|t-s|)\right)(\mathcal{E}(q,t)+C_0^W).
+\end{split}
+\]
+This concludes the proof.
 \end{proof}
-\begin{lemma}
-\label{lemma:tipo-ball-kirchhoff-control}
-Fix $0<\delta<1$ small enough. Then there exists $C>0$ such that
-\[
-W(NE)+\max_{i\in\{1,2,3\}}\left|E_i\dind{W}{E_i}(NE)\right|\le C(W(E)+C_0^W)
-\]
-for all $E\in(0,\infty)\times(0,\infty)\times\mathbb{R}$ and $N\in(1-\delta,1+\delta)^3$. Here $NE\in\mathbb{R}^3$ denotes the component-wise multiplication, i.e., $(NE)_i=N_iE_i$ for all $i\in\{1,2,3\}$.
-\end{lemma}
-\begin{proof}
-\emph{Step 1.} For all $i\in\{1,2,3\}$,
-\[
-\begin{split}
-\left|E_i\dind{W}{E_i}(NE)\right|=|N_i|^{-1}\left|N_iE_i\dind{W}{E_i}(NE)\right|&\le|N_i|^{-1}C_1^W(C_0^W+W(NE))\le\\
-&\le\frac{C_1^W}{1-\delta}(C_0^W+W(NE)).
-\end{split}
-\]
 
-\emph{Step 2.} We have that
-\[
-|W(NE)-W(E)|=\left|\int_0^1\frac{d}{d\lambda}W(\tilde N(\lambda)E)d\lambda\right|,
-\]
-where $\tilde N(\lambda)=(1-\lambda)+\lambda N$, i.e., $\tilde N_i(\lambda)=(1-\lambda)+\lambda N_i\in(1-\delta,1+\delta)$ for all $i\in\{1,2,3\}$. Then
-\[
-\begin{split}
-|W(NE)-W(E)|&=\left|\int_0^1\dind{W}{E}(\tilde N(\lambda)E)\cdot(N-1)d\lambda\right|\le\sum_{i=1}^3\int_0^1\left|\tilde N_i(\lambda)E_i\dind{W}{E_i}(\tilde N(\lambda)E)\right|\frac{|N_i-1|}{\tilde N_i(\lambda)}d\lambda\le\\
-&\le\frac{\delta}{1-\delta}C_1^W\int_0^1(W(\tilde N(\lambda)E)+C_0^W)d\lambda.
-\end{split}
-\]
+\subsection{Verification the properties of the dissipation potential}
 
-\emph{Step 3.} Let $\theta(E)=\sup_{N\in(1-\delta,1+\delta)^3}W(NE)$. From Step 2
-\[
-|W(NE)-W(E)|\le\theta(E)-W(E)\le\frac{\delta}{1-\delta}C_1^W(\theta(E)+C_0^W).
-\]
-This implies
-\[
-\left(1-\frac{\delta}{1-\delta}C_1^W\right)\theta(E)\le W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W.
-\]
-If $\delta$ is small enough then
-\[
-\theta(E)\le\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}.
-\]
-
-\emph{Step 4.} From Step 3
-\[
-|W(NE)-W(E)|\le\frac{\delta}{1-\delta}C_1^W\left(\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}+C_0^W\right)\le\left(\frac{1}{\frac{\delta}{1-\delta}C_1^W}-1\right)^{-1}(W(E)+C_0^W).
-\]
-
-\emph{Step 5.} From Step 1
-\[
-\begin{split}
-\max_{i\in\{1,2,3\}}\left|E_i\dind{W}{E_i}(NE)\right|\le\frac{C_1^W}{1-\delta}(C_0^W+\theta(E))&\le\frac{C_1^W}{1-\delta}\left(\frac{W(E)+\frac{\delta}{1-\delta}C_1^WC_0^W}{1-\frac{\delta}{1-\delta}C_1^W}+C_0^W\right)=\\
-&=\frac{C_1^W}{1-\delta(1+C_1^W)}(W(E)+C_0^W).
-\end{split}
-\]
-\emph{Step 6.} Summing together the results of Step 4 and Step 5 we get the thesis.
-\end{proof}
+Notice that (d2) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d3).
 
 \section{Tensile test}
 
@@ -2465,7 +2487,7 @@ Then the local form of the equilibrium condition is
 \end{align*}
 
 \appendix
-\part*{Collection of known results}
+\part*{Collection of useful results}
 
 \chapter{Notation}
 
@@ -3238,6 +3260,35 @@ It follows that
 This means that $T_1+T_2$ is pseudomonotone.
 \end{proof}
 
+\subsection{Lower semicontinuity of integral functionals}
+
+\begin{thm}[Lower semicontinuity of integral functionals]
+\label{thm:lower-semicontinuity-integral-functional}
+Let $\Omega\subset\mathbb{R}^d$ open bounded. Let $f\colon\Omega\times\mathbb{R}^n\times\mathbb{R}^m\to(-\infty,\infty]$ such that
+\begin{itemize}
+\item[(i)] $f(\cdot,z,p)$ is measurable for all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$
+\item[(ii)] $f(x,\cdot,\cdot)$ is continuous for a.e.\ $x\in\Omega$
+\item[(iii)] $f(x,z,\cdot)$ is convex for all $x\in\Omega$ and $z\in\mathbb{R}^n$
+\item[(iv)] there exists $\phi\in L^1(\Omega)$ such that $f(x,z,p)\ge\phi(x)$ for a.e. $x\in\Omega$ and all $(z,p)\in\mathbb{R}^n\times\mathbb{R}^m$.
+\end{itemize}
+Then for all measurable $y\colon\Omega\to\mathbb{R}^n$ and $u\colon\Omega\to\mathbb{R}^m$ is well defined
+\[
+I(y,u)=\int_\Omega f(x,y,u)dx.
+\]
+Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy
+\[
+y_k\to y\quad\text{in measure} 
+\]
+and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy
+\[
+u_k\to u\quad\text{in $L^1(\Omega,\mathbb{R}^n)$}
+\]
+then
+\[
+I(y,u)\le\liminf_{k\to\infty}I(y_k,u_k).
+\]
+\end{thm}
+
 \section{Convex analysis}
 
 \begin{ex}
@@ -3363,47 +3414,26 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 
 \subsection{Assumptions and preliminary results}
 
-Let
-\begin{equation}
-\parbox[c]{0.8\textwidth}{$Y$ and $Z$ separable and reflexive Banach spaces}.
-\tag{S1}
-\end{equation}
-and
-\begin{equation}
-\parbox[c]{0.8\textwidth}{$\mathscr{Y}$ and $\mathscr{Z}$ weakly closed subsets of $Y$ and $Z$ respectively}.
-\tag{S1}
-\end{equation}
-Set $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumptions on the energy functional are that
-\begin{gather}
-\label{eqn:ES-energy-definition}
-\parbox[c]{0.8\textwidth}{$\mathcal{E}\colon[0,T]\times\mathscr{Q}\to(-\infty,\infty]$}
-\tag{E0}
-\\
-\label{eqn:ES-energy-coercivity}
-\parbox[c]{0.8\textwidth}{for all $t\in[0,T]$ and $E\in\mathbb{R}$ the set $\mathscr{D}_E:=\{q\in\mathscr{Q}\;|\;\mathcal{E}(q,t)\le E\}$ is bounded and weakly closed}
-\tag{E1}
-\\
-\label{eqn:ES-energy-space-regularity}
-\parbox[c]{0.8\textwidth}{there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$}
-\tag{E2}
-\\
-\label{eqn:ES-energy-time-regularity}
-\parbox[c]{0.8\textwidth}{for all $q\in\mathscr{D}$, the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$ and
+Assume that
+\begin{itemize}[itemsep=1em]
+\item[(S1)] $Y$ and $Z$ separable and reflexive Banach spaces,
+\item[(S2)] $\mathscr{Y}$ and $\mathscr{Z}$ weakly closed subsets of $Y$ and $Z$ respectively.
+\end{itemize}
+Let $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumptions on the energy functional are that
+\begin{itemize}[itemsep=1em]
+\item[(E1)] $\mathcal{E}\colon[0,T]\times\mathscr{Q}\to(-\infty,\infty]$,
+\item[(E2)] for all $t\in[0,T]$ and $E\in\mathbb{R}$ the set $\mathscr{D}_E:=\{q\in\mathscr{Q}\;|\;\mathcal{E}(q,t)\le E\}$ is bounded and weakly closed
+\item[(E3)] there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$,
+\item[(E4)] for all $q\in\mathscr{D}$, the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$ and
 \begin{itemize}
-\item[(i)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$
-\item[(ii)] there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}$ and $t,s\in[0,T]$
+\item[(i)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
+\item[(ii)] for each $E\in\mathbb{E}$ there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}_E$ and $t,s\in[0,T]$
 \[
-|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega(|t-s|)(C_0^E+\mathcal{E}(q,t)).
+|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|).
 \]
 \end{itemize}
-}
-\tag{E3}
-\end{gather}
-Notice that~\eqref{eqn:ES-energy-space-regularity} implies that $\mathcal{E}$ is weakly lower semicontinuous and that~\eqref{eqn:ES-energy-time-regularity} implies the existence of a modulus of continuity $\omega^E$ (this means $\omega^E\colon[0,\infty)\to[0,\infty)$ is continuous, nondecreasing and $\omega^E(0)=0$) such that
-\[
-|\partial_t\mathcal{E}(q,t_1)-\partial_t\mathcal{E}(q,t_0)|\le\omega^E(|t_1-t_0|)\quad\text{for all $q\in\mathscr{D}$ and $t_0,t_1\in[0,T]$.}
-\]
-The bound in~\eqref{eqn:ES-energy-time-regularity} allows to get the bound
+\end{itemize}
+Notice that~(E2) implies that $\mathcal{E}$ is weakly lower semicontinuous. Moreover~(E4, i) implies
 \begin{equation}
 \label{eqn:ES-gronwall}
 \parbox[c]{0.8\textwidth}{$\mathcal{E}(q,t_1)+C_0^E\le e^{C_1^E|t_1-t_0|}\left(\mathcal{E}(q,t_1)+C_0^E\right)$ for all $q\in\mathscr{D}$ and $t_0,t_1\in[0,T]$.}
@@ -3421,15 +3451,10 @@ z(t)\le z(t_0)+\int_{t_0}^{t}b z(s)ds\quad\text{for all $0\le t_0\le t_1\le T$}.
 By~\eqref{eqn:gronwall} it follows that $z(t_1)\le e^{b(t_1-t_0)}z(t_0)$ all for all $0\le t_0\le t_1\le T$. But it holds also $\dot z\le -bz$. If we set $\zeta(t)=z(T-t)$ then $\dot\zeta\le b\zeta$. Then reasoning as before we get $z(t_1)\le\zeta(T-t_1)\le e^{b(t_0-t_1)}\zeta(T-t_0)\le e^{b(t_0-t_1)}z(t_0)$ for all $0\le t_1\le t_0\le T$. This concludes the proof.
 \end{proof}
 The assumptions on the dissipation distance are
-\begin{gather}
-\label{eqn:ES-dissipation-definition}
-\parbox[c]{0.8\textwidth}{$\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$ is a quasidistance, that is $\mathcal{D}(z_0,z_1)=0$ if and only if $z_0=z_1$ and $\mathcal{D}(z_0,z_2)\le\mathcal{D}(z_0,z_1)+\mathcal{D}(z_1,z_2)$ for all $z_1,z_2\in\mathscr{Z}$}
-\tag{D1}
-\\
-\label{eqn:ES-dissipation-quasi-distance}
-\parbox[c]{0.8\textwidth}{$\mathcal{D}$ is weakly lower semicontinuous, meaning that $z_n\rightharpoonup z$ and $\hat{z}_n\rightharpoonup\hat{z}$ implies $\mathcal{D}(z,\hat{z})\le\liminf_{n\to\infty}\mathcal{D}(z_n,\hat{z}_n)$.}
-\tag{D2}
-\end{gather}
+\begin{itemize}[itemsep=1em]
+\item[(D1)] $\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$ is a quasidistance, that is $\mathcal{D}(z_0,z_1)=0$ if and only if $z_0=z_1$ and $\mathcal{D}(z_0,z_2)\le\mathcal{D}(z_0,z_1)+\mathcal{D}(z_1,z_2)$ for all $z_1,z_2\in\mathscr{Z}$,
+\item[(D2)] $\mathcal{D}$ is weakly lower semicontinuous, meaning that $z_n\rightharpoonup z$ and $\hat{z}_n\rightharpoonup\hat{z}$ implies $\mathcal{D}(z,\hat{z})\le\liminf_{n\to\infty}\mathcal{D}(z_n,\hat{z}_n)$.
+\end{itemize}
 For a given $q=(y,z)\in\mathscr{Q}$, sometimes we write $\mathcal{D}(q)$ to mean $\mathcal{D}(z)$.
 \begin{defi}
 A sequence $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is said to be stable if
@@ -3442,15 +3467,10 @@ where the stable set is defined by
 \]
 \end{defi}
 We add the following assumptions regarding the stable set
-\begin{gather}
-\label{eqn:ES-compatibility-1}
-\parbox[c]{0.8\textwidth}{$\partial_t\mathcal{E}$ is continuous along stable sequences, this means that for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$}
-\tag{C1}
-\\
-\label{eqn:ES-compatibility-2}
-\parbox[c]{0.8\textwidth}{the stable sets are closed in the sense that, if $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is a stable sequence such that $q_n\rightharpoonup q$ and $t_n\to t$, then $q\in\mathscr{S}(t)$}
-\tag{C2}
-\end{gather}
+\begin{itemize}[itemsep=1em]
+\item[(C1)] $\partial_t\mathcal{E}$ is continuous along stable sequences, this means that for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$,
+\item[(C2)] the stable sets are closed in the sense that, if $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is a stable sequence such that $q_n\rightharpoonup q$ and $t_n\to t$, then $q\in\mathscr{S}(t)$.
+\end{itemize}
 
 \subsection{Definition of energetic solutions}
 

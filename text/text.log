@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  13 APR 2026 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  13 APR 2026 20:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -220,24 +220,35 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count294
 \enitdp@description=\count295
 )
-(/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
+
+(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+)
+Couldn't patch \@starttoc
+) (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2024-11-05 v7.01l Hypertext links for LaTeX
 
-(/usr/share/texlive/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
-Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)
 (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
-Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-)
 (/usr/share/texlive/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -260,15 +271,8 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty
-Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count296
 )
-(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count297
+\c@section@level=\count297
 )
 (/usr/share/texlive/texmf-dist/tex/generic/stringenc/stringenc.sty
 Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
@@ -1379,7 +1383,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 
 
 ]
-Chapter 1
+Introduction
 
 
 [1
@@ -1411,14 +1415,14 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 
 
 ]
-Chapter 2
+Chapter 1
 
 
 [3
 
 
 ]
-Chapter 3
+Chapter 2
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
 (Font)              scaled to size 10.0pt on input line 140.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
@@ -1487,7 +1491,7 @@ Package pdftex.def Info: figures/bar.png  used on input line 563.
 [12 <./figures/epsilon2F.png> <./figures/plotu2p.png>]
 
 [13 <./figures/bar.png (PNG copy)>]
-Chapter 4
+Chapter 3
 
 
 [14
@@ -1496,7 +1500,7 @@ Chapter 4
 ]
 
 [15]
-Overfull \hbox (35.1826pt too wide) in paragraph at lines 757--758
+Overfull \hbox (35.1826pt too wide) in paragraph at lines 773--774
 []\T1/zpltlf/m/n/10 there ex-ists $\U/npxsym/m/n/10 W [] [] R[] \LMS/npxsy/m/n/
 10 ! ¹^^@1\OML/npxmi/m/it/10 ; \LMS/npxsy/m/n/10 1¼$ \T1/zpltlf/m/n/10 con-tin-
 u-ous and con-vex such that $\OML/npxmi/m/it/10 W\LMS/npxsy/m/n/10 ¹\OML/npxmi/
@@ -1520,40 +1524,40 @@ MS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 E[]; E[]; G; E[]E[]\LMS/npxsy/m/n/10 º$
 
 [22]
 
+[23]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1100.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1100.
+(hyperref)                replaced by space on input line 1122.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1100.
+(hyperref)                removing `\noindent' on input line 1122.
 
-
-
-[23
-
-
-]
-Chapter 5
 
 
 [24
 
 
 ]
-Chapter 6
+Chapter 4
 
 
 [25
 
 
 ]
+Chapter 5
 
-[26]
+
+[26
+
+
+]
 
 [27]
 
@@ -1566,15 +1570,15 @@ Chapter 6
 [31]
 
 [32]
-Overfull \hbox (1.29216pt too wide) in paragraph at lines 1686--1688
-\T1/zpltlf/m/n/10 Proposition []6.14[] en-sures that that for each $\OML/npxmi/
+
+[33]
+Overfull \hbox (1.29216pt too wide) in paragraph at lines 1708--1710
+\T1/zpltlf/m/n/10 Proposition []5.14[] en-sures that that for each $\OML/npxmi/
 m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
 ¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
  []
 
 
-
-[33]
 
 [34]
 
@@ -1595,63 +1599,50 @@ m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10
 [42]
 
 [43]
-Chapter 7
+
+[44]
+Chapter 6
 
 
-[44
+[45
 
 
 ]
 
-[45]
+[46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2468.
+(hyperref)                removing `\noindent' on input line 2490.
 
-
-
-[46
-
-
-]
-Appendix A
 
 
 [47
 
 
 ]
-Appendix B
+Appendix A
 
 
 [48
 
 
 ]
-
-[49]
-Appendix C
-
-Overfull \hbox (3.73708pt too wide) in paragraph at lines 2568--2571
-[][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.1\T1/zpltlf/m/sc/10 . 
-[]\T1/zpltlf/m/n/10 (Gron-wall in-equal-ity) []Let $\OML/npxmi/m/it/10 z \LMS/n
-pxsy/m/n/10 2 \OML/npxmi/m/it/10 L[]\LMS/npxsy/m/n/10 ¹¹\OT1/minzpl/m/n/10 0\OM
-L/npxmi/m/it/10 ; T\LMS/npxsy/m/n/10 ºº$\T1/zpltlf/m/n/10 . Let $\OML/npxmi/m/i
-t/10 C \LMS/npxsy/m/n/10 2 \U/npxsym/m/n/10 R$ \T1/zpltlf/m/n/10 and $\OML/npxm
-i/m/it/10 $\T1/zpltlf/m/n/10 , $\OML/npxmi/m/it/10 ^^L$ \T1/zpltlf/m/n/10 in $
-\OML/npxmi/m/it/10 L[]\LMS/npxsy/m/n/10 ¹¹\OT1/minzpl/m/n/10 0\OML/npxmi/m/it/1
-0 ; T\LMS/npxsy/m/n/10 º\OML/npxmi/m/it/10 ; \LMS/npxsy/m/n/10 »\OT1/minzpl/m/n
-/10 0\OML/npxmi/m/it/10 ; \LMS/npxsy/m/n/10 1ºº$
- []
+Appendix B
 
 
-
-[50
+[49
 
 
 ]
 
-[51]
+[50]
+Appendix C
+
+
+[51
+
+
+]
 
 [52]
 
@@ -1672,25 +1663,25 @@ i/m/it/10 $\T1/zpltlf/m/n/10 , $\OML/npxmi/m/it/10 ^^L$ \T1/zpltlf/m/n/10 in $
 [60]
 
 [61]
+Overfull \hbox (2.96286pt too wide) in paragraph at lines 3380--3382
+[][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.28 (prop-er-ties of po
+s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
+f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
+m/it/10 ; \LMS/npxsy/m/n/10 1¼$
+ []
+
+
+
+[62]
+
+[63]
 Appendix D
 
-LaTeX Warning: Reference `eqn:ES-energy-time-regularity' on page 62 undefined o
-n input line 3402.
 
-
-LaTeX Warning: Reference `eqn:ES-energy-time-regularity' on page 62 undefined o
-n input line 3406.
-
-
-
-[62
+[64
 
 
 ]
-
-[63]
-
-[64]
 
 [65]
 
@@ -1705,45 +1696,45 @@ n input line 3406.
 [70]
 
 [71]
+
+[72]
+
+[73]
 Bibliography
 
 
-[72
+[74
 
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4027.
+4047.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4027.
+(Font)              scaled to size 10.0pt on input line 4047.
 
 
-[73] (./text.aux)
+[75] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'text.run.xml'.
 \openout1 = `text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35366 strings out of 473197
- 656879 string characters out of 5718605
- 1447443 words of memory out of 5000000
- 57516 multiletter control sequences out of 15000+600000
+ 35399 strings out of 473197
+ 657563 string characters out of 5718605
+ 1448087 words of memory out of 5000000
+ 57540 multiletter control sequences out of 15000+600000
  670217 words of font info for 233 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 102i,24n,107p,1899b,1537s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,24n,107p,1899b,1539s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXBMI.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr/share/texlive/texmf-
@@ -1757,10 +1748,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (76 pages, 591946 bytes).
+Output written on text.pdf (78 pages, 596469 bytes).
 PDF statistics:
- 1083 PDF objects out of 1200 (max. 8388607)
- 959 compressed objects within 10 object streams
- 362 named destinations out of 1000 (max. 500000)
+ 1095 PDF objects out of 1200 (max. 8388607)
+ 969 compressed objects within 10 object streams
+ 368 named destinations out of 1000 (max. 500000)
  300 words of extra memory for PDF output out of 10000 (max. 10000000)
 
