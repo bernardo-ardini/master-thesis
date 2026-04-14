@@ -1034,6 +1034,7 @@ By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'
 \end{proof}
 Until now we have established (E1) and (E2). We now prove (E3) and (E4).
 \begin{prop}
+\label{prop:power-control-necking}
 Assume that $g_2'=0$. Then there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
 \begin{itemize}
 \item[(i)] for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$,
@@ -1102,7 +1103,37 @@ This concludes the proof.
 
 \subsection{Verification the properties of the dissipation potential}
 
-Notice that (d2) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d3).
+Notice that (d1) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d3). We now prove (D2).
+\begin{prop}
+Let $P_k\rightharpoonup P$ and $\hat{P}_k\rightharpoonup\hat{P}$ in $Z$. Then $\mathcal{D}(P,\hat{P})\le\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)$.
+\end{prop}
+\begin{proof}
+Let $P_k,P,\hat{P}_k,\hat{P}\in Z$ such that
+\[
+P_k\rightharpoonup P\quad\text{and}\quad\hat{P}_k\rightharpoonup\hat{P}\quad\text{in $Z$.}
+\]
+Since $P_k$ and $\hat{P}_k$ are bounded in $W^{1,r}((0,L))$, for each subsequence $P_{k_j}$ and $\hat{P}_{k_j}$, up to extracting a further subsequence,
+\[
+P_{k_j}\to P\quad\text{and}\quad\hat{P}_{k_j}\to\hat{P}\quad\text{$C^0([0,L])$.}
+\]
+Then actually the whole sequence converges uniformly. i.e.,
+\[
+P_k\to P\quad\text{and}\quad\hat{P}_k\to\hat{P}\quad\text{in $C^0([0,L])$.}
+\]
+Now
+\[
+\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)=\liminf_{k\to\infty}\int_0^LD(P_k,\hat{P}_k)dX=\lim_{k\to\infty}\inf_{j\ge k}\int_0^LD(P_j,\hat{P}_j)dX\ge\lim_{k\to\infty}\int_0^L\inf_{j\ge k}D(P_j,\hat{P}_j)dX.
+\]
+By monotone convergence the last limit can be took inside the integral yielding
+\[
+\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)\ge\int_0^L\liminf_{k\to\infty}D(P_k,\hat{P}_k)dX=\int_0^L D(P,\hat{P})dX.
+\]
+The last equality holds since $D$ is continuous. This concludes the proof.
+\end{proof}
+
+\subsection{Verification of the compatibility conditions}
+
+We now verify (C1) and (C2). In view of Proposition~\ref{prop:tool-verify-compatibility} we need to verify (PC1) and (PC2). Notice that (PC2) has been established in Proposition~\ref{prop:power-control-necking} (iii). This we need to verify (PC1) only.
 
 \section{Tensile test}
 
@@ -2519,9 +2550,9 @@ We subdivide the discussion in three parts corresponding to the treatment of kin
 
 \paragraph{Kinematics} Consider a general mechanical system. Its kinematical configuration is described by elements $z\in\boldsymbol{Z}$ of a vector space $\boldsymbol{Z}$.
 
-\paragraph{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in\boldsymbol{Z}^*$ and $\mathcal{P}\in\boldsymbol{Z}^*$ respectively. The equilibrium between internal and external actions is written as $\mathscr{W}=\mathscr{P}$. This can be written as
+\paragraph{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in\boldsymbol{Z}^*$ and $\mathcal{P}\in\boldsymbol{Z}^*$ respectively. The equilibrium between internal and external actions is written as $\mathcal{W}=\mathcal{P}$. This can be written as
 \[
-\tilde{\mathscr{W}}\doteq\dual{\mathscr{W},\tilde w}=\dual{\mathscr{P},\tilde w}\doteq\tilde{\mathscr{P}}\quad\text{for all $\tilde w\in\boldsymbol{Z}$}
+\tilde{\mathcal{W}}\doteq\dual{\mathcal{W},\tilde w}=\dual{\mathcal{P},\tilde w}\doteq\tilde{\mathcal{P}}\quad\text{for all $\tilde w\in\boldsymbol{Z}$}
 \]
 which is the classical statement of the principle of virtual powers. We refer to the test vector $\tilde w\in\boldsymbol{Z}$ as the virtual velocity and to $\tilde{\mathscr{W}}$ and $\tilde{\mathscr{P}}$ as the virtual internal end external power respectively.
 
@@ -3498,6 +3529,30 @@ QUI O NELL'INTRODUZIONE, SCRIVERE QUALCOSA PER MOTIVARE LA NOZIONE DI ENERGETIC 
 \begin{thm}
 If the hypotheses (S), (E), (D) and (C) holds, then for all $q_0\in\mathscr{S}(0)$ there exists a bounded energetic solutions $q$ such that $q(0)=q_0$.
 \end{thm}
+
+\subsection{Tools to verify the compatibility conditions}
+
+\begin{prop}
+\label{prop:tool-verify-compatibility}
+Assume that the following property holds
+\begin{itemize}
+\item[(PC1)] for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ and for all $\hat{q}\in\mathscr{Q}$, there exist a sequence $\hat{q}_k$ such that
+\[
+\limsup_{k\to\infty}\left(\mathcal{E}(\hat{q}_k,t_k)+\mathcal{D}(q_k,\hat{q}_k)\right)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q}).
+\]
+\end{itemize}
+Then for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(q_k,t_k)=\mathcal{E}(q,t)$. Moreover (C2) holds.
+
+Assume that in addiction to (PC1) also the following property holds
+\begin{itemize}
+\item[(PC2)] for all $\epsilon>0$ and $E\in\mathbb{R}$, there exists $\delta>0$ such that for all $t,s\in[0,T]$ and $q\in\mathscr{Q}$ the implication
+\begin{equation}
+\text{$\mathcal{E}(q,t)\le E$ and $|t-s|<\delta$ implies $|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|<\epsilon$}
+\end{equation}
+holds.
+\end{itemize}
+Then (C1) holds.
+\end{prop}
 
 \section{Balanced-viscosity solutions}
 

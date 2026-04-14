@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  13 APR 2026 20:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  14 APR 2026 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1527,16 +1527,16 @@ MS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 E[]; E[]; G; E[]E[]\LMS/npxsy/m/n/10 º$
 [23]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1122.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1122.
+(hyperref)                replaced by space on input line 1153.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1122.
+(hyperref)                removing `\noindent' on input line 1153.
 
 
 
@@ -1572,7 +1572,7 @@ Chapter 5
 [32]
 
 [33]
-Overfull \hbox (1.29216pt too wide) in paragraph at lines 1708--1710
+Overfull \hbox (1.29216pt too wide) in paragraph at lines 1739--1741
 \T1/zpltlf/m/n/10 Proposition []5.14[] en-sures that that for each $\OML/npxmi/
 m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
 ¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
@@ -1612,7 +1612,7 @@ Chapter 6
 [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2490.
+(hyperref)                removing `\noindent' on input line 2521.
 
 
 
@@ -1663,7 +1663,7 @@ Appendix C
 [60]
 
 [61]
-Overfull \hbox (2.96286pt too wide) in paragraph at lines 3380--3382
+Overfull \hbox (2.96286pt too wide) in paragraph at lines 3411--3413
 [][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.28 (prop-er-ties of po
 s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
 f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
@@ -1710,12 +1710,12 @@ Bibliography
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4047.
+4102.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4047.
+(Font)              scaled to size 10.0pt on input line 4102.
 
 
 [75] (./text.aux)
@@ -1728,10 +1728,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35399 strings out of 473197
- 657563 string characters out of 5718605
- 1448087 words of memory out of 5000000
- 57540 multiletter control sequences out of 15000+600000
+ 35405 strings out of 473197
+ 657673 string characters out of 5718605
+ 1448139 words of memory out of 5000000
+ 57542 multiletter control sequences out of 15000+600000
  670217 words of font info for 233 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  102i,24n,107p,1899b,1539s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1748,10 +1748,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (78 pages, 596469 bytes).
+Output written on text.pdf (78 pages, 599598 bytes).
 PDF statistics:
- 1095 PDF objects out of 1200 (max. 8388607)
- 969 compressed objects within 10 object streams
- 368 named destinations out of 1000 (max. 500000)
+ 1101 PDF objects out of 1200 (max. 8388607)
+ 975 compressed objects within 10 object streams
+ 372 named destinations out of 1000 (max. 500000)
  300 words of extra memory for PDF output out of 10000 (max. 10000000)
 
