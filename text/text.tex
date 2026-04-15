@@ -735,21 +735,57 @@ Let $\tau=\dind{H}{P}+P^{-1}\xi$ with $\xi\in\partial R(\dot PP^{-1})$. Then dis
 \]
 By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
 \end{proof}
-Particular constitutive relations, can be obtained taking inspiration from the neo-Hookeian constitutive model. Specifically we choose the elastic free energy density
+
+\subsubsection*{Particular constitutive relations} Particular constitutive relations are the following:
+\begin{gather}
+W(E_1,E_2,G)=
+\begin{cases}
+\alpha_1|E_1|^{q_W}+\alpha_2|E_2|^{q_W}+\alpha_3 l^2|G|^{q_W}+\alpha_4\frac{1}{|E_1E_2|^{s_W}} & \text{of $E_1,E_2>0$} \\
+\infty & \text{otherwise}
+\end{cases}
+\\
+H(P,P')=
+\begin{cases}
+\alpha_5|P|^{q_H}+\alpha_6\frac{1}{|P-p|^{s_H}}+\alpha_7|P'|^{r_H} & \text{if $P>p$} \\
+\infty & \text{otherwise}
+\end{cases}
+\\
+R(P,\dot P)=
+\begin{cases}
+\alpha_8\frac{\dot P}{P} & \text{if $P\ge p$} \\
+\infty & \text{otherwise},
+\end{cases}
+\end{gather}
+where $\alpha_1,\dots,\alpha_8>0$, $s_W,s_H\in(0,\infty)$, $q_W,q_H,r_H\in(1,\infty)$ and $0<p<1$. This constitutive relations are motivated by the existence theorem that we prove in Section~\ref{sec:existence-necking}.
+\begin{rmk}
+Let the dissipation distance $D\colon\mathbb{R}\to[0,\infty]$ be defined by
 \[
-W(E_1,E_2,G)=C\left(\frac{E_1^2+l^2G^2+E_2^2}{E_1E_2}-2\right)+w(E_1E_2).
+D(P_0,P_1)=\inf\left\{\int_0^1R(P(t),\dot{P}(t))dt\;\middle|\;\text{$P\in C^1([0,1])$ and $P(i)=P_i$ for $i\in\{0,1\}$}\right\}.
 \]
-In this case
-\begin{gather*}
-\sigma_1=C\left(\frac{1}{E_2}-\frac{l^2G^2}{E_1^2E_2}-\frac{E_2}{E_1^2}\right)+E_2w'(E_1E_2),\quad\sigma_2=C\left(-\frac{E_1}{E_2^2}-\frac{l^2G^2}{E_1E_2^2}+\frac{1}{E_1}\right)+E_1w'(E_1E_2) \\
-\zeta=2C\frac{l^2G}{E_1E_2}
-\end{gather*}
+Then
+\[
+D(P_0,P_1)=
+\begin{cases}
+\alpha_8|\log P_1-\log P_0| & \text{if $P_0,P_1\ge p$} \\
+\infty & \text{otherwise}.
+\end{cases}
+\]
+Indeed notice that for each $P\in C^1([0,1],(0,\infty))$ it holds
+\[
+\int_0^1R(P(t),\dot{P}(t))dt\ge\alpha_8\int_0^1\left|\frac{\dot{P}(t)}{P(t)}\right|dt\ge\alpha_8\left|\int_0^1\frac{\dot{P}(t)}{P(t)}dt\right|=\alpha_8|\log P_1-\log P_0|.
+\]
+This implies $D(P_0,P_1)\ge\alpha_8|\log P_1-\log P_0|$. If $P_i<p$ for some $i\in\{0,1\}$, then every $C^1$ curve $P$ connecting $P_0$ with $P_1$, has $\int_0^1R(P(t),\dot{P}(t))dt=\infty$. If instead $P_0,P_1\ge p$ then we can take $P(t)=P_0^tP_1^{1-t}\ge p$ and in this case
+\[
+\int_0^1R(P(t),\dot{P}(t))dt=\alpha_8\int_0^1\left|\frac{\dot{P}(t)}{P(t)}\right|dt=\alpha_8|\log P_1-\log P_1|.
+\]
+This implies $D(P_0,P_1)=\alpha_8|\log P_1-\log P_0|$
+
+\end{rmk}
 
 \section{Existence result}
+\label{sec:existence-necking}
 
 \subsection{Introduction}
-
-
 
 Sometimes the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$ then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
 
@@ -761,7 +797,7 @@ Energy
 
 \subsection{Assumptions and preliminary results}
 
-Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r}((0,L))$ with $q_h,r\in(1,\infty)$ the space of $P$. Set $Q=Y\times Z$.
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H,r_H\in(1,\infty)$ the space of $P$. Set $Q=Y\times Z$.
 
 The assumption on the Dirichlet data is
 \begin{itemize}[itemsep=1em]
@@ -770,8 +806,12 @@ The assumption on the Dirichlet data is
 
 The elastic free energy density is supposed to satisfy
 \begin{itemize}[itemsep=1em]
-\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that $W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)$ for all $E_1,E_2,G\in\mathbb{R}$,
-\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_F}+|E_2|^{q_F}+|G|^{q_F})$ for all $E_1,E_2,G\in\mathbb{R}$,
+\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that
+\[
+W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)
+\]
+for all $E_1,E_2,G\in\mathbb{R}$,
+\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_W}+|E_2|^{q_W}+|G|^{q_W})$ for all $E_1,E_2,G\in\mathbb{R}$,
 \item[(W3)] $W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
 \item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$, $C^W_1>0$ and a modulus of continuity $\omega^W$ such that
 \begin{itemize}
@@ -839,7 +879,7 @@ If $\delta$ is small enough then
 The plastic free energy density satisfies
 \begin{itemize}[itemsep=1em]
 \item[(H1)] $H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$,
-\item[(H2)] there exist $C_H>0$ and $q_H,r\in(1,\infty)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^r)$ for all $P,P'\in\mathbb{R}$,
+\item[(H2)] there exist $C_H>0$ and $q_H\in(1,\infty)$, $r_H\in(1,q_H)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^{r_H})$ for all $P,P'\in\mathbb{R}$,
 \item[(H3)] there exists $p>0$ such that $H(P,P')=\infty$ if and only if $P\le p$.
 \end{itemize}
 The convexity assumption (H1) is required for lower semicontinuity, (H2) is a growth condition ensuring that the hardening and the plastic gradient regularization is sufficiently strong. Assumption (H3) is a strong incompenetrability condition for the plastic distortion.
@@ -851,9 +891,10 @@ To handle correctly the nonlinear coupling between elastic and plastic distortio
 
 The requirements on the dissipation potential density are
 \begin{itemize}[itemsep=1em]
-\item[(d1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is continuous,
-\item[(d2)] there exist $C_D>0$ and $q_D\in[1,q_H)$ such that $D(P_0,P_1)\le C_D(1+|P_0|^{q_D}+|P_1|^{q_D})$ for all $P_1,P_2\in\mathbb{R}$,
-\item[(d3)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$.
+\item[(d1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is lower semicontinuous,
+\item[(d2)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$,
+\item[(d3)] $D$ is finite and continuous on $[p,\infty)\times[p,\infty)$, where $p$ is the constant appearing in (H3).
+
 \end{itemize}
 
 \subsection{Verification the properties of the energy functional}
@@ -896,7 +937,7 @@ From (W1) and (H1) it follows
 \mathcal{E}(y,P,t)\ge
 \begin{multlined}[t]
 C\Big(-1+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}+\\
-+\norm{g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_r^r\Big).
++\norm{g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}}_{q_W}^{q_W}+\norm{P}_{q_H}^{q_H}+\norm{P'}_{r_H}^{r_H}\Big).
 \end{multlined}
 \end{equation}
 By H\"older inequality
@@ -914,7 +955,7 @@ for all $\delta>0$. We have used that $q_W/(\rho-1)=q_H$. Moreover
 This implies that
 \begin{equation}
 \label{eqn:bound-y1'}
-\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_q^q-\gamma^{q_W}(\rho-1)\delta\norm{P}_{q_H}^{q_H}.
+\norm{g_1'(y_1,t)y_1'P^{-1}}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\frac{\rho-1}{\rho}\norm{y_1'}_{q_Y}^{q_Y}-\gamma^{q_W}(\rho-1)\delta\norm{P}_{q_H}^{q_H}.
 \end{equation}
 Similarly by H\"older and Young inequalities, for all $\delta>0$
 \[
@@ -925,7 +966,7 @@ where now $\rho=1+q_W/q_H$. Last inequality holds since $P>p$ a.e.\ on the suble
 \label{eqn:bound-y2}
 \norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}p^{-q_H}.
 \end{equation}
-Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_{q_Y}$, $\norm{y}_{q_Y}$, $\norm{P}_{q_H}$ and $\norm{P'}_r$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,{q_Y}}$ is bounded. It remains to prove that $\norm{y_2'}_{q_Y}$ is bounded. Let
+Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_{q_Y}$, $\norm{y}_{q_Y}$, $\norm{P}_{q_H}$ and $\norm{P'}_{r_H}$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,{q_Y}}$ is bounded. It remains to prove that $\norm{y_2'}_{q_Y}$ is bounded. Let
 \[
 G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
 \]
@@ -940,9 +981,9 @@ Il follows that
 &\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_{q_Y}\norm{y_2}_\infty.
 \end{split}
 \]
-Since $L^\infty((0,T))$ is continuously embedded in $W^{1,q}((0,L))$, it follows that for all $\epsilon>0$ there exists $C>0$ such that
+Since $L^\infty((0,T))$ is continuously embedded in $W^{1,q_Y}((0,L))$, it follows that for all $\epsilon>0$ there exists $C>0$ such that
 \[
-\norm{y_2}_\infty\le C(\norm{y_2}_q+\epsilon\norm{y_2'}_q)\quad\text{for all $y_2\in W^{1,q}((0,L))$}.
+\norm{y_2}_\infty\le C(\norm{y_2}_{q_Y}+\epsilon\norm{y_2'}_{q_Y})\quad\text{for all $y_2\in W^{1,{q_Y}}((0,L))$}.
 \]
 On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_{q_Y}$ and $\norm{y_2}_{q_Y}$ are bounded, so that there exists $M>0$ such that
 \[
@@ -953,7 +994,7 @@ Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_{q_Y}$ is bounded
 We now move to the proof of the weak lower semicontinuity of $\mathcal E$. We first need the following technical result.
 \begin{prop}[convergence of elastic distortion]
 \label{prop:convergence-minors}
-Let $y^k,y\in W^{1,q}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in C^0([0,L])$ such that
+Let $y^k,y\in W^{1,q_Y}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in C^0([0,L])$ such that
 \begin{gather*}
 y^k\rightharpoonup y\quad\text{in $W^{1,q_Y}((0,L))$} \\
 P_k\to P\quad\text{in $C^0([0,L])$}.
@@ -981,7 +1022,7 @@ Notice also that, since $W^{1,q}((0,L))$ is compactly embedded in $C^0([0,L])$, 
 \end{proof}
 \begin{lemma}
 \label{lemma:lemmetto-cretino}
-Let $f_k,f\in L^q((0,L))$, $g_k,g\in L^\infty((0,L))$ with $q\in(1,\infty)$ and $h_k,h\in C^0([0,L])$ such that
+Let $f_k,f\in L^q((0,L))$  with $q\in(1,\infty)$, $g_k,g\in L^\infty((0,L))$ and $h_k,h\in C^0([0,L])$ such that
 \begin{gather*}
 f_k\rightharpoonup f\quad\text{in $L^q((0,L))$} \\
 g_k\to g\quad\text{in $L^\infty((0,L))$} \\
@@ -1030,7 +1071,7 @@ g_2(y_1^k,t)y_2^kP_k&\rightharpoonup g_2(y_1,t)y_2P\quad&\text{in $L^1((0,L))$} 
 g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
 \end{align*}
-By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^r((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
+By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^{r_H}((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
 Until now we have established (E1) and (E2). We now prove (E3) and (E4).
 \begin{prop}
@@ -1103,7 +1144,7 @@ This concludes the proof.
 
 \subsection{Verification the properties of the dissipation potential}
 
-Notice that (d1) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d3). We now prove (D2).
+Notice that (d1) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d2). We now prove (D2).
 \begin{prop}
 Let $P_k\rightharpoonup P$ and $\hat{P}_k\rightharpoonup\hat{P}$ in $Z$. Then $\mathcal{D}(P,\hat{P})\le\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)$.
 \end{prop}
@@ -1112,11 +1153,7 @@ Let $P_k,P,\hat{P}_k,\hat{P}\in Z$ such that
 \[
 P_k\rightharpoonup P\quad\text{and}\quad\hat{P}_k\rightharpoonup\hat{P}\quad\text{in $Z$.}
 \]
-Since $P_k$ and $\hat{P}_k$ are bounded in $W^{1,r}((0,L))$, for each subsequence $P_{k_j}$ and $\hat{P}_{k_j}$, up to extracting a further subsequence,
-\[
-P_{k_j}\to P\quad\text{and}\quad\hat{P}_{k_j}\to\hat{P}\quad\text{$C^0([0,L])$.}
-\]
-Then actually the whole sequence converges uniformly. i.e.,
+By Proposition~\ref{prop:sobolev-weak-lp-strong} it follows that
 \[
 P_k\to P\quad\text{and}\quad\hat{P}_k\to\hat{P}\quad\text{in $C^0([0,L])$.}
 \]
@@ -1126,14 +1163,35 @@ Now
 \]
 By monotone convergence the last limit can be took inside the integral yielding
 \[
-\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)\ge\int_0^L\liminf_{k\to\infty}D(P_k,\hat{P}_k)dX=\int_0^L D(P,\hat{P})dX.
+\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)\ge\int_0^L\liminf_{k\to\infty}D(P_k,\hat{P}_k)dX\ge\int_0^L D(P,\hat{P})dX.
 \]
-The last equality holds since $D$ is continuous. This concludes the proof.
+The last inequality holds since $D$ is lower semicontinuous. This concludes the proof.
 \end{proof}
 
 \subsection{Verification of the compatibility conditions}
 
-We now verify (C1) and (C2). In view of Proposition~\ref{prop:tool-verify-compatibility} we need to verify (PC1) and (PC2). Notice that (PC2) has been established in Proposition~\ref{prop:power-control-necking} (iii). This we need to verify (PC1) only.
+We now verify (C1) and (C2). In view of Proposition~\ref{prop:tool-verify-compatibility} we need to verify (PC1) and (PC2). Notice that (PC2) has been established in Proposition~\ref{prop:power-control-necking} (iii). Thus we need to verify (PC1) only. A stronger version of (PC1) is the following proposition.
+\begin{prop}
+Let $(q_k,t_k),(q,t)\in Q\times[0,T]$ such that $(q_k,t_k)\rightharpoonup(q,t)$ in $Q\times[0,T]$ and $q_k\in\mathscr{D}$. Then for all $\hat{q}\in Q$,
+\[
+\limsup_{k\to\infty}\left(\mathcal{E}(\hat{q},t_k)+\mathcal{D}(q_k,\hat{q})\right)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q}).
+\]
+\end{prop}
+\begin{proof}
+Let $(q_k,t_k)\rightharpoonup (q,t)$ in $Q\times[0,T]$. If $\hat{q}\notin\mathscr{D}$ there is nothing to prove since $\mathcal{E}(\hat{q},t)=\infty$. Then assume that $\hat{q}\in\mathscr{D}$. By Proposition`\eqref{prop:power-control-necking} the map $\mathcal{E}(\hat{q},\cdot)$ is continuous. Then $\mathcal{E}(\hat{q},t_k)\to\mathcal{E}(\hat{q},t)$ and it remains to prove only that
+\[
+\limsup_{k\to\infty}\mathcal{D}(q_k,\hat{q})\le\mathcal{D}(q,\hat{q}).
+\]
+Recall that this is the same as
+\[
+\limsup_{k\to\infty}\mathcal{D}(P_k,\hat{P})\le\mathcal{D}(P,\hat{P}).
+\]
+Since $\hat{q}\in\mathscr{D}$, then (H3) implies that $\hat{P}>p$ a.e.\ in $(0,L)$, so that $\hat{P}\ge p$ in $[0,L]$. Since also $q_k\in\mathscr{D}$ then, for the same reason, also $P_k\ge p$ in $[0,L]$. Notice also that Then $P_k\to P$ in $C^0([0,T])$. Then (d3) yields that actually
+\[
+\lim_{k\to\infty}\mathcal{D}(P_k,\hat{P})=\mathcal{D}(P,\hat{P}).
+\]
+This concludes the proof.
+\end{proof}
 
 \section{Tensile test}
 
@@ -2658,10 +2716,12 @@ z(t)\le Z(t)\le e^{\int_0^t\alpha(s)ds}\left(C+\int_0^t\beta(s)e^{-\int_0^s\alph
 
 \begin{prop}
 \label{prop:sobolev-weak-lp-strong}
-Let $\Omega\subset\mathbb{R}^d$ be open and bounded. Let $p\in[1,\infty]$. Let $u_n\rightharpoonup u$ in $W^{1,p}(\Omega)$. Then $u_n\to u$ in $L^p(\Omega)$.
+Let $\Omega\subset\mathbb{R}^d$ be open, bounded and Lipschitz. Let $p\in[1,\infty]$ and let $u_n\rightharpoonup u$ in $W^{1,p}(\Omega)$. Then $u_n\to u$ in $L^p(\Omega)$. Moreover if $p>d$ then $u_k\to u$ in $C^{0,\alpha}(\overline{\Omega})$ where $\alpha=1-\frac{d}{p}$.
 \end{prop}
 \begin{proof}
 Since $u_n\rightharpoonup u$ in $W^{1,p}(\Omega)$ then $u_n$ are bounded in $W^{1,p}(\Omega)$. By Rellich--Kondrakov theorem each subsequence of $u_n$ admits a further subsequence that converges strongly in $L^p(\Omega)$. Since we already know the weak convergence in $W^{1,p}(\Omega)$ then the limit is always $u$. Then necessarily the whole sequence $u_n$ converges strongly to $u$ in $L^2(\Omega)$.
+
+The result when $p>d$ follows from Morrey's theorem and a similar argument.
 \end{proof}
 
 \subsection{Bochner spaces}
@@ -3464,7 +3524,7 @@ Let $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumption
 \]
 \end{itemize}
 \end{itemize}
-Notice that~(E2) implies that $\mathcal{E}$ is weakly lower semicontinuous. Moreover~(E4, i) implies
+Notice that~(E2) is equivalent to say that $\mathcal{E}$ is weakly lower semicontinuous and has bounded sublevels. Moreover~(E4, i) implies
 \begin{equation}
 \label{eqn:ES-gronwall}
 \parbox[c]{0.8\textwidth}{$\mathcal{E}(q,t_1)+C_0^E\le e^{C_1^E|t_1-t_0|}\left(\mathcal{E}(q,t_1)+C_0^E\right)$ for all $q\in\mathscr{D}$ and $t_0,t_1\in[0,T]$.}
@@ -3499,7 +3559,7 @@ where the stable set is defined by
 \end{defi}
 We add the following assumptions regarding the stable set
 \begin{itemize}[itemsep=1em]
-\item[(C1)] $\partial_t\mathcal{E}$ is continuous along stable sequences, this means that for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$,
+\item[(C1)] for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$,
 \item[(C2)] the stable sets are closed in the sense that, if $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is a stable sequence such that $q_n\rightharpoonup q$ and $t_n\to t$, then $q\in\mathscr{S}(t)$.
 \end{itemize}
 

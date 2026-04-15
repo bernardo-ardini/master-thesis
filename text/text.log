@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  14 APR 2026 14:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  15 APR 2026 02:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1500,15 +1500,6 @@ Chapter 3
 ]
 
 [15]
-Overfull \hbox (35.1826pt too wide) in paragraph at lines 773--774
-[]\T1/zpltlf/m/n/10 there ex-ists $\U/npxsym/m/n/10 W [] [] R[] \LMS/npxsy/m/n/
-10 ! ¹^^@1\OML/npxmi/m/it/10 ; \LMS/npxsy/m/n/10 1¼$ \T1/zpltlf/m/n/10 con-tin-
-u-ous and con-vex such that $\OML/npxmi/m/it/10 W\LMS/npxsy/m/n/10 ¹\OML/npxmi/
-m/it/10 E[]; E[]; G\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 = \U/npxsym/m/n/10 W\L
-MS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 E[]; E[]; G; E[]E[]\LMS/npxsy/m/n/10 º$
- []
-
-
 
 [16]
 
@@ -1526,40 +1517,40 @@ MS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 E[]; E[]; G; E[]E[]\LMS/npxsy/m/n/10 º$
 
 [23]
 
+[24]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1153.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1153.
+(hyperref)                replaced by space on input line 1211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1153.
+(hyperref)                removing `\noindent' on input line 1211.
 
-
-
-[24
-
-
-]
-Chapter 4
 
 
 [25
 
 
 ]
-Chapter 5
+Chapter 4
 
 
 [26
 
 
 ]
+Chapter 5
 
-[27]
+
+[27
+
+
+]
 
 [28]
 
@@ -1572,15 +1563,15 @@ Chapter 5
 [32]
 
 [33]
-Overfull \hbox (1.29216pt too wide) in paragraph at lines 1739--1741
+
+[34]
+Overfull \hbox (1.29216pt too wide) in paragraph at lines 1797--1799
 \T1/zpltlf/m/n/10 Proposition []5.14[] en-sures that that for each $\OML/npxmi/
 m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
 ¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
  []
 
 
-
-[34]
 
 [35]
 
@@ -1601,50 +1592,50 @@ m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10
 [43]
 
 [44]
+
+[45]
 Chapter 6
 
 
-[45
+[46
 
 
 ]
 
-[46]
+[47]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2521.
+(hyperref)                removing `\noindent' on input line 2579.
 
-
-
-[47
-
-
-]
-Appendix A
 
 
 [48
 
 
 ]
-Appendix B
+Appendix A
 
 
 [49
 
 
 ]
-
-[50]
-Appendix C
+Appendix B
 
 
-[51
+[50
 
 
 ]
 
-[52]
+[51]
+Appendix C
+
+
+[52
+
+
+]
 
 [53]
 
@@ -1663,7 +1654,9 @@ Appendix C
 [60]
 
 [61]
-Overfull \hbox (2.96286pt too wide) in paragraph at lines 3411--3413
+
+[62]
+Overfull \hbox (2.96286pt too wide) in paragraph at lines 3471--3473
 [][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.28 (prop-er-ties of po
 s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
 f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
@@ -1672,18 +1665,16 @@ m/it/10 ; \LMS/npxsy/m/n/10 1¼$
 
 
 
-[62]
-
 [63]
+
+[64]
 Appendix D
 
 
-[64
+[65
 
 
 ]
-
-[65]
 
 [66]
 
@@ -1700,25 +1691,27 @@ Appendix D
 [72]
 
 [73]
+
+[74]
 Bibliography
 
 
-[74
+[75
 
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4102.
+4162.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4102.
+(Font)              scaled to size 10.0pt on input line 4162.
 
 
-[75] (./text.aux)
+[76] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1728,10 +1721,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35405 strings out of 473197
- 657673 string characters out of 5718605
- 1448139 words of memory out of 5000000
- 57542 multiletter control sequences out of 15000+600000
+ 35411 strings out of 473197
+ 657763 string characters out of 5718605
+ 1448182 words of memory out of 5000000
+ 57544 multiletter control sequences out of 15000+600000
  670217 words of font info for 233 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  102i,24n,107p,1899b,1539s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1748,10 +1741,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (78 pages, 599598 bytes).
+Output written on text.pdf (79 pages, 603050 bytes).
 PDF statistics:
- 1101 PDF objects out of 1200 (max. 8388607)
- 975 compressed objects within 10 object streams
- 372 named destinations out of 1000 (max. 500000)
+ 1113 PDF objects out of 1200 (max. 8388607)
+ 986 compressed objects within 10 object streams
+ 376 named destinations out of 1000 (max. 500000)
  300 words of extra memory for PDF output out of 10000 (max. 10000000)
 
