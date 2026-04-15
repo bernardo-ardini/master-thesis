@@ -758,7 +758,8 @@ R(P,\dot P)=
 \end{gather}
 where $\alpha_1,\dots,\alpha_8>0$, $s_W,s_H\in(0,\infty)$, $q_W,q_H,r_H\in(1,\infty)$ and $0<p<1$. This constitutive relations are motivated by the existence theorem that we prove in Section~\ref{sec:existence-necking}.
 \begin{rmk}
-Let the dissipation distance $D\colon\mathbb{R}\to[0,\infty]$ be defined by
+\label{rmk:dissipation-distance-density}
+Let the dissipation distance density $D\colon\mathbb{R}\to[0,\infty]$ be defined by
 \[
 D(P_0,P_1)=\inf\left\{\int_0^1R(P(t),\dot{P}(t))dt\;\middle|\;\text{$P\in C^1([0,1])$ and $P(i)=P_i$ for $i\in\{0,1\}$}\right\}.
 \]
@@ -785,26 +786,70 @@ This implies $D(P_0,P_1)=\alpha_8|\log P_1-\log P_0|$
 \section{Existence result}
 \label{sec:existence-necking}
 
-\subsection{Introduction}
+In this section we prove the existence of energetic solutions. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Appendix~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply Theorem~\ref{thm:existence-energetic-solutions}.
 
-Sometimes the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$ then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
+\subsection{Formulation of the initial boundary value problem}
 
-Energy
+We now describe how the model formulated in the previous section, can be treated within the realm of energetic solutions.
+
+\subsubsection*{Dirichlet conditions}
+
+Suppose that at time $t\in[0,T]$ the following Dirichlet conditions are imposed
+\begin{equation}
+\label{eqn:Dirichlet-necking}
+\chi_i(X)=g_i(X,t)\quad\text{for $X\in\Gamma_D^i$ and $i\in\{1,2\}$},
+\end{equation}
+where $\Gamma_D^i\subset\{0,L\}$ and $g_i\colon(0,L)\times[0,T]\to\mathbb{R}$ satisfy $g_1'>0$ and $g_2>0$. To avoid free translations of the bar, it is required that $\Gamma_D^1\neq\emptyset$, but $\Gamma_D^2$ can be empty instead. Conditions~\eqref{eqn:Dirichlet-necking} can be converted into time-independent conditions by expressing $\chi_i$ as
+\[
+\chi_1(X)=g_1(y_1(X),t)\quad\text{and}\quad\chi_2(X)=g_2(y_1(X),t)y_2(X),
+\]
+with $y_i\colon(0,L)\to\mathbb{R}$, $y_1'>0$ and $y_2>0$, and requiring that
+\[
+y_1(X)=X\quad\text{for $X\in\Gamma_D^1$}\quad\text{and}\quad y_2(X)=1\quad\text{for $X\in\Gamma_D^2$}.
+\]
+Having made that change of variables, the unknown of the problem are $y$ and $P$. We notice that the elastic distortions $E_1,E_2$ and $G$ are given by
+\[
+E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P\quad\text{and}\quad G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
+\]
+
+\subsubsection*{Function spaces}
+
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ be the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ be the space of $P$. Let $Q=Y\times Z$. The Dirichlet conditions are imposed requiring that $y,P$ belong respectively to the admissible spaces
+\[
+\mathscr{Y}=\left\{y\in Y\;\middle|\;\text{$y_1(X)=X$ for $X\in\Gamma_D^1$ and $y_2(X)=1$ for $X\in\Gamma_D^2$}\right\}\quad\text{and}\quad\mathscr{Z}=Z.
+\]
+Let $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. It is evident that $\mathscr{Q}$ is a weakly closed subset of $Q$.
+
+\subsubsection*{Energy functional and dissipation distance}
+
+To complete the formulation of the initial boundary value problem, we need to specify the energy functional $\mathcal{E}\colon\mathscr{Q}\times[0,T]\to(-\infty,\infty]$ and the dissipation distance $\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$. \textbf{Mettere qualcosa, magari nella parte generale, per spiegare perché il modello descritto precedentemente, se espresso mediante le energetic solution, conduce a queste particolari $\mathcal{E}$ e $\mathcal{D}$.} The energy functional is defined by
 \begin{multline*}
 \mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
 +\int_0^LH(P,P')dX-\int_0^L\left(f_1(t)g_1(y_1,t)+f_2(t)g_2(y_1,t)y_2\right)dX.
 \end{multline*}
+The dissipation distance can be expressed in term of the dissipation distance density $D\colon\mathbb{R}^2\to[0,\infty]$, discussed in Remark~\ref{rmk:dissipation-distance-density}, as
+\[
+\mathcal{D}(P_0,P_1)=\int_0^LD(P_0,P_1)dX.
+\]
 
 \subsection{Assumptions and preliminary results}
 
-Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H,r_H\in(1,\infty)$ the space of $P$. Set $Q=Y\times Z$.
+We now discuss the assumptions with which we will prove the validity of hypotheses (E1)-(E4), (D1)-(D2) and (C1)-(C2) of Section~\ref{sec:energetic-solution} in Appendix~\ref{chap:solution-concepts}. Subsequently, these assumptions will be implicitly supposed to be valid and will not be recalled.
+\begin{rmk}[on notation]
+Sometimes the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$, then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
+\end{rmk}
 
 The assumption on the Dirichlet data is
 \begin{itemize}[itemsep=1em]
 \item[(G)] $g_1\in C^2(\mathbb{R}\times[0,T])$, $g_2\in C^2(\mathbb{R}\times[0,T],(0,\infty))$ and there exists $0<\gamma<\Gamma<\infty$ for $i\in\{1,2\}$ such that $\gamma<g_1'<\Gamma$, $\gamma<g_2<\Gamma$ and $|g_2'|\le\Gamma$.
 \end{itemize}
+Only to prove Proposition~\ref{prop:power-control-necking} we will assume also the following additional requirement
+\begin{itemize}
+\item[($\hat{\text{G}}$)] $g_2'=0$.
+\end{itemize}
+We do not know whether the proof works without ($\hat{\text{G}}$).
 
-The elastic free energy density is supposed to satisfy
+The elastic free energy density is supposed to satisfy the following assumptions
 \begin{itemize}[itemsep=1em]
 \item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that
 \[
@@ -879,7 +924,7 @@ If $\delta$ is small enough then
 The plastic free energy density satisfies
 \begin{itemize}[itemsep=1em]
 \item[(H1)] $H\colon\mathbb{R}^2\to(-\infty,\infty]$ is continuous and $H(P,\cdot)$ is convex for all $P\in\mathbb{R}$,
-\item[(H2)] there exist $C_H>0$ and $q_H\in(1,\infty)$, $r_H\in(1,q_H)$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^{r_H})$ for all $P,P'\in\mathbb{R}$,
+\item[(H2)] there exist $C_H>0$ and $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ such that $H(P,P')\ge C_H(-1+|P|^{q_H}+|P'|^{r_H})$ for all $P,P'\in\mathbb{R}$,
 \item[(H3)] there exists $p>0$ such that $H(P,P')=\infty$ if and only if $P\le p$.
 \end{itemize}
 The convexity assumption (H1) is required for lower semicontinuity, (H2) is a growth condition ensuring that the hardening and the plastic gradient regularization is sufficiently strong. Assumption (H3) is a strong incompenetrability condition for the plastic distortion.
@@ -894,7 +939,6 @@ The requirements on the dissipation potential density are
 \item[(d1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is lower semicontinuous,
 \item[(d2)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$,
 \item[(d3)] $D$ is finite and continuous on $[p,\infty)\times[p,\infty)$, where $p$ is the constant appearing in (H3).
-
 \end{itemize}
 
 \subsection{Verification the properties of the energy functional}
@@ -1076,7 +1120,7 @@ By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'
 Until now we have established (E1) and (E2). We now prove (E3) and (E4).
 \begin{prop}
 \label{prop:power-control-necking}
-Assume that $g_2'=0$. Then there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
+Then there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
 \begin{itemize}
 \item[(i)] for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$,
 \item[(ii)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
@@ -1192,6 +1236,13 @@ Since $\hat{q}\in\mathscr{D}$, then (H3) implies that $\hat{P}>p$ a.e.\ in $(0,L
 \]
 This concludes the proof.
 \end{proof}
+
+\subsection{Conclusion}
+
+The application of Theorem~\ref{thm:existence-energetic-solutions} leads to the desired existence result.
+\begin{thm}
+Let $q_0=(y_0,P_0)\in\mathscr{Q}$ such that $\mathcal{E}(q_0,0)<\infty$. Then there exists an energetic solution $q=(y,P)\colon[0,T]\to\mathscr{Q}$ such that $q(0)=q_0$. 
+\end{thm}
 
 \section{Tensile test}
 
@@ -3498,8 +3549,10 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 \end{proof}
 
 \chapter{Solution concepts}
+\label{chap:solution-concepts}
 
 \section{Energetic solutions}
+\label{sec:energetic-solution}
 
 \subsection{Introduction}
 
@@ -3582,11 +3635,12 @@ holds for all $t\in[0,T]$. Here the dissipation is defined as
 for all $0\le s<t\le T$.
 \end{defi}
 
-QUI O NELL'INTRODUZIONE, SCRIVERE QUALCOSA PER MOTIVARE LA NOZIONE DI ENERGETIC SOLUTIONS
+\textbf{QUI O NELL'INTRODUZIONE, SCRIVERE QUALCOSA PER MOTIVARE LA NOZIONE DI ENERGETIC SOLUTIONS}
 
 \subsection{Existence theorem}
 
-\begin{thm}
+\begin{thm}(existence of energetic solution)
+\label{thm:existence-energetic-solutions}
 If the hypotheses (S), (E), (D) and (C) holds, then for all $q_0\in\mathscr{S}(0)$ there exists a bounded energetic solutions $q$ such that $q(0)=q_0$.
 \end{thm}
 
