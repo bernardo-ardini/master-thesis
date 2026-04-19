@@ -14,7 +14,7 @@
 \usepackage[indent=0.5em,skip=0em]{parskip}
 \usepackage{bookmark}
 
-\usepackage{tikz}
+\usepackage{pgfplots}
 \usetikzlibrary{hobby,patterns,patterns,decorations.pathmorphing,calc}
 
 \usepackage[backend=biber]{biblatex}
@@ -689,14 +689,17 @@ The external longitudinal and transversal forces distributed along the length of
 \]
 \begin{prop}
 The local form of the equilibrium condition is
-\begin{gather*}
+\begin{subequations}
+\label{eqn:indeinite-equation-necking-large}
+\begin{gather}
 (P^{-1}\sigma_1)'+f_1=0\quad\text{in $(0,L)$} \\
-h_1(x)=P(x)^{-1}\sigma_1(x)\quad\text{for $x\in\{0,L\}$} \\
+h_1(X)=P(X)^{-1}\sigma_1(X)\quad\text{for $X\in\{0,L\}$} \\
 -P^{\frac{1}{d-1}}\sigma_2+(P^{-1}\zeta)'+f_2=0\quad\text{in $(0,L)$} \\
-h_2(x)=P(x)^{-1}\zeta(x)\quad\text{for $x\in\{0,L\}$} \\
-\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta-\tau+\kappa'=0\quad\text{for $x\in\{0,L\}$} \\
-\kappa(x)=0\quad\text{for $x\in\{0,L\}$}
-\end{gather*}
+h_2(X)=P(X)^{-1}\zeta(X)\quad\text{for $X\in\{0,L\}$} \\
+\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta-\tau+\kappa'=0\quad\text{for $X\in\{0,L\}$} \\
+\kappa(X)=0\quad\text{for $X\in\{0,L\}$}
+\end{gather}
+\end{subequations}
 \end{prop}
 \begin{proof}
 Rearranging the terms we have
@@ -752,7 +755,7 @@ H(P,P')=
 \\
 R(P,\dot P)=
 \begin{cases}
-\alpha_8\frac{\dot P}{P} & \text{if $P\ge p$} \\
+\alpha_8\frac{|\dot P|}{P} & \text{if $P\ge p$} \\
 \infty & \text{otherwise},
 \end{cases}
 \end{gather}
@@ -1230,11 +1233,11 @@ Recall that this is the same as
 \[
 \limsup_{k\to\infty}\mathcal{D}(P_k,\hat{P})\le\mathcal{D}(P,\hat{P}).
 \]
-Since $\hat{q}\in\mathscr{D}$, then (H3) implies that $\hat{P}>p$ a.e.\ in $(0,L)$, so that $\hat{P}\ge p$ in $[0,L]$. Since also $q_k\in\mathscr{D}$ then, for the same reason, also $P_k\ge p$ in $[0,L]$. Notice also that Then $P_k\to P$ in $C^0([0,T])$. Then (d3) yields that actually
+Since $\hat{q}\in\mathscr{D}$, then (H3) implies that $\hat{P}>p$ a.e.\ in $(0,L)$, so that $\hat{P}\ge p$ in $[0,L]$. Since also $q_k\in\mathscr{D}$ then, for the same reason, also $P_k\ge p$ in $[0,L]$. Notice also that by~\ref{prop:sobolev-weak-lp-strong}, $P_k\to P$ in $C^0([0,T])$. Then actually
 \[
-\lim_{k\to\infty}\mathcal{D}(P_k,\hat{P})=\mathcal{D}(P,\hat{P}).
+\lim_{k\to\infty}\mathcal{D}(P_k,\hat{P})=\lim_{k\to\infty}\int_0^LD(P_p,\hat{P})dX=\mathcal{D}(P,\hat{P}),
 \]
-This concludes the proof.
+where last inequality holds because $D$ is finite and continuous on $[p\,infty)\times[p,\infty)$ by (d3). This concludes the proof.
 \end{proof}
 
 \subsection{Conclusion}
@@ -1246,18 +1249,169 @@ Let $q_0=(y_0,P_0)\in\mathscr{Q}$ such that $\mathcal{E}(q_0,0)<\infty$. Then th
 
 \section{Tensile test}
 
-Equations in the elastic range
-\begin{align*}
-C\left(\frac{1}{\chi_2}-\frac{l^2(\chi_2')^2}{(\chi_1')^2\chi_2}-\frac{\chi_2}{(\chi_1')^2}\right)+\chi_2w'(\chi_1'\chi_2)&=F \\
--C\left(-\frac{\chi_1'}{\chi_2^2}-\frac{l^2(\chi_2')^2}{\chi_1'\chi_2^2}+\frac{1}{\chi_1'}\right)-\chi_1'w'(\chi_1'\chi_2)+2Cl^2\left(\frac{\chi_2'}{\chi_1'\chi_2}\right)'&=0.
-\end{align*}
-From the first equation we get the following third order algebraic equation for $\chi_1'$
+We consider the following boundary value problem: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X)=0$ for $X\in\{0,L\}$ and $\Gamma_D^2=\emptyset$. On the contrary the longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(0)=0$ and $\chi_1(L)=E_1^*(t)L$, where $E_1^*\colon[0,T]\to[1,\infty)$ is the imposed elongation.
+
+\subsection{Purely elastic case}
+
+In the purely elastic case, equations~\eqref{eqn:indeinite-equation-necking-large} reduces to
+\begin{subequations}
+\label{eqn:indefinite-equations-necking-large-elastic}
+\begin{gather}
+\sigma_1'=0\quad\text{in $(0,L)$} \\
+-\sigma_2+\zeta'=0\quad\text{in $(0,L)$} \\
+\zeta(X)=0\quad\text{for $X\in\{0,L\}$}.
+\end{gather}
+\end{subequations}
+From the first equation it follows that $\sigma_1=F$, where $F$ is a constant, representing the axial reaction force needed to impose the boundary conditions on $\chi_1$. The constitutive relations yields $\sigma_1=W_1(E_1,E_2,G)$, $\sigma_2=W_2(E_1,E_2,G)$ and $\zeta=W_G(E_1,E_2,G)$, where $E_1=\chi_1'$, $E_2=chi_2$ and $G=\chi_2'$. We have denoted the partial derivatives of $W$ with respect to its arguments $E_1$, $E_2$ and $G$ with the subscripts $1,2$ and $G$ respectively. Inserting these constitutive relations into~\eqref{eqn:indefinite-equations-necking-large-elastic}, we get
+\begin{subequations}
+\label{eqn:definite-equations-necking-large-elastic}
+\begin{gather}
+\frac{d}{dX}W_1(\chi_1',\chi_2,\chi_2')=0\quad\text{in $(0,L)$} \\
+-W_2(\chi_1',\chi_2,\chi_2')+\frac{d}{dX}W_G(\chi_1',\chi_2,\chi_2')=0\quad\text{in $(0,L)$} \\
+W_G(\chi_1'(X),\chi_2(X),\chi_2'(X))=0\quad\text{for $X\in\{0,L\}$}.
+\end{gather}
+\end{subequations}
+We first look for homogeneous solutions of the form $\chi_1^*(X)=E_1^*X$, $\chi_2^*(X)=E_2^*$ where $E_1^*=E_1^*(t)$ is assigned and $E_2^*\in(0,\infty)$ is unknown. Notice that $G^*=(\chi_2^*)'=0$. Then $E_2^*=E_2^*(E_1^*)$ must satisfy the nonlinear equation
 \[
-2A\chi_2^2(\chi_1')^3+\left(\frac{C}{\chi_2}-2A\chi_2-F\right)(\chi_1')^2-C\left(l^2\frac{(\chi_2')^2}{\chi_2}+\chi_2\right)=0.
+W_2(E_1^*,E_2^*,0)=0.
 \]
-A classical choice for the dissipation potential is $R(L)=Y|L|$ where $Y>0$ is the yield strength.
+To study the stability of the homogeneous solution, we look for a perturbed solution $\chi_1=\chi_1^*+u_1$ and $\chi_2=\chi_2^*+u_2$, we linearize around the homogeneous solution, and we seek for nontrivial perturbations $u$. The linearized equations are
+\begin{subequations}
+\begin{gather}
+W_{11}^*u_1''+W_{12}^*u_2'+W_{1G}^*u_2''=0\quad\text{in $(0,L)$} \\
+\begin{multlined}[c]
+-W_{12}^*u_1'-W_{22}^*u_2-W_{2G}^*u_2'+\\
++W_{1G}^*u_1''+W_{2G}^*u_2'+W_{GG}^*u_2''=0
+\end{multlined}
+\quad\text{in $(0,L)$} \\
+W_{1G}^*u_1'(X)+W_{2G}^*u_2(X)+W_{GG}^*u_2'(X)=0\quad\text{for $X\in\{0,L\}$}.
+\end{gather}
+\end{subequations}
+We have denoted with a ``*'' superscript, the evaluation at $(E_1^*,E_2^*,0)$. From mechanical ground, it is reasonable to assume that $\sigma_i=W_i$ for $i\in\{1,2\}$ is even in $G$ and $\zeta=W_G$ is odd. Then $W_{iG}^*=0$ for $i\in\{1,2\}$. Moreover we assume that $W_{GG}^*>0$, $W_{11}^*>0$, $W_{22}^*>0$. Then
+\begin{subequations}
+\begin{gather}
+W_{11}^*u_1''+W_{12}^*u_2'=0\quad\text{in $(0,L)$} \\
+-W_{12}^*u_1'-W_{22}^*u_2+W_{GG}^*u_2''=0 \quad\text{in $(0,L)$} \\
+u_2'(X)=0\quad\text{for $X\in\{0,L\}$}.
+\end{gather}
+\end{subequations} 
+Differentiating the second equation and eliminating $u_1''$ from the first equation, we get
+\begin{subequations}
+\begin{gather}
+W_{GG}^*u_2'''+\left(\frac{(W_{12}^*)^2}{W_{11}^*}-W_{22}^*\right)u_2'=0 \quad\text{in $(0,L)$} \\
+u_2'(X)=0\quad\text{for $X\in\{0,L\}$}.
+\end{gather}
+\end{subequations}
+Let $\xi=u_2'$ and
+\[
+\lambda=\lambda(E_1^*)=\frac{\frac{(W_{12}^*)^2}{W_{11}^*}-W_{22}^*}{W_{GG}^*}.
+\]
+Then $\xi''+\lambda\xi=0$ with $\xi(X)=0$ for $X\in\{0,L\}$, admits a nontrivial solution $\xi(X)=\sin(\sqrt{\lambda}X)$, if and only if $\sqrt{\lambda}L=k\pi$ for some $k\in\mathbb{N}=\{1,2,\dots\}$. This means that the homogeneous solution is stable until $E_1^*$ is such that $\lambda(E_1^*)=\pi^2/L^2$.
+\begin{rmk}
+Let $F^*=F^*(E_1^*)=W_1^*$ be the axial force obtained in the homogeneous solution. Then
+\[
+\frac{dF^*}{dE_1^*}=W_{11}^*+W_{12}^*\frac{dE_2^*}{dE_1^*}.
+\]
+On the other end we know that $W_2^*=0$ so that, by differentiating with respect to $E_1^*$,
+\[
+W_{12}^*+W_{22}^*\frac{dE_2^*}{dE_1^*}=0\quad\text{that implies}\quad\frac{dE_2^*}{dE_1^*}=-\frac{W_{12}^*}{W_{22}^*}.
+\]
+Then
+\[
+\frac{dF^*}{dE_1^*}=W_{11}^*-\frac{(W_{12}^*)^2}{W_{22}^*}=-W_{GG}^*\frac{W_{11}^*}{W_{22}^*}\lambda(E_1^*).
+\]
+Since at the first stages of deformation, $\frac{dF^*}{dE_1^*}>0$, then $\lambda<0$. If $\lambda=\pi^2/L^2$ instead $\frac{dF^*}{dE_1^*}<0$. This means that instability can occur only after that a local maximum value of $F^*$ is attained.
+\end{rmk}
 
+\subsubsection*{An example}
 
+Now we show that there exists a particular constitutive model that is likely to have unstable homogeneous solutions. Consider
+\[
+W(E_1,E_2,G)=
+\begin{cases}
+\mathbb{W}(E_1,E_2,G,E_1E_2) & \text{if $E_1>0$ and $E_2>0$} \\
+\infty & \text{otherwise},
+\end{cases}
+\]
+with
+\[
+\quad \mathbb{W}(E_1,E_2,G,J)=A\frac{|E_1-1|^p+|E_2-1|^p+|lG|^p}{J^\alpha}+B|J-1|^r
+\]
+where $A,B>0$, $r>1$, $0<\alpha\le p-1$ and $p>1+\frac{\alpha}{r}$. This particular $W$ satisfies assumptions (W1), (W2), (W3) and (W4) of previous section. In particular it satisfies the convexity condition (W1) but it is not convex in $(E_1,E_2,G)$, this is crucial to get instability. Indeed if $W$ was convex, then the energy would have a unique minimizer and the homogeneous solution would be always stable.
+
+We start with the check of the assumptions (W1) and (W2). Hypotheses (W1) is a consequence of the following lemma.
+\begin{lemma}
+Let $w\colon(0,\infty)\to\mathbb{R}$ strictly convex and let $g\colon(0,\infty)\times(0,\infty)\to\mathbb{R}$ given by $g(r,y)=\frac{r^p}{y^\alpha}+w(y)$ for some $p>1$ and $0<\alpha\le p-1$. Let also $n\in\mathbb{N}$ and $f\colon\mathbb{R}^n\times(0,\infty)\to\mathbb{R}$ given by $f(x,y)=g(|x|,y)$. Then $f$ is strictly convex in $\mathbb{R}^n\times(0,\infty)$.
+\end{lemma}
+\begin{proof}
+We first prove that $g$ is strictly convex. The hessian matrix of $g$ is given by
+\[
+\nabla^2g(r,y)=\begin{pmatrix}
+p(p-1)\frac{r^{p-2}}{y^\alpha} & -p\alpha\frac{r^{p-1}}{y^{\alpha+1}} \\
+-p\alpha\frac{r^{p-1}}{y^{\alpha+1}} & \alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)
+\end{pmatrix}.
+\]
+Then
+\begin{equation}
+\begin{split}
+\det\nabla^2g(r,p)&=p(p-1)\frac{r^{p-2}}{y^\alpha}\left(\alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)\right)-p^2\alpha^2\frac{r^{2p-2}}{y^{\alpha+2}}=\\
+&=p\alpha(p-\alpha-1)\frac{r^{2p-2}}{y^{\alpha+2}}+p(p-1)\frac{r^{p-2}}{y^\alpha}w''(y)>0.
+\end{split}
+\end{equation}
+and
+\[
+\tr\nabla^2g(r,y)=p(p-1)\frac{r^{p-2}}{y^\alpha}+\alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)>0.
+\]
+This proves that $\nabla^2g$ is everywhere positive-definite. This implies that $g$ is strictly convex. Then for any $(x_0,y_0),(x_1,y_1)\in\mathbb{R}^n\times(0,\infty)$ and $0<\lambda<1$ it holds
+\[
+\begin{split}
+f((1-\lambda)(x_0,y_0)+\lambda(x_1,y_1))&=\frac{|(1-\lambda)x_0+\lambda x_1|^p}{y^\alpha}+w(y)\le\\
+&\le\frac{\left[(1-\lambda)|x_0|+\lambda |x_1|\right]^p}{\left[(1-\lambda)y_0+\lambda y_1)\right]^\alpha}+w((1-\lambda)y_0+\lambda y_1))=\\
+&=g((1-\lambda)(|x_0|,y_0)+\lambda(|x_1|,\lambda_1))<(1-\lambda)g(|x_0|,y_0)+\lambda g(|x_1|,y_1)=\\
+&=(1-\lambda)f(x_0,y_0)+\lambda f(x_1,y_1).
+\end{split}
+\]
+This is exactly the thesis.
+\end{proof}
+We now prove the growth condition (W2) for $q_W=p/\left(1+\frac{\alpha}{r}\right)>1$. Lemma~\ref{lemma:inverse-young} yields for all $\delta>0$ and $\rho>1$ that
+\begin{multline}
+\mathbb{W}(E_1,E_2,G,J)\ge A\rho\delta^\frac{\rho-1}{\rho}|E_1-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|E_2-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|lG|^\frac{p}{\rho}-\\
+-(2A+1)(\rho-1)\delta J^\frac{\alpha}{\rho-1}+B|J-1|^r.
+\end{multline}
+Choosing $\rho$ such that $\frac{\alpha}{\rho-1}=r$ we get $\frac{p}{\rho}=q_H$. Moreover choosing $\delta>0$ sufficiency small we have
+\[
+\inf_{J>0}\left[-(2A+1)(\rho-1)\delta J^r+B|J-1|^r\right]>-\infty.
+\]
+This is implied immediately from the following lemma.
+\begin{lemma}
+Let $r\ge1$. Then there exists $C>0$ such that $|x-1|^r\ge C|x|^p-1$ for all $x\in\mathbb{R}$.
+\end{lemma}
+\begin{proof}
+By the equivalence of the norms there exists $K>0$ such that
+\[
+(|x-1|^p+1)^{1/p}\ge K(|x-1|+1)\ge K(|x|-1).
+\]
+Now the thesis follows immediately.
+\end{proof}
+
+Thus we have that $W$ satisfies the required assumptions. Now we show that $W$ provides homogeneous solutions that are likely to become unstable. Indeed choosing particular values of the parameter appearing in the definition of $W$, we get the graphs of $F^*$ and $\lambda$ as functions of $E_1^*$ in Figure~\ref{fig:instability}. In particular notice that $\lambda$ became positive as $E_1^*$ is increased. This implies that, if $L$ is sufficiently large, then there exists $E_1^*$ such that $\lambda=\pi^2/L^2$.
+
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$E_1^*$},ylabel={$F^*$},xmin=1,xmax=6,ymin=0,width=0.45\textwidth,ylabel style={rotate=-90}]
+\addplot[-] table [x=E1,y=F] {figures/instability.dat};
+\end{axis}
+\end{tikzpicture}
+\hfill
+\begin{tikzpicture}
+\begin{axis}[xlabel={$E_1^*$},ylabel={$\lambda(E_1^*)$},xmin=1,xmax=6,width=0.45\textwidth,ylabel style={rotate=-90}]
+\addplot[-] table [x=E1,y=lambda] {figures/instability.dat};
+\addplot[dashed,domain=1:6] {0};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphs of $F^*$ and $\lambda$ as functions of $E_1^*$ for the homogeneous deformation when $A=1$, $B=10^{-4}$, $p=2$, $\alpha=1$ and $r=2$. Notice that $\lambda$ became positive for $E_1$ sufficiently large, indicating that the uniform solution is likely to became unstable if $L$ is sufficiently large.}
+\label{fig:instability}
+\end{figure}
 
 \part{Existence results for a model describing pressure sensitive plastic materials}
 
