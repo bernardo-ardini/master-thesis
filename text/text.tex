@@ -854,11 +854,11 @@ We do not know whether the proof works without ($\hat{\text{G}}$).
 
 The elastic free energy density is supposed to satisfy the following assumptions
 \begin{itemize}[itemsep=1em]
-\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous and convex such that
+\item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous such that
 \[
 W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)
 \]
-for all $E_1,E_2,G\in\mathbb{R}$,
+for all $E_1,E_2,G\in\mathbb{R}$ and $\mathbb{W}$ is convex in $(E_1,G,E_1E_2)$,
 \item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_W}+|E_2|^{q_W}+|G|^{q_W})$ for all $E_1,E_2,G\in\mathbb{R}$,
 \item[(W3)] $W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
 \item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$, $C^W_1>0$ and a modulus of continuity $\omega^W$ such that
@@ -1046,16 +1046,16 @@ Let $y^k,y\in W^{1,q_Y}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in C^0([0,
 y^k\rightharpoonup y\quad\text{in $W^{1,q_Y}((0,L))$} \\
 P_k\to P\quad\text{in $C^0([0,L])$}.
 \end{gather*}
-Assume also that $P_k,P\ge p>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_1,\gamma_2^k,\gamma_2,\rho_2^k,\rho_2\in L^\infty((0,L))$ such that
+Assume also that $P_k,P\ge p>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_1,\gamma_2^k,\gamma_2,\rho_2^k,\rho_2\in C^0([0,L])$ such that
 \begin{align*}
-\gamma_1^k\to\gamma_1\quad\text{in $L^\infty((0,L))$} \\
-\gamma_2^k\to\gamma_2\quad\text{in $L^\infty((0,L))$} \\
-\rho_2^k\to\rho_2\quad\text{in $L^\infty((0,L))$}
+\gamma_1^k\to\gamma_1\quad\text{in $C^0([0,L])$} \\
+\gamma_2^k\to\gamma_2\quad\text{in $C^0([0,L])$} \\
+\rho_2^k\to\rho_2\quad\text{in $C^0([0,L])$}
 \end{align*}
 Then, up to extracting a subsequence,
 \begin{align*}
 \gamma_1^k(y_1^k)'P_k^{-1}&\rightharpoonup \gamma_1y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-\gamma_2^ky_2^kP_k&\rightharpoonup \gamma_2y_2P\quad&\text{in $L^1((0,L))$} \\
+\gamma_2^ky_2^kP_k&\to \gamma_2y_2P\quad&\text{in $C^0([0,L])$} \\
 \rho_2^k(y_1^k)'y_2^kP_k^{-1}+\gamma_2^k(y_2^k)'P_k^{-1}&\rightharpoonup \rho_2y_1'y_2P^{-1}+\gamma_2y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 \gamma_1^k(y_1^k)'\gamma_2^ky_2^k&\rightharpoonup \gamma_1y_1'\gamma_2y_2\quad&\text{in $L^1((0,L))$}
 \end{align*}
@@ -1101,7 +1101,7 @@ We take a (not relabeled) subsequence such that $\mathcal{E}(y_k,P_k,t)$ has a l
 \end{equation}
 If $\mathcal{E}(y_k,P_k,t)\to\infty$ we have nothing to prove. Then we assume that instead it converges to a finite limit. In this case we can assume that $\mathcal{E}(y_k,P_k,t)<\infty$ for all $k$. This implies that $P_k>p$ a.e.\ in $(0,L)$, so that also $P\ge p$ a.e.\ in $(0,L)$.
 
-By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_1^k\to y_1$ and $P_k\to P$ in $C^0([0,L])$.  Moreover $g_1'(y_1^k,t)\to g_1'(y_1,t)$, $g_2(y_1^k,t)\to g_2(y_1,t)$ and $g_2'(y_1^k,t)\to g_2'(y_1,t)$ in $C^0([0,L])$. Indeed if $\gamma\in C^1(\mathbb{R})$ then
+By Rellich--Kondrachov theorem, up to extracting a subsequence, $y_i^k\to y_i$ for $i\in\{1,2\}$ and $P_k\to P$ in $C^0([0,L])$.  Moreover $g_1'(y_1^k,t)\to g_1'(y_1,t)$, $g_2(y_1^k,t)\to g_2(y_1,t)$ and $g_2'(y_1^k,t)\to g_2'(y_1,t)$ in $C^0([0,L])$. Indeed if $\gamma\in C^1(\mathbb{R})$ then
 \begin{equation}
 \label{eqn:bound-gamma}
 \begin{split}
@@ -1114,7 +1114,7 @@ Since $y_1^k$ converges to $y_1$ uniformly, then $y_1^k(t)$ takes values in a bo
 Applying Proposition~\ref{prop:convergence-minors}, it follows that, up to extracting a subsequence,
 \begin{align*}
 g_1'(y_1^k,t)(y_1^k)'P_k^{-1}&\rightharpoonup g_1(y_1,t)y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-g_2(y_1^k,t)y_2^kP_k&\rightharpoonup g_2(y_1,t)y_2P\quad&\text{in $L^1((0,L))$} \\
+g_2(y_1^k,t)y_2^kP_k&\to g_2(y_1,t)y_2P\quad&\text{in $C^0([0,L])$} \\
 g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
 g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
 \end{align*}
@@ -1384,12 +1384,12 @@ Choosing $\rho$ such that $\frac{\alpha}{\rho-1}=r$ we get $\frac{p}{\rho}=q_H$.
 \]
 This is implied immediately from the following lemma.
 \begin{lemma}
-Let $r\ge1$. Then there exists $C>0$ such that $|x-1|^r\ge C|x|^p-1$ for all $x\in\mathbb{R}$.
+Let $r\ge1$. Then there exists $C>0$ such that $|x-1|^r\ge C|x|^r-1$ for all $x\in\mathbb{R}$.
 \end{lemma}
 \begin{proof}
 By the equivalence of the norms there exists $K>0$ such that
 \[
-(|x-1|^p+1)^{1/p}\ge K(|x-1|+1)\ge K(|x|-1).
+(|x-1|^r+1)^{1/r}\ge K(|x-1|+1)\ge K|x|.
 \]
 Now the thesis follows immediately.
 \end{proof}
