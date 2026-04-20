@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  19 APR 2026 17:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  20 APR 2026 03:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1631,43 +1631,46 @@ PGFPlots: reading {figures/instability.dat}
 
 
 [27]
+PGFPlots: reading {figures/instabilitypl.dat}
+PGFPlots: reading {figures/instabilitypl-i.dat}
+
+
+[28]
+
+[29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1416.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1502.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1416.
+(hyperref)                replaced by space on input line 1502.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1416.
+(hyperref)                removing `\noindent' on input line 1502.
 
-
-
-[28
-
-
-]
-Chapter 4
-
-
-[29
-
-
-]
-Chapter 5
 
 
 [30
 
 
 ]
+Chapter 4
 
-[31]
 
-[32]
+[31
+
+
+]
+Chapter 5
+
+
+[32
+
+
+]
 
 [33]
 
@@ -1678,17 +1681,17 @@ Chapter 5
 [36]
 
 [37]
-Overfull \hbox (1.29216pt too wide) in paragraph at lines 2002--2004
+
+[38]
+
+[39]
+Overfull \hbox (1.29216pt too wide) in paragraph at lines 2088--2090
 \T1/zpltlf/m/n/10 Proposition []5.14[] en-sures that that for each $\OML/npxmi/
 m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
 ¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
  []
 
 
-
-[38]
-
-[39]
 
 [40]
 
@@ -1707,42 +1710,37 @@ m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10
 [47]
 
 [48]
-Chapter 6
 
-
-[49
-
-
-]
+[49]
 
 [50]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2784.
-
+Chapter 6
 
 
 [51
 
 
 ]
-Appendix A
 
+[52]
 
-[52
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\noindent' on input line 2870.
 
-
-]
-Appendix B
 
 
 [53
 
 
 ]
+Appendix A
 
-[54]
-Appendix C
+
+[54
+
+
+]
+Appendix B
 
 
 [55
@@ -1751,8 +1749,13 @@ Appendix C
 ]
 
 [56]
+Appendix C
 
-[57]
+
+[57
+
+
+]
 
 [58]
 
@@ -1769,7 +1772,11 @@ Appendix C
 [64]
 
 [65]
-Overfull \hbox (2.96286pt too wide) in paragraph at lines 3676--3678
+
+[66]
+
+[67]
+Overfull \hbox (2.96286pt too wide) in paragraph at lines 3762--3764
 [][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.28 (prop-er-ties of po
 s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
 f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
@@ -1778,20 +1785,16 @@ m/it/10 ; \LMS/npxsy/m/n/10 1¼$
 
 
 
-[66]
+[68]
 
-[67]
+[69]
 Appendix D
 
 
-[68
+[70
 
 
 ]
-
-[69]
-
-[70]
 
 [71]
 
@@ -1806,25 +1809,35 @@ Appendix D
 [76]
 
 [77]
+
+[78]
+
+[79]
 Bibliography
 
 
-[78
+[80
 
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4370.
+4457.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4370.
+(Font)              scaled to size 10.0pt on input line 4457.
+
+Overfull \hbox (20.6276pt too wide) in paragraph at lines 4458--4458
+[]\T1/zpltlf/m/n/10 U. Stafanelli and G.A. Franc-fort. ``Quasi-Static Evo-lu-ti
+on for the Arm-strong^^UFrederick Hardening-
+ []
 
 
-[79] (./text.aux)
+
+[81] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1834,10 +1847,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45361 strings out of 473197
- 993523 string characters out of 5718605
- 1867851 words of memory out of 5000000
- 67346 multiletter control sequences out of 15000+600000
+ 45399 strings out of 473197
+ 994392 string characters out of 5718605
+ 1868276 words of memory out of 5000000
+ 67369 multiletter control sequences out of 15000+600000
  670217 words of font info for 233 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1899b,1883s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1854,10 +1867,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (82 pages, 627247 bytes).
+Output written on text.pdf (84 pages, 637135 bytes).
 PDF statistics:
- 1164 PDF objects out of 1200 (max. 8388607)
- 1033 compressed objects within 11 object streams
- 398 named destinations out of 1000 (max. 500000)
+ 1191 PDF objects out of 1200 (max. 8388607)
+ 1058 compressed objects within 11 object streams
+ 409 named destinations out of 1000 (max. 500000)
  300 words of extra memory for PDF output out of 10000 (max. 10000000)
 

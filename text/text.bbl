@@ -1045,6 +1045,36 @@
       \field{title}{Nonlinear Partial Differential Equations with Applications}
       \field{year}{2013}
     \endentry
+    \entry{steffranc}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=e1956c9319b583fcfc9d840283c1df6d}{%
+           family={Stafanelli},
+           familyi={S\bibinitperiod},
+           given={U.},
+           giveni={U\bibinitperiod}}}%
+        {{hash=2962f5df2868345eac7f3a5c9f41ef5a}{%
+           family={Francfort},
+           familyi={F\bibinitperiod},
+           given={G.A.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{fullhash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{fullhashraw}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{bibnamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{authorbibnamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{authornamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{authorfullhash}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{authorfullhashraw}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Applied Mathematics Research eXpress}
+      \field{title}{Quasi-Static Evolution for the Armstrong–Frederick Hardening-Plasticity Model}
+      \field{year}{2013}
+      \true{nocite}
+    \endentry
     \entry{bifurcation-geomechanics}{book}{}{}
       \name{author}{2}{}{%
         {{hash=74e1f797a668ae633d602301c8436f6f}{%
