@@ -76,9 +76,9 @@
 \contentsline {section}{\tocsection {}{1}{Tensors}}{54}{section.A.1}%
 \contentsline {chapter}{\tocappendix {Appendix}{B}{Modeling in continuum mechanics}}{55}{appendix.B}%
 \contentsline {section}{\tocsection {}{1}{General procedure to build thermodynamically consistent mechanical models}}{55}{section.B.1}%
-\contentsline {paragraph}{\tocparagraph {}{}{Kinematics}}{55}{section*.21}%
-\contentsline {paragraph}{\tocparagraph {}{}{Statics}}{55}{section*.22}%
-\contentsline {paragraph}{\tocparagraph {}{}{Constitutive relations}}{55}{section*.23}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Kinematics}}{55}{section*.21}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Statics}}{55}{section*.22}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Constitutive relations}}{55}{section*.23}%
 \contentsline {section}{\tocsection {}{2}{Treating constrains with the methods of Lagrange multipliers}}{56}{section.B.2}%
 \contentsline {paragraph}{\tocparagraph {}{}{Kinematics of constrain}}{56}{section*.24}%
 \contentsline {paragraph}{\tocparagraph {}{}{Constrain reaction}}{56}{section*.25}%

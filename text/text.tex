@@ -1480,7 +1480,7 @@ with $Y>0$. In Remark~\ref{rmk:dissipation-distance-density} we already showed t
 \[
 D(P_0,P_1)=
 \begin{cases}
-\alpha_8|\log P_1-\log P_0| & \text{if $P_0,P_1\ge p$} \\
+Y|\log P_1-\log P_0| & \text{if $P_0,P_1\ge p$} \\
 \infty & \text{otherwise},
 \end{cases}
 \]
@@ -1495,7 +1495,7 @@ In Figure~\ref{fig:instabilitypl} is reported the graph of the tensile force $F^
 \addplot[dashed] table [x=dchi1,y=F] {figures/instabilitypl-i.dat};
 \end{axis}
 \end{tikzpicture}
-\caption{Graphs of $F^*$ and $\lambda$ as functions of the elongation $a$ along the homogeneous solution in the plastic model. The solid line is referred to the model $H$ in (ii) and the dashed line to $H$ in (i).}
+\caption{Graphs of $F^*$ and $\lambda$ as functions of the elongation $a$ along the homogeneous solution in the plastic model. The solid line is referred to $H$ in (ii) and the dashed line to $H$ in (i).}
 \label{fig:instabilitypl}
 \end{figure}
 
@@ -2891,30 +2891,30 @@ $\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
 %What I have written below so far is not suitable for large strain models. In particular the dissipation potential should be dependent also on $z$, $\Phi=\Phi(z,\dot z)$, and can be also nonconvex in $\dot z$. I should choose if is necessary to write the things in terms of Lie groups, that is assuming that $\boldsymbol{Z}$ is a Lie group and $\Phi=\Phi(\dot zz^{-1})$.
 %\end{rmk}
 
-In this chapter we describe the general procedure to develop a thermodynamically consistent mechanical model. The discussion will be purposely informal since the emphasis of this chapter is on modeling.
+In this chapter we describe the general procedure to develop a thermodynamically consistent mechanical model.
 
 \section{General procedure to build thermodynamically consistent mechanical models}
 
 We subdivide the discussion in three parts corresponding to the treatment of kinematics, statics and constitutive relations.
 
-\paragraph{Kinematics} Consider a general mechanical system. Its kinematical configuration is described by elements $z\in\boldsymbol{Z}$ of a vector space $\boldsymbol{Z}$.
+\subsubsection*{Kinematics} Consider a general mechanical system. Its kinematical configuration is described by elements $u\in V$ of a vector space $V$.
 
-\paragraph{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in\boldsymbol{Z}^*$ and $\mathcal{P}\in\boldsymbol{Z}^*$ respectively. The equilibrium between internal and external actions is written as $\mathcal{W}=\mathcal{P}$. This can be written as
+\subsubsection*{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in V^*$ and $\mathcal{P}\in V^*$ respectively. The equilibrium between internal and external actions is written as $\mathcal{W}=\mathcal{P}$ and this can be written as
 \[
-\tilde{\mathcal{W}}\doteq\dual{\mathcal{W},\tilde w}=\dual{\mathcal{P},\tilde w}\doteq\tilde{\mathcal{P}}\quad\text{for all $\tilde w\in\boldsymbol{Z}$}
+\tilde{\mathcal{W}}\doteq\dual{\mathcal{W},\tilde v}=\dual{\mathcal{P},\tilde v}\doteq\tilde{\mathcal{P}}\quad\text{for all $\tilde v\in V$}
 \]
-which is the classical statement of the principle of virtual powers. We refer to the test vector $\tilde w\in\boldsymbol{Z}$ as the virtual velocity and to $\tilde{\mathscr{W}}$ and $\tilde{\mathscr{P}}$ as the virtual internal end external power respectively.
+which is the classical statement of the principle of virtual powers. We refer to the test vector $\tilde v\in V$ as the virtual velocity and to $\tilde{\mathcal{W}}$ and $\tilde{\mathcal{P}}$ as the virtual internal end external power respectively.
 
-\paragraph{Constitutive relations}
+\subsubsection*{Constitutive relations}
 
-While the external actions $\mathscr{P}$ are assigned as a function $\mathscr{P}\colon[0,T]\to\boldsymbol{Z}^*$ the internal actions are put in relation with the kinematics of the system through constitutive relations. Since we always neglect inertial effects we assume a constitutive relation giving the internal actions as a set valued map $\mathscr{W}\colon\boldsymbol{Z}\times\boldsymbol{Z}\rightsquigarrow\boldsymbol{Z}$ of $z$ and $\dot z$. To obtain constitutive relations compatible with thermodynamics we postulate the existence of a
+While the external actions $\mathcal{P}$ are assigned as a function $\mathcal{P}\colon[0,T]\to V^*$, the internal actions are put in relation with the kinematics of the system through constitutive relations. Since we always neglect inertial effects we assume a constitutive relation giving the internal actions as a set valued map $\mathcal{W}\colon V\times V\rightsquigarrow V^*$ of $z$ and $\dot z$. To obtain constitutive relations compatible with thermodynamics we postulate the existence of a
 \begin{itemize}
-\item[(i)] free energy functional $\Psi\colon\boldsymbol{Z}\to(-\infty,\infty]$ which is differentiable on its domain,
-\item[(i)] subdifferentiable dissipation potential $\Phi\colon\boldsymbol{Z}\times\boldsymbol{Z}\to[0,\infty]$ such that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$,
+\item[(i)] free energy functional $\Psi\colon V\to(-\infty,\infty]$ which is differentiable on its domain,
+\item[(i)] subdifferentiable dissipation potential $\Phi\colon V\times V\to[0,\infty]$ such that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$,
 \end{itemize}
 and we define
 \[
-\mathscr{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(z,\dot z).
+\mathcal{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(z,\dot z).
 \]
 \begin{prop}
 Let $z\colon[0,T]\to\boldsymbol{Z}$ be a process satisfying the equilibrium condition
