@@ -3794,7 +3794,135 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 \section{Energetic solutions}
 \label{sec:energetic-solution}
 
+\subsection{Motivation}
+
+Let $Q$ be a separable and reflexive Banach space. Let $\mathcal{E}\colon Q\times[0,T]\to\mathbb{R}$ G\^ateaux differentiable such that $\mathcal{E}(\cdot,t)$ is convex for all $t\in[0,T]$ and let $\Phi\colon Q\times[0,\infty]$ be convex, lower semicontinuous and positively 1-homogeneous. Consider the following doubly nonlinear equation
+\begin{equation}
+\label{eqn:energetic:doubly-nonlinear}
+\partial_q\mathcal{E}(q(t),t)+\partial\Phi(\dot q(t))\ni 0.
+\end{equation}
+We say that $q\in\text{AC}([0,T],V)$ is a differentiable solution if~\eqref{eqn:energetic:doubly-nonlinear} holds for a.e.\ $t\in(0,T)$. From Proposition~\ref{prop:prop-pos-1-hom-convx} this is equivalent to
+\begin{equation}
+\label{eqn:energetic:equivalent-doubly-nonlinear}
+-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(0)\quad\text{and}\quad\Phi(\dot q(t))=-\dual{\partial_q\mathcal{E}(q(t),t),\dot q(t)}=-\frac{d}{dt}\mathcal{E}(q(t),t)+\partial_t\mathcal{E}(q(t),t)
+\end{equation}
+for a.e.\ $t\in(0,T)$. The first condition is the requirement that the conservative forces belong to the admissibility set $\partial\Phi(0)$. From the definition of subdifferential, this is equivalent to
+\[
+\Phi(\hat q-q(t))\ge\Phi(0)-\dual{\partial_q\mathcal{E}(q(t),t),\hat q-q(t)}\quad\text{for all $\hat{q}\in Q$}.
+\]
+Exploiting the convexity of $\mathcal{E}(\cdot,t)$ it follows that
+\[
+\mathcal{E}(\hat{q},t)-\mathcal{E}(q(t),t)\ge\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}=\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}.
+\]
+Then the first condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear}, implies
+\begin{equation}
+\label{eqn:energetic:stability-motivation}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$},
+\end{equation}
+Since $\Phi$ is 1-homogeneous, also the inverse implication holds, indeed
+\[
+\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}=\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}\ge\frac{\Phi(\epsilon(\hat{q}-q(t))}{\epsilon}=\Phi(\hat{q}-q(t)).
+\]
+The mechanical meaning of condition~\eqref{eqn:energetic:stability-motivation} is the following: the energy $\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)$ released by the system while passing from $q(t)$ to $\hat{q}$ cannot exceed the dissipation $\Phi(\hat{q}-q(t))$. This is a stability condition. The second condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear} is the power balance. Integrating it on the interval $(0,t)$ for $t\in(0,T]$ we get the energy balance
+\[
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\int_0^t\Phi(\dot q(s))ds.
+\]
+The first integral is the work of external forces, while the second integral is the dissipation. The following lemma gives an alternative way to express the dissipation.
+\begin{lemma}
+For all $0\le s<t\le T$ let
+\[
+\text{Diss}_\Phi(q,[s,t])=\inf\left\{\sum_{k=1}^N\Phi(q(t_k)-q(t_{k-1}))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
+\]
+Then
+\[
+\text{Diss}_\Phi(q,[s,t])=\int_s^t\Phi(\dot q(r))dr.
+\]
+\end{lemma}
+\begin{proof}
+Consider any subdivision $\{t_k\}_{k=0}^N$ of $[s,t]$. By Jensen inequality and in view of the 1-homogeneity of $\Phi$, it holds that
+\[
+\Phi(q(t_k)-q(t_{k-1}))=\Phi\left((t_k-t_{k-1})\frac{1}{t_k-t_{k-1}}\int_{t_{k-1}}^{t^k}\dot q(r)dr\right)\le\int_{t_{k-1}}^{t_k}\Phi(\dot q(r))dr\quad\text{for all $k$}.
+\]
+Then the inequality
+\[
+\text{Diss}_\Phi(q,[s,t])\le\int_s^t\Phi(\dot q(r))dr
+\]
+holds. To prove the other inequality we split the interval $[s,t]$ into intervals
+\[
+I_k^n=\left[s+\frac{k-1}{n}(t-s),s+\frac{k}{n}(t-s)\right]
+\]
+for $k\in\{1,\dots,n\}$ with $n\in\mathbb{N}$. Then, by lower semicontinuity of $\Phi$ and by the Fatou's lemma,
+\[
+\begin{split}
+\int_s^{t}\Phi(\dot q(r))dr&\le\int_s^t\liminf_{n\to\infty}\frac{n}{t-s}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr\le\\
+&\le\liminf_{n\to\infty}\frac{n}{t-s}\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr.
+\end{split}
+\]
+Now
+\[
+\begin{split}
+\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr&=\sum_{k=1}^{n-1}\int_0^{\frac{t-s}{n}}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
+&\le\int_0^{\frac{t-s}{n}}\sum_{k=1}^{n-1}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
+&\le\frac{t-s}{n}\text{Diss}_\Phi(q,[s,t]).
+\end{split}
+\]
+We have proved that
+\[
+\int_s^{t}\Phi(\dot q(r))dr\le\text{Diss}_\Phi(q,[s,t])
+\]
+as desired.
+\end{proof}
+Summarizing, we have seen that~\eqref{eqn:energetic:doubly-nonlinear} is equivalent
+\begin{subequations}
+\label{eqn:energetic:motivation-definition}
+\begin{gather}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\Phi(q,[0,t])\quad\text{for all $t\in[0,T]$}.
+\end{gather}
+\end{subequations}
+This conditions makes sense also if $\mathcal{E}$ is not G\^ateaux differentiable and $q$ is not absolutely continuous.
+
+This results suggest to define energetic solutions directly as evolutions $q\colon[0,T]\to Q$ satisfying~\eqref{eqn:energetic:motivation-definition} also when less regularity is assumed. This is discussed below.
+
 \subsection{Introduction}
+
+Let $Q$ be a separable and reflexive Banach space and $\mathcal{E}\colon Q\times[0,T]\to[0,\infty]$. Rather than using a dissipation potential, we describe the system's dissipation in terms of a dissipation distance. This is defined as a map $D\colon Q\times Q\to[0,\infty]$, where $D(q_0,q_1)$ denotes the minimum energy dissipated by the system when it jumps from $q_0$ to $q_1$. The dissipation along an evolution $q\colon[0,T]\to Q$ in the time interval $[s,t]$ is defined as
+\[
+\text{Diss}_\mathcal{D}(q,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(q(t_{k-1}),q(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
+\]
+Then we say that $q$ is an energetic solution if
+\begin{subequations}
+\begin{gather}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q(t),\hat{q})\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\mathcal{D}(q,[0,t])\quad\text{for all $t\in[0,T]$}.
+\end{gather}
+\end{subequations}
+In the following, the definition will be made more precise.
+
+\begin{rmk}
+Given a dissipation potential $\Phi\colon Q\times Q\to[0,\infty],\;(q,\dot q)\mapsto\Phi(q,\dot q)$, such that $\Phi(q,\cdot)$ is positively 1-homogeneous for all $q\in Q$, we can define the dissipation distance as
+\begin{equation}
+\label{eqn:energetic:dissipation-distance-definition}
+\mathcal{D}(q_0,q_1)=\inf\left\{\int_0^1\Phi(q(t),\dot{q}(t))dt\;\middle|\;\text{$q\in C^1([0,T],Q)$, $q(0)=q_0$ and $q(1)=q_1$}\right\}.
+\end{equation}
+Notice that the range of the integral can be choosen arbitrary due to the positive 1-homogeneity of $\Phi$. The particular choice~\eqref{eqn:energetic:dissipation-distance-definition} of $\mathcal{D}$ is motivated by the following \emph{formal} consideration. Let $q\colon[0,T]\to Q$ be an energetic solution. Fix $t\in[0,T]$, $w\in Q$, $\epsilon>0$ and let $\tilde q(r)=q(t)+r\epsilon w$. Then
+\[
+\mathcal{E}(q(t),t)\le\mathcal{E}(q(t)+\epsilon w,t)+\mathcal{D}(q(t),q(t)+\epsilon w)\le\mathcal{E}(q(t)+\epsilon w,t)+\int_0^1\Phi(\tilde q(r),\dot{\tilde q}(r))dr
+\]
+so that
+\[
+-\frac{\mathcal{E}(q(t)+\epsilon w,t)-\mathcal{E}(q(t),t)}{\epsilon}\le\frac{1}{\epsilon}\int_0^1\Phi(q(t)+r\epsilon w,\epsilon w)dr=\int_0^1\Phi(q(t)+r\epsilon w,w)dr.
+\]
+Assuming enough regularity, we let $\epsilon\to 0$ and we get
+\[
+-\dual{\partial_q\mathcal{E}(q(t),t),w}\le\Phi(q(t),w).
+\]
+This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(0)$. Differentiating the energy balance
+\[
+-\partial_q\mathcal{E}(q(t),t)=\Phi(q(t),\dot{q}(t)).
+\]
+This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(q(t))$. Thus~\eqref{eqn:energetic:dissipation-distance-definition} formally implies that energetic solutions are also solutions to the Biot inclusion.
+\end{rmk}
 
 \subsection{Assumptions and preliminary results}
 
@@ -3874,8 +4002,6 @@ holds for all $t\in[0,T]$. Here the dissipation is defined as
 \]
 for all $0\le s<t\le T$.
 \end{defi}
-
-\textbf{QUI O NELL'INTRODUZIONE, SCRIVERE QUALCOSA PER MOTIVARE LA NOZIONE DI ENERGETIC SOLUTIONS}
 
 \subsection{Existence theorem}
 
