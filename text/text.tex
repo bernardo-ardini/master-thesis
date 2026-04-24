@@ -119,7 +119,161 @@
 % 
 %I would like also to confirm the above considerations by a numerical study of the problem using the finite element method. The proof of the existence theorem is close to the numerical scheme that would be used, so we have in part established the convergence of the numerical method. I would use the monolithic approach proposed in~\cite{panteghini-bardella} and to obviate the need of globally $C^1$ finite element to handle the second gradient I would adopt the mortar method (we use discontinuous Lagrange polynomial of order two and we impose weakly the continuity and the continuity of the gradient across the elements with Lagrange multipliers supported on the element edges representing tractions and torques exchanged between the elements)\footnote{I saw this method applied for the numerical treatment of Navier--Stokes-$\alpha\beta$ model of Gurtin and Fried but I cannot find the paper any more.}. If the viscosity is kept positive the problem could be solved with a standard Newton--Raphson procedure applying a time step size adaptivity procedure to slow down during the fast localization process. This should work until the viscosity is so small that the problem requires a too small time step to be solved.
 
-\chapter*{Introduction}
+\chapter*{}
+
+\chapter{Da decidere}
+
+\section{General procedure to building mechanical models}
+
+In this section we describe a general procedure for building mechanical models that are thermodynamically coherent. This procedure will be systematically used throughout this thesis. The formulation we will give is based on the presentations in~\cite{gurtin-anand-fried},\cite{gurtin-anand-small} and~\cite{gurtin-anand-large}.
+
+\subsection{Kinematics}
+
+Kinematics is concerned with the description of the \emph{configurations} that a mechanical systems can assume. We assume that the possible configurations can be described as the elements of a Banach space $V$.
+\begin{ex}
+\label{ex:modeling:particles}
+Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by matrices $x\in\mathbb{R}^{d\times N}$, where $x_{i\alpha}$ is the $i$th component of the position vector of the $\alpha$th material point.
+\end{ex}
+\begin{ex}
+\label{ex:modeling:large-strain}
+The configurations of a deformable body at large strain in $\mathbb{R}^d$, can be identified with the deformations $\chi\in W^{1,p}(\Omega)^d$ with $p\in(1,\infty)$, where $\Omega\subset\mathbb{R}^d$, open and bounded subset of $\mathbb{R}^d$ is some reference configuration of the body. Every $X\in\Omega$ is the reference position of a material point and $\chi(X)$ is the position occupied by that material point in the deformed configuration. The condition of incompenetrability, $\det\text{Grad}\chi>0$ a.e.\ in $\Omega$, was purposely excluded from the definition of the configuration space in order to preserve the linear structure. Even thought we do not consider it at the level of kinematical description, it can be imposed in a later moment at the level of statics by adding suitable reactions, as we will show later. 
+\end{ex}
+\begin{ex}
+\label{ex:modeling:micro}
+Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $z\in W^{1,p}(\Omega)$ with $p\in(0,1)$. Where $z=1$ the material is sound, while where $z=0$ the material is completely damaged. The material is partially damaged where $z\in(0,1)$. One should add the constrain $z\in[0,1]$, but this is not required in the definition of the space of configurations in order to preserve the linear structure. As in Example~\ref{ex:modeling:large-strain} that constrain can be imposed later by adding suitable reactions. 
+\end{ex}
+\begin{rmk}
+Examples~\ref{ex:modeling:large-strain} and~\ref{ex:modeling:micro} shows that the assumption that space of configurations has a linear structure is not restrictive in most mechanical models, even when the attainable configurations actually lie in a space with a manifold structure. The complexity of the geometry of the achievable configuration space can be reduced to the analytical complexity of managing singular reactions.
+\end{rmk}
+\begin{rmk}
+As Example~\ref{ex:modeling:micro} demonstrate, the mechanical framework we are developing includes also models where internal variables are added to characterize microscopic processes. 
+\end{rmk}
+
+\subsection{Statics} With statics we mean the treatment of equilibrium of forces, in a generalized sense, acting on a mechanical system. Any \emph{generalized force} acting on the mechanical system, can be described as a linear functional $\mathcal{F}\in V^*$. Given any $\tilde v\in V$, the duality pairing $\dual{\mathcal{F},\tilde v}$ can be interpreted as the projection of $\mathcal{F}$ along the direction $\tilde v$. If we interpret $\tilde v$ as a virtual rate, that is $\tilde v=\dot{\tilde u}(0)$ for an arbitrary evolution $\tilde{u}\in C^1([0,1],V)$ of the configuration of the system, then $\dual{\mathcal{F},\tilde v}$ is called the virtual power of $\mathcal{F}$ along the virtual rate $\tilde{v}$.
+\begin{ex}(Example~\ref{ex:modeling:particles} continued)
+\label{ex:modeling:particles-continued}
+A generalized force can be seen as an element $F\in(\mathbb{R}^{d\times N})^*=\mathbb{R}^{d\times N}$. The virtual power is
+\[
+\dual{F,\tilde v}=\sum_{\alpha=1}^N\sum_{i=1}^dF_{i\alpha}\tilde v_{i\alpha}.
+\]
+In particular $F_{i\alpha}$ is the $i$th component of the force acting on the $\alpha$th. Since it is useful for understanding more complex models, let $N=2$, set $\tilde v_i\in\mathbb{R}^d$ with $(\tilde v_\alpha)_i=\tilde v_{\alpha i}$, and consider
+\[
+\dual{F,\tilde{v}}=f\cdot\left(\tilde v_1-\tilde v_2\right)
+\]
+for some $f\in\mathbb{R}^d$. This generalized force $F$ can represents the situation in which the second point exert a force $f$ on the first, and the first point exert a reaction force $-f$ on the second. 
+\end{ex}
+\begin{ex}(Example~\ref{ex:modeling:large-strain} continued)
+Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
+\[
+\dual{\mathcal{F},\tilde v}=\int_\Omega P:\Grad\tilde vdX+\int_\Omega f\cdot\tilde vdX+\int_{\partial\Omega}h\cdot\tilde vdX,
+\]
+where $P\in L^{P^*}(\Omega,\mathbb{R}^{d\times d})$, $f\in L^{p^*}(\Omega)^d$ and $h\in L^{p^*}(\partial\Omega)^d$. The first integral represents a generalized force that acts in the direction of the local bending of the body, the second integral represents a volume force distributed over $\Omega$, the last integral a surface force distributed over $\partial\Omega$.
+\end{ex}
+Consider now a time interval $[0,T]$ and actual evolution of the system $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example allowing jumps, can be considered as we will see subsequently in this thesis. During the time interval $[0,T]$ a generalized force $\mathcal{F}\colon[0,T]\to V^*$ will act on the mechanical system. We require that equilibrium holds, that is
+\[
+\mathcal{F}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
+\]
+This can be written also as
+\begin{equation}
+\label{eqn:modeling:ppv}
+\dual{\mathcal{F}(t),\tilde{v}}=0\quad\text{for all $\tilde v\in V$ and a.e.\ $t\in(0,T)$}.
+\end{equation}
+Equation~\eqref{eqn:modeling:ppv} is the statement of the principle of virtual powers, that is, the power of the generalized force acting on the system along all virtual rates must vanish.
+
+\subsection{Constitutive relations}
+
+To get an evolution equation, able to predict the evolution of the mechanical system, it is necessary to link $\mathcal{F}$ to the evolution $u$. This is done by specifying a constitutive relation, that is
+\[
+\mathcal{F}(t)\in\hat{\mathcal{F}}(u(t),\dot{u}(t),t)\quad\text{for a.e.\ $t\in(0,T)$},
+\]
+where $\hat{\mathcal{F}}\colon V\times V\times[0,T]\rightsquigarrow V^*$. We postulate that
+\[
+\hat{\mathcal{F}}(u,v,t)=-\partial_u\mathcal{E}(u,v,t)-\partial_v\mathcal{R}(u,v,t),
+\]
+where $\mathcal{E}\colon V\times V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the energy and the dissipation potential. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential.
+
+
+
+In most situations one can clearly split $\mathcal{F}=\mathcal{X}-\mathcal{I}$ where $\mathcal{X}$ and $\mathcal{I}$ form $[0,T]$ to $V^*$ are the external generalized force and the internal generalized force. The internal generalized force is due to the internal response of the mechanical system, while the external generalized force represents the external actions imposed on it. In this case the constitutive relations are usually specialized to
+\begin{itemize}
+\item[(i)] $\mathcal{E}\colon V\times[0,T]\to(-\infty,\infty]$ of the form $\mathcal{E}(u,t)=\Psi(u)-\dual{\mathcal{X}(t),u}$ where $\Psi\colon V\to(-\infty,\infty]$ is the free energy and $\mathcal{X}\colon[0,T]\to V^*$ is the external generalized force,
+\item[(ii)] $\mathcal{R}(u,v,t)=\Phi(u,v)$ where $\Phi\colon V\times V\to[0,\infty]$.
+\end{itemize}
+In this case the equilibrium condition reads
+\[
+\partial\Psi(u(t))+\partial_v\Phi(u(t),\dot u(t))\ni\mathcal{I}(t)=\mathcal{X}(t)\quad\text{for a.e.\ $t\in(0,T)$}.
+\]
+This is known as doubly nonlinear equation.
+\begin{rmk}
+Before imposing particular constitutive relations, $\mathcal{I}$ and $\mathcal{X}$ are completely undefined. However we notice that, before making specific constitutive assumptions, it is useful to assume that $\mathcal{I}$ and $\mathcal{X}$ have a more specific structure. We notice that, in order to keep the notation simple, we will sometimes write $\tilde{\mathcal{S}}$ instead of $\dual{\mathcal{S},\tilde v}$ for $\mathcal{S}\in\{\mathcal{I},\mathcal{X},\mathcal{F}\}$.
+% For example, if the mechanical system is the one described in Examples~\ref{ex:modeling:particles} and~\ref{ex:modeling:particles-continued} with $N=2$ and we want to build a mechanical model in which the only internal actions are a force $f(t)\in\mathbb{R}^d$, then we consider the case $\dual{\mathcal{I}(t),\tilde v}=f(t)\cdot(\tilde v_1-\tilde v_2)$. The force $f(t)$ is still undefined and can be fixed through suitable constitutive assumptions.
+\end{rmk}
+
+\section{General procedure to build thermodynamically consistent mechanical models}
+
+We subdivide the discussion in three parts corresponding to the treatment of kinematics, statics and constitutive relations.
+
+\subsubsection*{Kinematics} Consider a general mechanical system. Its kinematical configuration is described by elements $u\in V$ of a vector space $V$.
+
+\subsubsection*{Statics} The statics concerns with the instantaneous equilibrium between the internal and external action insisting on the configuration of the systems. The internal and external actions on the configuration of the system are described as a linear functionals, $\mathcal{W}\in V^*$ and $\mathcal{P}\in V^*$ respectively. The equilibrium between internal and external actions is written as $\mathcal{W}=\mathcal{P}$ and this can be written as
+\[
+\tilde{\mathcal{W}}\doteq\dual{\mathcal{W},\tilde v}=\dual{\mathcal{P},\tilde v}\doteq\tilde{\mathcal{P}}\quad\text{for all $\tilde v\in V$}
+\]
+which is the classical statement of the principle of virtual powers. We refer to the test vector $\tilde v\in V$ as the virtual velocity and to $\tilde{\mathcal{W}}$ and $\tilde{\mathcal{P}}$ as the virtual internal end external power respectively.
+
+\subsubsection*{Constitutive relations}
+
+While the external actions $\mathcal{P}$ are assigned as a function $\mathcal{P}\colon[0,T]\to V^*$, the internal actions are put in relation with the kinematics of the system through constitutive relations. Since we always neglect inertial effects we assume a constitutive relation giving the internal actions as a set valued map $\mathcal{W}\colon V\times V\rightsquigarrow V^*$ of $z$ and $\dot z$. To obtain constitutive relations compatible with thermodynamics we postulate the existence of a
+\begin{itemize}
+\item[(i)] free energy functional $\Psi\colon V\to(-\infty,\infty]$ which is differentiable on its domain,
+\item[(i)] subdifferentiable dissipation potential $\Phi\colon V\times V\to[0,\infty]$ such that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$,
+\end{itemize}
+and we define
+\[
+\mathcal{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(z,\dot z).
+\]
+\begin{prop}
+Let $z\colon[0,T]\to\boldsymbol{Z}$ be a process satisfying the equilibrium condition
+\[
+\partial\Psi(z(t))+\partial_{\dot z}\Phi(z(t),\dot z(t))\ni\mathcal{P}(t)
+\]
+for every $t\in[0,T]$. Let the dissipation rate be defined as $\mathscr{D}=\dual{\mathcal{W},\dot z}-\frac{d}{dt}\Psi(z)$. Then $\mathcal{D}\ge0$.
+\end{prop}
+\begin{proof}
+Let $\xi(t)\in\partial_{\dot z}\Phi(z(t),\dot z(t))$ such that $\partial\Psi(t)+\xi(t)=\mathcal{P}(t)$ for all $t\in[0,T]$. Then
+\[
+\mathcal{D}=\dual{\partial\Psi(z),\dot z}+\dual{\xi,\dot z}-\frac{d}{dt}\Psi(z)=\dual{\xi,\dot z}.
+\]
+But by definition of subdifferential we have $\Phi(z,0)\ge\Phi(z,\dot z)-\dual{\xi,\dot z}$ so that $\dual{\xi,\dot z}\ge\Phi(z,\dot z)\ge0$. This completes the thesis.
+\end{proof}
+\begin{rmk}
+The inequality $\mathscr{D}\ge0$ is known as the dissipation inequality and has the following meaning: the power $\dual{\mathscr{W},\dot z}$ absorbed (or released) by the system is stored reversibly as (or extracted from the) free energy up to a positive irreversible dissipation.
+\end{rmk}
+
+\section{Treating constrains with the methods of Lagrange multipliers}
+
+Linear constraints can be added in the system by substituting a $\boldsymbol{Z}$ with a subspace. Nonlinear constrains can be handled by choosing appropriately the free energy or the dissipation potential. However sometimes it can be useful to treat the constrain reaction as an additional unknown of the system. This happen especially if it is appropriate to include constitutive relations depending on the reactions.
+
+\paragraph{Kinematics of constrain} Let $\boldsymbol{K}$ be a convex subset of $\boldsymbol{Z}$. We consider the constrain $z\in\boldsymbol{K}$.
+
+\paragraph{Constrain reaction} In addiction to the internal and external actions, when we treat a constrain with the method of Lagrange multipliers we must add also the constrain reaction $\mathcal{R}\in\boldsymbol{Z}^*$. Then the equilibrium condition can be written as
+\[
+\mathcal{W}=\mathcal{P}+\mathcal{R}.
+\]
+We make the assumption that the power expanded by the reaction vanish requiring that $\mathcal{R}\in N_{\boldsymbol{K}}(z)$. The constrain reaction is an additional descriptor of the system together with the kinematical descriptor $z$.
+
+\paragraph{Constitutive relations} In presence of Lagrange multipliers the constitutive relation for $\mathcal{W}$ can be formulated as
+\[
+\mathcal{W}(z,\dot z)=\partial\Psi(z)+\partial_{\dot z}\Phi(\mathcal{R},z,\dot z).
+\]
+Here the free energy $\Psi$ is exactly as in the unconstrained case and the dissipation potential $\Phi$ is exactly as before but include a dependence on $\mathcal{R}$. The dissipation inequality is still valid in the following version.
+\begin{prop}
+Let $z\colon[0,T]\to\boldsymbol{Z}$ and $\mathcal{R}\colon[0,T]\to\boldsymbol{Z}^*$ satisfying
+\[
+z(t)\in\boldsymbol{K},\quad\mathcal{R}(t)\in N_{\boldsymbol{K}}(z(t))\quad\text{and}\quad\partial\Psi(z(t))+\partial_{\dot z}\Phi(\mathcal{R}(t),z(t),\dot z(t))\ni\mathcal{P}(t)+\mathcal{R}(t)
+\]
+for all $t\in[0,T]$. Let the dissipation rate be defined as $\mathscr{D}=\dual{\mathcal{W},\dot z}-\frac{d}{dt}\Psi(z)$. Then $\mathcal{D}\ge0$.
+\end{prop}
 
 \part{Existence results for a one-dimensional model of a plastic cylindrical bar}
 

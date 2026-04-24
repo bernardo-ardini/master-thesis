@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  23 APR 2026 01:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  24 APR 2026 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1474,140 +1474,142 @@ st/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}]
 Contents
 (./text.toc
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 2.
-)
+(Font)              scaled to size 10.0pt on input line 14.
+
+
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 7.0pt on input line 131.
+[3
+
+
+])
 \tf@toc=\write5
 \openout5 = `text.toc'.
 
 
 
+[4]
+
+Chapter 1
+LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
+(Font)              scaled to size 10.0pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 10.0pt on input line 132.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 7.3pt on input line 132.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
+(Font)              scaled to size 10.0pt on input line 134.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 82.
-[3
-
-
-]
-Introduction
-
+(Font)              scaled to size 7.3pt on input line 139.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 5.5pt on input line 139.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 152
+.
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
+File: ueus.fd 2013/01/14 v3.01 Euler Script
+)
 
 [1
 
 
 
 
-]
+
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}{/usr/sh
+are/texlive/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}{/usr/share/texlive/tex
+mf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
+
+[2]
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 10.0pt on input line 236.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 7.3pt on input line 236.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 5.5pt on input line 236.
+
+
+[3]
+
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 124.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 124.
+(hyperref)                replaced by space on input line 278.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 124.
+(hyperref)                removing `\noindent' on input line 278.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 17.28pt on input line 124.
+(Font)              scaled to size 17.28pt on input line 278.
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 124.
+(Font)              scaled to size 20.74pt on input line 278.
 
 
-[2
-
-
-]
-Chapter 1
-
-
-[3
+[5
 
 
 ]
 Chapter 2
-LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.0pt on input line 140.
-LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 140.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 191.
-LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 191.
 
 
-[4
+[6
 
 
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newpx/px-lms.enc}{/usr/share/tex
-live/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 220
-.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
-File: ueus.fd 2013/01/14 v3.01 Euler Script
-)
-LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 227.
+]
+Chapter 3
 
 
-[5{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf-pc.enc}]
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 10.0pt on input line 298.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 7.3pt on input line 298.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 5.5pt on input line 298.
+[7
 
 
-[6]
-LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 360.
-
-
-[7]
+]
 
 [8]
 
 [9]
-<figures/epsilon2F.png, id=186, 363.759pt x 358.4592pt>
-File: figures/epsilon2F.png Graphic file (type png)
-<use figures/epsilon2F.png>
-Package pdftex.def Info: figures/epsilon2F.png  used on input line 550.
-(pdftex.def)             Requested size: 204.85802pt x 201.87346pt.
-<figures/plotu2p.png, id=190, 546.843pt x 289.5618pt>
-File: figures/plotu2p.png Graphic file (type png)
-<use figures/plotu2p.png>
-Package pdftex.def Info: figures/plotu2p.png  used on input line 557.
-(pdftex.def)             Requested size: 426.79135pt x 226.00308pt.
-<figures/bar.png, id=191, 453.3738pt x 550.2156pt>
-File: figures/bar.png Graphic file (type png)
-<use figures/bar.png>
-Package pdftex.def Info: figures/bar.png  used on input line 563.
-(pdftex.def)             Requested size: 426.79135pt x 517.98354pt.
-
 
 [10]
 
 [11]
 
-[12 <./figures/epsilon2F.png> <./figures/plotu2p.png>]
+[12]
+<figures/epsilon2F.png, id=246, 363.759pt x 358.4592pt>
+File: figures/epsilon2F.png Graphic file (type png)
+<use figures/epsilon2F.png>
+Package pdftex.def Info: figures/epsilon2F.png  used on input line 704.
+(pdftex.def)             Requested size: 204.85802pt x 201.87346pt.
+<figures/plotu2p.png, id=250, 546.843pt x 289.5618pt>
+File: figures/plotu2p.png Graphic file (type png)
+<use figures/plotu2p.png>
+Package pdftex.def Info: figures/plotu2p.png  used on input line 711.
+(pdftex.def)             Requested size: 426.79135pt x 226.00308pt.
+<figures/bar.png, id=251, 453.3738pt x 550.2156pt>
+File: figures/bar.png Graphic file (type png)
+<use figures/bar.png>
+Package pdftex.def Info: figures/bar.png  used on input line 717.
+(pdftex.def)             Requested size: 426.79135pt x 517.98354pt.
 
-[13 <./figures/bar.png (PNG copy)>]
-Chapter 3
+
+[13]
+
+[14]
+
+[15 <./figures/epsilon2F.png> <./figures/plotu2p.png>]
+
+[16 <./figures/bar.png (PNG copy)>]
+Chapter 4
 
 
-[14
+[17
 
 
 ]
-
-[15]
-
-[16]
-
-[17]
 
 [18]
 
@@ -1626,57 +1628,57 @@ Chapter 3
 [25]
 
 [26]
-PGFPlots: reading {figures/instability.dat}
-PGFPlots: reading {figures/instability.dat}
-
 
 [27]
-PGFPlots: reading {figures/instabilitypl.dat}
-PGFPlots: reading {figures/instabilitypl-i.dat}
-
 
 [28]
 
 [29]
+PGFPlots: reading {figures/instability.dat}
+PGFPlots: reading {figures/instability.dat}
+
+
+[30]
+PGFPlots: reading {figures/instabilitypl.dat}
+PGFPlots: reading {figures/instabilitypl-i.dat}
+
+
+[31]
+
+[32]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1502.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1656.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1502.
+(hyperref)                replaced by space on input line 1656.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1502.
+(hyperref)                removing `\noindent' on input line 1656.
 
 
 
-[30
-
-
-]
-Chapter 4
-
-
-[31
+[33
 
 
 ]
 Chapter 5
 
 
-[32
+[34
 
 
 ]
+Chapter 6
 
-[33]
 
-[34]
+[35
 
-[35]
+
+]
 
 [36]
 
@@ -1685,19 +1687,19 @@ Chapter 5
 [38]
 
 [39]
-Overfull \hbox (1.29216pt too wide) in paragraph at lines 2088--2090
-\T1/zpltlf/m/n/10 Proposition []5.14[] en-sures that that for each $\OML/npxmi/
-m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
-¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
- []
-
-
 
 [40]
 
 [41]
 
 [42]
+Overfull \hbox (1.29216pt too wide) in paragraph at lines 2242--2244
+\T1/zpltlf/m/n/10 Proposition []6.14[] en-sures that that for each $\OML/npxmi/
+m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10 
+¹[]\OML/npxmi/m/it/10 ; p[]; y[]\LMS/npxsy/m/n/10 º \U/npxmia/m/it/10 =
+ []
+
+
 
 [43]
 
@@ -1714,54 +1716,54 @@ m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10
 [49]
 
 [50]
-Chapter 6
 
-
-[51
-
-
-]
+[51]
 
 [52]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2870.
-
-
-
-[53
-
-
-]
-Appendix A
+[53]
+Chapter 7
 
 
 [54
 
 
 ]
-Appendix B
+
+[55]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\noindent' on input line 3024.
 
 
-[55
+
+[56
 
 
 ]
-
-[56]
-Appendix C
+Appendix A
 
 
 [57
 
 
 ]
+Appendix B
 
-[58]
+
+[58
+
+
+]
 
 [59]
+Appendix C
 
-[60]
+
+[60
+
+
+]
 
 [61]
 
@@ -1776,7 +1778,13 @@ Appendix C
 [66]
 
 [67]
-Overfull \hbox (2.96286pt too wide) in paragraph at lines 3762--3764
+
+[68]
+
+[69]
+
+[70]
+Overfull \hbox (2.96286pt too wide) in paragraph at lines 3916--3918
 [][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 C.28 (prop-er-ties of po
 s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
 f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
@@ -1785,22 +1793,16 @@ m/it/10 ; \LMS/npxsy/m/n/10 1¼$
 
 
 
-[68]
-
-[69]
-Appendix D
-
-
-[70
-
-
-]
-
 [71]
 
 [72]
+Appendix D
 
-[73]
+
+[73
+
+
+]
 
 [74]
 
@@ -1817,31 +1819,37 @@ Appendix D
 [80]
 
 [81]
+
+[82]
+
+[83]
+
+[84]
 Bibliography
 
 
-[82
+[85
 
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4583.
+4737.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4583.
+(Font)              scaled to size 10.0pt on input line 4737.
 
-Overfull \hbox (20.6276pt too wide) in paragraph at lines 4584--4584
+Overfull \hbox (20.6276pt too wide) in paragraph at lines 4738--4738
 []\T1/zpltlf/m/n/10 U. Stafanelli and G.A. Franc-fort. ``Quasi-Static Evo-lu-ti
 on for the Arm-strong^^UFrederick Hardening-
  []
 
 
 
-[83] (./text.aux)
+[86] (./text.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1851,10 +1859,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45420 strings out of 473197
- 994923 string characters out of 5718605
- 1868474 words of memory out of 5000000
- 67379 multiletter control sequences out of 15000+600000
+ 45459 strings out of 473197
+ 995373 string characters out of 5718605
+ 1868615 words of memory out of 5000000
+ 67389 multiletter control sequences out of 15000+600000
  670217 words of font info for 233 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1899b,1883s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1871,10 +1879,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (86 pages, 647283 bytes).
+Output written on text.pdf (90 pages, 665219 bytes).
 PDF statistics:
- 1219 PDF objects out of 1440 (max. 8388607)
- 1084 compressed objects within 11 object streams
- 420 named destinations out of 1000 (max. 500000)
- 300 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1294 PDF objects out of 1440 (max. 8388607)
+ 1154 compressed objects within 12 object streams
+ 449 named destinations out of 1000 (max. 500000)
+ 332 words of extra memory for PDF output out of 10000 (max. 10000000)
 
