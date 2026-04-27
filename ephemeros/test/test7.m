@@ -68,8 +68,8 @@ pl.mat.B=1;
 
 pl.mat.Y0=1;
 pl.mat.alpha=3;
-
-E=2*pl.mat.C.mu*(pl.mat.C.la+pl.mat.C.la)/(pl.mat.C.la+2*pl.mat.C.mu);
+             
+E=2*pl.mat.C.mu*(pl.mat.C.la+pl.mat.C.mu)/(pl.mat.C.la+2*pl.mat.C.mu);
 be1=pl.mat.Y0/(sqrt(2)+pl.mat.alpha)/E;
 ga1=((sqrt(2)+pl.mat.alpha)*E*be1-pl.mat.Y0)/((pl.mat.alpha+sqrt(2))*E+sqrt(2)*pl.mat.B);
 p1=-E*(be1-ga1);

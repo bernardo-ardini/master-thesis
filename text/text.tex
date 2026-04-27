@@ -173,7 +173,7 @@ Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
 \]
 where $P\in L^{P^*}(\Omega,\mathbb{R}^{d\times d})$, $f\in L^{p^*}(\Omega)^d$ and $h\in L^{p^*}(\partial\Omega)^d$. The first integral represents a generalized force that acts in the direction of the local bending of the body, the second integral represents a volume force distributed over $\Omega$, the last integral a surface force distributed over $\partial\Omega$.
 \end{ex}
-Consider now a time interval $[0,T]$ and actual evolution of the system $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to V^*$ their sum. We require that equilibrium holds, that is
+Consider now a time interval $[0,T]$ and an actual evolution of the system $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to V^*$ their sum. We require that equilibrium holds, that is
 \[
 \mathcal{F}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
@@ -195,7 +195,7 @@ where $\hat{\mathcal{F}}\colon V\times V\times[0,T]\rightsquigarrow V^*$. We pos
 \label{eqn:modeling:constitutive-relations}
 \hat{\mathcal{F}}(u,v,t)=-\partial_u\mathcal{E}(u,v,t)-\partial_v\mathcal{R}(u,v,t),
 \end{equation}
-where $\mathcal{E}\colon V\times V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_u\mathcal{E}(u(t),\dot{u}(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_v\mathcal{R}(u(t),\dot{u}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
+where $\mathcal{E}\colon V\times V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential, while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_u\mathcal{E}(u(t),\dot{u}(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_v\mathcal{R}(u(t),\dot{u}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
 \[
 \dual{\mathcal{F}_d(t),\dot{u}(t)}\le0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
@@ -255,7 +255,7 @@ where $W\colon\Omega\times\mathbb{R}^{d\times d}\to(-\infty,\infty]$ is a contin
 \begin{ex}(Example~\ref{ex:modeling:micro} continued)
 To ensure that $z(x)\in[0,1]$ for a.e.\ $x\in\Omega$, one choose $\Phi\colon W^{1,p}(\Omega)\to(-\infty,\infty]$ such that $\Phi(z)=\infty$ if $z\neq 0$ on a set of positive measure.
 \end{ex}
-However there are situations in which it would be desirable to treat the constraint reaction $\mathcal{P}$ as an independent variable instead. In this sense $\mathcal{P}$ can be considered as an additional descriptor of the configuration of the system. This is particularly useful if one wants to consider constitutive relations depending on the reaction $\mathcal{P}$ itself, as it happens for the model that is discussed in Part~\ref{part:my-model}. Then we split the generalized force as $\mathcal{F}=\mathcal{I}+\mathcal{X}+\mathcal{P}$. The constitutive relations are imposed on $\mathcal{I}$ only as
+However there are situations in which it would be desirable to treat the constraint reaction $\mathcal{P}$ as an independent variable instead. In this sense $\mathcal{P}$ can be considered as an additional descriptor of the configuration of the system. This is particularly useful if one wants to consider constitutive relations depending on the reaction $\mathcal{P}$ itself, as it happens for the model that is discussed in Part~\ref{part:my-model}. Then we split the generalized force as $\mathcal{F}=-\mathcal{I}+\mathcal{X}+\mathcal{P}$. The constitutive relations are imposed on $\mathcal{I}$ only as
 \[
 \mathcal{I}(t)\in-\partial\Psi(\mathcal{P}(t),u(t))-\partial\Phi(\mathcal{P}(t),u(t),\dot u(t))\quad\text{for a.e.\ $t\in(0,T)$},
 \]
@@ -1485,7 +1485,7 @@ As we showed in the previous chapter, the one dimensional small deformations mod
 
 \subsection{Motivation form the multidimensional kinematics}
 
-We start with the description of the kinematics of the bar from a multidimensional perspective. The results obtained here will serve as the the basis for the development of the one dimensional model. Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
+We start with the description of the kinematics of the bar from a multidimensional perspective. The results obtained here will serve as a motivational basis for the development of the one dimensional model. Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
 \begin{equation}
 \label{eqn:necking-large:deformation}
 (X,Y)\mapsto\begin{pmatrix}
@@ -1574,7 +1574,7 @@ then the neo-Hookean elastic free energy density is given by
 
 \subsection{Kinematics}
 
-Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. We define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
+Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. As suggested by the multidimensional kinematics we define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
 
 \subsection{Statics}
 
@@ -2336,7 +2336,7 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 \label{fig:instability}
 \end{figure}
 
-\subsection{Plastic model}
+\subsection{Elastoplastic model}
 
 I still have to complete this part. Up to now I have develop the constitutive model bellow. It satisfies the assumptions of the existence theory developed in previous section. Since in the purely elastic model the lost of stability of the uniform solution is accompanied by the non-monotonicity of the tensile force $F^*$ as a function of $a$, we expect that this is also true in the plastic model. Thus I tried to develop a model that exhibits a non-monotone relationship between $F^*$ and $a$. It turned out that a simple quadratic hardening free energy density $H$ does not satisfy this requirement. For that reason I looked for other possibilities and at the end the Armstrong--Frederick appeared as a reasonable choice.
 
@@ -3718,6 +3718,97 @@ so that $\text{se}(\partial^2G(\dot U))=0$ there. On the contrary $\text{se}(\pa
 %where $u_n=u_{n-1}+h_n\dot u_n$ and $t_n=t_{n-1}+h$.
 
 \section{Numerical approximation}
+
+\subsection{Formulation}
+
+
+
+\subsection{Validation}
+
+To validate the numerical scheme we solve the following boundary value problem that admits an analytical solution. Consider the domain $\Omega=(0,L)\times(-H,H)$ and for all $t\in[0,T]$ impose the boundary conditions $u_2(x,t)=\epsilon(t)\sign x_2$ for $x_2\in\{-H,H\}$ and $u_1(x,t)=0$ for $x_1=0$. Here $\epsilon(t)=\frac{t}{T}\epsilon_0$ where $\epsilon_0>0$. Assume that no external volume forces or external tractions are imposed. We look for uniform solutions of the form
+\[
+u(x,t)=\begin{pmatrix}
+\zeta(t)x_1 \\
+\epsilon(t)x_2
+\end{pmatrix},\quad U_p(x,t)=\begin{pmatrix}
+-\gamma(t) & 0 \\
+0 & \gamma(t)
+\end{pmatrix}\quad\text{and}\quad p(x,t)=p(t).
+\]
+The unknowns are $\zeta,\gamma,p$ from $[0,T]$ to $\mathbb{R}$. We easily compute
+\[
+Eu=\begin{pmatrix}
+\zeta & 0 \\
+0 & \epsilon
+\end{pmatrix},
+\quad\text{and}\quad
+E_e=Eu-U_p=\begin{pmatrix}
+\zeta+\gamma & 0 \\
+0 & \epsilon-\gamma
+\end{pmatrix}.
+\]
+Assuming an isotropic elastic response, then
+\[
+\begin{split}
+T_e=2\mu E_e+\lambda\tr E_e I&=
+\begin{pmatrix}
+2\mu(\zeta+\gamma)+\lambda(\zeta+\epsilon) & 0 \\
+0 & 2\mu(\epsilon-\gamma)+\lambda(\zeta+\epsilon)
+\end{pmatrix}=\\
+&=\begin{pmatrix}
+(2\mu+\lambda)\zeta+\lambda\epsilon+2\mu\gamma & 0 \\
+0 & \lambda\zeta+(2\mu+\lambda)\epsilon-2\mu\gamma
+\end{pmatrix}.
+\end{split}
+\]
+The condition that the lateral traction vanish, impose that $(2\mu+\lambda)\zeta+\lambda\epsilon+2\mu\gamma=0$ so that
+\[
+\zeta=-\frac{\lambda\epsilon+2\mu\gamma}{2\mu+\lambda}.
+\]
+The micropressure can be immediately computed as
+\[
+p=-\frac{1}{2}\tr T_e=-(\lambda+\mu)(\zeta+\epsilon)=-E(\epsilon-\gamma),
+\]
+where $E=\frac{2\mu(\lambda+\mu)}{2\mu+\lambda}$. Now we consider the microforce balance. Since the solution is uniform the microstress vanish and we get $-\dev T_e+T_p=0$. We assume that
+\[
+Y(p)=
+\begin{cases}
+0 & \text{if $p\le-\frac{Y_0}{\alpha}$} \\
+Y_0+\alpha p & \text{if $p>-\frac{Y_0}{\alpha}$}
+\end{cases}
+\]
+Now
+\[
+\dev T_e=2\mu\dev E_e=
+\begin{pmatrix}
+\mu(\zeta-\epsilon+2\gamma) & 0 \\
+0 & \mu(\epsilon-\zeta-2\gamma)
+\end{pmatrix}=
+E(\epsilon-\gamma)\begin{pmatrix}
+-1 & 0 \\
+0 & 1
+\end{pmatrix}.
+\]
+Before the yield point is reached, $\gamma=0$ and the yield point is reached when $|\dev T_e|=Y(p)$. This can be written explicitly as $\sqrt{2}E\epsilon=Y_0-\alpha E\epsilon$, so that at yield point
+\[
+\epsilon=\frac{Y_0}{(\sqrt{2}+\alpha)E}.
+\]
+After that the yield point is reached $\dot\gamma>0$ and the microforce balance reads
+\[
+-\dev T_e+\mathfrak{B}U_p+\frac{1}{\sqrt{2}}Y(p)\begin{pmatrix}
+-1 & 0 \\
+0 & 1
+\end{pmatrix}=0,
+\]
+or equivalently
+\[
+-\sqrt{2}E\epsilon+\sqrt{2}E\gamma+\sqrt{2}\mathfrak{B}\gamma+Y_0-\alpha E\epsilon+\alpha E\gamma=0.
+\]
+This allows to compute $\gamma$ as
+\[
+\gamma=\frac{(\sqrt{2}+\alpha)E\epsilon-Y_0}{(\sqrt{2}+\alpha)E+\sqrt{2}\mathfrak{B}}.
+\]
+This completes the computation of the solution.
 
 \chapter{Large deformation model}
 

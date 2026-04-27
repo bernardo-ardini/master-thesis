@@ -64,7 +64,7 @@
 \contentsline {section}{\tocsection {}{3}{Qualitative analysis of the tensile test problem}}{40}{section.5.3}%
 \contentsline {subsection}{\tocsubsection {}{3.1}{Purely elastic model}}{40}{subsection.5.3.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{An example}}{42}{section*.16}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Plastic model}}{43}{subsection.5.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Elastoplastic model}}{43}{subsection.5.3.2}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{An example}}{43}{section*.17}%
 \contentsline {part}{Part\ 2. \enspace \noindent A model describing pressure sensitive plastic materials}{46}{part.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{6}{Introduction}}{47}{chapter.6}%
@@ -89,27 +89,29 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{64}{section*.21}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{66}{section*.22}%
 \contentsline {section}{\tocsection {}{3}{Numerical approximation}}{66}{section.7.3}%
-\contentsline {chapter}{\tocchapter {Chapter}{8}{Large deformation model}}{67}{chapter.8}%
-\contentsline {section}{\tocsection {}{1}{Formulation}}{67}{section.8.1}%
-\contentsline {subsection}{\tocsubsection {}{1.1}{Kinematics}}{67}{subsection.8.1.1}%
-\contentsline {subsection}{\tocsubsection {}{1.2}{Statics}}{67}{subsection.8.1.2}%
-\contentsline {subsection}{\tocsubsection {}{1.3}{Statics}}{67}{subsection.8.1.3}%
-\contentsline {part}{\noindent Collection of useful results}{69}{part*.23}%
-\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{70}{appendix.A}%
-\contentsline {section}{\tocsection {}{1}{Tensors}}{70}{section.A.1}%
-\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{71}{appendix.B}%
-\contentsline {section}{\tocsection {}{1}{Some classical results}}{71}{section.B.1}%
-\contentsline {subsection}{\tocsubsection {}{1.1}{A general form of the Gronwall inequality}}{71}{subsection.B.1.1}%
-\contentsline {section}{\tocsection {}{2}{Linear functional analysis}}{71}{section.B.2}%
-\contentsline {subsection}{\tocsubsection {}{2.1}{Other}}{71}{subsection.B.2.1}%
-\contentsline {subsection}{\tocsubsection {}{2.2}{Bochner spaces}}{72}{subsection.B.2.2}%
-\contentsline {subsection}{\tocsubsection {}{2.3}{Generalized mixed elliptic problems}}{73}{subsection.B.2.3}%
-\contentsline {section}{\tocsection {}{3}{Nonlinear functional analysis}}{76}{section.B.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Other}}{76}{subsection.B.3.1}%
-\contentsline {subsection}{\tocsubsection {}{3.2}{Implicit function theorem}}{76}{subsection.B.3.2}%
-\contentsline {subsection}{\tocsubsection {}{3.3}{Fixed point theorems}}{77}{subsection.B.3.3}%
-\contentsline {subsection}{\tocsubsection {}{3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{77}{subsection.B.3.4}%
-\contentsline {subsection}{\tocsubsection {}{3.5}{Browder--Minty theorem}}{77}{subsection.B.3.5}%
-\contentsline {subsection}{\tocsubsection {}{3.6}{Lower semicontinuity of integral functionals}}{81}{subsection.B.3.6}%
-\contentsline {section}{\tocsection {}{4}{Convex analysis}}{81}{section.B.4}%
-\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{83}{appendix*.24}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Formulation}}{66}{subsection.7.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Validation}}{66}{subsection.7.3.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Large deformation model}}{68}{chapter.8}%
+\contentsline {section}{\tocsection {}{1}{Formulation}}{68}{section.8.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Kinematics}}{68}{subsection.8.1.1}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Statics}}{68}{subsection.8.1.2}%
+\contentsline {subsection}{\tocsubsection {}{1.3}{Statics}}{68}{subsection.8.1.3}%
+\contentsline {part}{\noindent Collection of useful results}{70}{part*.23}%
+\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{71}{appendix.A}%
+\contentsline {section}{\tocsection {}{1}{Tensors}}{71}{section.A.1}%
+\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{72}{appendix.B}%
+\contentsline {section}{\tocsection {}{1}{Some classical results}}{72}{section.B.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{A general form of the Gronwall inequality}}{72}{subsection.B.1.1}%
+\contentsline {section}{\tocsection {}{2}{Linear functional analysis}}{72}{section.B.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Other}}{72}{subsection.B.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Bochner spaces}}{73}{subsection.B.2.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{Generalized mixed elliptic problems}}{74}{subsection.B.2.3}%
+\contentsline {section}{\tocsection {}{3}{Nonlinear functional analysis}}{77}{section.B.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Other}}{77}{subsection.B.3.1}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Implicit function theorem}}{77}{subsection.B.3.2}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Fixed point theorems}}{78}{subsection.B.3.3}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{78}{subsection.B.3.4}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{Browder--Minty theorem}}{78}{subsection.B.3.5}%
+\contentsline {subsection}{\tocsubsection {}{3.6}{Lower semicontinuity of integral functionals}}{82}{subsection.B.3.6}%
+\contentsline {section}{\tocsection {}{4}{Convex analysis}}{82}{section.B.4}%
+\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{84}{appendix*.24}%

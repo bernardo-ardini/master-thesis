@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  25 APR 2026 16:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  26 APR 2026 20:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1781,41 +1781,41 @@ m/it/10 N$ \T1/zpltlf/m/n/10 there ex-ists $[][]$ such that $\LMS/npxsy/m/n/10
 [65]
 
 [66]
+
+[67]
 Chapter 8
 
 
-[67
+[68
 
 
 ]
 
-[68]
+[69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3786.
+(hyperref)                removing `\noindent' on input line 3877.
 
-
-
-[69
-
-
-]
-Appendix A
 
 
 [70
 
 
 ]
-Appendix B
+Appendix A
 
 
 [71
 
 
 ]
+Appendix B
 
-[72]
+
+[72
+
+
+]
 
 [73]
 
@@ -1834,7 +1834,9 @@ Appendix B
 [80]
 
 [81]
-Overfull \hbox (1.98286pt too wide) in paragraph at lines 4604--4606
+
+[82]
+Overfull \hbox (1.98286pt too wide) in paragraph at lines 4695--4697
 [][][]\T1/zpltlf/m/sc/10 Proposition \T1/zpltlf/m/n/10 B.28 (prop-er-ties of po
 s-i-tively 1-ho-mo-ge-neous con-vex func-tions)\T1/zpltlf/m/sc/10 . []\T1/zpltl
 f/m/n/10 Let $\OML/npxmi/m/it/10 f [] [] V \LMS/npxsy/m/n/10 ! ¹^^@1\OML/npxmi/
@@ -1843,32 +1845,32 @@ m/it/10 ; \LMS/npxsy/m/n/10 1¼$
 
 
 
-[82]
+[83]
 Bibliography
 
 
-[83
+[84
 
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4668.
+4759.
  (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4668.
+(Font)              scaled to size 10.0pt on input line 4759.
 
-Overfull \hbox (20.6276pt too wide) in paragraph at lines 4669--4669
+Overfull \hbox (20.6276pt too wide) in paragraph at lines 4760--4760
 []\T1/zpltlf/m/n/10 U. Stafanelli and G.A. Franc-fort. ``Quasi-Static Evo-lu-ti
 on for the Arm-strong^^UFrederick Hardening-
  []
 
 
 
-[84] (./text.aux (./frontespizio.aux))
+[85] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1887,8 +1889,8 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45562 strings out of 473197
- 998384 string characters out of 5718605
+ 45565 strings out of 473197
+ 998423 string characters out of 5718605
  1872334 words of memory out of 5000000
  67495 multiletter control sequences out of 15000+600000
  687593 words of font info for 237 fonts, out of 8000000 for 9000
@@ -1907,10 +1909,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (86 pages, 886699 bytes).
+Output written on text.pdf (87 pages, 891147 bytes).
 PDF statistics:
- 1275 PDF objects out of 1440 (max. 8388607)
- 1137 compressed objects within 12 object streams
- 437 named destinations out of 1000 (max. 500000)
+ 1282 PDF objects out of 1440 (max. 8388607)
+ 1143 compressed objects within 12 object streams
+ 440 named destinations out of 1000 (max. 500000)
  313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
