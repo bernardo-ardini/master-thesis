@@ -46,6 +46,35 @@
       \field{year}{2005}
       \true{nocite}
     \endentry
+    \entry{progetto-ponno}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=9105389ff8f28e2760887f1c4a6c5b42}{%
+           family={B.},
+           familyi={B\bibinitperiod},
+           given={Ardini},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{fullhash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{fullhashraw}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{bibnamehash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{authorbibnamehash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{authornamehash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{authorfullhash}{9105389ff8f28e2760887f1c4a6c5b42}
+      \strng{authorfullhashraw}{9105389ff8f28e2760887f1c4a6c5b42}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Application of Bifurcation Theory to the study of buckling in Nonlinear Elasticity}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://raw.githubusercontent.com/bernardo-ardini/dynamical-systems-project/main/report/report.pdf
+      \endverb
+      \verb{url}
+      \verb https://raw.githubusercontent.com/bernardo-ardini/dynamical-systems-project/main/report/report.pdf
+      \endverb
+    \endentry
     \entry{bigoni-non-associative}{article}{}{}
       \name{author}{1}{}{%
         {{hash=ba175fb6803cc3be2e4d25ccedecff60}{%
@@ -494,7 +523,30 @@
       \field{labeltitlesource}{title}
       \field{title}{Non-Smooth Thermomechanics}
       \field{year}{2002}
-      \true{nocite}
+    \endentry
+    \entry{germain}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=3188f6f783f8dc5227e4616095ca879e}{%
+           family={Germain},
+           familyi={G\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{fullhash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{fullhashraw}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{bibnamehash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{authorbibnamehash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{authornamehash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{authorfullhash}{3188f6f783f8dc5227e4616095ca879e}
+      \strng{authorfullhashraw}{3188f6f783f8dc5227e4616095ca879e}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{J. de Mécanique}
+      \field{title}{La méthode des puissances virtuelles en mécanique des milieux continus, Première partie : théorie du second gradient}
+      \field{year}{1974}
     \endentry
     \entry{gurtin}{book}{}{}
       \name{author}{1}{}{%
@@ -552,7 +604,6 @@
       \field{journaltitle}{International Journal of Plasticity}
       \field{title}{A theory of strain-gradient plasticity for isotropic, plastically irrotational materials. Part I: Small deformations}
       \field{year}{2005}
-      \true{nocite}
     \endentry
     \entry{gurtin-anand-large}{article}{}{}
       \name{author}{2}{}{%
@@ -583,7 +634,35 @@
       \field{journaltitle}{International Journal of Plasticity}
       \field{title}{A theory of strain-gradient plasticity for isotropic, plastically irrotational materials. Part II: Finite deformations}
       \field{year}{2005}
-      \true{nocite}
+    \endentry
+    \entry{gurtin-fried-turbulence}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=282dc14781708c08359a404ba6b869cf}{%
+           family={Gurtin},
+           familyi={G\bibinitperiod},
+           given={M.E.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=94020b1b13632c0ee1b72899148da51f}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{fullhash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{fullhashraw}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{bibnamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorbibnamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authornamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorfullhash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorfullhashraw}{7d1e8432ea974ba7a271cbec6190ad52}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theoretical and Computational Fluid Dynamics}
+      \field{title}{A continuum mechanical theory for turbulence: a generalized Navier–Stokes-$\alpha$ equation with boundary conditions}
+      \field{year}{2008}
     \endentry
     \entry{gurtin-anand-fried}{book}{}{}
       \name{author}{3}{}{%
@@ -647,7 +726,6 @@
       \field{journaltitle}{Archive for Rational Mechanics and Analysis}
       \field{title}{Tractions, Balances, and Boundary Conditions for Nonsimple Materials with Application to Liquid Flow at Small-Length Scales}
       \field{year}{2006}
-      \true{nocite}
     \endentry
     \entry{han-reddy}{book}{}{}
       \name{author}{2}{}{%
@@ -679,6 +757,39 @@
       \field{labeltitlesource}{title}
       \field{title}{Plasticity - Mathematical Theory and Numerical Analysis}
       \field{year}{2013}
+    \endentry
+    \entry{ppv-encyclopedia}{inbook}{}{}
+      \name{author}{2}{}{%
+        {{hash=7895f17e01b82bfb1f2718667b570232}{%
+           family={Isola},
+           familyi={I\bibinitperiod},
+           given={Francesco},
+           giveni={F\bibinitperiod}}}%
+        {{hash=61110c30709cf1b5c84ffa99b1277e2c}{%
+           family={Della\bibnamedelima Corte},
+           familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Alessandro},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{fullhash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{fullhashraw}{83dfcf8c26298b880246326785dfca7e}
+      \strng{bibnamehash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{authorbibnamehash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{authornamehash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{authorfullhash}{83dfcf8c26298b880246326785dfca7e}
+      \strng{authorfullhashraw}{83dfcf8c26298b880246326785dfca7e}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Encyclopedia of continuum mechanics}
+      \field{title}{History of the Principle of Virtual Work}
+      \field{year}{2020}
+      \field{dateera}{ce}
     \endentry
     \entry{mielke}{article}{}{}
       \name{author}{2}{}{%
@@ -741,6 +852,30 @@
       \field{title}{A micromechanical inspired model for the coupled to damage elasto-plastic behavior of geomaterials under compression}
       \field{year}{2019}
       \true{nocite}
+    \endentry
+    \entry{ppv-maugin}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=252661c5fa0468f12ec392f6f9b74d2a}{%
+           family={Maugin},
+           familyi={M\bibinitperiod},
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{fullhash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{fullhashraw}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{bibnamehash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{authorbibnamehash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{authornamehash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{authorfullhash}{252661c5fa0468f12ec392f6f9b74d2a}
+      \strng{authorfullhashraw}{252661c5fa0468f12ec392f6f9b74d2a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Continuum Mech. Thermodyn.}
+      \field{title}{The principle of virtual power: from eliminating metaphysical forces to providing an efficient modelling tool}
+      \field{year}{2019}
     \endentry
     \entry{mierosBV}{article}{}{}
       \name{author}{2}{}{%
@@ -1073,7 +1208,6 @@
       \field{journaltitle}{Applied Mathematics Research eXpress}
       \field{title}{Quasi-Static Evolution for the Armstrong–Frederick Hardening-Plasticity Model}
       \field{year}{2013}
-      \true{nocite}
     \endentry
     \entry{bifurcation-geomechanics}{book}{}{}
       \name{author}{2}{}{%
