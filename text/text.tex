@@ -2356,7 +2356,7 @@ with $K_3\in\mathbb{R}$. Boundary condition imposes that $K_1=0$ and $K_3=0$. Fr
 \end{minipage}
 }
 \\
-\subfloat[][Instability mode]
+\subfloat[][Bifurcation mode]
 {
 \begin{minipage}{0.45\textwidth}
 \centering
@@ -2369,7 +2369,7 @@ with $K_3\in\mathbb{R}$. Boundary condition imposes that $K_1=0$ and $K_3=0$. Fr
 \end{tikzpicture}
 \end{minipage}
 }
-\caption{Instability mode of the elastic bar under traction.}
+\caption{Bifurcation mode of the elastic bar under traction.}
 \label{fig:instability-mode-elastic}
 \end{figure}
 
@@ -2455,43 +2455,99 @@ First of all we assume that instability does not occur in the elastic range. Thi
 \]
 be the reaction tensile force acting on the ends of the bar along the trivial solution. Consider now the function $J\colon(0,\infty)^3\to\mathbb{R}\cup\{\infty\}$ given by
 \[
-J(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\overline{P}(t),P)-\overline{F}(t)\rho.
+J_t(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\overline{P}(t),P)-\overline{F}(t)\rho.
 \]
-The quantity $J(\rho,y_2,P)-J(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J$ is not differentiable at $P=\overline{P}(t)$ but $J\in C^1(H^+)$ and $J\in C^1(H^-)$, where
+The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J_t$ is not differentiable at $P=\overline{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
 \[
-H^+=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\overline{P}(t)\}\quad\text{and}\quad H^-=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\overline{P}(t)\}.
+H^+_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\overline{P}(t)\}\quad\text{and}\quad H^-_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\overline{P}(t)\}.
 \]
 We easily find that
 \[
-\nabla J(\eta,\overline y_2(t),\overline P(t)^-)=\left(0,0,-\frac{2Y}{\overline P(t)}\right)\quad\text{and}\quad\nabla J(\eta,\overline y_2(t),\overline P(t)^+)=(0,0,0).
+\nabla J_t(\eta,\overline y_2(t),\overline P(t)^-)=\left(0,0,-\frac{2Y}{\overline P(t)}\right)\quad\text{and}\quad\nabla J_t(\eta,\overline y_2(t),\overline P(t)^+)=(0,0,0).
 \]
-Then, to study wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum look at the hessian matrix
+Then, to study wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum depends on the eigenvalues of the hessian matrix
 \[
-\nabla^2 J(\eta(t),\overline y_2(t),\overline P(t)^+)=
+h(t)=\nabla^2 J_t(\eta(t),\overline y_2(t),\overline P(t)^+).
 \]
+Let
+\[
+a(t)=h_{11}(t),\quad
+b(t)=\begin{pmatrix}
+h_{22}(t) & h_{23}(t) \\
+h_{32}(t) & h_{33}(t)
+\end{pmatrix}\quad\text{and}\quad
+c(t)=\begin{pmatrix}
+h_{21}(t) \\
+h_{31}(t)
+\end{pmatrix}
+\]
+so that
+\[
+h(t)=\begin{pmatrix}
+a(t) & c(t)^T \\
+c(t) & b(t)
+\end{pmatrix}.
+\]
+\begin{lemma}
+It holds that
+\[
+\frac{dF}{d\eta}(t):=\frac{dF}{dt}(t)\left(\frac{d\eta}{dt}(t)\right)^{-1}=\frac{\det h(t)}{\det b(t)}.
+\]
+\end{lemma}
+\begin{proof}
+Notice that
+\[
+F(s)=\dind{J_t}{\rho}(\eta(s),\overline y_2(s),\overline P(s))+\overline{F}(t).
+\]
+Then, differentiating with respect to $s$, computing for $s=t$ and dividing by $\frac{d\eta}{dt}(t)$, we get
+\begin{equation}
+\label{eqn:dF-deta-1}
+\frac{dF}{d\eta}=\dind{J_t}{\rho\partial\rho}(\eta,\overline y_2,\overline P)+\dind{J_t}{\rho\partial y_2}(\eta,\overline y_2,\overline P)\frac{d\overline y_2}{d\eta}+\dind{J_t}{\rho\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline P}{d\eta}.
+\end{equation}
+On the other hand, the balance in the transversal direction and the balance of microforces can be written respectively as
+\[
+\dind{J_t}{y_2}(\eta,\overline y_2,\overline P)=0\quad\text{and}\quad\dind{J_t}{P}(\eta,\overline y_2,\overline P)=0.
+\]
+Differentiating with respect to $\eta$ we get
+\[
+\begin{dcases}
+\dind{J_t}{\rho\partial y_2}(\eta,\overline y_2,\overline P)+\dind{J_t}{y_2\partial y_2}(\eta,\overline y_2,\overline P)\frac{d\overline y_2}{d\eta}+\dind{J_t}{y_2\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline P}{d\eta}=0 \\
+\dind{J_t}{\rho\partial P}(\eta,\overline y_2,\overline P)+\dind{J_t}{y_2\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline y_2}{d\eta}+\dind{J_t}{P\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline P}{d\eta}=0.
+\end{dcases}
+\]
+Then
+\[
+\begin{pmatrix}
+\dfrac{d\overline P}{d\eta} \\
+\dfrac{d\overline P}{d\eta}
+\end{pmatrix}=
+-b^{-1} c.
+\]
+Substituting into~\eqref{eqn:dF-deta-1} we get
+\[
+\frac{dF}{d\eta}=a-c\cdot b^{-1}c.
+\]
+But since
+\[
+\det h=\det b\left(a-c\cdot b^{-1}c\right)
+\]
+the thesis follows.
+\end{proof}
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $dF/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $F$ increases and became indefinite if $F$ reaches a maximum. This is indeed confirmed by the numerical computation of the trivial solution.
 
-Consider the elastic free energy density proposed previously for the purely elastic model. Consider also the following hardening free energy densities,
-\begin{itemize}
-\item[(i)] a simple quadratic energy density, with an additional penalization as $P$ approaches to $0<p<1$,
-\[
-H(P,P')=
-\begin{cases}
-C(P-1)^2+\frac{D}{P-p}+E|lP'|^q & \text{if $P>p$} \\
-\infty & \text{otherwise},
-\end{cases}
-\]
-\item[(ii)] and a more refined model
-\[
-H(P,P')=
-\begin{cases}
-C\left(P^q+\frac{q}{\delta}e^{-\delta(P-1)}\right)+\frac{D}{P-p}+E|lP'|^q & \text{if $P>p$} \\
-\infty & \text{otherwise},
-\end{cases}
-\]
-\end{itemize}
-where $C,D,E,\delta>0$ and $q>1$. These constitutive relations both satisfies the assumptions (H1), (H2) and (H3).
+We notice that the constitutive equation of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $F$ and $\eta$ if $C$ is large enough, see the dashed graph in Figure~\ref{fig:instabilitypl}. According to the considerations above we expect that hardening does not occur in this case. When $C>0$ is sufficiency reduces a non monotone relation is obtained, see the solid graph in Figure~\ref{fig:instabilitypl}.
+
 \begin{rmk}
-The expression of $H$ in (ii) is obtained as a modification of the Armstrong--Frederick kinematical hardening model. According to the Armstrong--Frederick model, the backstress $\beta=\dind{H}{P}$ satisfies
+A possible refinement of the hardening free energy function is
+\begin{equation}
+\label{eqn:hardening-amstrong-federik-modified}
+H(P,P')=
+\begin{cases}
+C\left(P^q+\frac{q}{\delta}e^{-\delta(P-1)}\right)+\frac{D}{P-\Pi}+E|lP'|^q & \text{if $P>p$} \\
+\infty & \text{otherwise},
+\end{cases}
+\end{equation}
+where $C,D,E,\delta>0$ and $q>1$. This constitutive relation still satisfies the assumptions (H1), (H2) and (H3). The expression~\eqref{eqn:hardening-amstrong-federik-modified} is obtained as a modification of the Armstrong--Frederick kinematical hardening model. According to the Armstrong--Frederick model, the backstress $\beta$ (that in our model correspond to the conservative microforce $\beta=\dind{H}{P}$) is required to satisfy the condition
 \begin{equation}
 \label{eqn:armstrong-frederick}
 \dot\beta=\delta(C\dot P-|\dot P|\beta)
@@ -2507,38 +2563,19 @@ This suggest the relation
 \end{equation}
 The main feature of this relation is that $\beta$ is bounded from above by $C$ and $P\to C^-$ as $P\to\infty$. Now~\eqref{eqn:armstrong-frederick-constitutive} corresponds to the energy density
 \[
-H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right)
+H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right).
 \]
-and formula in (ii) is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved. \textbf{Ma poi per garantire che i sottolivelli siano limitati, non andebbe a limite anche bene che $H$ abbia crescita solo lineare in $P$? Tanto poi il termine col gradiente compensa questa cosa.} In particular $H$ in (ii) is non-convex in $P$.
+Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved.
 \end{rmk}
-Let also
-\[
-R(P,\dot P)=
-\begin{cases}
-Y\frac{|\dot P|}{P} & \text{if $P\ge p$} \\
-\infty & \text{otherwise},
-\end{cases}
-\]
-with $Y>0$. In Remark~\ref{rmk:dissipation-distance-density} we already showed that the corresponding dissipation distance density $D\colon\mathbb{R}\to[0,\infty]$,
-\[
-D(P_0,P_1)=
-\begin{cases}
-Y|\log P_1-\log P_0| & \text{if $P_0,P_1\ge p$} \\
-\infty & \text{otherwise},
-\end{cases}
-\]
-satisfies the assumptions (d1), (d2) and (d3).
 
-In Figure~\ref{fig:instabilitypl} is reported the graph of the tensile force $F^*$ along the homogeneous solution as a function of $a$. The solid line correspond to $H$ in (ii) while the dashed line to $H$ in (i).
-
-\begin{figure}[tp]
+\begin{figure}[htp]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$a$},ylabel={$F^*$},xmin=1,xmax=1.5,width=0.45\textwidth,ylabel style={rotate=-90}]
 \addplot[-] table [x=dchi1,y=F] {figures/instabilitypl.dat};
 \addplot[dashed] table [x=dchi1,y=F] {figures/instabilitypl-i.dat};
 \end{axis}
 \end{tikzpicture}
-\caption{Graphs of $F^*$ and $\lambda$ as functions of the elongation $a$ along the homogeneous solution in the plastic model. The solid line is referred to $H$ in (ii) and the dashed line to $H$ in (i).}
+\caption{Graphs of $\overline F$ as functions of the elongation $\eta$ along the homogeneous solution in the plastic model.}
 \label{fig:instabilitypl}
 \end{figure}
 
