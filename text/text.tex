@@ -15,9 +15,15 @@
 \usepackage{bookmark}
 \usepackage{setspace}
 \usepackage{graphicx}
+\usepackage{caption,subfig}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{chapter}
 
 \usepackage{pgfplots}
 \usetikzlibrary{hobby,patterns,patterns,decorations.pathmorphing,calc}
+\usepgfplotslibrary{fillbetween}
+%\pgfplotsset{compat=1.18}
 
 \usepackage[backend=biber]{biblatex}
 \addbibresource{bib.bib}
@@ -129,16 +135,18 @@
 
 \section{A general framework for developing mechanical models}
 
-In this section we describe a general framework that allows to systematically develop mechanical models. All the models presented in this thesis will be formulated in agreement with this framework. The approach used here is based on the principle of virtual powers, which is a powerful and elegant tool to describe the equilibrium of the ``forces'' acting on a mechanical system. The ``forces'' must be intended in a generalized sense here. In fact, the configurations of the mechanical system are described as elements of a space (possibly infinite dimensional) of configurations, and therefore the generalized forces must be understood as actions that push the configuration within this space. Moreover the configuration of the mechanical system can include also the description of internal or microscopic conditions of the system, so that a generalized forces does not necessarily correspond to a mechanical force in the usual sense.
+In this section we describe a general framework that allows to systematically develop mechanical models All the models presented in this thesis will be formulated in agreement with this framework.
 
-Some historical informations about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works where the principle of virtual powers is used to develop systematically mechanical model are~\cite{germain},~\cite{gurtin-fried}, \cite{gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small}, \cite{gurtin-anand-large}, \cite{non-smooth-thermomechanics} that treat materials with microstructure.
+The approach presented here is based on the principle of virtual powers, which is a powerful and elegant tool to describe the equilibrium of the ``forces'' acting on a mechanical system. The ``forces'' must be intended in a generalized sense here. In fact, the configurations of the mechanical system are described as elements of a space (possibly infinite dimensional) of configurations, and therefore the generalized forces must be understood as actions that ``push'' the configuration of the system within this space. Moreover the configuration of the mechanical system can include also the description of internal or microscopic conditions of the system, so that a generalized forces does not necessarily correspond to a mechanical macroscopic force in the usual sense.
+
+Some historical information about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works where the principle of virtual powers is used to develop systematically mechanical model are~\cite{germain},~\cite{gurtin-fried}, \cite{gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small}, \cite{gurtin-anand-large}, \cite{non-smooth-thermomechanics} that treat materials with microstructure.
 
 \subsection{Kinematics}
 
 Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a Banach space $V$, the \emph{space of configurations}.
 \begin{ex}
 \label{ex:modeling:particles}
-Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by matrices $x\in\mathbb{R}^{d\times N}$, where $x_{i\alpha}$ is the $i$th component of the position vector of the $\alpha$th material point.
+Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by the matrices $x=(x_1,\dots x_N)\in\mathbb{R}^{d\times N}$, where $x_{\alpha}\in\mathbb{R}^d$ with $\alpha\in\{1,\dots,N\}$ is the position of the $\alpha$th material point.
 \end{ex}
 \begin{ex}
 \label{ex:modeling:large-strain}
@@ -157,15 +165,11 @@ As Example~\ref{ex:modeling:micro} show, the configuration of the mechanical sys
 \subsection{Statics} With statics we mean the treatment of equilibrium of forces, in a generalized sense, acting on a mechanical system. Any \emph{generalized force} acting on the mechanical system, can be described as a linear functional $\mathcal{F}\in V^*$. Given any $\tilde v\in V$, the duality pairing $\dual{\mathcal{F},\tilde v}$ can be interpreted as the projection of $\mathcal{F}$ along the direction $\tilde v$. If we interpret $\tilde v$ as a virtual rate, that is $\tilde v=\dot{\tilde u}(0)$ for an arbitrary evolution $\tilde{u}\in C^1([0,1],V)$ of the configuration of the system, then $\dual{\mathcal{F},\tilde v}$ is called the virtual power of $\mathcal{F}$ along the virtual rate $\tilde{v}$.
 \begin{ex}(Example~\ref{ex:modeling:particles} continued)
 \label{ex:modeling:particles-continued}
-A generalized force can be seen as an element $F\in(\mathbb{R}^{d\times N})^*=\mathbb{R}^{d\times N}$. The virtual power is
+A generalized force can be seen as an element $F=(F_1,\dots,F_N)\in(\mathbb{R}^{d\times N})^*=\mathbb{R}^{d\times N}$. The virtual power acts on $\tilde v=(\tilde v_1,\dots,\tilde v_N)$ as
 \[
-\dual{F,\tilde v}=\sum_{\alpha=1}^N\sum_{i=1}^dF_{i\alpha}\tilde v_{i\alpha}.
+\dual{F,\tilde v}=\sum_{\alpha=1}^NF_\alpha\cdot\tilde v_\alpha.
 \]
-In particular $F_{i\alpha}$ is the $i$th component of the force acting on the $\alpha$th material point. Since the following consideration is useful for understanding more complex models, let $N=2$, set $\tilde v_i\in\mathbb{R}^d$ with $(\tilde v_\alpha)_i=\tilde v_{\alpha i}$, and consider
-\[
-\dual{F,\tilde{v}}=f\cdot\left(\tilde v_1-\tilde v_2\right)
-\]
-for some $f\in\mathbb{R}^d$. This generalized force $F$ can represents the situation in which the second point exert a force $f$ on the first, and the first point exert a reaction force $-f$ on the second. 
+Here $F_\alpha$ is the force acting on the $\alpha$th material point.
 \end{ex}
 \begin{ex}(Example~\ref{ex:modeling:large-strain} continued)
 Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
@@ -174,7 +178,7 @@ Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
 \]
 where $P\in L^{P^*}(\Omega,\mathbb{R}^{d\times d})$, $f\in L^{p^*}(\Omega)^d$ and $h\in L^{p^*}(\partial\Omega)^d$. The first integral represents a generalized force that acts in the direction of the local bending of the body, the second integral represents a volume force distributed over $\Omega$, the last integral a surface force distributed over $\partial\Omega$.
 \end{ex}
-Consider now a time interval $[0,T]$ and an actual evolution of the system $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to V^*$ their sum. We require that equilibrium holds, that is
+Consider now a time interval $[0,T]$ and an actual evolution of the configuration of the system, $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to V^*$ their sum. We require that equilibrium holds, that is
 \[
 \mathcal{F}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
@@ -249,7 +253,7 @@ To include a kinematical constrains on the process, say $u(t)\in K$ for all $t\i
 \begin{ex}(Example~\ref{ex:modeling:large-strain} continued)
 Let $\Phi\colon W^{1,p^*}(\Omega)^d\to(-\infty,\infty]$. To describe an elastic response, we choose $\Psi$ of the form
 \[
-\Phi(\chi)=\int_\Omega W(X,\Grad\chi(X))dX,
+\Psi(\chi)=\int_\Omega W(X,\Grad\chi(X))dX,
 \]
 where $W\colon\Omega\times\mathbb{R}^{d\times d}\to(-\infty,\infty]$ is a continuous free energy density. Incompenetrability impose that $W(X,F)=\infty$ if $\det F\le0$.
 \end{ex}
@@ -1421,7 +1425,7 @@ where $a$ and $b$ depends on time only. A solution which is symmetric with respe
 y=-\frac{b}{a}+C_2\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right).
 \end{equation}
 \begin{rmk}
-Since the computations became to long to be done by hand we perform them with an automatic algebraic manipulator (the MATLAB Symbolic Math Toolbox). Since most of the resultant expressions are too long we do not report them.
+From now on, since most of the resultant expressions are too long we do not report them.
 \end{rmk}
 We now look for a solution $u_2\in C^2([0,L])$. When $\epsilon=L/2$ the solution is simply given by
 \[
@@ -1464,28 +1468,28 @@ It is a direct computation.
 \end{proof}
 This results confirm the absence of necking in the small deformation model. Indeed it says that a thin bar deforms almost uniformly. 
 
-\subsubsection*{Some plots}
-
-For completeness we report some plots illustrating the solution that we have found. We fix $d=3$, $L=1$, $l=0.1$, $\kappa=100$, $\mu=100$, $B=0.1$, $Y=1$.
-\begin{figure}[p]
-\centering
-\includegraphics[width=0.48\textwidth]{figures/epsilon2F.png}
-\caption{Graph of the function $f$.}
-\label{fig:epsilon2F}
-\end{figure}
-In Figure~\ref{fig:epsilon2F} on the left we port the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. In Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar when $\epsilon=0.493$. On the top there is the result obtained with a purely elastic bar while on the bottom the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
-\begin{figure}[p]
-\centering
-\includegraphics[width=\textwidth]{figures/plotu2p.png}
-\caption{Plot of $u_2$ (left) and $p$ (right) for $\epsilon=0.3$.}
-\label{fig:plotu2p}
-\end{figure}
-\begin{figure}[p]
-\centering
-\includegraphics[width=\textwidth]{figures/bar.png}
-\caption{Picture of the half $(0,L/2)$ of the bar when $\epsilon=0.493$. The bar on the bottom is plastic, the one on the top is purely elastic and subject to the same load. The transversal displacement is magnified with a factor 7. The color represents $p$.}
-\label{fig:bar}
-\end{figure}
+%\subsubsection*{Some plots}
+%
+%For completeness we report some plots illustrating the solution that we have found. We fix $d=3$, $L=1$, $l=0.1$, $\kappa=100$, $\mu=100$, $B=0.1$, $Y=1$.
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=0.48\textwidth]{figures/epsilon2F.png}
+%\caption{Graph of the function $f$.}
+%\label{fig:epsilon2F}
+%\end{figure}
+%In Figure~\ref{fig:epsilon2F} on the left we port the graph of $f$. We see that $\epsilon_0$, which correspond to the abscissa of the vertical asymptote, is slightly greater then $L/2$. In Figure~\ref{fig:plotu2p} we report the plot of $u_2$ and $p$ when $\epsilon=0.3$. In Figure~\ref{fig:bar} we report a picture of the bar when $\epsilon=0.493$. On the top there is the result obtained with a purely elastic bar while on the bottom the result predicted including the plastic behavior. The displacements of cross sections is magnified with a factor 7. The color represents the variable $p$.
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=\textwidth]{figures/plotu2p.png}
+%\caption{Plot of $u_2$ (left) and $p$ (right) for $\epsilon=0.3$.}
+%\label{fig:plotu2p}
+%\end{figure}
+%\begin{figure}[p]
+%\centering
+%\includegraphics[width=\textwidth]{figures/bar.png}
+%\caption{Picture of the half $(0,L/2)$ of the bar when $\epsilon=0.493$. The bar on the bottom is plastic, the one on the top is purely elastic and subject to the same load. The transversal displacement is magnified with a factor 7. The color represents $p$.}
+%\label{fig:bar}
+%\end{figure}
 
 \chapter{Model at large deformations}
 
@@ -1633,11 +1637,18 @@ h_2(X)=P(X)^{-1}\zeta(X)\quad\text{for $X\in\{0,L\}$} \\
 \begin{proof}
 Rearranging the terms we have
 \begin{multline*}
-\tilde{\mathcal{I}}=\int_0^L\left[P^{-1}\sigma_1\tilde v_1'+P^{\frac{1}{d-1}}\sigma_2\tilde v_2+P^{-1}\zeta\tilde v_2'\right]dX+\\
+\dual{\mathcal{I},\tilde w}=\int_0^L\left[P^{-1}\sigma_1\tilde v_1'+P^{\frac{1}{d-1}}\sigma_2\tilde v_2+P^{-1}\zeta\tilde v_2'\right]dX+\\
 +\int_0^L\left[\left(\tau-\chi_1'P^{-2}\sigma_1+(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2-\chi_2'P^{-2}\zeta\right)\tilde Q+\kappa\tilde Q'\right]dX.
 \end{multline*}
 By integration by parts and application of the fundamental lemma of the calculus of variation we get the thesis.
 \end{proof}
+We call Mandel stress the quantity
+\begin{equation}
+\label{eqn:neck-large-mandel}
+m=\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta.
+\end{equation}
+It is the elastic force felt by the microscopic configuration.
+
 
 \subsection{Constitutive relations}
 
@@ -2138,6 +2149,8 @@ Let $q_0=(y_0,P_0)\in\mathscr{Q}$ such that $\mathcal{E}(q_0,0)<\infty$. Then th
 
 \subsection{Particular constitutive relations that satisfy the hypotheses of the existence theorem}
 
+\label{subsec:constitutive-large-neck}
+
 We now discuss particular constitutive relations that satisfies the hypotheses required to apply Theorem~\ref{thm:existence-necking-large}.
 
 Taking inspiration from the neo-Hooken elastic free energy density~\eqref{eqn:necking-large:neo-hookean}, we consider
@@ -2247,9 +2260,9 @@ We consider the following boundary value problem describing the tensile test: th
 
 We will see that a trivial strong solution to this problem is the spatially homogeneous one that is $\overline{y}_1(X,t)=X$ for all $X\in(0,L)$ and $t\in[0,T]$, $\overline{y}_1(\cdot,t)$ and $\overline{P}(\cdot,t)$ constant for all $t\in[0,T]$. However we expect that this trivial solution is unstable when $\eta$ is sufficiently large, in the sense that it does not satisfy the global stability condition
 \[
-\mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(P,\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
+\mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline P(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
 \]
-We actually start with the treatment of stability when only the elastic response is considered.
+We first discuss the stability when the elastic response only is considered. In this case we are able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
 \begin{rmk}
 Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces. Some results regarding this theory and application to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
 \end{rmk}
@@ -2280,7 +2293,7 @@ W_2(\eta(t),\overline E_2(t),0)=0.
 \]
 This yields $\overline E_2$ as a function of $\eta$.
 
-We now turn to the study of the stability of the homogeneous solution $(\overline{\chi})$. To this aim we should check whether the second variation of the energy becomes indefinite for $\eta$ large enough. This can be done as follows: we insert a perturbation of the homogeneous solution $\chi_1=\overline\chi_1+v_1$ and $\chi_2=\overline\chi_2+v_2$ into problem~\eqref{eqn:definite-equations-necking-large-elastic}, then we linearize the resulting problem around the homogeneous solution and we look for nontrivial solutions. The linearized problem reads as follows
+We now turn to the study of the stability of the homogeneous solution $(\overline{\chi},\overline{P})$. To this aim we should check whether the second variation of the energy becomes indefinite for $\eta$ large enough. This can be done as follows: we insert a perturbation of the homogeneous solution $\chi_1=\overline\chi_1+v_1$ and $\chi_2=\overline\chi_2+v_2$ into problem~\eqref{eqn:definite-equations-necking-large-elastic}, then we linearize the resulting problem around the homogeneous solution and we look for nontrivial solutions. The linearized problem reads as follows
 \begin{subequations}
 \label{eqn:perturbed-eqn}
 \begin{gather}
@@ -2318,159 +2331,99 @@ Let
 \[
 \lambda=\frac{\frac{(\overline W_{12})^2}{\overline W_{11}}-\overline W_{22}}{\overline W_{33}}.
 \]
-Taking into account the boundary condition $v_2'(X)=0$  for $X\in\{0,L\}$, we find that a nontrivial solution exists if and only if $\lambda=k\pi$ for $k\in\{1,2,\dots\}$ and is of the form
+Taking into account the boundary condition $v_2'(X)=0$  for $X\in\{0,L\}$, we find that a nontrivial solution exists if and only if $\lambda=\frac{k^2\pi^2}{L^2}$ for $k\in\{1,2,\dots\}$ and is of the form
 \[
 v_2(X)=\frac{\overline W_{12}K_1}{\frac{\overline{W}_{12}^2}{\overline{W}_{11}}-\overline W_{22}}+K_2\cos\left(\sqrt{\lambda}X\right).
 \]
 Here $K_2\in\mathbb{R}$ is a constant. Inserting in~\eqref{eqn:v1prime} we get that
 \[
-v_1(X)=\left(-\frac{\overline W_{12}}{\overline W_{11}}\frac{\overline W_{12}K_1}{\frac{\overline{W}_{12}^2}{\overline{W}_{11}}-\overline W_{22}}+1\right)K_1X+\frac{K_2}{\sqrt{\lambda}}\sin\left(\sqrt{\lambda}X\right)+K_3
+v_1(X)=\left(-\frac{\overline W_{12}}{\overline W_{11}}\frac{\overline W_{12}K_1}{\frac{\overline{W}_{12}^2}{\overline{W}_{11}}-\overline W_{22}}+1\right)K_1X-\frac{\overline{W}_{12}}{\overline{W}_{11}}\frac{K_2}{\sqrt{\lambda}}\sin\left(\sqrt{\lambda}X\right)+K_3
 \]
-with $K_3\in\mathbb{R}$. Boundary condition imposes that $K_1=0$ and $K_3=0$.
+with $K_3\in\mathbb{R}$. Boundary condition imposes that $K_1=0$ and $K_3=0$. From these considerations we conclude that the homogeneous solution becomes unstable when $\lambda=\pi^2/L^2$ for the first time. The shape of the instability is showed schematically in Figure~\ref{fig:instability-mode-elastic}
+\begin{figure}[t]
+\centering
+\subfloat[][Reference configuration]
+{
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[hide axis,clip=false,x=1cm,y=1cm]
+\addplot[name path=A, no markers, draw=none] table[x index=0, y index=1] {figures/instabilityelref.dat};
+\addplot[name path=B, no markers, draw=none] table[x index=0, y expr=-\thisrowno{1}] {figures/instabilityelref.dat};
+\addplot[black] fill between[of=A and B];
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+}
+\\
+\subfloat[][Instability mode]
+{
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.6]
+\begin{axis}[hide axis,clip=false,x=1cm,y=1cm]
+\addplot[name path=A, no markers, draw=none] table[x index=0, y index=1] {figures/instabilityel.dat};
+\addplot[name path=B, no markers, draw=none] table[x index=0, y expr=-\thisrowno{1}] {figures/instabilityel.dat};
+\addplot[black] fill between[of=A and B];
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+}
+\caption{Instability mode of the elastic bar under traction.}
+\label{fig:instability-mode-elastic}
+\end{figure}
 
-This requires that $\lambda\ge0$. If $\lambda<0$ the only solution is $v_2=0$.
+%Let $f=f(u,p)$ and $g=g(u,p)$ form $\mathbb{R}^m\times\mathbb{R}^m$ to $\mathbb{R}^m$ be smooth. Let also $A,B\in\mathbb{R}^{m\times m}$ and $c\in\mathbb{R}^m$. Let $V$ some Banach space and consider the problem to find $u\colon(0,L)\to\mathbb{R}^m$ such that
+%\[
+%\begin{cases}
+%f(u(x),u'(x))+\frac{d}{dx}g(u(x),u'(x))=0 & \text{for $x\in(0,L)$} \\
+%Au(x)+Bu'(x)=c & \text{for $x\in\{0,L\}$}.
+%\end{cases}
+%\]
+%We formally write this problem as $\mathcal{L}(u)=0$. Let $u$ be a solution and suppose that 
+%\[
+%\dind{f}{u}(u(x),u'(x))=F_u,\quad\dind{f}{p}(u(x),u'(x))=F_p,\quad\dind{g}{u}(u(x),u'(x))=G_u\quad\text{and}\quad\dind{g}{p}(u(x),u'(x))=G_p
+%\]
+%for all $x\in(0,L)$, where $F_u,F_p,G_u,G_p\in\mathbb{R}^{m\times m}$ are constant. Formally, the linearized perturbed problem $\mathcal{L}'(u)v$, with $v\colon(0,L)\to\mathbb{R}$, reads
+%\[
+%\begin{cases}
+%F_uv(x)+(F_p+G_u)v'(x)+G_pv''(x)=0 & \text{for $x\in(0,L)$} \\
+%Av(x)+Bv'(x)=0 & \text{for $x\in\{0,L\}$}.
+%\end{cases}
+%\]
+%We look for particular solution of the differential equation of the form $x\mapsto e^{rx}w$ with $w\in\mathbb{C}$ and $w\in\mathbb{R}^m$. This is a solution if and only $r$ and $w$ solve the following polynomial eigenvalue problem
+%\[
+%(r^2G_p+r(F_p+G_u)+F_u)w=0.
+%\]
+%Assume that there exist.
 
-To study if these equations together with boundary conditions~\eqref{eqn:perturbed-bound} admits a nontrivial solution we first need the following general discussion.
-
-Let $f=f(u,p)$ and $g=g(u,p)$ form $\mathbb{R}^m\times\mathbb{R}^m$ to $\mathbb{R}^m$ be smooth. Let also $A,B\in\mathbb{R}^{m\times m}$ and $c\in\mathbb{R}^m$. Let $V$ some Banach space and consider the problem to find $u\colon(0,L)\to\mathbb{R}^m$ such that
+Now let $\overline{F}(t)=W_1(\eta(t),\overline{E}_2(t),0)$ be the axial force along the homogeneous solution. We now show that the instability can occur only after that $F$ reaches its maximum. Indeed let us view $\overline{F}$ as a function of $\eta$, so that
 \[
-\begin{cases}
-f(u(x),u'(x))+\frac{d}{dx}g(u(x),u'(x))=0 & \text{for $x\in(0,L)$} \\
-Au(x)+Bu'(x)=c & \text{for $x\in\{0,L\}$}.
-\end{cases}
+\frac{d\overline{F}}{d\eta}=\overline W_{11}+\overline W_{12}\frac{d\overline E_2}{d\eta}.
 \]
-We formally write this problem as $\mathcal{L}(u)=0$. Let $u$ be a solution and suppose that 
+On the other end we know that $\overline W_2=W_2(\eta,\overline{E}_2,0)=0$ so that, by differentiating with respect to $\eta$,
 \[
-\dind{f}{u}(u(x),u'(x))=F_u,\quad\dind{f}{p}(u(x),u'(x))=F_p,\quad\dind{g}{u}(u(x),u'(x))=G_u\quad\text{and}\quad\dind{g}{p}(u(x),u'(x))=G_p
-\]
-for all $x\in(0,L)$, where $F_u,F_p,G_u,G_p\in\mathbb{R}^{m\times m}$ are constant. Formally, the linearized perturbed problem $\mathcal{L}'(u)v$, with $v\colon(0,L)\to\mathbb{R}$, reads
-\[
-\begin{cases}
-F_uv(x)+(F_p+G_u)v'(x)+G_pv''(x)=0 & \text{for $x\in(0,L)$} \\
-Av(x)+Bv'(x)=0 & \text{for $x\in\{0,L\}$}.
-\end{cases}
-\]
-We look for particular solution of the differential equation of the form $x\mapsto e^{rx}w$ with $w\in\mathbb{C}$ and $w\in\mathbb{R}^m$. This is a solution if and only $r$ and $w$ solve the following polynomial eigenvalue problem
-\[
-(r^2G_p+r(F_p+G_u)+F_u)w=0.
-\]
-Assume that there exist.
-Differentiating the second equation and eliminating $u_1''$ from the first equation, we get
-\begin{subequations}
-\begin{gather}
-\overline W_{33}u_2'''+\left(\frac{\overline W_{12}^2}{\overline W_{11}}-\overline W_{22}\right)u_2'=0 \quad\text{in $(0,L)$}
-\end{gather}
-\end{subequations}
-with boundary conditions
-\begin{gather}
-u_1(X)=0\quad\text{for $X\in\{0,L\}$}
-u_2'(X)=0\quad\text{for $X\in\{0,L\}$}
-\end{gather}
-Let $\xi=u_2'$ and
-\[
-\lambda=\frac{\frac{(\overline W_{12})^2}{\overline W_{11}}-\overline W_{22}}{\overline W_{33}}.
-\]
-Then $\xi''+\lambda\xi=0$ with $\xi(X)=0$ for $X\in\{0,L\}$, admits a nontrivial solution $\xi(X)=\sin(\sqrt{\lambda}X)$, if and only if $\sqrt{\lambda}L=k\pi$ for some $k\in\mathbb{N}=\{1,2,\dots\}$. This means that the homogeneous solution is stable until $E_1^*$ is such that $\lambda(E_1^*)=\pi^2/L^2$.
-\begin{rmk}
-Let $F^*=W_1^*$ be the axial force obtained in the homogeneous solution. Then
-\[
-\frac{dF^*}{da}=W_{11}^*+W_{12}^*\frac{dE_2^*}{da}.
-\]
-On the other end we know that $W_2^*=0$ so that, by differentiating with respect to $a$,
-\[
-W_{12}^*+W_{22}^*\frac{dE_2^*}{da}=0\quad\text{that implies}\quad\frac{dE_2^*}{da}=-\frac{W_{12}^*}{W_{22}^*}.
+\overline W_{12}+\overline W_{22}\frac{d\overline E_2}{d\eta}=0\quad\text{that implies}\quad\frac{d\overline E_2}{d\eta}=-\frac{\overline W_{12}}{\overline W_{22}}.
 \]
 Then
 \[
-\frac{dF^*}{da}=W_{11}^*-\frac{(W_{12}^*)^2}{W_{22}^*}=-W_{GG}^*\frac{W_{11}^*}{W_{22}^*}\lambda.
+\frac{d\overline F}{d\eta}=\overline W_{11}-\frac{\overline W_{12}^2}{\overline W_{22}}=-\overline W_{33}\frac{\overline W_{11}}{\overline W_{22}}\lambda.
 \]
-Since at the first stages of deformation, $\frac{dF^*}{dE_1^*}>0$, then $\lambda<0$. If $\lambda=\pi^2/L^2$ instead $\frac{dF^*}{dE_1^*}<0$. This means that instability can occur only after that a local maximum value of $F^*$ is attained.
-\end{rmk}
+Now, at the first stages of deformation the force increases with elongation so $d\overline F/d\eta>0$ that implies $\lambda<0$ and no instability can occur. It $\overline{F}$ has a (local) maximum then $\lambda$ become positive and instability occur if it reach the value $\pi^2/L^2$. This clearly happen if the bar is sufficiently long.
 
-\subsubsection*{An example}
-
-Now we show that there exists a particular constitutive model that is likely to have unstable homogeneous solutions. Consider
-\[
-W(E_1,E_2,G)=
-\begin{cases}
-\mathbb{W}(E_1,E_2,G,E_1E_2) & \text{if $E_1>0$ and $E_2>0$} \\
-\infty & \text{otherwise},
-\end{cases}
-\]
-with
-\[
-\quad \mathbb{W}(E_1,E_2,G,J)=A\frac{|E_1-1|^p+|E_2-1|^p+|lG|^p}{J^\alpha}+B|J-1|^r
-\]
-where $A,B>0$, $r>1$, $0<\alpha\le p-1$ and $p>1+\frac{\alpha}{r}$. This particular $W$ satisfies assumptions (W1), (W2), (W3) and (W4) of previous section. In particular it satisfies the convexity condition (W1) but it is not convex in $(E_1,E_2,G)$, this is crucial to get instability. Indeed if $W$ was convex, then the energy would have a unique minimizer and the homogeneous solution would be always stable.
-
-We start with the check of the assumptions (W1) and (W2). Hypotheses (W1) is a consequence of the following lemma.
-\begin{lemma}
-Let $w\colon(0,\infty)\to\mathbb{R}$ strictly convex and let $g\colon(0,\infty)\times(0,\infty)\to\mathbb{R}$ given by $g(r,y)=\frac{r^p}{y^\alpha}+w(y)$ for some $p>1$ and $0<\alpha\le p-1$. Let also $n\in\mathbb{N}$ and $f\colon\mathbb{R}^n\times(0,\infty)\to\mathbb{R}$ given by $f(x,y)=g(|x|,y)$. Then $f$ is strictly convex in $\mathbb{R}^n\times(0,\infty)$.
-\end{lemma}
-\begin{proof}
-We first prove that $g$ is strictly convex. The hessian matrix of $g$ is given by
-\[
-\nabla^2g(r,y)=\begin{pmatrix}
-p(p-1)\frac{r^{p-2}}{y^\alpha} & -p\alpha\frac{r^{p-1}}{y^{\alpha+1}} \\
--p\alpha\frac{r^{p-1}}{y^{\alpha+1}} & \alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)
-\end{pmatrix}.
-\]
-Then
-\begin{equation}
-\begin{split}
-\det\nabla^2g(r,p)&=p(p-1)\frac{r^{p-2}}{y^\alpha}\left(\alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)\right)-p^2\alpha^2\frac{r^{2p-2}}{y^{\alpha+2}}=\\
-&=p\alpha(p-\alpha-1)\frac{r^{2p-2}}{y^{\alpha+2}}+p(p-1)\frac{r^{p-2}}{y^\alpha}w''(y)>0.
-\end{split}
-\end{equation}
-and
-\[
-\tr\nabla^2g(r,y)=p(p-1)\frac{r^{p-2}}{y^\alpha}+\alpha(\alpha+1)\frac{r^p}{y^{\alpha+2}}+w''(y)>0.
-\]
-This proves that $\nabla^2g$ is everywhere positive-definite. This implies that $g$ is strictly convex. Then for any $(x_0,y_0),(x_1,y_1)\in\mathbb{R}^n\times(0,\infty)$ and $0<\lambda<1$ it holds
-\[
-\begin{split}
-f((1-\lambda)(x_0,y_0)+\lambda(x_1,y_1))&=\frac{|(1-\lambda)x_0+\lambda x_1|^p}{y^\alpha}+w(y)\le\\
-&\le\frac{\left[(1-\lambda)|x_0|+\lambda |x_1|\right]^p}{\left[(1-\lambda)y_0+\lambda y_1)\right]^\alpha}+w((1-\lambda)y_0+\lambda y_1))=\\
-&=g((1-\lambda)(|x_0|,y_0)+\lambda(|x_1|,y_1))<(1-\lambda)g(|x_0|,y_0)+\lambda g(|x_1|,y_1)=\\
-&=(1-\lambda)f(x_0,y_0)+\lambda f(x_1,y_1).
-\end{split}
-\]
-This is exactly the thesis.
-\end{proof}
-We now prove the growth condition (W2) for $q_W=p/\left(1+\frac{\alpha}{r}\right)>1$. Lemma~\ref{lemma:inverse-young} yields for all $\delta>0$ and $\rho>1$ that
-\begin{multline}
-\mathbb{W}(E_1,E_2,G,J)\ge A\rho\delta^\frac{\rho-1}{\rho}|E_1-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|E_2-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|lG|^\frac{p}{\rho}-\\
--(2A+1)(\rho-1)\delta J^\frac{\alpha}{\rho-1}+B|J-1|^r.
-\end{multline}
-Choosing $\rho$ such that $\frac{\alpha}{\rho-1}=r$ we get $\frac{p}{\rho}=q_H$. Moreover choosing $\delta>0$ sufficiency small we have
-\[
-\inf_{J>0}\left[-(2A+1)(\rho-1)\delta J^r+B|J-1|^r\right]>-\infty.
-\]
-This is implied immediately from the following lemma.
-\begin{lemma}
-Let $r\ge1$. Then there exists $C>0$ such that $|x-1|^r\ge C|x|^r-1$ for all $x\in\mathbb{R}$.
-\end{lemma}
-\begin{proof}
-By the equivalence of the norms there exists $K>0$ such that
-\[
-(|x-1|^r+1)^{1/r}\ge K(|x-1|+1)\ge K|x|.
-\]
-Now the thesis follows immediately.
-\end{proof}
-
-Thus we have that $W$ satisfies the required assumptions. Now we show that $W$ provides homogeneous solutions that are likely to become unstable. Indeed choosing the following particular values of the parameter appearing in the definition of $W$
+Consider now the particular constitutive model described in Section~\ref{subsec:constitutive-large-neck}. If we choose
 \begin{equation}
 \label{eqn:choice-parameters}
 \text{$A=1$, $B=10^{-4}$, $p=2$, $\alpha=1$ and $r=2$},
 \end{equation}
-we get the graphs of $F^*$ and $\lambda$ as functions of $a$ in Figure~\ref{fig:instability}. In particular notice that $\lambda$ became positive as $E_1^*$ is increased. This implies that, if $L$ is sufficiently large, then there exists $a$ such that $\lambda=\pi^2/L^2$.
+we get the graphs of $\overline F$ and $\lambda$ as functions of $\eta$ reported in Figure~\ref{fig:instability}. Notice that $F$ has a maximum and $\lambda$ became positive so that instability occur if $L$ is sufficiently large.
 \begin{rmk}
-We notice that the particular choice of the parameters in~\eqref{eqn:choice-parameters} is not mechanically reasonable for metals, and was motivated only by the need to show that the mechanical model that we have developed in this chapter is able to capture instability phenomena. The inaccuracy of~\eqref{eqn:choice-parameters} stems to the fact that, since $B$ is small compared to $A$, the nearly-compressibility behavior of metals is not correctly reproduced. Moreover~\eqref{eqn:choice-parameters} implies that cross-sections growth in traction, this is clearly wrong for metals.
+We notice that the particular choice of the parameters in~\eqref{eqn:choice-parameters} is not mechanically reasonable for metals, and was motivated only by the need to show that the mechanical model that we have developed in this chapter can exhibit instability phenomena. The inaccuracy of~\eqref{eqn:choice-parameters} stems to the fact that, since $B$ is small compared to $A$, the nearly-compressibility behavior of metals is not correctly reproduced. Moreover~\eqref{eqn:choice-parameters} implies that cross-sections growth in traction, this is clearly wrong for metals.
 \end{rmk}
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{axis}[xlabel={$a$},ylabel={$F^*$},xmin=1,xmax=6,ymin=0,width=0.45\textwidth,ylabel style={rotate=-90}]
+\begin{axis}[xlabel={$a$},ylabel={$\overline F$},xmin=1,xmax=6,ymin=0,width=0.45\textwidth,ylabel style={rotate=-90}]
 \addplot[-] table [x=E1,y=F] {figures/instability.dat};
 \end{axis}
 \end{tikzpicture}
@@ -2481,15 +2434,41 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 \addplot[dashed,domain=1:6] {0};
 \end{axis}
 \end{tikzpicture}
-\caption{Graphs of $F^*$ and $\lambda$ as functions of the imposed elongation $a$ for the homogeneous deformation in the purely elastic model when $A=1$, $B=10^{-4}$, $p=2$, $\alpha=1$ and $r=2$. Notice that $\lambda$ became positive when $a$ is sufficiently large, indicating that the uniform solution is likely to became unstable if $L$ is large enough.}
+\caption{Graphs of $\overline F$ and $\lambda$ as functions of the imposed elongation $\eta$ for the homogeneous deformation in the purely elastic model with the choice of the value of the parameters in~\ref{eqn:choice-parameters}.}
 \label{fig:instability}
 \end{figure}
 
 \subsection{Elastoplastic model}
 
-I still have to complete this part. Up to now I have develop the constitutive model bellow. It satisfies the assumptions of the existence theory developed in previous section. Since in the purely elastic model the lost of stability of the uniform solution is accompanied by the non-monotonicity of the tensile force $F^*$ as a function of $a$, we expect that this is also true in the plastic model. Thus I tried to develop a model that exhibits a non-monotone relationship between $F^*$ and $a$. It turned out that a simple quadratic hardening free energy density $H$ does not satisfy this requirement. For that reason I looked for other possibilities and at the end the Armstrong--Frederick appeared as a reasonable choice.
+We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(P,\dot P)=Y/P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
 
-\subsubsection*{An example}
+To study the stability of the homogeneous solution we should to check if
+\begin{equation}
+\label{eqn:stability-necking}
+\mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
+\end{equation}
+This since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the stability condition is equivalent to the requirement that $(\overline{y}(t),\overline P(t))$ is a global minimizer of $(y,P)\mapsto\mathcal{E}(y,P,t)+\mathcal{D}(\overline{P}(t),P)$ in $\mathscr{Y}\times\mathscr{Z}$. We expect that~\eqref{eqn:stability-necking} is violated when $\eta$ is sufficiently large. We were not able to get conclusive results in this sense, so we now propose an heuristic consideration that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen. 
+
+First of all we assume that instability does not occur in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Let
+\[
+\overline F(t)=\overline{P}(t)^{-1}W_1(\eta(t)\overline{P}(t)^{-1},\overline{y}_2(t)\overline P(t),\overline{y}_2'(t)\overline{P}(t)^{-1})
+\]
+be the reaction tensile force acting on the ends of the bar along the trivial solution. Consider now the function $J\colon(0,\infty)^3\to\mathbb{R}\cup\{\infty\}$ given by
+\[
+J(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\overline{P}(t),P)-\overline{F}(t)\rho.
+\]
+The quantity $J(\rho,y_2,P)-J(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J$ is not differentiable at $P=\overline{P}(t)$ but $J\in C^1(H^+)$ and $J\in C^1(H^-)$, where
+\[
+H^+=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\overline{P}(t)\}\quad\text{and}\quad H^-=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\overline{P}(t)\}.
+\]
+We easily find that
+\[
+\nabla J(\eta,\overline y_2(t),\overline P(t)^-)=\left(0,0,-\frac{2Y}{\overline P(t)}\right)\quad\text{and}\quad\nabla J(\eta,\overline y_2(t),\overline P(t)^+)=(0,0,0).
+\]
+Then, to study wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum look at the hessian matrix
+\[
+\nabla^2 J(\eta(t),\overline y_2(t),\overline P(t)^+)=
+\]
 
 Consider the elastic free energy density proposed previously for the purely elastic model. Consider also the following hardening free energy densities,
 \begin{itemize}
