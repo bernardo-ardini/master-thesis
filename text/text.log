@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  30 APR 2026 00:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  1 MAY 2026 00:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1749,7 +1749,7 @@ Chapter 5
 [38]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2413: fill between: activating layered grap
+Package pgfplots info on input line 2415: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1767,16 +1767,16 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2413: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2415: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2413.
+(Font)              scaled to size 8.0pt on input line 2415.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2427: fill between: activating layered grap
+Package pgfplots info on input line 2429: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2427: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2429: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
@@ -1799,16 +1799,16 @@ PGFPlots: reading {figures/instabilitypl(4).dat}
 [43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2644.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 2644.
+(hyperref)                replaced by space on input line 2646.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2644.
+(hyperref)                removing `\noindent' on input line 2646.
 
 
 
@@ -1880,7 +1880,7 @@ Chapter 8
 [66]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4104.
+(hyperref)                removing `\noindent' on input line 4106.
 
 
 
@@ -1924,52 +1924,45 @@ Appendix B
 [79]
 
 [80]
+
+[81]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-4986.
+5046.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 4986.
+(Font)              scaled to size 10.0pt on input line 5046.
 
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 4987--4987
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5047--5047
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[81
+[82
 
 
 
 
 ]
 
-[82] (./text.aux (./frontespizio.aux))
+[83] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                text
-(biblatex)                and rerun LaTeX afterwards.
-
 Package logreq Info: Writing requests to 'text.run.xml'.
 \openout1 = `text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47704 strings out of 473197
- 1047834 string characters out of 5718605
- 1915597 words of memory out of 5000000
- 69575 multiletter control sequences out of 15000+600000
+ 47720 strings out of 473197
+ 1048195 string characters out of 5718605
+ 1915788 words of memory out of 5000000
+ 69585 multiletter control sequences out of 15000+600000
  690838 words of font info for 238 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2038s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1986,10 +1979,10 @@ live/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/new
 px/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (84 pages, 836839 bytes).
+Output written on text.pdf (85 pages, 842917 bytes).
 PDF statistics:
- 1328 PDF objects out of 1440 (max. 8388607)
- 1193 compressed objects within 12 object streams
- 451 named destinations out of 1000 (max. 500000)
+ 1348 PDF objects out of 1440 (max. 8388607)
+ 1211 compressed objects within 13 object streams
+ 457 named destinations out of 1000 (max. 500000)
  298 words of extra memory for PDF output out of 10000 (max. 10000000)
 

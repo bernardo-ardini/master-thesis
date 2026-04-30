@@ -139,13 +139,13 @@
 
 In this section we describe a general framework that allows to systematically develop mechanical models All the models presented in this thesis will be formulated in agreement with this framework.
 
-The approach presented here is based on the principle of virtual powers, which is a powerful and elegant tool to describe the equilibrium of the ``forces'' acting on a mechanical system. The ``forces'' must be intended in a generalized sense here. In fact, the configurations of the mechanical system are described as elements of a space (possibly infinite dimensional) of configurations, and therefore the generalized forces must be understood as actions that ``push'' the configuration of the system within this space. Moreover the configuration of the mechanical system can include also the description of internal or microscopic conditions of the system, so that a generalized forces does not necessarily correspond to a mechanical macroscopic force in the usual sense.
+The approach presented here is based on the principle of virtual powers, which is a powerful and elegant tool to describe the equilibrium of the ``forces'' acting on a mechanical system. The ``forces'' must be intended in a generalized sense here. In fact, the configurations of the mechanical system are described as elements of a space (possibly infinite dimensional) of configurations, and therefore the generalized forces must be understood as actions that ``push'' the configuration of the system within this space. Moreover the configuration of the mechanical system can include also the description of internal or microscopic conditions of the system, so that a generalized forces does not necessarily correspond to a mechanical macroscopic distribution of force in the usual sense.
 
-Some historical information about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works where the principle of virtual powers is used to develop systematically mechanical model are~\cite{germain},~\cite{gurtin-fried}, \cite{gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small}, \cite{gurtin-anand-large}, \cite{non-smooth-thermomechanics} that treat materials with microstructure.
+Some historical information about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works that use the principle of virtual powers to develop systematically mechanical model are~\cite{germain},~\cite{gurtin-fried}, \cite{gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small}, \cite{gurtin-anand-large}, \cite{non-smooth-thermomechanics} that treat materials with internal variables.
 
 \subsection{Kinematics}
 
-Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a Banach space $V$, the \emph{space of configurations}.
+Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a separable and reflexive Banach space $V$, the \emph{space of configurations}.
 \begin{ex}
 \label{ex:modeling:particles}
 Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by the matrices $x=(x_1,\dots x_N)\in\mathbb{R}^{d\times N}$, where $x_{\alpha}\in\mathbb{R}^d$ with $\alpha\in\{1,\dots,N\}$ is the position of the $\alpha$th material point.
@@ -298,7 +298,7 @@ Let $V$ be a separable and reflexive Banach space. Consider a mechanical system 
 \]
 \item[(D)] the dissipation potential $\Phi\colon V\to[0,\infty]$ is convex, proper, l.s.c., positively 1-homogeneous and Lipschitz on its domain.
 \end{itemize}
-Assumption $(E)$ immediately implies that $\Psi$ is Fréchet differentiable with Fréchet differential $\partial\Psi(u)=\mathcal{A}$ for all $u\in V$. Since $\Phi$ is convex and Lipschitz continuous on its domain then it admits a non empty subdifferential $\partial\Phi(v)$ for all $v\in\dom\Phi$. \textbf{Per il teorem di Rockafeller sappiamo che è subdifferenziabile nell'interno del suo dominio, poi però data la Lipschitzianità su tutto il bordo immagino che si possa dimostrare che è subdifferenziabile su tutto il dominio in realtà.} In this case Problem~\ref{prb:modeling:doubly-nonlinear} can be formulated explicitely as follows.
+Assumption $(E)$ immediately implies that $\Psi$ is Fréchet differentiable with Fréchet differential $\partial\Psi(u)=\mathcal{A}$ for all $u\in V$. Since $\Phi$ is convex and Lipschitz continuous on its domain then it admits a non empty subdifferential $\partial\Phi(v)$ for all $v\in\dom\Phi$. \textbf{Per il teorema di Rockafeller sappiamo che è subdifferenziabile nell'interno del suo dominio, poi però data la Lipschitzianità su tutto il bordo immagino che si possa dimostrare che è subdifferenziabile su tutto il dominio in realtà.} In this case Problem~\ref{prb:modeling:doubly-nonlinear} can be formulated explicitely as follows.
 \begin{prb}
 \label{prb:evi}
 Given $\mathscr{X}\in H^1((0,T),V^*)$ with $\mathcal{X}(0)=0$, find $u\in\text{AC}([0,T],V)$ such that $u(0)=0$ and
@@ -1106,7 +1106,7 @@ With the hope of being able to obtain the most explicit and analytically tractab
 %
 %La nostra analisi non può essere considerata conclusiva dal momento che non è ancora in grado di mostrare in modo completo e rigoroso l'occorrenza del necking, nè tantomeno è capace di descrivere qualitativamente le proprietà salienti del comportamento della barra a seguito dell'innesco dell'instabilità.
 
-In Chapter~\ref{chap:small-neck} we formulate a version of the model valid in the regime of small deformations. The existence and uniqueness os solutions to of the initial and boundary value problem produced by this model is established by resorting to the general theory of existence for evolutionary variational inequalities presented in Section~\ref{sec:evi} of Chapter~\ref{chap:solution-concepts}. We then move on to study the initial and boundary value problem associated with the tensile test. As one might expect, this model is not able to capture the onset of necking, which as we have discussed is an instability phenomenon intrinsically due to the nonlinearity induced by large deformations, and we show this by explicitly determining the solution. In Chapter~\ref{chap:large-neck} we refine the model so that it can describe the behavior of the bar even at large deformations. The existence of solutions to the resulting evolutionary problem is studied through the notion of energy solutions described in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. We then approach the study of the stability of the trivial solution using the notion of global stability provided by the definition of energy solution itself. If we ignore the effect of plasticity by reducing ourselves to the purely elastic case we are able to obtain an explicit result which indicates that the solution in which the bar deforms uniformly loses stability after the tension force reaches its maximum. In the plastic case we are unable to obtain an equally explicit result. We will propose some heuristic considerations which suggest that the instability of the trivial solution also occurs in this case after the force reaches its maximum, in accordance with the Considére criterion.
+In Chapter~\ref{chap:small-neck} we formulate a version of the model valid in the regime of small deformations. The existence and uniqueness of solutions to the initial boundary value problem produced by this model is established by resorting to the general theory of existence for evolutionary variational inequalities presented in Section~\ref{sec:evi} of Chapter~\ref{chap:solution-concepts}. We then move on to study the initial boundary value problem associated with the tensile test. As one might expect, this model is not able to capture the onset of necking, which as we have discussed is an instability phenomenon intrinsically due to the nonlinearity induced by large deformations, and we show this by explicitly determining the solution. In Chapter~\ref{chap:large-neck} we refine the model so that it can describe the behavior of the bar at large deformations. The existence of solutions to the resulting evolutionary problem is studied through the notion of energy solutions described in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. We then approach the study of the stability of the trivial solution using the notion of global stability provided by the definition of energy solution itself. If we ignore the effect of plasticity by reducing ourselves to the purely elastic case we are able to obtain an explicit result which indicates that the solution in which the bar deforms uniformly loses stability after the tension force reaches its maximum. In the plastic case we are unable to obtain an equally explicit result. We will propose some heuristic considerations which suggest that the instability of the trivial solution also occurs in this case after the force reaches its maximum, in accordance with the Considére criterion.
 
 Our analysis cannot be considered conclusive since it is not yet able to show the occurrence of necking in a complete and rigorous way, nor is it capable of qualitatively describing the salient properties of the behavior of the bar following the triggering of the instability. We hope that a deeper analysis of this simplified one‑dimensional model will provide clearer insight into the mechanisms that govern the onset and evolution of necking.
 
@@ -1212,7 +1212,7 @@ We now develop a purely one dimensional model of the bar taking inspiration from
 
 Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by the plastic distortion $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$ the elastic distortions.
 
-The space $Z$ of the configurations $z=(u,p)$ will be clearly defined subsequently when the existence result will be proved. The virtual velocities will be denoted as $\tilde w=(\tilde v,\tilde q)$
+The space $Z$ of the configurations $z=(u,p)$ will be clearly defined subsequently when the existence result will be proved. The virtual velocities is denoted as $\tilde w=(\tilde v,\tilde q)\in Z$.
 
 \subsection{Statics}
 
@@ -1228,7 +1228,7 @@ The external generalized force is required to be of the form
 \]
 Here $f\colon(0,L)\to\mathbb{R}^2$ is an external force distributed along the bar and $h\colon\{0,L\}\to\mathbb{R}^2$ is an external force acting at the ends of the bar. The first component of both $f$ and $h$ is referred to the axial direction, while the second component is referred to the longitudinal direction.
 
-The application of he principle of virtual powers, $\dual{\mathcal{I},\tilde w}=\dual{\mathcal{X},\tilde w}$ for all $\tilde w\in Z$, leads to equilibrium equations whose strong form is given by the following Proposition.
+The application of he principle of virtual powers, $\dual{\mathcal{I},\tilde w}=\dual{\mathcal{X},\tilde w}$ for all $\tilde w\in Z$, leads to equilibrium equations whose strong form is given by the following proposition.
 \begin{prop}
 The local form of the equilibrium condition is
 \begin{subequations}
@@ -1674,6 +1674,8 @@ The external generalized force is chosen of the form
 \tilde{\mathcal X}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
 As in the small strain model, $f\colon(0,L)\to\mathbb{R}^2$ is an external force distributed along the bar and $h\colon\{0,L\}\to\mathbb{R}^2$ is an external force acting at the ends of the bar. The first component of both $f$ and $h$ is referred to the axial direction, while the second component is referred to the longitudinal direction.
+
+Applying the principle of virtual powers, $\dual{\mathcal{I},\tilde w}=\dual{\mathcal{X},\tilde w}$ for all $\tilde w\in Z$, we get the equilibrium equations whose strong form is given below.
 \begin{prop}
 The local form of the equilibrium condition is
 \begin{subequations}
@@ -2197,7 +2199,7 @@ where last inequality holds because $D$ is finite and continuous on $[\Pi,\infty
 
 \subsection{Conclusion of the existence proof}
 
-The application of Theorem~\ref{thm:existence-energetic-solutions} leads to the desired existence result.
+All the hypotheses of Theorem~\ref{thm:existence-energetic-solutions} have been established. Thus applying that theorem we get desired existence result.
 \begin{thm}
 \label{thm:existence-necking-large}
 Let $q_0=(y_0,P_0)\in\mathscr{Q}$ such that $\mathcal{E}(q_0,0)<\infty$. Then there exists an energetic solution $q=(y,P)\colon[0,T]\to\mathscr{Q}$ such that $q(0)=q_0$. 
@@ -4131,7 +4133,7 @@ In this chapter we collect some tools of linear and nonlinear analysis used in t
 \label{eqn:gronwall}
 Let $z\in L^\infty((0,T))$. Let $C\in\mathbb{R}$ and $\alpha$, $\beta$ in $L^1((0,T),[0,\infty))$ such that
 \begin{equation*}
-y(t)\le C+\int_0^t\left(\alpha(s)y(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
+z(t)\le C+\int_0^t\left(\alpha(s)y(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
 Then
 \begin{equation*}
@@ -4159,6 +4161,7 @@ Then
 \begin{equation*}
 z(t)\le Z(t)\le e^{\int_0^t\alpha(s)ds}\left(C+\int_0^t\beta(s)e^{-\int_0^s\alpha(r)dr}\right)\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
+This is exactly the thesis.
 \end{proof}
 
 \section{Linear functional analysis}
@@ -4560,11 +4563,11 @@ Up to choose a smaller $T$ we can assume that $TL<1$. In this case $T$ is a stri
 
 The results of this section are taken from~\cite{intro-pde} and~\cite{roubicek-pde}.
 
-Let $X$ be a Banach space and $T\colon X\to X'$ be a nonlinear operator and $f\in X'$. The Browder--Minty theorem allows to study the existence of solutions to the equation $T(x)=f$ when there is not any variational formulation. The key assumption is that $T$ is coercive and monotone, a property that makes $T$ similar in some sense to an elliptic operator.
+Let $X$ be a Banach space and $T\colon X\to X^*$ be a nonlinear operator and $f\in X^*$. The Browder--Minty theorem allows to study the existence of solutions to the equation $T(x)=f$ when there is not any variational formulation. The key assumption is that $T$ is coercive and monotone, a property that makes $T$ similar in some sense to an elliptic operator.
 \begin{defi}
-Let $X$ be a Banach space and let $T\colon X\to X'$. We say that
+Let $X$ be a Banach space and let $T\colon X\to X^*$. We say that
 \begin{itemize}
-\item[(i)] $T$ is bounded if maps bounded sets of $X$ into bounded sets of $X'$,
+\item[(i)] $T$ is bounded if maps bounded sets of $X$ into bounded sets of $X^*$,
 \item[(ii)] $T$ is coercive if
 \[
 \frac{\dual{T(x),x}}{\norm{x}}\to\infty\quad\text{as $\norm{x}\to\infty$}
@@ -4579,7 +4582,7 @@ and that
 We now prove a lemma that establish the equivalence between the equation $T(x)=f$ and a variational inequality under the assumption that $T$ is monotone.
 \begin{lemma}
 \label{lemma:equality-inequality}
-Let $T\colon X\to X'$ be continuous and $f\in X'$. Then if $x\in X$ is a solution to the variational inequality
+Let $T\colon X\to X^*$ be continuous and $f\in X^*$. Then if $x\in X$ is a solution to the variational inequality
 \[
 \dual{T(y)-f,y-x}\ge0\quad\text{for all $y\in X$}
 \]
@@ -4622,12 +4625,12 @@ We set $H(x)=\Pi(G(x))$ and we notice that $H\colon C\to C$ and it is continuous
 \[
 |x|^2=x\cdot x=H(x)\cdot x=\frac{r}{|G(x)|}G(x)\cdot x<\frac{r}{|G(x)|}|x|^2\le|x|^2
 \]
-where we used that $|x|^2>G(x)\cdot x$ for $|x|\ge r$. This is the a contradiction.
+where we used that $|x|^2>G(x)\cdot x$ for $|x|\ge r$. This is a contradiction.
 \end{proof}
 We are now in position to prove the Browder--Minty theorem.
 \begin{thm}
 \label{thm:browder-minty}
-Let $X$ be a reflexive and separable Banach space. Let $T\colon X\to X'$ be bounded, continuous, coercive and monotone. Then for every $f\in X'$ there exists a solution $x\in X$ to the equation $T(x)=f$.
+Let $X$ be a reflexive and separable Banach space. Let $T\colon X\to X^*$ be bounded, continuous, coercive and monotone. Then for every $f\in X^*$ there exists a solution $x\in X$ to the equation $T(x)=f$.
 \end{thm}
 \begin{proof}
 As anticipated the proof relies on the Galerkin method.
@@ -4636,35 +4639,35 @@ As anticipated the proof relies on the Galerkin method.
 \[
 X_n=\text{span}\left\{y_m\right\}_{m=1}^n.
 \]
-We define $f_n\in X_n'$ by $\dual{f_n,x}=\dual{f,x}$ for all $x\in X_n$. We also define $T_n\colon X_n\to X_n'$ by $\dual{T_n(x),y}=\dual{T(x),y}$ for all $x$ and $y$ in $X_n$.
+We define $f_n\in X_n^*$ by $\dual{f_n,x}=\dual{f,x}$ for all $x\in X_n$. We also define $T_n\colon X_n\to X_n^*$ by $\dual{T_n(x),y}=\dual{T(x),y}$ for all $x$ and $y$ in $X_n$.
 
 \emph{Step 2}. We prove that $T_n$ are still bounded, continuous and coercive. For all $x\in X_n$ we have
 \[
-\norm{T_n(x)}_{X_n'}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x),y}}{\norm{y}_{X_n}}\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(xx),y}}{\norm{y}_X}=\norm{T(x)}_X
+\norm{T_n(x)}_{X_n^*}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x),y}}{\norm{y}_{X_n}}\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(x),y}}{\norm{y}_X}=\norm{T(x)}_X
 \]
 so the boundedness of $T_n$ follows form the boundedness of $T$. Moreover let $x_k\to x$ in $X_n$. Then
 \[
 \begin{split}
-\norm{T_n(x_k)-T_n(x)}_{X_n'}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x_k)-T_n(x),y}}{\norm{y}_{X_n}}&\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(x_k)-T(x),y}}{\norm{y}_X}=\\
-&=\norm{T(x_k)-T(x)}_{X'}\to0
+\norm{T_n(x_k)-T_n(x)}_{X_n^*}=\sup_{y\in X_n\setminus\{0\}}\frac{\dual{T_n(x_k)-T_n(x),y}}{\norm{y}_{X_n}}&\le\sup_{y\in X\setminus\{0\}}\frac{\dual{T(x_k)-T(x),y}}{\norm{y}_X}=\\
+&=\norm{T(x_k)-T(x)}_{X^*}\to0
 \end{split}
 \]
 and this proves that $T_n$ is continuous. Moreover for $x\in X_n$
 \[
 \frac{\dual{T_n(x),x}}{\norm{x}_{X_n}}=\frac{\dual{T(x),x}}{\norm{x}_{X}}
 \]
-so the coercivity of $T_n$ follows immediately from the coercivity of $T$. By~\ref{prop:elliptic-finite-dimensional} we have that for each $n$ there exists $x_n\in X_n$ that solves $T_n(x_n)=f_n$.
+so the coercivity of $T_n$ follows immediately from the coercivity of $T$. By Proposition~\ref{prop:elliptic-finite-dimensional} we have that for each $n$ there exists $x_n\in X_n$ that solves $T_n(x_n)=f_n$.
 
 \emph{Step 3}. We have the estimate
 \[
 \frac{\dual{T(x_n),x_n}}{\norm{x_n}_X}\le\frac{\dual{T_n(x_n),x_n}}{\norm{x_n}_X}=\frac{\dual{f_n,x_n}}{\norm{x_n}_X}=\frac{\dual{f,x_n}}{\norm{x_n}_X}\le\norm{f}.
 \]
-Since $T$ is coercive then $x_n$ are bounded in $X$ and since $T$ is bounded then $T(x_n)$ are bounded in $X'$. Then up to a subsequence
+Since $T$ is coercive then $x_n$ are bounded in $X$ and since $T$ is bounded then $T(x_n)$ are bounded in $X^*$. Then up to a subsequence
 \begin{gather*}
 x_n\rightharpoonup x\quad\text{in $X$} \\
-T(x_n)\overset{*}{\rightharpoonup}g\quad\text{in $X'$}
+T(x_n)\overset{*}{\rightharpoonup}g\quad\text{in $X^*$}
 \end{gather*}
-for some $x\in X$ and $g\in X'$.
+for some $x\in X$ and $g\in X^*$.
 
 \emph{Step 4}. We first prove that $g=f$. To this aim we fix any $y_m$ and we notice that
 \[
@@ -4672,7 +4675,7 @@ for some $x\in X$ and $g\in X'$.
 \]
 Then by density we have indeed $g=f$. Next we have
 \[
-\dual{T(x_n),x_n}=\dual{T_n(x_n),x_n}=\dual{g_n,x_n}=\dual{g,x_n}\to\dual{g,x}.
+\dual{T(x_n),x_n}=\dual{T_n(x_n),x_n}=\dual{f_n,x_n}=\dual{f,x_n}\to\dual{g,x}.
 \]
 \emph{Step 5}. Eventually using the monotonicity of $T$ we have
 \[
@@ -4680,9 +4683,9 @@ Then by density we have indeed $g=f$. Next we have
 \]
 Applying Lemma~\ref{lemma:equality-inequality} we get the thesis.
 \end{proof}
-Actually to obtain the same existence result the monotonicity assumption can be weakened.
+Actually the same existence result can be obtained with a weaken condition then monotonicity.
 \begin{defi}
-Let $X$ be a Banach space and let $T\colon X\to X'$. We say that $T$ is pseudomonotone if it is bounded and every time
+Let $X$ be a Banach space and let $T\colon X\to X^*$. We say that $T$ is pseudomonotone if it is bounded and every time
 \[
 \text{$x_k\rightharpoonup x$ in $X$}\quad\text{and}\quad\limsup_{k\to\infty}\dual{T(x_k),x_k-x}\le0
 \]
@@ -4694,10 +4697,10 @@ for all $y\in X$.
 \end{defi}
 \begin{thm}
 \label{thm:browder-minty-generalized}
-Let $X$ be a separable and reflexive Banach space. Let $T\colon X\to X'$ be continuous, coercive and pseudomonotone. Then for every $f\in X'$ there exists $x\in X$ such that $T(x)=f$.
+Let $X$ be a separable and reflexive Banach space. Let $T\colon X\to X^*$ be continuous, coercive and pseudomonotone. Then for every $f\in X^*$ there exists $x\in X$ such that $T(x)=f$.
 \end{thm}
 \begin{proof}
-The proof is exactly the same as the one of Theorem~\ref{thm:browder-minty} except to Step 5. We know that $x_k\rightharpoonup x$ in $X$, that $T(x_k)\overset{*}{\rightharpoonup}f$ in $X'$ and $\dual{T(x_k),x_k}\to\dual{f,x}$. Then in particular
+The proof is exactly the same as the one of Theorem~\ref{thm:browder-minty} except to Step 5. We know that $x_k\rightharpoonup x$ in $X$, that $T(x_k)\overset{*}{\rightharpoonup}f$ in $X^*$ and $\dual{T(x_k),x_k}\to\dual{f,x}$. Then in particular
 \[
 \dual{T(x_k),x_k-x}=\dual{T(x_k),x_k}-\dual{T(x_k),x}\to\dual{f,x}-\dual{f,x}=0.
 \]
@@ -4718,7 +4721,7 @@ for all $y\in X$. By arbitrariness of $y$ we have $T(x)=f$.
 The following proposition establish the relationship between monotone and pseudomonotone operators.
 \begin{prop}
 \label{prop:monotono-pseudomonotone}
-Let $X$ be a Banach space. Let $T\colon X\to X'$ be continuous, bounded and monotone. Then $T$ is pseudomonotone.
+Let $X$ be a Banach space. Let $T\colon X\to X^*$ be continuous, bounded and monotone. Then $T$ is pseudomonotone.
 \end{prop}
 \begin{proof}
 Let $x_k\rightharpoonup x$ with
@@ -4762,7 +4765,7 @@ This proves that $T$ is pseudomonotone.
 The following result is useful.
 \begin{prop}
 \label{prop:sum-pseudomonotone}
-Let $X$ be a Banach space. Let $T_1$ and $T_2$ from $X$ into $X'$ be pseudomonotone operators. Then also $T_1+T_2$ is pseudomonotone.
+Let $X$ be a Banach space. Let $T_1$ and $T_2$ from $X$ into $X^*$ be pseudomonotone operators. Then also $T_1+T_2$ is pseudomonotone.
 \end{prop}
 \begin{proof}
 Let $x_k\rightharpoonup x$ with
@@ -4802,6 +4805,70 @@ It follows that
 This means that $T_1+T_2$ is pseudomonotone.
 \end{proof}
 
+The Minty--Browder theorem can be generalized also to the case in which $T$ is a set valued map, that is $T\colon X\rightsquigarrow X^*$. In particular we focus on the case in which $T=\partial\Phi+A$ where $\Phi\colon X\to\mathbb{R}\cup\{\infty\}$ is convex and $A\colon X\to X^*$ is pseudomonotone. In this case the problem that we want to study is that of finding $x\in X$ such that
+\begin{equation}
+\label{eqn:inclusion}
+\partial\Phi(x)+A(x)\ni f,
+\end{equation}
+where $f\in X^*$. Here $\partial\Psi$ denotes the subdifferential of $\Psi$. The following generalization of Minty--Browder theorem holds.
+\begin{thm}
+Let $\Phi\colon X\to\mathbb{R}\cup\mathbb{\infty}$ be convex, proper and lower semicontinuous. Assume that for all $\epsilon>0$ there exist $\Phi_\epsilon\colon X\to\mathbb{R}$ convex and G\^ateaux differentiable with $\Phi_\epsilon'\colon X\to X^*$ continuous and bounded, such that the following properties holds:
+\begin{itemize}
+\item[(i)] for all $x\in X$ and $\{x_\epsilon\}_{\epsilon>0}\subset X$ such that $x_\epsilon\rightharpoonup x$ in $X$ it holds that
+\[
+\Phi(x)\le\liminf_{\epsilon\to0^+}\Phi_\epsilon(x_\epsilon),
+\]
+\item[(ii)] for all $x\in X$
+\[
+\Phi(x)\ge\limsup_{\epsilon\to 0^+}\Phi_\epsilon(x).
+\]
+\end{itemize}
+Let also $A\colon X\to X^*$ continuous, bounded and pseudomonotone. Moreover assume that the following coercivity property holds: there exists $y\in\dom\Phi$ such that for all $z\in X$ the inequality
+\begin{equation}
+\label{eqn:coercivity-property}
+\dfrac{\Phi_\epsilon(x)+\dual{A(x),x-z}}{\norm{x}_X}\ge\zeta(\norm{x}_X)
+\end{equation}
+holds. Here $\zeta\colon[0,\infty)\to[0,\infty)$ satisfies the condition
+\[
+\lim_{r\to\infty}\zeta(r)=\infty.
+\]
+Then for all $f\in X^*$ there exists $x\in X$ such that~\eqref{eqn:inclusion} holds.
+\end{thm}
+\begin{proof}
+The map $\Phi_\epsilon'$ is monotone since $\Phi_\epsilon$ is convex. Then by Proposition~\ref{prop:sum-pseudomonotone} the operator $\Phi_\epsilon'+A$ is pseudomonotone. Moreover it is bounded and continuous. The coercivity property~\eqref{eqn:coercivity-property} allows to apply Theorem~\ref{thm:browder-minty-generalized} to conclude thet for all $\epsilon>0$ there exists $x_\epsilon\in X$ such that $\Phi_\epsilon'(x_\epsilon)+A(x_\epsilon)\ni f$. This is equivalent to
+\begin{equation}
+\label{eqn:variational-inequality}
+\Phi_\epsilon(y)\ge\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\quad\text{for all $y\in X$}.
+\end{equation}
+The idea is now to prove that $\{x_\epsilon\}_{\epsilon>0}$ is bounded in $X$ in order to find a limit value by compactness. To this aim we notice that by property (ii) above, for each $\epsilon>0$ small enough the inequality $\Phi_\epsilon(z_\epsilon)\le\Phi(z)+1$ holds. Then by~\eqref{eqn:coercivity-property} and by~\eqref{eqn:variational-inequality} with $y=z$ we have
+\[
+\zeta(\norm{x_\epsilon})\norm{x_\epsilon}_X\le \Phi_\epsilon(x_\epsilon)+\dual{A(x_\epsilon),x_\epsilon-z}\le\Phi_\epsilon(z)+\dual{f,z-x_\epsilon}.
+\]
+This implies that $x_\epsilon\to0$. Then extracting a (not relabeled) subsequence we have $x_\epsilon\rightharpoonup x$. Then we take the supremum limit of~\eqref{eqn:variational-inequality}, and using properties (i, ii) above we get
+\[
+\begin{split}
+\Phi(y)&\ge\limsup_{\epsilon\to 0^+}\left[\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\right]\ge\liminf_{\epsilon\to 0^+}\left[\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\right]\ge\\
+&\ge\Phi(x)+\dual{f,y-x}+\liminf_{\epsilon\to 0^+}\dual{A(x_\epsilon),x_\epsilon-y}.
+\end{split}
+\]
+The proof of the theorem is completed if we prove that
+\[
+\liminf_{\epsilon\to 0^+}\dual{A(x_\epsilon),x_\epsilon-y}\ge\dual{A(x),x-y}.
+\]
+In view of the fact that $A$ is pseudomonotone, it is enough to prove that
+\[
+\limsup_{\epsilon\to 0^+}\dual{A(x_\epsilon),x_\epsilon-x}\le0.
+\]
+But by~\eqref{eqn:variational-inequality} it follows that
+\[
+\begin{split}
+\limsup_{\epsilon\to 0^+}\dual{A(x_\epsilon),x_\epsilon-x}&\le\limsup_{\epsilon\to 0^+}\left[\Phi_\epsilon(x)-\Phi_\epsilon(x_\epsilon)+\dual{f,x_\epsilon-x}\right]\le\\
+&\le\limsup_{\epsilon\to0^+}\Phi_\epsilon(y)-\liminf_{\epsilon\to0^+}\Phi_\epsilon(x_\epsilon)\le\Phi(x)-\Phi(x)=0.
+\end{split}
+\]
+as desired.
+\end{proof}
+
 \subsection{Lower semicontinuity of integral functionals}
 
 \begin{thm}[Lower semicontinuity of integral functionals]
@@ -4817,15 +4884,7 @@ Then for all measurable $y\colon\Omega\to\mathbb{R}^n$ and $u\colon\Omega\to\mat
 \[
 I(y,u)=\int_\Omega f(x,y,u)dx.
 \]
-Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy
-\[
-y_k\to y\quad\text{in measure} 
-\]
-and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy
-\[
-u_k\to u\quad\text{in $L^1(\Omega,\mathbb{R}^n)$}
-\]
-then
+Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy $y_k\to y$ in measure and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy $u_k\to u$ in $L^1(\Omega,\mathbb{R}^n)$, then
 \[
 I(y,u)\le\liminf_{k\to\infty}I(y_k,u_k).
 \]
@@ -4983,6 +5042,7 @@ This is equivalent to $\xi\in\partial f(0)$. We have proved that if $\xi\in\part
 \nocite{francfort}
 \nocite{MieRosSav13}
 \nocite{steffranc}
+\nocite{duhem1906}
 \printbibliography
 
 \end{document}

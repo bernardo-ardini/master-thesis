@@ -44,7 +44,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Nonlinear Problems of Elasticity}
       \field{year}{2005}
-      \true{nocite}
     \endentry
     \entry{AudolyHutchinson2020}{article}{}{}
       \name{author}{2}{}{%
@@ -467,6 +466,36 @@
       \field{journaltitle}{Calc Var PDEs}
       \field{title}{Quasistatic evolution for Cam-Clay plasticity: a weak formulation via viscoplastic regularization and time rescaling}
       \field{year}{2011}
+    \endentry
+    \entry{duhem1906}{book}{}{}
+      \name{author}{1}{}{%
+        {{hash=3d107dc63a0d35184e791430f6a92380}{%
+           family={Duhem},
+           familyi={D\bibinitperiod},
+           given={Pierre},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{publisher}{1}{%
+        {Librairie Marcel Rivière}%
+      }
+      \strng{namehash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{fullhash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{fullhashraw}{3d107dc63a0d35184e791430f6a92380}
+      \strng{bibnamehash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{authorbibnamehash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{authornamehash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{authorfullhash}{3d107dc63a0d35184e791430f6a92380}
+      \strng{authorfullhashraw}{3d107dc63a0d35184e791430f6a92380}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{La théorie physique: Son objet, sa structure}
+      \field{year}{1906}
+      \true{nocite}
     \endentry
     \entry{ekeland-temam}{book}{}{}
       \name{author}{2}{}{%
