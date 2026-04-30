@@ -46,6 +46,41 @@
       \field{year}{2005}
       \true{nocite}
     \endentry
+    \entry{AudolyHutchinson2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=3251bd705349d0f780fea3d541f2baf1}{%
+           family={Audoly},
+           familyi={A\bibinitperiod},
+           given={Basile},
+           giveni={B\bibinitperiod}}}%
+        {{hash=7f10bc8978e05ed377464951f9d14434}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{fullhash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{fullhashraw}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{bibnamehash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{authorbibnamehash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{authornamehash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{authorfullhash}{efbfd70416f2d3ec3adf672521d8adec}
+      \strng{authorfullhashraw}{efbfd70416f2d3ec3adf672521d8adec}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{title}{Analysis of necking based on a one-dimensional model}
+      \field{volume}{136}
+      \field{year}{2020}
+      \field{pages}{103720}
+      \range{pages}{1}
+    \endentry
     \entry{progetto-ponno}{online}{}{}
       \name{author}{1}{}{%
         {{hash=9105389ff8f28e2760887f1c4a6c5b42}{%
@@ -346,6 +381,34 @@
       \field{title}{Mathematical Elasticity: Three-Dimensional Elasticity}
       \field{year}{2021}
       \true{nocite}
+    \endentry
+    \entry{Considere1885}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=6c1ca02462c070cbae0d33dc0b24e94b}{%
+           family={Considère},
+           familyi={C\bibinitperiod},
+           given={A.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{fullhash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{fullhashraw}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{bibnamehash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{authorbibnamehash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{authornamehash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{authorfullhash}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \strng{authorfullhashraw}{6c1ca02462c070cbae0d33dc0b24e94b}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Annales des Ponts et Chaussées}
+      \field{series}{9}
+      \field{title}{Mémoire sur l'emploi du fer et de l'acier dans les constructions}
+      \field{volume}{10}
+      \field{year}{1885}
+      \field{pages}{574\bibrangedash 775}
+      \range{pages}{202}
     \endentry
     \entry{energetic-geomaterials}{article}{}{}
       \name{author}{1}{}{%
@@ -758,6 +821,109 @@
       \field{title}{Plasticity - Mathematical Theory and Numerical Analysis}
       \field{year}{2013}
     \endentry
+    \entry{Hill1958}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=1ee940c47b96678a68e23a600218952a}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Rodney},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{1ee940c47b96678a68e23a600218952a}
+      \strng{fullhash}{1ee940c47b96678a68e23a600218952a}
+      \strng{fullhashraw}{1ee940c47b96678a68e23a600218952a}
+      \strng{bibnamehash}{1ee940c47b96678a68e23a600218952a}
+      \strng{authorbibnamehash}{1ee940c47b96678a68e23a600218952a}
+      \strng{authornamehash}{1ee940c47b96678a68e23a600218952a}
+      \strng{authorfullhash}{1ee940c47b96678a68e23a600218952a}
+      \strng{authorfullhashraw}{1ee940c47b96678a68e23a600218952a}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{number}{3}
+      \field{title}{A general theory of uniqueness and stability in elastic-plastic solids}
+      \field{volume}{6}
+      \field{year}{1958}
+      \field{pages}{236\bibrangedash 249}
+      \range{pages}{14}
+    \endentry
+    \entry{HillHutchinson1975}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=1ee940c47b96678a68e23a600218952a}{%
+           family={Hill},
+           familyi={H\bibinitperiod},
+           given={Rodney},
+           giveni={R\bibinitperiod}}}%
+        {{hash=7f10bc8978e05ed377464951f9d14434}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{fullhash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{fullhashraw}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{bibnamehash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{authorbibnamehash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{authornamehash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{authorfullhash}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{authorfullhashraw}{338eb748a415fc1b67285b3ad76bdd23}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{number}{4}
+      \field{title}{Bifurcation phenomena in the plane tension test}
+      \field{volume}{23}
+      \field{year}{1975}
+      \field{pages}{239\bibrangedash 264}
+      \range{pages}{26}
+    \endentry
+    \entry{HutchinsonMiles1974}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=dfda9f1f34f1f8c03d374c8319680911}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+        {{hash=3655ebae4cfd90fd6f55bbaf9cca769b}{%
+           family={Miles},
+           familyi={M\bibinitperiod},
+           given={J.\bibnamedelimi P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{a615248afddce02a0cf6559414225ad7}
+      \strng{fullhash}{a615248afddce02a0cf6559414225ad7}
+      \strng{fullhashraw}{a615248afddce02a0cf6559414225ad7}
+      \strng{bibnamehash}{a615248afddce02a0cf6559414225ad7}
+      \strng{authorbibnamehash}{a615248afddce02a0cf6559414225ad7}
+      \strng{authornamehash}{a615248afddce02a0cf6559414225ad7}
+      \strng{authorfullhash}{a615248afddce02a0cf6559414225ad7}
+      \strng{authorfullhashraw}{a615248afddce02a0cf6559414225ad7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{number}{1}
+      \field{title}{Bifurcation analysis of the onset of necking in an elastic/plastic cylinder under uniaxial tension}
+      \field{volume}{22}
+      \field{year}{1974}
+      \field{pages}{61\bibrangedash 71}
+      \range{pages}{11}
+    \endentry
     \entry{ppv-encyclopedia}{inbook}{}{}
       \name{author}{2}{}{%
         {{hash=7895f17e01b82bfb1f2718667b570232}{%
@@ -978,6 +1144,36 @@
       \field{title}{Rate-Independent Systems Theory and Application}
       \field{year}{2015}
       \true{nocite}
+    \endentry
+    \entry{Needleman1972}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=18a8a727ccf35bfa1616aba286c0a123}{%
+           family={Needleman},
+           familyi={N\bibinitperiod},
+           given={Alan},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{fullhash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{fullhashraw}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{bibnamehash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{authorbibnamehash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{authornamehash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{authorfullhash}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{authorfullhashraw}{18a8a727ccf35bfa1616aba286c0a123}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{title}{A Numerical Study of Necking in Circular Cylindrical Bars}
+      \field{volume}{20}
+      \field{year}{1972}
+      \field{pages}{111\bibrangedash 127}
+      \range{pages}{17}
     \endentry
     \entry{nicolaides}{article}{}{}
       \name{author}{1}{}{%

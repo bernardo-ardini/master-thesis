@@ -130,10 +130,12 @@
 \chapter*{Premise}
 
 \chapter{Introductory notions regarding mechanical modeling and plasticity theory}
+\label{chap:modeling}
 
 %\section{Review of kinematics of deformable bodies}
 
 \section{A general framework for developing mechanical models}
+\label{sec:ppv}
 
 In this section we describe a general framework that allows to systematically develop mechanical models All the models presented in this thesis will be formulated in agreement with this framework.
 
@@ -280,6 +282,7 @@ Let $u_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to V^*$. Find $
 \end{prb}
 
 \section{A review of plasticity theory}
+\label{sec:plasticity-review}
 
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
@@ -1074,17 +1077,63 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 
 \chapter{Introduction}
 
+In the Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considére are shown in Figure~\ref{fig:considere}.
+\begin{figure}[h]
+\begin{tikzpicture}
+\begin{axis}[xlabel={$\eta=l/L$},ylabel={$F$ [kg]},xmin=1,xmax=1.33,ymin=400]
+\addplot[color=black,thick,mark=*] 
+table[x=eta,y=F] {figures/necking-experimental.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Trend of the tensile force $F$ as the elongation $\eta=l/L$ varies (where $L$ is the initial length and $l$ the length in the deformed configuration) taken from the experimental data in~\cite{Considere1885}. The sample is made of soft iron and has a length $L=201$ mm and a diameter of 16 mm in the initial configuration.}
+\label{fig:considere}
+\end{figure}
+In the first phase of the test, the behavior of the specimen is elastic (the section that appears steep in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known in the past although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considére experimentally observed that the length of the area affected by the constriction is independent of the length of the bar but increases as the diameter increases.
+
+%I primi contributi verso la comprensione teorica del fenomeno del necking nell'ambito della teoria della plasticità risalgono alla seconda metà del Novecento, quando è il fenomeno è stato studiato come manifestazione della perdita di stabilità della \emph{soluzione triaviale}, cioè quella in cui la barra rimane in uno stato di deformazione uniforme. In un lavoro~\cite{Hill1958} del 1958, R. Hill ha sviluppato una teoria generale per trattare i fenomeni di biforcazione e di perdita di stabilità nell'ambito della teoria della plasticità incrementale. La teoria della plasticità incrementale era il framework utilizzato prima che venisse introdotta, negli anni Settanta, la moderna teoria della plasticità basata su solide base variazionali, quella che abbiamo discusso nei capitoli introduttivi~\ref{}. Nella teoria della plasticità incrementale la relazione costitutiva lega il rate dello stress al rate dello strain, cosicché il \emph{problema incrementale} di determinare ad ogni istante il campo velocità del solido elastoplastico emerge naturalmente. La teoria della biforcazione di Hill riguarda l'unicità della soluzione di tale problema incrementale. Utilizzando la teoria della biforcazione di Hill, negli anni Settanta in~\cite{HillHutchinson1975,HutchinsonMiles1974}, viene dimostrato che la perdita di stabilita della soluzione uniforme avviene poco dopo che la forza di trazione raggiunge il suo massimo, in accordo con il criterio di Considère. Nello stesso periodo viene effettuata anche la prima simulazione numerica mediante gli elementi finiti dell'occorenza del fenomeno del necking~\cite{Needleman1972} permettendo per la prima volta di predire accuratemante la forma del neck.
+%
+%In questa parte della tesi ci proponiamo di studiare il fenomeno del necking nell’ambito della moderna teoria matematica della plasticità. L’obiettivo finale sarebbe quello di ottenere risultati analoghi a quelli ottenuti nell'ambito della plasticità incrementale, ma inseriti nel quadro concettuale più coerente della teoria plasticità che abbiamo descritto nel Capitolo~\ref{}. In questo contesto vorremo studiare il necking, non come una perdita di unicità del problema incrementale, ma piuttosto come una instabilità energetica della soluzione uniforme, che cessa di essere globalmente (o localmente) minimizzante e viene sostituita da una configurazione localizzata energeticamente favorita.
+
+The first contributions towards the theoretical understanding of the necking phenomenon in the context of the theory of plasticity date back to the second half of the twentieth century, when the phenomenon was studied as a manifestation of the loss of stability of the \emph{triavial solution}, i.e. the one in which the bar remains in a state of uniform deformation. In a 1958 work~\cite{Hill1958}, R. Hill developed a general theory to deal with the phenomena of bifurcation and loss of stability within the theory of incremental plasticity. The theory of incremental plasticity was the framework used before the modern theory of plasticity based on solid variational foundations, the one we discussed in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, was introduced in the 1970s. In the theory of incremental plasticity the constitutive relation links the stress rate to the strain rate, so that the \emph{incremental problem} of determining the velocity field of the elastoplastic solid at any instant emerges naturally. Hill's bifurcation theory concerns the uniqueness of the solution to such an incremental problem. Using Hill's bifurcation theory, in the 1970s~\cite{HillHutchinson1975,HutchinsonMiles1974} it was demonstrated that the loss of stability of the uniform solution occurs shortly after the tensile force reaches its maximum, in agreement with the Considère criterion. In the same period, the first numerical simulation using finite elements of the occurrence of the necking phenomenon was also carried out, allowing for the first time to accurately predict the shape of the neck~\cite{Needleman1972}.
+
+In this part of the thesis we aim to study the necking phenomenon in the context of the modern mathematical theory of plasticity. The final objective would be to obtain results similar to those obtained in the context of incremental plasticity, but inserted into the more elegant and mathematically robust conceptual framework of modern plasticity theory. In this context we would like to study necking, not as a loss of uniqueness of the incremental problem, but rather as an energetic instability of the uniform solution that leads to energetically favored localized configuration.
+
+%Con la speranza di poter ottenere risultati quanto più espliciti e analiticamente trattabili, abbiamo sviluppato un modello semplificato per descrivere la barra metallica, ottenuto mediante una riduzione dimensionale della teoria della plasticità tridimensionale completa. L’idea è di conservare gli ingredienti essenziali della formulazione variazionale moderna, eliminando al tempo stesso la complessità geometrica del problema completo. L'approccio utilizzato è ispirato alla teoria delle rod di Antman~\cite{antman} e all'approccio unidimensionale al necking discusso in~\cite{AudolyHutchinson2020}, che tuttavia si limitano alla sola teoria dell'elasticità. Assumiamo pertanto che ogni configurazione della barra possa essere descritta attraverso tre soli campi scalari definiti lungo la lunghezza della barra: la posizione assiale media delle sezioni, che rappresenta la cinematica longitudinale; un parametro di dilatazione che quantifica l’allargamento o il restringimento della sezione trasversale; e infine un terzo parametro scalare che rappresenta la distorsione plastica assiale media.
+
+With the hope of being able to obtain the most explicit and analytically tractable results, we have developed a simplified model to describe the metal bar, obtained through a dimensional reduction of the complete three-dimensional plasticity theory. The idea is to retain the essential ingredients of the modern variational formulation, while eliminating the geometric complexity of the complete problem. The approach used is inspired by Antman's rod theory~\cite{antman} and the one-dimensional approach to necking discussed in~\cite{AudolyHutchinson2020}, which however are limited to elasticity theory alone. We therefore assume that each configuration of the bar can be described through only three scalar fields defined along the length of the bar: the average axial position of the sections, which represents the longitudinal kinematics; a dilation parameter that quantifies the widening or narrowing of the cross section; and finally a third scalar parameter representing the average axial plastic distortion.
+
+%Nel Capitolo~\ref{chap:small-neck} formuliamo una versione del modello valida nel regime di piccole deformazioni. La buon positura del problema ai valori iniziali e al contorno prodotta da questo modello è stabilita facendo ricorso alla teoria generale di esistenza per le disuguaglianza variazionali evolutive presentata nella Sezione~\ref{sec:evi} del Capitolo~\ref{chap:solution-concepts}. Quindi passiamo allo studio del problema ai valori iniziali e al contorno associato alla prova di trazione. Come è facile aspettarsi questo modello non è in grado di catturare l'insorgere del necking, che come abbiamo discusso è un fenomeno di instabilità intrinsecamente dovuto alla nonlinearità indotta dalle grandi deformazioni, e lo mostriamo determinando esplicitamente la soluzione. Nel Capitolo~\ref{chap:large-neck} raffiniamo il modello affinché possa descrivere il comportamento della barra anche a grandi deformazioni. L'esistenza di soluzioni al problema evolutivo che ne deriva è studiata mediante la nozione di soluzioni energetiche descritte nella Sezione~\ref{sec:energetic-solution} del Capitolo~\ref{chap:solution-concepts}. Quindi affrontiamo lo studio della stabilità della soluzione triviale utilizzando la nozione di stabilità globale fornita dalla definizione stessa di soluzione energetica. Se tralasciamo l'effetto della plasticità riducendosi al caso puramente elastico riusciamo ad ottenere un risultato esplicito che indica che la soluzione in cui la barra si deforma uniformemente perde di stabilità dopo che la la forza di tensione raggiunge il suo massimo. Nel caso plastico non riusciamo ad ottenere un risultato altrettanto esplicito. Proporremo alcune considerazioni euristiche che suggeriscono che l'instabilità della soluzione triviale avviene anche in questo caso dopo che forza raggiunge il suo massimo, in accordo con il criterio di Considére.
+%
+%La nostra analisi non può essere considerata conclusiva dal momento che non è ancora in grado di mostrare in modo completo e rigoroso l'occorrenza del necking, nè tantomeno è capace di descrivere qualitativamente le proprietà salienti del comportamento della barra a seguito dell'innesco dell'instabilità.
+
+In Chapter~\ref{chap:small-neck} we formulate a version of the model valid in the regime of small deformations. The existence and uniqueness os solutions to of the initial and boundary value problem produced by this model is established by resorting to the general theory of existence for evolutionary variational inequalities presented in Section~\ref{sec:evi} of Chapter~\ref{chap:solution-concepts}. We then move on to study the initial and boundary value problem associated with the tensile test. As one might expect, this model is not able to capture the onset of necking, which as we have discussed is an instability phenomenon intrinsically due to the nonlinearity induced by large deformations, and we show this by explicitly determining the solution. In Chapter~\ref{chap:large-neck} we refine the model so that it can describe the behavior of the bar even at large deformations. The existence of solutions to the resulting evolutionary problem is studied through the notion of energy solutions described in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. We then approach the study of the stability of the trivial solution using the notion of global stability provided by the definition of energy solution itself. If we ignore the effect of plasticity by reducing ourselves to the purely elastic case we are able to obtain an explicit result which indicates that the solution in which the bar deforms uniformly loses stability after the tension force reaches its maximum. In the plastic case we are unable to obtain an equally explicit result. We will propose some heuristic considerations which suggest that the instability of the trivial solution also occurs in this case after the force reaches its maximum, in accordance with the Considére criterion.
+
+Our analysis cannot be considered conclusive since it is not yet able to show the occurrence of necking in a complete and rigorous way, nor is it capable of qualitatively describing the salient properties of the behavior of the bar following the triggering of the instability. We hope that a deeper analysis of this simplified one‑dimensional model will provide clearer insight into the mechanisms that govern the onset and evolution of necking.
+
+%Nel Mémoire del 1885~\cite{Considere1885}, l'ingegnere fracese M. Considère raccolse i suoi studi sulle prove sperimentali da lui effettuate sul comportamento meccanico dei metalli strutturali, il cui utilizzo come materiale da costruzione si era ormai ampiamente diffuso. Una parte del suo studio è dedicata alla prova di trazione di campioni cilindrici: una barra cilindrica viene posta in trazione controllandone l'allungamento e viene misurata la forza assiale a cui essa è soggetta. I dati sperimentali riportati da Considére sono mostrati in Figura~\ref{fig:considere}.
+%\begin{figure}[h]
+%\begin{tikzpicture}
+%\begin{axis}[xlabel={$\eta=l/L$},ylabel={$F$ [kg]},xmin=1,xmax=1.33,ymin=400]
+%\addplot[color=black,thick,mark=*] 
+%table[x=eta,y=F] {figures/necking-experimental.dat};
+%\end{axis}
+%\end{tikzpicture}
+%\caption{Andamento della forza di trazione $F$ al variare dell'allungamento $\eta=l/L$ (dove $L$ è la lunghezza iniziale e $l$ la lunghezza nella configurazione deformata) tratta dai dati sperimentali in~\cite{Considere1885}. Il campione ha lunghezza $L=201$ mm e un diametro di 16 mm nella configurazione iniziale, il materiale è ferro dolce.}
+%\label{fig:considere}
+%\end{figure}
+%Nella prima fase della prova il comportamento del provino è elastico (il tratto che appare ripido in figura). Successivamente viene raggiunto il limite di snervamento e in un primo momento la forza assiale cresce all'aumentare della deformazione. Questo comportamento è noto come \emph{incrudimento} ovvero l'aumento della resistenza interna del materiale allo snervamento man mano che la deformazione plastica si accumula. L'effetto incrudimento è in competizione con il restringimento della sezione del provino che tende invece ad indebolire il materiale, dal momento che la forza assiale viene distribuita su una sezione sempre più piccola. Questo porta alla diminuzione della pendenza nella curva in figura, finché la forza non incomincia a diminuire quando l'effetto geometrico della diminuzione della sezione prevale sull'incrudimento. Considère osservò che il raggiungimento del massimo della forza di trazione corrisponde approssimativamente al momento in cui la barra, che inizialmente si era deformata in modo uniforme su tutta la sua lunghezza, inizia a restringersi maggiormente in un punto localizzato. Questo fenomeno, che era già conosciuto in passato sebbene non fosse stato ancora caratterizzato in modo quantitativo, è noto come \emph{strizione}. Il criterio che lega l'inzio della strizione al raggiungimento del massimo della forza di trazione è ora conosciuto appunto come \emph{criterio di Considère}. Sperimentalmente si osserva che la lunghezza della zona interessata dalla strizione è indipendente dalla lunghezza della barra ma cresce con l'aumentare del diametro.
+
 \chapter{Model at small deformations}
 \label{chap:small-neck}
 
-In this chapter we develop and analyze a small deformations model of a bar whose sections can only translate and change their size. In particular shear and bending are not allowed. We split our discussion into three parts. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section is devoted to the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
+In this chapter we develop and analyze a version of the one dimensional model aiming to describe the behavior of the metallic bar under tension which is valid in the regime of small deformations model. We split our discussion into three parts. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section treats the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
 
 \section{Formulation}
 \label{sec:small-model-1d}
 
 \subsection{Motivation from the multidimensional kinematics}
 
-We start describing the kinematics of the bar from a multidimensional perspective. This will serve as a motivation for the development of the purely one dimensional model discussed in the forthcoming sections.
+We start describing the kinematics of the bar from a multidimensional perspective. This will serve as a motivation for the development of the purely one dimensional model.
 
 Let $\Omega=(0,L)\times\Sigma$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ be the reference configuration of the cylindrical bar. We denote the generic point in $\Omega$ as $(x,y)$ with $x\in(0,L)$ and $y\in\Sigma$. We assume a macroscopic displacement of the form
 \[
@@ -1163,21 +1212,23 @@ We now develop a purely one dimensional model of the bar taking inspiration from
 
 Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by the plastic distortion $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$ the elastic distortions.
 
-The space $Z$ of the configurations $z=(u,p)$ will be clearly defined subsequently. The virtual velocities will be denoted as $\tilde w=(\tilde v,\tilde q)$
+The space $Z$ of the configurations $z=(u,p)$ will be clearly defined subsequently when the existence result will be proved. The virtual velocities will be denoted as $\tilde w=(\tilde v,\tilde q)$
 
 \subsection{Statics}
 
-To describe the coupling between the macroscopic configuration $u$ and the microscopic configuration $p$ we require that the internal generalized force is the form
+We assume that the generalized internal force is of the form
 \[
-\dual{\mathcal I,\tilde w}=\int_0^L\zeta\tilde v_2'dx+\int_0^L\left(\sigma_1(\tilde v_1'-\tilde q)+\sigma_2(\tilde v_2+(d-1)^{-1}\tilde q)\right)dx+\int_0^L\tau\tilde qdx.
+\dual{\mathcal I,\tilde w}=\int_0^L\left(\zeta\tilde v_2'+\sigma_1(\tilde v_1'-\tilde q)+\sigma_2(\tilde v_2+(d-1)^{-1}\tilde q)\right)dx+\int_0^L\tau\tilde qdx.
 \]
-The first integral describes a purely macroscopic response.. Here $\zeta\colon(0,L)\to\mathbb{R}$ is the transversal stress. The second integral describes the elastic response that couples the macroscopic and the microscopic configurations. Here $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ the longitudinal elastic force. The last integral describes the microscopic response and $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force.
+The first integral describes the elastic response that couples the macroscopic kinematic variables $u$ with the microscopic variable $p$. Here $\zeta\colon(0,L)\to\mathbb{R}$, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic force. The last integral describes the microscopic response and $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force.
 
 The external generalized force is required to be of the form
 \[
 \dual{\mathcal X,\tilde w}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
 Here $f\colon(0,L)\to\mathbb{R}^2$ is an external force distributed along the bar and $h\colon\{0,L\}\to\mathbb{R}^2$ is an external force acting at the ends of the bar. The first component of both $f$ and $h$ is referred to the axial direction, while the second component is referred to the longitudinal direction.
+
+The application of he principle of virtual powers, $\dual{\mathcal{I},\tilde w}=\dual{\mathcal{X},\tilde w}$ for all $\tilde w\in Z$, leads to equilibrium equations whose strong form is given by the following Proposition.
 \begin{prop}
 The local form of the equilibrium condition is
 \begin{subequations}
@@ -1218,13 +1269,15 @@ where $\kappa$ is a bulk modulus, $\mu$ is a shear modulus, $l$ is length parame
 \label{eqn:necking-small:dissipation-potential-density}
 \phi=R(\dot p)
 \end{equation}
-where $R\colon\mathbb{R}\to[0,\infty]$ is convex and satisfy $R(0)=0$. A possible choice could be $R(\dot p)=Y|\dot p|$ where $Y>0$ is the yield strength. Consistently with these choices and~\eqref{eqn:modeling:constitutive}, we impose the following constitutive relations
+where $R\colon\mathbb{R}\to[0,\infty]$ is convex and satisfy $R(0)=0$. A possible choice could be $R(\dot p)=Y|\dot p|$ where $Y>0$ is the yield strength. Consistently with these choices and with~\eqref{eqn:modeling:constitutive}, we impose the following constitutive relations
 \begin{gather*}
 \zeta=\mu l^2u_2' \\
 \sigma_1=\kappa(e_1+(d-1)e_2)+\mu(e_1-e_2) \\
 \sigma_2=(d-1)\kappa(e_1+(d-1)e_2)-\mu(e_1-e_2) \\
 \tau\in Bp+\partial R(\dot p).
 \end{gather*}
+Notice that the general discussion of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} implies that these constitutive relations are compatible with the dissipation inequality.
+
 We notice that introducing these constitutive relations into~\eqref{eqn:local-form-5} we get
 \[
 \frac{d}{d-1}\mu(e_1-e_2)-Bp\in\partial R(\dot p).
@@ -1316,9 +1369,9 @@ Now we choose $\theta$, $\tau$ and $\eta$ sufficiently close to 1 so that the co
 \emph{Step 3.} Since $f\in H^1((0,T),U^*)$ and $f(0)=0$ then $\mathcal{X}\in H^1((0,T),Z^*)$ and $\mathcal{X}(0)=0$.
 \end{proof}
 
-\section{Analytical solution of the tensile test problem}
+\section{Analytical solution to the tensile test problem}
 
-In this section we obtain explicit solutions of the tensile test problem, meaning that an axial tension force is applied at the ends of the bar. We will consider two different variants of the problem: in the first variant the end section are left free, while in the second variant  and the end section are clamped. We will see that the behavior of the solutions in this two situations is qualitatively similar, and in particular necking does not occur.
+In this section we obtain explicit solutions to the boundary value problem describing the tensile test. We will consider two different variants of the problem: in the first variant the end section are left free, while in the second variant  and the end section are clamped. We will see that the behavior of the solutions in this two situations is qualitatively similar, and in particular necking does not occur.
 
 \subsection{Traction with free end sections}
 \label{subsec:homogeneous-solution}
@@ -1492,8 +1545,9 @@ This results confirm the absence of necking in the small deformation model. Inde
 %\end{figure}
 
 \chapter{Model at large deformations}
+\label{chap:large-neck}
 
-As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations.
+As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations. This is the content of this chapter. The discussion is structures as in the previous chapter. In the first section we develop the model, in the second section we obtain an existence theorem of solutions to the boundary value problem produced by that model. In the third section we face the problem of studying the boundary value problem describing the tensile test.
 
 \section{Formulation}
 
@@ -1599,7 +1653,7 @@ We assume that the internal generalized force is of the form
 \[
 \dual{\mathcal{I},\tilde w}=\int_0^L\left(\zeta\tilde{\dot G}+\sigma_1\tilde{\dot E}_1+\sigma_2\tilde{\dot E}_2\right)dX+\int_0^L\left(\tau\tilde{Q}+\kappa\tilde{Q}'\right)dX,
 \]
-Here $\zeta\colon(0,L)\to\mathbb{R}$ is the transversal elastic stress, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the transversal elastic force while $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force and $\kappa\colon(0,L)\to\mathbb{R}$ the microscopic stress. Moreover the virtual rates $\tilde{\dot E}_1$, $\tilde{\dot E}_2$ and $\tilde{\dot G}$ are defined by the relations
+Here $\zeta\colon(0,L)\to\mathbb{R}$ is the transversal elastic stress, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the transversal elastic force, while $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force and $\kappa\colon(0,L)\to\mathbb{R}$ the microscopic stress. Moreover the virtual rates $\tilde{\dot E}_1$, $\tilde{\dot E}_2$ and $\tilde{\dot G}$ are defined by the relations
 \begin{gather*}
 G^{-1}\tilde{\dot G}=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q} \\
 E_1^{-1}\tilde{\dot E}_1=(\chi_1')^{-1}\tilde{v}_1'-P^{-1}\tilde{Q} \\
@@ -1612,7 +1666,7 @@ Then the internal generalized force can be written more explicitly as
 +\int_0^L\left[\tau\tilde Q+\kappa\tilde Q'\right]dX.
 \end{multline*}
 \begin{rmk}
-In the small strain model of Chapter~\ref{chap:small-neck} we did not included the microscopic stress $\kappa$. However, we are now including it because we expect that in the large deformation regime, it is necessary to obtain an existence result in Sobolev spaces. This is suggested by the existence theorem for three-dimensional elastoplasticity at large strains presented in~\cite{mielke}.
+In the small strain model of Chapter~\ref{chap:small-neck} we did not included the microscopic stress $\kappa$. However, we are now including it because we expect that in the large deformation regime, it is necessary to obtain an existence result in Sobolev spaces. This is suggested by the existence theorem for three-dimensional elastoplasticity at large strains presented in~\cite{mielke}. It will ensure the necessary compactness needed to handle the complex nonlinear coupling implied by the present model. The insertion of the microstress $\kappa$ will prevent the plastic distortion field $P$ to exhibiting jumps, so it works as a regularization.
 \end{rmk}
 
 The external generalized force is chosen of the form
@@ -1668,22 +1722,24 @@ where $R\colon(0,\infty)\times\mathbb{R}\to[0,\infty]$ is convex in $\dot P$ and
 \tau\in\dind{H}{P}+P^{-1}\partial_{\dot P}R\quad\text{and}\quad\kappa=\dind{H}{P'}.
 \end{gather}
 \end{subequations}
-\begin{prop}
-The constitutive relations~\eqref{eqn:constitutive-neck-large} satisfy the dissipation inequality.
-\end{prop}
-\begin{proof}
-Let $\tau=\dind{H}{P}+P^{-1}\xi$ with $\xi\in\partial R(\dot PP^{-1})$. Then the dissipation per unit axial length is given by
-\[
-\zeta\dot G+\sigma_2\dot E_2+\sigma_2\dot E_2+\tau\dot P+\kappa\dot P'-\dot\psi=\xi P^{-1}\dot P.
-\]
-By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
-\end{proof}
-We will see particular examples of constitutive relations in the next section, after we have clarified which assumptions are required for the model to be well-posed.
+The general discussion made in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} implies that the dissipation inequality is satisfied by these constitutive relations.
+
+%\begin{prop}
+%The constitutive relations~\eqref{eqn:constitutive-neck-large} satisfy the dissipation inequality.
+%\end{prop}
+%\begin{proof}
+%Let $\tau=\dind{H}{P}+P^{-1}\xi$ with $\xi\in\partial R(\dot PP^{-1})$. Then the dissipation per unit axial length is given by
+%\[
+%\zeta\dot G+\sigma_2\dot E_2+\sigma_2\dot E_2+\tau\dot P+\kappa\dot P'-\dot\psi=\xi P^{-1}\dot P.
+%\]
+%By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
+%\end{proof}
+We will see particular examples of constitutive relations in the next section, after we have clarified which assumptions are required to produce boundary value problems which are well-posed. This is indeed the content of next section.
 
 \section{Existence result}
 \label{sec:existence-necking}
 
-In this section we prove the existence of energetic solutions. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Appendix~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply Theorem~\ref{thm:existence-energetic-solutions}.
+In this section we prove the existence of energetic solutions. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply the abstract existence result provided by Theorem~\ref{thm:existence-energetic-solutions}.
 
 \subsection{Formulation of the initial boundary value problem}
 
@@ -2165,7 +2221,7 @@ with
 \[
 \quad \mathbb{W}(E_1,E_2,G,J)=A\frac{|E_1-1|^p+|E_2-1|^p+|lG|^p}{J^\alpha}+B|J-1|^r
 \]
-where $A,B,l>0$, $r>1$, $0<\alpha\le p-1$ and $p>1+\frac{\alpha}{r}$. We now check that this particular $W$ satisfies (W1), (W2), (W3) and (W4) of previous section. We start with the check of the assumptions (W1) and (W2). Hypotheses (W1) is a consequence of the following lemma.
+where $A,B,l>0$, $r>1$, $0<\alpha\le p-1$ and $p>1+\frac{\alpha}{r}$. The parameter $l>0$ is connected with the diameter of the cross section $\Sigma$. We now check that this particular $W$ satisfies (W1), (W2), (W3) and (W4) of previous section. We start with the check of the assumptions (W1) and (W2). Hypotheses (W1) is a consequence of the following lemma.
 \begin{lemma}
 Let $w\colon(0,\infty)\to\mathbb{R}$ strictly convex and let $g\colon(0,\infty)\times(0,\infty)\to\mathbb{R}$ given by $g(r,y)=\frac{r^p}{y^\alpha}+w(y)$ for some $p>1$ and $0<\alpha\le p-1$. Let also $n\in\mathbb{N}$ and $f\colon\mathbb{R}^n\times(0,\infty)\to\mathbb{R}$ given by $f(x,y)=g(|x|,y)$. Then $f$ is strictly convex in $\mathbb{R}^n\times(0,\infty)$.
 \end{lemma}
@@ -2264,7 +2320,7 @@ We will see that a trivial strong solution to this problem is the spatially homo
 \]
 We first discuss the stability when the elastic response only is considered. In this case we are able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
 \begin{rmk}
-Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces. Some results regarding this theory and application to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
+Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces, probably with some nontrivial adjustments needed to treat the nonsmooth character of plasticity theory. Some results regarding this theory and application to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
 \end{rmk}
 
 \subsection{Purely elastic model}
@@ -2423,13 +2479,13 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 
 \begin{figure}
 \begin{tikzpicture}
-\begin{axis}[xlabel={$a$},ylabel={$\overline F$},xmin=1,xmax=6,ymin=0,width=0.45\textwidth,ylabel style={rotate=-90}]
+\begin{axis}[xlabel={$\eta$},ylabel={$\overline F$},xmin=1,xmax=6,ymin=0,width=0.45\textwidth,ylabel style={rotate=-90}]
 \addplot[-] table [x=E1,y=F] {figures/instability.dat};
 \end{axis}
 \end{tikzpicture}
 \hfill
 \begin{tikzpicture}
-\begin{axis}[xlabel={$a$},ylabel={$\lambda$},xmin=1,xmax=6,width=0.45\textwidth,ylabel style={rotate=-90}]
+\begin{axis}[xlabel={$\eta$},ylabel={$\lambda$},xmin=1,xmax=6,width=0.45\textwidth,ylabel style={rotate=-90}]
 \addplot[-] table [x=E1,y=lambda] {figures/instability.dat};
 \addplot[dashed,domain=1:6] {0};
 \end{axis}
@@ -2457,7 +2513,7 @@ be the reaction tensile force acting on the ends of the bar along the trivial so
 \[
 J_t(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\overline{P}(t),P)-\overline{F}(t)\rho.
 \]
-The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J_t$ is not differentiable at $P=\overline{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
+The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. It includes both the energy stored by the system in the form of free energy and the energy dissipated as the plastic distortion is changed. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J_t$ is not differentiable at $P=\overline{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
 \[
 H^+_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\overline{P}(t)\}\quad\text{and}\quad H^-_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\overline{P}(t)\}.
 \]
@@ -2533,9 +2589,14 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $dF/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $F$ increases and became indefinite if $F$ reaches a maximum. This is indeed confirmed by the numerical computation of the trivial solution.
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $dF/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $F$ increases and became indefinite if $F$ reaches a maximum. This is indeed confirmed by the numerical computations. In particular one finds that at the instant $t_0\in(0,T]$ where $\det h(t_0)$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This suggest that at time $t_0$ the bar tends to increase its length, shrink and increase its plastic distortion, but this instability mode actually cannot happen since the elongation, and not the traction force, are imposed. This leads us to claim that at some instant $t_1\ge t_0$, the stability condition~\eqref{eqn:stability-necking} is violated. A different non homogeneous solution became energetically favored and we expect that
+\begin{itemize}
+\item[(i)] somewhere along the length of the bar the axial deformation $\chi_1'>\eta$, $\chi_2<\overline\chi_2$ and $P>\overline P$ since this is the instability mode that we would have in absence of the Dirichlet boundary conditions imposed at the ends,
+\item[(ii)] elsewhere $\chi_1'<\eta$ in order to fulfill the boundary conditions.
+\end{itemize}
+This type of instability is likely to corresponds to necking, since in the regions where $\chi_1'<\eta$ we expect that the material is less in tension and is subject to elastic unloading. This leads to a concentration of the deformation where $\chi_1'>\eta$ leading to a localized neck. We expect that the axial dimension of the neck will depends on the length parameter $l$ since it prescribes the amount of regularization. As $l\to0^+$ we expect the neck to shrink to zero.
 
-We notice that the constitutive equation of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $F$ and $\eta$ if $C$ is large enough, see the dashed graph in Figure~\ref{fig:instabilitypl}. According to the considerations above we expect that hardening does not occur in this case. When $C>0$ is sufficiency reduces a non monotone relation is obtained, see the solid graph in Figure~\ref{fig:instabilitypl}.
+The constitutive equations of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $F$ and $\eta$ if $C$ is large enough, so that the above considerations suggest that necking does not occur in this case, while when $C>0$ a non monotone relation is obtained, see the the dashed lines in Figure~\ref{fig:instabilitypl}.
 
 \begin{rmk}
 A possible refinement of the hardening free energy function is
@@ -2565,14 +2626,15 @@ The main feature of this relation is that $\beta$ is bounded from above by $C$ a
 \[
 H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right).
 \]
-Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved.
+Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved. The plot of the force-elongation relation produced by the hardemning model~\ref{eqn:armstrong-frederick-constitutive} is showed as the solid line in Figure~\ref{fig:instabilitypl}
 \end{rmk}
 
 \begin{figure}[htp]
 \begin{tikzpicture}
-\begin{axis}[xlabel={$a$},ylabel={$F^*$},xmin=1,xmax=1.5,width=0.45\textwidth,ylabel style={rotate=-90}]
-\addplot[-] table [x=dchi1,y=F] {figures/instabilitypl.dat};
-\addplot[dashed] table [x=dchi1,y=F] {figures/instabilitypl-i.dat};
+\begin{axis}[xlabel={$\eta$},ylabel={$\overline F$},xmin=1,xmax=1.3,width=0.45\textwidth,ylabel style={rotate=-90}]
+\addplot[-] table {figures/instabilitypl(2).dat};
+\addplot[dashed] table {figures/instabilitypl(3).dat};
+\addplot[dashdotted] table {figures/instabilitypl(4).dat};
 \end{axis}
 \end{tikzpicture}
 \caption{Graphs of $\overline F$ as functions of the elongation $\eta$ along the homogeneous solution in the plastic model.}
@@ -2762,7 +2824,7 @@ To include the dilatancy in the model we could do the following. We put the unil
 %
 %A further refinement could be the addition of plastic spin $W_p\in\text{Skew}$. We notice that since the second gradient elasticity that we have introduced is independent of the plastic behavior\footnote{Because $K$ is conjugate to $\tilde{\dot M}$ and not to $\tilde{\dot M}_e$ with $M_e=\grad H_e$ and $H_e=H-H_p$)} (this was done for mathematical reasons, since we needed compactness to apply Schauder theorem) then the rotational force would come only from the plastic behavior in the sense that: the macroscopic stress only exert a symmetric microforce that in principle only change $E_p$ but the plastic response can cause also a nonsymmetric zero microforce so that $W_p$ can became nonzero.
 
-\section{Mathematical analysis}
+\section{Existence result}
 
 In what follows we write simply $U$ and $\lambda$ in place of $U_p$ and $\lambda_p$ respectively. Moreover for simplicity we assume $\Gamma_D=\partial\Omega$ and $\overline{u}=0$ since the extension to the general case in trivial.
 
