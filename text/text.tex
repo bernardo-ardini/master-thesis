@@ -260,7 +260,7 @@ Let $\Phi\colon W^{1,p^*}(\Omega)^d\to(-\infty,\infty]$. To describe an elastic 
 where $W\colon\Omega\times\mathbb{R}^{d\times d}\to(-\infty,\infty]$ is a continuous free energy density. Incompenetrability impose that $W(X,F)=\infty$ if $\det F\le0$.
 \end{ex}
 \begin{ex}(Example~\ref{ex:modeling:micro} continued)
-To ensure that $z(x)\in[0,1]$ for a.e.\ $x\in\Omega$, one choose $\Phi\colon W^{1,p}(\Omega)\to(-\infty,\infty]$ such that $\Phi(z)=\infty$ if $z\neq 0$ on a set of positive measure.
+To ensure that $z(x)\in[0,1]$ for a.e.\ $x\in\Omega$, one choose $\Phi\colon W^{1,p}(\Omega)\to(-\infty,\infty]$ such that $\Phi(z)=\infty$ if $z\notin[0,1]$ on a set of positive measure.
 \end{ex}
 However there are situations in which it would be desirable to treat the constraint reaction $\mathcal{P}$ as an independent variable instead. In this sense $\mathcal{P}$ can be considered as an additional descriptor of the configuration of the system. This is particularly useful if one wants to consider constitutive relations depending on the reaction $\mathcal{P}$ itself, as it happens for the model that is discussed in Part~\ref{part:my-model}. Then we split the generalized force as $\mathcal{F}=-\mathcal{I}+\mathcal{X}+\mathcal{P}$. The constitutive relations are imposed on $\mathcal{I}$ only as
 \[
@@ -349,7 +349,7 @@ Since $\Phi$ is 1-homogeneous, also the inverse implication holds, indeed
 \[
 \dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}=\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}\ge\frac{\Phi(\epsilon(\hat{q}-q(t))}{\epsilon}=\Phi(\hat{q}-q(t)).
 \]
-The mechanical meaning of condition~\eqref{eqn:energetic:stability-motivation} is the following: the energy $\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)$ released by the system while passing from $q(t)$ to $\hat{q}$ cannot exceed the dissipation $\Phi(\hat{q}-q(t))$. This is a stability condition. The second condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear} is the power balance. Integrating it on the interval $(0,t)$ for $t\in(0,T]$ we get the energy balance
+The mechanical meaning of condition~\eqref{eqn:energetic:stability-motivation} is the following: the energy $\mathcal{E}(q(t),t)-\mathcal{E}(\hat{q},t)$ released by the system while passing from $q(t)$ to $\hat{q}$ cannot exceed the dissipation $\Phi(\hat{q}-q(t))$. This is a stability condition. The second condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear} is the power balance. Integrating it on the interval $(0,t)$ for $t\in(0,T]$ we get the energy balance
 \[
 \mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\int_0^t\Phi(\dot q(s))ds.
 \]
@@ -408,11 +408,11 @@ Summarizing, we have seen that~\eqref{eqn:energetic:doubly-nonlinear} is equival
 \end{subequations}
 This conditions makes sense also if $\mathcal{E}$ is not Fréchet differentiable and $q$ is not absolutely continuous.
 
-This results suggest to define energetic solutions directly as evolutions $q\colon[0,T]\to Q$ satisfying~\eqref{eqn:energetic:motivation-definition} also when less regularity is assumed. This is discussed below.
+This results suggest to define energetic solutions directly as evolutions $q\colon[0,T]\to Q$ satisfying~\eqref{eqn:energetic:motivation-definition} also when less regularity is assumed. This is discussed in detail below.
 
 \subsection{Introduction}
 
-Let $Q$ be a separable and reflexive Banach space and $\mathcal{E}\colon Q\times[0,T]\to[0,\infty]$. Rather than using a dissipation potential, we describe the system's dissipation in terms of a dissipation distance. This is defined as a map $D\colon Q\times Q\to[0,\infty]$, where $D(q_0,q_1)$ denotes the minimum energy dissipated by the system when it jumps from $q_0$ to $q_1$. The dissipation along an evolution $q\colon[0,T]\to Q$ in the time interval $[s,t]$ is defined as
+Let $Q$ be a separable and reflexive Banach space and $\mathcal{E}\colon Q\times[0,T]\to[0,\infty]$. Rather than using a dissipation potential, we describe the system's dissipation in terms of a dissipation distance. This is defined as a map $\mathcal D\colon Q\times Q\to[0,\infty]$, where $\mathcal D(q_0,q_1)$ denotes the minimum energy dissipated by the system when it jumps from $q_0$ to $q_1$. The dissipation along an evolution $q\colon[0,T]\to Q$ in the time interval $[s,t]$ is defined as
 \[
 \text{Diss}_\mathcal{D}(q,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(q(t_{k-1}),q(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
 \]
@@ -1077,7 +1077,7 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 
 \chapter{Introduction}
 
-In the Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considére are shown in Figure~\ref{fig:considere}.
+In a Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considére are shown in Figure~\ref{fig:considere}.
 \begin{figure}[h]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$\eta=l/L$},ylabel={$F$ [kg]},xmin=1,xmax=1.33,ymin=400]
@@ -1088,7 +1088,7 @@ table[x=eta,y=F] {figures/necking-experimental.dat};
 \caption{Trend of the tensile force $F$ as the elongation $\eta=l/L$ varies (where $L$ is the initial length and $l$ the length in the deformed configuration) taken from the experimental data in~\cite{Considere1885}. The sample is made of soft iron and has a length $L=201$ mm and a diameter of 16 mm in the initial configuration.}
 \label{fig:considere}
 \end{figure}
-In the first phase of the test, the behavior of the specimen is elastic (the section that appears steep in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known in the past although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considére experimentally observed that the length of the area affected by the constriction is independent of the length of the bar but increases as the diameter increases.
+In the first phase of the test, the behavior of the specimen is elastic (the section that appears steep in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considére experimentally observed that the length of the area affected by the neck is independent of the length of the bar but increases with the diameter.
 
 %I primi contributi verso la comprensione teorica del fenomeno del necking nell'ambito della teoria della plasticità risalgono alla seconda metà del Novecento, quando è il fenomeno è stato studiato come manifestazione della perdita di stabilità della \emph{soluzione triaviale}, cioè quella in cui la barra rimane in uno stato di deformazione uniforme. In un lavoro~\cite{Hill1958} del 1958, R. Hill ha sviluppato una teoria generale per trattare i fenomeni di biforcazione e di perdita di stabilità nell'ambito della teoria della plasticità incrementale. La teoria della plasticità incrementale era il framework utilizzato prima che venisse introdotta, negli anni Settanta, la moderna teoria della plasticità basata su solide base variazionali, quella che abbiamo discusso nei capitoli introduttivi~\ref{}. Nella teoria della plasticità incrementale la relazione costitutiva lega il rate dello stress al rate dello strain, cosicché il \emph{problema incrementale} di determinare ad ogni istante il campo velocità del solido elastoplastico emerge naturalmente. La teoria della biforcazione di Hill riguarda l'unicità della soluzione di tale problema incrementale. Utilizzando la teoria della biforcazione di Hill, negli anni Settanta in~\cite{HillHutchinson1975,HutchinsonMiles1974}, viene dimostrato che la perdita di stabilita della soluzione uniforme avviene poco dopo che la forza di trazione raggiunge il suo massimo, in accordo con il criterio di Considère. Nello stesso periodo viene effettuata anche la prima simulazione numerica mediante gli elementi finiti dell'occorenza del fenomeno del necking~\cite{Needleman1972} permettendo per la prima volta di predire accuratemante la forma del neck.
 %
@@ -1296,7 +1296,7 @@ In this section we discuss the existence and uniqueness of solutions of evolutio
 
 We define the spaces $U=H^1((0,L),\mathbb{R}\times\mathbb{R})$ and $P=L^2((0,L))$. Let also $Z=U\times P$ the space of configurations of the system. We will write the generic configuration as $z=(u,p)\in Z$ with $u\in U$ and $p\in P$ and the generic virtual rate as $w=(v,q)\in Z$ with $v\in U$ and $q\in P$.
 
-The evolution problem associated with the model described in this chapter is of the form of an evolutionary variational inequality that has been studied in Section~\ref{sec:evi}. According to~\eqref{eqn:necking-small:free-energy-density}, the free energy $\Psi\colon Z\to\mathbb{R}$ is defined by
+The evolution problem associated with the model described in this chapter is of the form of an evolutionary variational inequality that has been studied in Section~\ref{sec:evi} of Chapter~\ref{chap:solution-concepts}. According to~\eqref{eqn:necking-small:free-energy-density}, the free energy $\Psi\colon Z\to\mathbb{R}$ is defined by
 \[
 \Psi(z)=
 \begin{multlined}[t]
@@ -4602,7 +4602,7 @@ Then $x$ is a solution to the variational inequality.
 Now we study the equation $T(x)=f$ when the Banach space is finite dimensional. This results will be used to get the general result using the Galerkin method.
 \begin{prop}
 \label{prop:elliptic-finite-dimensional}
-Let $T\colon\mathbb{R}^n\to\mathbb{R}^n$ be continuous and coercive. Then for every $f\in\mathbb{R}^n$ the equation $T(x)=f$ has al least one solution.
+Let $T\colon\mathbb{R}^n\to\mathbb{R}^n$ be continuous and coercive. Then for every $f\in\mathbb{R}^n$ the equation $T(x)=f$ has at least one solution.
 \end{prop}
 \begin{proof}
 Without loss of generality we cn assume that $f=0$. Indeed otherwise define $S(x)=T(x)-f$ and notice that $S$ is still continuous and coercive. Indeed
@@ -4695,12 +4695,31 @@ then
 \]
 for all $y\in X$.
 \end{defi}
+If $T$ is pseudomonotone it posses also a nice continuity property.
+\begin{prop}
+\label{prop:pseudomonotone-demicontinuous}
+Let $T\colon X\to X^*$ be pseudomonotone. Then $T$ is demicontinuous, i.e., for all $x_k\to x$ in $X$ it holds that $T(x_k)\overset{*}{\rightharpoonup}T(x)$ in $X^*$.
+\end{prop}
+\begin{proof}
+Let $x_k\to x$ in $X$. Then $\{x_k\}$ is bounded in $X$ and since $T$ is bounded also $\{T(x_k)\}$ is bounded in $X^*$. Then, for all subsequence of $\{x_k\}$ there exists a further subsequence $\{x_{k_j}\}$ such that $T(x_{k_j})\overset{*}{\rightharpoonup}g$ for some $g\in X^*$. Then
+\[
+\liminf_{j\to\infty}\dual{T(x_{k_j}),x_{k_j}-x}=\dual{g,x-x}=0.
+\]
+Then, since $T$ is pseudomonotone
+\[
+\dual{g,x-y}=\limsup_{j\to\infty}\dual{T(x_{k_j}),x_{k_j}-y}\le\dual{T(x),x-y}\quad\text{for all $y\in X$}.
+\]
+By arbitrariness of $y$, it follows that $T(x)=g$. We conclude that the whole sequence $\{T(x_k)\}$ converges weakly-star in $X^*$ to $T(x)$.
+\end{proof}
+The following generalization of Minty--Brower theorem holds.
 \begin{thm}
 \label{thm:browder-minty-generalized}
-Let $X$ be a separable and reflexive Banach space. Let $T\colon X\to X^*$ be continuous, coercive and pseudomonotone. Then for every $f\in X^*$ there exists $x\in X$ such that $T(x)=f$.
+Let $X$ be a separable and reflexive Banach space. Let $T\colon X\to X^*$ coercive and pseudomonotone. Then for every $f\in X^*$ there exists $x\in X$ such that $T(x)=f$.
 \end{thm}
 \begin{proof}
-The proof is exactly the same as the one of Theorem~\ref{thm:browder-minty} except to Step 5. We know that $x_k\rightharpoonup x$ in $X$, that $T(x_k)\overset{*}{\rightharpoonup}f$ in $X^*$ and $\dual{T(x_k),x_k}\to\dual{f,x}$. Then in particular
+The proof is similar to that of Theorem~\ref{thm:browder-minty} up to Step 4. The monotonicity is never used here and the demicontinuity (implied by pseudomonotonicity by Proposition~\ref{prop:pseudomonotone-demicontinuous}) is enough to prove that $T_k$ are continuous and to handle the other limit passages. Then we need only to adapt Step 5.
+
+We know that $x_k\rightharpoonup x$ in $X$, that $T(x_k)\overset{*}{\rightharpoonup}f$ in $X^*$ and $\dual{T(x_k),x_k}\to\dual{f,x}$. Then in particular
 \[
 \dual{T(x_k),x_k-x}=\dual{T(x_k),x_k}-\dual{T(x_k),x}\to\dual{f,x}-\dual{f,x}=0.
 \]
@@ -4812,7 +4831,8 @@ The Minty--Browder theorem can be generalized also to the case in which $T$ is a
 \end{equation}
 where $f\in X^*$. Here $\partial\Psi$ denotes the subdifferential of $\Psi$. The following generalization of Minty--Browder theorem holds.
 \begin{thm}
-Let $\Phi\colon X\to\mathbb{R}\cup\mathbb{\infty}$ be convex, proper and lower semicontinuous. Assume that for all $\epsilon>0$ there exist $\Phi_\epsilon\colon X\to\mathbb{R}$ convex and G\^ateaux differentiable with $\Phi_\epsilon'\colon X\to X^*$ continuous and bounded, such that the following properties holds:
+\label{thm:inclusion}
+Let $\Phi\colon X\to\mathbb{R}\cup\mathbb{\infty}$ be convex, proper and lower semicontinuous. Assume that for all $\epsilon>0$ there exist $\Phi_\epsilon\colon X\to\mathbb{R}$ convex and G\^ateaux differentiable with $\Phi_\epsilon'\colon X\to X^*$ demicontinuous and bounded, such that the following properties holds:
 \begin{itemize}
 \item[(i)] for all $x\in X$ and $\{x_\epsilon\}_{\epsilon>0}\subset X$ such that $x_\epsilon\rightharpoonup x$ in $X$ it holds that
 \[
@@ -4823,7 +4843,7 @@ Let $\Phi\colon X\to\mathbb{R}\cup\mathbb{\infty}$ be convex, proper and lower s
 \Phi(x)\ge\limsup_{\epsilon\to 0^+}\Phi_\epsilon(x).
 \]
 \end{itemize}
-Let also $A\colon X\to X^*$ continuous, bounded and pseudomonotone. Moreover assume that the following coercivity property holds: there exists $y\in\dom\Phi$ such that for all $z\in X$ the inequality
+Let also $A\colon X\to X^*$ be pseudomonotone. Moreover assume that the following coercivity property holds: there exists $y\in\dom\Phi$ such that for all $z\in X$ the inequality
 \begin{equation}
 \label{eqn:coercivity-property}
 \dfrac{\Phi_\epsilon(x)+\dual{A(x),x-z}}{\norm{x}_X}\ge\zeta(\norm{x}_X)
@@ -4867,6 +4887,70 @@ But by~\eqref{eqn:variational-inequality} it follows that
 \end{split}
 \]
 as desired.
+\end{proof}
+%\begin{rmk}
+%The Theorem holds true if (ii) is replaced by the requirement that for all $x\in X$ there exists $\{x_\epsilon\}_{\epsilon>0}\subset X$ with $x_\epsilon\to X$ in $X$ and
+%\[
+%\Phi(x)\ge\limsup_{\epsilon\to 0^+}\Phi_\epsilon(x_\epsilon).
+%\]
+%In this case we say that $\Phi_\epsilon$ Mosco converge to $\Phi$ as $\epsilon\to 0^+$.
+%\end{rmk}
+Given $\Phi\colon X\to\mathbb{R}\cup\{\infty\}$ convex, proper and lower semicontinuous, a possible way to obtain its regularization $\Phi_\epsilon$ for all $\epsilon>0$ is through the Yosida approximation
+\[
+\Phi_\epsilon(x):=\inf_{y\in X}\left(\frac{\norm{x-y}^2}{2\epsilon}+\Phi(y)\right).
+\]
+Notice that it is well defined as a function $\Phi_\epsilon\colon X\to\mathbb{R}$. The following result shows that the Yosida regularization satisfies the desired approximation properties.
+\begin{lemma}
+\label{lemma:yosida}
+Let $X$ be a separable and reflexive Banach space and endow it with a strictly convex norm. Let $\Phi\colon X\to\mathbb{R}\cup\{\infty\}$ be convex, proper and lower semicontinuous. Then also $\Phi_\epsilon$ is convex, proper and lower semicontinuous. Moreover
+\begin{itemize}
+\item[(i)] for all $x\in X$ and $\{x_\epsilon\}_{\epsilon>0}\subset X$ such that $x_\epsilon\rightharpoonup x$ in $X$ it holds that
+\[
+\Phi(x)\le\liminf_{\epsilon\to0^+}\Phi_\epsilon(x_\epsilon),
+\]
+\item[(ii)] for all $x\in X$
+\[
+\Phi(x)\ge\limsup_{\epsilon\to 0^+}\Phi_\epsilon(x).
+\]
+\end{itemize}
+and $\Phi_\epsilon$ is G\^ateaux differentiable with $\Phi_\epsilon'\colon V\to V^*$ bounded and demicontinuous.
+\end{lemma}
+\begin{proof}
+See~\cite[Lemma 5.17]{roubicek-pde}.
+\end{proof}
+\begin{cor}
+Let $X$ be a reflexive and separable Banach space. Let $\Phi\colon X\to\mathbb{R}\cup\{\infty\}$ be convex, proper and lower semicontinuous. Let $A\colon V\to V^*$ pseudomonotone. Suppose then one of the following two conditions holds:
+\begin{itemize}
+\item[(i)] there exists $\alpha>1$ such that $\Phi(x)\ge\norm{x}^\alpha$ for all $x\in X$ and there exists $z\in\dom\Phi$ such that
+\[
+x\mapsto\dfrac{\dual{A(x),x-y}}{\norm{x}}
+\]
+is bounded from below,
+\item[(ii)] $\Phi$ is bounded from below and $A$ is coercive in the sense that there exists $z\in\dom\Phi$ such that
+\[
+\dfrac{\dual{A(x),x-z}}{\norm{x}}\to\infty\quad\text{as $\norm{x}\to\infty$}.
+\]
+\end{itemize}
+Then for each $f\in X^*$ there exists at least one $x\in X$ such that~\eqref{eqn:inclusion} holds.
+\end{cor}
+\begin{proof}
+For all $\epsilon>0$ let $\Phi_\epsilon$ be the Yosida approximation of $\Phi$. In view of Lemma~\ref{lemma:yosida} and Theorem~\ref{thm:inclusion} get the thesis if we prove that~\eqref{eqn:coercivity-property} holds.
+
+In case that (ii) is assumed the result follows immediately. Indeed since $\Phi\ge C$ for some $C\in\mathbb{R}$ also $\Phi_\epsilon\ge C$ for all $\epsilon>0$.
+
+When (i) is assumed, we fix $\delta>0$ and for all $\epsilon\le\delta$ we estimate
+\[
+\Phi_\epsilon(x)\ge\Phi_\delta(x)\ge\inf_{y\in X}\left(\frac{\norm{x-y}^2}{2\delta}+\Phi(y)\right)\ge\inf_{y\in X}\left(\frac{\left(\norm{x}-\norm{y}\right)^2}{2\delta}+\norm{y}^\alpha\right)=|\cdot|^\alpha_\delta\left(\norm{x}\right),
+\]
+where $|\cdot|_\delta^\alpha$ is the Yosida approximation of $|\cdot|^\alpha$. Now let $r\in\mathbb{R}$ be the optimal value such that
+\[
+|\cdot|_\delta^\alpha\left(\norm{x}\right)=\frac{(r-\norm{x})^2}{2\epsilon}+|r|^\alpha.
+\]
+so that $|\cdot|^\alpha_\delta\left(\norm{x}\right)\ge r^\alpha$. The optimality of $r$ implies that $\norm{x}=r+\epsilon\alpha r^{\alpha-1}$ which in turn implies that
+\[
+\norm{x}^{\min\left\{1,\frac{1}{\alpha-1}\right\}}\le Cr
+\]
+Collecting the results obtained, we get $\Phi_\epsilon(x)\ge\norm{x}^{\min\left\{\alpha,\alpha^*\right\}}$. This implies the desired coercivity.
 \end{proof}
 
 \subsection{Lower semicontinuity of integral functionals}
