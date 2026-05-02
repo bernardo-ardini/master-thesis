@@ -409,6 +409,40 @@
       \field{pages}{574\bibrangedash 775}
       \range{pages}{202}
     \endentry
+    \entry{cosserat1909}{book}{}{}
+      \name{author}{2}{}{%
+        {{hash=a733067ca3fff54dadbc180880f8e116}{%
+           family={Cosserat},
+           familyi={C\bibinitperiod},
+           given={Eugène},
+           giveni={E\bibinitperiod}}}%
+        {{hash=9b6627a37cd2e95d57ebd25c37577e52}{%
+           family={Cosserat},
+           familyi={C\bibinitperiod},
+           given={François},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Paris}%
+      }
+      \list{publisher}{1}{%
+        {Hermann}%
+      }
+      \strng{namehash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{fullhash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{fullhashraw}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{bibnamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{authorbibnamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{authornamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{authorfullhash}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{authorfullhashraw}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Théorie des corps déformables}
+      \field{year}{1909}
+    \endentry
     \entry{energetic-geomaterials}{article}{}{}
       \name{author}{1}{}{%
         {{hash=4d18b46a0308fd797be6a9ddd3d647c7}{%

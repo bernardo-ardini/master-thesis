@@ -141,7 +141,7 @@ In this section we describe a general framework that allows to systematically de
 
 The approach presented here is based on the principle of virtual powers, which is a powerful and elegant tool to describe the equilibrium of the ``forces'' acting on a mechanical system. The ``forces'' must be intended in a generalized sense here. In fact, the configurations of the mechanical system are described as elements of a space (possibly infinite dimensional) of configurations, and therefore the generalized forces must be understood as actions that ``push'' the configuration of the system within this space. Moreover the configuration of the mechanical system can include also the description of internal or microscopic conditions of the system, so that a generalized forces does not necessarily correspond to a mechanical macroscopic distribution of force in the usual sense.
 
-Some historical information about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works that use the principle of virtual powers to develop systematically mechanical model are~\cite{germain},~\cite{gurtin-fried}, \cite{gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small}, \cite{gurtin-anand-large}, \cite{non-smooth-thermomechanics} that treat materials with internal variables.
+Some historical information about the birth of the principle of virtual powers can be found in~\cite{ppv-encyclopedia} and in~\cite{ppv-maugin}. Modern works that use the principle of virtual powers to develop systematically mechanical model are~\cite{germain,gurtin-fried,gurtin-fried-turbulence}, where second gradient theories are considered, and~\cite{gurtin-anand-small,gurtin-anand-large,non-smooth-thermomechanics} that treat materials with internal variables.
 
 \subsection{Kinematics}
 
@@ -152,11 +152,11 @@ Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be descr
 \end{ex}
 \begin{ex}
 \label{ex:modeling:large-strain}
-The configurations of a deformable body at large strain in $\mathbb{R}^d$, can be identified with the deformations $\chi\in W^{1,p}(\Omega)^d$ with $p\in(1,\infty)$, where $\Omega\subset\mathbb{R}^d$, open and bounded subset of $\mathbb{R}^d$ is some reference configuration of the body. Every $x\in\Omega$ is the reference position of a material point and $\chi(x)$ is the position occupied by that material point in the deformed configuration. The condition of incompenetrability, $\det\text{Grad}\chi>0$ a.e.\ in $\Omega$, was purposely excluded from the definition of the configuration space in order to preserve the linear structure. Even thought we do not consider it at the level of kinematical description, it can be imposed in a later moment, as we will show.
+The configurations of a deformable body at large strain in $\mathbb{R}^d$, can be identified with the deformations $\chi\in W^{1,p}(\Omega)^d$ with $p\in(1,\infty)$, where $\Omega\subset\mathbb{R}^d$, open and bounded subset of $\mathbb{R}^d$ is some reference configuration of the body. Every $x\in\Omega$ is the reference position of a material point and $\chi(x)$ is the position occupied by that material point in the deformed configuration. The condition of incompenetrability, $\det\text{grad}\chi>0$ a.e.\ in $\Omega$, was purposely excluded from the definition of the configuration space in order to preserve the linear structure. Even thought we do not consider the incompenetrability constrain at the level of kinematical description, it can be imposed in a later moment, as we will show.
 \end{ex}
 \begin{ex}
 \label{ex:modeling:micro}
-Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $\alpha\in W^{1,p}(\Omega)$ with $p\in(0,1)$. Where $\alpha=1$ the material is sound, while where $\alpha=0$ the material is completely damaged. The material is partially damaged where $\alpha\in(0,1)$. One should add the constrain $\alpha\in[0,1]$, but this is not required in the definition of the space of configurations, again in order to preserve the linear structure.
+Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $\alpha\in W^{1,p}(\Omega)$ with $p\in(0,1)$. Where $\alpha=0$ the material is sound, while where $\alpha=1$ the material is completely damaged. The material is partially damaged where $\alpha\in(0,1)$. One should add the constrain $\alpha\in[0,1]$, but this is not imposes at the level of definition of the space of configurations, again in order to preserve the linear structure.
 \end{ex}
 Examples~\ref{ex:modeling:large-strain} and~\ref{ex:modeling:micro} suggest that the assumption that space of configurations has a linear structure is not restrictive in most mechanical models, even when the truly attainable configurations actually should lie in a space $M$ with the structure of a manifold. Indeed in most cases, $M$ can be seen as a subset of a larger linear space of configurations $V$. Then we can formulate the model on $V$ and impose that the evolution of the configuration of the system is restricted to $M$ by including suitable reactions, as we will see. Thus the geometric complexity of $M$ can be avoided and reduced to the analytical complexity of managing the reactions within $V$ required to enforce the constraint
 
@@ -237,11 +237,11 @@ This is known as the \emph{doubly nonlinear equation}. Now the evolution problem
 Let $u_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to V^*$. Find $u\in\text{AC}([0,T],V)$ such that~\eqref{eqn:modeling:doubly-nonlinear} holds.
 \end{prb}
 \begin{rmk}
-Before imposing particular constitutive relations, $\mathcal{I}$ and $\mathcal{X}$ are completely undefined. However we notice that, before making specific constitutive assumptions, it is useful to assume that $\mathcal{I}$ and $\mathcal{X}$ have a more specific structure as we will seen in the following chapters. We notice that, in order to keep the notation simple, we will sometimes write $\tilde{\mathcal{S}}$ instead of $\dual{\mathcal{S},\tilde v}$ for $\mathcal{S}\in\{\mathcal{I},\mathcal{X},\mathcal{F}\}$.
+Before imposing particular constitutive relations, $\mathcal{I}$ and $\mathcal{X}$ are completely undefined. However we notice that, before making specific constitutive assumptions, when one develop a new mechanical model it is useful to understand which is the particular structure that $\mathcal{I}$ and $\mathcal{X}$ must assume in order to describe the forces involved in the mechanical system of interest. This is the approach that will be followed in this thesis.
 % For example, if the mechanical system is the one described in Examples~\ref{ex:modeling:particles} and~\ref{ex:modeling:particles-continued} with $N=2$ and we want to build a mechanical model in which the only internal actions are a force $f(t)\in\mathbb{R}^d$, then we consider the case $\dual{\mathcal{I}(t),\tilde v}=f(t)\cdot(\tilde v_1-\tilde v_2)$. The force $f(t)$ is still undefined and can be fixed through suitable constitutive assumptions.
 \end{rmk}
 \begin{rmk}
-In terms of $\Phi$, the dissipative inequality is
+In terms of $\Phi$, the dissipative inequality reads
 \begin{equation}
 \label{eqn:modeling:dissipative-inequality}
 \text{$\dual{\xi,v}\ge0$ for all $(u,v)\in V\times V$ and $\xi\in\partial_v\Phi(u,v)$}.
@@ -281,8 +281,185 @@ where now $\mathcal{E}\colon V^*\times V\times[0,T]\to(-\infty,\infty]$ is defin
 Let $u_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to V^*$. Find $u\in\text{AC}([0,T],V)$ and $\mathcal{P}\colon[0,T]\to V^*$ such that~\eqref{eqn:modeling:doubly-nonlinear-equation-constrain} holds.
 \end{prb}
 
-\section{A review of plasticity theory}
+\section{A review of gradient plasticity theory}
 \label{sec:plasticity-review}
+
+Plasticity theory concerns with the description of the mechanical behavior of solids beyond the elastic limit, when not recoverable deformations accumulates.
+
+In this section we give a concise description of plasticity theory, both at regime of small and large deformations, inserting it in the general framework proposed in Section~\ref{sec:ppv}.
+
+\subsection{Plasticity theory at small deformations}
+
+Let $\Omega\subset\mathbb{R}^d$, a bounded, open and Lipschitz domain, be the reference configuration of a body. Each $x\in\Omega$ is the reference position of a material point belonging to the body. The macroscopic configuration of the body is described by the displacement field $u\colon\Omega\to\mathbb{R}^d$ that assign to each material point $x\in\Omega$ the displacement $u(x)$ from its reference position. The displacement gradient is defined as $H=\grad u$ and is additively decomposed as $H=W+E$, where $W=\ske H$ represents a rigid spin of the material while $E=\sym H$ is the strain. The distortion of the microscopic structure of the body is described by the field $H_p\colon\Omega\to\text{Lin}$, called plastic distortion. We decompose additively $H_p=W_p+E_p$, where $W_p=\ske H_p$ is the plastic spin and $E_p=\sym H_p$ is the plastic strain. In what follows we assume\footnote{Nonzero plastic spin are considered by the micropolar continuum theories, or Cosserat theories introduced by the Cosserat brothers~\cite{cosserat1909} at the beginning of the twentieth century. They are suitable for describing, for example, granular materials when is relevant the change of the orientations of the grains.} for simplicity that that $W_p=0$. Moreover we also add the hypotheses of plastic incompressibility $\tr E_p=0$ so that $E_p\colon\Omega\to\text{DevSym}$: this hypotheses is suitable for the description of metals but it is not good for other kind of materials such as geomaterials, as we will discuss in Part~\ref{part:my-model}. Now the configuration of the system is described by the couples $z=(u,E_p)\in Z$ where the space $Z$ is chosen case by case depending on the particular constitutive model.
+
+The plastic strain $E_p$ can be considered as the elastically relaxed strain of the material, so we define the elastic strain as $E_e=E-E_p$.
+\begin{rmk}
+\label{rmk:plasticity-simplified}
+To clearly understand the significance of the definition of elastic strain $E_e$, it is helpful to have this picture in mind. We view the strain $E$ as resting upon the plastic strain $E_p$, with the elastic strain $E_e$ acting as the coupling mechanism that transfers force between them. This concept can be illustrated with the following simple mechanical model. Consider a damper with one end fixed to a wall and the other at horizontal position $x_p\in\mathbb{R}$, and a spring in series with the damper whose end is at horizontal position $x\in\mathbb{R}$. The configuration of the system is described by the couples $z=(x,x_p)\in\mathbb{R}^2$, and we view $x$ as the ``macroscopic'' configuration and $x_p$ as the internal or ``microscopic'' configuration. We define $x_e=x-x_p\in\mathbb{R}$ the length of the spring.
+\begin{center}
+\begin{tikzpicture}[thick, scale=1]
+% Connessioni verticali
+\draw (0,-1) -- (0.5,-1);
+\draw (4,-1) -- (3.5,-1);
+\draw[pattern=bricks] (4,-2) rectangle (6,-0);
+
+% Ramo Inferiore: Molla Te (disegnata segmento per segmento)
+\draw (0.5,-1) -- (0.571,-0.75) -- (0.714,-1.25) -- (0.857,-0.75) -- (1,-1.25) -- (1.143,-0.75) -- (1.286,-1.25) -- (1.429,-0.75) -- (1.5,-1);
+\node[anchor=north] at (1,-1.25) {$T_e$};
+\node[anchor=south] at (1,-0.75) {$x_e$};
+\draw (1.5,-1) -- (3,-1);
+
+% Ramo Inferiore: Smorzatore Tp
+\draw (3,-1.125) -- (3,-0.875); % Pistone
+\draw (2.5,-0.75) -- (3.5,-0.75) -- (3.5,-1.25) -- (2.5,-1.25); % Cilindro
+\node[anchor=north] at (3,-1.25) {$T_p$};
+
+\draw[fill=black] (0,-1) circle (0.03);
+\node[anchor=south] at (0,-1) {$x$};
+
+\draw[fill=black] (2,-1) circle (0.03);
+\node[anchor=south] at (2,-1) {$x_p$};
+
+\draw[latex-] (-1.1,-1) -- (-0.1,-1);
+\node[anchor=north] at (-0.55,-1) {$F$};
+\end{tikzpicture}
+\end{center}
+On $x$ acts the external force $F\in\mathbb{R}$, the wall exert a force $T_p\in\mathbb{R}$ on the damper and the ``macroscopic'' and ``microscopic'' points $x$ and $x_p$ exchange a force $T_e\in\mathbb{R}$. If we call $\tilde w=(\tilde v,\tilde v_p)\in\mathbb{R}^2$ a generic virtual rate of the system, and we define accordingly $\tilde v_e=\tilde v-\tilde v_e\in\mathbb{R}$ the elastic virtual rate, this configuration of forces is described by the internal and external virtual powers
+\[
+\dual{\mathcal{I},\tilde w}=T_e\tilde v_e+T_p=T_e(\tilde v-\tilde v_p)+T_p\tilde v_p\quad\text{and}\quad\dual{\mathcal{X},\tilde w}=F\tilde v
+\]
+respectively. Thus the equilibrium condition $\mathcal{I}=\mathcal{X}$ can be written as the ``macroscopic'' balance of forces $T_e=F$ together with the ``microscopic'' balance of forces $T_p=T_e$.
+\end{rmk}
+Motivated by the consideration in Remark~\ref{rmk:plasticity-simplified}, we consider the virtual rates $\tilde w=(\tilde v,\tilde V_p)\in Z$ of $z$, we define the elastic virtual rate as $\tilde V_e=E\tilde v-V_p$ and we consider and internal and an external virtual powers functionals of the form
+\[
+\dual{\mathcal{I},\tilde w}=\int_\Omega T_e:\tilde V_edx+\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx
+\quad\text{and}\quad
+\dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
+\]
+respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure. The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde L_p$, could be added, but in order to keep the discussion simpler we neglect them.
+
+By a simple application of the Green theorem and the fundamental lemma of the calculus of variations, one easily get the strong form of the equilibrium condition $\mathcal{I}=\mathcal{X}$,
+\begin{gather}
+\diver T_e+f=0\quad\text{in $\Omega$} \\
+T_en=h\quad\text{in $\partial\Omega$} \\
+\dev T_e-T_p+\diver K_p=0\quad\text{in $\Omega$} \\
+K_pn=0\quad\text{in $\partial\Omega$}.
+\end{gather}
+The first two conditions express the balance of macroscopic forces, while the last two represents the balance of microscopic forces.
+
+The choice of constitutive relations is driven by the idea that the elastic response is conservative while the plastic response is dissipative. Thus one choose a free energy $\Psi\colon Z\to\mathbb{R}$ and a dissipation potential $\Phi\colon Z\to[0,\infty)$ of the form
+\[
+\Psi(z)=\int_\Omega W_e(E_e)dx+\int_\Omega W_p(E_p,\grad E_p)dx\quad\text{and}\quad\Phi(\dot z)=\int_\Omega R(\dot E_p)dx,
+\]
+where
+\begin{itemize}
+\item[(i)] the elastic energy density $W_e\colon\text{Sym}\to\mathbb{R}$ and the plastic energy density $W_p\colon\text{DevPla}\to\mathbb{R}$ are differentiable and
+\item[(ii)] the plastic dissipation potential density $R\colon\text{DevSym}\to[0,\infty)$ is convex and satisfies $R(0)=0$.
+\end{itemize}
+The condition $\mathcal{I}\in\partial\Psi(z)+\partial\Phi(\dot z)$ imposes that
+\[
+T_e=\dind{W_e}{E_e}(E_e),\qquad T_p\in\dind{W_p}{E_p}(E_p,\grad E_p)+\partial R(\dot E_p)\quad\text{and}\quad K_p=\dind{W_p}{\grad E_p}(E_p,\grad E_p).
+\]
+Usually one assume a linear elastic response, corresponding to
+\[
+W_e(E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e=\frac{1}{2}\kappa(\tr E_e)^2+\mu|\dev E_e|^2,
+\]
+where $\kappa>0$ is the bulk modulus and $\mu$ is the shear modulus. A possible choice of the plastic free energy is
+\[
+W_p(E_p,\grad E_p)=w_p(E_p)+\frac{1}{2}l^2\mathfrak{B}_2|\grad E_p|^2
+\]
+where $\mathcal{B}_2>0$ is a constant with the dimensions of a stress and $l>0$ is a constant with the dimensions of length. The term containing the gradient of $E_p$ act as a regularization of the plastic strain field, since it penalize sharp variations of $E_p$. Moreover it includes an internal length scale on the model, that is otherwise absent in the classical non-gradient plasticity theory. The quantity $B_p=w_p'(E_p)$ is called back-stress and represents the conservative part of the plastic microforce. The classical Von Mises rate rate-independent constitutive relation for the dissipative part of the plastic microforce is obtained choosing $R(\dot E_p)=Y|\dot E_p|$, where $Y>0$ is the yield strength. In this case
+\[
+\partial R(\dot E_p)=
+\begin{cases}
+B(0,Y) & \text{if $\dot E_p=0$} \\
+\left\{Y\dfrac{\dot E_p}{|\dot E_p|}\right\} & \text{if $\dot E_p\neq0$}.
+\end{cases}
+\]
+Now, the microforce balance can be written as
+\[
+\dev T_e-B_p+\diver K_p\in\partial R(\dot E_p).
+\]
+Then the Von Mises costitutive relation means that if $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
+\begin{rmk}
+More general expression of $R$ can be obtained as follows. One choose a bounded, closed and convex set $C\subset\text{DevSym}$ and impose that
+\[
+\dev T_e-B_p+\diver K_p\in C\quad\text{and}\quad\dot E_p\in N_C(\dev T_e-B_p+\diver K_p)
+\]
+where $N_C$ is the outer normal cone to $C$. The first condition is the requirement that the dissipative plastic force must belong to $C$, the second is a flow rule of the plastic strain. Using a well known result of convex analysis~\cite[Corollary 5.2]{ekeland-temam}, this is equivalent to
+\[
+\dev T_e-B_p+\diver K_p\in\partial\sigma_C(\dot E_p)
+\]
+where $\sigma_C\colon\text{DevSym}\to\mathbb{R}$ is the support function of $C$, defined by
+\[
+\sigma_C(A)=\sup_{S\in C}S\cdot A.
+\]
+This behavior is obtained by choosing the dissipation potential density $R=\sigma_C$.
+\end{rmk}
+
+\subsection{Plasticity theory at large deformations}
+
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. The macroscopic configuration of the body is described by the placement map $\chi\colon\Omega\to\mathbb{R}^d$ that assign to each material point $x\in\Omega$ its position $\chi(x)$. The local state of deformation is described by the deformation gradient $F=\grad\chi\colon\Omega\to\text{Lin}$. The Cauchy deformation tensor is defined as $C=F^TF$ and have the important property of being invariant under superimposed rigid placement: if $\chi^*(X)=Q\chi(X)+a$, with $Q\in\text{Orth}^+$ and $a\in\mathbb{R}^d$, then $F^*=QF$ and $C^*=C$. The distortion of the microscopic structure is described by the plastic distortion $F_p\colon\Omega\to\text{Lin}$. Then the configuration of the system is described by the couple $z=(\chi,F_p)\in Z$ where the particular definition of the function space $Z$ depends on the choice of constitutive relations and it is not important now. The virtual rates are denoted as $\tilde w=(\tilde v,\tilde V_p)\in Z$.
+\begin{rmk}
+In accordance with the discussion made in Section~\ref{sec:ppv}, we do not include the constrain $\det F>0$ (the impenetrability condition) and $\det F_p=1$ (the plastic incompressibility) in the definition of $Z$.
+\end{rmk}
+
+The plastic distortion can be considered as the locally elastically relaxed state of the material, so we define the elastic distortion as $F_e=FF_p^{-1}$ for all $z=(\chi,F_p)$ with $\det F_p>0$. A measure of the elastic distortion that is not affected by superimposed rigid placements\footnote{Given $Q\in\text{Orth}^+$ and $a\in\mathbb{R}^d$, if one superimpose the rigid placement $x\mapsto x^*=Qx+a$, then the placement transforms as $\chi^*=Q\chi+a$ while $F_p^*=F_p$ does not change since it is referred to the reference configuration.} is the Cauchy elastic distortion tensor $C_e=F_e^TF_e=F_p^{-T}CF_p^{-1}$. Given a time evolution $z=(\chi,F_p)\colon\Omega\times[0,T]\to\mathbb{R}^d\times\text{Lin}$ with $\det F_p>0$, we have that
+\[
+\dot F_e=\dot FF_p^{-1}-FF_p^{-1}\dot F_pF_p^{-1}=\dot FF_p^{-1}-F_e\dot F_pF_p^{-1}.
+\]
+Consistently with that, for all $z,\tilde w\in Z$, we define $\tilde V_e=(\grad\tilde v)F_p^{-1}-F_e\tilde V_pF_p^{-1}$.
+
+Motivated by Remark~\ref{rmk:plasticity-simplified}, we decide that for $z=(\chi,F_p)\in Z$ with $\det F_p>0$, the internal and and external virtual power functionals are of the form
+\begin{equation}
+\label{eqn:ppv-large-plasticity}
+\dual{\mathcal{I},\tilde w}=\int_\Omega P_e:\tilde V_edx+\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx
+\quad\text{and}\quad
+\dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
+\end{equation}
+Here $P_e\colon\Omega\to\text{Lin}$ is the elastic first Piola stress, $T_p\colon\Omega\to\text{Lin}$ is the plastic microforce, $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the plastic microstress, $f\colon\Omega\to\mathbb{R}^d$ is the external volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the external surface force. The strong form of the equilibrium equation $\mathcal{I}=\mathcal{X}$ can be easily obtained using the Green lemma and the fundamental lemma of the calculus of variations; we find
+\begin{gather*}
+\diver(P_eF_p^{-T})+f=0\quad\text{in $\Omega$} \\
+P_eF_p^{-T}n=h\quad\text{in $\partial\Omega$} \\
+F_e^TP_eF_p^{-T}-T_p+\diver K_p=0\quad\text{in $\Omega$} \\
+K_pn=0\quad\text{in $\partial\Omega$}.
+\end{gather*}
+This corresponds to the balance of macroscopic and microscopic forces.
+
+The choice of the constitutive relations follows the same criteria used with the small deformation model. We consider $\Psi\colon Z\to\mathbb{R}\cup\{\infty\}$ and $\Phi\colon Z\times Z\to[0,\infty]$ of the form
+\[
+\Psi(z)=\int_\Omega W_e(F_e)dx+\int_\Omega W_p(F_p,\grad F_p)dx\quad\text{and}\quad\Phi(z,\dot z)=\int_\Omega R(F_p,\dot F_p)dx.
+\]
+The elastic free energy density $W_e\colon\text{Lin}\to\mathbb{R}\cup\{\infty\}$ is assumed to satisfy $W(F_e)=\infty$ if and only if $\det F_e\le0$ (in order to enforce the impenetrability constrain) and to be differentiable on its domain. The requirement of indifference over superimposed rigid motions requires $W_e$ to be of the form $W_e(F_e)=\hat{W}_e(F_e^TF_e)$ form some $W_e\colon\text{Sym}\to\mathbb{R}\cup\{\infty\}$. Similarly the plastic free energy density $W_p\colon\text{Lin}\times\left(\text{Lin}\otimes\mathbb{R}\right)\to\mathbb{R}\cup\{\infty\}$ is supposed to satisfy $W_p(F_p,\grad F_p)=\infty$ if $\det F_p\neq1$ so that the plastic incompressibility is implied. The analogue of the Von Mises constitutive relation (known as $J_2$ flow theory) is obtained choosing
+\[
+R(F_p,\dot F_p)=\begin{cases}
+Y|\dot F_pF_p^{-1}| & \text{if $\det F_p=1$} \\
+\infty & \text{otherwise}.
+\end{cases}
+\]
+Notice that in this definition appears the deviatoric plastic rate $L_p=\dot F_pF_p^{-1}$ (see also Remark~\ref{rmk:plasticity-lie-group}).
+
+\begin{rmk}
+\label{rmk:plasticity-lie-group}
+A more geometric approach to plasticity theory at large strain (that we do not adopt in the spirit of the discussion we made in Section~\ref{sec:ppv}) is the following. Let $M$ be the manifold of the couples $z=(\chi,F_p)\in Z$ such that $\det F>0$ and $\det F_p=1$. It is a Lie group (at least formally) with respect to the group operation
+\[
+\begin{split}
+\bullet\colon M\times M&\to M, \\
+(z^1,z^2)&\mapsto z_1\bullet z_2=(\chi^1\circ\chi^2,(F_p^1\circ \chi^2)F_p^2).
+\end{split}
+\]
+Given a time evolution $z=(\chi,F_p)\colon[0,T]\to M$ with $\det F>0$, we define the velocity gradient as $L=\dot FF^{-1}$ and the plastic rate as $L_p=\dot F_pF_p^{-1}\colon\Omega\times[0,T]\to\text{Lin}$. Notice that the plastic strain rate is deviatoric, i.e., $L_p(x,t)\in\text{Dev}$ for all $(x,t)\in\Omega\times[0,T]$. Indeed since $\det F_p=1$, then
+\[
+0=\frac{d}{dt}\det F_p=\cof F_p:\dot F_p=\det F_p F_p^{-T}:\dot F_p=I:\dot F_pF_p^{-1}=\tr L_p.
+\]
+If we define the elastic rate as $L_e=\dot F_eF_e^{-1}$ we easily see that $L=L_e+L_p$. This means that the Lie algebra is the linear space $\mathfrak{m}$ of the virtual rates $\tilde w=(\tilde v,\tilde L_p)$ with $\tilde v\colon\Omega\to\mathbb{R}^d$ and $\tilde L_p=\tilde V_pF_p^{-1}\colon\Omega\to\text{DevSym}$. Consistently we let $\tilde L=(\grad\tilde v)F^{-1}$ and $\tilde L_e=\tilde L-\tilde L_p$. Then we can consider the internal and external virtual powers functional $\mathcal{I}$ and $\mathcal{X}$ as elements of $\mathfrak{m}^*$ of the form
+\[
+\dual{\mathcal{I},\tilde w}=\int_\Omega T_e:\tilde L_edx+\int_\Omega\left(T_p:\tilde L_p+K_p\threedots\grad\tilde L_p\right)dx
+\quad\text{and}\quad
+\dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v,
+\]
+\end{rmk}
+where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:ppv-large-plasticity}.
 
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
@@ -4117,6 +4294,8 @@ $\text{Lin}^+$ & $d\times d$ matrices with positive determinant \\
 $\text{Sym}$ & $d\times d$ symmetric matrices \\
 $\text{Dev}$ & $d\times d$ deviatoric matrices \\
 $\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
+$\text{DevPla}$ & defined as $\text{DevSym}\otimes(\text{DevSym}\otimes\mathbb{R})$ \\
+$\text{Lin}^1$ & $d\times d$ matrices with unit determinant \\
 \bottomrule
 \end{tabular}
 \end{center}
