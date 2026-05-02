@@ -99,12 +99,12 @@
 \contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{69}{appendix.B}%
 \contentsline {section}{\tocsection {}{1}{Some classical results}}{69}{section.B.1}%
 \contentsline {subsection}{\tocsubsection {}{1.1}{A general form of the Gronwall inequality}}{69}{subsection.B.1.1}%
-\contentsline {section}{\tocsection {}{2}{Linear functional analysis}}{69}{section.B.2}%
-\contentsline {subsection}{\tocsubsection {}{2.1}{Other}}{69}{subsection.B.2.1}%
+\contentsline {section}{\tocsection {}{2}{Linear functional analysis}}{70}{section.B.2}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Other}}{70}{subsection.B.2.1}%
 \contentsline {subsection}{\tocsubsection {}{2.2}{Bochner spaces}}{70}{subsection.B.2.2}%
 \contentsline {subsection}{\tocsubsection {}{2.3}{Generalized mixed elliptic problems}}{71}{subsection.B.2.3}%
-\contentsline {section}{\tocsection {}{3}{Nonlinear functional analysis}}{73}{section.B.3}%
-\contentsline {subsection}{\tocsubsection {}{3.1}{Other}}{73}{subsection.B.3.1}%
+\contentsline {section}{\tocsection {}{3}{Nonlinear functional analysis}}{74}{section.B.3}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Other}}{74}{subsection.B.3.1}%
 \contentsline {subsection}{\tocsubsection {}{3.2}{Implicit function theorem}}{74}{subsection.B.3.2}%
 \contentsline {subsection}{\tocsubsection {}{3.3}{Fixed point theorems}}{74}{subsection.B.3.3}%
 \contentsline {subsection}{\tocsubsection {}{3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{75}{subsection.B.3.4}%

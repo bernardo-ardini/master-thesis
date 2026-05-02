@@ -4163,6 +4163,17 @@ z(t)\le Z(t)\le e^{\int_0^t\alpha(s)ds}\left(C+\int_0^t\beta(s)e^{-\int_0^s\alph
 \end{equation*}
 This is exactly the thesis.
 \end{proof}
+The same inequality has also a discrete version that can be proved similarly.
+\begin{prop}[discrete Gronwall inequality]
+Let $z_n\in\mathbb{R}$, $a_n\ge0$, $b_n\ge 0$ and $C\in\mathbb{R}$ and $\tau>0$ such that
+\[
+z_k\le C+\tau\sum_{j=1}^{k-1}(a_jz_j+b_j)\quad\text{for $k\ge0$}.
+\]
+Then
+\[
+z_k\le\left(C+\tau\sum_{j=1}^{k-1}b_j\right)e^{\tau\sum_{j=1}^{k-1}a_j}\quad\text{for $k\ge0$}.
+\]
+\end{prop}
 
 \section{Linear functional analysis}
 
@@ -4230,11 +4241,11 @@ from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v
 
 \begin{thm}[Aubin--Lions--Simon lemma]
 \label{thm:aubin-lions}
-Let $T>0$ and $V\subset H\subset E$ be Banach spaces. Assume that the embedding of $V$ in $H$ is compact and the embedding of $H$ in $E$ is compact. Let $p$ and $q$ in $[1,\infty]$. Then the space
+Let $T>0$ and $V\subset H\subset E$ be Banach spaces. Assume that the embedding of $V$ in $H$ is compact and the embedding of $H$ in $E$ is continuous. Let $p$ and $q$ in $[1,\infty]$. Then the space
 \[
 \left\{u\in L^p((0,T),V)\;\middle|\;\dot u\in L^q((0,T),E)\right\}
 \]
-i compactly embedded in
+is compactly embedded in
 \begin{itemize}
 \item[(i)] $L^p((0,T),H)$ if $p<\infty$
 \item[(ii)] $C([0,T],H)$ if $p=\infty$ and $q>1$.
