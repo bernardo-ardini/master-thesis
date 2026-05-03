@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  2 MAY 2026 22:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  3 MAY 2026 04:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1590,18 +1590,18 @@ Premise
 ]
 Chapter 1
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 148.
+(Font)              scaled to size 10.0pt on input line 146.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.0pt on input line 148.
+(Font)              scaled to size 10.0pt on input line 146.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 148.
+(Font)              scaled to size 7.3pt on input line 146.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 150.
+(Font)              scaled to size 10.0pt on input line 148.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 155.
+(Font)              scaled to size 7.3pt on input line 153.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 155.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 167
+(Font)              scaled to size 5.5pt on input line 153.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 165
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
@@ -1614,7 +1614,7 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 live/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 
 [3]
-Overfull \hbox (2.13603pt too wide) in paragraph at lines 262--264
+Overfull \hbox (2.13603pt too wide) in paragraph at lines 260--262
 [][][]\T1/zpltlf/m/sc/10 Example \T1/zpltlf/m/n/10 1.11\T1/zpltlf/m/sc/10 . []\
 T1/zpltlf/m/n/10 (Ex-am-ple []1.3[] con-tin-ued) To en-sure that $\OML/npxmi/m/
 it/10 z\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
@@ -1629,26 +1629,29 @@ $\T1/zpltlf/m/n/10 , one choose $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10
 
 
 [4]
+Overfull \vbox (1.75797pt too high) has occurred while \output is active []
+
+
 
 [5]
 
 [6]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 407.
+(Font)              scaled to size 6.2pt on input line 414.
 
 
 [7]
 
 [8]
+
+[9]
 Chapter 2
 
 
-[9
+[10
 
 
 ]
-
-[10]
 
 [11]
 
@@ -1661,15 +1664,15 @@ Chapter 2
 [15]
 
 [16]
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 10.0pt on input line 1033.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 7.3pt on input line 1033.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 5.5pt on input line 1033.
-
 
 [17]
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1044.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 7.3pt on input line 1044.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 5.5pt on input line 1044.
+
 
 [18]
 
@@ -1677,23 +1680,25 @@ LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
 
 [20]
 
+[21]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1253.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1253.
+(hyperref)                replaced by space on input line 1264.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1253.
+(hyperref)                removing `\noindent' on input line 1264.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1253.
+(Font)              scaled to size 20.74pt on input line 1264.
 
 
-[21
+[22
 
 
 ]
@@ -1701,26 +1706,24 @@ Chapter 3
 PGFPlots: reading {figures/necking-experimental.dat}
 
 
-[22
+[23
 
 
 ]
 
-[23]
+[24]
 Chapter 4
 
 
-[24
+[25
 
 
 ]
 
-[25]
+[26]
 Missing character: There is no h in font eusm10!
 Missing character: There is no i in font eusm10!
 
-
-[26]
 
 [27]
 
@@ -1729,15 +1732,15 @@ Missing character: There is no i in font eusm10!
 [29]
 
 [30]
+
+[31]
 Chapter 5
 
 
-[31
+[32
 
 
 ]
-
-[32]
 
 [33]
 
@@ -1758,9 +1761,11 @@ Chapter 5
 [41]
 
 [42]
+
+[43]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2592: fill between: activating layered grap
+Package pgfplots info on input line 2604: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1778,71 +1783,69 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2592: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2604: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2592.
+(Font)              scaled to size 8.0pt on input line 2604.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2606: fill between: activating layered grap
+Package pgfplots info on input line 2618: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2606: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2618: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
 
-[43]
-PGFPlots: reading {figures/instability.dat}
-PGFPlots: reading {figures/instability.dat}
-
-
 [44]
+PGFPlots: reading {figures/instability.dat}
+PGFPlots: reading {figures/instability.dat}
+
 
 [45]
 
 [46]
+
+[47]
 PGFPlots: reading {figures/instabilitypl(2).dat}
 PGFPlots: reading {figures/instabilitypl(3).dat}
 PGFPlots: reading {figures/instabilitypl(4).dat}
 
 
-[47]
+[48]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2823.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2835.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 2823.
+(hyperref)                replaced by space on input line 2835.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2823.
+(hyperref)                removing `\noindent' on input line 2835.
 
-
-
-[48
-
-
-]
-Chapter 6
 
 
 [49
 
 
 ]
-Chapter 7
+Chapter 6
 
 
 [50
 
 
 ]
+Chapter 7
 
-[51]
+
+[51
+
+
+]
 
 [52]
 
@@ -1869,52 +1872,52 @@ Chapter 7
 [63]
 
 [64]
+
+[65]
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
-
-[65]
 
 [66]
 
 [67]
 
 [68]
+
+[69]
 Chapter 8
 
 
-[69
+[70
 
 
 ]
 
-[70]
+[71]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4283.
+(hyperref)                removing `\noindent' on input line 4295.
 
-
-
-[71
-
-
-]
-Appendix A
 
 
 [72
 
 
 ]
-Appendix B
+Appendix A
 
 
 [73
 
 
 ]
+Appendix B
 
-[74]
+
+[74
+
+
+]
 
 [75]
 
@@ -1939,30 +1942,34 @@ Appendix B
 [85]
 
 [86]
+
+[87]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5320.
+5332.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5320.
+(Font)              scaled to size 10.0pt on input line 5332.
 
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5321--5321
+
+[88
+
+
+
+
+]
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5333--5333
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[87
+[89]
 
-
-
-
-]
-
-[88] (./text.aux (./frontespizio.aux))
+[90] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1972,10 +1979,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47781 strings out of 473197
- 1049192 string characters out of 5718605
- 1916080 words of memory out of 5000000
- 69616 multiletter control sequences out of 15000+600000
+ 47843 strings out of 473197
+ 1051481 string characters out of 5718605
+ 1916944 words of memory out of 5000000
+ 69663 multiletter control sequences out of 15000+600000
  697611 words of font info for 252 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2037s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2000,10 +2007,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (90 pages, 872643 bytes).
+Output written on text.pdf (92 pages, 880469 bytes).
 PDF statistics:
- 1406 PDF objects out of 1440 (max. 8388607)
- 1263 compressed objects within 13 object streams
- 476 named destinations out of 1000 (max. 500000)
+ 1452 PDF objects out of 1728 (max. 8388607)
+ 1306 compressed objects within 14 object streams
+ 491 named destinations out of 1000 (max. 500000)
  302 words of extra memory for PDF output out of 10000 (max. 10000000)
 
