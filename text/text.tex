@@ -389,6 +389,7 @@ Now, the microforce balance can be written as
 \]
 Then the Von Mises costitutive relation means that if $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
 \begin{rmk}
+\label{rmk:flow-rule}
 More general expression of $R$ can be obtained as follows. One choose a bounded, closed and convex set $C\subset\text{DevSym}$ and impose that
 \[
 \dev T_e-B_p+\diver K_p\in C\quad\text{and}\quad\dot E_p\in N_C(\dev T_e-B_p+\diver K_p)
@@ -2837,7 +2838,17 @@ Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of thi
 
 \chapter{Introduction}
 
-Fino agli anni cinquanta l'applicazione della teoria della plasticità è rimasta confinata alla descrizione del comportamento meccanico dei metalli. Nel 1952, Drucker e Prager~\cite{DruckerPrager1952} estesero la teoria per descrivere il comportamento meccanico dei suoli, interprentando il classico criterio sulla resistenza limite delle terre di Mohr--Coulomb~\cite{Coulomb1776,Mohr1900} come un criterio di snervamento plastico. Inoltre proposero un nuovo criterio di snernervamento, oggi appunto noto come criterio di Drucker--Prager. 
+Fino agli anni cinquanta l'applicazione della teoria della plasticità è rimasta confinata alla descrizione del comportamento meccanico dei metalli. Nel 1952, Drucker e Prager~\cite{DruckerPrager1952} estesero la teoria per descrivere il comportamento meccanico dei suoli, interprentando il classico criterio sulla resistenza limite delle terre di Mohr--Coulomb~\cite{Coulomb1776,Mohr1900} come un criterio di snervamento plastico. Inoltre proposero un nuovo criterio di snernervamento, oggi appunto noto come criterio di Drucker--Prager.
+
+La caratteristica del criterio di Drucker--Prager, assente nella plasticità classica dei metalli, è che la resistenza allo snervamento cresce con l'aumentare della pressione. Questo comportamento è opportuno per descrivere il comportamento plastico di materiali come i suoli per via della loro natura granulare. In effetti in questi casi il comportamento plastico è dovuto allo scorrimento dei grani di cui il materiale è composto e tale scorrimento viene ostacolato dall'attrito interno tra i grani quanto più essi sono premuti gli uni contro gli altri. Come abbiamo visto nella Sezione~\ref{sec:plasticity-review} del Capitolo~\ref{chap:modeling}, nella teoria della plasticità classica, fissato l'insieme di ammissibilità per lo stress, la legge di flusso dello strain plastico viene automaticamente determinata dalla condizione di normalità del legge del flusso plastico (si veda la Nota~\ref{rmk:flow-rule} e la discussione che segue): si dice che la legge di flusso è \emph{associata}. Nel caso cui il criterio di ammissibilità tiene conto anche della pressione, la condizione di normalità impone che lo stain plastico non possa rimanere deviatorico, per cui l'ipotesi di incomprimibilità plastica va abbondonato. Questo corrisponde in realtà ad un fenomeno meccanico reale chiamato \emph{dilatanza} nel contesto della geotecnica e ha una precisa interpretazione micromeccanica: quando avviene il flusso plastico i grani scorrono gli uni sugli altri e nel farlo passano da una configurazione di impacchettamento più ottimale ad una meno ottimale provocando l'aumento del volume. Tuttavia la legge di flusso associata sovrastima la dilatanza; per questo ovviare a questo è nono state sviluppate delle leggi di flusso non associate, in cui cioè la legge di flusso plastico è scelta indipendentamente dall'insieme di ammissibilità dello stess.
+
+L'introduzione della legge di flusso non associata comporta delle complicazioni matematiche aggiuntive perché rompe la struttura variazionale standard della teoria della plasticità classica; recentemente~\cite{morafrancfort,StefanelliVikelis2024} è stato dimostrato che la plasticità non associata ammette in realtà una formulazione variazionale e sono stati ottenuti dei risultati di esistenza.
+
+Noi riteniamo che la legge di flusso non associata 
+
+Questa parte della tesi è dedicata allo studio di questi modelli di plasticità in cui la resistenza allo snervamento è influenzata dalla pressione. In questo capitolo introduttivo descriveremo più in dettaglio il modello di Drucker--Prager e i medelli di flusso non associati
+
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is described by the couples $z=(u,E_p)$ with $u\colon\Omega\to\mathbb{R}^d$ the displacement field and $E_p\colon\Omega\to\text{Sym}$ the plastic strain. 
 
 \chapter{Small deformation model}
 

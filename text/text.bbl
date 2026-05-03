@@ -811,7 +811,6 @@
       \field{labeltitlesource}{title}
       \field{title}{Quasistatic evolution in non-associative plasticity revisited}
       \field{year}{2017}
-      \true{nocite}
     \endentry
     \entry{non-smooth-thermomechanics}{book}{}{}
       \name{author}{1}{}{%
@@ -1857,8 +1856,8 @@
     \endentry
     \entry{steffranc}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=e1956c9319b583fcfc9d840283c1df6d}{%
-           family={Stafanelli},
+        {{hash=83d84a094150e8fb893dd29fd60a3a0d}{%
+           family={Stefanelli},
            familyi={S\bibinitperiod},
            given={U.},
            giveni={U\bibinitperiod}}}%
@@ -1868,14 +1867,14 @@
            given={G.A.},
            giveni={G\bibinitperiod}}}%
       }
-      \strng{namehash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{fullhash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{fullhashraw}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{bibnamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{authorbibnamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{authornamehash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{authorfullhash}{5cf9a519fe90d6c78a663d78a7558ca4}
-      \strng{authorfullhashraw}{5cf9a519fe90d6c78a663d78a7558ca4}
+      \strng{namehash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{fullhash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{fullhashraw}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{bibnamehash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{authorbibnamehash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{authornamehash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{authorfullhash}{d60bf8dea098fcba226ae30fa0cc3280}
+      \strng{authorfullhashraw}{d60bf8dea098fcba226ae30fa0cc3280}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
@@ -1883,6 +1882,41 @@
       \field{journaltitle}{Applied Mathematics Research eXpress}
       \field{title}{Quasi-Static Evolution for the Armstrong–Frederick Hardening-Plasticity Model}
       \field{year}{2013}
+    \endentry
+    \entry{StefanelliVikelis2024}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=fd2675cf6df143fc4754c08408d7e227}{%
+           family={Stefanelli},
+           familyi={S\bibinitperiod},
+           given={Ulisse},
+           giveni={U\bibinitperiod}}}%
+        {{hash=d683a9d6bb5aab1775aeffd14f93d937}{%
+           family={Vikelis},
+           familyi={V\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{fullhash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{fullhashraw}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{bibnamehash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{authorbibnamehash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{authornamehash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{authorfullhash}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{authorfullhashraw}{8c65c37b858eef43afde4506c435d0c5}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ESAIM: Control, Optimisation and Calculus of Variations}
+      \field{title}{Quasistatic Nonassociative Plasticity at Finite Strains}
+      \field{volume}{30}
+      \field{year}{2024}
+      \field{pages}{Paper No. 17\bibrangessep 1\bibrangedash 33}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1051/cocv/2024017
+      \endverb
     \endentry
     \entry{Tresca1872}{article}{}{}
       \name{author}{1}{}{%
