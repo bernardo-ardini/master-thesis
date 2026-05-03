@@ -624,6 +624,39 @@
       \field{pages}{1509\bibrangedash 1580}
       \range{pages}{72}
     \endentry
+    \entry{DruckerPrager1952}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=ee0ce5a321d8116708e710d9fe4b5dc9}{%
+           family={Drucker},
+           familyi={D\bibinitperiod},
+           given={Daniel\bibnamedelima C.},
+           giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=c0483a0bba8a1e0da1e84571466d6340}{%
+           family={Prager},
+           familyi={P\bibinitperiod},
+           given={William},
+           giveni={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{fullhash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{fullhashraw}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{bibnamehash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{authorbibnamehash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{authornamehash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{authorfullhash}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{authorfullhashraw}{14cc48aaa79eecea7ede862347681d8c}
+      \field{sortinit}{D}
+      \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Quarterly of Applied Mathematics}
+      \field{number}{2}
+      \field{title}{Soil Mechanics and Plastic Analysis or Limit Design}
+      \field{volume}{10}
+      \field{year}{1952}
+      \field{pages}{157\bibrangedash 165}
+      \range{pages}{9}
+    \endentry
     \entry{duhem1906}{book}{}{}
       \name{author}{1}{}{%
         {{hash=3d107dc63a0d35184e791430f6a92380}{%
@@ -1418,6 +1451,33 @@
       \field{year}{1928}
       \field{pages}{161\bibrangedash 185}
       \range{pages}{25}
+    \endentry
+    \entry{Mohr1900}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=03154bca52dadcf46d2972bf1086aa8a}{%
+           family={Mohr},
+           familyi={M\bibinitperiod},
+           given={Otto},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{fullhash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{fullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{bibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{authorbibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{authornamehash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{authorfullhash}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{authorfullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Zeitschrift des Vereines Deutscher Ingenieure}
+      \field{title}{Welche Umstände bedingen die Elastizitätsgrenze und den Bruch eines Materials?}
+      \field{volume}{44}
+      \field{year}{1900}
+      \field{pages}{1524\bibrangedash 1530}
+      \range{pages}{7}
     \endentry
     \entry{Moreau1974}{incollection}{}{}
       \name{author}{1}{}{%
