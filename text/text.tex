@@ -2853,6 +2853,8 @@ The material is organized as follows. In this introductory chapter we briefly re
 
 \section{The classical plasticity theories of pressure sensitive plastic materials}
 
+We now describe the classical plasticity theory describing pressure sensitive plastic material with a possibly non-associated flow rule. We will give a presentation which is compatible with the framework of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}.
+
 Let $\Omega$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assume since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
 \[
 \dual{\mathcal{I},\tilde w}=\int_\Omega\left(T_e:\tilde V_edx+T_p:\tilde V_p\right)dx
@@ -2871,12 +2873,17 @@ We now discuss the choice of constitutive relations. We assume that the free ene
 \[
 \Psi(z)=\int_\Omega\left(W_e(E_e)+W_p(E_p)\right)dx,
 \]
-where $W_e$ and $W_p$ form $\text{Sym}$ to $\mathbb{R}$ are the elastic and plastic free energy which are supposed to be differentiable. This gives the constitutive relation for the elastic stress $T_e=W_e'(E_e)$. If we split the plastic force $T_p$ as the sum of a conservative back-stress $B_p$ (for example $B_p=\mathfrak{B}E_p$, with $\mathfrak{B}>0$ and a dissipative plastic force $A_p$, then $B_p=W_p'(E_p)$. Notice that, having written $T_p=A_p+B_p$, the equilibrium of microforces can be written as $A_p=T_e-B_p$ in $\Omega$. To characterize the plastic response
+where $W_e$ and $W_p$ form $\text{Sym}$ to $\mathbb{R}$ are the elastic and plastic free energy which are supposed to be differentiable. This gives the constitutive relation for the elastic stress $T_e=W_e'(E_e)$. If we split the plastic force $T_p$ as the sum of a conservative back-stress $B_p$ (for example $B_p=\mathfrak{B}E_p$, with $\mathfrak{B}>0$ and a dissipative plastic force $A_p$, then $B_p=W_p'(E_p)$. Notice that, having written $T_p=A_p+B_p$, the equilibrium of microforces can be written as
+\begin{equation}
+\label{eqn:Ap}
+A_p=T_e-B_p=-\dind{W}{E_p}(Eu,E_p)\quad\text{in $\Omega$},
+\end{equation}
+where $W(Eu,E_p)=W_e(Eu-E_p)+W_p(E_p)$. To characterize the plastic response
 \begin{itemize}
-\item[(i)] we require the admissibility condition $A_p\in C$ where $C=\{f\le0\}\subset\text{Sym}$, with $f\colon\text{Sym}\to\mathbb{R}$ a convex \emph{yield function}, and
-\item[(ii)] we impose the flow rule $\dot E_p=0$ if $A_p\in\inter C$ and $\dot E_p$ belongs to the normal outer cone to $\{A\in\text{Sym}\;|\;g(A)\le g(A_p)\}$ at $A_p$ if $A_p\in\partial C$, where $g\colon\text{Sym}\to\mathbb{R}$ is a convex \emph{plastic potential}.
+\item[(i)] we require the admissibility condition $A_p\in C$ where $C=\{f\le0\}\subset\text{Sym}$, with $f\colon\text{Sym}\to\mathbb{R}$ a convex \emph{yield function} satisfying $f(0)<0$, and
+\item[(ii)] we impose the flow rule $\dot E_p=0$ if $A_p\in\inter C$ and $\dot E_p$ belongs to the normal outer cone to $L(A_p)=\{A\in\text{Sym}\;|\;g(A)\le g(A_p)\}$ at $A_p$ if $A_p\in\partial C$, where $g\colon\text{Sym}\to\mathbb{R}$ is a convex \emph{plastic potential}.
 \end{itemize}
-When the yield function $f$ coincides with the plastic potential $g$, then the flow rule reduces to $\dot E_p\in N_C(A_p)$ which is the normality rule. When $f=g$ we say that the flow rule is associated, while when $f\neq g$ we say that the flow rule is non-associated. This is the way in which the plastic response is characterized in the classical presentations of non-associated plasticity models. However this formulation does not fit directly into the framework of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} and is not suitable for proving existence theorems. A better reformulation is described in~\cite{Laborde1987,morafrancfort,StefanelliVikelis2024} and is described in the following lemma.
+When the yield function $f$ coincides with the plastic potential $g$, then the flow rule reduces to $\dot E_p\in N_C(A_p)$ which is the normality rule. When $f=g$ we say that the flow rule is associated, while when $f\neq g$ we say that the flow rule is non-associated. This is the way in which the plastic response is characterized in the classical presentations of non-associated plasticity models. However this formulation does not fit directly into the framework of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} and is not suitable for proving existence theorems. A better reformulation is described in~\cite{Laborde1987,morafrancfort,StefanelliVikelis2024} and is reproduced in the following lemma.
 \begin{lemma}
 The admissibility condition and the flow rule are equivalent to
 \begin{equation}
@@ -2892,14 +2899,33 @@ In turn, the inclusions in~\eqref{eqn:reformulation} are also equivalent to
 \label{eqn:reformulation-2}
 A_p\in\partial\hat{R}(A_p,\dot E_p),
 \end{equation}
-where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty)$ is defined as
+where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty]$ is defined as
 \[
 \hat{R}(A_p,\dot E_p)=\sup_{A\in\text{Sym}}A:\dot E_p=\sigma_{\hat{C}(A_p)}(\dot E_p).
 \]
 \end{lemma}
 \begin{proof}
-It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$, and if $A_p\in\partial\hat{C}(A_p)$ then 
+It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$. Instead, if $A_p\in\partial\hat{C}(A_p)$ then $f(A_p)=0$ so that $\hat{C}(A_p)=L(A_p)$ and $N_{\hat{C}(A_p)}(A_p)=N_{L(A_p)}$. This proves the first equivalence.
+
+The second equivalence follows from a well known results of complex analysis~\cite[Corollary 5.2]{ekeland-temam}.
 \end{proof}
+Now in order to write the inclusion~\eqref{eqn:reformulation-2} as a true constitutive relation, i.e., expressing the dependence of $A_p$ on kinematical quantities alone, one can use~\eqref{eqn:Ap}. Thus we define $R\colon\text{Sym}\times\text{Sym}\times\text{Sym}\to[0,\infty]$ by
+\[
+R(Eu,E_p,\dot E_p)=\hat{R}\left(-\dind{W}{E_p}(Eu,E_p),\dot E_p\right)
+\]
+and we require that $A_p\in\partial R(Eu,E_p,\dot E_p)$. This correspond to the choice of the dissipation potential $\Psi\colon Z\times Z\to[0,\infty]$ defined as
+\[
+\Psi(z,\dot z)=\int_\Omega R(Eu,E_p,\dot E_p)dx.
+\]
+\begin{rmk}
+If the dependence on plastic strain gradients is included, the balance of microforces~\eqref{eqn:Ap} becomes
+\[
+A_p=T_e-B_p+\diver K_p.
+\]
+The quantity $\diver K_p$ is not defined as a function in general. This prevents the possibility of defining $R$ from $\hat R$ by a simple substitution.
+\end{rmk}
+
+\section{The Drucker--Prager yield criterion}
 
 \section{An existence result}
 
