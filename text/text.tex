@@ -346,12 +346,15 @@ Motivated by the consideration in Remark~\ref{rmk:plasticity-simplified}, we con
 respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure. The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde L_p$, could be added, but in order to keep the discussion simpler we neglect them.
 
 By a simple application of the Green theorem and the fundamental lemma of the calculus of variations, one easily get the strong form of the equilibrium condition $\mathcal{I}=\mathcal{X}$,
+\begin{subequations}
+\label{eqn:equilibrium-plasticity}
 \begin{gather}
 \diver T_e+f=0\quad\text{in $\Omega$} \\
 T_en=h\quad\text{in $\partial\Omega$} \\
 \dev T_e-T_p+\diver K_p=0\quad\text{in $\Omega$} \\
 K_pn=0\quad\text{in $\partial\Omega$}.
 \end{gather}
+\end{subequations}
 The first two conditions express the balance of macroscopic forces, while the last two represents the balance of microscopic forces.
 
 The choice of constitutive relations is driven by the idea that the elastic response is conservative while the plastic response is dissipative. Thus one choose a free energy $\Psi\colon Z\to\mathbb{R}$ and a dissipation potential $\Phi\colon Z\to[0,\infty)$ of the form
@@ -2842,25 +2845,67 @@ Until the 1950s, the application of the theory of plasticity remained confined t
 
 The characteristic of the Drucker-Prager criterion, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material is composed and this sliding is resisted by the internal friction between the grains the more they are pressed against each other. As we saw in the Section~\ref{sec:plasticity-review} of the Chapter~\ref{chap:modeling}, in the theory of classical plasticity, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below): the flow rule is said to be \emph{associated}. In the case in which the admissibility criterion also takes pressure into account, the normal condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs the grains slide over each other and in doing so they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule overestimates the dilatancy; to overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
 
-The introduction of the non-associate flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory; recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
+The use of the non-associate flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory; recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-%Fino agli anni cinquanta l'applicazione della teoria della plasticità è rimasta confinata alla descrizione del comportamento meccanico dei metalli. Nel 1952, Drucker e Prager~\cite{DruckerPrager1952} estesero la teoria per descrivere il comportamento meccanico dei suoli, interprentando il classico criterio sulla resistenza limite delle terre di Mohr--Coulomb~\cite{Coulomb1776,Mohr1900} come un criterio di snervamento plastico. Inoltre proposero un nuovo criterio di snernervamento, oggi appunto noto come criterio di Drucker--Prager.
-%
-%La caratteristica del criterio di Drucker--Prager, assente nella plasticità classica dei metalli, è che la resistenza allo snervamento cresce con l'aumentare della pressione. Questo comportamento è opportuno per descrivere il comportamento plastico di materiali come i suoli per via della loro natura granulare. In effetti in questi casi il comportamento plastico è dovuto allo scorrimento dei grani di cui il materiale è composto e tale scorrimento viene ostacolato dall'attrito interno tra i grani quanto più essi sono premuti gli uni contro gli altri. Come abbiamo visto nella Sezione~\ref{sec:plasticity-review} del Capitolo~\ref{chap:modeling}, nella teoria della plasticità classica, fissato l'insieme di ammissibilità per lo stress, la legge di flusso dello strain plastico viene automaticamente determinata dalla condizione di normalità del legge del flusso plastico (si veda la Nota~\ref{rmk:flow-rule} e la discussione che segue): si dice che la legge di flusso è \emph{associata}. Nel caso cui il criterio di ammissibilità tiene conto anche della pressione, la condizione di normalità impone che lo stain plastico non possa rimanere deviatorico, per cui l'ipotesi di incomprimibilità plastica va abbondonato. Questo corrisponde in realtà ad un fenomeno meccanico reale chiamato \emph{dilatanza} nel contesto della geotecnica e ha una precisa interpretazione micromeccanica: quando avviene il flusso plastico i grani scorrono gli uni sugli altri e nel farlo passano da una configurazione di impacchettamento più ottimale ad una meno ottimale provocando l'aumento del volume. Tuttavia la legge di flusso associata sovrastima la dilatanza; per questo ovviare a questo è nono state sviluppate delle leggi di flusso non associate, in cui cioè la legge di flusso plastico è scelta indipendentamente dall'insieme di ammissibilità dello stess.
-%
-%L'introduzione della legge di flusso non associata comporta delle complicazioni matematiche aggiuntive perché rompe la struttura variazionale standard della teoria della plasticità classica; recentemente~\cite{morafrancfort,StefanelliVikelis2024} è stato dimostrato che la plasticità non associata ammette in realtà una formulazione variazionale e sono stati ottenuti dei risultati di esistenza.
+This part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clear variational formulation.
 
-Noi riteniamo che la legge di flusso non associata 
+The material is organized as follows. In this introductory chapter we briefly review the original model of Drucker--Prager and give some information about the known existence results. For sempolicity we will confine ourself to the formulaton of the model at small deformations. In the following chapter we introduce our alternative model.
 
-Questa parte della tesi è dedicata allo studio di questi modelli di plasticità in cui la resistenza allo snervamento è influenzata dalla pressione. In questo capitolo introduttivo descriveremo più in dettaglio il modello di Drucker--Prager e i medelli di flusso non associati
+\section{The classical plasticity theories of pressure sensitive plastic materials}
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is described by the couples $z=(u,E_p)$ with $u\colon\Omega\to\mathbb{R}^d$ the displacement field and $E_p\colon\Omega\to\text{Sym}$ the plastic strain. 
+Let $\Omega$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assume since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
+\[
+\dual{\mathcal{I},\tilde w}=\int_\Omega\left(T_e:\tilde V_edx+T_p:\tilde V_p\right)dx
+\quad\text{and}\quad
+\dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
+\]
+for all $\tilde w=(\tilde v,\tilde V_p)\in Z$. For simplicity we have assumed that $K_p=0$, i.e., we are not considering plastic strain gradient effects since they are not relevant in the present discussion. Then the strong form of the equilibrium condition $\mathcal{I}=\mathcal{X}$ is
+\begin{gather}
+\diver T_e+f=0\quad\text{in $\Omega$} \\
+T_en=h\quad\text{in $\partial\Omega$} \\
+T_e-T_p=0\quad\text{in $\Omega$}
+\end{gather}
+where the first two equations describe the balance of macroforces while the last equation represents the balance of plastic microforces. The main difference with respect to equations~\eqref{eqn:equilibrium-plasticity} is that in the microforce balance the whole elastic stress tensor $T_e$, and not only is deviator, appears.
+
+We now discuss the choice of constitutive relations. We assume that the free energy $\Psi\colon Z\to\mathbb{R}$ is of the form
+\[
+\Psi(z)=\int_\Omega\left(W_e(E_e)+W_p(E_p)\right)dx,
+\]
+where $W_e$ and $W_p$ form $\text{Sym}$ to $\mathbb{R}$ are the elastic and plastic free energy which are supposed to be differentiable. This gives the constitutive relation for the elastic stress $T_e=W_e'(E_e)$. If we split the plastic force $T_p$ as the sum of a conservative back-stress $B_p$ (for example $B_p=\mathfrak{B}E_p$, with $\mathfrak{B}>0$ and a dissipative plastic force $A_p$, then $B_p=W_p'(E_p)$. Notice that, having written $T_p=A_p+B_p$, the equilibrium of microforces can be written as $A_p=T_e-B_p$ in $\Omega$. To characterize the plastic response
+\begin{itemize}
+\item[(i)] we require the admissibility condition $A_p\in C$ where $C=\{f\le0\}\subset\text{Sym}$, with $f\colon\text{Sym}\to\mathbb{R}$ a convex \emph{yield function}, and
+\item[(ii)] we impose the flow rule $\dot E_p=0$ if $A_p\in\inter C$ and $\dot E_p$ belongs to the normal outer cone to $\{A\in\text{Sym}\;|\;g(A)\le g(A_p)\}$ at $A_p$ if $A_p\in\partial C$, where $g\colon\text{Sym}\to\mathbb{R}$ is a convex \emph{plastic potential}.
+\end{itemize}
+When the yield function $f$ coincides with the plastic potential $g$, then the flow rule reduces to $\dot E_p\in N_C(A_p)$ which is the normality rule. When $f=g$ we say that the flow rule is associated, while when $f\neq g$ we say that the flow rule is non-associated. This is the way in which the plastic response is characterized in the classical presentations of non-associated plasticity models. However this formulation does not fit directly into the framework of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} and is not suitable for proving existence theorems. A better reformulation is described in~\cite{Laborde1987,morafrancfort,StefanelliVikelis2024} and is described in the following lemma.
+\begin{lemma}
+The admissibility condition and the flow rule are equivalent to
+\begin{equation}
+\label{eqn:reformulation}
+A_p\in\hat{C}(A_p)\quad\text{and}\quad\dot E_p\in N_{\hat{C}(A_p)}(A_p),
+\end{equation}
+where
+\[
+\hat{C}(A_p)=\left\{A\in\text{Sym}\;|\;g(A)\le g(A_p)-f(A_p)\right\}.
+\]
+In turn, the inclusions in~\eqref{eqn:reformulation} are also equivalent to
+\begin{equation}
+\label{eqn:reformulation-2}
+A_p\in\partial\hat{R}(A_p,\dot E_p),
+\end{equation}
+where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty)$ is defined as
+\[
+\hat{R}(A_p,\dot E_p)=\sup_{A\in\text{Sym}}A:\dot E_p=\sigma_{\hat{C}(A_p)}(\dot E_p).
+\]
+\end{lemma}
+\begin{proof}
+It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$, and if $A_p\in\partial\hat{C}(A_p)$ then 
+\end{proof}
+
+\section{An existence result}
 
 \chapter{Small deformation model}
 
 \section{Formulation}
-
-\textbf{Scrivere una introduzione}
 
 \subsection{Kinematics}
 

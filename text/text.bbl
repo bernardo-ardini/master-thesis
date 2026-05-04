@@ -1207,6 +1207,36 @@
       \field{year}{2020}
       \field{dateera}{ce}
     \endentry
+    \entry{Laborde1987}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=38bd90164d190b9aced21cc6fd0b4ce4}{%
+           family={Laborde},
+           familyi={L\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{fullhash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{fullhashraw}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{bibnamehash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{authorbibnamehash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{authornamehash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{authorfullhash}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \strng{authorfullhashraw}{38bd90164d190b9aced21cc6fd0b4ce4}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Engineering Science}
+      \field{title}{Analysis of the strain--stress relation in plasticity with non-associative laws}
+      \field{volume}{25}
+      \field{year}{1987}
+      \field{pages}{655\bibrangedash 666}
+      \range{pages}{12}
+      \verb{doi}
+      \verb 10.1016/0020-7225(87)90051-0
+      \endverb
+    \endentry
     \entry{Levy1871}{article}{}{}
       \name{author}{1}{}{%
         {{hash=a622ea7b796dc22666b3a8e15c145f10}{%
@@ -1450,33 +1480,6 @@
       \field{year}{1928}
       \field{pages}{161\bibrangedash 185}
       \range{pages}{25}
-    \endentry
-    \entry{Mohr1900}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=03154bca52dadcf46d2972bf1086aa8a}{%
-           family={Mohr},
-           familyi={M\bibinitperiod},
-           given={Otto},
-           giveni={O\bibinitperiod}}}%
-      }
-      \strng{namehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{fullhash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{fullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{bibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorbibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authornamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorfullhash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorfullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
-      \field{sortinit}{M}
-      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Zeitschrift des Vereines Deutscher Ingenieure}
-      \field{title}{Welche Umstände bedingen die Elastizitätsgrenze und den Bruch eines Materials?}
-      \field{volume}{44}
-      \field{year}{1900}
-      \field{pages}{1524\bibrangedash 1530}
-      \range{pages}{7}
     \endentry
     \entry{Moreau1974}{incollection}{}{}
       \name{author}{1}{}{%
