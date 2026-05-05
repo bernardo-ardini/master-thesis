@@ -6,8 +6,7 @@
 \geometry{a4paper,margin=2.4cm,heightrounded}
 
 \usepackage{amssymb,amsmath,amsthm,amsfonts,mathtools,eucal}
-\mathtoolsset{showonlyrefs}
-\numberwithin{equation}{chapter}
+%\mathtoolsset{showonlyrefs}
 \usepackage{booktabs}
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep}
@@ -16,6 +15,10 @@
 \usepackage{setspace}
 \usepackage{graphicx}
 \usepackage{caption,subfig}
+
+\usepackage{cleveref}
+\numberwithin{section}{chapter}
+\numberwithin{equation}{chapter}
 
 \usepackage{chngcntr}
 \counterwithin{figure}{chapter}
@@ -2841,21 +2844,21 @@ Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of thi
 
 \chapter{Introduction}
 
-Until the 1950s, the application of the theory of plasticity remained confined to the description of the mechanical behavior of metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} extended the theory to describe the mechanical behavior of soils, interpreting the classic Mohr-Coulomb failure criterion as a plastic yield criterion. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
+Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to get a description of the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a plastic yield criterion. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
 
 The characteristic of the Drucker-Prager criterion, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material is composed and this sliding is resisted by the internal friction between the grains the more they are pressed against each other. As we saw in the Section~\ref{sec:plasticity-review} of the Chapter~\ref{chap:modeling}, in the theory of classical plasticity, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below): the flow rule is said to be \emph{associated}. In the case in which the admissibility criterion also takes pressure into account, the normal condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs the grains slide over each other and in doing so they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule overestimates the dilatancy; to overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
 
 The use of the non-associate flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory; recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-This part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clear variational formulation.
+This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clear variational formulation.
 
-The material is organized as follows. In this introductory chapter we briefly review the original model of Drucker--Prager and give some information about the known existence results. For sempolicity we will confine ourself to the formulaton of the model at small deformations. In the following chapter we introduce our alternative model.
+The material is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are dedicated to the formulation of our alternative approach.
 
-\section{The classical plasticity theories of pressure sensitive plastic materials}
+\section{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}
 
-We now describe the classical plasticity theory describing pressure sensitive plastic material with a possibly non-associated flow rule. We will give a presentation which is compatible with the framework of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}.
+We now describe how the theory presented in~\Cref{sec:plasticity-review} is extended to include plastic compressibility and non-associated flow rules. The formulation presented here is the standard way used to perform that extension. In the following chapters we will propose an alternative approach.
 
-Let $\Omega$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assume since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assume since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
 \[
 \dual{\mathcal{I},\tilde w}=\int_\Omega\left(T_e:\tilde V_edx+T_p:\tilde V_p\right)dx
 \quad\text{and}\quad
@@ -2910,9 +2913,10 @@ It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or 
 The second equivalence follows from a well known results of complex analysis~\cite[Corollary 5.2]{ekeland-temam}.
 \end{proof}
 Now in order to write the inclusion~\eqref{eqn:reformulation-2} as a true constitutive relation, i.e., expressing the dependence of $A_p$ on kinematical quantities alone, one can use~\eqref{eqn:Ap}. Thus we define $R\colon\text{Sym}\times\text{Sym}\times\text{Sym}\to[0,\infty]$ by
-\[
+\begin{equation}
+\label{eqn:Rhat-R}
 R(Eu,E_p,\dot E_p)=\hat{R}\left(-\dind{W}{E_p}(Eu,E_p),\dot E_p\right)
-\]
+\end{equation}
 and we require that $A_p\in\partial R(Eu,E_p,\dot E_p)$. This correspond to the choice of the dissipation potential $\Psi\colon Z\times Z\to[0,\infty]$ defined as
 \[
 \Psi(z,\dot z)=\int_\Omega R(Eu,E_p,\dot E_p)dx.
@@ -2922,10 +2926,46 @@ If the dependence on plastic strain gradients is included, the balance of microf
 \[
 A_p=T_e-B_p+\diver K_p.
 \]
-The quantity $\diver K_p$ is not defined as a function in general. This prevents the possibility of defining $R$ from $\hat R$ by a simple substitution.
+The quantity $\diver K_p$ is not defined as a function in general. This prevents the possibility of defining $R$ from $\hat R$ by a simple substitution. In this case, see~\cite{StefanelliVikelis2024}, the definition of $R$ kept as in~\eqref{eqn:Rhat-R}.
 \end{rmk}
 
-\section{The Drucker--Prager yield criterion}
+\section{The Mohr--Coulomb and Drucker--Prager yield criterion}
+
+In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterion can be formulated within the notation of previous section.
+
+The Mohr--Coulomb criterion was the first criterion failure of cohesive materials such as rocks and soil. The original formulation states that failure happen at a material point where the Cauchy stress tensor $T\in\text{Sym}$ there exists a direction $n\in\partial B(0,1)$ such that
+\begin{equation}
+\label{eqn:mhor-coulomb}
+\tau=-\sigma\tan\phi+c,
+\end{equation}
+where $\sigma=Tn\cdot n$ and $\tau=|Tn-\sigma n|$ are the normal and shear stress respectively acting on the plane orthogonal to $n$. Here $\phi\in[0,\pi/2)$ is the angle of internal friction and $c\ge0$ is the cohesion. The idea behind~\eqref{eqn:mhor-coulomb} is that the resistance of the material to shear stresses increases with compression. In the Mohr plane, that is the half plane of the couples $(\sigma,\tau)\in\mathbb{R}\times[0,\infty)$, the failure locus determined by~\eqref{eqn:mhor-coulomb} is a cone as showed in Figure~\ref{fig:mhor-coulomb}. After some computations (see~\cite{Lubliner1990}) one finds that the failure criterion can be written directly in term of $T$ as
+\begin{equation}
+\label{eqn:f-mohr-coulomb}
+f(T)=F(\dev T)+\frac{2}{d}(\tr T)\sin\phi-2c\cos\phi=0.
+\end{equation}
+Here
+\[
+F(\dev T)=T_\text{max}-T_\text{min}+\sin\phi(T_\text{max}+T_\text{min}),
+\]
+where $T_\text{min}$ and $T_\text{max}$ are the maximum and minimum eigenvalues of $\dev T$.
+
+Now the $f\colon\text{Sym}\to\mathbb{R}$ defined in equation~\eqref{eqn:f-mohr-coulomb} can be used also as a yield function. The motivation is that when $B_p=0$ then $A_p$ coincides with the Cauchy stress tensor.
+\begin{figure}
+\begin{tikzpicture}
+
+\end{tikzpicture}
+\caption{.}
+\label{fig:mhor-coulomb}
+\end{figure}
+
+The Drucker--Prager yield criterion correspond to yield function
+\[
+f(A)=|\dev A|+\frac{2}{d}(\tr A)\sin\phi-2c\cos\phi
+\]
+where $c>0$ is the cohesion and $\phi\in[0,\pi/2]$ is the angle of internal friction. In this case
+\[
+C=\{f\le0\}=\{A\in\text{Sym}\;|\;|\dev A|\le2c\cos\phi-(\tr A)\sin\phi\}.
+\]
 
 \section{An existence result}
 
