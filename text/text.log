@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  5 MAY 2026 06:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  5 MAY 2026 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -429,22 +429,6 @@ Package: subfig 2005/06/28 ver: 1.3 subfig package
 \c@lotdepth=\count317
 \sf@top=\skip68
 \sf@bottom=\skip69
-)
-(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty
-Package: cleveref 2018/03/27 v0.21.4 Intelligent cross-referencing
-Package cleveref Info: `hyperref' support loaded on input line 2370.
-LaTeX Info: Redefining \cref on input line 2370.
-LaTeX Info: Redefining \Cref on input line 2370.
-LaTeX Info: Redefining \crefrange on input line 2370.
-LaTeX Info: Redefining \Crefrange on input line 2370.
-LaTeX Info: Redefining \cpageref on input line 2370.
-LaTeX Info: Redefining \Cpageref on input line 2370.
-LaTeX Info: Redefining \cpagerefrange on input line 2370.
-LaTeX Info: Redefining \Cpagerefrange on input line 2370.
-LaTeX Info: Redefining \labelcref on input line 2370.
-LaTeX Info: Redefining \labelcpageref on input line 2370.
-Package cleveref Info: `amsthm' support loaded on input line 3026.
-Package cleveref Info: `subfig' support loaded on input line 3164.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/chngcntr/chngcntr.sty
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
@@ -1611,6 +1595,8 @@ LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
 (Font)              scaled to size 10.0pt on input line 149.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
 (Font)              scaled to size 7.3pt on input line 149.
+LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
+(Font)              scaled to size 10.0pt on input line 151.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 7.3pt on input line 156.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
@@ -1628,6 +1614,19 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 live/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 
 [3]
+Overfull \hbox (2.13603pt too wide) in paragraph at lines 263--265
+[][][]\T1/zpltlf/m/sc/10 Example \T1/zpltlf/m/n/10 1.11\T1/zpltlf/m/sc/10 . []\
+T1/zpltlf/m/n/10 (Ex-am-ple []1.3[] con-tin-ued) To en-sure that $\OML/npxmi/m/
+it/10 z\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
+l/m/n/10 0\OML/npxmi/m/it/10 ; \OT1/minzpl/m/n/10 1\LMS/npxsy/m/n/10 ¼$ \T1/zpl
+tlf/m/n/10 for a.e. $\OML/npxmi/m/it/10 x \LMS/npxsy/m/n/10 2 \U/npxmia/m/it/10
+ 
+$\T1/zpltlf/m/n/10 , one choose $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10
+ W[]\LMS/npxsy/m/n/10 ¹\U/npxmia/m/it/10 
+\LMS/npxsy/m/n/10 º !
+ []
+
+
 
 [4]
 Overfull \vbox (1.75797pt too high) has occurred while \output is active []
@@ -1647,8 +1646,6 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 
 [9]
 Chapter 2
-LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 512.
 
 
 [10
@@ -1662,13 +1659,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
 
 [13]
 
-[14
-pdfTeX warning (ext4): destination with the same identifier (name{equation.2.11
-}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.833 \end{equation*}
-                     ]
+[14]
 
 [15]
 
@@ -1909,7 +1900,7 @@ Chapter 8
 [73]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4425.
+(hyperref)                removing `\noindent' on input line 4439.
 
 
 
@@ -1959,12 +1950,12 @@ Appendix B
 [89]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5462.
+5476.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5462.
+(Font)              scaled to size 10.0pt on input line 5476.
 
 
 [90
@@ -1973,7 +1964,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5463--5463
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5477--5477
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
@@ -1992,13 +1983,13 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49736 strings out of 473197
- 1095443 string characters out of 5718605
- 1960102 words of memory out of 5000000
- 71477 multiletter control sequences out of 15000+600000
+ 47903 strings out of 473197
+ 1052915 string characters out of 5718605
+ 1918077 words of memory out of 5000000
+ 69700 multiletter control sequences out of 15000+600000
  697611 words of font info for 252 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 99i,24n,105p,1901b,2039s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,24n,105p,1901b,2037s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
@@ -2020,10 +2011,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (94 pages, 901077 bytes).
+Output written on text.pdf (94 pages, 900796 bytes).
 PDF statistics:
- 1596 PDF objects out of 1728 (max. 8388607)
- 1447 compressed objects within 15 object streams
- 565 named destinations out of 1000 (max. 500000)
+ 1534 PDF objects out of 1728 (max. 8388607)
+ 1386 compressed objects within 14 object streams
+ 514 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
