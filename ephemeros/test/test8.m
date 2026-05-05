@@ -57,14 +57,14 @@ pl.setting.tol=100;
 %pl.dat.f=@(x,t) repmat([-1*(1-cos(2*pi*t/10));2*(1-cos(2*pi*t/10))],[1,size(x,2)]);
 %pl.dat.f=@(x,t) [(10*((x(2,:)-0.7).*(x(2,:)-1.3)<0)-10*(x(2,:)>1.4))*(1-cos(2*pi*t/10));-0*(1-cos(2*pi*t/10)).*ones(1,size(x,2))];
 %pl.dat.f=@(x,t) [10*(x(2,:)>0.5)*(1-cos(2*pi*t/10));-0*(1-cos(2*pi*t/10)).*ones(1,size(x,2))];
-pl.dat.f=@(x,t) 0.5*(1-cos(2*pi*t/10))*[-0.01;-3]*ones(1,size(x,2));
-pl.dat.g=@(x,t) 0.5*(1-cos(2*pi*t/10))*[0;1e-1]*ones(1,size(x,2));
+pl.dat.f=@(x,t) 0*(1-cos(2*pi*t/10))*[-0.01;-3]*ones(1,size(x,2));
+pl.dat.g=@(x,t) 0.5*(1-cos(2*pi*t/10))*[0;-1e-1]*ones(1,size(x,2));
 pl.unit.strain=1e-3;
 
 % material
 
 pl.mat.eta=1e-6;
-pl.mat.l=0;
+pl.mat.l=0.3;
 
 pl.mat.D.mu=100;
 pl.mat.D.la=100;
@@ -89,7 +89,7 @@ pl.mat.B=0.5;
 % pl.mat.F=0.0001;
 
 function [Y,dY]=yield(p)
-    alpha=0;
+    alpha=1;
     Y0=1;
 
     % Y=Y0*zeros(size(p));
@@ -102,7 +102,7 @@ end
 pl.mat.yield=@yield;
 
 function [dG,d2G]=diss(dotz)
-    c=1e-6;
+    c=1e-5;
 
     d=size(dotz,1);
     r=pagenorm(dotz,"fro");

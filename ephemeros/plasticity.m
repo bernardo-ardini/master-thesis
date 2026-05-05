@@ -73,13 +73,12 @@ classdef plasticity < handle
             figure(1);
             clf;
             theme(gcf,"light");
-            subplot(1,2,1);
-            obj.unk.u.plot(prc=@(u) u(1,:),trisurf=0,LineStyle="None");
+            % obj.unk.u.plot(prc=@(u) u(1,:),trisurf=0,LineStyle="None");
+            % colorbar;
+            % subplot(1,2,2);
+            obj.unk.z.plot(prc="norm",trisurf=0,LineStyle="None",displ=obj.unk.u,scale=100);
             colorbar;
-            subplot(1,2,2);
-            obj.unk.z.plot(prc="norm",trisurf=0,LineStyle="None");
-            colorbar;
-            sgtitle(sprintf("t=%.4f",obj.t));
+            title(sprintf("t=%.4f",obj.t));
             drawnow;
             %pause; 
 

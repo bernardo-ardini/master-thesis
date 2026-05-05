@@ -107,11 +107,11 @@ classdef field < handle
 
             if ~strcmp(options.displ,"none")
                 C=obj.geo.gauss{2}.coord;
-                va=options.displ.val{2,1};
-                va=va';
-                U=scatteredInterpolant(C(:,1),C(:,2),va(:,1));
-                U.Values=va;
-                U=F(coord(:,1),coord(:,2));
+                valu=options.displ.val{2,1};
+                valu=valu';
+                U=scatteredInterpolant(C(:,1),C(:,2),valu(:,1));
+                U.Values=valu;
+                U=U(coord(:,1),coord(:,2));
                 coord=coord+options.scale*U;
             end
 

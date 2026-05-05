@@ -2904,9 +2904,10 @@ In turn, the inclusions in~\eqref{eqn:reformulation} are also equivalent to
 A_p\in\partial\hat{R}(A_p,\dot E_p),
 \end{equation}
 where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty]$ is defined as
-\[
+\begin{equation}
+\label{eqn:R-hat}
 \hat{R}(A_p,\dot E_p)=\sup_{A\in\text{Sym}}A:\dot E_p=\sigma_{\hat{C}(A_p)}(\dot E_p).
-\]
+\end{equation}
 \end{lemma}
 \begin{proof}
 It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$. Instead, if $A_p\in\partial\hat{C}(A_p)$ then $f(A_p)=0$ so that $\hat{C}(A_p)=L(A_p)$ and $N_{\hat{C}(A_p)}(A_p)=N_{L(A_p)}$. This proves the first equivalence.
@@ -2961,13 +2962,6 @@ F(S)=S_\text{max}-S_\text{min}+(S_\text{max}+S_\text{min})\sin\phi,
 where $S_\text{min}$ and $S_\text{max}$ are the maximum and minimum eigenvalues of $S$.
 
 Now the Mohr--Coulomb criterion is included in the theory described in Section~\ref{sec:plasticity-review-soil} by using $f$ in~\eqref{eqn:f-mohr-coulomb} as the yield function.
-\begin{figure}
-\begin{tikzpicture}
-
-\end{tikzpicture}
-\caption{.}
-\label{fig:mhor-coulomb}
-\end{figure}
 
 \subsection{The Drucker--Prager yield criterion}
 
@@ -2981,7 +2975,41 @@ f(A)=|\dev A|-\left(Y_0-\alpha\frac{\tr A}{d}\right)
 \]
 where $Y_0>0$ and $\alpha>0$. The corresponding criterion is known as Drucker--Prager yield criterion and can be seen as an approximation of the Mohr--Coulomb criterion. Since the hydrostatic pressure is $p=-\tr T/d$, the Drucker--Prager criterion can be formulated as $|\dev T|\le Y(p)=Y_0+\alpha p$. Thus it is a generalization of the Von Mises criterion where the yield strength is made dependent on the hydrostratic pressure.
 
-\section{An existence result}
+\section{An existence result for non-associative plasticity}
+
+An existence theorem for non-associative compressible plasticity at small deformations has been derived in~\cite{morafrancfort} and is reported below. It is obtained assuming no hardening and adding a viscous plastic microforce.
+\begin{thm}
+\label{thm:existence-non-associative}
+Let $\Omega\subset\mathbb{R}^d$ be open, bounded and Lipschitz and $\Gamma_D\partial\Omega$ non-empty and relatively open. Let $\mathfrak{C}\in\mathscr{L}(\text{Sym},\text{Sym})$ the elasticity tensor and suppose that there exists $c>0$ such that $\mathfrak{C}E:E\ge c|E|^2$ for all $E\in\text{Sym}$. Let $\eta>0$ a plastic viscosity. Let $K\subset\text{DevSym}$ be bounded, closed and convex and such that $0\in\inter K$, and define the admissibility set
+\[
+C=\left\{A\in\text{Sym}\;|\;\text{$A\in\alpha(\Pi-\tr A)K$ and $\tr A\ge-M$}\right\}
+\]
+for some $\alpha>0$, $\Pi>0$ and $M>0$. Let also
+\[
+G=\left\{A\in\text{Sym}\;|\;\text{$A\in\beta(\Theta-\tr A)K$ and $\tr A\ge-M$}\right\},
+\]
+where $\beta>0$ and $\Theta>0$. Define  $f$ and $g$ as the signed distance from $C$ and $G$ respectively, and let $\hat{R}$ defined as in~\eqref{eqn:R-hat}. Let $\overline u\in H^1((0,T),H^1(\Omega,\mathbb{R}^d))$ and $(u_0,E_p^0)\in H^1(\Omega,\mathbb{R}^d)\times L^2(\Omega,\text{Sym})$ such that $u_0=\overline{u}(0)$ in $\Gamma_D$ in the sense of the trace. Then there exists a unique couple $(u,E_p)$ with
+\[
+u\in H^1((0,T),H^1(\Omega,\mathbb{R}^d))\quad\text{and}\quad E_p\in W^{1,\infty}((0,T),L^2(\Omega,\text{Sym}))
+\]
+such that, setting $T=\mathfrak{C}(Eu-E_p)$, the following conditions hold:
+\begin{itemize}
+\item[(i)] the initial condition $u(0)=u_0$,
+\item[(ii)] the macroscopic equilibrium
+\[
+\diver T(t)=0\quad\text{in the sense of distributions for all $t\in[0,T]$,}
+\]
+\item[(iii)] the flow rule
+\[
+\eta\dot E_p(t)-T(t)+\partial_{\dot E_p}\hat{R}(T_p(t),\dot E_p(t))\ni0\quad\text{for all $t\in[0,T]$.}
+\]
+\end{itemize}
+\end{thm}
+\begin{rmk}
+Using a time rescaling approach it is possible to prove also the existence of a limit solution $(u,E_p)$ in the limit $\eta\to0^+$ of vanishing viscosity, with $u\in C^0([0,T],\text{BD}(\Omega))$ and $E_p\in W^{1,\infty}((0,T),\mathscr{M}(\overline\Omega,\text{Sym}))$, where $\text{BD}(\Omega)$ is the space of functions of bounded variations and $\mathscr{M}(\overline\Omega,\text{Sym})$ the space of bounded Radon measures.
+\end{rmk}
+
+Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
 
 \chapter{Small deformation model}
 
