@@ -157,7 +157,7 @@ The configurations of a deformable body at large strain in $\mathbb{R}^d$, can b
 \end{ex}
 \begin{ex}
 \label{ex:modeling:micro}
-Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $\alpha\in W^{1,p}(\Omega)$ with $p\in(0,1)$. Where $\alpha=0$ the material is sound, while where $\alpha=1$ the material is completely damaged. The material is partially damaged where $\alpha\in(0,1)$. One should add the constrain $\alpha\in[0,1]$, but this is not imposes at the level of definition of the space of configurations, again in order to preserve the linear structure.
+Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $\alpha\in W^{1,p}(\Omega)$ with $p\in(1,\infty)$. Where $\alpha=0$ the material is sound, while where $\alpha=1$ the material is completely damaged. The material is partially damaged where $\alpha\in(0,1)$. One should add the constrain $\alpha\in[0,1]$, but this is not imposes at the level of definition of the space of configurations, again in order to preserve the linear structure.
 \end{ex}
 Examples~\ref{ex:modeling:large-strain} and~\ref{ex:modeling:micro} suggest that the assumption that space of configurations has a linear structure is not restrictive in most mechanical models, even when the truly attainable configurations actually should lie in a space $M$ with the structure of a manifold. Indeed in most cases, $M$ can be seen as a subset of a larger linear space of configurations $V$. Then we can formulate the model on $V$ and impose that the evolution of the configuration of the system is restricted to $M$ by including suitable reactions, as we will see. Thus the geometric complexity of $M$ can be avoided and reduced to the analytical complexity of managing the reactions within $V$ required to enforce the constraint
 
@@ -201,9 +201,9 @@ To get an evolution equation, able to predict the evolution of the mechanical sy
 where $\hat{\mathcal{F}}\colon V\times V\times[0,T]\rightsquigarrow V^*$. We postulate that
 \begin{equation}
 \label{eqn:modeling:constitutive-relations}
-\hat{\mathcal{F}}(u,v,t)=-\partial_u\mathcal{E}(u,v,t)-\partial_v\mathcal{R}(u,v,t),
+\hat{\mathcal{F}}(u,v,t)=-\partial_u\mathcal{E}(u,t)-\partial_v\mathcal{R}(u,v,t),
 \end{equation}
-where $\mathcal{E}\colon V\times V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential, while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_u\mathcal{E}(u(t),\dot{u}(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_v\mathcal{R}(u(t),\dot{u}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
+where $\mathcal{E}\colon V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential, while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_u\mathcal{E}(u(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_v\mathcal{R}(u(t),\dot{u}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
 \[
 \dual{\mathcal{F}_d(t),\dot{u}(t)}\le0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
@@ -341,12 +341,13 @@ On $x$ acts the external force $F\in\mathbb{R}$, the wall exert a force $T_p\in\
 respectively. Thus the equilibrium condition $\mathcal{I}=\mathcal{X}$ can be written as the ``macroscopic'' balance of forces $T_e=F$ together with the ``microscopic'' balance of forces $T_p=T_e$.
 \end{rmk}
 Motivated by the consideration in Remark~\ref{rmk:plasticity-simplified}, we consider the virtual rates $\tilde w=(\tilde v,\tilde V_p)\in Z$ of $z$, we define the elastic virtual rate as $\tilde V_e=E\tilde v-V_p$ and we consider and internal and an external virtual powers functionals of the form
-\[
+\begin{equation}
+\label{eqn:powers-plasticity}
 \dual{\mathcal{I},\tilde w}=\int_\Omega T_e:\tilde V_edx+\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx
 \quad\text{and}\quad
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
-\]
-respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure. The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde L_p$, could be added, but in order to keep the discussion simpler we neglect them.
+\end{equation}
+respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure. The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde V_p$, could be added, but in order to keep the discussion simpler we neglect them.
 
 By a simple application of the Green theorem and the fundamental lemma of the calculus of variations, one easily get the strong form of the equilibrium condition $\mathcal{I}=\mathcal{X}$,
 \begin{subequations}
@@ -393,7 +394,7 @@ Now, the microforce balance can be written as
 \[
 \dev T_e-B_p+\diver K_p\in\partial R(\dot E_p).
 \]
-Then the Von Mises costitutive relation means that if $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
+The mechanical meaning of Von Mises costitutive relation is that, when $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
 \begin{rmk}
 \label{rmk:flow-rule}
 More general expression of $R$ can be obtained as follows. One choose a bounded, closed and convex set $C\subset\text{DevSym}$ and impose that
@@ -466,7 +467,7 @@ A more geometric approach to plasticity theory at large strain (that we do not a
 (z^1,z^2)&\mapsto z^1\bullet z^2=(\chi^1\circ\chi^2,(F_p^1\circ \chi^2)F_p^2).
 \end{split}
 \]
-Given a time evolution $z=(\chi,F_p)\colon[0,T]\to M$ with $\det F>0$, we define the velocity gradient as $L=\dot FF^{-1}$ and the plastic rate as $L_p=\dot F_pF_p^{-1}\colon\Omega\times[0,T]\to\text{Lin}$. Notice that the plastic strain rate is deviatoric, i.e., $L_p(x,t)\in\text{Dev}$ for all $(x,t)\in\Omega\times[0,T]$. Indeed since $\det F_p=1$, then
+Given a time evolution $z=(\chi,F_p)\colon[0,T]\to M$, we define the velocity gradient as $L=\dot FF^{-1}$ and the plastic rate as $L_p=\dot F_pF_p^{-1}\colon\Omega\times[0,T]\to\text{Lin}$. Notice that the plastic strain rate is deviatoric, i.e., $L_p(x,t)\in\text{Dev}$ for all $(x,t)\in\Omega\times[0,T]$. Indeed since $\det F_p=1$, then
 \[
 0=\frac{d}{dt}\det F_p=\cof F_p:\dot F_p=\det F_p F_p^{-T}:\dot F_p=I:\dot F_pF_p^{-1}=\tr L_p.
 \]
@@ -1273,7 +1274,7 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 
 \chapter{Introduction}
 
-In a Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considére are shown in Figure~\ref{fig:considere}.
+In a Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considère are shown in Figure~\ref{fig:considere}.
 \begin{figure}[h]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$\eta=l/L$},ylabel={$F$ [kg]},xmin=1,xmax=1.33,ymin=400]
@@ -1284,7 +1285,7 @@ table[x=eta,y=F] {figures/necking-experimental.dat};
 \caption{Trend of the tensile force $F$ as the elongation $\eta=l/L$ varies (where $L$ is the initial length and $l$ the length in the deformed configuration) taken from the experimental data in~\cite{Considere1885}. The sample is made of soft iron and has a length $L=201$ mm and a diameter of 16 mm in the initial configuration.}
 \label{fig:considere}
 \end{figure}
-In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considére experimentally observed that the length of the area affected by the neck is independent of the length of the bar but increases with the diameter.
+In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considère experimentally observed that the length of the region affected by the neck is independent of the length of the bar but increases with the diameter.
 
 %I primi contributi verso la comprensione teorica del fenomeno del necking nell'ambito della teoria della plasticità risalgono alla seconda metà del Novecento, quando è il fenomeno è stato studiato come manifestazione della perdita di stabilità della \emph{soluzione triaviale}, cioè quella in cui la barra rimane in uno stato di deformazione uniforme. In un lavoro~\cite{Hill1958} del 1958, R. Hill ha sviluppato una teoria generale per trattare i fenomeni di biforcazione e di perdita di stabilità nell'ambito della teoria della plasticità incrementale. La teoria della plasticità incrementale era il framework utilizzato prima che venisse introdotta, negli anni Settanta, la moderna teoria della plasticità basata su solide base variazionali, quella che abbiamo discusso nei capitoli introduttivi~\ref{}. Nella teoria della plasticità incrementale la relazione costitutiva lega il rate dello stress al rate dello strain, cosicché il \emph{problema incrementale} di determinare ad ogni istante il campo velocità del solido elastoplastico emerge naturalmente. La teoria della biforcazione di Hill riguarda l'unicità della soluzione di tale problema incrementale. Utilizzando la teoria della biforcazione di Hill, negli anni Settanta in~\cite{HillHutchinson1975,HutchinsonMiles1974}, viene dimostrato che la perdita di stabilita della soluzione uniforme avviene poco dopo che la forza di trazione raggiunge il suo massimo, in accordo con il criterio di Considère. Nello stesso periodo viene effettuata anche la prima simulazione numerica mediante gli elementi finiti dell'occorenza del fenomeno del necking~\cite{Needleman1972} permettendo per la prima volta di predire accuratemante la forma del neck.
 %
@@ -1319,7 +1320,7 @@ Our analysis cannot be considered conclusive since it is not yet able to show th
 %\end{figure}
 %Nella prima fase della prova il comportamento del provino è elastico (il tratto che appare ripido in figura). Successivamente viene raggiunto il limite di snervamento e in un primo momento la forza assiale cresce all'aumentare della deformazione. Questo comportamento è noto come \emph{incrudimento} ovvero l'aumento della resistenza interna del materiale allo snervamento man mano che la deformazione plastica si accumula. L'effetto incrudimento è in competizione con il restringimento della sezione del provino che tende invece ad indebolire il materiale, dal momento che la forza assiale viene distribuita su una sezione sempre più piccola. Questo porta alla diminuzione della pendenza nella curva in figura, finché la forza non incomincia a diminuire quando l'effetto geometrico della diminuzione della sezione prevale sull'incrudimento. Considère osservò che il raggiungimento del massimo della forza di trazione corrisponde approssimativamente al momento in cui la barra, che inizialmente si era deformata in modo uniforme su tutta la sua lunghezza, inizia a restringersi maggiormente in un punto localizzato. Questo fenomeno, che era già conosciuto in passato sebbene non fosse stato ancora caratterizzato in modo quantitativo, è noto come \emph{strizione}. Il criterio che lega l'inzio della strizione al raggiungimento del massimo della forza di trazione è ora conosciuto appunto come \emph{criterio di Considère}. Sperimentalmente si osserva che la lunghezza della zona interessata dalla strizione è indipendente dalla lunghezza della barra ma cresce con l'aumentare del diametro.
 
-\chapter{Model at small deformations}
+\chapter{One-dimensional model at small deformations}
 \label{chap:small-neck}
 
 In this chapter we develop and analyze a version of the one dimensional model aiming to describe the behavior of the metallic bar under tension which is valid in the regime of small deformations model. We split our discussion into three parts. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section treats the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
@@ -1327,12 +1328,13 @@ In this chapter we develop and analyze a version of the one dimensional model ai
 \section{Formulation}
 \label{sec:small-model-1d}
 
+Before starting to develop the true one dimensional model, we look at the full multidimensional model of the bar but considering a constrained kinematics that does not allows for bending and shear. This will provide the basic intuition upon which we will be able to build the reduced dimensional model.
+
 \subsection{Motivation from the multidimensional kinematics}
 
-We start describing the kinematics of the bar from a multidimensional perspective. This will serve as a motivation for the development of the purely one dimensional model.
-
 Let $\Omega=(0,L)\times\Sigma$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ be the reference configuration of the cylindrical bar. We denote the generic point in $\Omega$ as $(x,y)$ with $x\in(0,L)$ and $y\in\Sigma$. We assume a macroscopic displacement of the form
-\[
+\begin{equation}
+\label{eqn:displacement}
 \begin{pmatrix}
 x \\
 y
@@ -1342,7 +1344,7 @@ y
 u_1(x) \\
 u_2(x)y
 \end{pmatrix}
-\]
+\end{equation}
 where $u_1$ and $u_2$ are functions from $(0,L)$ to ${R}$. This assumption means that the sections of the cylindrical bar remain flat and can translate and expand uniformly. The corresponding displacement gradient is
 \[
 H=\begin{pmatrix}
@@ -1351,13 +1353,14 @@ u_2'y & u_2I
 \end{pmatrix}.
 \]
 The plastic distortion is assumed to be of the form
-\[
+\begin{equation}
+\label{eqn:plastic}
 H_p=
 \begin{pmatrix}
 p & 0 \\
 0 & -\frac{p}{d-1}I
 \end{pmatrix}
-\]
+\end{equation}
 where $p\colon(0,L)\to\mathbb{R}$. This choice implies plastic incompressibility. The elastic distortion is then given by
 \[
 H_e=H-H_p=\begin{pmatrix}
@@ -1376,25 +1379,27 @@ e_1 & \frac{u_2'}{2}y^T \\
 \frac{u_2'}{2}y & e_2I
 \end{pmatrix}
 \]
-where we have introduced $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$. Assuming an isotropic elastic response the elastic free energy density is given by
+where we have introduced $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$.
+
+We now look how the elastic free energy looks like when the displacement is of the form~\eqref{eqn:displacement} and the plastic distortion is of the form~\eqref{eqn:plastic}. Assuming an isotropic elastic response the elastic free energy density is
 \[
-\psi_e=\frac{1}{2}\kappa(\tr E_e)^2+\mu|\dev E_e|^2
+W_e(E_e)=\frac{1}{2}\kappa(\tr E_e)^2+\mu|\dev E_e|^2
 \]
-where $\kappa\ge0$ and $\mu\ge0$ are the bulk and shear modulus respectively. We notice that
+where $\kappa\ge0$ and $\mu\ge0$ are the bulk and shear modulus respectively. But in our case
 \[
 \tr E_e=e_1+(d-1)e_2\quad\text{and}\quad\dev E_e=\begin{pmatrix}
 \frac{d-1}{d}(e_1-e_2) & \frac{u_2'}{2}y^T \\
 \frac{u_2'}{2}y & -\frac{1}{d}(e_1-e_2)I
-\end{pmatrix}.
+\end{pmatrix},
 \]
-Then the elastic free energy density can be written as
+so that
 \[
-\psi_e=\frac{1}{2}\kappa\left(e_1+(d-1)e_2\right)^2+\frac{d-1}{d}\mu(e_1-e_2)^2+\frac{1}{2}|y|^2\mu|u_2'|^2.
+W_e(E_e)=\frac{1}{2}\kappa\left(e_1+(d-1)e_2\right)^2+\frac{d-1}{d}\mu(e_1-e_2)^2+\frac{1}{2}|y|^2\mu|u_2'|^2.
 \]
-We conclude that the elastic free energy per unit axial length is
+We now compute the elastic free energy per unit axial length. This will suggest us how to appropriately choose the free energy in the one dimensional model. To this aim we integrate the elastic free energy density over the section. We find
 \begin{equation}
 \label{eqn:necking-small:constitutive-multidimensional}
-\int_\Sigma\psi_edy=\frac{1}{2}A\kappa\left(e_1+(d-1)e_2\right)^2+\frac{d-1}{d}A\mu(e_1-e_2)^2+\frac{1}{2}J\mu|u_2'|^2
+\int_\Sigma W_e(E_e)dy=\frac{1}{2}A\kappa\left(e_1+(d-1)e_2\right)^2+\frac{d-1}{d}A\mu(e_1-e_2)^2+\frac{1}{2}J\mu|u_2'|^2,
 \end{equation}
 where
 \[
@@ -1402,23 +1407,23 @@ A=\int_\Sigma dy\quad\text{and}\quad J=\int_\Sigma|y|^2dy
 \]
 are the polar and the polar second order moment of area.
 
-\subsection{Kinematics}
+\subsection{Kinematics of the one dimensional model}
 
-We now develop a purely one dimensional model of the bar taking inspiration from the multidimensional kinematics just discussed.
+We are now ready to build a purely one-dimensional model of the bar, drawing inspiration from the multidimensional kinematics discussed above. We stress that this formulation should be viewed as an independent model with its own intrinsic validity, regardless of the multidimensional framework, which was presented in the previous subsection solely as a motivation.
 
-Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is described by $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by the plastic distortion $p\colon(0,L)\to\mathbb{R}$. We define $e_1=u_1'-p$ and $e_2=u_2+(d-1)^{-1}p$ the elastic distortions.
+Let $L>0$ be the length of the cylindrical bar. The macroscopic configuration of the bar is now described by the couples $z=(u,p)\in Z$ where $u_i\colon(0,L)\to\mathbb{R}$ for $i\in\{1,2\}$ and $p\colon(0,L)\to\mathbb{R}$. Here $u_1$ is the longitudinal displacement of the sections in the axis direction and $u_2$ is the quantity describing the transversal expansion of the sections. The configuration of the microscopic structure of the bar is described by the plastic distortion $p\colon(0,L)\to\mathbb{R}$. As suggested by the relations we found in previous subsection, we define $e_1=u_1'-p$ as the quantities quantifying the elastic distortion.
 
-The space $Z$ of the configurations $z=(u,p)$ will be clearly defined subsequently when the existence result will be proved. The virtual velocities is denoted as $\tilde w=(\tilde v,\tilde q)\in Z$.
+The space $Z$ of configurations $z=(u,p)$ will be clearly defined subsequently when the existence result will be proved. The generic virtual velocity will be denoted as $\tilde w=(\tilde v,\tilde q)\in Z$.
 
 \subsection{Statics}
 
-We assume that the generalized internal force is of the form
+With the same reasoning that lead to choose an internal power of the form~\eqref{eqn:powers-plasticity} in the multidimensional plasticity theory discussed in Section~\ref{sec:plasticity-review}, we assume that the generalized internal force in out one-dimensional model is of the form
 \[
 \dual{\mathcal I,\tilde w}=\int_0^L\left(\zeta\tilde v_2'+\sigma_1(\tilde v_1'-\tilde q)+\sigma_2(\tilde v_2+(d-1)^{-1}\tilde q)\right)dx+\int_0^L\tau\tilde qdx.
 \]
 The first integral describes the elastic response that couples the macroscopic kinematic variables $u$ with the microscopic variable $p$. Here $\zeta\colon(0,L)\to\mathbb{R}$, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic force. The last integral describes the microscopic response and $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force.
 
-The external generalized force is required to be of the form
+Similarly, the external generalized force is required to be of the form
 \[
 \dual{\mathcal X,\tilde w}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
@@ -1455,34 +1460,44 @@ This implies~\eqref{eqn:local-form-5}.
 
 \subsection{Constitutive relations}
 
-Taking inspiration from~\eqref{eqn:necking-small:constitutive-multidimensional}, we choose the free energy for unit axial length
+To find appropriate constitutive relations for our one-dimensional model, we first choose the free energy and dissipation potential functionals. The free energy functional $\Psi\colon Z\to\mathbb{R}$ is chosen as
+\[
+\Psi(z)=\int_0^L\left(W_e(e_1,e_2)+W_p(p)\right)dx
+\]
+where $W_e\colon\mathbb{R}\times\mathbb{R}\to\mathbb{R}$ and $W_p\colon\mathbb{R}\to\mathbb{R}$ are now the elastic and plastic free energies per unit axial lenght. We specialize to the case
 \begin{equation}
 \label{eqn:necking-small:free-energy-density}
-\psi=\frac{1}{2}\kappa(e_1+(d-1)e_2)^2+\frac{1}{2}\mu(e_1-e_2)^2+\frac{1}{2}l^2\mu|u_2'|^2+\frac{1}{2}Bp^2.
+W_e(e_1,e_2)=\frac{1}{2}\kappa(e_1+(d-1)e_2)^2+\frac{1}{2}\mu(e_1-e_2)^2\quad\text{and}\quad W_p(p)=\frac{1}{2}l^2\mu|u_2'|^2+\frac{1}{2}Bp^2.
 \end{equation}
-where $\kappa$ is a bulk modulus, $\mu$ is a shear modulus, $l$ is length parameter related to the geometry of the section and $B$ is the hardening parameter. We also choose the dissipation potential for unit axial length
+where $\kappa$ is a bulk modulus, $\mu$ is a shear modulus, $l$ is length parameter related to the geometry of the section and $B$ is the hardening parameter. The above formula for $W_e$ is motivated by what we found in~\eqref{eqn:necking-small:constitutive-multidimensional} when discussing the multidimensional model of the bar. The dissipation potential functional $\Phi\colon Z\to\mathbb{R}$ is supposed to be
 \begin{equation}
 \label{eqn:necking-small:dissipation-potential-density}
-\phi=R(\dot p)
+\Phi(\dot z)=\int_0^LR(\dot p)dx
 \end{equation}
-where $R\colon\mathbb{R}\to[0,\infty]$ is convex and satisfy $R(0)=0$. A possible choice could be $R(\dot p)=Y|\dot p|$ where $Y>0$ is the yield strength. Consistently with these choices and with~\eqref{eqn:modeling:constitutive}, we impose the following constitutive relations
-\begin{gather*}
+where $R\colon\mathbb{R}\to[0,\infty]$ is the plastic dissipation potential per unit axial length, which is required to be convex and satisfying $R(0)=0$. A psiibile particular $R$ could be the one dimensional analog of the Von-Mises yield criterion, i.e.\ $R(\dot p)=Y|\dot p|$ where $Y>0$ is the yield strength.
+
+Consistently with that choices of $\Psi$ and $\Phi$, applying~\eqref{eqn:modeling:constitutive} we find the following constitutive relations
+\begin{subequations}
+\label{eqn:constitutive-small-neck}
+\begin{gather}
 \zeta=\mu l^2u_2' \\
 \sigma_1=\kappa(e_1+(d-1)e_2)+\mu(e_1-e_2) \\
 \sigma_2=(d-1)\kappa(e_1+(d-1)e_2)-\mu(e_1-e_2) \\
 \tau\in Bp+\partial R(\dot p).
-\end{gather*}
+\end{gather}
+\end{subequations}
 Notice that the general discussion of Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling} implies that these constitutive relations are compatible with the dissipation inequality.
-
-We notice that introducing these constitutive relations into~\eqref{eqn:local-form-5} we get
+\begin{rmk}(the Mandel stress)
+Introducing the constitutive relations~\eqref{eqn:constitutive-small-neck} into~\eqref{eqn:local-form-5} we get
 \[
 \frac{d}{d-1}\mu(e_1-e_2)-Bp\in\partial R(\dot p).
 \]
-We refer to
+We will refer to
 \[
 m=\frac{d}{d-1}\mu(e_1-e_2)
 \]
-as the Mandel stress. It is the elastic force acting on the microscopic configuration and we notice that it depends on the shear modulus only.
+as the Mandel stress. It is interpreted as the elastic force felt by the microscopic configuration and we notice that it depends on the shear modulus only.
+\end{rmk}
 
 \section{Existence and uniqueness result}
 
@@ -2844,15 +2859,15 @@ Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of thi
 
 \chapter{Introduction}
 
-Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to get a description of the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a plastic yield criterion. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
+Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to describe the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a plastic yield criterion. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
 
-The characteristic of the Drucker-Prager criterion, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material is composed and this sliding is resisted by the internal friction between the grains the more they are pressed against each other. As we saw in the Section~\ref{sec:plasticity-review} of the Chapter~\ref{chap:modeling}, in the theory of classical plasticity, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below): the flow rule is said to be \emph{associated}. In the case in which the admissibility criterion also takes pressure into account, the normal condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs the grains slide over each other and in doing so they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule overestimates the dilatancy; to overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
+The characteristic of the Mohr-Coulomb criterion and the Drucker-Prager criterion, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material. The sliding is opposed by the internal friction between the grains and increases as the grains are pressed against each other. As we saw in the Section~\ref{sec:plasticity-review} of the Chapter~\ref{chap:modeling}, in the classical formulation of plasticity theory, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below). In this case the flow rule is said to be \emph{associated}. In the case in which the admissibility criterion also takes pressure into account, the normality condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs the grains slide over each other and in doing so they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule has the drawback of overestimating the dilatancy. To overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
 
-The use of the non-associate flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory; recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
+The use of the non-associated flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory. However recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clear variational formulation.
+This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clearer variational formulation.
 
-The material is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are dedicated to the formulation of our alternative approach.
+The discussion is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are dedicated to the formulation of our alternative approach.
 
 \section{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}
 \label{sec:plasticity-review-soil}
