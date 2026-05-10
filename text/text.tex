@@ -2709,14 +2709,28 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 
 \subsection{Elastoplastic model}
 
-We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(P,\dot P)=Y/P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
+We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\overline P,\dot{\overline P})=Y/\overline P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
 
-To study the stability of the homogeneous solution we should to check if
+To study the stability of the trivial solution we should to check if
 \begin{equation}
 \label{eqn:stability-necking}
 \mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
 \end{equation}
-This since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the stability condition is equivalent to the requirement that $(\overline{y}(t),\overline P(t))$ is a global minimizer of $(y,P)\mapsto\mathcal{E}(y,P,t)+\mathcal{D}(\overline{P}(t),P)$ in $\mathscr{Y}\times\mathscr{Z}$. We expect that~\eqref{eqn:stability-necking} is violated when $\eta$ is sufficiently large. We were not able to get conclusive results in this sense, so we now propose an heuristic consideration that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen. 
+This since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the stability condition is equivalent to the requirement that $(\overline{y}(t),\overline P(t))$ is a global minimizer of $(y,P)\mapsto\mathcal{E}(y,P,t)+\mathcal{D}(\overline{P}(t),P)=:\mathcal{J}_t(y,P)$ in $\mathscr{Y}\times\mathscr{Z}$. We expect that~\eqref{eqn:stability-necking} is violated when $t$ overcome a threshold $t_0>0$, so that the trivial solution becomes unstable and the necking starts.
+
+La discussione che segue è dedicata ad una analisi locale di~\ref{eqn:stability-necking}, nel senso che, invece di controllare l'esistenza di competitori $(y,P)\in\mathscr{Q}$ generici, studieremo se in un intorno di $(\overline y(t),\overline P(t))$ esistono competitori che violano la disuguaglianza di stabilità. Per fare questo potremo sostanzialmente studiare le variazioni prima e seconda di $\mathcal{J}_t$ in $(\overline y(t),\overline{P}(t))$. Siccome $\mathcal{J}_t$ non è differenziabile per via della presenza della distanza di dissipazione non-liscia $\mathcal{D}$, dovremo. Il risultato finale a cui giungeremo è che, scegliendo opportunamente le relazioni costitutive, esiste un $t_0>0$ tale che~\eqref{eqn:stability-necking} viene violata da competitors vicini a $(\overline y(t),\overline P(t))$. Chiaramente l'analisi locale che faremo fornirà una stima inferiore 
+
+The discussion that follows is devoted to a local analysis of~\ref{eqn:stability-necking}.
+
+
+
+We will show that, choosing suitable constitutive relations, there exists an $\eta_0>1$ such that $\mathcal{J}_t$
+
+ the uniform solution losses. The objective of this section is to show that this expectation is
+
+\subsubsection*{Some heuristic considerations}
+
+We were not able to get conclusive results in this sense, so we now propose an heuristic consideration that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen. 
 
 First of all we assume that instability does not occur in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Let
 \[

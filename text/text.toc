@@ -65,6 +65,7 @@
 \contentsline {section}{\tocsection {}{5.3}{Qualitative analysis of the tensile test problem}}{42}{section.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.3.1}{Purely elastic model}}{42}{subsection.5.3.1}%
 \contentsline {subsection}{\tocsubsection {}{5.3.2}{Elastoplastic model}}{44}{subsection.5.3.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Some heuristic considerations}}{45}{section*.17}%
 \contentsline {part}{Part\ 2. \enspace \noindent A model describing pressure sensitive plastic materials}{48}{part.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{6}{Introduction}}{49}{chapter.6}%
 \contentsline {section}{\tocsection {}{6.1}{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}}{49}{section.6.1}%
@@ -83,15 +84,15 @@
 \contentsline {subsection}{\tocsubsection {}{7.2.2}{Function spaces}}{56}{subsection.7.2.2}%
 \contentsline {subsection}{\tocsubsection {}{7.2.3}{Formulation of the problem}}{56}{subsection.7.2.3}%
 \contentsline {subsection}{\tocsubsection {}{7.2.4}{Global existence}}{56}{subsection.7.2.4}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{56}{section*.19}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{60}{section*.20}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{56}{section*.20}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{60}{section*.21}%
 \contentsline {subsection}{\tocsubsection {}{7.2.5}{Example of constitutive relations}}{65}{subsection.7.2.5}%
 \contentsline {subsection}{\tocsubsection {}{7.2.6}{Further regularity hypotheses}}{65}{subsection.7.2.6}%
 \contentsline {subsection}{\tocsubsection {}{7.2.7}{Local existence and uniqueness and global uniqueness}}{65}{subsection.7.2.7}%
 \contentsline {subsection}{\tocsubsection {}{7.2.8}{Bifurcation analysis}}{67}{subsection.7.2.8}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{67}{section*.21}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{68}{section*.22}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{69}{section*.23}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{67}{section*.22}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{68}{section*.23}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{69}{section*.24}%
 \contentsline {section}{\tocsection {}{7.3}{Numerical approximation}}{70}{section.7.3}%
 \contentsline {subsection}{\tocsubsection {}{7.3.1}{Formulation}}{70}{subsection.7.3.1}%
 \contentsline {subsection}{\tocsubsection {}{7.3.2}{Validation}}{70}{subsection.7.3.2}%
@@ -100,7 +101,7 @@
 \contentsline {subsection}{\tocsubsection {}{8.1.1}{Kinematics}}{72}{subsection.8.1.1}%
 \contentsline {subsection}{\tocsubsection {}{8.1.2}{Statics}}{72}{subsection.8.1.2}%
 \contentsline {subsection}{\tocsubsection {}{8.1.3}{Statics}}{72}{subsection.8.1.3}%
-\contentsline {part}{\noindent Collection of useful results}{74}{part*.24}%
+\contentsline {part}{\noindent Collection of useful results}{74}{part*.25}%
 \contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{75}{appendix.A}%
 \contentsline {section}{\tocsection {}{A.1}{Tensors}}{75}{section.A.1}%
 \contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{76}{appendix.B}%
@@ -118,4 +119,4 @@
 \contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{82}{subsection.B.3.5}%
 \contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{87}{subsection.B.3.6}%
 \contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{88}{section.B.4}%
-\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{90}{appendix*.25}%
+\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{90}{appendix*.26}%
