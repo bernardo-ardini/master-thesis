@@ -374,7 +374,7 @@ The condition $\mathcal{I}\in\partial\Psi(z)+\partial\Phi(\dot z)$ imposes that
 \[
 T_e=\dind{W_e}{E_e}(E_e),\qquad T_p\in\dind{W_p}{E_p}(E_p,\grad E_p)+\partial R(\dot E_p)\quad\text{and}\quad K_p=\dind{W_p}{\grad E_p}(E_p,\grad E_p).
 \]
-Usually one assume a linear elastic response, corresponding to
+Usually one assumes a linear elastic response, corresponding to
 \[
 W_e(E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e=\frac{1}{2}\kappa(\tr E_e)^2+\mu|\dev E_e|^2,
 \]
@@ -1882,7 +1882,7 @@ In the small strain model of Chapter~\ref{chap:small-neck} we did not included t
 
 The external generalized force is chosen of the form
 \[
-\tilde{\mathcal X}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
+\dual{\mathcal X,\tilde w}=\int_0^Lf\cdot\tilde vdx+h(L)\cdot\tilde v(L)-h(0)\cdot\tilde v(0).
 \]
 As in the small strain model, $f\colon(0,L)\to\mathbb{R}^2$ is an external force distributed along the bar and $h\colon\{0,L\}\to\mathbb{R}^2$ is an external force acting at the ends of the bar. The first component of both $f$ and $h$ is referred to the axial direction, while the second component is referred to the longitudinal direction.
 
@@ -2760,18 +2760,18 @@ c(t) & b(t)
 \begin{lemma}
 It holds that
 \[
-\frac{dF}{d\eta}(t):=\frac{dF}{dt}(t)\left(\frac{d\eta}{dt}(t)\right)^{-1}=\frac{\det h(t)}{\det b(t)}.
+\frac{d\overline F}{d\eta}(t):=\frac{d\overline F}{dt}(t)\left(\frac{d\eta}{dt}(t)\right)^{-1}=\frac{\det h(t)}{\det b(t)}.
 \]
 \end{lemma}
 \begin{proof}
 Notice that
 \[
-F(s)=\dind{J_t}{\rho}(\eta(s),\overline y_2(s),\overline P(s))+\overline{F}(t).
+\overline F(s)=\dind{J_t}{\rho}(\eta(s),\overline y_2(s),\overline P(s))+\overline{F}(t).
 \]
 Then, differentiating with respect to $s$, computing for $s=t$ and dividing by $\frac{d\eta}{dt}(t)$, we get
 \begin{equation}
 \label{eqn:dF-deta-1}
-\frac{dF}{d\eta}=\dind{J_t}{\rho\partial\rho}(\eta,\overline y_2,\overline P)+\dind{J_t}{\rho\partial y_2}(\eta,\overline y_2,\overline P)\frac{d\overline y_2}{d\eta}+\dind{J_t}{\rho\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline P}{d\eta}.
+\frac{d\overline F}{d\eta}=\dind{J_t}{\rho\partial\rho}(\eta,\overline y_2,\overline P)+\dind{J_t}{\rho\partial y_2}(\eta,\overline y_2,\overline P)\frac{d\overline y_2}{d\eta}+\dind{J_t}{\rho\partial P}(\eta,\overline y_2,\overline P)\frac{d\overline P}{d\eta}.
 \end{equation}
 On the other hand, the balance in the transversal direction and the balance of microforces can be written respectively as
 \[
@@ -2794,7 +2794,7 @@ Then
 \]
 Substituting into~\eqref{eqn:dF-deta-1} we get
 \[
-\frac{dF}{d\eta}=a-c\cdot b^{-1}c.
+\frac{d\overline F}{d\eta}=a-c\cdot b^{-1}c.
 \]
 But since
 \[
@@ -2802,14 +2802,14 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $dF/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $F$ increases and became indefinite if $F$ reaches a maximum. This is indeed confirmed by the numerical computations. In particular one finds that at the instant $t_0\in(0,T]$ where $\det h(t_0)$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This suggest that at time $t_0$ the bar tends to increase its length, shrink and increase its plastic distortion, but this instability mode actually cannot happen since the elongation, and not the traction force, are imposed. This leads us to claim that at some instant $t_1\ge t_0$, the stability condition~\eqref{eqn:stability-necking} is violated. A different non homogeneous solution became energetically favored and we expect that
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $d\overline F/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $\overline F$ increases and became indefinite if $\overline F$ reaches a maximum. This is indeed confirmed by the numerical computations. In particular one finds that at the instant $t_0\in(0,T]$ where $\det h(t_0)$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This suggest that at time $t_0$ the bar tends to increase its length, shrink and increase its plastic distortion, but this instability mode actually cannot happen since the elongation, and not the traction force, are imposed. This leads us to claim that at some instant $t_1\ge t_0$, the stability condition~\eqref{eqn:stability-necking} is violated. A different non homogeneous solution became energetically favored and we expect that
 \begin{itemize}
 \item[(i)] somewhere along the length of the bar the axial deformation $\chi_1'>\eta$, $\chi_2<\overline\chi_2$ and $P>\overline P$ since this is the instability mode that we would have in absence of the Dirichlet boundary conditions imposed at the ends,
 \item[(ii)] elsewhere $\chi_1'<\eta$ in order to fulfill the boundary conditions.
 \end{itemize}
 This type of instability is likely to corresponds to necking, since in the regions where $\chi_1'<\eta$ we expect that the material is less in tension and is subject to elastic unloading. This leads to a concentration of the deformation where $\chi_1'>\eta$ leading to a localized neck. We expect that the axial dimension of the neck will depends on the length parameter $l$ since it prescribes the amount of regularization. As $l\to0^+$ we expect the neck to shrink to zero.
 
-The constitutive equations of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $F$ and $\eta$ if $C$ is large enough, so that the above considerations suggest that necking does not occur in this case, while when $C>0$ a non monotone relation is obtained, see the the dashed lines in Figure~\ref{fig:instabilitypl}.
+The constitutive equations of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $\overline F$ and $\eta$ if $C$ is large enough, so that the above considerations suggest that necking does not occur in this case, while when $C>0$ a non monotone relation is obtained, see the the dashed lines in Figure~\ref{fig:instabilitypl}.
 
 \begin{rmk}
 A possible refinement of the hardening free energy function is
