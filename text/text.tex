@@ -1273,6 +1273,7 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 \label{part:his-model}
 
 \chapter{Introduction}
+\label{chap:intro-neck}
 
 In a Mémoire of 1885~\cite{Considere1885}, the French engineer M. Considère collected his studies on the experimental tests he carried out on the mechanical behavior of structural metals, whose use as building materials had become widespread. Part of his study is dedicated to the tensile test of cylindrical samples: a cylindrical bar is placed under tension by controlling its elongation and the axial force to which it is subjected is measured. The experimental data reported by Considère are shown in Figure~\ref{fig:considere}.
 \begin{figure}[h]
@@ -2709,7 +2710,23 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 
 \subsection{Elastoplastic model}
 
-We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\overline P,\dot{\overline P})=Y/\overline P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
+We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\overline P,\dot{\overline P})=Y/\overline P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
+
+To study the stability of the trivial solution we have to check whether the global stability condition
+\begin{equation}
+\label{eqn:stability-necking}
+\mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
+\end{equation}
+is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the global stability condition is equivalent to say that $(\overline y(t),\overline P(t))$ is a global minimizer of $\mathcal{J}_t\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ defined by
+\[
+\mathcal{J}_t(\hat y,\hat Q)=\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline P(t),\hat P).
+\]
+The aim of what follows is to study the conditions under under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\overline y(t),\overline P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\overline y(t),\overline P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
+\begin{rmk}
+Out study of local stability does not exclude that~\eqref{eqn:stability-necking} is violated also for $t_0\le t$, so that $t_0$ must be intended as an upper bound for the instant in which instability occur. Indeed it could exist a $t\le t_0$ such that $(\overline y(t),\overline P(t))$ is a local minimizer of $\mathcal{J}_t$ but not a global minimizer. In this case the configuration bar would jump from the trivial configuration to another configuration energetically favored. However the experimental observation and the theoretical and numerical studies indicate in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that our threshold $t_0$ of instability detected by the local analysis actually corresponds with the true instant at which necking starts. Even thought the energetic solution exhibits a jumps, this should be considered as a defect of the energetic solution concept as discussed in Chapter~\ref{chap:solution-concepts}.
+\end{rmk}
+
+
 
 To study the stability of the trivial solution we should to check if
 \begin{equation}
