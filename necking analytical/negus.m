@@ -42,7 +42,7 @@ res=cell(N,1);
 etas=linspace(1,1.003,N);
 etas=[etas(1:end-1),linspace(1.003,1.35,N)];
 N=length(etas);
-L=201;
+L=6e2;
 %L=30e20;
 yield=0;
 hs=linspace(0,0.9*L,2);
@@ -208,8 +208,10 @@ han=@(t)-interp1(etas,arrayfun(@(i) res{i}.F,1:N),t,'spline');
 etay=mean([etas(ind(1)-1),etas(ind(1))]);
 etan=zeros(K+1,1);
 
+figure;
+
 for k=1:K+1
-    figure;
+    %figure;
     plot(etas(ind),arrayfun(@(i) res{i}.de(k),ind));
     hold on;
     title(sprintf("determinant of M_k with k=%d",k));
@@ -226,5 +228,9 @@ figure;
 plot(etas(ind),arrayfun(@(i) res{i}.hess,ind))
 title("determinant of the hessian for stability under force control");
 
-writematrix([etas',arrayfun(@(i) res{i}.F,1:N)'],"../text/figures/force.dat",Delimiter="tab")
-writematrix([etas(ind)',arrayfun(@(i) res{i}.hess,ind)'],"../text/figures/hessian.dat",Delimiter="tab")
+% writematrix([etas',arrayfun(@(i) res{i}.F,1:N)'],"../text/figures/force.dat",Delimiter="tab")
+% writematrix([etas(ind)',arrayfun(@(i) res{i}.hess,ind)'],"../text/figures/hessian.dat",Delimiter="tab")
+% writematrix([etas(ind)',arrayfun(@(i) res{i}.de(1),ind)',arrayfun(@(i) res{i}.de(2),ind)',arrayfun(@(i) res{i}.de(3),ind)',arrayfun(@(i) res{i}.de(4),ind)',arrayfun(@(i) res{i}.de(5),ind)'],"../text/figures/dets.dat",Delimiter="tab")
+% 
+% 
+% writematrix([L,etan(2)],"../text/figures/etan.dat", 'WriteMode', 'append',Delimiter="tab");

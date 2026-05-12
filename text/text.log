@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  12 MAY 2026 14:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  12 MAY 2026 20:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1564,7 +1564,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 (Font)              scaled to size 14.4pt on input line 93.
 (./text.toc
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 30.
+(Font)              scaled to size 10.0pt on input line 29.
 )
 \tf@toc=\write5
 \openout5 = `text.toc'.
@@ -1662,15 +1662,15 @@ Chapter 2
 [14]
 
 [15]
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 10.0pt on input line 1048.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 7.3pt on input line 1048.
+LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
+(Font)              scaled to size 5.5pt on input line 1048.
+
 
 [16]
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 10.0pt on input line 1052.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 7.3pt on input line 1052.
-LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
-(Font)              scaled to size 5.5pt on input line 1052.
-
 
 [17]
 
@@ -1678,25 +1678,23 @@ LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
 
 [19]
 
-[20]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1272.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1268.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1272.
+(hyperref)                replaced by space on input line 1268.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1272.
+(hyperref)                removing `\noindent' on input line 1268.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1272.
+(Font)              scaled to size 20.74pt on input line 1268.
 
 
-[21
+[20
 
 
 ]
@@ -1704,50 +1702,52 @@ Chapter 3
 PGFPlots: reading {figures/necking-experimental.dat}
 
 
-[22
+[21
 
 
 ]
 
-[23]
+[22]
 Chapter 4
 
 
-[24
+[23
 
 
 ]
-Overfull \hbox (3.04405pt too wide) in paragraph at lines 1413--1414
+Overfull \hbox (3.04405pt too wide) in paragraph at lines 1409--1410
  \T1/zpltlf/b/n/10 4.1.2.Kinematics of the one di-men-sional model.[] \T1/zpltl
 f/m/n/10 We are now ready to build a purely one-dimensional
  []
 
 
 
-[25]
+[24]
 
-[26]
+[25]
 Missing character: There is no h in font eusm10!
 Missing character: There is no i in font eusm10!
 
+
+[26]
 
 [27]
 
 [28]
 
 [29]
-
-[30]
 Chapter 5
 
 
-[31
+[30
 
 
 ]
 Underfull \vbox (badness 1648) has occurred while \output is active []
 
 
+
+[31]
 
 [32]
 
@@ -1770,11 +1770,9 @@ Underfull \vbox (badness 1648) has occurred while \output is active []
 [41]
 
 [42]
-
-[43]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2665: fill between: activating layered grap
+Package pgfplots info on input line 2661: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1792,49 +1790,69 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2665: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2661: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2665.
+(Font)              scaled to size 8.0pt on input line 2661.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2679: fill between: activating layered grap
+Package pgfplots info on input line 2675: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2679: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2675: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
 
-[44]
+[43]
 PGFPlots: reading {figures/instability.dat}
 PGFPlots: reading {figures/instability.dat}
 
+
+[44]
 
 [45]
-
-[46]
 PGFPlots: reading {figures/force.dat}
 PGFPlots: reading {figures/hessian.dat}
 
 
+[46]
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 2951.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 6.5pt on input line 2954.
+
+
 [47]
+PGFPlots: reading {figures/dets.dat}
+
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/dets.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/dets.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/dets.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/dets.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/etan.dat}
+
 
 [48]
 
 [49]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2996.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 2996.
+(hyperref)                replaced by space on input line 3118.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2996.
+(hyperref)                removing `\noindent' on input line 3118.
 
 
 
@@ -1912,7 +1930,7 @@ Chapter 8
 [75]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4621.
+(hyperref)                removing `\noindent' on input line 4743.
 
 
 
@@ -1962,12 +1980,12 @@ Appendix B
 [91]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5658.
+5780.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5658.
+(Font)              scaled to size 10.0pt on input line 5780.
 
 
 [92
@@ -1976,7 +1994,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5659--5659
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5781--5781
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
@@ -1995,13 +2013,13 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47942 strings out of 473197
- 1053447 string characters out of 5718605
- 1921772 words of memory out of 5000000
- 69725 multiletter control sequences out of 15000+600000
- 697611 words of font info for 252 fonts, out of 8000000 for 9000
+ 48021 strings out of 473197
+ 1054855 string characters out of 5718605
+ 1947278 words of memory out of 5000000
+ 69788 multiletter control sequences out of 15000+600000
+ 707525 words of font info for 272 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 99i,24n,105p,1901b,2037s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,24n,105p,1901b,2249s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
@@ -2023,10 +2041,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (96 pages, 918312 bytes).
+Output written on text.pdf (96 pages, 926880 bytes).
 PDF statistics:
- 1574 PDF objects out of 1728 (max. 8388607)
- 1423 compressed objects within 15 object streams
- 530 named destinations out of 1000 (max. 500000)
+ 1584 PDF objects out of 1728 (max. 8388607)
+ 1433 compressed objects within 15 object streams
+ 534 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
