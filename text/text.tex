@@ -1320,7 +1320,7 @@ Our analysis cannot be considered conclusive since it is not yet able to show th
 \chapter{One-dimensional model at small deformations}
 \label{chap:small-neck}
 
-In this chapter we develop and analyze a version of the one dimensional model aiming to describe the behavior of the metallic bar under tension which is valid in the regime of small deformations model. We split our discussion into three parts. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section treats the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
+In this chapter we develop and analyze a version of the one dimensional model aiming to describe the behavior of the metallic bar under tension under the assumption of small deformations. We split our discussion into three sections. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section treats the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
 
 \section{Formulation}
 \label{sec:small-model-1d}
@@ -1414,7 +1414,7 @@ The space $Z$ of configurations $z=(u,p)$ will be clearly defined subsequently w
 
 \subsection{Statics}
 
-With the same reasoning that lead to choose an internal power of the form~\eqref{eqn:powers-plasticity} in the multidimensional plasticity theory discussed in Section~\ref{sec:plasticity-review}, we assume that the generalized internal force in out one-dimensional model is of the form
+With the same reasoning that lead to choose the internal power]\eqref{eqn:powers-plasticity} in the context of the multidimensional plasticity theory, now we assume that the generalized internal force in our one-dimensional model is of the form
 \[
 \dual{\mathcal I,\tilde w}=\int_0^L\left(\zeta\tilde v_2'+\sigma_1(\tilde v_1'-\tilde q)+\sigma_2(\tilde v_2+(d-1)^{-1}\tilde q)\right)dx+\int_0^L\tau\tilde qdx.
 \]
@@ -1853,7 +1853,7 @@ so that the neo-Hookean elastic free energy density is given by
 
 \subsection{Kinematics}
 
-We now proceed to develop a purely one-dimensional model of the bar. This model is formulated independently of the fully multidimensional one; therefore, the discussion in the previous section should be viewed merely as a motivation for the specific choices made in the following derivation.
+We now proceed to develop a purely one-dimensional model of the bar. This model is formulated independently of the fully multidimensional one; therefore, the discussion in the previous subsection should be viewed merely as a motivation for the specific choices made in the following derivation.
 
 Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. As suggested by the multidimensional kinematics, we define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
 
@@ -1861,9 +1861,9 @@ The configuration space $Z$ of the system are thus the elements of the form $z=(
 
 \subsection{Statics}
 
-We assume that the internal generalized force is of the form
+The internal generalized force is chosen so that clearly appear the elastic forces and stresses, conjugate to the virtual rates of the elastic distortions, and plastic microforces and microstresses power, conjugate to the the virtual rate of the plastic distortion and its spatial derivative:
 \[
-\dual{\mathcal{I},\tilde w}=\int_0^L\left(\zeta\tilde{\dot G}+\sigma_1\tilde{\dot E}_1+\sigma_2\tilde{\dot E}_2\right)dX+\int_0^L\left(\tau\tilde{Q}+\kappa\tilde{Q}'\right)dX,
+\dual{\mathcal{I},\tilde w}=\int_0^L\left(\zeta\tilde{\dot G}+\sigma_1\tilde{\dot E}_1+\sigma_2\tilde{\dot E}_2\right)dX+\int_0^L\left(\tau\tilde{Q}+\kappa\tilde{Q}'\right)dX.
 \]
 Here $\zeta\colon(0,L)\to\mathbb{R}$ is the transversal elastic stress, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the transversal elastic force, while $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force and $\kappa\colon(0,L)\to\mathbb{R}$ the microscopic stress. Moreover the virtual rates $\tilde{\dot E}_1$, $\tilde{\dot E}_2$ and $\tilde{\dot G}$ are defined by the relations
 \begin{gather*}
@@ -1871,7 +1871,7 @@ G^{-1}\tilde{\dot G}=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q} \\
 E_1^{-1}\tilde{\dot E}_1=(\chi_1')^{-1}\tilde{v}_1'-P^{-1}\tilde{Q} \\
 E_2^{-1}\tilde{\dot E}_2=\chi_2^{-1}\tilde{v}_2+(d-1)^{-1}P^{-1}\tilde{Q},
 \end{gather*}
-Then the internal generalized force can be written more explicitly as
+Taking into account these definitions the internal generalized force can be rewritten more explicitly as
 \begin{multline*}
 \dual{\mathcal{I},\tilde w}=\int_0^LG\zeta\left((\chi_2')^{-1}\tilde v_2'-P^{-1}\tilde Q\right)dX+\\
 +\int_0^L\left[E_1\sigma_1\left((\chi_1')^{-1}\tilde v_1'-P^{-1}\tilde Q\right)+E_2\sigma_2\left(\chi_2^{-1}\tilde v_2+(d-1)^{-1}P^{-1}\tilde Q\right)\right]dX+\\
@@ -1910,25 +1910,19 @@ Rearranging the terms we have
 \end{multline*}
 By integration by parts and application of the fundamental lemma of the calculus of variation we get the thesis.
 \end{proof}
-We call Mandel stress the quantity
+As we did also in the previous chapter, we define the Mandel stress as the elastic force felt by the microscopic configuration, that is
 \begin{equation}
 \label{eqn:neck-large-mandel}
 m=\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta.
 \end{equation}
-It is the elastic force felt by the microscopic configuration.
-
 
 \subsection{Constitutive relations}
 
-We choose a free energy for unit axial length of the form
-\[
-\psi=W(E_1,E_2,G)+H(P,P')
-\]
-where $W\colon(0,\infty)\times(0,\infty)\times\mathbb{R}\to\mathbb{R}$ is elastic free energy density and $H\colon(0,\infty)\times\mathbb{R}\to\mathbb{R}$ is the hardening free energy density. The plastic response is obtained by introducing a dissipation potential per unit axial length of the form
-\[
-\phi=R(P,\dot P)
-\]
-where $R\colon(0,\infty)\times\mathbb{R}\to[0,\infty]$ is convex in $\dot P$ and satisfies $R(0)=0$. Consistently with that choice of $\psi$ and $\phi$ we impose the following constitutive relations
+To appropriately build the constitutive relations we consider a free energy $\Psi\colon Z\to\mathbb{R}$ and a dissipation potential $\Phi\colon Z\to\mathbb{R}$ of the same structure that we sow in the previous plasticity models.
+\begin{equation}
+\Psi(z)=\int_0^L\left(W(E_1,E_2,G)+H(P,P')\right)dX\quad\text{and}\quad\Phi(z,\dot z)=\int_0^LR(P,\dot P)dX.
+\end{equation}
+Here $W\colon(0,\infty)\times(0,\infty)\times\mathbb{R}\to\mathbb{R}$ and $H\colon(0,\infty)\times\mathbb{R}\to\mathbb{R}$ are the smooth elastic and plastic free energy densities, and $R\colon(0,\infty)\times\mathbb{R}\to[0,\infty]$, convex in $\dot P$ and satisfying $R(0)=0$, is dissipation potential per unit axial length. Consistently with that choice of $\Psi$ and $\Phi$ we find the following constitutive relations
 \begin{subequations}
 \label{eqn:constitutive-neck-large}
 \begin{gather}
@@ -2558,9 +2552,9 @@ This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ i
 
 \section{Qualitative analysis of the tensile test problem}
 
-We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$, $\eta\ge1$ and $\eta$ is nondecreasing. To handle the boundary conditions we $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknown of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
+We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$, $\eta\ge1$ and $\eta$ is nondecreasing. To handle the boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
 
-We will see that a trivial strong solution to this problem is the spatially homogeneous one that is $\bar{y}_1(X,t)=X$ for all $X\in(0,L)$ and $t\in[0,T]$, $\bar{y}_1(\cdot,t)$ and $\bar{P}(\cdot,t)$ constant for all $t\in[0,T]$. However we expect that this trivial solution is unstable when $\eta$ is sufficiently large, in the sense that it does not satisfy the global stability condition
+We will see that a trivial strong solution to this problem is the spatially homogeneous one that is $\bar{y}_1(X,t)=X$ for all $X\in(0,L)$ and $t\in[0,T]$, $\bar{y}_2(\cdot,t)$ and $\bar{P}(\cdot,t)$ constant for all $t\in[0,T]$. However we expect that this trivial solution is unstable when $\eta$ is sufficiently large, in the sense that it does not satisfy the global stability condition
 \[
 \mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar P(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
 \]
@@ -2568,7 +2562,7 @@ The instability of the trivial solution would correspond with the onset of necki
 
 We will discuss first the stability of the trivial solution when the elastic response only is considered. In this case we will be able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
 \begin{rmk}
-Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces, probably with some nontrivial adjustments needed to treat the nonsmooth character of plasticity theory. Some results regarding this theory and application to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
+Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces, probably with some nontrivial adjustments needed to treat the nonsmooth character of plasticity theory. Some results regarding this theory in the smooth context and applications to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
 \end{rmk}
 
 \subsection{Purely elastic model}
@@ -2883,35 +2877,43 @@ with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. And we notice that $\mathc
 \[
 \mathscr{Q}^\varsigma_t=\{\hat q=(\hat y,\hat P)\in\mathscr{Q}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
-Then the following trivial fact holds.
+Then the following lemma express some relations between the minimality of $\mathcal{J}_t$ and similar conditions for $\mathcal{J}_t^\varsigma$.
 \begin{lemma}
 The global stability condition
 \begin{equation}
 \label{eqn:min-neck}
 \mathcal{J}_t(\bar{q}(t))\le\mathcal{J}_t(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}$}
 \end{equation}
-implies the following couple of one sided  global stability conditions
+implies the following couple of one-sided  global stability conditions
 \begin{equation}
 \label{eqn:min-neck-sigma}
 \mathcal{J}_t^\varsigma(\bar{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 \end{equation}
-Moreover if $\overline q(t)$ satisfies
-\begin{gather*}
-\dual{\partial\mathcal{J}_t^-(\overline q(t)),w}>0\quad\text{for all $w\in Q$ with $Q\le0$ in $(0,L)$ not identically vanishing} \\
-\text{and}\\
-\partial\mathcal{J}_t^+(\overline q(t))=0,\quad\text{$\partial^2\mathcal{J}^+_t(\overline{q}(t))$ is positive definite}
-\end{gather*}
-then it is a local minimum of $\mathcal{J}_t$ in the following sense
-\[
-\dual{\partial^+\mathcal{J}_t(\overline{q}),w}>0\quad\text{or}\quad\begin{cases}
-\dual{\partial^+\mathcal{J}_t(\overline{q}),w}=0 \\
-\dual{\partial^+\partial^+\mathcal{J}_t(\overline{q})w,w}>0
-\end{cases}\qquad\text{for all $w\in Q$}.
-\]
-\end{lemma}
-\begin{proof}
-That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial.
-\end{proof}
+%Moreover if $\overline q(t)$ satisfies
+%\begin{subequations}
+%\label{eqn:condiz}
+%\begin{gather}
+%\dual{\partial\mathcal{J}_t^-(\overline q(t)),w}>0\quad\text{for all $w\in Q$ with $Q\le0$ in $(0,L)$ not identically vanishing} \\
+%\text{and}\\
+%\partial\mathcal{J}_t^+(\overline q(t))=0,\quad\text{$\partial^2\mathcal{J}^+_t(\overline{q}(t))$ is positive definite}
+%\end{gather}
+%\end{subequations}
+%then
+%\begin{equation}
+%\label{eqn:local-minimum}
+%\dual{\partial^+\mathcal{J}_t(\overline{q}),w}>0\quad\text{or}\quad\begin{cases}
+%\dual{\partial^+\mathcal{J}_t(\overline{q}),w}=0 \\
+%\dual{(\partial^+)^2\mathcal{J}_t(\overline{q})w,w}>0
+%\end{cases}\qquad\text{for all $w\in Q$},
+%\end{equation}
+%where $\partial^+$ denotes the one-sided G\^ateaux derivative.
+%\end{lemma}
+%\begin{proof}
+%That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial. Next consider any $w\in Q$ and decompose it as $w=w^++w^-$ with $Q^+\ge0$ and $Q^-\le0$. Then it is immediate to check that
+%\end{proof}
+%\begin{rmk}
+%We suspect that~\eqref{eqn:local-minimum} does not implies that $\overline{q}(t)$ is a local minimum of $\mathcal{J}_t$ but it is a weaker stability property that takes into account only the directional derivatives up to second order instead of the whole local behavior of $\mathcal{J}_t$ ner $\overline q(t)$.
+%\end{rmk}
 %\begin{lemma}
 %The stability condition
 %\begin{equation}
@@ -2923,7 +2925,7 @@ That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial.
 %\label{eqn:min-neck-sigma}
 %\mathcal{J}_t^\varsigma(\bar{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 %\end{equation}
-%\end{lemma}
+\end{lemma}
 %\begin{proof}
 %That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial. Conversely suppose that~\eqref{eqn:min-neck-sigma} holds and, by contradiction, that $\mathcal{J}_t(\bar{q}(t))>\mathcal{J}_t(\hat q)$ for some $\hat q\in\mathscr{Q}$. If $\hat q\in\mathscr{Q}^\varsigma$ for some $\varsigma\in\{\pm1\}$ we immediately get the desired contradiction. Otherwise let $\hat q^+\in\mathscr{Q}^+$ be defined by $\hat y^+=\hat y$ and $\hat P^+:=\max\{\hat P,\bar P(t)\}$. Then
 %\[
@@ -2931,7 +2933,7 @@ That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial.
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study when this happen.
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study when this happen.
 
 Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $Q\le0$ in $(0,L)$, it holds that
 \[
@@ -3067,6 +3069,12 @@ Thus the existence of a nontrivial solution is equivalent to the existence of so
 \caption{On the left, value of $\det M_k$ for $k\in\{0,1,2,3,4\}$. Notice the $\det M_0$ never vanishes while $\det M_1$ is the first determinant to vanish at elongation $\eta_1=1.1597$, slightly greater than the elongation $\eta_\text{m}=1.1474$ corresponding to the maximum of $\bar F$. On the right is $\eta_1$ as $L$ changes. Notice that $\eta_1$ tends to $\eta_\text{m}$ as $L\to\infty$.}
 \label{fig:dets}
 \end{figure}
+When $\eta=\eta_1$ the kernel of $\partial^2\mathcal{J}^+_t(\overline q(t))$ becomes nontrivial and is spanned by $w$
+\[
+w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
+\]
+with $w^1$ satisfying $M_1w^1=0$. If we compote numerically $w^1$ we find that $w^1>0$, $w^2<0$ and $w^3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. Even though $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+$, it is not necessarily a true instability mode because, since it does not satisfies $w_3\ge 0$ does not necessarily made stationary the second variation of the true objective functional $\mathcal{J}_t$.
+
 In the same figure, on the right, is shown the value of the elongation $\eta_1$ when $\det M_1$ vanish as a function of the length of $L$ of the bar. In the limit $L\to\infty$ it results that $\eta_1$ converges to $\eta_\text{m}$, the elongation corresponding to the maximum tensile force. This is indeed justified by the following lemma.
 \begin{lemma}
 Assume that as $L\to\infty$ the value $\eta_k$ corresponding to vanishing $\det M_k$ has a finite limit. Then that limit coincides to $\eta_\text{m}$ for all $k\in\mathbb{N}$.
@@ -3112,7 +3120,7 @@ Now reasoning as in the proof of Lemma~\ref{lemma:stability-force} and using~\eq
 \end{proof}
 
 \begin{rmk}
-The result that we have obtained actually allows to determine a lower bound 
+The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
 \end{rmk}
 
 \part{A model describing pressure sensitive plastic materials}
