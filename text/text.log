@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  10 MAY 2026 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  12 MAY 2026 09:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1344,17 +1344,14 @@ LaTeX Info: Redefining \openbox on input line 2551.
 \@quotereset=\count490
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 10.0pt on input line 83.
- (./text.aux (./frontespizio.aux)
-
-LaTeX Warning: Label `eqn:stability-necking' multiply defined.
-
-)
+ (./text.aux (./frontespizio.aux))
 \openout1 = `text.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/npxmi/m/it on input line 83.
 LaTeX Font Info:    Trying to load font information for OML+npxmi on input line
  83.
- (/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/newpx/omlnpxmi.fd
 File: omlnpxmi.fd 2013/03/21 Fontinst v1.933 font definitions for OML/npxmi.
 )
 LaTeX Font Info:    ... okay on input line 83.
@@ -1772,7 +1769,7 @@ Chapter 5
 [42]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2627: fill between: activating layered grap
+Package pgfplots info on input line 2629: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1790,16 +1787,16 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2627: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2629: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2627.
+(Font)              scaled to size 8.0pt on input line 2629.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2641: fill between: activating layered grap
+Package pgfplots info on input line 2643: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2641: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2643: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
@@ -1821,46 +1818,46 @@ PGFPlots: reading {figures/instabilitypl(4).dat}
 
 [47]
 
-[48]
-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2886.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 2886.
+(hyperref)                replaced by space on input line 2875.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2886.
+(hyperref)                removing `\noindent' on input line 2875.
 
 
 
-[49
+[48
 
 
 ]
 Chapter 6
 
 
-[50
+[49
 
 
 ]
+
+[50]
 
 [51]
 
 [52]
-
-[53]
 Chapter 7
 
 
-[54
+[53
 
 
 ]
+
+[54]
 
 [55]
 
@@ -1887,52 +1884,52 @@ Chapter 7
 [66]
 
 [67]
-
-[68]
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
+
+[68]
 
 [69]
 
 [70]
 
 [71]
-
-[72]
 Chapter 8
 
 
-[73
+[72
 
 
 ]
 
-[74]
+[73]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4511.
+(hyperref)                removing `\noindent' on input line 4500.
 
 
 
-[75
+[74
 
 
 ]
 Appendix A
 
 
-[76
+[75
 
 
 ]
 Appendix B
 
 
-[77
+[76
 
 
 ]
+
+[77]
 
 [78]
 
@@ -1957,50 +1954,44 @@ Appendix B
 [88]
 
 [89]
-
-[90]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5548.
+5537.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5548.
+(Font)              scaled to size 10.0pt on input line 5537.
 
 
-[91
+[90
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5549--5549
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5538--5538
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[92]
+[91]
 
-[93] (./text.aux (./frontespizio.aux))
+[92] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package logreq Info: Writing requests to 'text.run.xml'.
 \openout1 = `text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47925 strings out of 473197
- 1053256 string characters out of 5718605
- 1918471 words of memory out of 5000000
+ 47924 strings out of 473197
+ 1053245 string characters out of 5718605
+ 1919436 words of memory out of 5000000
  69711 multiletter control sequences out of 15000+600000
  697611 words of font info for 252 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -2026,10 +2017,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (95 pages, 911960 bytes).
+Output written on text.pdf (94 pages, 909369 bytes).
 PDF statistics:
- 1568 PDF objects out of 1728 (max. 8388607)
- 1418 compressed objects within 15 object streams
- 525 named destinations out of 1000 (max. 500000)
+ 1558 PDF objects out of 1728 (max. 8388607)
+ 1409 compressed objects within 15 object streams
+ 524 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 

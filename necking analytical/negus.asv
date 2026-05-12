@@ -42,7 +42,9 @@ N=length(etas);
 L=201;
 %L=30e20;
 yield=0;
-hs=linspace(0,L,10);
+hs=linspace(0,L,2);
+
+load de
 
 for i=1:N
     if yield==0
@@ -77,27 +79,27 @@ for i=1:N
         C(3,2)=C(2,3);
         C(3,3)=double(subs(-eta^2*W11/y3^4-y2^2*W22-2*eta*W1/y3^3+2*eta*y2/y3^2*W12-H11-D22,in,out));
 
-        syms la;
-        P=det(la^2*A+la*B+C);
-        sop=solve(P==0,la);
-        vp=zeros(3,6);
-        lap=zeros(6,1);
-        for j=1:6
-            LLL=subs(la^2*A+la*B+C,la,sop(j));
-            vp(:,j)=null(LLL);
-            lap(j)=double(sop(j));
-        end
-
-        syms la;
-        P=det(la^2*A(1:2,1:2)+la*B(1:2,1:2)+C(1:2,1:2));
-        so0=solve(P==0,la);
-        v0=zeros(2,4);
-        la0=zeros(4,1);
-        for j=1:4
-            LLL=subs(la^2*A(1:2,1:2)+la*B(1:2,1:2)+C(1:2,1:2),la,so0(j));
-            v0(:,j)=null(LLL);
-            la0(j)=double(sop(j));
-        end
+        % syms la;
+        % P=det(la^2*A+la*B+C);
+        % sop=solve(P==0,la);
+        % vp=zeros(3,6);
+        % lap=zeros(6,1);
+        % for j=1:6
+        %     LLL=subs(la^2*A+la*B+C,la,sop(j));
+        %     vp(:,j)=null(LLL);
+        %     lap(j)=double(sop(j));
+        % end
+        % 
+        % syms la;
+        % P=det(la^2*A(1:2,1:2)+la*B(1:2,1:2)+C(1:2,1:2));
+        % so0=solve(P==0,la);
+        % v0=zeros(2,4);
+        % la0=zeros(4,1);
+        % for j=1:4
+        %     LLL=subs(la^2*A(1:2,1:2)+la*B(1:2,1:2)+C(1:2,1:2),la,so0(j));
+        %     v0(:,j)=null(LLL);
+        %     la0(j)=double(sop(j));
+        % end
 
         % Mp=[zeros(3,3),eye(3,3);-A\C,-A\B];
         % M0=[zeros(2,2),eye(2,2);-A(1:2,1:2)\C(1:2,1:2),-A(1:2,1:2)\B(1:2,1:2)];
@@ -127,6 +129,25 @@ for i=1:N
         c1=C(2,2);
         c2=C(2,3);
         c3=C(3,3);
+
+        syms v10(x) v20(x);
+        dv20=diff(v20,x);
+        dx=dsolve([a1*diff(v10,x,x)+b1*diff(v20,x)==0,a2*diff(v20,x,x)-b1*diff(v10,x)+c1*v20==0],[v10(L)==0,dv20(L)==0]);
+
+        syms v1p(x) v2p(x) v3p(x);
+        dv2p=diff(v2p,x);
+        dv3p=diff(v3p,x);
+        sx=dsolve([a1*diff(v1p,x,x)+b1*diff(v2p,x)+b2*diff(v3p,x)==0,a2*diff(v2p,x,x)-b1*diff(v1p,x)+c1*v2p+c2*v3p==0,a3*diff(v3p,x,x)-b2*diff(v1p,x)+c2*v2p+c3*v3p==0],[v1p(0)==0,dv2p(0)==0,dv3p(0)==0]);
+
+        syms C1 C2 C3;
+        res{i}.deQ=zeros(length(hs),1);
+
+        for j=1:length(hs)
+            % matdx=equationsToMatrix(subs([dx.v10;dx.v20;0;diff(dx.v10,x);diff(dx.v20,x)],x,hs(j)),[C1,C2]);
+            % matsx=equationsToMatrix(subs([sx.v1p;sx.v2p;sx.v3p;diff(sx.v1p,x);diff(sx.v2p,x)],x,hs(j)),[C1,C2,C3]);
+            % Q=[matdx,-matsx];
+            res{i}.deQ(j)=det(Q);
+        end
 
         K=4;
         res{i}.de=zeros(K+1,1);

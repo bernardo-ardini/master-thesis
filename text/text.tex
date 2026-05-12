@@ -1583,9 +1583,9 @@ Now we choose $\theta$, $\tau$ and $\eta$ sufficiently close to 1 so that the co
 
 \section{Analytical solution to the tensile test problem}
 
-In this section we obtain explicit solutions to the boundary value problem describing the tensile test. We will consider two different variants of the problem: in the first variant the end section are left free, while in the second variant  and the end section are clamped. We will see that the behavior of the solutions in this two situations is qualitatively similar, and in particular necking does not occur.
+In this section we obtain explicit solutions to the boundary value problem describing the tensile test. We will consider two different variants of the problem: in the first variant the ends are left free to slide in the transversal direction, while in the second variant the ends are clamped. We will see that the behavior of the solutions in this two situations is qualitatively similar, and in particular necking does not occur.
 
-\subsection{Traction with free end sections}
+\subsection{Tensile test with free-sliding ends}
 \label{subsec:homogeneous-solution}
 
 Suppose that $f(x,t)=0$, $h_1(L,t)=h_1(0,t)=F(t)$, and $h_2(L,t)=h_2(0,t)=0$ for all $x\in(0,L)$ and $t\in[0,T]$. We assume that $F(0)=0$ and that $F$ is monotonically increasing. From equation~\eqref{eqn:local-form-1} and~\eqref{eqn:local-form-2} we have that $\sigma_1=F$ on all $(0,L)$. Then
@@ -1626,7 +1626,7 @@ F-Bp=Y.
 \]
 This implies $p=B^{-1}(F-Y)$. Assuming $(d-1)\kappa-\mu>0$ the sections constricts in traction.
 
-\subsection{Traction with clamped end sections}
+\subsection{Tensile test with clamped ends}
 
 \subsubsection*{Setup of the problem}
 
@@ -2532,7 +2532,9 @@ We will see that a trivial strong solution to this problem is the spatially homo
 \[
 \mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline P(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
 \]
-We first discuss the stability when the elastic response only is considered. In this case we are able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
+The instability of the trivial solution would correspond with the onset of necking, when a non uniform localized solution becomes energetically favorable.
+
+We will discuss first the stability of the trivial solution when the elastic response only is considered. In this case we will be able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
 \begin{rmk}
 Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces, probably with some nontrivial adjustments needed to treat the nonsmooth character of plasticity theory. Some results regarding this theory and application to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
 \end{rmk}
@@ -2721,43 +2723,28 @@ is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathca
 \[
 \mathcal{J}_t(\hat y,\hat Q)=\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline P(t),\hat P).
 \]
-The aim of what follows is to study the conditions under under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\overline y(t),\overline P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\overline y(t),\overline P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
+The aim of what follows would be to identify conditions that ensure that for sufficiently large elongations~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
 \begin{rmk}
-Out study of local stability does not exclude that~\eqref{eqn:stability-necking} is violated also for $t_0\le t$, so that $t_0$ must be intended as an upper bound for the instant in which instability occur. Indeed it could exist a $t\le t_0$ such that $(\overline y(t),\overline P(t))$ is a local minimizer of $\mathcal{J}_t$ but not a global minimizer. In this case the configuration bar would jump from the trivial configuration to another configuration energetically favored. However the experimental observation and the theoretical and numerical studies indicate in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that our threshold $t_0$ of instability detected by the local analysis actually corresponds with the true instant at which necking starts. Even thought the energetic solution exhibits a jumps, this should be considered as a defect of the energetic solution concept as discussed in Chapter~\ref{chap:solution-concepts}.
+Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\overline{y}(t),\overline{P}(t))$ only, in particular taking into account second order variations. It is clear that if the trivial solution is locally stable, is does not necessarily global stable. Thus any estimate of the critical elongation corresponding with the onset of local instability must be intended as an upper bound of the actual critical elongation corresponding to global instability. In the case the actual critical elongation is smaller then the one predicted by the local analysis, the configuration of the bar would jump from the trivial configuration to another configuration energetically favored. However the experimental observation and the theoretical and numerical studies indicate in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that our threshold of instability detected by the local analysis corresponds with the true instant at which necking starts. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
 \end{rmk}
+%The aim of what follows is to study the conditions under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\overline y(t),\overline P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\overline y(t),\overline P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
+We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the exact stability condition~\eqref{eqn:stability-necking}, we deviate from it by considering two simplified conditions that can give us some intuition about the occurrence of instability.
 
+\subsubsection*{Stability under force control}
 
-
-To study the stability of the trivial solution we should to check if
-\begin{equation}
-\label{eqn:stability-necking}
-\mathcal{E}(\overline{y}(t),\overline{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\overline{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
-\end{equation}
-This since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the stability condition is equivalent to the requirement that $(\overline{y}(t),\overline P(t))$ is a global minimizer of $(y,P)\mapsto\mathcal{E}(y,P,t)+\mathcal{D}(\overline{P}(t),P)=:\mathcal{J}_t(y,P)$ in $\mathscr{Y}\times\mathscr{Z}$. We expect that~\eqref{eqn:stability-necking} is violated when $t$ overcome a threshold $t_0>0$, so that the trivial solution becomes unstable and the necking starts.
-
-La discussione che segue è dedicata ad una analisi locale di~\ref{eqn:stability-necking}, nel senso che, invece di controllare l'esistenza di competitori $(y,P)\in\mathscr{Q}$ generici, studieremo se in un intorno di $(\overline y(t),\overline P(t))$ esistono competitori che violano la disuguaglianza di stabilità. Per fare questo potremo sostanzialmente studiare le variazioni prima e seconda di $\mathcal{J}_t$ in $(\overline y(t),\overline{P}(t))$. Siccome $\mathcal{J}_t$ non è differenziabile per via della presenza della distanza di dissipazione non-liscia $\mathcal{D}$, dovremo. Il risultato finale a cui giungeremo è che, scegliendo opportunamente le relazioni costitutive, esiste un $t_0>0$ tale che~\eqref{eqn:stability-necking} viene violata da competitors vicini a $(\overline y(t),\overline P(t))$. Chiaramente l'analisi locale che faremo fornirà una stima inferiore 
-
-The discussion that follows is devoted to a local analysis of~\ref{eqn:stability-necking}.
-
-
-
-We will show that, choosing suitable constitutive relations, there exists an $\eta_0>1$ such that $\mathcal{J}_t$
-
- the uniform solution losses. The objective of this section is to show that this expectation is
-
-\subsubsection*{Some heuristic considerations}
-
-We were not able to get conclusive results in this sense, so we now propose an heuristic consideration that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen. 
-
-First of all we assume that instability does not occur in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Let
+To introduce this first alternative stability condition, let us define
 \[
-\overline F(t)=\overline{P}(t)^{-1}W_1(\eta(t)\overline{P}(t)^{-1},\overline{y}_2(t)\overline P(t),\overline{y}_2'(t)\overline{P}(t)^{-1})
+\overline F(t)=\overline{P}(t)^{-1}W_1(\eta(t)\overline{P}(t)^{-1},\overline{y}_2(t)\overline P(t),\overline{y}_2'(t)\overline{P}(t)^{-1}),
 \]
-be the reaction tensile force acting on the ends of the bar along the trivial solution. Consider now the function $J\colon(0,\infty)^3\to\mathbb{R}\cup\{\infty\}$ given by
+the reaction tensile force acting on the ends of the bar along the trivial solution. Consider now the function $J\colon(0,\infty)^3\to\mathbb{R}\cup\{\infty\}$ given by
 \[
 J_t(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\overline{P}(t),P)-\overline{F}(t)\rho.
 \]
-The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. It includes both the energy stored by the system in the form of free energy and the energy dissipated as the plastic distortion is changed. We now want to study if $(\eta,\overline{y}_2(t),\overline{P}(t))$ is a (local) minimizer of $J$. If not, this would signify that the trivial solution ($\overline y,\overline P$) is not the most energetically favored it the same tensile force is applied and the ends are made free to move. Thus assume now the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck}. In this case $J_t$ is not differentiable at $P=\overline{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
+The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\overline y_1(t)$, $\overline y_2(t)$ and $\overline P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\overline F(t)$. It includes both the energy stored by the system in the form of free energy and the energy dissipated as the plastic distortion is changed. Now our first simplified stability condition is the following.
+\begin{defi}[stability under force control]
+We say that the trivial uniform solution at time $t\in(0,T]$, is stable under force control if $(\eta(t),\overline{y}_2(t),\overline{P}(t))$ is a local minimizer of $J_t$.
+\end{defi}
+The mechanical meaning of this definition is the following: the trivial uniform solution $(\eta,\overline{y}_2(t),\overline{P}(t))$ is stable under force control when it is the most energetically favored configuration among all other uniform configurations and under the condition of fixed tensile force is applied. We now study whether the stability of the trivial uniform solution under force control is lost for sufficiently large elongations when the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck} are considered. In this particular case $J_t$ is not differentiable at $P=\overline{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
 \[
 H^+_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\overline{P}(t)\}\quad\text{and}\quad H^-_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\overline{P}(t)\}.
 \]
@@ -2765,7 +2752,7 @@ We easily find that
 \[
 \nabla J_t(\eta,\overline y_2(t),\overline P(t)^-)=\left(0,0,-\frac{2Y}{\overline P(t)}\right)\quad\text{and}\quad\nabla J_t(\eta,\overline y_2(t),\overline P(t)^+)=(0,0,0).
 \]
-Then, to study wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum depends on the eigenvalues of the hessian matrix
+Then, wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum of $J_t$ depends on the eigenvalues of the hessian matrix
 \[
 h(t)=\nabla^2 J_t(\eta(t),\overline y_2(t),\overline P(t)^+).
 \]
