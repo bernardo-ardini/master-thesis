@@ -22,6 +22,9 @@ syms eta y2 y3 real;
 in=[E1,E2,E3,P,dP,P0];
 out=[eta/y3,y2*y3,0,y3,0,y3];
 
+W0=subs(W,in(1:end-1),out(1:end-1));
+H0=subs(H,in(1:end-1),out(1:end-1));
+D0=subs(D,in(1:end-1),out(1:end-1));
 W1=subs(diff(W,E1),in,out);
 W2=subs(diff(W,E2),in,out);
 W11=subs(diff(W,E1,E1),in,out);
@@ -37,15 +40,15 @@ D22=subs(diff(D,P,P),in,out);
 N=40;
 res=cell(N,1);
 etas=linspace(1,1.003,N);
-etas=[etas(1:end-1),linspace(1.003,1.3,N)];
+etas=[etas(1:end-1),linspace(1.003,1.35,N)];
 N=length(etas);
 L=201;
 %L=30e20;
 yield=0;
 hs=linspace(0,0.9*L,2);
 
-load deQQ.mat;
-syms h;
+% load deQQ.mat;
+% syms h;
 
 for i=1:N
     if yield==0
@@ -131,24 +134,24 @@ for i=1:N
         c2=C(2,3);
         c3=C(3,3);
 
-        syms v10(x) v20(x);
-        dv20=diff(v20,x);
-        dx=dsolve([a1*diff(v10,x,x)+b1*diff(v20,x)==0,a2*diff(v20,x,x)-b1*diff(v10,x)+c1*v20==0],[v10(L)==0,dv20(L)==0]);
-
-        syms v1p(x) v2p(x) v3p(x);
-        dv2p=diff(v2p,x);
-        dv3p=diff(v3p,x);
-        sx=dsolve([a1*diff(v1p,x,x)+b1*diff(v2p,x)+b2*diff(v3p,x)==0,a2*diff(v2p,x,x)-b1*diff(v1p,x)+c1*v2p+c2*v3p==0,a3*diff(v3p,x,x)-b2*diff(v1p,x)+c2*v2p+c3*v3p==0],[v1p(0)==0,dv2p(0)==0,dv3p(0)==0]);
-
-        syms C1 C2 C3;
-        res{i}.deQ=zeros(length(hs),1);
-
-        for j=1:length(hs)
-            % matdx=equationsToMatrix(subs([dx.v10;dx.v20;0;diff(dx.v10,x);diff(dx.v20,x)],x,hs(j)),[C1,C2]);
-            % matsx=equationsToMatrix(subs([sx.v1p;sx.v2p;sx.v3p;diff(sx.v1p,x);diff(sx.v2p,x)],x,hs(j)),[C1,C2,C3]);
-            % Q=[matdx,-matsx];
-            res{i}.deQ(j)=double(subs(subs(de,h,hs(j))));
-        end
+        % syms v10(x) v20(x);
+        % dv20=diff(v20,x);
+        % dx=dsolve([a1*diff(v10,x,x)+b1*diff(v20,x)==0,a2*diff(v20,x,x)-b1*diff(v10,x)+c1*v20==0],[v10(L)==0,dv20(L)==0]);
+        % 
+        % syms v1p(x) v2p(x) v3p(x);
+        % dv2p=diff(v2p,x);
+        % dv3p=diff(v3p,x);
+        % sx=dsolve([a1*diff(v1p,x,x)+b1*diff(v2p,x)+b2*diff(v3p,x)==0,a2*diff(v2p,x,x)-b1*diff(v1p,x)+c1*v2p+c2*v3p==0,a3*diff(v3p,x,x)-b2*diff(v1p,x)+c2*v2p+c3*v3p==0],[v1p(0)==0,dv2p(0)==0,dv3p(0)==0]);
+        % 
+        % syms C1 C2 C3;
+        % res{i}.deQ=zeros(length(hs),1);
+        % 
+        % for j=1:length(hs)
+        %     % matdx=equationsToMatrix(subs([dx.v10;dx.v20;0;diff(dx.v10,x);diff(dx.v20,x)],x,hs(j)),[C1,C2]);
+        %     % matsx=equationsToMatrix(subs([sx.v1p;sx.v2p;sx.v3p;diff(sx.v1p,x);diff(sx.v2p,x)],x,hs(j)),[C1,C2,C3]);
+        %     % Q=[matdx,-matsx];
+        %     res{i}.deQ(j)=double(subs(subs(de,h,hs(j))));
+        % end
 
         K=4;
         res{i}.de=zeros(K+1,1);
@@ -169,6 +172,8 @@ for i=1:N
             M(3,3)=-a3*gamma^2+c3;
             res{i}.de(k+1)=det(M);
         end
+
+        res{i}.hess=double(subs(subs(det(hessian(W0+H0+D0))),[eta,y2,y3,P0],[etas(i),sol(1),sol(2),sol(2)]));
     
         res{i}.y2=sol(1);
         res{i}.y3=sol(2);
@@ -180,13 +185,16 @@ end
 
 figure;
 plot(etas,arrayfun(@(i) res{i}.y2,1:N));
+title("tranversal deformation");
 
 figure;
 plot(etas,arrayfun(@(i) res{i}.y3,1:N));
+title("plastic distortion");
 
 figure;
 plot(etas,arrayfun(@(i) res{i}.F,1:N));
 pbaspect([1 1 1])
+title("force");
 
 ind=1:N;
 ind=ind(arrayfun(@(i) res{i}.yield,1:N)==1);
@@ -204,6 +212,7 @@ for k=1:K+1
     figure;
     plot(etas(ind),arrayfun(@(i) res{i}.de(k),ind));
     hold on;
+    title(sprintf("determinant of M_k with k=%d",k));
 
     han=@(t) interp1(etas(ind),arrayfun(@(i) res{i}.de(k),ind),t,'spline');
     etan(k)=fzero(han,1);
@@ -211,5 +220,11 @@ end
 
 figure;
 plot(etas(ind),arrayfun(@(i) res{i}.f,ind))
+title("determinant of M_1 when L tends to infinity");
 
-figure(3);
+figure;
+plot(etas(ind),arrayfun(@(i) res{i}.hess,ind))
+title("determinant of the hessian for stability under force control");
+
+writematrix([etas',arrayfun(@(i) res{i}.F,1:N)'],"../text/figures/force.dat",Delimiter="tab")
+writematrix([etas(ind)',arrayfun(@(i) res{i}.hess,ind)'],"../text/figures/hessian.dat",Delimiter="tab")

@@ -1763,9 +1763,11 @@ As we showed in the previous chapter, the one dimensional small deformations mod
 
 \section{Formulation}
 
+In a similar manner to the previous chapter, before developing the strictly one-dimensional model, we examine the kinematics of a fully multidimensional bar under large strain. We assume that bending and shear are neglected; consequently, cross-sections remain plane, undergoing only axial translation and uniform transversal stretching.
+
 \subsection{Motivation form the multidimensional kinematics}
 
-We start with the description of the kinematics of the bar from a multidimensional perspective. The results obtained here will serve as a motivational basis for the development of the one dimensional model. Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
+Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
 \begin{equation}
 \label{eqn:necking-large:deformation}
 (X,Y)\mapsto\begin{pmatrix}
@@ -1838,7 +1840,7 @@ where we have defined $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=
 %%a(I_1-d)+b(I_2-d)+w(I_3) & \text{if $d=3$}.
 %%\end{cases}
 %%\]
-In order to get some inspiration for developing constitutive relations for the one dimensional model, we look how the neo-Hookean elastic free energy density looks like when the deformation is of the form~\eqref{eqn:necking-large:deformation} and the plastic distortion is as in~\eqref{eqn:necking-large:plastic}. Since the first principal invariant of $C_e=F_e^TF_e$ is
+To motivate the development of the one-dimensional constitutive relations, we examine the neo-Hookean elastic free-energy density under the aforementioned kinematic assumptions. This will serve as a basis for the development of the constitutive model presented in the following section. Assuming the particular kinematic assumptions above, the first principal invariant of $C_e=F_e^TF_e$ is
 \[
 I_e=\tr(C_e)=E_1^2+G^2|Y|^2+E_2^2
 \]
@@ -1846,7 +1848,7 @@ and the determinant of $F_e$ is
 \[
 J_e=\det F_e=E_1E_2,
 \]
-then the neo-Hookean elastic free energy density is given by
+so that the neo-Hookean elastic free energy density is given by
 \begin{equation}
 \label{eqn:necking-large:neo-hookean}
 \psi_e=C\left(\frac{I_e}{J_e}-2\right)+w(J_e)=C\left(\frac{E_1^2+G^2|Y|^2+E_2^2}{E_1E_2}-2\right)+w(E_1E_2).
@@ -1854,6 +1856,8 @@ then the neo-Hookean elastic free energy density is given by
 
 
 \subsection{Kinematics}
+
+We now proceed to develop a purely one-dimensional model of the bar. This model is formulated independently of the fully multidimensional one; therefore, the discussion in the previous section should be viewed merely as a motivation for the specific choices made in the following derivation.
 
 Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. As suggested by the multidimensional kinematics, we define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
 
@@ -2497,7 +2501,39 @@ C(P-1)^q+\frac{D}{P-\Pi}+E|lP'|^q & \text{if $P>\Pi$} \\
 \infty & \text{otherwise}.
 \end{cases}
 \]
-where $q>1$, $0<\Pi<1$ and $C,D,E>0$. It trivially satisfies hypotheses (H1), (H2) and (H3). The disipation potential density can be chosen as
+where $q>1$, $0<\Pi<1$ and $C,D,E>0$. It trivially satisfies hypotheses (H1), (H2) and (H3).
+\begin{rmk}
+\label{rmk:am-fed}
+In what follow we will consider only the following refined version of the hardening free energy
+\begin{equation}
+\label{eqn:hardening-amstrong-federik-modified}
+H(P,P')=
+\begin{cases}
+C\left(P^q+\frac{q}{\delta}e^{-\delta(P-1)}\right)+\frac{D}{P-\Pi}+E|lP'|^q & \text{if $P>p$} \\
+\infty & \text{otherwise},
+\end{cases}
+\end{equation}
+where $C,D,E,\delta>0$ and $q>1$. This constitutive relation still satisfies the assumptions (H1), (H2) and (H3). The expression~\eqref{eqn:hardening-amstrong-federik-modified} is obtained as a modification of the Armstrong--Frederick kinematical hardening model which can reproduce better the experimentally observed relation between force and elongation. According to the Armstrong--Frederick model, the back-stress $\beta$ (that in our model correspond to the conservative microforce $\beta=\dind{H}{P}$) is required to satisfy the condition
+\begin{equation}
+\label{eqn:armstrong-frederick}
+\dot\beta=\delta(C\dot P-|\dot P|\beta)
+\end{equation}
+for some $\delta,C>0$, see~\cite{steffranc}. In tension $\dot P\ge0$ and~\eqref{eqn:armstrong-frederick} becomes
+\[
+\delta\dot P=\frac{\dot\beta}{C-\beta}=-\frac{d}{dt}\log(C-\beta).
+\]
+This suggest the relation
+\begin{equation}
+\label{eqn:armstrong-frederick-constitutive}
+\log\frac{C-\beta}{C}=-\delta(P-1)\quad\text{so that}\quad\beta=C(1-e^{-\delta(P-1)}).
+\end{equation}
+The main feature of this relation is that $\beta$ is bounded from above by $C$ and $P\to C^-$ as $P\to\infty$. Now~\eqref{eqn:armstrong-frederick-constitutive} corresponds to the energy density
+\[
+H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right).
+\]
+Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved.
+\end{rmk}
+The disipation potential density can be chosen as
 \begin{equation}
 R(P,\dot P)=
 \begin{cases}
@@ -2711,8 +2747,9 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 \end{figure}
 
 \subsection{Elastoplastic model}
+\label{subsec:plastic-model}
 
-We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\overline P,\dot{\overline P})=Y/\overline P$. Then the balance of microforces coupled with the balance in the transversal direction allows to compute $\overline y_2$ and $\overline P$.
+We start with the computation of the trivial solution of the form $\overline{y}_1(X,t)=\eta(t)X$, $\overline{y}_2(X,t)=\overline{y}_2(t)$ and $\overline P(X,t)=\overline{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\overline y_2(t)$ can be found as we showed previously while $\overline P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\overline P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\overline P,\dot{\overline P})=Y/\overline P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\overline y_2$ and $\overline P$.
 
 To study the stability of the trivial solution we have to check whether the global stability condition
 \begin{equation}
@@ -2756,6 +2793,8 @@ Then, wether $(\eta(t),\overline y_2(t),\overline P(t))$ is a local minimum of $
 \[
 h(t)=\nabla^2 J_t(\eta(t),\overline y_2(t),\overline P(t)^+).
 \]
+It is clear that at $t=0$ the trivial solution is stable and that $h(0)$ is positive definite. Then instability occur when $h(t)$ become singular. We now show that this happen exactly when $\overline{F}$ reaches its maximum, in agreement with Considère criterion. Indeed the following lemma holds.
+\begin{lemma}
 Let
 \[
 a(t)=h_{11}(t),\quad
@@ -2775,8 +2814,7 @@ a(t) & c(t)^T \\
 c(t) & b(t)
 \end{pmatrix}.
 \]
-\begin{lemma}
-It holds that
+Then it holds that
 \[
 \frac{d\overline F}{d\eta}(t):=\frac{d\overline F}{dt}(t)\left(\frac{d\eta}{dt}(t)\right)^{-1}=\frac{\det h(t)}{\det b(t)}.
 \]
@@ -2820,57 +2858,140 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then the sign of $d\overline F/d\eta$ coincides with the sign of $\det h$. This suggest that $h$ is positive definite when $\overline F$ increases and became indefinite if $\overline F$ reaches a maximum. This is indeed confirmed by the numerical computations. In particular one finds that at the instant $t_0\in(0,T]$ where $\det h(t_0)$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This suggest that at time $t_0$ the bar tends to increase its length, shrink and increase its plastic distortion, but this instability mode actually cannot happen since the elongation, and not the traction force, are imposed. This leads us to claim that at some instant $t_1\ge t_0$, the stability condition~\eqref{eqn:stability-necking} is violated. A different non homogeneous solution became energetically favored and we expect that
-\begin{itemize}
-\item[(i)] somewhere along the length of the bar the axial deformation $\chi_1'>\eta$, $\chi_2<\overline\chi_2$ and $P>\overline P$ since this is the instability mode that we would have in absence of the Dirichlet boundary conditions imposed at the ends,
-\item[(ii)] elsewhere $\chi_1'<\eta$ in order to fulfill the boundary conditions.
-\end{itemize}
-This type of instability is likely to corresponds to necking, since in the regions where $\chi_1'<\eta$ we expect that the material is less in tension and is subject to elastic unloading. This leads to a concentration of the deformation where $\chi_1'>\eta$ leading to a localized neck. We expect that the axial dimension of the neck will depends on the length parameter $l$ since it prescribes the amount of regularization. As $l\to0^+$ we expect the neck to shrink to zero.
-
-The constitutive equations of the hardening free energy proposed in Section~\ref{subsec:constitutive-large-neck} gives a monotone relation between $\overline F$ and $\eta$ if $C$ is large enough, so that the above considerations suggest that necking does not occur in this case, while when $C>0$ a non monotone relation is obtained, see the the dashed lines in Figure~\ref{fig:instabilitypl}.
-
-\begin{rmk}
-A possible refinement of the hardening free energy function is
-\begin{equation}
-\label{eqn:hardening-amstrong-federik-modified}
-H(P,P')=
-\begin{cases}
-C\left(P^q+\frac{q}{\delta}e^{-\delta(P-1)}\right)+\frac{D}{P-\Pi}+E|lP'|^q & \text{if $P>p$} \\
-\infty & \text{otherwise},
-\end{cases}
-\end{equation}
-where $C,D,E,\delta>0$ and $q>1$. This constitutive relation still satisfies the assumptions (H1), (H2) and (H3). The expression~\eqref{eqn:hardening-amstrong-federik-modified} is obtained as a modification of the Armstrong--Frederick kinematical hardening model. According to the Armstrong--Frederick model, the backstress $\beta$ (that in our model correspond to the conservative microforce $\beta=\dind{H}{P}$) is required to satisfy the condition
-\begin{equation}
-\label{eqn:armstrong-frederick}
-\dot\beta=\delta(C\dot P-|\dot P|\beta)
-\end{equation}
-for some $\delta,C>0$, see~\cite{steffranc}. In tension $\dot P\ge0$ and~\eqref{eqn:armstrong-frederick} becomes
-\[
-\delta\dot P=\frac{\dot\beta}{C-\beta}=-\frac{d}{dt}\log(C-\beta).
-\]
-This suggest the relation
-\begin{equation}
-\label{eqn:armstrong-frederick-constitutive}
-\log\frac{C-\beta}{C}=-\delta(P-1)\quad\text{so that}\quad\beta=C(1-e^{-\delta(P-1)}).
-\end{equation}
-The main feature of this relation is that $\beta$ is bounded from above by $C$ and $P\to C^-$ as $P\to\infty$. Now~\eqref{eqn:armstrong-frederick-constitutive} corresponds to the energy density
-\[
-H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right).
-\]
-Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved. The plot of the force-elongation relation produced by the hardemning model~\ref{eqn:armstrong-frederick-constitutive} is showed as the solid line in Figure~\ref{fig:instabilitypl}
-\end{rmk}
-
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability occur when $\overline F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\overline{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\overline{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation—rather than the tensile force—is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
 \begin{figure}[htp]
 \begin{tikzpicture}
-\begin{axis}[xlabel={$\eta$},ylabel={$\overline F$},xmin=1,xmax=1.3,width=0.45\textwidth,ylabel style={rotate=-90}]
-\addplot[-] table {figures/instabilitypl(2).dat};
-\addplot[dashed] table {figures/instabilitypl(3).dat};
-\addplot[dashdotted] table {figures/instabilitypl(4).dat};
+\begin{axis}[xlabel={$\eta$},ylabel={$\overline F$},xmin=1,xmax=1.35,width=0.45\textwidth]
+\addplot[-,thick] table {figures/force.dat};
 \end{axis}
 \end{tikzpicture}
-\caption{Graphs of $\overline F$ as functions of the elongation $\eta$ along the homogeneous solution in the plastic model.}
+\hfill
+\begin{tikzpicture}
+\begin{axis}[xlabel={$\eta$},ylabel={$\det h$},xmin=1,xmax=1.35,width=0.45\textwidth]
+\addplot[-,thick] table {figures/hessian.dat};
+\addplot[domain=1:1.35,samples=2,color=black,dashed] {0};
+\end{axis}
+\end{tikzpicture}
+\caption{Graphs of $\overline F$ and $\det h$ as functions of the elongation $\eta$ along the trivial solution in the plastic model. Notice that the maximum of $\overline{F}$ is reached when $h$ vanishes at $\eta=1.1474$.}
 \label{fig:instabilitypl}
 \end{figure}
+
+\subsubsection*{Regularized stability}
+
+The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\overline{y}(t),\overline{P}(t))$ difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\overline{y}(t),\overline{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider variations in the directions where the directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck}, we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ defined by
+\[
+\mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\overline P,\hat P)dt,
+\]
+with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. And we notice that $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$ where
+\[
+\mathscr{Q}^\varsigma_t=\{\hat q=(\hat y,\hat P)\in\mathscr{Q}\;|\;\text{$\varsigma(\hat P-\overline P(t))\ge0$ in $(0,L)$}\}.
+\]
+Then the following trivial fact holds.
+\begin{lemma}
+The stability condition
+\begin{equation}
+\label{eqn:min-neck}
+\mathcal{J}_t(\overline{q}(t))\le\mathcal{J}_t(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}$}
+\end{equation}
+implies
+\begin{equation}
+\label{eqn:min-neck-sigma}
+\mathcal{J}_t^\varsigma(\overline{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
+\end{equation}
+\end{lemma}
+%\begin{lemma}
+%The stability condition
+%\begin{equation}
+%\label{eqn:min-neck}
+%\mathcal{J}_t(\overline{q}(t))\le\mathcal{J}_t(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}$}
+%\end{equation}
+%is equivalent to
+%\begin{equation}
+%\label{eqn:min-neck-sigma}
+%\mathcal{J}_t^\varsigma(\overline{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
+%\end{equation}
+%\end{lemma}
+%\begin{proof}
+%That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial. Conversely suppose that~\eqref{eqn:min-neck-sigma} holds and, by contradiction, that $\mathcal{J}_t(\overline{q}(t))>\mathcal{J}_t(\hat q)$ for some $\hat q\in\mathscr{Q}$. If $\hat q\in\mathscr{Q}^\varsigma$ for some $\varsigma\in\{\pm1\}$ we immediately get the desired contradiction. Otherwise let $\hat q^+\in\mathscr{Q}^+$ be defined by $\hat y^+=\hat y$ and $\hat P^+:=\max\{\hat P,\overline P(t)\}$. Then
+%\[
+%\mathcal{J}_t^+(\overline{q}(t))=\mathcal{J}_t(\overline{q}(t))>\mathcal{J}_t(\hat q)\ge\mathcal{J}_t^+(\hat q^+).
+%\]
+%This is a contradiction.
+%\end{proof}
+Thus a sufficient condition for instability is that one among~\eqref{eqn:min-neck-sigma} is violated so we now try to study when this happen.
+
+Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\overline q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $Q\le0$ in $(0,L)$, it holds that
+\[
+\dual{\partial\mathcal{J}^-_t(\overline q(t)),w}=\dual{\partial\mathcal{J}^+_t(\overline q(t)),w}-2Y\int_0^L\log\frac{Q}{\overline P(t)}dX=-2Y\int_0^L\frac{Q}{\overline P(t)}dX\ge0.
+\]
+This means that~\eqref{eqn:min-neck-sigma} for $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\overline q(t)$, for all $t\in[0,T]$. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\overline{y}(t),\overline P(t))$: if we are able to find $w=(v,Q)\in Q$ with $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\overline q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\overline q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\overline q(t)+w)=0$. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful, in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+\begin{defi}[regularized stability]
+We say that the trivial uniform solution satisfies the regularized stability condition if $\partial^2\mathcal{J}_t^+(\overline y(t),\overline P(t))$ is positive definite.
+\end{defi}
+So, now we study the perturbed equation equation $\partial^2\mathcal{J}_t^+(\overline q(t))w=0$. After some tedious computation we wind that (for each $t$ fixed that we will not specify anymore) this is equivalent to
+\begin{equation}
+\label{eqn:2order}
+Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},
+\end{equation}
+together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have used the notation $v=(w_1,w_2)$ and $Q=w_3$ and we have defined
+\begin{align*}
+A&=\begin{pmatrix}
+a_1 & 0 & 0 \\
+0 & a_2 & 0 \\
+0 & 0 & a_3
+\end{pmatrix}=\begin{pmatrix}
+\eta^2 \frac{\bar W_{11}}{\bar P^2} & 0 & 0 \\
+0 & \frac{\bar W_{33}}{\bar P^2} & 0 \\
+0 & 0 & \bar H_{22}
+\end{pmatrix}
+\\
+B &=\begin{pmatrix}
+0 & b_1 & b_2 \\
+-b_1 & 0 & 0 \\
+-b_2 & 0 & 0
+\end{pmatrix}= \begin{pmatrix}
+0 & \eta \bar{W}_{12} & \eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \eta^2 \frac{\bar{W}_{11}}{\bar{P}^3} - \eta \frac{\bar{W}_1}{\bar{P}^2} \\
+-\eta \bar{W}_{12} & 0 & 0 \\
+-\left( \eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \eta^2 \frac{\bar{W}_{11}}{\bar{P}^3} - \eta \frac{\bar{W}_1}{\bar{P}^2} \right) & 0 & 0 
+\end{pmatrix} \\
+C &=\begin{pmatrix}
+0 & 0 & 0 \\
+0 & c_1 & c_2 \\
+0 & c_2 & c_3
+\end{pmatrix}= \begin{pmatrix}
+0 & 0 & 0 \\
+0 & -\bar{P}^2 \bar{W}_{22} & -\bar{W}_2 + \frac{\eta}{\bar{P}} \bar{W}_{12} - \bar{y}_2 \bar{P} \bar{W}_{22} \\
+0 & -\bar{W}_2 + \frac{\eta}{\bar{P}} \bar{W}_{12} - \bar{y}_2 \bar{P} \bar{W}_{22} & -\eta^2 \frac{\bar{W}_{11}}{\bar{P}^4} - \bar{y}_2^2 \bar{W}_{22} - 2\eta \frac{\bar{W}_1}{\bar{P}^3} + 2\eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \bar{H}_{11} - \bar{D}_{22}
+\end{pmatrix}
+\end{align*}
+where the bar denotes quantities computed along the trivial solution. The system of second order partial differential equations~\eqref{eqn:2order} can be written more explicitly as
+\begin{subequations}
+\label{eqn:equations2order}
+\begin{gather}
+a_1 w_1'' + b_1 w_2' + b_2 w_3' = 0, \\
+a_2 w_2'' - b_1 w_1' + c_1 w_2 + c_2 w_3 = 0, \\
+a_3 w_3'' - b_2 w_1' + c_2 w_2 + c_3 w_3 = 0
+\end{gather}
+\end{subequations}
+in $(0,L)$. Taking into account the boundary conditions we can write $w_1$, $w_2$ and $w_3$ as the following formal series
+\[
+w_1=\sum_{k=1}^\infty w_1^k\sin\left(\frac{k\pi}{L}x\right),\quad w_2=w_2^0+\sum_{k=1}^\infty w_2^k\cos\left(\frac{k\pi}{L}x\right)\quad\text{and}\quad w_3=w_3^0+\sum_{k=1}^\infty w_3^k\cos\left(\frac{k\pi}{L}x\right).
+\]
+Substituting into~\eqref{eqn:equations2order} we get
+\begin{gather}
+\sum_{k=1}^\infty\left(-a_1\gamma_k^2w_1^k-b_1\gamma_kw_2^k-b_2\gamma_kw_3^k\right)\sin\left(\gamma_kx\right)=0,\\
+c_1w_2^0+c_2w_3^0+\sum_{k=1}^\infty\left((c_1-a_2\gamma_k^2)w_2^k-b_1\gamma_kw_1^k+c_2w_3^k\right)\cos\left(\gamma_kx\right)=0, \\
+c_2w_2^0+c_3w_3^0+\sum_{k=1}^\infty\left(c_2w_2^k-b_2\gamma_kw_1^k+(c_3-a_3\gamma_k^2)w_3^k\right)\cos\left(\gamma_kx\right)=0
+\end{gather}
+in $(0,L)$. Taking into account the orthogonality relations
+\[
+\int_0^L\sin(\gamma_kx)\sin(\gamma_jx)dx=\begin{cases}
+\frac{L}{2} & \text{if $k=j$} \\
+0 & \text{if $k\neq j$}
+\end{cases}\quad\text{and}\quad\int_0^L\sin(\gamma_kx)\sin(\gamma_jx)dx=\begin{cases}
+L & \text{if $k=$ and $j=0$}
+\end{cases}\frac{L}{2}\delta_{kj}
+\]
 
 \part{A model describing pressure sensitive plastic materials}
 \label{part:my-model}

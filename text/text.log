@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  12 MAY 2026 09:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  12 MAY 2026 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1745,6 +1745,9 @@ Chapter 5
 
 
 ]
+Underfull \vbox (badness 1648) has occurred while \output is active []
+
+
 
 [32]
 
@@ -1767,9 +1770,11 @@ Chapter 5
 [41]
 
 [42]
+
+[43]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2629: fill between: activating layered grap
+Package pgfplots info on input line 2665: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1787,79 +1792,76 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2629: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2665: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2629.
+(Font)              scaled to size 8.0pt on input line 2665.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2643: fill between: activating layered grap
+Package pgfplots info on input line 2679: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2643: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2679: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
 
-[43]
-PGFPlots: reading {figures/instability.dat}
-PGFPlots: reading {figures/instability.dat}
-
-
 [44]
+PGFPlots: reading {figures/instability.dat}
+PGFPlots: reading {figures/instability.dat}
+
 
 [45]
 
 [46]
-PGFPlots: reading {figures/instabilitypl(2).dat}
-PGFPlots: reading {figures/instabilitypl(3).dat}
-PGFPlots: reading {figures/instabilitypl(4).dat}
+PGFPlots: reading {figures/force.dat}
+PGFPlots: reading {figures/hessian.dat}
 
 
 [47]
 
+[48]
+
+[49]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 2875.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 2996.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 2875.
+(hyperref)                replaced by space on input line 2996.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 2875.
+(hyperref)                removing `\noindent' on input line 2996.
 
 
 
-[48
+[50
 
 
 ]
 Chapter 6
 
 
-[49
+[51
 
 
 ]
 
-[50]
-
-[51]
-
 [52]
+
+[53]
+
+[54]
 Chapter 7
 
 
-[53
+[55
 
 
 ]
-
-[54]
-
-[55]
 
 [56]
 
@@ -1884,54 +1886,54 @@ Chapter 7
 [66]
 
 [67]
-Underfull \vbox (badness 3439) has occurred while \output is active []
-
-
 
 [68]
 
 [69]
+Underfull \vbox (badness 3439) has occurred while \output is active []
+
+
 
 [70]
 
 [71]
-Chapter 8
 
-
-[72
-
-
-]
+[72]
 
 [73]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4500.
-
+Chapter 8
 
 
 [74
 
 
 ]
-Appendix A
 
+[75]
 
-[75
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\noindent' on input line 4621.
 
-
-]
-Appendix B
 
 
 [76
 
 
 ]
+Appendix A
 
-[77]
 
-[78]
+[77
+
+
+]
+Appendix B
+
+
+[78
+
+
+]
 
 [79]
 
@@ -1954,32 +1956,36 @@ Appendix B
 [88]
 
 [89]
+
+[90]
+
+[91]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5537.
+5658.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5537.
+(Font)              scaled to size 10.0pt on input line 5658.
 
 
-[90
+[92
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5538--5538
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5659--5659
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[91]
+[93]
 
-[92] (./text.aux (./frontespizio.aux))
+[94] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -1989,10 +1995,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 47924 strings out of 473197
- 1053245 string characters out of 5718605
- 1919436 words of memory out of 5000000
- 69711 multiletter control sequences out of 15000+600000
+ 47942 strings out of 473197
+ 1053447 string characters out of 5718605
+ 1921772 words of memory out of 5000000
+ 69725 multiletter control sequences out of 15000+600000
  697611 words of font info for 252 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2037s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2017,10 +2023,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (94 pages, 909369 bytes).
+Output written on text.pdf (96 pages, 918312 bytes).
 PDF statistics:
- 1558 PDF objects out of 1728 (max. 8388607)
- 1409 compressed objects within 15 object streams
- 524 named destinations out of 1000 (max. 500000)
+ 1574 PDF objects out of 1728 (max. 8388607)
+ 1423 compressed objects within 15 object streams
+ 530 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
