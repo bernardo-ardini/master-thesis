@@ -1685,14 +1685,11 @@ where $a$ and $b$ depends on time only. A solution which is symmetric with respe
 \label{eqn:epsilon-large-u2}
 y=-\frac{b}{a}+C_2\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right).
 \end{equation}
-\begin{rmk}
-From now on, since most of the resultant expressions are too long we do not report them.
-\end{rmk}
 We now look for a solution $u_2\in C^2([0,L])$. When $\epsilon=L/2$ the solution is simply given by
 \[
 u_2=\frac{b}{a}\left(\frac{\cosh\left(\sqrt{a}\left(x-\frac{L}{2}\right)\right)}{\cosh\left(\sqrt{a}\frac{L}{2}\right)}-1\right)
 \]
-When $\epsilon\in(0,L/2)$ we consider~\eqref{eqn:epsilon-small-u2} on $(0,L/2-\epsilon)$ and~\eqref{eqn:epsilon-large-u2} on $(L/2-\epsilon,L/2)$ and we impose the continuity of $u_2$ and $u_2'$ at $x=L/2-\epsilon$. Solving the resultant linear system we find the constants $C_1$ and $C_2$.
+When $\epsilon\in(0,L/2)$ we consider~\eqref{eqn:epsilon-small-u2} on $(0,L/2-\epsilon)$ and~\eqref{eqn:epsilon-large-u2} on $(L/2-\epsilon,L/2)$ and we impose the continuity of $u_2$ and $u_2'$ at $x=L/2-\epsilon$. Solving the resultant linear system we find the constants $C_1$ and $C_2$ that we do not report.
 
 \subsubsection*{Determination of $\epsilon$}
 
@@ -1716,7 +1713,7 @@ L/2 & \text{if $F>f(L/2)$}.
 
 \subsubsection*{Absence of necking}
 
-From the analytical expression one can see that for $F>f(L/2)$ the solution $u_2$ depends linearly on $F$. In particular as $F\to\infty$ we have that $u_2\to-\infty$ uniformly on all compact sets contained in $(0,L)$. We conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section seems to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
+From the analytical expression one can see that for $F>f(L/2)$ the solution $u_2$ depends linearly on $F$. In particular as $F\to\infty$ we have that $u_2\to-\infty$ uniformly on all compact sets contained in $(0,L)$. We conclude that the small deformation model is not able to predict necking. Indeed the shrinkage of the cross section appears to be not localized on a small region around the middle of the bar but to be distributed along its entire length.
 
 \subsubsection*{The limit of thin bar}
 
@@ -1755,7 +1752,7 @@ This results confirm the absence of necking in the small deformation model. Inde
 \chapter{Model at large deformations}
 \label{chap:large-neck}
 
-As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations. This is the content of this chapter. The discussion is structures as in the previous chapter. In the first section we develop the model, in the second section we obtain an existence theorem of solutions to the boundary value problem produced by that model. In the third section we face the problem of studying the boundary value problem describing the tensile test.
+As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations. This is the content of this chapter. The discussion is structures as in the previous chapter. In the first section we develop the model, in the second section we obtain an existence theorem of solutions to the boundary value problem produced by that model. In the third section we face the problem of studying the boundary value problem describing the tensile test: in this case we will not be able to obtain any explicit solution, so we will propose some methods to gain qualitative insight on the behavior of the solution, in particular regarding the onset of necking.
 
 \section{Formulation}
 
@@ -2752,7 +2749,7 @@ is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathca
 \]
 The aim of what follows would be to identify conditions that ensure that for sufficiently large elongations~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
 \begin{rmk}
-Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observation and the theoretical and numerical studies indicated in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds with the true condition for the beginning of necking. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
+Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observations and the theoretical and numerical studies mentioned in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds with the true condition for the beginning of necking. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
 \end{rmk}
 %The aim of what follows is to study the conditions under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\bar y(t),\bar P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\bar y(t),\bar P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
 We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the exact stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability}.
@@ -2869,7 +2866,7 @@ It is easy to see that the constitutive model described in Section~\ref{subsec:c
 
 \subsubsection*{Regularized stability}
 
-The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$ difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck}, we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ defined by
+The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$ difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck}, we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ defined by
 \[
 \mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P,\hat P)dt,
 \]
@@ -2933,13 +2930,13 @@ implies the following couple of one-sided  global stability conditions
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study when this happen.
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen.
 
-Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $Q\le0$ in $(0,L)$, it holds that
+Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\le0$ in $(0,L)$, it holds that
 \[
 \dual{\partial\mathcal{J}^-_t(\bar q(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar q(t)),w}-2Y\int_0^L\log\frac{Q}{\bar P(t)}dX=-2Y\int_0^L\frac{Q}{\bar P(t)}dX\ge0.
 \]
-This means that~\eqref{eqn:min-neck-sigma} for $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful, in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+This means that~\eqref{eqn:min-neck-sigma} for $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful, in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
