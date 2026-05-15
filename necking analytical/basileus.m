@@ -5,15 +5,17 @@ clc;
 syms E1 E2 E3 P dP P0 real;
 
 A=1.1e6;B=1.1e6;l=4;p=2;r=2;alpha=1;
-assert((alpha>0)&(r>1)&(alpha<=p-1)&(p>1+alpha/r));
+%syms A B l p r alpha real;
+%assert((alpha>0)&(r>1)&(alpha<=p-1)&(p>1+alpha/r));
 W=A*(((E1-1)^2)^(p/2)+((E2-1)^2)^(p/2)+((l*E3)^2)^(p/2))/(E1*E2)^alpha+B*((E1*E2-1)^2)^(r/2);
 
 C=0.9e3;D=10;E=1e3;l=0.1;Pi=0.1;q=1.3;delta=17;
+%syms C D E ll Pi q delta real;
 %H=C*((P-1)^2)^(q/2)+D/(P-Pi)+E*((l*dP)^2)^(q/2);
 H=C*(P^q+q/delta*exp(-delta*(P-1)))+D/(P-Pi)+E*(l*dP)^2;
 
 Y=3.8e3;
-ep=1e-9;
+%syms Y;
 %D=Y*sqrt(ep+log(P/P0)^2);
 D=Y*log(P/P0);
 
@@ -141,11 +143,13 @@ etay=mean([etas(ind(1)-1),etas(ind(1))]);
 han=@(t) interp1(etas(ind),arrayfun(@(i) res{i}.D,ind),t,'spline');
 etan=fzero(han,1);
 
-Q=res{end}.Q;
+Q=res{60}.Q;
 A=Q(1:3,1:3);
 B=Q(4:5,1:3);
 C=Q(4:5,4:5);
 q=C-B*(A\B');
+
+disp(eig(A));
 
 [C4,C5]=meshgrid(linspace(-2,2,1000),linspace(-2,2,1000));
 

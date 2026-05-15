@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  15 MAY 2026 01:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  16 MAY 2026 01:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1815,11 +1815,6 @@ PGFPlots: reading {figures/hessian.dat}
 
 [46]
 
-LaTeX Warning: Reference `rmk:instability-failed' on page 47 undefined on input
- line 2940.
-
-
-
 [47]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
 (Font)              scaled to size 6.0pt on input line 2977.
@@ -1846,46 +1841,46 @@ PGFPlots: reading {figures/etan.dat}
 
 [50]
 
+[51]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 3167.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3293.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 3167.
+(hyperref)                replaced by space on input line 3293.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3167.
+(hyperref)                removing `\noindent' on input line 3293.
 
-
-
-[51
-
-
-]
-Chapter 6
 
 
 [52
 
 
 ]
-
-[53]
-
-[54]
-
-[55]
-Chapter 7
+Chapter 6
 
 
-[56
+[53
 
 
 ]
 
-[57]
+[54]
+
+[55]
+
+[56]
+Chapter 7
+
+
+[57
+
+
+]
 
 [58]
 
@@ -1912,52 +1907,52 @@ Chapter 7
 [69]
 
 [70]
+
+[71]
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
-
-[71]
 
 [72]
 
 [73]
 
 [74]
+
+[75]
 Chapter 8
 
 
-[75
+[76
 
 
 ]
 
-[76]
+[77]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4792.
+(hyperref)                removing `\noindent' on input line 4918.
 
-
-
-[77
-
-
-]
-Appendix A
 
 
 [78
 
 
 ]
-Appendix B
+Appendix A
 
 
 [79
 
 
 ]
+Appendix B
 
-[80]
+
+[80
+
+
+]
 
 [81]
 
@@ -1982,49 +1977,47 @@ Appendix B
 [91]
 
 [92]
+
+[93]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5829.
+5955.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5829.
+(Font)              scaled to size 10.0pt on input line 5955.
 
 
-[93
+[94
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5830--5830
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5956--5956
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[94]
+[95]
 
-[95] (./text.aux (./frontespizio.aux))
+[96] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package logreq Info: Writing requests to 'text.run.xml'.
 \openout1 = `text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48023 strings out of 473197
- 1054897 string characters out of 5718605
- 1939304 words of memory out of 5000000
- 69789 multiletter control sequences out of 15000+600000
+ 48034 strings out of 473197
+ 1055045 string characters out of 5718605
+ 1939456 words of memory out of 5000000
+ 69794 multiletter control sequences out of 15000+600000
  707525 words of font info for 272 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2249s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2049,10 +2042,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (97 pages, 934559 bytes).
+Output written on text.pdf (98 pages, 940192 bytes).
 PDF statistics:
- 1589 PDF objects out of 1728 (max. 8388607)
- 1437 compressed objects within 15 object streams
- 535 named destinations out of 1000 (max. 500000)
+ 1605 PDF objects out of 1728 (max. 8388607)
+ 1452 compressed objects within 15 object streams
+ 541 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 

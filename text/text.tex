@@ -2937,7 +2937,7 @@ Thus a sufficient condition for instability is that at least one among~\eqref{eq
 \[
 \dual{\partial\mathcal{J}^-_t(\bar q(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar q(t)),w}-2Y\int_0^L\log\frac{Q}{\bar P(t)}dX=-2Y\int_0^L\frac{Q}{\bar P(t)}dX\ge0.
 \]
-This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$ for $w$ small. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful (see Remark~\ref{rmk:instability-failed} below), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$ for $w$ small. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful (see also the subsection below which gives a presentations of our attempts in that direction), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
@@ -3032,9 +3032,10 @@ a_3 w_3'' - b_2 w_1' + c_2 w_2 + c_3 w_3 = 0
 \end{gather}
 \end{subequations}
 in $(0,L)$. Taking into account the boundary conditions we write $w_1$, $w_2$ and $w_3$ as the following formal series
-\[
+\begin{equation}
+\label{eqn:series-formal}
 w_1=\sum_{k=1}^\infty w_1^k\sin\left(\gamma_kx\right),\quad w_2=w_2^0+\sum_{k=1}^\infty w_2^k\cos\left(\gamma_kx\right)\quad\text{and}\quad w_3=w_3^0+\sum_{k=1}^\infty w_3^k\cos\left(\gamma_kx\right),
-\]
+\end{equation}
 where $\gamma_k=\frac{\pi k}{L}$. Substituting into~\eqref{eqn:equations2order} we get
 \begin{subequations}
 \label{eqn:series}
@@ -3137,22 +3138,25 @@ Differentiating these equations, solving for $\left(\frac{d\bar y_2}{d\eta};\fra
 Now reasoning as in the proof of Lemma~\ref{lemma:stability-force} and using~\eqref{eqn:matrici-piccoline}, it follows that $\frac{d\bar{F}}{d\eta}$ vanish if and only if $\det M$ vanish. This concludes the proof.
 \end{proof}
 
-We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not satisfy the regularized stability condition. When $\det M_1$ vanishes, the kernel of $\partial^2\mathcal{J}^+_t(\overline q(t))$ becomes nontrivial and is spanned by $w$
+We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not satisfy the regularized stability condition. When $\det M_1$ vanishes, the kernel of $\partial^2\mathcal{J}^+_t(\bar q(t))$ becomes nontrivial and is spanned by $w$
 \[
 w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
 \]
 with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1>0$, $w^2<0$ and $w^3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{q}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $w_3 \ge 0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta > \eta_1$.
-\begin{rmk}
+
 %The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
-We have proved that the kernel of $\partial\mathcal{J}^+_t(\bar{q}(t))$ never contains $w\in Q$ with $Q\ge 0$. However to prove that $\bar{q}(t)$ is not a minimizer of $\mathcal{J}^+_t(\overline{q}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}<0$. Here we describe our attempts in that direction. Consider a finite dimensional subspace of $Q$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w_1,\dots,w_m)$. Then generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
+
+\subsubsection*{True instability} In previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{q}(t))$ never contains $w\in Q$ with $Q\ge 0$. However to prove that $\bar{q}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{q}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}<0$. Here we describe our attempts in that direction, that however were not successful. Consider a finite dimensional subspace of $Q$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
 \[
-\dual{\mathcal{J}^+_t(\overline{q}(t))w,w}=c^TG(t)c,
+\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}=c^TG(t)c,
 \]
 where the symmetric matrix $G\in\mathbb{R}^{d\times d}$ is given by
 \[
-G=\int_0^L\left((O')^TMO'+2(O')^TNO+O^TKO\right)dX.
+G(t)=\int_0^L\left((O')^TM(t)O'+(O')^TN(t)O+O^TN(t)^TO'+O^TK(t)O\right)dX.
 \]
-Thus out aim is to find $O$ and $\eta>\eta_1$ such that there exists $c\in\mathbb{R}^{m}$ with $c^TGc<0$ and satisfying the constrain $(Oc)_3\ge0$ in $(0,L)$. We first consider the case
+Thus out aim is to find $O$ and $\eta>\eta_1$ such that there exists $c\in\mathbb{R}^{m}$ with $c^TGc<0$ and satisfying the constrain $(Oc)_3\ge0$ in $(0,L)$.
+
+We first consider the choice
 \[
 O(x)=\begin{pmatrix}
 \sin(\gamma_1x) & 0 & 0 \\
@@ -3160,9 +3164,131 @@ O(x)=\begin{pmatrix}
 0 & \cos(\gamma_1x) & 0 \\
 0 & 0 & 1 \\
 0 & 0 & \cos(\gamma_1x) 
+\end{pmatrix}
+\]
+that correspond to a truncation of the formal series~\eqref{eqn:series-formal} at the first orders. The condition $(Oc)_3\ge0$ in this case reads as $|c_5|<c_4$. Let
+\[
+\mathscr{A}=\{(c_4,c_5)\in\mathbb{R}^2\;|\;\text{there exists $(c_1,c_2,c_3)\in\mathbb{R}^3$ such that $c^TGc<0$}\}.
+\]
+To characterize $\mathscr{A}$ the following lemma is useful.
+\begin{lemma}
+Let $m,n\in\mathbb{N}$. Let $A\in\mathbb{R}^{m\times m}$ and $C\in\mathbb{R}^{n\times n}$ be symmetric matrices. Assume that $A$ is positive-definite. Let also $B\in\mathbb{R}^{m\times n}$ and define the symmetric matrix
+\[
+M=\begin{pmatrix}
+A & B^T \\
+B & C
 \end{pmatrix}.
-\]The condition $(Oc)_3\ge0$ in this case reads as $|c_5|<c_4$. We find that 
-\end{rmk}
+\]
+Then for all $b\in\mathbb{R}^n$ it holds that
+\[
+\min_{a\in\mathbb{R}^m}\begin{pmatrix}
+a^T & b^T
+\end{pmatrix}
+M
+\begin{pmatrix}
+a \\
+b
+\end{pmatrix}=b^T(C-BA^{-1}B^T)b
+\]
+\end{lemma}
+\begin{proof}
+For each $b\in\mathbb{R}^n$ consider the map
+\begin{equation}
+\label{eqn:objective}
+\mathbb{R}^m\ni a\mapsto
+\begin{pmatrix}
+a^T & b^T
+\end{pmatrix}
+M
+\begin{pmatrix}
+a \\
+b
+\end{pmatrix}.
+\end{equation}
+Its gradient and hessian are respectively
+\[
+a\mapsto Aa+B^Tb\quad\text{and}\quad a\mapsto A.
+\]
+Since $A$ is positive-definite a minimum point of~\eqref{eqn:objective} is
+\[
+a=-A^{-1}B^Tb.
+\]
+Thus substituting that $a$ in~\eqref{eqn:objective} we conclude.
+\end{proof}
+In our case the previous lemma implies that $(c_4,c_5)\in\mathbb{R}^2$ it holds
+\[
+\min_{(c_1,c_2,c_3)\in\mathbb{R}^3}c^TGc=\begin{pmatrix}
+c_1 & c_2
+\end{pmatrix}
+S
+\begin{pmatrix}
+c_1 \\ c_2
+\end{pmatrix}
+\]
+where
+\[
+S=
+\begin{pmatrix}
+G_{44} & G_{45} \\
+G_{54} & G_{55}
+\end{pmatrix}-
+\begin{pmatrix}
+G_{41} & G_{42} & G_{43} \\
+G_{51} & G_{52} & G_{53} \\
+\end{pmatrix}
+\begin{pmatrix}
+G_{11} & G_{12} & G_{13} \\
+G_{21} & G_{22} & G_{23} \\
+G_{31} & G_{32} & G_{33}
+\end{pmatrix}^{-1}
+\begin{pmatrix}
+G_{41} & G_{51} \\
+G_{42} & G_{52} \\
+G_{43} & G_{53} \\
+\end{pmatrix}.
+\]
+The positive definiteness of the 3-by-3 block can be checked explicitly and is always satisfied in the range of constitutive parameters explored by out numerical computations. Now we conclude that
+\[
+\mathscr{A}=\left\{(c_4,c_5)\in\mathbb{R}^2\;\middle|\;\begin{pmatrix}
+c_1 & c_2
+\end{pmatrix}
+S
+\begin{pmatrix}
+c_1 \\ c_2
+\end{pmatrix}<0\right\}.
+\]
+From the numerical computations it result that for $\eta>\eta_1$ matrix $S$ is of the form
+\[
+S=\begin{pmatrix}
+S_{11} & 0 \\
+0 & S_{22}
+\end{pmatrix}
+\]
+with $S_{11}>0$ and $S_{22}<0$. Then the set $\mathscr{A}$ is a the cone defined by
+\[
+|c_5|\ge-\frac{S_{11}}{S_{22}}|c_4|.
+\] 
+We conclude that the condition for the existence of a $c\in\mathbb{R}^5$ with $c^TGc<0$ and $|c_5|<c_4$ is $-S_{11}/S_{22}<0$. Unfortunately this never happens, at least in the range of constitutive parameters we have explored.
+
+Another choice of $O$ that we have considered is
+\begin{equation}
+\label{eqn:basis}
+O=\begin{pmatrix}
+\delta\left(1-e^{-\frac{x}{\delta}}\right)-\frac{x}{L}\delta\left(1-e^{-\frac{L}{\delta}}\right) & 0 & 0 \\
+0 & 1 & 0 \\
+0 & -e^{-\frac{x}{\delta}} & 0 \\
+0 & 0 & e^{-\frac{x}{\delta}}
+\end{pmatrix}
+\end{equation}
+where $\delta>0$ is a parameter to be chosen. The first basis function represents a dilation of the bar localized at the left end; the linear combinations of the second and third basis functions are chosen to represents a localized shrinkage of the cross-sections at the left end and a possible expansion of cross-sections on the right of the bar; eventually the third basis function represents a localized increase of plastic distortion at the left end. The parameter $\delta$ tune how much the considered basis functions are localized. The idea behind this choice was that we expect that necking should initiate as a localized shrinkage of the cross-sections near one end: this because the eigenvector found in previous subsection (that we recall is not a true instability mode) has this feature so this type of behavior seems to be the instability mode preferred by the bar under tension. To understand whether an instability mode can be obtained as a linear combination of the basis functions in~\eqref{eqn:basis}, we explored different values of $\delta$ in the range from $\frac{1}{50}l$ to $10 L$ (recall that $l$ is the internal length scale associated with the diameter of the bar while $L$ is the length of the bar). However what we found is that $G$ remains positive definite also for $\eta>0$ for all the ranges of constitutive parameters that we have considered.
+
+We have obtained similar results to those we just explicitly described even enriching the basis $O$, considering more terms of the formal series~\eqref{eqn:series-formal}, adding other possible shapes of localized necks (for example considering a localization at the center of the bar) and considering their combination.
+
+\subsection{Conclusions about our qualitative analysis}
+
+
+
+%[delta*(1-exp(-x/delta))-x/L*delta*(1-exp(-L/delta)),0,0;sin(pi*x/L),0,0;0,cos(pi/L*x),0;0,1,0;0,-x/delta*exp(-x/delta),0;0,-exp(-x/delta),0;0,0,exp(-x/delta)]
 
 \part{A model describing pressure sensitive plastic materials}
 \label{part:my-model}
