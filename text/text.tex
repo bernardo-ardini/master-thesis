@@ -2868,13 +2868,13 @@ It is easy to see that the constitutive model described in Section~\ref{subsec:c
 
 The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$ difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck}, we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ defined by
 \[
-\mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P,\hat P)dt,
+\mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P(t),\hat P)dt,
 \]
-with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. And we notice that $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$ where
+with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$, where
 \[
 \mathscr{Q}^\varsigma_t=\{\hat q=(\hat y,\hat P)\in\mathscr{Q}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
-Then the following lemma express some relations between the minimality of $\mathcal{J}_t$ and similar conditions for $\mathcal{J}_t^\varsigma$.
+Then the following lemma express a relation between the minimality of $\mathcal{J}_t$ and similar conditions for $\mathcal{J}_t^\varsigma$ that can be useful.
 \begin{lemma}
 The global stability condition
 \begin{equation}
@@ -2923,6 +2923,9 @@ implies the following couple of one-sided  global stability conditions
 %\mathcal{J}_t^\varsigma(\bar{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 %\end{equation}
 \end{lemma}
+\begin{proof}
+Since $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$, the results follows immediately.
+\end{proof}
 %\begin{proof}
 %That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial. Conversely suppose that~\eqref{eqn:min-neck-sigma} holds and, by contradiction, that $\mathcal{J}_t(\bar{q}(t))>\mathcal{J}_t(\hat q)$ for some $\hat q\in\mathscr{Q}$. If $\hat q\in\mathscr{Q}^\varsigma$ for some $\varsigma\in\{\pm1\}$ we immediately get the desired contradiction. Otherwise let $\hat q^+\in\mathscr{Q}^+$ be defined by $\hat y^+=\hat y$ and $\hat P^+:=\max\{\hat P,\bar P(t)\}$. Then
 %\[
@@ -2930,22 +2933,46 @@ implies the following couple of one-sided  global stability conditions
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen.
-
-Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\le0$ in $(0,L)$, it holds that
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\le0$ in $(0,L)$, it holds that
 \[
 \dual{\partial\mathcal{J}^-_t(\bar q(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar q(t)),w}-2Y\int_0^L\log\frac{Q}{\bar P(t)}dX=-2Y\int_0^L\frac{Q}{\bar P(t)}dX\ge0.
 \]
-This means that~\eqref{eqn:min-neck-sigma} for $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful, in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$ for $w$ small. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful (see Remark~\ref{rmk:instability-failed} below), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
-So, now we study the perturbed equation equation $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. After some tedious computation we wind that (for each $t$ fixed that we will not specify anymore) this is equivalent to
+\begin{rmk}
+\label{rmk:stability-regularized}
+We have already established that instability modes where $P$ decreases everywhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently, if we assume a priori that instability modes cannot exhibit a plastic increment that is negative in some regions and positive in others (as is expected for a bar under tension, where $P$ should not decrease at any point) then the regularized stability condition would imply true local stability.However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,Q) \in Q$ with $Q \ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
+\end{rmk}
+We now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w \in \mathcal{Q}$ such that $\partial^2\mathcal{J}_t^+(\bar{q}(t))w = 0$. It is easy to prove that
+\[
+\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,\tilde w}=\int_0^L\left(M(t)w'\cdot \tilde w'+N(t)w\cdot\tilde w'+N^Tw'\cdot\tilde w+K(t)w\cdot\tilde w\right)dX
+\]
+where
+\[
+M=\begin{pmatrix}
+    W_{y_1'y_1'} & \bar{W}_{y'_1 y_2'} & 0 \\
+    \bar{W}_{y'_1 y_3} & \bar{W}_{y'_2 y'_2} & 0 \\
+    0             & 0             & \bar{H}_{P'P'}
+\end{pmatrix},\quad
+N=\begin{pmatrix}
+    0 & \bar{W}_{y'_1 y_2} & \bar{W}_{y_1'P} \\
+    0 & \bar{W}_{y'_2 y_2} & \bar{W}_{y'_2P} \\
+    0 & 0  & \bar{H}_{PP'}
+\end{pmatrix}\quad\text{and}\quad
+K=\begin{pmatrix}
+    \bar{W}_{y_1y_1} & \bar{W}_{y_1y_2} & \bar{W}_{y_1y_3} \\
+    \bar{W}_{y_2y_1} & \bar{W}_{y_2y_2} & \bar{W}_{y_2y_3} \\
+    \bar{W}_{y_3y_1} & \bar{W}_{y_3y_2} & \bar{W}_{y_3y_3}+\bar{H}_{PP}+\bar{D}_{22} \\
+\end{pmatrix}.
+\]
+Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\overline{D}_{22}$ denotes the partial derivatives of $D$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{q}(t))w=0$ is
 \begin{equation}
 \label{eqn:2order}
 Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},
 \end{equation}
-together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have used the notation $v=(w_1,w_2)$ and $Q=w_3$ and we have defined
+together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have used the notation $v=(w_1,w_2)$ and $Q=w_3$ and we have defined $A=M$, $B=(N-N^T)/2$ and $C=-K$. After some tedious computations one finds
 \begingroup
 \tiny
 \begin{subequations}
@@ -2962,7 +2989,7 @@ a_1 & 0 & 0 \\
 \end{pmatrix}=\begin{pmatrix}
 \eta^2 \frac{\bar W_{11}}{\bar P^2} & 0 & 0 \\
 0 & \frac{\bar W_{33}}{\bar P^2} & 0 \\
-0 & 0 & \bar H_{22}
+0 & 0 & \bar H_{P'P'}
 \end{pmatrix}
 \\
 B &=\begin{pmatrix}
@@ -2970,9 +2997,9 @@ B &=\begin{pmatrix}
 -b_1 & 0 & 0 \\
 -b_2 & 0 & 0
 \end{pmatrix}= \begin{pmatrix}
-    0 & \bar{W}_{y'_1 y_2} & \bar{W}_{y'_1 \bar{P}} \\
-    -\bar{W}_{y'_1 y_2} & 0 & \bar{W}_{y'_2 \bar{P}} \\
-    -\bar{W}_{\bar{P} y'_1} & -\bar{W}_{\bar{P} y'_2} & 0
+    0 & \bar{W}_{y'_1 y_2} & \bar{W}_{y'_1 {P}} \\
+    -\bar{W}_{y'_1 y_2} & 0 & \bar{W}_{y'_2 {P}} \\
+    -\bar{W}_{{P} y'_1} & -\bar{W}_{{P} y'_2} & 0
 \end{pmatrix}=\begin{pmatrix}
 0 & \eta \bar{W}_{12} & \eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \eta^2 \frac{\bar{W}_{11}}{\bar{P}^3} - \eta \frac{\bar{W}_1}{\bar{P}^2} \\
 -\eta \bar{W}_{12} & 0 & 0 \\
@@ -2985,12 +3012,12 @@ C &=\begin{pmatrix}
 \end{pmatrix}=\begin{pmatrix}
     0 & 0 & 0 \\
     0 & -\bar{W}_{y_2 y_2} & -\bar{W}_{y_2 \bar{P}} \\
-    0 & -\bar{W}_{\bar{P} y_2} & -\bar{W}_{\bar{P} \bar{P}} - \bar{H}_{11} - \bar{D}_{22}
+    0 & -\bar{W}_{{P} y_2} & -\bar{W}_{{P} {P}} - \bar{H}_{PP} - \bar{D}_{22}
 \end{pmatrix}=
 \begin{pmatrix}
 0 & 0 & 0 \\
 0 & -\bar{P}^2 \bar{W}_{22} & -\bar{W}_2 + \frac{\eta}{\bar{P}} \bar{W}_{12} - \bar{y}_2 \bar{P} \bar{W}_{22} \\
-0 & -\bar{W}_2 + \frac{\eta}{\bar{P}} \bar{W}_{12} - \bar{y}_2 \bar{P} \bar{W}_{22} & -\eta^2 \frac{\bar{W}_{11}}{\bar{P}^4} - \bar{y}_2^2 \bar{W}_{22} - 2\eta \frac{\bar{W}_1}{\bar{P}^3} + 2\eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \bar{H}_{11} - \bar{D}_{22}
+0 & -\bar{W}_2 + \frac{\eta}{\bar{P}} \bar{W}_{12} - \bar{y}_2 \bar{P} \bar{W}_{22} & -\eta^2 \frac{\bar{W}_{11}}{\bar{P}^4} - \bar{y}_2^2 \bar{W}_{22} - 2\eta \frac{\bar{W}_1}{\bar{P}^3} + 2\eta \frac{\bar{y}_2}{\bar{P}^2} \bar{W}_{12} - \bar{H}_{PP} - \bar{D}_{22}
 \end{pmatrix}
 \end{align}
 \end{subequations}
@@ -3004,7 +3031,7 @@ a_2 w_2'' - b_1 w_1' + c_1 w_2 + c_2 w_3 = 0, \\
 a_3 w_3'' - b_2 w_1' + c_2 w_2 + c_3 w_3 = 0
 \end{gather}
 \end{subequations}
-in $(0,L)$. Taking into account the boundary conditions we can write $w_1$, $w_2$ and $w_3$ as the following formal series
+in $(0,L)$. Taking into account the boundary conditions we write $w_1$, $w_2$ and $w_3$ as the following formal series
 \[
 w_1=\sum_{k=1}^\infty w_1^k\sin\left(\gamma_kx\right),\quad w_2=w_2^0+\sum_{k=1}^\infty w_2^k\cos\left(\gamma_kx\right)\quad\text{and}\quad w_3=w_3^0+\sum_{k=1}^\infty w_3^k\cos\left(\gamma_kx\right),
 \]
@@ -3017,7 +3044,7 @@ c_1w_2^0+c_2w_3^0+\sum_{k=1}^\infty\left((c_1-a_2\gamma_k^2)w_2^k-b_1\gamma_kw_1
 c_2w_2^0+c_3w_3^0+\sum_{k=1}^\infty\left(c_2w_2^k-b_2\gamma_kw_1^k+(c_3-a_3\gamma_k^2)w_3^k\right)\cos\left(\gamma_kx\right)=0
 \end{gather}
 \end{subequations}
-in $(0,L)$, where. Taking into account the orthogonality relations
+in $(0,L)$, where. Due to the orthogonality relations
 \[
 \int_0^L\sin(\gamma_kx)\sin(\gamma_jx)dx=\begin{cases}
 \frac{L}{2} & \text{if $k=j$} \\
@@ -3028,7 +3055,7 @@ L & \text{if $k=j=0$} \\
 0 & \text{if $k\neq j$},
 \end{cases}
 \]
-then~\eqref{eqn:series} is equivalent to $M_kw^k=0$ for all $k\in\mathbb{N}_0$ where $w^0=(w_2^0;w_3^0)\in\mathbb{R}^2$, $w^k=(w_1^k;w_2^k;w_3^k)\in\mathbb{R}^3$ for $k\in\mathbb{N}$ and
+we find that~\eqref{eqn:series} is equivalent to $M_kw^k=0$ for all $k\in\mathbb{N}_0$ where $w^0=(w_2^0,w_3^0)\in\mathbb{R}^2$, $w^k=(w_1^k,w_2^k,w_3^k)\in\mathbb{R}^3$ for $k\in\mathbb{N}$ and
 \[
 M_0=\begin{pmatrix}
 c_1 & c_2 \\
@@ -3066,12 +3093,6 @@ Thus the existence of a nontrivial solution is equivalent to the existence of so
 \caption{On the left, value of $\det M_k$ for $k\in\{0,1,2,3,4\}$. Notice the $\det M_0$ never vanishes while $\det M_1$ is the first determinant to vanish at elongation $\eta_1=1.1597$, slightly greater than the elongation $\eta_\text{m}=1.1474$ corresponding to the maximum of $\bar F$. On the right is $\eta_1$ as $L$ changes. Notice that $\eta_1$ tends to $\eta_\text{m}$ as $L\to\infty$.}
 \label{fig:dets}
 \end{figure}
-When $\eta=\eta_1$ the kernel of $\partial^2\mathcal{J}^+_t(\overline q(t))$ becomes nontrivial and is spanned by $w$
-\[
-w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
-\]
-with $w^1$ satisfying $M_1w^1=0$. If we compote numerically $w^1$ we find that $w^1>0$, $w^2<0$ and $w^3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. Even though $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+$, it is not necessarily a true instability mode because, since it does not satisfies $w_3\ge 0$ does not necessarily made stationary the second variation of the true objective functional $\mathcal{J}_t$.
-
 In the same figure, on the right, is shown the value of the elongation $\eta_1$ when $\det M_1$ vanish as a function of the length of $L$ of the bar. In the limit $L\to\infty$ it results that $\eta_1$ converges to $\eta_\text{m}$, the elongation corresponding to the maximum tensile force. This is indeed justified by the following lemma.
 \begin{lemma}
 Assume that as $L\to\infty$ the value $\eta_k$ corresponding to vanishing $\det M_k$ has a finite limit. Then that limit coincides to $\eta_\text{m}$ for all $k\in\mathbb{N}$.
@@ -3116,8 +3137,31 @@ Differentiating these equations, solving for $\left(\frac{d\bar y_2}{d\eta};\fra
 Now reasoning as in the proof of Lemma~\ref{lemma:stability-force} and using~\eqref{eqn:matrici-piccoline}, it follows that $\frac{d\bar{F}}{d\eta}$ vanish if and only if $\det M$ vanish. This concludes the proof.
 \end{proof}
 
+We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not satisfy the regularized stability condition. When $\det M_1$ vanishes, the kernel of $\partial^2\mathcal{J}^+_t(\overline q(t))$ becomes nontrivial and is spanned by $w$
+\[
+w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
+\]
+with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1>0$, $w^2<0$ and $w^3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{q}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $w_3 \ge 0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta > \eta_1$.
 \begin{rmk}
-The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
+%The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
+We have proved that the kernel of $\partial\mathcal{J}^+_t(\bar{q}(t))$ never contains $w\in Q$ with $Q\ge 0$. However to prove that $\bar{q}(t)$ is not a minimizer of $\mathcal{J}^+_t(\overline{q}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}<0$. Here we describe our attempts in that direction. Consider a finite dimensional subspace of $Q$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w_1,\dots,w_m)$. Then generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
+\[
+\dual{\mathcal{J}^+_t(\overline{q}(t))w,w}=c^TG(t)c,
+\]
+where the symmetric matrix $G\in\mathbb{R}^{d\times d}$ is given by
+\[
+G=\int_0^L\left((O')^TMO'+2(O')^TNO+O^TKO\right)dX.
+\]
+Thus out aim is to find $O$ and $\eta>\eta_1$ such that there exists $c\in\mathbb{R}^{m}$ with $c^TGc<0$ and satisfying the constrain $(Oc)_3\ge0$ in $(0,L)$. We first consider the case
+\[
+O(x)=\begin{pmatrix}
+\sin(\gamma_1x) & 0 & 0 \\
+0 & 1 & 0 \\
+0 & \cos(\gamma_1x) & 0 \\
+0 & 0 & 1 \\
+0 & 0 & \cos(\gamma_1x) 
+\end{pmatrix}.
+\]The condition $(Oc)_3\ge0$ in this case reads as $|c_5|<c_4$. We find that 
 \end{rmk}
 
 \part{A model describing pressure sensitive plastic materials}
