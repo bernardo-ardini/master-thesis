@@ -146,7 +146,7 @@ Some historical information about the birth of the principle of virtual powers c
 
 \subsection{Kinematics}
 
-Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a separable and reflexive Banach space $V$, the \emph{space of configurations}.
+Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a separable and reflexive Banach space $Z$, the \emph{space of configurations}.
 \begin{ex}
 \label{ex:modeling:particles}
 Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by the matrices $x=(x_1,\dots x_N)\in\mathbb{R}^{d\times N}$, where $x_{\alpha}\in\mathbb{R}^d$ with $\alpha\in\{1,\dots,N\}$ is the position of the $\alpha$th material point.
@@ -159,13 +159,13 @@ The configurations of a deformable body at large strain in $\mathbb{R}^d$, can b
 \label{ex:modeling:micro}
 Consider a body that can be subject to damage. This can be modeled considering an internal damage variable $\alpha\in W^{1,p}(\Omega)$ with $p\in(1,\infty)$. Where $\alpha=0$ the material is sound, while where $\alpha=1$ the material is completely damaged. The material is partially damaged where $\alpha\in(0,1)$. One should add the constrain $\alpha\in[0,1]$, but this is not imposes at the level of definition of the space of configurations, again in order to preserve the linear structure.
 \end{ex}
-Examples~\ref{ex:modeling:large-strain} and~\ref{ex:modeling:micro} suggest that the assumption that space of configurations has a linear structure is not restrictive in most mechanical models, even when the truly attainable configurations actually should lie in a space $M$ with the structure of a manifold. Indeed in most cases, $M$ can be seen as a subset of a larger linear space of configurations $V$. Then we can formulate the model on $V$ and impose that the evolution of the configuration of the system is restricted to $M$ by including suitable reactions, as we will see. Thus the geometric complexity of $M$ can be avoided and reduced to the analytical complexity of managing the reactions within $V$ required to enforce the constraint
+Examples~\ref{ex:modeling:large-strain} and~\ref{ex:modeling:micro} suggest that the assumption that space of configurations has a linear structure is not restrictive in most mechanical models, even when the truly attainable configurations actually should lie in a space $M$ with the structure of a manifold. Indeed in most cases, $M$ can be seen as a subset of a larger linear space of configurations $Z$. Then we can formulate the model on $Z$ and impose that the evolution of the configuration of the system is restricted to $M$ by including suitable reactions, as we will see. Thus the geometric complexity of $M$ can be avoided and reduced to the analytical complexity of managing the reactions within $Z$ required to enforce the constraint
 
 \begin{rmk}
 As Example~\ref{ex:modeling:micro} show, the configuration of the mechanical system can include also the description of an internal state of the system that does not necessarily correspond with the macroscopic observable placement of the system in the space. This is particularly true also in the case of plasticity theory, that will be discussed in the next section.
 \end{rmk}
 
-\subsection{Statics} With statics we mean the treatment of equilibrium of forces, in a generalized sense, acting on a mechanical system. Any \emph{generalized force} acting on the mechanical system, can be described as a linear functional $\mathcal{F}\in V^*$. Given any $\tilde v\in V$, the duality pairing $\dual{\mathcal{F},\tilde v}$ can be interpreted as the projection of $\mathcal{F}$ along the direction $\tilde v$. If we interpret $\tilde v$ as a virtual rate, that is $\tilde v=\dot{\tilde u}(0)$ for an arbitrary evolution $\tilde{u}\in C^1([0,1],V)$ of the configuration of the system, then $\dual{\mathcal{F},\tilde v}$ is called the virtual power of $\mathcal{F}$ along the virtual rate $\tilde{v}$.
+\subsection{Statics} With statics we mean the treatment of equilibrium of forces, in a generalized sense, acting on a mechanical system. Any \emph{generalized force} acting on the mechanical system, can be described as a linear functional $\mathcal{F}\in Z^*$. Given any $\tilde w\in Z$, the duality pairing $\dual{\mathcal{F},\tilde w}$ can be interpreted as the projection of $\mathcal{F}$ along the direction $\tilde w$. If we interpret $\tilde w$ as a virtual rate, that is $\tilde w=\dot{\tilde z}(0)$ for an arbitrary evolution $\tilde{z}\in C^1([0,1],Z)$ of the configuration of the system, then $\dual{\mathcal{F},\tilde w}$ is called the virtual power of $\mathcal{F}$ along the virtual rate $\tilde{w}$.
 \begin{ex}(Example~\ref{ex:modeling:particles} continued)
 \label{ex:modeling:particles-continued}
 A generalized force can be seen as an element $F=(F_1,\dots,F_N)\in(\mathbb{R}^{d\times N})^*=\mathbb{R}^{d\times N}$. The virtual power acts on $\tilde v=(\tilde v_1,\dots,\tilde v_N)$ as
@@ -181,61 +181,61 @@ Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
 \]
 where $P\in L^{P^*}(\Omega,\mathbb{R}^{d\times d})$, $f\in L^{p^*}(\Omega)^d$ and $h\in L^{p^*}(\partial\Omega)^d$. The first integral represents a generalized force that acts in the direction of the local bending of the body, the second integral represents a volume force distributed over $\Omega$, the last integral a surface force distributed over $\partial\Omega$.
 \end{ex}
-Consider now a time interval $[0,T]$ and an actual evolution of the configuration of the system, $u\colon[0,T]\to V$. For simplicity, in this discussion we assume that $u\in\text{AC}([0,T],V)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to V^*$ their sum. We require that equilibrium holds, that is
+Consider now a time interval $[0,T]$ and an actual evolution of the configuration of the system, $z\colon[0,T]\to Z$. For simplicity, in this discussion we assume that $z\in\text{AC}([0,T],Z)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to Z^*$ their sum. We require that equilibrium holds, that is
 \[
 \mathcal{F}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
 This can be written also as
 \begin{equation}
 \label{eqn:modeling:ppv}
-\dual{\mathcal{F}(t),\tilde{v}}=0\quad\text{for all $\tilde v\in V$ and a.e.\ $t\in(0,T)$}.
+\dual{\mathcal{F}(t),\tilde{w}}=0\quad\text{for all $\tilde w\in Z$ and a.e.\ $t\in(0,T)$}.
 \end{equation}
 Equation~\eqref{eqn:modeling:ppv} is the statement of the principle of virtual powers, that is, the virtual power of the generalized force acting on the system along all virtual rates must vanish.
 
 \subsection{Constitutive relations}
 
-To get an evolution equation, able to predict the evolution of the mechanical system, it is necessary to link $\mathcal{F}$ to the evolution $u$ through constitutive relations. We focus on constitutive relations of the form
+To get an evolution equation, able to predict the evolution of the mechanical system, it is necessary to link $\mathcal{F}$ to the evolution $z$ through constitutive relations. We focus on constitutive relations of the form
 \[
-\mathcal{F}(t)\in\hat{\mathcal{F}}(u(t),\dot{u}(t),t)\quad\text{for a.e.\ $t\in(0,T)$},
+\mathcal{F}(t)\in\hat{\mathcal{F}}(z(t),\dot{z}(t),t)\quad\text{for a.e.\ $t\in(0,T)$},
 \]
-where $\hat{\mathcal{F}}\colon V\times V\times[0,T]\rightsquigarrow V^*$. We postulate that
+where $\hat{\mathcal{F}}\colon Z\times Z\times[0,T]\rightsquigarrow Z^*$. We postulate that
 \begin{equation}
 \label{eqn:modeling:constitutive-relations}
-\hat{\mathcal{F}}(u,v,t)=-\partial_u\mathcal{E}(u,t)-\partial_v\mathcal{R}(u,v,t),
+\hat{\mathcal{F}}(z,w,t)=-\partial_z\mathcal{E}(z,t)-\partial_w\mathcal{R}(z,w,t),
 \end{equation}
-where $\mathcal{E}\colon V\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon V\times V\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential, while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_u\mathcal{E}(u(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_v\mathcal{R}(u(t),\dot{u}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
+where $\mathcal{E}\colon Z\times[0,T]\to(-\infty,\infty]$ and $\mathcal{R}\colon Z\times Z\times[0,T]\to[0,\infty]$ are called respectively the \emph{energy} and the \emph{dissipation potential}. The $\partial$ symbol can have different definitions according to the regularity of $\mathcal{E}$ and $\mathcal{R}$. If Fréchet differentiability is assumed then $\partial$ denotes the Fréchet differential, while if only convexity is assumed it denotes the subdifferential. Less regularity requires to use extended notions of subdifferentials such as the Fréchet subdifferential. In view of~\eqref{eqn:modeling:constitutive-relations}, we can split $\mathcal{F}=\mathcal{F}_c+\mathcal{F}_d$, where $\mathcal{F}_c(t)\in-\partial_z\mathcal{E}(z(t),t)$ is the conservative generalized force and $\mathcal{F}_d(t)\in-\partial_w\mathcal{R}(z(t),\dot{z}(t),t)$ is the dissipative generalized force. The requirement that $\mathcal{F}_d$ has a dissipative behavior can be formulated as
 \[
-\dual{\mathcal{F}_d(t),\dot{u}(t)}\le0\quad\text{for a.e.\ $t\in(0,T)$}.
+\dual{\mathcal{F}_d(t),\dot{z}(t)}\le0\quad\text{for a.e.\ $t\in(0,T)$}.z
 \]
 This means that the projection of $\mathcal{F}_d$ along the direction of the rate is negative, or equivalently that the power of $\mathcal{F}_d$ is nonpositive. This is automatically satisfied if
 \[
-\text{$\dual{\xi,v}\ge0$ for all $(u,v,t)\in V\times V\times[0,T]$ and $\xi\in\partial_v\mathcal{R}(u,v,t)$}.
+\text{$\dual{\xi,w}\ge0$ for all $(z,w,t)\in Z\times Z\times[0,T]$ and $\xi\in\partial_w\mathcal{R}(z,w,t)$}.
 \]
 This last condition is called \emph{dissipation inequality}.
 
-In most situations one can split $\mathcal{F}=\mathcal{X}-\mathcal{I}$, where $\mathcal{X}$ and $\mathcal{I}$ from $[0,T]$ to $V^*$ are the external generalized force and the internal generalized force respectively. The internal generalized force is due to the internal response of the mechanical system, while the external generalized force represents the external actions imposed on it. In this case the constitutive relations are usually specialized to
+In most situations one can split $\mathcal{F}=\mathcal{X}-\mathcal{I}$, where $\mathcal{X}$ and $\mathcal{I}$ from $[0,T]$ to $Z^*$ are the external generalized force and the internal generalized force respectively. The internal generalized force is due to the internal response of the mechanical system, while the external generalized force represents the external actions imposed on it. In this case the constitutive relations are usually specialized to
 \begin{itemize}
-\item[(i)] $\mathcal{E}\colon V\times[0,T]\to(-\infty,\infty]$ of the form $\mathcal{E}(u,t)=\Psi(u)-\dual{\mathcal{X}(t),u}$, where $\Psi\colon V\to(-\infty,\infty]$ is the free energy, describing the conservative internal response, and $\mathcal{X}\colon[0,T]\to V^*$ is the external generalized force,
-\item[(ii)] $\mathcal{R}(u,v,t)=\Phi(u,v)$, where $\Phi\colon V\times V\to[0,\infty]$ is the dissipation potential describing the dissipative internal response.
+\item[(i)] $\mathcal{E}\colon Z\times[0,T]\to(-\infty,\infty]$ of the form $\mathcal{E}(z,t)=\Psi(z)-\dual{\mathcal{X}(t),z}$, where $\Psi\colon Z\to(-\infty,\infty]$ is the free energy, describing the conservative internal response, and $\mathcal{X}\colon[0,T]\to Z^*$ is the external generalized force,
+\item[(ii)] $\mathcal{R}(z,w,t)=\Phi(z,w)$, where $\Phi\colon Z\times Z\to[0,\infty]$ is the dissipation potential describing the dissipative internal response.
 \end{itemize}
-Then the constitutive relations can be written as $\mathcal{I}(t)\in\hat{\mathcal{I}}(u(t),\dot{u}(t))$ for a.e.\ $t\in(0,T)$, where $\hat{\mathcal{I}}\colon V\times V\rightsquigarrow V^*$ is given by
+Then the constitutive relations can be written as $\mathcal{I}(t)\in\hat{\mathcal{I}}(z(t),\dot{z}(t))$ for a.e.\ $t\in(0,T)$, where $\hat{\mathcal{I}}\colon Z\times Z\rightsquigarrow Z^*$ is given by
 \begin{equation}
 \label{eqn:modeling:constitutive}
-\hat{\mathcal{I}}(u,v)=\partial\Psi(u)+\partial_v\Phi(u,v).
+\hat{\mathcal{I}}(z,w)=\partial\Psi(z)+\partial_w\Phi(z,w).
 \end{equation}
 In this case the equilibrium condition reads
 \[
-\partial\Psi(u(t))+\partial_v\Phi(u(t),\dot u(t))\ni\mathcal{I}(t)=\mathcal{X}(t)\quad\text{for a.e.\ $t\in(0,T)$}
+\partial\Psi(z(t))+\partial_w\Phi(z(t),\dot z(t))\ni\mathcal{I}(t)=\mathcal{X}(t)\quad\text{for a.e.\ $t\in(0,T)$}
 \]
 or
 \begin{equation}
 \label{eqn:modeling:doubly-nonlinear}
-\partial_u\mathcal{E}(u(t),t)+\partial_v\Phi(u(t),\dot u(t))\ni0\quad\text{for a.e.\ $t\in(0,T)$}.
+\partial_z\mathcal{E}(z(t),t)+\partial_w\Phi(z(t),\dot z(t))\ni0\quad\text{for a.e.\ $t\in(0,T)$}.
 \end{equation}
 This is known as the \emph{doubly nonlinear equation}. Now the evolution problem can be formulates as follows.
 \begin{prb}
 \label{prb:modeling:doubly-nonlinear}
-Let $u_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to V^*$. Find $u\in\text{AC}([0,T],V)$ such that~\eqref{eqn:modeling:doubly-nonlinear} holds.
+Let $z_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to Z^*$. Find $z\in\text{AC}([0,T],Z)$ such that~\eqref{eqn:modeling:doubly-nonlinear} holds.
 \end{prb}
 \begin{rmk}
 Before imposing particular constitutive relations, $\mathcal{I}$ and $\mathcal{X}$ are completely undefined. However we notice that, before making specific constitutive assumptions, when one develop a new mechanical model it is useful to understand which is the particular structure that $\mathcal{I}$ and $\mathcal{X}$ must assume in order to describe the forces involved in the mechanical system of interest. This is the approach that will be followed in this thesis.
@@ -245,14 +245,14 @@ Before imposing particular constitutive relations, $\mathcal{I}$ and $\mathcal{X
 In terms of $\Phi$, the dissipative inequality reads
 \begin{equation}
 \label{eqn:modeling:dissipative-inequality}
-\text{$\dual{\xi,v}\ge0$ for all $(u,v)\in V\times V$ and $\xi\in\partial_v\Phi(u,v)$}.
+\text{$\dual{\xi,w}\ge0$ for all $(z,w)\in Z\times Z$ and $\xi\in\partial_w\Phi(z,w)$}.
 \end{equation}
-A possible condition ensuring~\eqref{eqn:modeling:dissipative-inequality} is that $\Phi(u,\cdot)$ is convex and $\Phi(u,0)=0$. Indeed if $(u,v)\in V\times V$ and $\xi\in\partial_v\Phi(u,v)$, then by definition of subdifferential, $0=\Phi(u,0)\ge\Phi(u,v)+\dual{\xi,0-v}$, so that $\dual{\xi,v}\ge\Phi(u,v)\ge0$.
+A possible condition ensuring~\eqref{eqn:modeling:dissipative-inequality} is that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$. Indeed if $(z,w)\in Z\times Z$ and $\xi\in\partial_w\Phi(z,w)$, then by definition of subdifferential, $0=\Phi(z,0)\ge\Phi(z,w)+\dual{\xi,0-w}$, so that $\dual{\xi,w}\ge\Phi(z,w)\ge0$.
 \end{rmk}
 
 \subsection{Adding constraints with the method of Lagrange multipliers}
 
-To include a kinematical constrains on the process, say $u(t)\in K$ for all $t\in[0,T]$, one can set $\mathcal{E}(u,t)=\infty$ if $u\notin K$. This can be done by including $\iota_K$ in $\mathcal{E}$. In this way $\mathcal{F}_c(t)$ will include the reaction $\mathcal{P}(t)\in-N_K(u(t))\subset V^*$ required to enforce the constrain. Here $N_K=\partial\iota_K$.
+To include a kinematical constrains on the process, say $z(t)\in K$ for all $t\in[0,T]$, one can set $\mathcal{E}(z,t)=\infty$ if $z\notin K$. This can be done by including $\iota_K$ in $\mathcal{E}$. In this way $\mathcal{F}_c(t)$ will include the reaction $\mathcal{P}(t)\in-N_K(z(t))\subset Z^*$ required to enforce the constrain. Here $N_K=\partial\iota_K$.
 \begin{ex}(Example~\ref{ex:modeling:large-strain} continued)
 Let $\Phi\colon W^{1,p^*}(\Omega)^d\to(-\infty,\infty]$. To describe an elastic response, we choose $\Psi$ of the form
 \[
@@ -261,25 +261,25 @@ Let $\Phi\colon W^{1,p^*}(\Omega)^d\to(-\infty,\infty]$. To describe an elastic 
 where $W\colon\Omega\times\mathbb{R}^{d\times d}\to(-\infty,\infty]$ is a continuous free energy density. Incompenetrability impose that $W(X,F)=\infty$ if $\det F\le0$.
 \end{ex}
 \begin{ex}(Example~\ref{ex:modeling:micro} continued)
-To ensure that $z(x)\in[0,1]$ for a.e.\ $x\in\Omega$, one choose $\Phi\colon W^{1,p}(\Omega)\to(-\infty,\infty]$ such that $\Phi(z)=\infty$ if $z\notin[0,1]$ on a set of positive measure.
+To ensure that $\alpha(x)\in[0,1]$ for a.e.\ $x\in\Omega$, one choose $\Phi\colon W^{1,p}(\Omega)\to(-\infty,\infty]$ such that $\Phi(z)=\infty$ if $\alpha\notin[0,1]$ on a set of positive measure.
 \end{ex}
 However there are situations in which it would be desirable to treat the constraint reaction $\mathcal{P}$ as an independent variable instead. In this sense $\mathcal{P}$ can be considered as an additional descriptor of the configuration of the system. This is particularly useful if one wants to consider constitutive relations depending on the reaction $\mathcal{P}$ itself, as it happens for the model that is discussed in Part~\ref{part:my-model}. Then we split the generalized force as $\mathcal{F}=-\mathcal{I}+\mathcal{X}+\mathcal{P}$. The constitutive relations are imposed on $\mathcal{I}$ only as
 \[
-\mathcal{I}(t)\in-\partial\Psi(\mathcal{P}(t),u(t))-\partial\Phi(\mathcal{P}(t),u(t),\dot u(t))\quad\text{for a.e.\ $t\in(0,T)$},
+\mathcal{I}(t)\in-\partial_z\Psi(\mathcal{P}(t),z(t))-\partial_w\Phi(\mathcal{P}(t),z(t),\dot z(t))\quad\text{for a.e.\ $t\in(0,T)$},
 \]
-where now $\Psi\colon V^*\times V\to(-\infty,\infty]$ and $\Phi\colon V^*\times V\times V\to[0,\infty]$. Instead
+where now $\Psi\colon Z^*\times Z\to(-\infty,\infty]$ and $\Phi\colon Z^*\times Z\times Z\to[0,\infty]$. Instead
 $\mathcal{X}$ is assigned while $\mathcal{P}$ is included among the unknowns of the evolution together with $u$. Then the evolution equation can be written as
 \begin{equation}
 \label{eqn:modeling:doubly-nonlinear-equation-constrain}
 \begin{split}
-u(t)&\in K\\
-\mathcal{P}(t)&\in-N_K(u(t))
+z(t)&\in K\\
+\mathcal{P}(t)&\in-N_K(z(t))
 \end{split}
-\quad\text{and}\quad\partial_u\mathcal{E}(\mathcal{P}(t),u(t),t)+\partial_v\Phi(\mathcal{P}(t),u(t),\dot u(t))\ni\mathcal{P}(t)\quad\text{for a.e.\ $t\in(0,T)$},
+\quad\text{and}\quad\partial_z\mathcal{E}(\mathcal{P}(t),z(t),t)+\partial_w\Phi(\mathcal{P}(t),z(t),\dot z(t))\ni\mathcal{P}(t)\quad\text{for a.e.\ $t\in(0,T)$},
 \end{equation}
-where now $\mathcal{E}\colon V^*\times V\times[0,T]\to(-\infty,\infty]$ is defined by $\mathcal{E}(\mathcal{P},u,t)=\Psi(\mathcal{P},u)-\dual{\mathcal{X}(t),u}$. Then the evolution problem becomes as follows.
+where now $\mathcal{E}\colon Z^*\times Z\times[0,T]\to(-\infty,\infty]$ is defined by $\mathcal{E}(\mathcal{P},z,t)=\Psi(\mathcal{P},z)-\dual{\mathcal{X}(t),z}$. Then the evolution problem becomes as follows.
 \begin{prb}
-Let $u_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to V^*$. Find $u\in\text{AC}([0,T],V)$ and $\mathcal{P}\colon[0,T]\to V^*$ such that~\eqref{eqn:modeling:doubly-nonlinear-equation-constrain} holds.
+Let $z_0\in\dom\mathcal{E}(\cdot,0)$ and $\mathcal{X}\colon[0,T]\to Z^*$. Find $z\in\text{AC}([0,T],Z)$ and $\mathcal{P}\colon[0,T]\to Z^*$ such that~\eqref{eqn:modeling:doubly-nonlinear-equation-constrain} holds.
 \end{prb}
 
 \section{A review of plasticity theory}

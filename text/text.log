@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  16 MAY 2026 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  16 MAY 2026 16:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1614,10 +1614,10 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 live/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 
 [3]
-Overfull \hbox (2.13603pt too wide) in paragraph at lines 263--265
+Overfull \hbox (3.44603pt too wide) in paragraph at lines 263--265
 [][][]\T1/zpltlf/m/sc/10 Example \T1/zpltlf/m/n/10 1.11\T1/zpltlf/m/sc/10 . []\
 T1/zpltlf/m/n/10 (Ex-am-ple []1.3[] con-tin-ued) To en-sure that $\OML/npxmi/m/
-it/10 z\LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
+it/10 \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
 l/m/n/10 0\OML/npxmi/m/it/10 ; \OT1/minzpl/m/n/10 1\LMS/npxsy/m/n/10 ¼$ \T1/zpl
 tlf/m/n/10 for a.e. $\OML/npxmi/m/it/10 x \LMS/npxsy/m/n/10 2 \U/npxmia/m/it/10
  
@@ -2018,7 +2018,7 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 Here is how much of TeX's memory you used:
  48034 strings out of 473197
  1055036 string characters out of 5718605
- 1935457 words of memory out of 5000000
+ 1936457 words of memory out of 5000000
  69794 multiletter control sequences out of 15000+600000
  707525 words of font info for 272 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -2044,7 +2044,7 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (99 pages, 941074 bytes).
+Output written on text.pdf (99 pages, 941089 bytes).
 PDF statistics:
  1609 PDF objects out of 1728 (max. 8388607)
  1455 compressed objects within 15 object streams
