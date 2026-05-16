@@ -67,7 +67,6 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Stability under force control}}{45}{section*.17}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Regularized stability}}{46}{section*.19}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{True instability}}{50}{section*.21}%
-\contentsline {subsection}{\tocsubsection {}{5.3.3}{Conclusions about our qualitative analysis}}{51}{subsection.5.3.3}%
 \contentsline {part}{Part\ 2. \enspace \noindent A model describing pressure sensitive plastic materials}{52}{part.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{6}{Introduction}}{53}{chapter.6}%
 \contentsline {section}{\tocsection {}{6.1}{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}}{53}{section.6.1}%

@@ -1972,15 +1972,18 @@ E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P\quad\text{and}\quad G=g_2'(y_
 
 \subsubsection*{Function spaces}
 
-Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ be the space of $y$ and $Z=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ be the space of $P$. Let $Q=Y\times Z$. The Dirichlet conditions are imposed requiring that $y,P$ belong respectively to the admissible spaces
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ be the space of $y$ and $Q=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ be the space of $P$. Let $Z=Y\times Q$. The Dirichlet conditions are imposed requiring that $y,P$ belong respectively to the admissible spaces
 \[
-\mathscr{Y}=\left\{y\in Y\;\middle|\;\text{$y_1(X)=X$ for $X\in\Gamma_D^1$ and $y_2(X)=1$ for $X\in\Gamma_D^2$}\right\}\quad\text{and}\quad\mathscr{Z}=Z.
+\mathscr{Y}=\left\{y\in Y\;\middle|\;\text{$y_1(X)=X$ for $X\in\Gamma_D^1$ and $y_2(X)=1$ for $X\in\Gamma_D^2$}\right\}\quad\text{and}\quad\mathscr{Q}=Q.
 \]
-Let $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. It is evident that $\mathscr{Q}$ is a weakly closed subset of $Q$.
+Let $\mathscr{Z}=\mathscr{Y}\times\mathscr{Q}$. It is evident that $\mathscr{Z}$ is a weakly closed subset of $Z$. We also define the space of allowed variations in $\mathscr{Z}$ as
+\[
+Z_0=\left\{w=(v,q)\in Z\;\middle|\text{$w_1(X)=v_1(X)=0$ for $X\in\{0,L\}$}\right\}.
+\]
 
 \subsubsection*{Energy functional and dissipation distance}
 
-To complete the formulation of the initial boundary value problem, we need to specify the energy functional $\mathcal{E}\colon\mathscr{Q}\times[0,T]\to(-\infty,\infty]$ and the dissipation distance $\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$. The energy functional is defined by
+To complete the formulation of the initial boundary value problem, we need to specify the energy functional $\mathcal{E}\colon\mathscr{Z}\times[0,T]\to(-\infty,\infty]$ and the dissipation distance $\mathcal{D}\colon\mathscr{Q}\times\mathscr{Q}\to[0,\infty]$. The energy functional is defined by
 \begin{multline*}
 \mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
 +\int_0^LH(P,P')dX-\int_0^L\left(f_1(t)g_1(y_1,t)+f_2(t)g_2(y_1,t)y_2\right)dX.
@@ -2135,7 +2138,7 @@ the thesis follows.
 \end{proof}
 We now prove that (E2) is satisfied. We start with proving the boundedness of sublevels.
 \begin{prop}[Boundedness of energy sublevels]
-The sublevels of $\mathcal{E}(\cdot,t)$ are bounded in $Q$ for all $t\in[0,T]$.
+The sublevels of $\mathcal{E}(\cdot,t)$ are bounded in $Z$ for all $t\in[0,T]$.
 \end{prop}
 \begin{proof}
 From (W1) and (H1) it follows
@@ -2250,7 +2253,7 @@ We are now ready to get the weakly lower semicontinuity of $\mathcal{E}$.
 For all $t\in[0,T]$ the map $\mathcal{E}(\cdot,t)$ is lower semicontinuous.
 \end{prop}
 \begin{proof}
-Let $(y^k,P_k)\rightharpoonup(y,P)$ in $Y\times Z$. We have to prove that
+Let $(y^k,P_k)\rightharpoonup(y,P)$ in $Y\times Q$. We have to prove that
 \[
 \mathcal{E}(y,P,t)\le\liminf_{k\to\infty}\mathcal{E}(y_k,P_k,t).
 \]
@@ -2283,20 +2286,20 @@ By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'
 Until now we have established (E1) and (E2). We now prove (E3) and (E4).
 \begin{prop}
 \label{prop:power-control-necking}
-Then there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
+Then there exists $\mathscr{D}\subset\mathscr{Z}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$. Moreover
 \begin{itemize}
-\item[(i)] for all $q\in\mathscr{D}$ the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$,
-\item[(ii)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
-\item[(iii)] there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}$ and $t,s\in[0,T]$,
+\item[(i)] for all $z\in\mathscr{D}$ the function $\mathcal{E}(z,\cdot)$ is $C^1([0,T])$,
+\item[(ii)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(z,t)|\le C_1^E(C_0^E+\mathcal{E}(z,t))$ for all $z\in\mathscr{Z}$ and $t\in[0,T]$,
+\item[(iii)] there exists a modulus of continuity $\omega^E$ such that for all $z\in\mathscr{D}$ and $t,s\in[0,T]$,
 \[
-|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|)\min\{\mathcal{E}(q,t)+C_0^W,\mathcal{E}(q,s)+C_0^W\}.
+|\partial_t\mathcal{E}(z,t)-\partial_t\mathcal{E}(z,s)|\le\omega^E(|t-s|)\min\{\mathcal{E}(z,t)+C_0^W,\mathcal{E}(z,s)+C_0^W\}.
 \]
 \end{itemize}
 \end{prop}
 \begin{proof}
 Since $g_1'>0$ and $g_2>0$, it is clear that
 \[
-\mathscr{D}=\left\{(y,P)\in Y\times Z\;\middle|\;\text{$y_1',y_2,P>0$ a.e.\ on $(0,L)$}\right\}.
+\mathscr{D}=\left\{(y,P)\in Y\times Q\;\middle|\;\text{$y_1',y_2,P>0$ a.e.\ on $(0,L)$}\right\}.
 \]
 
 \emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $G=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,G)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,G)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
@@ -2306,11 +2309,11 @@ Since $g_1'>0$ and $g_2>0$, it is clear that
 there. We have to prove that for all $t\in[0,T]$, there exists
 \begin{equation}
 \label{eqn:partial-time-derivative-energy}
-\partial_t\mathcal{E}(q,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(q,t+\epsilon)-\mathcal{E}(q,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,G)dX.
+\partial_t\mathcal{E}(z,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,G)dX.
 \end{equation}
 By Lagrange theorem there exists $\eta\in(0,1)$ depending on $X$, $t$ and $\epsilon$, such that
 \[
-\frac{\mathcal{E}(q,t+\epsilon)-\mathcal{E}(q,t)}{\epsilon}=\int_0^LW(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})dX.
+\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^LW(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})dX.
 \]
 For $\epsilon$ small, $g_1'(y_1,t+\eta\epsilon)/g_1'(y_1,t)$ and $g_2(y_1,t+\eta\epsilon)/g_2(y_1,t)$ are close to 1 uniformly on $(0,L)\times[0,T]$. Thus, for $\epsilon$ small enough, we can apply Lemma~\ref{lemma:tipo-ball-kirchhoff-control} and we get
 \begin{multline*}
@@ -2333,17 +2336,17 @@ as functions of $(X,t)\in(0,L)\times[0,T]$. Then
 \[
 \frac{d}{dt}W(E)=K\cdot V.
 \]
-Let $E\in\mathbb{R}$ and $q\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(q,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $q$ such that
+Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $q$ such that
 \[
 |V(t)-V(s)|\le\omega^V(|t-s|)\quad\text{and}\quad\max\left\{\frac{g_1'(y_1,s)}{g_1'(y_1,t)},\frac{g_2(y_1,s)}{g_2(y_1,t)}\right\}\le\omega^V(|t-s|)
 \]
-on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent of $q$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
+on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent of $z$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
 \[
 \begin{split}
-|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|&\le\int_0^L|K(t)\cdot V(t)-K(s)\cdot V(s)|dX\le\\
+|\partial_t\mathcal{E}(z,t)-\partial_t\mathcal{E}(z,s)|&\le\int_0^L|K(t)\cdot V(t)-K(s)\cdot V(s)|dX\le\\
 &\le\int_0^L|K(t)-K(s)||V(s)|dX+\int_0^L|K(t)||V(t)-V(s)|dX\le\\
 &\le \left(L\omega^W(\omega^G(|t-s|))M+3C_1^W\omega^V(|t-s|)\right)\int_0^L(W(E(t))+C_0^W)dX\\
-&\le\left(L\omega^W(\omega^G(|t-s|))M+3C_1^W\omega^V(|t-s|)\right)(\mathcal{E}(q,t)+C_0^W).
+&\le\left(L\omega^W(\omega^G(|t-s|))M+3C_1^W\omega^V(|t-s|)\right)(\mathcal{E}(z,t)+C_0^W).
 \end{split}
 \]
 This concludes the proof.
@@ -2353,12 +2356,12 @@ This concludes the proof.
 
 Notice that (d1) implies that $\mathcal{D}$ is well defined. Property (D1) follows immediately form (d2). We now prove (D2).
 \begin{prop}
-Let $P_k\rightharpoonup P$ and $\hat{P}_k\rightharpoonup\hat{P}$ in $Z$. Then $\mathcal{D}(P,\hat{P})\le\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)$.
+Let $P_k\rightharpoonup P$ and $\hat{P}_k\rightharpoonup\hat{P}$ in $Q$. Then $\mathcal{D}(P,\hat{P})\le\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)$.
 \end{prop}
 \begin{proof}
-Let $P_k,P,\hat{P}_k,\hat{P}\in Z$ such that
+Let $P_k,P,\hat{P}_k,\hat{P}\in Q$ such that
 \[
-P_k\rightharpoonup P\quad\text{and}\quad\hat{P}_k\rightharpoonup\hat{P}\quad\text{in $Z$.}
+P_k\rightharpoonup P\quad\text{and}\quad\hat{P}_k\rightharpoonup\hat{P}\quad\text{in $Q$.}
 \]
 By Proposition~\ref{prop:sobolev-weak-lp-strong} it follows that
 \[
@@ -2379,21 +2382,21 @@ The last inequality holds since $D$ is lower semicontinuous. This concludes the 
 
 We now verify (C1) and (C2). In view of Proposition~\ref{prop:tool-verify-compatibility} we need to verify (PC1) and (PC2). Notice that (PC2) has been established in Proposition~\ref{prop:power-control-necking} (iii). Thus we need to verify (PC1) only. A stronger version of (PC1) is the following proposition.
 \begin{prop}
-Let $(q_k,t_k),(q,t)\in Q\times[0,T]$ such that $(q_k,t_k)\rightharpoonup(q,t)$ in $Q\times[0,T]$ and $q_k\in\mathscr{D}$. Then for all $\hat{q}\in Q$,
+Let $(z_k,t_k),(z,t)\in Z\times[0,T]$ such that $(z_k,t_k)\rightharpoonup(q,t)$ in $Z\times[0,T]$ and $z_k\in\mathscr{D}$. Then for all $\hat{z}\in Z$,
 \[
-\limsup_{k\to\infty}\left(\mathcal{E}(\hat{q},t_k)+\mathcal{D}(q_k,\hat{q})\right)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q}).
+\limsup_{k\to\infty}\left(\mathcal{E}(\hat{z},t_k)+\mathcal{D}(z_k,\hat{z})\right)\le\mathcal{E}(\hat{z},t)+\mathcal{D}(z,\hat{z}).
 \]
 \end{prop}
 \begin{proof}
-Let $(q_k,t_k)\rightharpoonup (q,t)$ in $Q\times[0,T]$. If $\hat{q}\notin\mathscr{D}$ there is nothing to prove since $\mathcal{E}(\hat{q},t)=\infty$. Then assume that $\hat{q}\in\mathscr{D}$. By Proposition`\eqref{prop:power-control-necking} the map $\mathcal{E}(\hat{q},\cdot)$ is continuous. Then $\mathcal{E}(\hat{q},t_k)\to\mathcal{E}(\hat{q},t)$ and it remains to prove only that
+Let $(z_k,t_k)\rightharpoonup (z,t)$ in $Z\times[0,T]$. If $\hat{z}\notin\mathscr{D}$ there is nothing to prove since $\mathcal{E}(\hat{z},t)=\infty$. Then assume that $\hat{z}\in\mathscr{D}$. By Proposition`\eqref{prop:power-control-necking} the map $\mathcal{E}(\hat{z},\cdot)$ is continuous. Then $\mathcal{E}(\hat{z},t_k)\to\mathcal{E}(\hat{z},t)$ and it remains to prove only that
 \[
-\limsup_{k\to\infty}\mathcal{D}(q_k,\hat{q})\le\mathcal{D}(q,\hat{q}).
+\limsup_{k\to\infty}\mathcal{D}(z_k,\hat{z})\le\mathcal{D}(z,\hat{z}).
 \]
 Recall that this is the same as
 \[
 \limsup_{k\to\infty}\mathcal{D}(P_k,\hat{P})\le\mathcal{D}(P,\hat{P}).
 \]
-Since $\hat{q}\in\mathscr{D}$, then (H3) implies that $\hat{P}>\Pi$ a.e.\ in $(0,L)$, so that $\hat{P}\ge \Pi$ in $[0,L]$. Since also $q_k\in\mathscr{D}$ then, for the same reason, also $P_k\ge \Pi$ in $[0,L]$. Notice also that by~\ref{prop:sobolev-weak-lp-strong}, $P_k\to P$ in $C^0([0,T])$. Then actually
+Since $\hat{z}\in\mathscr{D}$, then (H3) implies that $\hat{P}>\Pi$ a.e.\ in $(0,L)$, so that $\hat{P}\ge \Pi$ in $[0,L]$. Since also $z_k\in\mathscr{D}$ then, for the same reason, also $P_k\ge \Pi$ in $[0,L]$. Notice also that by~\ref{prop:sobolev-weak-lp-strong}, $P_k\to P$ in $C^0([0,T])$. Then actually
 \[
 \lim_{k\to\infty}\mathcal{D}(P_k,\hat{P})=\lim_{k\to\infty}\int_0^LD(P_p,\hat{P})dX=\mathcal{D}(P,\hat{P}),
 \]
@@ -2405,7 +2408,7 @@ where last inequality holds because $D$ is finite and continuous on $[\Pi,\infty
 All the hypotheses of Theorem~\ref{thm:existence-energetic-solutions} have been established. Thus applying that theorem we get desired existence result.
 \begin{thm}
 \label{thm:existence-necking-large}
-Let $q_0=(y_0,P_0)\in\mathscr{Q}$ such that $\mathcal{E}(q_0,0)<\infty$. Then there exists an energetic solution $q=(y,P)\colon[0,T]\to\mathscr{Q}$ such that $q(0)=q_0$. 
+Let $z_0=(y_0,P_0)\in\mathscr{Z}$ such that $\mathcal{E}(z_0,0)<\infty$. Then there exists an energetic solution $z=(y,P)\colon[0,T]\to\mathscr{Z}$ such that $z(0)=z_0$. 
 \end{thm}
 
 \subsection{Particular constitutive relations that satisfy the hypotheses of the existence theorem}
@@ -2549,11 +2552,11 @@ This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ i
 
 \section{Qualitative analysis of the tensile test problem}
 
-We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$, $\eta\ge1$ and $\eta$ is nondecreasing. To handle the boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
+We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$ and $\eta$ is nondecreasing. To handle the boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
 
 We will see that a trivial strong solution to this problem is the spatially homogeneous one that is $\bar{y}_1(X,t)=X$ for all $X\in(0,L)$ and $t\in[0,T]$, $\bar{y}_2(\cdot,t)$ and $\bar{P}(\cdot,t)$ constant for all $t\in[0,T]$. However we expect that this trivial solution is unstable when $\eta$ is sufficiently large, in the sense that it does not satisfy the global stability condition
 \[
-\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar P(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
+\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar P(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Z}$}.
 \]
 The instability of the trivial solution would correspond with the onset of necking, when a non uniform localized solution becomes energetically favorable.
 
@@ -2582,7 +2585,7 @@ From the first equation it follows that $\sigma_1=F$, where $F$ is a constant, r
 W_3(\chi_1'(X),\chi_2(X),\chi_2'(X))=0\quad\text{for $X\in\{0,L\}$}.
 \end{gather}
 \end{subequations}
-We first look for homogeneous solutions of the form $\bar{\chi}_1(X,t)=\eta(t)X$, $\bar\chi_2(X,t)=\bar E_2(t)$ where $\bar E_2\colon(0,T)\to(0,\infty)$ is the only unknown. Notice that $\bar E_1(t)=\bar\chi_1(X,t)=\eta(t)$ and $\bar G(t)=\bar\chi_2'(X,t)=0$ for all $X\in(0,L)$ and $t\in[0,T]$. To find $\bar E_2$ we need only to solve the nonlinear equation
+We first look for homogeneous solutions of the form $\bar{\chi}_1(X,t)=\eta(t)X$, $\bar\chi_2(X,t)=\bar E_2(t)$ where $\bar E_2\colon(0,T)\to(0,\infty)$ is the only unknown. We will refer to a solution of this type as a trivial solution. Notice that $\bar E_1(t)=\bar\chi_1(X,t)=\eta(t)$ and $\bar G(t)=\bar\chi_2'(X,t)=0$ for all $X\in(0,L)$ and $t\in[0,T]$. To find $\bar E_2$ we need only to solve the nonlinear equation
 \[
 W_2(\eta(t),\bar E_2(t),0)=0.
 \]
@@ -2696,7 +2699,7 @@ Now let $\bar{F}(t)=W_1(\eta(t),\bar{E}_2(t),0)$ be the axial force along the ho
 \[
 \frac{d\bar{F}}{d\eta}=\bar W_{11}+\bar W_{12}\frac{d\bar E_2}{d\eta}.
 \]
-On the other end we know that $\bar W_2=W_2(\eta,\bar{E}_2,0)=0$ so that, by differentiating with respect to $\eta$,
+On the other hand we know that $\bar W_2=W_2(\eta,\bar{E}_2,0)=0$ so that, by differentiating with respect to $\eta$,
 \[
 \bar W_{12}+\bar W_{22}\frac{d\bar E_2}{d\eta}=0\quad\text{that implies}\quad\frac{d\bar E_2}{d\eta}=-\frac{\bar W_{12}}{\bar W_{22}}.
 \]
@@ -2736,27 +2739,27 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 \subsection{Elastoplastic model}
 \label{subsec:plastic-model}
 
-We start with the computation of the trivial solution of the form $\bar{y}_1(X,t)=\eta(t)X$, $\bar{y}_2(X,t)=\bar{y}_2(t)$ and $\bar P(X,t)=\bar{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$. In the elastic range, $\bar y_2(t)$ can be found as we showed previously while $\bar P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\bar P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\bar P,\dot{\bar P})=Y/\bar P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\bar y_2$ and $\bar P$.
+We now study the tensile test in the complete elastoplastic model. We start with explaining how a trivial solution of the form $\bar{y}_1(X,t)=\eta(t)X$, $\bar{y}_2(X,t)=\bar{y}_2(t)$ and $\bar P(X,t)=\bar{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$ can be computed. In the elastic range, $\bar y_2(t)$ can be found as we showed previously while $\bar P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\bar P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\bar P,\dot{\bar P})=Y/\bar P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\bar y_2$ and $\bar P$.
 
-To study the stability of the trivial solution we have to check whether the global stability condition
+Next we study the stability of the trivial solution we have to check whether the global stability condition
 \begin{equation}
 \label{eqn:stability-necking}
-\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Q}$}.
+\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Z}$}.
 \end{equation}
-is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the global stability condition is equivalent to say that $(\bar y(t),\bar P(t))$ is a global minimizer of $\mathcal{J}_t\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ defined by
+is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the global stability condition is equivalent to say that $(\bar y(t),\bar P(t))$ is a global minimizer of $\mathcal{J}_t\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ defined by
 \[
 \mathcal{J}_t(\hat y,\hat Q)=\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar P(t),\hat P).
 \]
-The aim of what follows would be to identify conditions that ensure that for sufficiently large elongations~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
+The aim of what follows would be to identify conditions that ensure that, for sufficiently large elongations,~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
 \begin{rmk}
 Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observations and the theoretical and numerical studies mentioned in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds with the true condition for the beginning of necking. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
 \end{rmk}
 %The aim of what follows is to study the conditions under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\bar y(t),\bar P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\bar y(t),\bar P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
-We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the exact stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability}.
+We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the true stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability} and we discuss when they are violated them below. We will describe also our not conclusive attempts to get information regarding the occurrence of the \emph{true instability}.
 
 \subsubsection*{Stability under force control}
 
-To introduce this first alternative stability condition, let us define
+To introduce this first simplified stability condition, let us define
 \[
 \bar F(t)=\bar{P}(t)^{-1}W_1(\eta(t)\bar{P}(t)^{-1},\bar{y}_2(t)\bar P(t),\bar{y}_2'(t)\bar{P}(t)^{-1}),
 \]
@@ -2768,9 +2771,9 @@ The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\bar{y}_2(t),\bar{P}(t))$ is the energ
 \begin{defi}[stability under force control]
 We say that the trivial uniform solution at time $t\in(0,T]$, is stable under force control if $(\eta(t),\bar{y}_2(t),\bar{P}(t))$ is a local minimizer of $J_t$.
 \end{defi}
-The mechanical meaning of this definition is the following: the trivial uniform solution $(\eta,\bar{y}_2(t),\bar{P}(t))$ is stable under force control when it is the most energetically favored configuration among all other uniform configurations and under the condition of fixed tensile force is applied. We now study whether the stability of the trivial uniform solution under force control is lost for sufficiently large elongations when the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck} are considered. In this particular case $J_t$ is not differentiable at $P=\bar{P}(t)$ but $J_t\in C^1(H^+_t)$ and $J_t\in C^1(H^-_t)$, where
+The mechanical meaning of this definition is the following: the trivial uniform solution $(\eta,\bar{y}_2(t),\bar{P}(t))$ is stable under force control when it is the most energetically favored configuration among all other uniform configurations when the condition of fixed tensile force is applied. We now study whether the stability of the trivial uniform solution under force control is lost for sufficiently large elongations when the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck} are considered. In this particular case $J_t$ is not differentiable at $P=\bar{P}(t)$ but $J_t\in C^1(\mathscr H^+_t)$ and $J_t\in C^1(\mathscr H^-_t)$, where
 \[
-H^+_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\bar{P}(t)\}\quad\text{and}\quad H^-_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\bar{P}(t)\}.
+\mathscr H^+_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;P\ge\bar{P}(t)\}\quad\text{and}\quad \mathscr H^-_t=\{(\rho,y_2,P)\in(0,\infty)^3\;|\;\Pi<P\le\bar{P}(t)\}.
 \]
 We easily find that
 \[
@@ -2780,7 +2783,7 @@ Then, wether $(\eta(t),\bar y_2(t),\bar P(t))$ is a local minimum of $J_t$ depen
 \[
 h(t)=\nabla^2 J_t(\eta(t),\bar y_2(t),\bar P(t)^+).
 \]
-It is clear that at $t=0$ the trivial solution is stable and that $h(0)$ is positive definite. Then instability occur when $h(t)$ become singular. We now show that this happen exactly when $\bar{F}$ reaches its maximum, in agreement with Considère criterion. Indeed the following lemma holds.
+It is clear that at $t=0$ the trivial solution is stable and that $h(0)$ is positive definite. Then instability under force control occurs when $h(t)$ become singular. We now show that this happen exactly when $\bar{F}$ reaches its maximum, suggesting an agreement between our model with the Considère criterion. Indeed the following lemma holds.
 \begin{lemma}
 \label{lemma:stability-force}
 Let
@@ -2846,7 +2849,7 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,q)$ with $\theta>0$, $v_2<0$ and $q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
 \begin{figure}[htp]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$\eta$},ylabel={$\bar F$},xmin=1,xmax=1.35,width=0.45\textwidth]
@@ -2866,25 +2869,25 @@ It is easy to see that the constitutive model described in Section~\ref{subsec:c
 
 \subsubsection*{Regularized stability}
 
-The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$ difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck}, we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Q}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ defined by
+We now turn to our second simplified notion of stability whose introduction is motivated by the follwing considerations. The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$, difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck} and we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ as
 \[
 \mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P(t),\hat P)dt,
 \]
-with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$, where
+with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\pm(\hat z)$ if $\hat z\in\mathscr{Z}^\varsigma_t$, where
 \[
-\mathscr{Q}^\varsigma_t=\{\hat q=(\hat y,\hat P)\in\mathscr{Q}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
+\mathscr{Z}^\varsigma_t=\{\hat z=(\hat y,\hat P)\in\mathscr{Z}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
 Then the following lemma express a relation between the minimality of $\mathcal{J}_t$ and similar conditions for $\mathcal{J}_t^\varsigma$ that can be useful.
 \begin{lemma}
 The global stability condition
 \begin{equation}
 \label{eqn:min-neck}
-\mathcal{J}_t(\bar{q}(t))\le\mathcal{J}_t(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}$}
+\mathcal{J}_t(\bar{z}(t))\le\mathcal{J}_t(\hat z)\quad\text{for all $\hat z\in\mathscr{Z}$}
 \end{equation}
 implies the following couple of one-sided  global stability conditions
 \begin{equation}
 \label{eqn:min-neck-sigma}
-\mathcal{J}_t^\varsigma(\bar{q}(t))\le\mathcal{J}_t^\varsigma(\hat q)\quad\text{for all $\hat q\in\mathscr{Q}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
+\mathcal{J}_t^\varsigma(\bar{z}(t))\le\mathcal{J}_t^\varsigma(\hat z)\quad\text{for all $\hat z\in\mathscr{z}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 \end{equation}
 %Moreover if $\overline q(t)$ satisfies
 %\begin{subequations}
@@ -2924,7 +2927,7 @@ implies the following couple of one-sided  global stability conditions
 %\end{equation}
 \end{lemma}
 \begin{proof}
-Since $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}^\varsigma_t$, the results follows immediately.
+Since $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\varsigma(\hat z)$ if $\hat z\in\mathscr{Z}^\varsigma_t$, the results follows immediately.
 \end{proof}
 %\begin{proof}
 %That~\eqref{eqn:min-neck} implies~\eqref{eqn:min-neck-sigma} is trivial. Conversely suppose that~\eqref{eqn:min-neck-sigma} holds and, by contradiction, that $\mathcal{J}_t(\bar{q}(t))>\mathcal{J}_t(\hat q)$ for some $\hat q\in\mathscr{Q}$. If $\hat q\in\mathscr{Q}^\varsigma$ for some $\varsigma\in\{\pm1\}$ we immediately get the desired contradiction. Otherwise let $\hat q^+\in\mathscr{Q}^+$ be defined by $\hat y^+=\hat y$ and $\hat P^+:=\max\{\hat P,\bar P(t)\}$. Then
@@ -2933,21 +2936,21 @@ Since $\mathcal{J}_t(\hat q)=\mathcal{J}_t^\pm(\hat q)$ if $\hat q\in\mathscr{Q}
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar q(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\le0$ in $(0,L)$, it holds that
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar z(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,q)\in Z_0$ with $q\le0$ in $(0,L)$, it holds that
 \[
-\dual{\partial\mathcal{J}^-_t(\bar q(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar q(t)),w}-2Y\int_0^L\log\frac{Q}{\bar P(t)}dX=-2Y\int_0^L\frac{Q}{\bar P(t)}dX\ge0.
+\dual{\partial\mathcal{J}^-_t(\bar z(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}-2Y\int_0^L\log\frac{q}{\bar P(t)}dX=-2Y\int_0^L\frac{q}{\bar P(t)}dX\ge0.
 \]
-This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat q$ near $\bar q(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Q$ with $w_1(0)=w_1(L)=0$ and $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,w}<0$, we have done. Clearly the critical condition would be the existence of a nontrivial $w=(y,Q)$ with $Q\ge0$ such that $\partial^2\mathcal{J}_t^+(\bar q(t))w=0$. This last equation is the linerization of the perturbed equation $\partial\mathcal{J}_t^+(\bar q(t)+w)=0$ for $w$ small. Since our efforts to find a nontrivial solution $w$ satisfying the constraint $Q\ge0$ were unsuccessful (see also the subsection below which gives a presentations of our attempts in that direction), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat z$ near $\bar z(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,q)\in Z_0$ with $q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}<0$, we have done. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentations of our attempts in that direction), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
 \begin{rmk}
 \label{rmk:stability-regularized}
-We have already established that instability modes where $P$ decreases everywhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently, if we assume a priori that instability modes cannot exhibit a plastic increment that is negative in some regions and positive in others (as is expected for a bar under tension, where $P$ should not decrease at any point) then the regularized stability condition would imply true local stability.However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,Q) \in Q$ with $Q \ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
+We have already established that instability modes where $P$ decreases everywhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently, if we assume a priori that instability modes cannot exhibit a plastic increment that is negative in some regions and positive in others (as is expected for a bar under tension, where $P$ should not decrease at any point) then the regularized stability condition would imply true local stability. However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,q) \in Z_0$ with $q\ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
 \end{rmk}
-We now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w \in \mathcal{Q}$ such that $\partial^2\mathcal{J}_t^+(\bar{q}(t))w = 0$. It is easy to prove that
+We now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w\in Z_0$ such that $\partial^2\mathcal{J}_t^+(\bar{z}(t))w = 0$. It is easy to prove that
 \[
-\dual{\partial^2\mathcal{J}_t^+(\bar q(t))w,\tilde w}=\int_0^L\left(M(t)w'\cdot \tilde w'+N(t)w\cdot\tilde w'+N^Tw'\cdot\tilde w+K(t)w\cdot\tilde w\right)dX
+\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,\tilde w}=\int_0^L\left(M(t)w'\cdot \tilde w'+N(t)w\cdot\tilde w'+N^Tw'\cdot\tilde w+K(t)w\cdot\tilde w\right)dX
 \]
 where
 \[
@@ -2967,12 +2970,12 @@ K=\begin{pmatrix}
     \bar{W}_{y_3y_1} & \bar{W}_{y_3y_2} & \bar{W}_{y_3y_3}+\bar{H}_{PP}+\bar{D}_{22} \\
 \end{pmatrix}.
 \]
-Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\overline{D}_{22}$ denotes the partial derivatives of $D$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{q}(t))w=0$ is
+Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\overline{D}_{22}$ denotes the partial derivatives of $D$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{z}(t))w=0$ is
 \begin{equation}
 \label{eqn:2order}
 Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},
 \end{equation}
-together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have used the notation $v=(w_1,w_2)$ and $Q=w_3$ and we have defined $A=M$, $B=(N-N^T)/2$ and $C=-K$. After some tedious computations one finds
+together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have defined $A=M$, $B=(N-N^T)/2$ and $C=-K$. After some tedious computations one finds
 \begingroup
 \tiny
 \begin{subequations}
@@ -3138,17 +3141,17 @@ Differentiating these equations, solving for $\left(\frac{d\bar y_2}{d\eta};\fra
 Now reasoning as in the proof of Lemma~\ref{lemma:stability-force} and using~\eqref{eqn:matrici-piccoline}, it follows that $\frac{d\bar{F}}{d\eta}$ vanish if and only if $\det M$ vanish. This concludes the proof.
 \end{proof}
 
-We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not satisfy the regularized stability condition. When $\det M_1$ vanishes, the kernel of $\partial^2\mathcal{J}^+_t(\bar q(t))$ becomes nontrivial and is spanned by $w$
+We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not satisfy the regularized stability condition. When $\det M_1$ vanishes, the kernel of $\partial^2\mathcal{J}^+_t(\bar z(t))$ becomes nontrivial and is spanned by $w$
 \[
 w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
 \]
-with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1>0$, $w^2<0$ and $w^3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{q}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $w_3 \ge 0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta > \eta_1$.
+with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1_1>0$, $w^1_2<0$ and $w^1_3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{z}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $w_3 \ge 0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta > \eta_1$.
 
 %The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
 
-\subsubsection*{True instability} In previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{q}(t))$ never contains $w\in Q$ with $Q\ge 0$. However to prove that $\bar{q}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{q}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}<0$. Here we describe our attempts in that direction, that however were not successful. Consider a finite dimensional subspace of $Q$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
+\subsubsection*{True instability} In previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{z}(t))$ never contains $w\in Z_0$ with $q\ge 0$. However to prove that $\bar{z}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{z}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}<0$. Here we describe our attempts in that direction, that however were unsuccessful. Consider a finite dimensional subspace of $Z_0$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then the generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
 \[
-\dual{\mathcal{J}^+_t(\bar{q}(t))w,w}=c^TG(t)c,
+\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}=c^TG(t)c,
 \]
 where the symmetric matrix $G\in\mathbb{R}^{d\times d}$ is given by
 \[
@@ -3159,11 +3162,9 @@ Thus out aim is to find $O$ and $\eta>\eta_1$ such that there exists $c\in\mathb
 We first consider the choice
 \[
 O(x)=\begin{pmatrix}
-\sin(\gamma_1x) & 0 & 0 \\
-0 & 1 & 0 \\
-0 & \cos(\gamma_1x) & 0 \\
-0 & 0 & 1 \\
-0 & 0 & \cos(\gamma_1x) 
+\sin(\gamma_1x) & 0 & 0 & 0 & 0 \\
+0 & 1 & \cos(\gamma_1x) & 0 & 0 \\
+0 & 0 & 0 & 1 & \cos(\gamma_1x)
 \end{pmatrix}
 \]
 that correspond to a truncation of the formal series~\eqref{eqn:series-formal} at the first orders. The condition $(Oc)_3\ge0$ in this case reads as $|c_5|<c_4$. Let
@@ -3215,7 +3216,7 @@ a=-A^{-1}B^Tb.
 \]
 Thus substituting that $a$ in~\eqref{eqn:objective} we conclude.
 \end{proof}
-In our case the previous lemma implies that $(c_4,c_5)\in\mathbb{R}^2$ it holds
+In our case the previous lemma implies that for all $(c_4,c_5)\in\mathbb{R}^2$ it holds
 \[
 \min_{(c_1,c_2,c_3)\in\mathbb{R}^3}c^TGc=\begin{pmatrix}
 c_1 & c_2
@@ -3223,7 +3224,7 @@ c_1 & c_2
 S
 \begin{pmatrix}
 c_1 \\ c_2
-\end{pmatrix}
+\end{pmatrix},
 \]
 where
 \[
@@ -3247,7 +3248,7 @@ G_{42} & G_{52} \\
 G_{43} & G_{53} \\
 \end{pmatrix}.
 \]
-The positive definiteness of the 3-by-3 block can be checked explicitly and is always satisfied in the range of constitutive parameters explored by out numerical computations. Now we conclude that
+The positive definiteness of the 3-by-3 block can be checked explicitly and is always satisfied in the range of constitutive parameters explored by our numerical computations. Now we conclude that
 \[
 \mathscr{A}=\left\{(c_4,c_5)\in\mathbb{R}^2\;\middle|\;\begin{pmatrix}
 c_1 & c_2
@@ -3264,29 +3265,24 @@ S_{11} & 0 \\
 0 & S_{22}
 \end{pmatrix}
 \]
-with $S_{11}>0$ and $S_{22}<0$. Then the set $\mathscr{A}$ is a the cone defined by
+with $S_{11}>0$ and $S_{22}<0$. Then the set $\mathscr{A}$ is the cone defined by
 \[
 |c_5|\ge-\frac{S_{11}}{S_{22}}|c_4|.
 \] 
-We conclude that the condition for the existence of a $c\in\mathbb{R}^5$ with $c^TGc<0$ and $|c_5|<c_4$ is $-S_{11}/S_{22}<0$. Unfortunately this never happens, at least in the range of constitutive parameters we have explored.
+We conclude that the condition for the existence of a $c\in\mathbb{R}^5$ with $c^TGc<0$ and $|c_5|<c_4$ is $-S_{11}/S_{22}<1$. Unfortunately this never happens, at least in the range of constitutive parameters we have explored.
 
 Another choice of $O$ that we have considered is
 \begin{equation}
 \label{eqn:basis}
 O=\begin{pmatrix}
-\delta\left(1-e^{-\frac{x}{\delta}}\right)-\frac{x}{L}\delta\left(1-e^{-\frac{L}{\delta}}\right) & 0 & 0 \\
-0 & 1 & 0 \\
-0 & -e^{-\frac{x}{\delta}} & 0 \\
-0 & 0 & e^{-\frac{x}{\delta}}
+\delta\left(1-e^{-\frac{x}{\delta}}\right)-\frac{x}{L}\delta\left(1-e^{-\frac{L}{\delta}}\right) & 0 & 0 & 0 \\
+0 & 1 & -e^{-\frac{x}{\delta}} & 0 \\
+0 & 0 & 0 & e^{-\frac{x}{\delta}}
 \end{pmatrix}
 \end{equation}
-where $\delta>0$ is a parameter to be chosen. The first basis function represents a dilation of the bar localized at the left end; the linear combinations of the second and third basis functions are chosen to represents a localized shrinkage of the cross-sections at the left end and a possible expansion of cross-sections on the right of the bar; eventually the third basis function represents a localized increase of plastic distortion at the left end. The parameter $\delta$ tune how much the considered basis functions are localized. The idea behind this choice was that we expect that necking should initiate as a localized shrinkage of the cross-sections near one end: this because the eigenvector found in previous subsection (that we recall is not a true instability mode) has this feature so this type of behavior seems to be the instability mode preferred by the bar under tension. To understand whether an instability mode can be obtained as a linear combination of the basis functions in~\eqref{eqn:basis}, we explored different values of $\delta$ in the range from $\frac{1}{50}l$ to $10 L$ (recall that $l$ is the internal length scale associated with the diameter of the bar while $L$ is the length of the bar). However what we found is that $G$ remains positive definite also for $\eta>0$ for all the ranges of constitutive parameters that we have considered.
+where $\delta>0$ is a parameter to be chosen. The first basis function represents a dilation of the bar localized at the left end; the linear combinations of the second and third basis functions are chosen to represents a localized shrinkage of the cross-sections at the left end and a possible expansion of cross-sections on the right of the bar; eventually the third basis function represents a localized increase of the plastic distortion at the left end. The parameter $\delta$ tune how much the considered basis functions are localized. The idea behind this choice was that we expect that necking should initiate as a localized shrinkage of the cross-sections near one end: this because the eigenvector found in previous subsection (that we recall is not a true instability mode) has this feature, so this type of behavior seems to be the instability mode preferred by the bar under tension. To understand whether an instability mode can be obtained as a linear combination of the basis functions in~\eqref{eqn:basis}, we explored different values of $\delta$ in the range from $\frac{1}{50}l$ to $10 L$ (recall that $l$ is the internal length scale associated with the diameter of the bar while $L$ is the length of the bar). However what we found is that $G$ remains positive definite also for $\eta>\eta_1$ for all the ranges of constitutive parameters that we have considered.
 
 We have obtained similar results to those we just explicitly described even enriching the basis $O$, considering more terms of the formal series~\eqref{eqn:series-formal}, adding other possible shapes of localized necks (for example considering a localization at the center of the bar) and considering their combination.
-
-\subsection{Conclusions about our qualitative analysis}
-
-
 
 %[delta*(1-exp(-x/delta))-x/L*delta*(1-exp(-L/delta)),0,0;sin(pi*x/L),0,0;0,cos(pi/L*x),0;0,1,0;0,-x/delta*exp(-x/delta),0;0,-exp(-x/delta),0;0,0,exp(-x/delta)]
 
