@@ -2741,7 +2741,7 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 
 We now study the tensile test in the complete elastoplastic model. We start with explaining how a trivial solution of the form $\bar{y}_1(X,t)=\eta(t)X$, $\bar{y}_2(X,t)=\bar{y}_2(t)$ and $\bar P(X,t)=\bar{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$ can be computed. In the elastic range, $\bar y_2(t)$ can be found as we showed previously while $\bar P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\bar P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\bar P,\dot{\bar P})=Y/\bar P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\bar y_2$ and $\bar P$.
 
-Next we study the stability of the trivial solution we have to check whether the global stability condition
+Next we study the stability of the trivial solution so we have to check whether the global stability condition
 \begin{equation}
 \label{eqn:stability-necking}
 \mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Z}$}.
@@ -2755,7 +2755,7 @@ The aim of what follows would be to identify conditions that ensure that, for su
 Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observations and the theoretical and numerical studies mentioned in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds with the true condition for the beginning of necking. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
 \end{rmk}
 %The aim of what follows is to study the conditions under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\bar y(t),\bar P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\bar y(t),\bar P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
-We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the true stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability} and we discuss when they are violated them below. We will describe also our not conclusive attempts to get information regarding the occurrence of the \emph{true instability}.
+We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the true stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability} and we discuss whether they are violated below. We will describe also our not conclusive attempts to get information regarding the occurrence of the \emph{true instability}.
 
 \subsubsection*{Stability under force control}
 
@@ -2873,7 +2873,7 @@ We now turn to our second simplified notion of stability whose introduction is m
 \[
 \mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P(t),\hat P)dt,
 \]
-with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\pm(\hat z)$ if $\hat z\in\mathscr{Z}^\varsigma_t$, where
+with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\varsigma(\hat z)$ if $\hat z\in\mathscr{Z}^\varsigma_t$, where
 \[
 \mathscr{Z}^\varsigma_t=\{\hat z=(\hat y,\hat P)\in\mathscr{Z}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
@@ -2887,7 +2887,7 @@ The global stability condition
 implies the following couple of one-sided  global stability conditions
 \begin{equation}
 \label{eqn:min-neck-sigma}
-\mathcal{J}_t^\varsigma(\bar{z}(t))\le\mathcal{J}_t^\varsigma(\hat z)\quad\text{for all $\hat z\in\mathscr{z}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
+\mathcal{J}_t^\varsigma(\bar{z}(t))\le\mathcal{J}_t^\varsigma(\hat z)\quad\text{for all $\hat z\in\mathscr{Z}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 \end{equation}
 %Moreover if $\overline q(t)$ satisfies
 %\begin{subequations}
@@ -2936,17 +2936,17 @@ Since $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\varsigma(\hat z)$ if $\hat z\in\math
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now try to study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar z(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,q)\in Z_0$ with $q\le0$ in $(0,L)$, it holds that
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar z(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,q)\in Z_0$ with $q\le0$ in $(0,L)$, it holds that
 \[
-\dual{\partial\mathcal{J}^-_t(\bar z(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}-2Y\int_0^L\log\frac{q}{\bar P(t)}dX=-2Y\int_0^L\frac{q}{\bar P(t)}dX\ge0.
+\dual{\partial\mathcal{J}^-_t(\bar z(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}-2Y\int_0^L\frac{q}{\bar P(t)}dX=-2Y\int_0^L\frac{q}{\bar P(t)}dX\ge0.
 \]
-This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat z$ near $\bar z(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\overline P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,q)\in Z_0$ with $q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}<0$, we have done. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentations of our attempts in that direction), in what follows we presents a simplified analysis in which that constraint is disregarded. This leads us to the following second simplified notion of stability.
+This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat z$ near $\bar z(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\bar P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,q)\in Z_0$ with $q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}<0$, we have indeed that ~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentation of our attempts in that direction), in what follows we presents a simplified analysis in which the constraint $q\ge0$ is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
 \begin{rmk}
 \label{rmk:stability-regularized}
-We have already established that instability modes where $P$ decreases everywhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently, if we assume a priori that instability modes cannot exhibit a plastic increment that is negative in some regions and positive in others (as is expected for a bar under tension, where $P$ should not decrease at any point) then the regularized stability condition would imply true local stability. However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,q) \in Z_0$ with $q\ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\overline{y}(t),\overline{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
+We have already established that instability modes where $P$ decreases everywhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently, if we assume a priori that instability modes cannot exhibit a plastic increment that is negative in some regions and positive in others (as is expected for a bar under tension, where $P$ should not decrease at any point) then the regularized stability condition would imply true local stability. However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,q) \in Z_0$ with $q\ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
 \end{rmk}
 We now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w\in Z_0$ such that $\partial^2\mathcal{J}_t^+(\bar{z}(t))w = 0$. It is easy to prove that
 \[
@@ -2967,10 +2967,10 @@ N=\begin{pmatrix}
 K=\begin{pmatrix}
     \bar{W}_{y_1y_1} & \bar{W}_{y_1y_2} & \bar{W}_{y_1y_3} \\
     \bar{W}_{y_2y_1} & \bar{W}_{y_2y_2} & \bar{W}_{y_2y_3} \\
-    \bar{W}_{y_3y_1} & \bar{W}_{y_3y_2} & \bar{W}_{y_3y_3}+\bar{H}_{PP}+\bar{D}_{22} \\
+    \bar{W}_{y_3y_1} & \bar{W}_{y_3y_2} & \bar{W}_{y_3y_3}+\bar{H}_{PP}+\bar{D}_{22}^+ \\
 \end{pmatrix}.
 \]
-Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\overline{D}_{22}$ denotes the partial derivatives of $D$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{z}(t))w=0$ is
+Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\bar{D}_{22}^+$ denotes the partial derivatives of $D^+$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{z}(t))w=0$ is
 \begin{equation}
 \label{eqn:2order}
 Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},
@@ -3097,7 +3097,7 @@ Thus the existence of a nontrivial solution is equivalent to the existence of so
 \caption{On the left, value of $\det M_k$ for $k\in\{0,1,2,3,4\}$. Notice the $\det M_0$ never vanishes while $\det M_1$ is the first determinant to vanish at elongation $\eta_1=1.1597$, slightly greater than the elongation $\eta_\text{m}=1.1474$ corresponding to the maximum of $\bar F$. On the right is $\eta_1$ as $L$ changes. Notice that $\eta_1$ tends to $\eta_\text{m}$ as $L\to\infty$.}
 \label{fig:dets}
 \end{figure}
-In the same figure, on the right, is shown the value of the elongation $\eta_1$ when $\det M_1$ vanish as a function of the length of $L$ of the bar. In the limit $L\to\infty$ it results that $\eta_1$ converges to $\eta_\text{m}$, the elongation corresponding to the maximum tensile force. This is indeed justified by the following lemma.
+In the same figure, on the right, is shown the value of the elongation $\eta_1$ when $\det M_1$ vanish as a function of the length of $L$ of the bar. In the limit $L\to\infty$ it results that $\eta_1$ converges to $\eta_\text{m}$, the elongation corresponding to the maximum tensile force: this again suggest that our model agrees with Considère criterion. This is indeed justified by the following lemma.
 \begin{lemma}
 Assume that as $L\to\infty$ the value $\eta_k$ corresponding to vanishing $\det M_k$ has a finite limit. Then that limit coincides to $\eta_\text{m}$ for all $k\in\mathbb{N}$.
 \end{lemma}
@@ -3145,11 +3145,11 @@ We have thus proved that when $\eta\ge\eta_1$ the trivial solution does not sati
 \[
 w_1(x)=w_1^1\sin(\gamma_1x),\quad w_2(x)=w_2^1\cos(\gamma_1x)\quad\text{and}\quad w_3(x)=w_3^1\cos(\gamma_1x)
 \]
-with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1_1>0$, $w^1_2<0$ and $w^1_3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{z}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $w_3 \ge 0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta > \eta_1$.
+with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically $w^1$ we find that $w^1_1>0$, $w^1_2<0$ and $w^1_3>0$, so interpreted as a variation of the configuration of the bar it appears qualitatively as the instability mode we found in the purely elastic case and reported in Figure~\ref{fig:instability-mode-elastic}. As previously observed in Remark~\ref{rmk:stability-regularized}, although $w$ belongs to the kernel of $\partial^2\mathcal{J}_t^+(\bar{z}(t))$, it does not represent a true instability mode since it fails to satisfy the condition $q=w_3\ge0$. Consequently, we have not proven that necking necessarily occurs at this stage; rather, we have established that if necking were to occur, it must do so for $\eta>\eta_1$.
 
 %The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
 
-\subsubsection*{True instability} In previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{z}(t))$ never contains $w\in Z_0$ with $q\ge 0$. However to prove that $\bar{z}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{z}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}<0$. Here we describe our attempts in that direction, that however were unsuccessful. Consider a finite dimensional subspace of $Z_0$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then the generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
+\subsubsection*{True instability} In the previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{z}(t))$ never contains $w\in Z_0$ with $q\ge 0$. However to prove that $\bar{z}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{z}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}<0$. Here we describe our attempts in that direction, that however were unsuccessful. Consider a finite dimensional subspace of $Z_0$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then the generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
 \[
 \dual{\mathcal{J}^+_t(\bar{z}(t))w,w}=c^TG(t)c,
 \]
@@ -3210,7 +3210,7 @@ Its gradient and hessian are respectively
 \[
 a\mapsto Aa+B^Tb\quad\text{and}\quad a\mapsto A.
 \]
-Since $A$ is positive-definite a minimum point of~\eqref{eqn:objective} is
+Since $A$ is positive-definite, a minimum point of~\eqref{eqn:objective} is
 \[
 a=-A^{-1}B^Tb.
 \]
