@@ -3494,9 +3494,10 @@ Notice that the original Drucker--Prager model is not covered by the hypotheses 
 \chapter{}
 
 Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $C_P>0$ such that
-\[
+\begin{equation}
+\label{eqn:abstract-poincare}
 \norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
-\]
+\end{equation}
 Let $L\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=L(z)$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{Au,u}$ with $\Psi_0$ and $A$ satisfying the following properties:
 \begin{itemize}
 \item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H)$ and there exist $C_\Psi^1>0$ and $C^2_\Psi\in\mathbb{R}$ with $\dual{D\Psi_0(z)w,w}\ge C_\Psi^2(\norm{w}_H^2+C_\Psi^2)$ for all $w\in Z$;
@@ -3538,16 +3539,44 @@ We substitute $\lambda_N^k$ from the last equation into the first equation obtai
 D_u\Psi_0(u_N^k,L(u_N^k))+Au_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+D\frac{u_N^k-u_N^{k-1}}{\tau_N}+L'(u_N^k)^*p_N^k\ni f_N^k.
 \]
 For each $N\in\mathbb{N}$ and $p_N^k\in\Lambda^*$ fixed, this is a nonlinear equation for $u_N^k\in U$ that can be written as
-\[
+\begin{equation}
+\label{eqn:equation-unk}
 F(u_N^k)+\partial\Xi(u_N^k)\ni f_N^k,
-\]
+\end{equation}
 where $F\colon V\to V^*$ is defined by
 \[
-F(u)=D_u\Psi_0(u_N^k,L(u_N^k))+L'(u_N^k)^*p_N^k
+F(u)=D_u\Psi_0(u,L(u))+L'(u)^*p_N^k
 \]
 and $\Xi\colon U\to[0,\infty]$ by
 \[
-\Xi(u)=\frac{1}{2}\dual{Au,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{D(u-u_N^{k-1}),u-u_N^{k-1}}
+\Xi(u)=\frac{1}{2}\dual{Au,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{D(u-u_N^{k-1}),u-u_N^{k-1}}.
+\]
+We first prove that~\eqref{eqn:equation-unk} admits a solution $u_N^k$ for each $p_N^k$ fixed. To this aim we check the hypotheses needed to apply Corollary~\ref{cor:corollary-5-19} with $\Xi$ in place of $\Phi$ and $F$ in place of $A$. It is trivial that $\Xi$ is convex, lower semicontinuous and proper. The superlinear growth of $\Xi$ follows from the positivity of $\Phi_0$ and by~\eqref{eqn:abstract-poincare}. Next we prove that $F$ is pseudomonotone. This follows form the following lemma.
+\begin{lemma}
+Let $U,H$ be separable and reflexive Banach spaces with $U$ embedded compactly and densely in $H$. Let $F\in C^0(H,H^*)$. Then $F$ is pseudomonotone as a map from $V$ to $V^*$.
+\end{lemma}
+\begin{proof}
+Let $u_n\rightharpoonup u$ in $V$. Then for each subsequence $u_{n_k}$ there exists a further (not relabeled) subsequence such that $u_{n_k}\to u$ in $H$. By continuity of $F$ it holds that $F(u_{n_k})\to F(u)$ in $H^*$. Then
+\[
+\lim_{k\to\infty}\dual{F(u_{n_k}),u_{n_k}-w}=\dual{F(u),u-w}\quad\text{for all $w\in U$}.
+\]
+Since the subsequence $u_{n_k}$ was arbitrary, actually
+\[
+\lim_{n\to\infty}\dual{F(u_{n}),u_{n}-w}=\dual{F(u),u-w}\quad\text{for all $w\in U$}.
+\]
+This implies that $F$ is presudomonotone as a map form $V$ to $V^*$.
+\end{proof}
+Now we prove the coercivity property
+\[
+\lim_{\norm{u}_U\to\infty}\frac{\dual{F(u),u}}{\norm{u}_U}\ge0.
+\]
+To this aim we notice that
+\[
+\begin{split}
+\dual{F(u),u}&=\dual{D_u\Psi_0(u,L(u)),u}+\dual{L'(u)^*p_N^k,u}=\\
+&=\dual{D\Psi_0(u,L(u)),(u,L(u))}+\dual{L'(u)^*p_N^k,u}-\dual{D_\lambda\Psi_0(u,L(u)),L(u)}\ge\\
+&\ge C_\Psi^1(\norm{u}_U^2+)
+\end{split}
 \]
 
 \chapter{Small deformation model}
@@ -5832,6 +5861,7 @@ and $\Phi_\epsilon$ is G\^ateaux differentiable with $\Phi_\epsilon'\colon V\to 
 See~\cite[Lemma 5.17]{roubicek-pde}.
 \end{proof}
 \begin{cor}
+\label{cor:corollary-5-19}
 Let $X$ be a reflexive and separable Banach space. Let $\Phi\colon X\to\mathbb{R}\cup\{\infty\}$ be convex, proper and lower semicontinuous. Let $A\colon V\to V^*$ pseudomonotone. Suppose then one of the following two conditions holds:
 \begin{itemize}
 \item[(i)] there exists $\alpha>1$ such that $\Phi(x)\ge\norm{x}^\alpha$ for all $x\in X$ and there exists $z\in\dom\Phi$ such that
