@@ -3491,6 +3491,65 @@ Using a time rescaling approach it is possible to prove also the existence of a 
 
 Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
 
+\chapter{}
+
+Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $C_P>0$ such that
+\[
+\norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
+\]
+Let $L\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=L(z)$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{Au,u}$ with $\Psi_0$ and $A$ satisfying the following properties:
+\begin{itemize}
+\item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H)$ and there exist $C_\Psi^1>0$ and $C^2_\Psi\in\mathbb{R}$ with $\dual{D\Psi_0(z)w,w}\ge C_\Psi^2(\norm{w}_H^2+C_\Psi^2)$ for all $w\in Z$;
+\item[($\Psi$2)] $A\in\mathscr{L}(U,U^*)$ is such that $A^*=A$ and there exists $C_A>0$ such that $\dual{Au,u}\ge C_A|u|_U^2$ for all $u\in U$.
+\end{itemize}
+Let $\Phi\colon\Lambda^*\times U\to[0,\infty]$ of the form $\Phi(p,v)=\Phi_0(p,v)+\frac{1}{2}\dual{Dv,v}$ with $\Phi_0$ and $D$ such that:
+\begin{itemize}
+\item[($\Phi$1)] for all $p\in\Lambda^*$ the map $\Phi_0(p,\cdot)\colon H\to[0,\infty]$ is convex, lower semicontinuous, proper and satisfies $\Phi_0(p,0)=0$;
+\item[($\Phi$2)] $D\in\mathscr{L}(H,H^*)$ and there exists $C_D>0$ such that $\dual{Dw,w}\ge C_D\norm{w}_H^2$.
+\end{itemize}
+Let also $f\in H^1([0,T],H^*)$ and $z_0=(u_0,\lambda_0)\in Z$ such that
+\[
+\lambda_0=L(u_0)\quad\text{and}\quad f(0)=D_u\Psi(z_0).
+\]
+We are interested to the following problem.
+\begin{prb}
+Find $z=(u,\lambda)\in\text{AC}([0,T],Z)$ and $p\in C^0([0,T],\Lambda^*)$ such that $z(0)=z_0$ and
+\begin{align}
+D_u\Psi_0(u(t),\lambda(t))+Au(t)+\partial\Phi_0(p(t),\dot u(t))+D\dot u(t)+L'(u(t))^*p(t)&\ni f(t) \\
+D_\lambda\Psi_0(u(t),\lambda(t))-p(t)&=0 \\
+\lambda(t)&=L(u(t))
+\end{align}
+for a.e.\ $t\in(0,T)$.
+\end{prb}
+We are now going to prove the existence of solutions to this problem.
+
+Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
+\begin{align}
+D_u\Psi_0(u_N^k,\lambda_N^k)+Au_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+D\frac{u_N^k-u_N^{k-1}}{\tau_N}+L'(u_N^k)^*p_N^k&\ni f_N^k \\
+D_\lambda\Psi_0(u_N^k,\lambda_N^k)-p_N^k&=0 \\
+\lambda_N^k&=L(u_N^k)
+\end{align}
+for all $k\in\{1,\dots,N\}$. There we have defined
+\[
+f_N^k=\int_{t_N^{k-1}}^{t_N^k}f(s)ds.
+\]
+We substitute $\lambda_N^k$ from the last equation into the first equation obtaining
+\[
+D_u\Psi_0(u_N^k,L(u_N^k))+Au_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+D\frac{u_N^k-u_N^{k-1}}{\tau_N}+L'(u_N^k)^*p_N^k\ni f_N^k.
+\]
+For each $N\in\mathbb{N}$ and $p_N^k\in\Lambda^*$ fixed, this is a nonlinear equation for $u_N^k\in U$ that can be written as
+\[
+F(u_N^k)+\partial\Xi(u_N^k)\ni f_N^k,
+\]
+where $F\colon V\to V^*$ is defined by
+\[
+F(u)=D_u\Psi_0(u_N^k,L(u_N^k))+L'(u_N^k)^*p_N^k
+\]
+and $\Xi\colon U\to[0,\infty]$ by
+\[
+\Xi(u)=\frac{1}{2}\dual{Au,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{D(u-u_N^{k-1}),u-u_N^{k-1}}
+\]
+
 \chapter{Small deformation model}
 
 \section{Formulation}
