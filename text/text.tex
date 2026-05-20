@@ -3306,7 +3306,7 @@ The discussion is organized as follows. This introductory chapter reviews the st
 
 We now describe how the theory presented in Section~\ref{sec:plasticity-review} is extended to include plastic compressibility and non-associated flow rules. The formulation presented here is the standard way used to perform that extension. In the following chapters we will propose an alternative approach.
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assume since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assumed since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
 \[
 \dual{\mathcal{I},\tilde w}=\int_\Omega\left(T_e:\tilde V_edx+T_p:\tilde V_p\right)dx
 \quad\text{and}\quad
@@ -3318,7 +3318,7 @@ for all $\tilde w=(\tilde v,\tilde V_p)\in Z$. For simplicity we have assumed th
 T_en=h\quad\text{in $\partial\Omega$} \\
 T_e-T_p=0\quad\text{in $\Omega$}
 \end{gather}
-where the first two equations describe the balance of macroforces while the last equation represents the balance of plastic microforces. The main difference with respect to equations~\eqref{eqn:equilibrium-plasticity} is that in the microforce balance the whole elastic stress tensor $T_e$, and not only is deviator, appears.
+where the first two equations describe the balance of macroforces while the last equation represents the balance of plastic microforces. The main difference with respect to equations~\eqref{eqn:equilibrium-plasticity} is that in the microforce balance the whole elastic stress tensor $T_e$, and not only its deviator, appears.
 
 We now discuss the choice of constitutive relations. We assume that the free energy $\Psi\colon Z\to\mathbb{R}$ is of the form
 \[
@@ -3353,7 +3353,7 @@ A_p\in\partial\hat{R}(A_p,\dot E_p),
 where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty]$ is defined as
 \begin{equation}
 \label{eqn:R-hat}
-\hat{R}(A_p,\dot E_p)=\sup_{A\in\text{Sym}}A:\dot E_p=\sigma_{\hat{C}(A_p)}(\dot E_p).
+\hat{R}(A_p,\dot E_p)=\sup_{A\in\hat{C}(A_p)}A:\dot E_p=\sigma_{\hat{C}(A_p)}(\dot E_p).
 \end{equation}
 \end{lemma}
 \begin{proof}
@@ -3366,7 +3366,7 @@ Now in order to write the inclusion~\eqref{eqn:reformulation-2} as a true consti
 \label{eqn:Rhat-R}
 R(Eu,E_p,\dot E_p)=\hat{R}\left(-\dind{W}{E_p}(Eu,E_p),\dot E_p\right)
 \end{equation}
-and we require that $A_p\in\partial R(Eu,E_p,\dot E_p)$. This correspond to the choice of the dissipation potential $\Psi\colon Z\times Z\to[0,\infty]$ defined as
+and we require that $A_p\in\partial_{\dot E_p}R(Eu,E_p,\dot E_p)$. This correspond to assuming that the dissipation potential $\Psi\colon Z\times Z\to[0,\infty]$ is defined as
 \[
 \Psi(z,\dot z)=\int_\Omega R(Eu,E_p,\dot E_p)dx.
 \]
@@ -3378,9 +3378,9 @@ A_p=T_e-B_p+\diver K_p.
 The quantity $\diver K_p$ is not defined as a function in general. This prevents the possibility of defining $R$ from $\hat R$ by a simple substitution. In this case, see~\cite{StefanelliVikelis2024}, the definition of $R$ kept as in~\eqref{eqn:Rhat-R}.
 \end{rmk}
 
-\section{The Mohr--Coulomb and Drucker--Prager yield criterion}
+\section{The Mohr--Coulomb and Drucker--Prager yield criterion and non associated flow rules}
 
-In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterion can be formulated within the notation of previous section.
+In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterion can be formulated within the notation of previous section. Moreover we will describe the non-associated flow rule commonly employed to describe dilatancy.
 
 \subsection{The Mohr--Coulomb criterion}
 
@@ -3413,14 +3413,47 @@ Now the Mohr--Coulomb criterion is included in the theory described in Section~\
 \subsection{The Drucker--Prager yield criterion}
 
 When $d=2$ it is easy to check that $F$ in~\eqref{eqn:F-mohr-coulomb} can be also written as $F(S)=\sqrt{2}|S|$. In this case the yield function becomes
-\[
-f(T)=\sqrt{2}|\dev T|+(\tr T)\sin\phi-2c\cos\phi.
-\]
+\begin{equation}
+\label{eqn:f-mohr-coulomb-2d}
+f(A)=\sqrt{2}|\dev A|+(\tr A)\sin\phi-2c\cos\phi.
+\end{equation}
 In the general case, this formula suggest to consider the yield function $f\colon\text{Sym}\to\mathbb{R}$ of the form
 \[
 f(A)=|\dev A|-\left(Y_0-\alpha\frac{\tr A}{d}\right)
 \]
 where $Y_0>0$ and $\alpha>0$. The corresponding criterion is known as Drucker--Prager yield criterion and can be seen as an approximation of the Mohr--Coulomb criterion. Since the hydrostatic pressure is $p=-\tr T/d$, the Drucker--Prager criterion can be formulated as $|\dev T|\le Y(p)=Y_0+\alpha p$. Thus it is a generalization of the Von Mises criterion where the yield strength is made dependent on the hydrostratic pressure.
+
+\subsection{Non associated flow rules and the dilatancy angle}
+
+Restrict now to the case of the Drucker--Prager criterion, the discussion being similar in the case of the Mohr--Coulomb crierion. If the normality rule corresponding to $g=f$ is assumed then $E_p$ evolves as
+\[
+\dot E_p=\gamma\dind{f}{T}(A_p)=\gamma\left[\frac{\dev A_p}{|\dev A_p|}+\frac{\alpha}{d}I\right]
+\]
+where $\gamma$ is the plastic multiplier that is required to satisfy the Kuhn--Tucker compatibility conditions
+\[
+\gamma\ge0,\quad f(A_p)\le0\quad\text{and}\quad\gamma f(A_p)=0.
+\]
+Then it holds that
+\[
+|\dev\dot E_p|=\gamma\quad\text{and}\tr\dot E_p=\gamma\alpha
+\]
+so
+\[
+\tr\dot E_p=\alpha|\dev\dot E_p|.
+\]
+This implies that the accumulation of deviatoric plastic distortion is always accompanied with an increase in the volumetric plastic distortion. This behavior is called dilatancy and is common in granular materials. However the normality rule overestimates the dilatancy, so that one would like to consider a relation of the type
+\[
+\tr\dot E_p=\beta|\dev\dot E_p|
+\]
+with $\beta<\alpha$. This motivate the need of introducing a non-associated flow rule by choosing $g$ as
+\[
+g(A)=|\dev A|-\left(K_0-\beta\frac{\tr A}{d}\right)
+\]
+with $K_0,\beta>0$. In the case $d=2$ we can define $g$ with the same structure as $f$ in~\eqref{eqn:f-mohr-coulomb-2d}, that is
+\[
+g(A)=\sqrt{2}|\dev A|+(\tr A)\sin\psi-2c\cos\psi
+\]
+where $c\ge0$ is still the cohesion and $\psi\in[0,\pi/2)$ is called the dilatancy angle (that is usually chosen satisfying $\psi\le\phi$).
 
 \section{An existence result for non-associative plasticity}
 
@@ -5142,7 +5175,7 @@ Notice that $\norm{f}_{Q'}\ge\beta\norm{w}_W$. Now
 \]
 This completes the proof.
 \end{proof}
-Then we get immediately the following proposition.
+Then we get immediately the following corollary.
 \begin{cor}
 \label{cor:babuska}
 Assume the hypotheses of Theorem~\ref{thm:babuska}. Then for each $g\in W'$ there exists a unique $p\in Q$ such that
@@ -5172,7 +5205,7 @@ and
 \norm{p}_Q\le\frac{1}{\beta}\norm{g}_{V'}.
 \]
 \end{rmk}
-The following theorem is the main result of this Section. The result is proved in~\cite{nicolaides} in the Hilbert spaces setting and we have generalized it for Banach spaces.
+The following theorem is the main result of this section. The result is proved in~\cite{nicolaides} in the Hilbert spaces setting and we have generalized it for Banach spaces.
 \begin{thm}
 \label{thm:mixed-elliptic}
 Let $V$, $\tilde V$, $Q$ and $\tilde Q$ be reflexive Banach spaces. Let $b\colon Q\times\tilde V\to\mathbb{R}$ be a bilinear form. Let $\tilde{Z}=\left\{\tilde{z}\in\tilde V\middle|\text{$b(q,\tilde z)=0$ for all $q\in Q$}\right\}$ and define $\tilde W=\tilde V/\tilde Z$. Assume that there exists $M>0$ such that
@@ -5653,7 +5686,7 @@ The Minty--Browder theorem can be generalized also to the case in which $T$ is a
 where $f\in X^*$. Here $\partial\Psi$ denotes the subdifferential of $\Psi$. The following generalization of Minty--Browder theorem holds.
 \begin{thm}
 \label{thm:inclusion}
-Let $\Phi\colon X\to\mathbb{R}\cup\mathbb{\infty}$ be convex, proper and lower semicontinuous. Assume that for all $\epsilon>0$ there exist $\Phi_\epsilon\colon X\to\mathbb{R}$ convex and G\^ateaux differentiable with $\Phi_\epsilon'\colon X\to X^*$ demicontinuous and bounded, such that the following properties holds:
+Let $\Phi\colon X\to\mathbb{R}\cup\mathbb\{\infty\}$ be convex, proper and lower semicontinuous. Assume that for all $\epsilon>0$ there exist $\Phi_\epsilon\colon X\to\mathbb{R}$ convex and G\^ateaux differentiable with $\Phi_\epsilon'\colon X\to X^*$ demicontinuous and bounded, such that the following properties holds:
 \begin{itemize}
 \item[(i)] for all $x\in X$ and $\{x_\epsilon\}_{\epsilon>0}\subset X$ such that $x_\epsilon\rightharpoonup x$ in $X$ it holds that
 \[
@@ -5676,7 +5709,7 @@ holds. Here $\zeta\colon[0,\infty)\to[0,\infty)$ satisfies the condition
 Then for all $f\in X^*$ there exists $x\in X$ such that~\eqref{eqn:inclusion} holds.
 \end{thm}
 \begin{proof}
-The map $\Phi_\epsilon'$ is monotone since $\Phi_\epsilon$ is convex. Then by Proposition~\ref{prop:sum-pseudomonotone} the operator $\Phi_\epsilon'+A$ is pseudomonotone. Moreover it is bounded and continuous. The coercivity property~\eqref{eqn:coercivity-property} allows to apply Theorem~\ref{thm:browder-minty-generalized} to conclude thet for all $\epsilon>0$ there exists $x_\epsilon\in X$ such that $\Phi_\epsilon'(x_\epsilon)+A(x_\epsilon)\ni f$. This is equivalent to
+The map $\Phi_\epsilon'$ is monotone since $\Phi_\epsilon$ is convex. Then by Proposition~\ref{prop:sum-pseudomonotone} the operator $\Phi_\epsilon'+A$ is pseudomonotone. Moreover it is bounded and demicontinuous. The coercivity property~\eqref{eqn:coercivity-property} allows to apply Theorem~\ref{thm:browder-minty-generalized} to conclude thet for all $\epsilon>0$ there exists $x_\epsilon\in X$ such that $\Phi_\epsilon'(x_\epsilon)+A(x_\epsilon)\ni f$. This is equivalent to
 \begin{equation}
 \label{eqn:variational-inequality}
 \Phi_\epsilon(y)\ge\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\quad\text{for all $y\in X$}.
@@ -5744,7 +5777,7 @@ Let $X$ be a reflexive and separable Banach space. Let $\Phi\colon X\to\mathbb{R
 \begin{itemize}
 \item[(i)] there exists $\alpha>1$ such that $\Phi(x)\ge\norm{x}^\alpha$ for all $x\in X$ and there exists $z\in\dom\Phi$ such that
 \[
-x\mapsto\dfrac{\dual{A(x),x-y}}{\norm{x}}
+x\mapsto\dfrac{\dual{A(x),x-z}}{\norm{x}}
 \]
 is bounded from below,
 \item[(ii)] $\Phi$ is bounded from below and $A$ is coercive in the sense that there exists $z\in\dom\Phi$ such that

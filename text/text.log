@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  16 MAY 2026 16:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  20 MAY 2026 17:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1876,15 +1876,15 @@ Chapter 6
 [56]
 
 [57]
+
+[58]
 Chapter 7
 
 
-[58
+[59
 
 
 ]
-
-[59]
 
 [60]
 
@@ -1911,52 +1911,52 @@ Chapter 7
 [71]
 
 [72]
+
+[73]
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
-
-[73]
 
 [74]
 
 [75]
 
 [76]
+
+[77]
 Chapter 8
 
 
-[77
+[78
 
 
 ]
 
-[78]
+[79]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4914.
+(hyperref)                removing `\noindent' on input line 4947.
 
-
-
-[79
-
-
-]
-Appendix A
 
 
 [80
 
 
 ]
-Appendix B
+Appendix A
 
 
 [81
 
 
 ]
+Appendix B
 
-[82]
+
+[82
+
+
+]
 
 [83]
 
@@ -1981,32 +1981,34 @@ Appendix B
 [93]
 
 [94]
+
+[95]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5951.
+5984.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5951.
+(Font)              scaled to size 10.0pt on input line 5984.
 
 
-[95
+[96
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5952--5952
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5985--5985
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[96]
+[97]
 
-[97] (./text.aux (./frontespizio.aux))
+[98] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2016,10 +2018,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48034 strings out of 473197
- 1055036 string characters out of 5718605
- 1936457 words of memory out of 5000000
- 69794 multiletter control sequences out of 15000+600000
+ 48039 strings out of 473197
+ 1055120 string characters out of 5718605
+ 1936525 words of memory out of 5000000
+ 69796 multiletter control sequences out of 15000+600000
  707525 words of font info for 272 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2249s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2044,10 +2046,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (99 pages, 941089 bytes).
+Output written on text.pdf (100 pages, 943675 bytes).
 PDF statistics:
- 1609 PDF objects out of 1728 (max. 8388607)
- 1455 compressed objects within 15 object streams
- 541 named destinations out of 1000 (max. 500000)
+ 1616 PDF objects out of 1728 (max. 8388607)
+ 1461 compressed objects within 15 object streams
+ 544 named destinations out of 1000 (max. 500000)
  326 words of extra memory for PDF output out of 10000 (max. 10000000)
 
