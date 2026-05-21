@@ -3289,7 +3289,7 @@ We have obtained similar results to those we just explicitly described even enri
 \part{A model describing pressure sensitive plastic materials}
 \label{part:my-model}
 
-\chapter{Introduction}
+\chapter{Introduction and review of preexisting mechanical models describing of pressure sensitive plastic materials}
 
 Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to describe the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a characterization of the yield limit. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
 
@@ -3491,44 +3491,69 @@ Using a time rescaling approach it is possible to prove also the existence of a 
 
 Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
 
-\chapter{}
+\chapter{Proposal of an alternative mechanical model: small deformations}
+
+\section{Formulation of the model}
+
+\section{Existence theory}
+
+In this section we obtain an existence result for the model we have developed in previous section. To make the discussion more clear in the following subsection we prove an existence theorem in a more abstract setting. This theorem will be applied to our particular problem in the subsequent subsection.
+
+\subsection{An abstract existence theorem for constrained mechanical systems treated with the method of Lagrange multipliers}
+
+In this subsection we present an abstract existence theorem for evolutionary problems in presence of constraints treated with the method of Lagrange multipliers. 
+
+\subsubsection*{Notation, assumptions and formulation of the problem}
 
 Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $C_P>0$ such that
 \begin{equation}
 \label{eqn:abstract-poincare}
 \norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
 \end{equation}
-Let $L\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=L(z)$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{Au,u}$ with $\Psi_0$ and $A$ satisfying the following properties:
+Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(z)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}u,u}$ with $\Psi_0$ and $\mathcal{A}$ satisfying the following properties:
 \begin{itemize}
-\item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H)$ and there exist $C_\Psi^1>0$ and $C^2_\Psi\in\mathbb{R}$ with $\dual{D\Psi_0(z)w,w}\ge C_\Psi^2(\norm{w}_H^2+C_\Psi^2)$ for all $w\in Z$;
-\item[($\Psi$2)] $A\in\mathscr{L}(U,U^*)$ is such that $A^*=A$ and there exists $C_A>0$ such that $\dual{Au,u}\ge C_A|u|_U^2$ for all $u\in U$.
+\item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H\times\Lambda)$ and there exist $C_\Psi^2>0$ and $C^1_\Psi,C^0_\Psi\in\mathbb{R}$ with $\dual{D\Psi_0(z)w,w}\ge C_\Psi^2\norm{w}_{H\times\Lambda}^2+C_\Psi^1\norm{w}_{H\times\Lambda}+C_\Psi^0$ for all $w\in Z$;
+\item[($\Psi$2)] there exists a constant $C_\Psi^3>0$ such that $\norm{D_\lambda\Psi_0(z)}_{\Lambda^*}\le C_\Psi^3\norm{z}_{H\times\Lambda}$;
+\item[(A)] $\mathcal{A}\in\mathscr{L}(U,U^*)$ is such that $\mathcal{A}^*=\mathcal{A}$ and there exists $C_A>0$ such that $\dual{\mathcal{A}u,u}\ge C_A|u|_U^2$ for all $u\in U$.
 \end{itemize}
-Let $\Phi\colon\Lambda^*\times U\to[0,\infty]$ of the form $\Phi(p,v)=\Phi_0(p,v)+\frac{1}{2}\dual{Dv,v}$ with $\Phi_0$ and $D$ such that:
+Let $\Phi\colon\Lambda^*\times U\to[0,\infty]$ of the form $\Phi(p,v)=\Phi_0(p,v)+\frac{1}{2}\dual{\mathcal{D}v,v}$ with $\Phi_0$ and $\mathcal{D}$ such that:
 \begin{itemize}
 \item[($\Phi$1)] for all $p\in\Lambda^*$ the map $\Phi_0(p,\cdot)\colon H\to[0,\infty]$ is convex, lower semicontinuous, proper and satisfies $\Phi_0(p,0)=0$;
-\item[($\Phi$2)] $D\in\mathscr{L}(H,H^*)$ and there exists $C_D>0$ such that $\dual{Dw,w}\ge C_D\norm{w}_H^2$.
+\item[($\Phi$2)] there exists $C_\Phi>0$ such that
+\[
+|\Phi(p_1,v_1)-\Phi(p_2,v_1)+\Phi(p_2,v_2)-\Phi(p_1,v_2)|\le C_\Phi\norm{p_1-p_2}_{\Lambda^*}\norm{v_1-v_2}_H
+\]
+for all $(p_1,v_1),(p_2,v_2)\in\dom\Phi_0$;
+\item[(D)] $\mathcal{D}\in\mathscr{L}(H,H^*)$ and there exists $C_D>0$ such that $\dual{\mathcal{D}w,w}\ge C_D\norm{w}_H^2$.
 \end{itemize}
 Let also $f\in H^1([0,T],H^*)$ and $z_0=(u_0,\lambda_0)\in Z$ such that
 \[
-\lambda_0=L(u_0)\quad\text{and}\quad f(0)=D_u\Psi(z_0).
+\lambda_0=\mathcal{L}(u_0)\quad\text{and}\quad f(0)=D_u\Psi(z_0).
 \]
-We are interested to the following problem.
+The abstract problem that is consider is the following.
 \begin{prb}
+\label{prb:existence-abstract}
 Find $z=(u,\lambda)\in\text{AC}([0,T],Z)$ and $p\in C^0([0,T],\Lambda^*)$ such that $z(0)=z_0$ and
 \begin{align}
-D_u\Psi_0(u(t),\lambda(t))+Au(t)+\partial\Phi_0(p(t),\dot u(t))+D\dot u(t)+L'(u(t))^*p(t)&\ni f(t) \\
+D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}u(t)+\partial\Phi_0(p(t),\dot u(t))+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)&\ni f(t) \\
 D_\lambda\Psi_0(u(t),\lambda(t))-p(t)&=0 \\
-\lambda(t)&=L(u(t))
+\lambda(t)&=\mathcal{L}(u(t))
 \end{align}
 for a.e.\ $t\in(0,T)$.
 \end{prb}
-We are now going to prove the existence of solutions to this problem.
 
-Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
+\subsubsection*{Existence theorem}
+
+We are now going to prove the following theorem.
+\begin{thm}
+Under the assumptions previously stated, there exists a solution to Problem~\ref{prb:existence-abstract}.
+\end{thm}
+The proof rely on the Rothe method, so we first consider a time-discretized version of Problem~\ref{prb:existence-abstract}. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
 \begin{align}
-D_u\Psi_0(u_N^k,\lambda_N^k)+Au_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+D\frac{u_N^k-u_N^{k-1}}{\tau_N}+L'(u_N^k)^*p_N^k&\ni f_N^k \\
+D_u\Psi_0(u_N^k,\lambda_N^k)+\mathcal{A}u_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{u_N^k-u_N^{k-1}}{\tau_N}+\mathcal{L}'(u_N^k)^*p_N^k&\ni f_N^k \\
+\label{eqn:second-equation-discrete}
 D_\lambda\Psi_0(u_N^k,\lambda_N^k)-p_N^k&=0 \\
-\lambda_N^k&=L(u_N^k)
+\lambda_N^k&=\mathcal{L}(u_N^k)
 \end{align}
 for all $k\in\{1,\dots,N\}$. There we have defined
 \[
@@ -3536,7 +3561,7 @@ f_N^k=\int_{t_N^{k-1}}^{t_N^k}f(s)ds.
 \]
 We substitute $\lambda_N^k$ from the last equation into the first equation obtaining
 \[
-D_u\Psi_0(u_N^k,L(u_N^k))+Au_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+D\frac{u_N^k-u_N^{k-1}}{\tau_N}+L'(u_N^k)^*p_N^k\ni f_N^k.
+D_u\Psi_0(u_N^k,\mathcal{L}(u_N^k))+\mathcal{A}u_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{u_N^k-u_N^{k-1}}{\tau_N}+\mathcal{L}'(u_N^k)^*p_N^k\ni f_N^k.
 \]
 For each $N\in\mathbb{N}$ and $p_N^k\in\Lambda^*$ fixed, this is a nonlinear equation for $u_N^k\in U$ that can be written as
 \begin{equation}
@@ -3545,15 +3570,15 @@ F(u_N^k)+\partial\Xi(u_N^k)\ni f_N^k,
 \end{equation}
 where $F\colon V\to V^*$ is defined by
 \[
-F(u)=D_u\Psi_0(u,L(u))+L'(u)^*p_N^k
+F(u)=D_u\Psi_0(u,\mathcal{L}(u))+\mathcal{L}'(u)^*p_N^k
 \]
 and $\Xi\colon U\to[0,\infty]$ by
 \[
-\Xi(u)=\frac{1}{2}\dual{Au,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{D(u-u_N^{k-1}),u-u_N^{k-1}}.
+\Xi(u)=\frac{1}{2}\dual{\mathcal{A}u,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{\mathcal{D}(u-u_N^{k-1}),u-u_N^{k-1}}.
 \]
-We first prove that~\eqref{eqn:equation-unk} admits a solution $u_N^k$ for each $p_N^k$ fixed. To this aim we check the hypotheses needed to apply Corollary~\ref{cor:corollary-5-19} with $\Xi$ in place of $\Phi$ and $F$ in place of $A$. It is trivial that $\Xi$ is convex, lower semicontinuous and proper. The superlinear growth of $\Xi$ follows from the positivity of $\Phi_0$ and by~\eqref{eqn:abstract-poincare}. Next we prove that $F$ is pseudomonotone. This follows form the following lemma.
+We prove that~\eqref{eqn:equation-unk} admits a solution $u_N^k$ for each $p_N^k$ fixed. To this aim we check the hypotheses needed to apply Corollary~\ref{cor:corollary-5-19} with $\Xi$ in place of $\Phi$ and $F$ in place of $A$. It is trivial that $\Xi$ is convex, lower semicontinuous and proper. The superlinear growth of $\Xi$ with respect to $\norm{\cdot}_U$ follows from the positivity of $\Phi_0$ and by~\eqref{eqn:abstract-poincare}. Next we prove that $F$ is pseudomonotone. This follows form the following lemma.
 \begin{lemma}
-Let $U,H$ be separable and reflexive Banach spaces with $U$ embedded compactly and densely in $H$. Let $F\in C^0(H,H^*)$. Then $F$ is pseudomonotone as a map from $V$ to $V^*$.
+Let $U,H$ be separable and reflexive Banach spaces with $U$ embedded compactly and densely in $H$. Let $F\in C^0(H,H^*)$. Then $F$ is pseudomonotone as a map from $U$ to $U^*$.
 \end{lemma}
 \begin{proof}
 Let $u_n\rightharpoonup u$ in $V$. Then for each subsequence $u_{n_k}$ there exists a further (not relabeled) subsequence such that $u_{n_k}\to u$ in $H$. By continuity of $F$ it holds that $F(u_{n_k})\to F(u)$ in $H^*$. Then
@@ -3566,18 +3591,39 @@ Since the subsequence $u_{n_k}$ was arbitrary, actually
 \]
 This implies that $F$ is presudomonotone as a map form $V$ to $V^*$.
 \end{proof}
-Now we prove the coercivity property
-\[
-\lim_{\norm{u}_U\to\infty}\frac{\dual{F(u),u}}{\norm{u}_U}\ge0.
-\]
-To this aim we notice that
+To verify the required coercivity property on $F$ we prove the following lemma.
+\begin{lemma}
+There exist a constants $C_F^2>0$ and $C_F^1,C_F^0\in\mathbb{R}$ such that $\dual{F(u),u}\ge C_F^2\norm{u}_H^2+C_F^1\norm{u}_H^2+C_F^0$.
+\end{lemma}
+\begin{proof}
+We have that
 \[
 \begin{split}
-\dual{F(u),u}&=\dual{D_u\Psi_0(u,L(u)),u}+\dual{L'(u)^*p_N^k,u}=\\
-&=\dual{D\Psi_0(u,L(u)),(u,L(u))}+\dual{L'(u)^*p_N^k,u}-\dual{D_\lambda\Psi_0(u,L(u)),L(u)}\ge\\
-&\ge C_\Psi^1(\norm{u}_U^2+)
+\dual{F(u),u}&=\dual{D_u\Psi_0(u,\mathcal{L}(u)),u}+\dual{\mathcal{L}'(u)^*p_N^k,u}=\\
+&=\dual{D\Psi_0(u,\mathcal{L}(u)),(u,\mathcal{L}(u))}+\dual{p_N^k,\mathcal{L}'(u)u}-\dual{D_\lambda\Psi_0(u,\mathcal{L}(u)),\mathcal{L}(u)}\ge \\
+&\ge C_\Psi^2\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}^2+C_\Psi^1\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}+C_\Psi^0-C_L\norm{p_N^k}_{\Lambda^*}\norm{u}_H-C_\Psi^3C_L\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}.
 \end{split}
 \]
+Now $\norm{u}_H\le\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}\le\norm{u}_H+C_L$ so that the thesis follows immediately.
+\end{proof}
+Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined as showed in the following lemma.
+\begin{lemma}
+\label{lemma:properties-U}
+The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and $\mathcal{U}(\Lambda^*)$ is bounded in $U$.
+\end{lemma}
+To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^k\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
+\begin{equation}
+\label{eqn:fixed-point}
+p_N^k=D_\lambda\Psi_0(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))=:\mathcal{T}(p_N^k)
+\end{equation}
+where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\eqref{eqn:fixed-point} follows from the Schauder fixed-point theorem in the form of Corollary~\ref{cor:schauder} thanks to the following lemma.
+\begin{lemma}
+The map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+\end{lemma}
+\begin{proof}
+The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\Lambda^*$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to\mathcal{U}(u)$ in $H$. Then bu continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+\end{proof}
+Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 
 \chapter{Small deformation model}
 
@@ -5466,10 +5512,18 @@ See~\cite{niremberg}.
 
 \begin{thm}[Schauder fixed point theorem]
 \label{thm:schauder}
-Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous and with compact range. Then $F$ admits a fixed point.
+Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $f(C)\subset K$, where $K\subset C$ is compact. Then $F$ admits a fixed point.
 \end{thm}
 \begin{proof}
 See~\cite{niremberg}.
+\end{proof}
+The following corollary holds.
+\begin{cor}
+\label{cor:schauder}
+Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $f(C)$ is precompact. Then $F$ admits a fixed point.
+\end{cor}
+\begin{proof}
+Let $F(C)\subset K\subset C$ be the closure of $F(C)$. It is clear that $K$ is compact. Then by Theorem~\ref{thm:schauder} it follows that $F$ has a fixed point.
 \end{proof}
 
 \subsection{Local existence theorem for Cauchy problems in Banach spaces}
