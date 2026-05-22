@@ -679,7 +679,7 @@ Let $z(t)=f(t)+a$. Then $|\dot z|\le bz$. It follows that $\dot z\le bz$ and
 \[
 z(t)\le z(t_0)+\int_{t_0}^{t}b z(s)ds\quad\text{for all $0\le t_0\le t_1\le T$}.
 \]
-By~\eqref{eqn:gronwall} it follows that $z(t_1)\le e^{b(t_1-t_0)}z(t_0)$ all for all $0\le t_0\le t_1\le T$. But it holds also $\dot z\le -bz$. If we set $\zeta(t)=z(T-t)$ then $\dot\zeta\le b\zeta$. Then reasoning as before we get $z(t_1)\le\zeta(T-t_1)\le e^{b(t_0-t_1)}\zeta(T-t_0)\le e^{b(t_0-t_1)}z(t_0)$ for all $0\le t_1\le t_0\le T$. This concludes the proof.
+By Proposition~\ref{prop:gronwall} it follows that $z(t_1)\le e^{b(t_1-t_0)}z(t_0)$ all for all $0\le t_0\le t_1\le T$. But it holds also $\dot z\le -bz$. If we set $\zeta(t)=z(T-t)$ then $\dot\zeta\le b\zeta$. Then reasoning as before we get $z(t_1)\le\zeta(T-t_1)\le e^{b(t_0-t_1)}\zeta(T-t_0)\le e^{b(t_0-t_1)}z(t_0)$ for all $0\le t_1\le t_0\le T$. This concludes the proof.
 \end{proof}
 The assumptions on the dissipation distance are
 \begin{itemize}[itemsep=0.5em]
@@ -3491,7 +3491,7 @@ Using a time rescaling approach it is possible to prove also the existence of a 
 
 Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
 
-\chapter{Proposal of an alternative mechanical model: small deformations}
+\chapter{Proposal of an alternative mechanical model in the regime of small deformations}
 
 \section{Formulation of the model}
 
@@ -3627,7 +3627,7 @@ The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\l
 Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution. To this aim we first obtain some a priori estimates. The first of them ensure that $u_N^k$ remain bounded in $U$.
 \begin{lemma}
 \label{lemma:a-priori-0}
-There exists a constant $C_0>0$ such that $\norm{u_N}_{L^\infty((0,T),U)}\le C_0$.
+There exists a constant $C_0>0$ such that $\norm{u_N}_{L^\infty((0,T),U)}\le C_0$ for all $N$.
 \end{lemma}
 \begin{proof}
 We notice that~\eqref{eqn:first-equation-discrete} can be written as
@@ -3647,6 +3647,8 @@ Summing for $k$ from 0 to any $j\in\{1,\dots,N\}$, using the coercivity of $\mat
 \end{proof}
 The second a priori estimate is a bound on $\dot u_N^k$.
 \begin{lemma}
+The quantities
+$\|\dot{\hat{u}}_N\|_{L^2((0,T),H)}$, $\norm{\dot u_N}_L^\infty((0,T),U)$ and $\norm{\hat u_N}_L^\infty((0,T),U)$ are bounded uniformly in $N$.
 \end{lemma}
 \begin{proof}
 Consider~\eqref{eqn:inclusion-explicit} with $v=\dot u_N^{k-1}$
@@ -3697,19 +3699,68 @@ and similarly
 Then
 \[
 \begin{multlined}
-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+C_D\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\tau_N^2C_\Phi C_\Psi^2(1+C_L)\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
+\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+C_D\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\tau_N^2C_\Phi C_\Psi^4(1+C_L)\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
 +\norm{f_N^k-f_N^{k-1}}_{H^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+C_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
 +C_pC_L\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+C_LC_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H.
 \end{multlined}
 \]
-Applying Young inequality
+Applying Young inequality we get
+\[
+\begin{multlined}
+\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+\frac{C_D}{6}\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\frac{3}{2C_D}\norm{f_N^k-f_N^{k-1}}_{H^*}^2+\\+
+\frac{3}{2C_D}\tau_N^2\left[\tau_N^2C_\Phi^4(C_\Psi^4)^2(1+C_L)^2+(C_\Psi^4)^2(1+C_L)^2+C_p^2C_L^2+C_L^2(C_\Psi^4)^2(1+C_L)^2\right]\norm{\dot u_N^k}_H^2.
+\end{multlined}
+\]
+Letting
+\[
+C_1=T^2C_\Phi^4(C_\Psi^4)^2(1+C_L)^2+(C_\Psi^4)^2(1+C_L)^2+C_p^2C_L^2+C_L^2(C_\Psi^4)^2(1+C_L)^2
+\]
+and dividing by $\tau_N$, the above inequality can be written as
+\[
+\frac{1}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{1}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+\frac{C_D}{6}\tau_N\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2\le\frac{3}{2C_D}\tau_N\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+C_1\norm{\dot u_N^k}_H^2\right).
+\]
+Summing for $k$ from 1 to $j$, using the coercivity property of $\mathcal{A}$ and the fact that $\dot u_N^0=0$, we get
+\begin{equation}
+\label{eqn:a-priori-estimate}
+\frac{C_A}{2}|\dot u_N^n|_U^2+\frac{C_D}{6}\tau_N\sum_{k=1}^n\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2\le\frac{3}{2C_D}\tau_N\sum_{k=1}^n\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+C_1\norm{\dot u_N^k}_H^2\right).
+\end{equation}
+Let
+\[
+S_N^n=\tau_N\sum_{k=1}^n\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2.
+\]
+Then by Jensen inequality
+\[
+\begin{split}
+\|\dot{u}_N^k\|_H^2&=\left\|\sum_{j=1}^k(\dot{u}_N^j-\dot{u}_N^{j-1})\right\|_H^2\le k^2\left(\frac{1}{k}\sum_{j=1}^k\|\dot{u}_N^j-\dot{u}_N^{j-1}\|_H\right)^2\le k^2\frac{1}{k}\sum_{j=1}^k\|\dot{u}_N^j-\dot{u}_N^{j-1}\|_H^2=\\
+&=k\tau_N\;\tau_N\sum_{j=1}^k\left\|\frac{\dot{u}_N^j-\dot{u}_N^{j-1}}{\tau_N}\right\|_H^2\le TS_N^k
+\end{split}
+\]
+From~\eqref{eqn:a-priori-estimate} it follows that
+\[
+S_N^n\le\tau_N\sum_{k=1}^n\left(\frac{9}{C_D^2}\left\|\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\|_{H^*}^2+\frac{9T}{C_D^2}S_N^k\right)
+\]
+Applying the discrete Gronwall inequality, i.e.\ Proposition~\ref{prop:discrete-gronwall}, we get
+\[
+S_N^n\le\left(\tau_N\sum_{k=1}^n\frac{9T}{C_D^2}\right)\exp\left(\frac{9}{C_D^2}\tau_N\sum_{k=1}^n\left\|\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\|_{H^*}^2\right)\le T\frac{9T}{C_D^2}\exp\left(\frac{9}{C_D^2}\tau_N\sum_{k=1}^N\left\|\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\|_{H^*}^2\right).
+\]
+But since $f\in H^1((0,T),H^*)$, by repeatedly applying H\"older inequality, using Fubini--Tonelli theorem and the fact that $\dot f(s)=0$ for $s<0$, it follows that
+\[
+\begin{split}
+\tau_N\sum_{k=1}^N\left\|\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\|_{H^*}^2&=\frac{1}{\tau_N}\sum_{k=1}^N\left\|\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}\int_{t-\tau_N}^s\dot{f}(s)dsdt\right\|_{H^*}^2\le\frac{1}{\tau_N^3}\sum_{k=1}^N\left(\int_{t_N^{k-1}}^{t_N^k}\int_{t-\tau_N}^t\|\dot{f}(s)\|_{H^*}dsdt\right)^2\le\\
+&\le\frac{1}{\tau_N^3}\sum_{k=1}^N\left(\int_{t_N^{k-1}}^{t_N^k}\tau_N^{1/2}\left(\int_{t-\tau_N}^t\|\dot{f}(s)\|_{H^*}^2ds\right)^{1/2}dt\right)^2\le\\
+&\le\frac{1}{\tau_N}\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\int_{t-\tau_N}^t\|\dot{f}(s)\|_{H^*}^2dsdt=\frac{1}{\tau_N}\int_0^T\int_{t-\tau_N}^t\|\dot{f}(s)\|_{H^*}^2dsdt\le\\
+&\le\int_0^T\frac{1}{\tau_N}\int_s^{s+\tau_N}\|\dot{f}(s)\|_{H^*}^2dtds=\|\dot{f}\|_{L^2((0,T),H^*)}^2.
+\end{split}
+\]
+This shows that $S_N^N=\|\dot{\hat{u}}_N\|_{L^2((0,T),H)}$ is bounded uniformly in $N$. Returning back to~\eqref{eqn:a-priori-estimate} we get that also $\norm{\dot u_N}_L^\infty((0,T),U)$ and $\norm{\hat u_N}_L^\infty((0,T),U)$ are bounded uniformly in $N$. This concludes the proof.
 \end{proof}
+Until now we have proved that $\norm{u_N}_{W^{1,\infty}((0,T),U)}$ and $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ are bounded uniformly in $N$. Thus there exists $u\in W^{1,\infty}((0,T),U)$ such that, up to extracting a subsequence, $u_N\overset{*}{\rightharpoonup}u$ in $W^{1,\infty}((0,T),U)$.
 
 \chapter{Small deformation model}
 
 \section{Formulation}
 
-\subsection{Kinematics}
+\subsection{kinematics}
 
 Let $\Omega\subset\mathbb{R}^d$ be the reference configuration of the body. The macroscopic displacement is a map $u\colon\Omega\to\mathbb{R}^d$. We set $E=\sym\grad u$ and $M=\grad^2 u$. We subdivide $\partial\Omega$ in two disjoint parts $\Gamma_D$ and $\Gamma_N$. On $\Gamma_D$ we impose the kinematical constrain $u=\bar u$. The configuration of the microscopic structure is described by the plastic distortion $H_p\colon\Omega\to\text{Lin}$. The skew symmetric part $W_p=\ske H_p$ describes the rotation of the microscopic structure and for simplicity we assume that it vanish. The symmetric part is the plastic strain $E_p=\sym H_p\colon\Omega\to\text{Sym}$ which describes the deformation of microscopic structure. We can regard $E_p$ as the elastically relaxed strain of the body so we define the elastic strain as $E_e=E-E_p$. The volumetric deformation of the microscopic structure is described by $\lambda_p=\tr E_p$ while the deviatoric deformation by $U_p=\dev E_p$. We call $M_p=\grad U_p$ and we set $\mathbb{U}_p=(U_p,l\,M_p)\in\text{DevPla}$ where $l>0$ is an internal length scale. Here $\text{DevPla}=\text{Sym}\otimes(\text{Sym}\otimes\mathbb{R})$ is the vector space of the deviatoric plastic strains and their gradients. In what follows we will denote with $\circ$ the natural scalar product on $\text{DevPla}$. We assume that the material is not dilatant (this is a simplification and should be generalized to describe the dilatant behavior observed in most materials exhibiting a pressure dependent yield strength) so we add the constrain $\lambda_p=0$. To impose this constrain we add the Lagrange multiplier $p\colon\Omega\to\mathbb{R}$ with the meaning of a plastic pressure. The constrain can be written in weak form as
 \[
@@ -5187,7 +5238,7 @@ In this chapter we collect some tools of linear and nonlinear analysis used in t
 \subsection{A general form of the Gronwall inequality}
 
 \begin{prop}(Gronwall inequality)
-\label{eqn:gronwall}
+\label{prop:gronwall}
 Let $z\in L^\infty((0,T))$. Let $C\in\mathbb{R}$ and $\alpha$, $\beta$ in $L^1((0,T),[0,\infty))$ such that
 \begin{equation*}
 z(t)\le C+\int_0^t\left(\alpha(s)y(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
@@ -5222,13 +5273,14 @@ This is exactly the thesis.
 \end{proof}
 The same inequality has also a discrete version that can be proved similarly.
 \begin{prop}[discrete Gronwall inequality]
-Let $z_n\in\mathbb{R}$, $a_n\ge0$, $b_n\ge 0$ and $C\in\mathbb{R}$ and $\tau>0$ such that
+\label{prop:discrete-gronwall}
+Let $z_k\in\mathbb{R}$, $a_k\ge0$, $b_k\ge 0$ for $k\in\mathbb{N}$ and $C\in\mathbb{R}$, $\tau>0$ such that
 \[
-z_k\le C+\tau\sum_{j=1}^{k-1}(a_jz_j+b_j)\quad\text{for $k\ge0$}.
+z_k\le C+\tau\sum_{j=1}^k(a_jz_j+b_j)\quad\text{for $k\in\mathbb{N}$}.
 \]
 Then
 \[
-z_k\le\left(C+\tau\sum_{j=1}^{k-1}b_j\right)e^{\tau\sum_{j=1}^{k-1}a_j}\quad\text{for $k\ge0$}.
+z_k\le\left(C+\tau\sum_{j=1}^kb_j\right)e^{\tau\sum_{j=1}^ka_j}\quad\text{for $k\in\mathbb{N}$}.
 \]
 \end{prop}
 
