@@ -3550,6 +3550,7 @@ Under the assumptions previously stated, there exists a solution to Problem~\ref
 \end{thm}
 The proof rely on the Rothe method, so we first consider a time-discretized version of Problem~\ref{prb:existence-abstract}. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
 \begin{align}
+\label{eqn:first-equation-discrete}
 D_u\Psi_0(u_N^k,\lambda_N^k)+\mathcal{A}u_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{u_N^k-u_N^{k-1}}{\tau_N}+\mathcal{L}'(u_N^k)^*p_N^k&\ni f_N^k \\
 \label{eqn:second-equation-discrete}
 D_\lambda\Psi_0(u_N^k,\lambda_N^k)-p_N^k&=0 \\
@@ -3623,7 +3624,86 @@ The map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and $\mathcal{T}(\La
 \begin{proof}
 The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\Lambda^*$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to\mathcal{U}(u)$ in $H$. Then bu continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
 \end{proof}
-Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
+Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution. To this aim we first obtain some a priori estimates. The first of them ensure that $u_N^k$ remain bounded in $U$.
+\begin{lemma}
+\label{lemma:a-priori-0}
+There exists a constant $C_0>0$ such that $\norm{u_N}_{L^\infty((0,T),U)}\le C_0$.
+\end{lemma}
+\begin{proof}
+We notice that~\eqref{eqn:first-equation-discrete} can be written as
+\begin{equation}
+\label{eqn:inclusion-explicit}
+\tau_N\Phi_0(p_N^k,v)\ge\tau_N\Phi_0(p_N^k,\dot u_N^k)+\dual{f_N^k-D_u\Psi_0(u_N^k,\lambda_N^k)-\mathcal{A}u_N^k-\mathcal{L}'(u_N^k)^*p_N^k-\mathcal{D}\dot u_N^k,v-\dot u_N^k}
+\end{equation}
+for all $v\in U$. Setting $v=0$, using the positivity of $\Phi_0(p_N^k,\dot u_N^k)$ and $\dual{\mathcal{D}\dot u_N^k,\dot u_N^k}$, we get
+\[
+\dual{-f_N^k+D_u\Psi_0(u_N^k,\lambda_N^k)+\mathcal{A}u_N^k+\mathcal{L}'(u_N^k)^*p_N^k,\dot u_N^k}\le0.
+\]
+Then, using that $\dual{\mathcal{A}u_N^k,u_N^k-u_N^{k-1}}\ge\frac{1}{2}\dual{\mathcal{A}u_N^k,u_N^k}-\frac{1}{2}\dual{\mathcal{A}u_N^{k-1},u_N^{k-1}}$, $p_N^k=D_\lambda\Psi_0(u_N^k,\lambda_N^k)$ and $\lambda_N^k=\mathcal{L}(u_N^k)$, it follows that
+\[
+\frac{1}{2}\dual{\mathcal{A}u_N^k,u_N^k}-\frac{1}{2}\dual{\mathcal{A}u_N^{k-1},u_N^{k-1}}+\left\langle D\Psi_0(u_N^k,L(u_N^k)),\left((u_N^k-u_N^{k-1}),\mathcal{L}'(u_N^k)(u_N^k-u_N^{k-1})\right)\right\rangle\le\dual{f_N^k,u_N^k-u_N^{k-1}}.
+\]
+Summing for $k$ from 0 to any $j\in\{1,\dots,N\}$, using the coercivity of $\mathcal{A}$, the growth condition of $\Psi_0$ and~\eqref{eqn:abstract-poincare}, the result follows.
+\end{proof}
+The second a priori estimate is a bound on $\dot u_N^k$.
+\begin{lemma}
+\end{lemma}
+\begin{proof}
+Consider~\eqref{eqn:inclusion-explicit} with $v=\dot u_N^{k-1}$
+\begin{equation}
+\label{eqn:inclusion-k}
+\tau_N\Phi_0(p_N^k,\dot u_N^{k-1})\ge\tau_N\Phi_0(p_N^k,\dot u_N^k)+\dual{f_N^k-D_u\Psi_0(u_N^k,\lambda_N^k)-\mathcal{A}u_N^k-\mathcal{L}'(u_N^k)^*p_N^k-\mathcal{D}\dot u_N^k,\dot u_N^{k-1}-\dot u_N^k}.
+\end{equation}
+Consider also~\eqref{eqn:inclusion-explicit} with $k-1$ in place of $k$ and $v=\dot u_N^{k-1}$
+\begin{equation}
+\label{eqn:inclusion-k-1}
+\begin{multlined}
+\tau_N\Phi_0(p_N^{k-1},\dot u_N^k)\ge\tau_N\Phi_0(p_N^{k-1},\dot u_N^{k-1})+\\
++\dual{f_N^{k-1}-D_u\Psi_0(u_N^{k-1},\lambda_N^{k-1})-\mathcal{A}u_N^{k-1}-\mathcal{L}'(u_N^{k-1})^*p_N^{k-1}-\mathcal{D}\dot u_N^{k-1},\dot u_N^k-\dot u_N^{k-1}}.
+\end{multlined}
+\end{equation}
+Summing together~\eqref{eqn:inclusion-k} and~\eqref{eqn:inclusion-k-1} and rearranging the terms, we get
+\[
+\begin{multlined}
+\tau_N\left[\Phi_0(p_N^k,\dot u_N^k)-\Phi_0(p_N^k,\dot u_N^{k-1})+\Phi_0(p_N^{k-1},\dot u_N^k)-\Phi_0(p_N^{k-1},\dot u_N^{k-1})\right]+\\
++\dual{f_N^k-f_N^{k-1},\dot u_N^k-\dot u_N^{k-1}}+\dual{D_u\Psi_0(u_N^k,\lambda_N^k)-D_u\Psi_0(u_N^{k-1},\lambda_N^{k-1}),\dot u_N^k-\dot u_N^{k-1}}-\\
+-\dual{\mathcal{L}'(u_N^k)^*p_N^k-\mathcal{L}'(u_N^{k-1})^*p_N^{k-1},\dot u_N^k-\dot u_N^{k-1}}\ge\\
+\ge\tau_N\dual{\mathcal{A}\dot u_N^k,\dot u_N^k-\dot u_N^{k-1}}+\dual{\mathcal{D}(\dot u_N^k-\dot u_N^{k-1}),\dot u_N^k-\dot u_N^{k-1}}
+\end{multlined}
+\]
+Using ($\Phi$2) and performing some trivial estimates, it follows that
+\[
+\begin{multlined}
+\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+C_D\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\tau_NC_\Phi\norm{p_N^k-p_N^{k-1}}_{\Lambda^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
++\norm{f_N^k-f_N^{k-1}}_{H^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\norm{D_u\Psi_0(u_N^k,\lambda_N^k)-D_u\Psi_0(u_N^{k-1},\lambda_N^{k-1})}_{H^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
++\norm{p_N^k}_{\Lambda^*}\norm{\mathcal{L}'(u_N^k)-\mathcal{L}'(u_N^{k-1})}_{\mathscr{L}(H,\Lambda)}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\norm{\mathcal{L}'(u_N^{k-1})}_{\mathscr{L}(H,\Lambda)}\norm{p_N^k-p_N^{k-1}}_{\Lambda^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H.
+\end{multlined}
+\]
+By Lemma~\ref{lemma:a-priori-0} we know that $u_N^k$ are bounded in $U$, and in particular in $H$. Since also $\norm{\lambda_N^k}_\Lambda=\norm{\mathcal{L}(u_N^k)}_\Lambda\le C_L$. Then, using that $D\Psi_0$ is locally Lipschitz and $\mathcal{L}$ is Lipschitz, it follows that there exists a constant $C_\Psi^4>0$ such that
+\[
+\norm{D_u\Psi_0(u_N^k,\lambda_N^k)-D_u\Psi_0(u_N^{k-1},\lambda_N^{k-1})}_{H^*}\le C_\Psi^4\norm{(u_N^k,\lambda_N^k)-(u_N^{k-1},\lambda_N^{k-1})}_{H\times\Lambda}\le C_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H.
+\]
+Moreover
+\[
+\begin{split}
+\norm{p_N^k}_{\Lambda^*}&=\norm{D_\lambda\Psi_0(u_N^k,\mathcal{L}(u_N^k))}_{\Lambda^*}\le\norm{D_\lambda\Psi_0(0,0)}_{\Lambda^*}+C_\Psi^4(1+C_L)\norm{u_N^k}_H=\\
+&=\norm{D_\lambda\Psi_0(0,0)}_{\Lambda^*}+C_\Psi^4(1+C_L)C_0=:C_p<\infty
+\end{split}
+\]
+and similarly
+\[
+\norm{p_N^k-p_N^{k-1}}_{\Lambda^*}\le C_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H.
+\]
+Then
+\[
+\begin{multlined}
+\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+C_D\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\tau_N^2C_\Phi C_\Psi^2(1+C_L)\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
++\norm{f_N^k-f_N^{k-1}}_{H^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+C_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
++C_pC_L\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H+C_LC_\Psi^4(1+C_L)\tau_N\norm{\dot u_N^k}_H\norm{\dot u_N^k-\dot u_N^{k-1}}_H.
+\end{multlined}
+\]
+Applying Young inequality
+\end{proof}
 
 \chapter{Small deformation model}
 
