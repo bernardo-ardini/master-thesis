@@ -3765,7 +3765,21 @@ But since $f\in H^1((0,T),H^*)$, by repeatedly applying H\"older inequality, usi
 \]
 This shows that $S_N^N=\|\dot{\hat{u}}_N\|_{L^2((0,T),H)}$ is bounded uniformly in $N$. Returning back to~\eqref{eqn:a-priori-estimate} we get that also $\norm{\dot u_N}_{L^\infty((0,T),U)}$ and $\norm{\hat u_N}_{L^\infty((0,T),U)}$ are bounded uniformly in $N$. This concludes the proof.
 \end{proof}
-Until now we have proved that $\norm{u_N}_{W^{1,\infty}((0,T),U)}$, $\norm{\hat u_N}_{L^\infty((0,T),U)}$ and $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ are bounded uniformly in $N$. Thus there exists $u\in W^{1,\infty}((0,T),U)$ such that, up to extracting a subsequence, $u_N\overset{*}{\rightharpoonup}u$ in $W^{1,\infty}((0,T),U)$. By Aubin--Lions--Simons lemma (Theorem~\ref{thm:aubin-lions}) it holds also that, up to extracting a further subsequence, $u_N\to u$ and $\hat{u}_N\to v$ in $C^0([0,T],H)$, where $v\in C^0([0,T],H)$. It holds also the following convergence.
+Until now we have proved that $\norm{u_N}_{W^{1,\infty}((0,T),U)}$, $\norm{\hat u_N}_{L^\infty((0,T),U)}$ and $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ are bounded uniformly in $N$. Thus there exists $u\in W^{1,\infty}((0,T),U)$ such that, up to extracting a subsequence, $u_N\overset{*}{\rightharpoonup}u$ in $W^{1,\infty}((0,T),U)$. By Aubin--Lions--Simons lemma (Theorem~\ref{thm:aubin-lions}) it holds also that, up to extracting a further subsequence, $u_N\to u$ and $\hat{u}_N\to v$ in $C^0([0,T],H)$, where $v\in C^0([0,T],H)$. Also the convergences stated in the following lemmas hold.
+\begin{lemma}
+It holds that $\norm{u_N-\bar u_N}_{L^2((0,T),U)}\to0$ and in particular $\bar u_N\to u$ in $L^2((0,T),H)$.
+\end{lemma}
+\begin{proof}
+We have that
+\[
+\begin{split}
+\|\overline{u}_N-u_N\|_{L^2((0,T),U)}^2&=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|u_N^k-u_N^{k-1}-\dot{u}_N^k(t-t_N^{k-1})\|_U^2dt=\\
+&=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|\dot{u}_N^k\|_U^2\left(\tau_N-t+t_N^{k-1}\right)^2dt=\\
+&=\left[\int_0^{\tau_N}(\tau_N-t)^2dt\right]\frac{1}{\tau_N}\|\dot{u}_N\|_{L^2((0,T),U)}^2=\frac{\tau_N^2}{3}\|\dot{u}_N\|_{L^2((0,T),U)}^2.
+\end{split}
+\]
+Since $\norm{\dot u_N}_{L^2((0,T),U)}$ is bounded uniformly in $N$, it follows that $\norm{u_N-\bar u_N}_{L^2((0,T),U)}\to0$. Moreover the fact that $u_N\to u$ in $C^0([0,T],H)$ implies that $\bar u_N\to u$ in $L^2((0,T),H)$.
+\end{proof}
 \begin{lemma}
 It holds that $\dot u_N\to v$ in $L^2((0,T),H)$ and in particular $v=\dot u$.
 \end{lemma}
@@ -3780,9 +3794,19 @@ We now that
 \]
 Since $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ is bounded uniformly in $N$, it follows that $\|\dot{u}_N-\hat{u}_N\|_{L^2((0,T),H)}\to0$.
 \end{proof}
-Next we build the time-continuous $\lambda$ and $p$. We define $\lambda=\mathcal{L}(u)\in C^0([0,T],\Lambda)$ and $p=D_\lambda\Psi_0(u,\lambda)\in C^0([0,T],\Lambda^*)$. Using that $\mathcal{L}$ and $D_\lambda\Psi_0$ are (locally) Lipschitz and that $u_N\to u$ in $C^0([0,T],H)$, it follows immediately that $\lambda_N\to\lambda$ in $C^0([0,T],\Lambda)$ and $p_N\to p$ in $C^0([0,T],\Lambda^*)$. 
+Next we build the time-continuous $\lambda$ and $p$. We define $\lambda=\mathcal{L}(u)\in C^0([0,T],\Lambda)$ and $p=D_\lambda\Psi_0(u,\lambda)\in C^0([0,T],\Lambda^*)$. The convergence of $\lambda_N,\bar\lambda_N$ and $p_N,\bar p_N$ to $\lambda$ and $p$ respectively are ensured by the following lemma.
+\begin{lemma}
+It holds that
+\begin{align}
+\lambda_N\to\lambda\;\text{in $C^0([0,T],\Lambda)$},\qquad & \bar\lambda_N\to\lambda\;\text{in $L^2([0,T],\Lambda)$} \\
+p_N\to p\;\text{in $C^0([0,T],\Lambda^*)$},\qquad & \bar p_N\to p\;\text{in $L^2([0,T],\Lambda^*)$}.
+\end{align}
+\end{lemma}
+\begin{proof}
+Using that $\mathcal{L}$ and $D_\lambda\Psi_0$ are (locally) Lipschitz and that $u_N\to u$ in $C^0([0,T],H)$, it follows immediately that $\lambda_N\to\lambda$ in $C^0([0,T],\Lambda)$ and $p_N\to p$ in $C^0([0,T],\Lambda^*)$. 
+\end{proof}
 
-Now we need to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:existence-abstract}. Notice that~\eqref{eqn:problem-abstract-second},~\eqref{eqn:problem-abstract-third} are satisfied by construction and $z(0)=z_0$. Then we only have to show that~\eqref{eqn:problem-abstract-first} is satisfied for a.e.\ $t\in(0,T)$. To this aim, notice that~\eqref{eqn:first-equation-discrete} can be written as
+Now we have to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:existence-abstract}. Notice that~\eqref{eqn:problem-abstract-second},~\eqref{eqn:problem-abstract-third} are satisfied by construction and $z(0)=z_0$. Then we only have to show that~\eqref{eqn:problem-abstract-first} is satisfied for a.e.\ $t\in(0,T)$. To this aim, notice that~\eqref{eqn:first-equation-discrete} can be written as
 \[
 \begin{multlined}
 \int_0^L\big[\Phi_0(\bar{p}_N(t),v(t))-\Psi_0(\bar{p}_N(t),\dot u_N(t))-\\

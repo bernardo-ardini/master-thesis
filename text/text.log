@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  22 MAY 2026 23:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  23 MAY 2026 12:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1957,7 +1957,7 @@ Chapter 9
 [85]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 5247.
+(hyperref)                removing `\noindent' on input line 5271.
 
 
 
@@ -2007,12 +2007,12 @@ Appendix B
 [101]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-6294.
+6318.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 6294.
+(Font)              scaled to size 10.0pt on input line 6318.
 
 
 [102
@@ -2021,7 +2021,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 6295--6295
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 6319--6319
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
@@ -2040,8 +2040,8 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48107 strings out of 473197
- 1056208 string characters out of 5718605
+ 48109 strings out of 473197
+ 1056226 string characters out of 5718605
  1937288 words of memory out of 5000000
  69828 multiletter control sequences out of 15000+600000
  707525 words of font info for 272 fonts, out of 8000000 for 9000
@@ -2068,10 +2068,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (107 pages, 978339 bytes).
+Output written on text.pdf (107 pages, 980112 bytes).
 PDF statistics:
- 1723 PDF objects out of 1728 (max. 8388607)
- 1560 compressed objects within 16 object streams
- 580 named destinations out of 1000 (max. 500000)
+ 1725 PDF objects out of 1728 (max. 8388607)
+ 1562 compressed objects within 16 object streams
+ 582 named destinations out of 1000 (max. 500000)
  350 words of extra memory for PDF output out of 10000 (max. 10000000)
 
