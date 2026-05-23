@@ -81,50 +81,50 @@
 \contentsline {subsection}{\tocsubsection {}{7.2.1}{An abstract existence theorem for constrained mechanical systems treated with the method of Lagrange multipliers}}{59}{subsection.7.2.1}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Notation, assumptions and formulation of the problem}}{59}{section*.22}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Existence theorem}}{60}{section*.23}%
-\contentsline {chapter}{\tocchapter {Chapter}{8}{Small deformation model}}{65}{chapter.8}%
-\contentsline {section}{\tocsection {}{8.1}{Formulation}}{65}{section.8.1}%
-\contentsline {subsection}{\tocsubsection {}{8.1.1}{kinematics}}{65}{subsection.8.1.1}%
-\contentsline {subsection}{\tocsubsection {}{8.1.2}{Statics}}{65}{subsection.8.1.2}%
-\contentsline {subsection}{\tocsubsection {}{8.1.3}{Constitutive relations}}{67}{subsection.8.1.3}%
-\contentsline {subsection}{\tocsubsection {}{8.1.4}{Refinements of the model}}{67}{subsection.8.1.4}%
-\contentsline {section}{\tocsection {}{8.2}{Existence result}}{67}{section.8.2}%
-\contentsline {subsection}{\tocsubsection {}{8.2.1}{Hypotheses}}{67}{subsection.8.2.1}%
-\contentsline {subsection}{\tocsubsection {}{8.2.2}{Function spaces}}{68}{subsection.8.2.2}%
-\contentsline {subsection}{\tocsubsection {}{8.2.3}{Formulation of the problem}}{68}{subsection.8.2.3}%
-\contentsline {subsection}{\tocsubsection {}{8.2.4}{Global existence}}{68}{subsection.8.2.4}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{68}{section*.25}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{72}{section*.26}%
-\contentsline {subsection}{\tocsubsection {}{8.2.5}{Example of constitutive relations}}{77}{subsection.8.2.5}%
-\contentsline {subsection}{\tocsubsection {}{8.2.6}{Further regularity hypotheses}}{77}{subsection.8.2.6}%
-\contentsline {subsection}{\tocsubsection {}{8.2.7}{Local existence and uniqueness and global uniqueness}}{77}{subsection.8.2.7}%
-\contentsline {subsection}{\tocsubsection {}{8.2.8}{Bifurcation analysis}}{79}{subsection.8.2.8}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{79}{section*.27}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{80}{section*.28}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{81}{section*.29}%
-\contentsline {section}{\tocsection {}{8.3}{Numerical approximation}}{82}{section.8.3}%
-\contentsline {subsection}{\tocsubsection {}{8.3.1}{Formulation}}{82}{subsection.8.3.1}%
-\contentsline {subsection}{\tocsubsection {}{8.3.2}{Validation}}{82}{subsection.8.3.2}%
-\contentsline {chapter}{\tocchapter {Chapter}{9}{Large deformation model}}{84}{chapter.9}%
-\contentsline {section}{\tocsection {}{9.1}{Formulation}}{84}{section.9.1}%
-\contentsline {subsection}{\tocsubsection {}{9.1.1}{Kinematics}}{84}{subsection.9.1.1}%
-\contentsline {subsection}{\tocsubsection {}{9.1.2}{Statics}}{84}{subsection.9.1.2}%
-\contentsline {subsection}{\tocsubsection {}{9.1.3}{Statics}}{84}{subsection.9.1.3}%
-\contentsline {part}{\noindent Collection of useful results}{86}{part*.30}%
-\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{87}{appendix.A}%
-\contentsline {section}{\tocsection {}{A.1}{Tensors}}{87}{section.A.1}%
-\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{88}{appendix.B}%
-\contentsline {section}{\tocsection {}{B.1}{Some classical results}}{88}{section.B.1}%
-\contentsline {subsection}{\tocsubsection {}{B.1.1}{A general form of the Gronwall inequality}}{88}{subsection.B.1.1}%
-\contentsline {section}{\tocsection {}{B.2}{Linear functional analysis}}{89}{section.B.2}%
-\contentsline {subsection}{\tocsubsection {}{B.2.1}{Other}}{89}{subsection.B.2.1}%
-\contentsline {subsection}{\tocsubsection {}{B.2.2}{Bochner spaces}}{89}{subsection.B.2.2}%
-\contentsline {subsection}{\tocsubsection {}{B.2.3}{Generalized mixed elliptic problems}}{90}{subsection.B.2.3}%
-\contentsline {section}{\tocsection {}{B.3}{Nonlinear functional analysis}}{93}{section.B.3}%
-\contentsline {subsection}{\tocsubsection {}{B.3.1}{Other}}{93}{subsection.B.3.1}%
-\contentsline {subsection}{\tocsubsection {}{B.3.2}{Implicit function theorem}}{93}{subsection.B.3.2}%
-\contentsline {subsection}{\tocsubsection {}{B.3.3}{Fixed point theorems}}{94}{subsection.B.3.3}%
-\contentsline {subsection}{\tocsubsection {}{B.3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{94}{subsection.B.3.4}%
-\contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{94}{subsection.B.3.5}%
-\contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{100}{subsection.B.3.6}%
-\contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{100}{section.B.4}%
-\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{102}{appendix*.31}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Small deformation model}}{66}{chapter.8}%
+\contentsline {section}{\tocsection {}{8.1}{Formulation}}{66}{section.8.1}%
+\contentsline {subsection}{\tocsubsection {}{8.1.1}{kinematics}}{66}{subsection.8.1.1}%
+\contentsline {subsection}{\tocsubsection {}{8.1.2}{Statics}}{66}{subsection.8.1.2}%
+\contentsline {subsection}{\tocsubsection {}{8.1.3}{Constitutive relations}}{68}{subsection.8.1.3}%
+\contentsline {subsection}{\tocsubsection {}{8.1.4}{Refinements of the model}}{68}{subsection.8.1.4}%
+\contentsline {section}{\tocsection {}{8.2}{Existence result}}{68}{section.8.2}%
+\contentsline {subsection}{\tocsubsection {}{8.2.1}{Hypotheses}}{68}{subsection.8.2.1}%
+\contentsline {subsection}{\tocsubsection {}{8.2.2}{Function spaces}}{69}{subsection.8.2.2}%
+\contentsline {subsection}{\tocsubsection {}{8.2.3}{Formulation of the problem}}{69}{subsection.8.2.3}%
+\contentsline {subsection}{\tocsubsection {}{8.2.4}{Global existence}}{69}{subsection.8.2.4}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{69}{section*.25}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{73}{section*.26}%
+\contentsline {subsection}{\tocsubsection {}{8.2.5}{Example of constitutive relations}}{78}{subsection.8.2.5}%
+\contentsline {subsection}{\tocsubsection {}{8.2.6}{Further regularity hypotheses}}{78}{subsection.8.2.6}%
+\contentsline {subsection}{\tocsubsection {}{8.2.7}{Local existence and uniqueness and global uniqueness}}{78}{subsection.8.2.7}%
+\contentsline {subsection}{\tocsubsection {}{8.2.8}{Bifurcation analysis}}{80}{subsection.8.2.8}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{80}{section*.27}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{81}{section*.28}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{82}{section*.29}%
+\contentsline {section}{\tocsection {}{8.3}{Numerical approximation}}{83}{section.8.3}%
+\contentsline {subsection}{\tocsubsection {}{8.3.1}{Formulation}}{83}{subsection.8.3.1}%
+\contentsline {subsection}{\tocsubsection {}{8.3.2}{Validation}}{83}{subsection.8.3.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{9}{Large deformation model}}{85}{chapter.9}%
+\contentsline {section}{\tocsection {}{9.1}{Formulation}}{85}{section.9.1}%
+\contentsline {subsection}{\tocsubsection {}{9.1.1}{Kinematics}}{85}{subsection.9.1.1}%
+\contentsline {subsection}{\tocsubsection {}{9.1.2}{Statics}}{85}{subsection.9.1.2}%
+\contentsline {subsection}{\tocsubsection {}{9.1.3}{Statics}}{85}{subsection.9.1.3}%
+\contentsline {part}{\noindent Collection of useful results}{87}{part*.30}%
+\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{88}{appendix.A}%
+\contentsline {section}{\tocsection {}{A.1}{Tensors}}{88}{section.A.1}%
+\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{89}{appendix.B}%
+\contentsline {section}{\tocsection {}{B.1}{Some classical results}}{89}{section.B.1}%
+\contentsline {subsection}{\tocsubsection {}{B.1.1}{A general form of the Gronwall inequality}}{89}{subsection.B.1.1}%
+\contentsline {section}{\tocsection {}{B.2}{Linear functional analysis}}{90}{section.B.2}%
+\contentsline {subsection}{\tocsubsection {}{B.2.1}{Other}}{90}{subsection.B.2.1}%
+\contentsline {subsection}{\tocsubsection {}{B.2.2}{Bochner spaces}}{90}{subsection.B.2.2}%
+\contentsline {subsection}{\tocsubsection {}{B.2.3}{Generalized mixed elliptic problems}}{91}{subsection.B.2.3}%
+\contentsline {section}{\tocsection {}{B.3}{Nonlinear functional analysis}}{94}{section.B.3}%
+\contentsline {subsection}{\tocsubsection {}{B.3.1}{Other}}{94}{subsection.B.3.1}%
+\contentsline {subsection}{\tocsubsection {}{B.3.2}{Implicit function theorem}}{94}{subsection.B.3.2}%
+\contentsline {subsection}{\tocsubsection {}{B.3.3}{Fixed point theorems}}{95}{subsection.B.3.3}%
+\contentsline {subsection}{\tocsubsection {}{B.3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{95}{subsection.B.3.4}%
+\contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{95}{subsection.B.3.5}%
+\contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{101}{subsection.B.3.6}%
+\contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{101}{section.B.4}%
+\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{103}{appendix*.31}%

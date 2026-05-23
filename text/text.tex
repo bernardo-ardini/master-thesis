@@ -3510,7 +3510,7 @@ Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lamb
 \label{eqn:abstract-poincare}
 \norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
 \end{equation}
-Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(z)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}u,u}$ with $\Psi_0$ and $\mathcal{A}$ satisfying the following properties:
+Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(z)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Up to redefining $C_L$ we can assume that $\text{Lip}(\mathcal{L})\le C_L$ and $\text{Lip}(\mathcal{L}')\le C_L$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}u,u}$ with $\Psi_0$ and $\mathcal{A}$ satisfying the following properties:
 \begin{itemize}
 \item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H\times\Lambda)$ and there exist $C_\Psi^2>0$ and $C^1_\Psi,C^0_\Psi\in\mathbb{R}$ with $\dual{D\Psi_0(z)w,w}\ge C_\Psi^2\norm{w}_{H\times\Lambda}^2+C_\Psi^1\norm{w}_{H\times\Lambda}+C_\Psi^0$ for all $w\in Z$;
 \item[($\Psi$2)] there exists a constant $C_\Psi^3>0$ such that $\norm{D_\lambda\Psi_0(z)}_{\Lambda^*}\le C_\Psi^3\norm{z}_{H\times\Lambda}$;
@@ -3519,11 +3519,16 @@ Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the 
 Let $\Phi\colon\Lambda^*\times U\to[0,\infty]$ of the form $\Phi(p,v)=\Phi_0(p,v)+\frac{1}{2}\dual{\mathcal{D}v,v}$ with $\Phi_0$ and $\mathcal{D}$ such that:
 \begin{itemize}
 \item[($\Phi$1)] for all $p\in\Lambda^*$ the map $\Phi_0(p,\cdot)\colon H\to[0,\infty]$ is convex, lower semicontinuous, proper and satisfies $\Phi_0(p,0)=0$;
-\item[($\Phi$2)] there exists $C_\Phi>0$ such that
+\item[($\Phi$2)] $\dom\Phi_0=\Lambda^*\times D_\Phi$ where $D_\Phi\subset H$ is closed and convex;
+\item[($\Phi$3)] there exists $C_\Phi>0$ such that
+\[
+|\Phi(p_1,v)-\Phi(p_2,v)|\le C_\Phi\norm{p_1-p_2}_{\Lambda^*}\norm{v}_H,\quad|\Phi(p,v_1)-\Phi(p,v_2)|\le C_\Phi\norm{p}_{\Lambda^*}\norm{v_1-v_2}_H
+\]
+and
 \[
 |\Phi(p_1,v_1)-\Phi(p_2,v_1)+\Phi(p_2,v_2)-\Phi(p_1,v_2)|\le C_\Phi\norm{p_1-p_2}_{\Lambda^*}\norm{v_1-v_2}_H
 \]
-for all $(p_1,v_1),(p_2,v_2)\in\dom\Phi_0$;
+for all $p,p_1,p_2\in\Lambda^*$ and $v,v_1,v_2\in D_\Phi$;
 \item[(D)] $\mathcal{D}\in\mathscr{L}(H,H^*)$ and there exists $C_D>0$ such that $\dual{\mathcal{D}w,w}\ge C_D\norm{w}_H^2$.
 \end{itemize}
 Let also $f\in H^1([0,T],H^*)$ and $z_0=(u_0,\lambda_0)\in Z$ such that
@@ -3627,13 +3632,13 @@ The map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and $\mathcal{T}(\La
 \begin{proof}
 The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\Lambda^*$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to\mathcal{U}(u)$ in $H$. Then bu continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
 \end{proof}
-Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
+Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ and $p_N^k\in\Lambda^*$ for $k\in\{0,\dots,N\}$, solutions to the discrete-in-time problem. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{1,\dots,N\}$. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 \begin{rmk}[On notation]
 We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T),U)$ respectively the piecewise constant and affine interpolation of $\{u_N^k\}_{k=0}^N$. The derivative $\dot u_N$ is piecewise constant in the sense that a representative is given by
 \[
 \dot u_N(t)=\dot u_N^k:=\frac{u_N^k-u_N^{k-1}}{\tau_N}\quad\text{for all $t\in(t_N^{k-1},t_N^k]$ and $k\in\{1,\dots,N\}$}.
 \]
-We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for $k\in\{0,\dots,N\}$ and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{1,\dots,N\}$. Let also $\bar f_N^k$ be the affine interpolation of $\{f_N^k\}_{k=0}^N$.
+We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for $k\in\{0,\dots,N\}$ and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{1,\dots,N\}$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
 \end{rmk}
 Notice that. To this aim we first obtain some a priori estimates. The first of them ensure that $u_N^k$ remain bounded in $U$.
 \begin{lemma}
@@ -3684,7 +3689,7 @@ Summing together~\eqref{eqn:inclusion-k} and~\eqref{eqn:inclusion-k-1} and rearr
 \ge\tau_N\dual{\mathcal{A}\dot u_N^k,\dot u_N^k-\dot u_N^{k-1}}+\dual{\mathcal{D}(\dot u_N^k-\dot u_N^{k-1}),\dot u_N^k-\dot u_N^{k-1}}
 \end{multlined}
 \]
-Using ($\Phi$2) and performing some trivial estimates, it follows that
+Using ($\Phi$3) and performing some trivial estimates, it follows that
 \[
 \begin{multlined}
 \frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^k,\dot u_N^k}-\frac{\tau_N}{2}\dual{\mathcal{A}\dot u_N^{k-1},\dot u_N^{k-1}}+C_D\norm{\dot u_N^k-\dot u_N^{k-1}}_H^2\le\tau_NC_\Phi\norm{p_N^k-p_N^{k-1}}_{\Lambda^*}\norm{\dot u_N^k-\dot u_N^{k-1}}_H+\\
@@ -3773,7 +3778,7 @@ It holds that $\norm{u_N-\bar u_N}_{L^2((0,T),U)}\to0$ and in particular $\bar u
 We have that
 \[
 \begin{split}
-\|\overline{u}_N-u_N\|_{L^2((0,T),U)}^2&=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|u_N^k-u_N^{k-1}-\dot{u}_N^k(t-t_N^{k-1})\|_U^2dt=\\
+\|\bar{u}_N-u_N\|_{L^2((0,T),U)}^2&=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|u_N^k-u_N^{k-1}-\dot{u}_N^k(t-t_N^{k-1})\|_U^2dt=\\
 &=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|\dot{u}_N^k\|_U^2\left(\tau_N-t+t_N^{k-1}\right)^2dt=\\
 &=\left[\int_0^{\tau_N}(\tau_N-t)^2dt\right]\frac{1}{\tau_N}\|\dot{u}_N\|_{L^2((0,T),U)}^2=\frac{\tau_N^2}{3}\|\dot{u}_N\|_{L^2((0,T),U)}^2.
 \end{split}
@@ -3794,6 +3799,9 @@ We now that
 \]
 Since $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ is bounded uniformly in $N$, it follows that $\|\dot{u}_N-\hat{u}_N\|_{L^2((0,T),H)}\to0$.
 \end{proof}
+\begin{rmk}
+Since $D_\Phi$ is convex $\hat u_N(t)\in D_\Phi$ for all $t\in[0,T]$. Since $\hat u_N\to\dot u$ in $C^0([0,T],H)$ and $D_\Phi$ is closed in $H$, then $\dot u(t)\in D_\Phi$ for all $t\in[0,T]$.
+\end{rmk}
 Next we build the time-continuous $\lambda$ and $p$. We define $\lambda=\mathcal{L}(u)\in C^0([0,T],\Lambda)$ and $p=D_\lambda\Psi_0(u,\lambda)\in C^0([0,T],\Lambda^*)$. The convergence of $\lambda_N,\bar\lambda_N$ and $p_N,\bar p_N$ to $\lambda$ and $p$ respectively are ensured by the following lemma.
 \begin{lemma}
 It holds that
@@ -3803,7 +3811,22 @@ p_N\to p\;\text{in $C^0([0,T],\Lambda^*)$},\qquad & \bar p_N\to p\;\text{in $L^2
 \end{align}
 \end{lemma}
 \begin{proof}
-Using that $\mathcal{L}$ and $D_\lambda\Psi_0$ are (locally) Lipschitz and that $u_N\to u$ in $C^0([0,T],H)$, it follows immediately that $\lambda_N\to\lambda$ in $C^0([0,T],\Lambda)$ and $p_N\to p$ in $C^0([0,T],\Lambda^*)$. 
+Using that $\mathcal{L}$ is Lipschitz, we have
+\[
+\norm{\lambda_N(t)-\lambda(t)}_\Lambda=\norm{\mathcal{L}(u_N(t))-\mathcal{L}(u(t))}_\Lambda\le C_L\norm{u_N(t)-u(t)}_H
+\]
+for all $t\in[0,T]$, so that
+\[
+\norm{\lambda_N-\lambda}_{C^0([0,T],\Lambda)}=\norm{\mathcal{L}(u_N)-\mathcal{L}(u)}_{C^0([0,T],\Lambda)}\le C_L\norm{u_N-u}_{C^0([0,T],H)}\to0.
+\]
+Moreover
+\[
+\begin{split}
+\|\bar{\lambda}_N-\lambda\|_{L^2((0,T),\Lambda)}^2=\int_0^T\|\mathcal{L}(\bar{u}_N(t))-\mathcal{L}(u(t))\|_\Lambda^2dt\le\\
+\le\int_0^TC_L^2\|\bar{u}_N(t)-u(t)\|_H^2dt=C_L^2\|\bar{u}_N-u\|_{L^2((0,T),H)}^2\to0.
+\end{split}
+\]
+The convergence of $p_N$ and $\bar p_N$ follows similarly form the fact that $\mathcal{L}$ is Lipschitz and $D_\lambda\Psi_0$ is locally Lipschitz.
 \end{proof}
 
 Now we have to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:existence-abstract}. Notice that~\eqref{eqn:problem-abstract-second},~\eqref{eqn:problem-abstract-third} are satisfied by construction and $z(0)=z_0$. Then we only have to show that~\eqref{eqn:problem-abstract-first} is satisfied for a.e.\ $t\in(0,T)$. To this aim, notice that~\eqref{eqn:first-equation-discrete} can be written as
@@ -3813,7 +3836,53 @@ Now we have to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:exis
 -\dual{D_u\Psi_0(\bar u_N(t),\bar\lambda_N(t))+\mathcal{A}\bar u_N(t)+\mathcal{D}\dot u_N(t)+\mathcal{L}'(\bar u_N(t))^*\bar p_N(t)-\bar f_N(t),v(t)-\dot u_N(t)}\big]\ge0
 \end{multlined}
 \]
-for all $v\in L^\infty((0,T),U)$.
+for all $v\in L^\infty((0,T),U)$. We want to pass in the limit $T\to\infty$ of that inequality. To this aim we look separately st the limit of each term. First w notice that
+\[
+\begin{split}
+\left|\int_0^T\Phi_0(\bar{p}_N(t),v(t))dt-\int_0^T\Phi_0(p(t),v(t))dt\right|
+&\le C_\Phi\int_0^T\|\bar{p}_N(t)-p(t)\|_{\Lambda^*}\|v(t)\|_Hdt\le\\
+&\le C_\Phi\|\bar{p}_N-p\|_{L^2((0,T),\Lambda^*)}\|v\|_{L^2((0,T),H)}\to0
+\end{split}
+\]
+and
+\[
+\begin{multlined}
+\left|\int_0^T\Phi_0(\bar{p}_N(t),\dot{u}_N(t))dt-\int_0^T\Phi_0(p(t),\dot{u}(t))dt\right|\le\\
+\le\int_0^T\left|\Phi_0(\bar{p}_N(t),\dot{u}_N(t))-\Phi_0(p(t),\dot{u}_N(t))\right|dt+\int_0^T\left|\Phi_0(p(t),\dot{u}_N(t))-\Phi_0(p(t),\dot{u}(t))\right|dt\le\\
+\le C_\Phi\|\bar{p}_N-p\|_{L^2((0,T),\Lambda^*)}\|\dot{u}_N\|_{L^2((0,T),H)}+C_\Phi\|p\|_{L^2((0,T),\Lambda^*)}\|\dot{u}_N-\dot{u}\|_{L^2((0,T),H)}\to0.
+\end{multlined}
+\]
+Next
+\[
+\begin{multlined}
+\left|\int_0^T\langle D_u\Psi_0(\bar{u}_N(t),\bar{\lambda}_N(t)),v(t)-\dot{u}_N(t)\rangle dt-\int_0^T\langle D_u\Psi_0(u(t),\lambda(t)),v(t)-\dot{u}(t)\rangle dt\right|\le\\
+\le C_\Psi^4\left(\|\bar{u}_N-u\|_{L^2((0,T),H)}+\|\bar{\lambda}_N-\lambda\|_{L^2((0,T),H)}\right)\|\dot{u}_N-\dot{u}\|_{L^2((0,T),H)}\to0
+\end{multlined}
+\]
+and
+\[
+\begin{multlined}
+\left|\int_0^T\langle \mathcal{D}\dot{u}_N(t),v(t)-\dot{u}_N(t)\rangle dt-\int_0^T\langle\mathcal{D}\dot{u}(t),v(t)-\dot{u}(t)\rangle dt\right|\le\\
+\le\int_0^T\left|\langle\mathcal{D}\dot{u}_N(t),\dot{u}_N(t)-\dot{u}(t)\rangle\right|dt+\int_0^T\left|\langle\mathcal{D}\dot{u}_N(t)-\mathcal{D}\dot{u}(t),v-\dot{u}(t)\rangle\right|dt\le\\
+\le\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\left(\|\dot{u}_N\|_{L^2((0,T),H)}+\|v-\dot{u}\|_{L^2((0,T),H)}\right)\|\dot{u}_N-\dot{u}\|_{L^2((0,T),H)}\to0.
+\end{multlined}
+\]
+Then
+\[
+\begin{multlined}
+\left|\int_0^T\langle\mathcal{L}'(\bar{u}_N(t))^*\bar{p}_N(t),v(t)-\dot{u}_N(t)\rangle dt-\int_0^T\langle\mathcal{L}'(u(t))^*p(t),v(t)-\dot{u}(t)\rangle dt\right|\le\\
+\le\int_0^T\left|\langle\mathcal{L}'(\bar{u}_N(t))^*\bar{p}_N(t),v(t)-\dot{u}_N(t)\rangle-\langle\mathcal{L}'(\bar{u}_N(t))^*p(t),v(t)-\dot{u}_N(t)\rangle\right|dt+\\
++\int_0^T\left|\langle\mathcal{L}'(\bar{u}_N(t))^*p(t),v(t)-\dot{u}_N(t)\rangle-\langle\mathcal{L}'(u(t))^*p(t),v(t)-\dot{u}_N(t)\rangle\right|dt+\\
++\int_0^T\left|\langle\mathcal{L}'(u(t))^*p(t),v(t)-\dot{u}_N(t)\rangle-\langle\mathcal{L}'(u(t))^*p(t),v(t)-\dot{u}(t)\rangle\right|dt\le\\
+\le
+\begin{multlined}[t]
+C_L\|\bar{p}_N-p\|_{L^2((0,T),\Lambda^*)}\|v-\dot{u}_N\|_{L^2((0,T),H)}+\\
++C_L\|\bar{u}_N-u\|_{L^2((0,T),H)}\|p\|_{C^0([0,T],\Lambda^*)}\|v-\dot{u}_N\|_{L^2((0,T),H)}+\\
++C_L\|p\|_{L^2((0,T),\Lambda^*)}\|\dot{u}_N-\dot{u}\|_{L^2((0,T),H)}\to0
+\end{multlined}
+\end{multlined}
+\]
+and
 
 \chapter{Small deformation model}
 
