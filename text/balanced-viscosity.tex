@@ -1,0 +1,510 @@
+\section{Balanced-viscosity solutions}
+
+\subsection{Introduction}
+Let
+\begin{equation}
+\label{eqn:bv-space}
+\text{$V$ a separable and reflexive Banach space}.
+\tag{$V$}
+\end{equation}
+Consider an evolution $u\colon[0,T]\to V$ and the doubly nonlinear equation for the evolution
+\begin{equation}
+\label{eqn:doubly-nonlinear}
+\partial_u\mathcal{E}(u(t),t)+\partial\Phi(\dot u(t))\ni0\quad\text{for $t\in(0,T)$}.
+\end{equation}
+Here $\mathcal{E}$ is the energy and $\Phi$ is the dissipation potential. In application usually $\mathcal{E}(u,t)=\Psi(u)-\dual{\mathcal F(t),u}$ where $\Psi$ is the free energy and $\mathcal{F}$ is the external action. For a given $\eta>0$ consider the time-rescaled evolution $u\colon(0,\eta^{-1}T)\to V$ and the time-rescaled equation
+\begin{equation}
+\label{eqn:doubly-nonlinear-eta}
+\partial_u\mathcal{E}(u(t),\eta t)+\partial\Phi(\dot u(t))\ni0\quad\text{for $t\in(0,\eta^{-1}T)$}.
+\end{equation}
+For $\eta\to0$ this describe the situation in which the external actions are mush slower with respect to the characteristic relaxation time of the system. Equation~\eqref{eqn:doubly-nonlinear-eta} can be written as
+\begin{equation}
+\label{eqn:doubly-nonlinear-rescaled}
+\partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for $t\in(0,T)$}
+\end{equation}
+where $u_\eta(t)=u(\eta^{-1}t)$ and $\Phi_\eta(v)=\eta^{-1}\Phi(\eta v)$.
+
+\subsection{Assumptions}
+
+The energy $\mathcal{E}$ is supposed to satisfy the following assumptions.
+\begin{gather}
+\label{eqn:energy-regularity}
+\parbox[c]{0.8\textwidth}{$\mathcal{E}\in C^1(V\times[0,T])$}
+\tag{$\mathcal{E}$.1}
+\\
+\label{eqn:energy-coercivity}
+\parbox[c]{0.8\textwidth}{for all $E>0$ the sublevel $D_E=\{u\in V\;|\;\sup_{t\in[0,T]}\mathcal{E}(u,t)\le D_E\}$ is weakly compact}
+\tag{$\mathcal{E}$.2}
+\\
+\label{eqn:power-control}
+\parbox[c]{0.8\textwidth}{there exists $C>0$ such that $|\partial_t\mathcal{E}(u,t)|\le C(1+\mathcal{E}(u,t))$ for all $u\in V$ and $t\in[0,T]$}
+\tag{$\mathcal{E}$.3}
+\end{gather}
+The dissipation potential is defined by
+\begin{equation*}
+\Phi(v)=\mathcal{R}(v)+\mathcal{V}(v)
+\end{equation*}
+and for $\eta>0$ its rescaled version is
+\begin{equation*}
+\Phi_\eta(v)=\eta^{-1}\Phi_1(\eta v)=\mathcal{R}(v)+\eta^{-1}\mathcal{V}(\eta v)=\mathcal{R}(v)+\mathcal{V}_\eta(v).
+\end{equation*}
+Here $\mathcal{R}$ is a rate-independent dissipation potential and $\mathcal{V}$ is a rate-dependent dissipation potential that models viscosity. It is assumed that $\mathcal{R}$ and $\mathcal{V}$ satisfy the following assumptions.
+\begin{gather}
+\label{eqn:bv-dissipation-1}
+\parbox[c]{0.8\textwidth}{$\mathcal{R}$ and $\mathcal{V}$ from $V$ into $[0,\infty)$ are continuous, convex and strictly positive in $V\setminus\{0\}$}
+\tag{$\Phi$.1}
+\\
+\label{eqn:bv-dissipation-2}
+\parbox[c]{0.8\textwidth}{$\mathcal{R}$ is positively 1-homogeneous}
+\tag{$\Phi$.2}
+\\
+\label{eqn:bv-dissipation-3}
+\parbox[c]{0.8\textwidth}{$\mathcal{V}(v)=\phi(\norm{v})$ with $\phi\in C^1([0,\infty))$ convex such that $\phi(0)=0$, $\phi'(0)=0$, $\phi(r)>0$ for $r>0$ and $\lim_{r\to\infty}\phi'(r)=\infty$}
+\tag{$\Phi$.3}
+\end{gather}
+Notice that from Proposition~\ref{prop:prop-pos-1-hom-convx} it holds $\mathcal{R}(0)=0$. Moreover notice that $\phi$ can be extended to an even $C^1(\mathbb{R})$ function.
+
+\subsection{Preliminary results regarding the dissipation potential}
+
+Let $K=\partial\mathcal{R}(0)$. By Proposition~\ref{prop:prop-pos-1-hom-convx} it follows that $\mathcal{R}=\sigma_K$ and $\mathcal{R}^*=\iota_K$. Notice that there exists a constant $M>0$ such that $\mathcal{R}(v)\le M\norm{v}$ for all $v\in V$. Indeed by contradiction assume that there exist $v_n\in V\setminus\{0\}$ such that $\mathcal{R}(v_n)\ge n\norm{v_n}$. Since $\mathcal{R}$ is positively homogeneous the inequality implies $\mathcal{R}(n^{-1}v_n/\norm{v_n})\ge1$ so $\liminf_{n\to\infty}\mathcal{R}(n^{-1}v_n/\norm{v_n})\ge1$. But $n^{-1}v_n/\norm{v_n}\to0$ so by continuity of $\mathcal{R}$ it follows $\lim_{n\to\infty}\mathcal{R}(n^{-1}v_n/\norm{v_n})=0$. This is the desired contradiction.
+
+Since $\Phi_1$ is convex and $\Phi_1(0)=0$ then for all $v\in V$ the functions $\eta\mapsto\Phi_\eta(v)$ are increasing. Then it is well defined
+\begin{equation*}
+\Phi_0(v)=\lim_{\eta\to0^+}\Phi_\eta(v)=\inf_{\eta>0}\Phi_\eta(v)=\mathcal{R}(v).
+\end{equation*}
+Last inequality holds true since $\phi(0)=0$ and $\phi'(0)=0$.
+
+It simple to check that $\Phi_\eta^*(\xi)=\eta^{-1}\Phi^*(\xi)$. It is possible to obtain a more explicit representation formula for $\Phi^*$. By the inf-convolution duality formula
+\begin{equation}
+\label{eqn:dual-dissipation}
+\Phi_\eta^*(\xi)=\left(\mathcal{R}+\mathcal{V}_\eta\right)^*(\xi)=\inf_{\zeta\in V}\left(\mathcal{R}^*(\zeta)+\mathcal{V}_\eta^*(\xi-\zeta)\right)=\eta^{-1}\inf_{\zeta\in K}\mathcal{V}^*(\xi-\zeta)=\eta^{-1}\min_{\zeta\in K}\mathcal{V}^*(\xi-\zeta).
+\end{equation}
+Last equality holds true because, since $K$ is closed and convex, it is also weakly closed, $\mathcal{V}$ is convex and coercive, then the infimum is actually a minimum. Now $\mathcal{V}^*(\xi)=\phi^*(\norm{\xi})$. \begin{lemma}
+The function $\phi^*$ satisfies $\phi^*(0)=0$, $(\phi^*)'(0)=0$ and is monotone.
+\end{lemma}
+\begin{proof}
+Let $r=\rho(\gamma)$ the solution to $\gamma-\phi'(\rho(\gamma))=0$. Clearly $\rho\in C^1(\mathbb{R})$ and $\rho(0)=0$. Then $\phi^*(\gamma)=\gamma\rho(\gamma)-\phi(\rho(\gamma))$. Now $\phi^*(0)=-\phi(0)=0$ and $(\phi^*)'(0)=-\phi'(0)=0$.
+\end{proof}
+Using that lemma and~\eqref{eqn:dual-dissipation}
+\begin{equation}
+\label{eqn:dual-dissipation-1}
+\Phi_\eta^*(\xi)=\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta}).
+\end{equation}
+
+\subsection{Absolutely continuous and BV evolutions}
+
+Let $\mathcal{R}\colon V\to[0,\infty)$ satisfying~\eqref{eqn:bv-dissipation-1} and~\eqref{eqn:bv-dissipation-2}. We say that a map $u\colon[0,T]\to V$ is $\text{AC}_\mathcal{R}([0,T],V)$ if there exists $m\in L^1((0,T),[0,\infty))$ such that
+\begin{equation}
+\label{eqn:AC-R-m}
+\mathcal{R}(u(t_1)-u(t_0))\le\int_{t_0}^{t_1}m(s)ds\quad\text{for every $0\le t_0<t_1\le T$}.
+\end{equation}
+\begin{lemma}
+Let $u\in\text{AC}_\mathcal{R}([0,T],V)$. Then
+\begin{equation*}
+\mathcal{R}[\dot u](t)\doteq\lim_{h\to0}\mathcal{R}\left(\frac{u(t+h)-u(t)}{h}\right)
+\end{equation*}
+exists for a.e.\ $t\in(0,T)$ and $\mathcal{R}[\dot u]\in L^1((0,T))$. Moreover for all $m$ as in~\eqref{eqn:AC-R-m}
+\begin{equation*}
+\mathcal{R}[\dot u](t)\le m(t)\quad\text{for a.e.\ $t\in(0,T)$}.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+For any $s\in(0,T)$ and $t\in(0,T)$ let $\delta_s(t)=\mathcal{R}(u(t)-u(s))$.
+Then
+\begin{equation*}
+\delta_s(t_1)-\delta_s(t_0)\le\mathcal{R}(u(t_1)-u(t_0))\le\int_{t_0}^{t_1}m(s)ds\quad\text{for all $0\le t_0<t_1\le T$}.
+\end{equation*}
+The second inequality holds since $\mathcal{R}$ is sub additive by Proposition~\ref{prop:prop-pos-1-hom-convx} so
+\begin{equation*}
+\delta_s(t_1)=\mathcal{R}(u(t_1)-u(s))\le\mathcal{R}(u(t_1)-u(t_0))+\mathcal{R}(u(t_0)-u(s))=\mathcal{R}(u(t_1)-u(t_0))+\delta_s(t_0).
+\end{equation*}
+Then the map $t\mapsto\delta_s(t)-\int_0^tm(r)dr=\beta_s(t)$ is non increasing on $(0,T)$ and in particular it is differentiable a.e.\ on $(0,T)$. This in turns implies that $\delta_s$ is differentiable a.e.\ on $(0,T)$ and
+\begin{equation}
+\label{eqn:defi-delta}
+\dot\delta_s(t)\le\delta(t)\doteq\liminf_{h\to0^+}\mathcal{R}\left(\frac{u(t+h)-u(t)}{h}\right)\quad\text{for a.e.\ $t\in(0,T)$}.
+\end{equation}
+Note that
+\begin{equation}
+%\label{eqn:delta-minimality}
+0\le\delta(t)\le\liminf_{h\to0^+}\frac{1}{h}\int_t^{t+h}m(s)ds=m(t)\quad\text{for a.e.\ $t\in(0,T)$}
+\end{equation}
+and this implies $\delta\in L^1((0,T))$. Since $\delta_s(t)=\beta_s(t)+\int_0^tm(r)dr$ and $\beta_s$ is non increasing then the singular part of the distributional derivative of $\delta_s$ is non positive and
+\begin{equation}
+\label{eqn:delta-dominates}
+\mathcal{R}(u(t)-u(s))=\delta_s(t)\le\int_s^t\dot\delta_s(r)dr\le\int_s^t\delta(r)dr.
+\end{equation}
+Let
+\begin{equation*}
+\gamma(t)\doteq\limsup_{h\to0^+}\mathcal{R}\left(\frac{u(t+h)-u(t)}{h}\right).
+\end{equation*}
+By~\eqref{eqn:delta-dominates} then $\delta(t)\le\gamma(t)\le\delta(t)$. This proves that
+\[
+\delta^+(t)\doteq\lim_{h\to0^+}\mathcal{R}\left(\frac{u(t+h)-u(t)}{h}\right)=\delta(t)\quad\text{exists for a.e.\ $t\in(0,T)$}.
+\]
+Applying the previous argument to $t\mapsto u(T-t)$ and $v\mapsto\mathcal{R}(-v)$ in place of $u$ and $\mathcal{R}$ respectively, follows that
+\[
+\delta^-(t)=\lim_{h\to0^-}\mathcal{R}\left(\frac{u(t+h)-u(t)}{h}\right)=\lim_{h\to0^+}\mathcal{R}\left(\frac{u(t)-u(t-h)}{h}\right)\quad\text{exists for a.e.\ $t\in(0,T)$}
+\]
+and satisfy the conditions
+\begin{equation}
+\label{eqn:delta-dominates-minus}
+\mathcal{R}(u(t)-u(s))\le\int_s^t\delta^-(r)dr.
+\end{equation}
+and $\delta^-(t)\le m(t)$ for a.e.\ $t\in(0,T)$. This means that $\delta^+$ and $\delta^-$ coincides both with the minimal $m\in L^1((0,T),(0,\infty))$ for which~\eqref{eqn:AC-R-m} holds.
+\end{proof}
+Given a map $u\colon[0,T]\to V$ we define the total variation on $[a,b]\subset[0,T]$ as
+\begin{equation*}
+\text{Var}_\mathcal{R}(u,[a,b])=\sup\left\{\sum_{k=1}^N\mathcal{R}(u(t_k))-\mathcal{R}(u(t_{k-1}))\;\middle|\;a=t_0<\dots<t_N=b\right\}.
+\end{equation*}
+We say that $u\in\text{BV}_\mathcal{R}([0,T],V)$ if $\text{Var}_\mathcal{R}(u,[0,T])<\infty$.
+\begin{lemma}
+It holds that $\text{AC}([0,T],V)\subset\text{AC}_\mathcal{R}([0,T],V)$ and $\text{BV}([0,T],V)\subset\text{BV}_\mathcal{R}([0,T],V)$.
+\end{lemma}
+\begin{proof}
+Recall that there exists $M>0$ such that $\mathcal{R}(v)\le M\norm{v}$. Let $u\in AC([0,T],V)$. Then
+\[
+\mathcal{R}(u(t_1)-u(t_0))\le M\norm{u(t_1)-u(t_0)}\le\int_{t_0}^{t_1}Mm(s)ds.
+\]
+This shows that $u\in\text{AC}_\mathcal{R}([0,T],V)$. Next let $u\in\text{BV}([0,T],V)$. Then
+\[
+\text{Var}_\mathcal{R}(u,[0,T])\le M\text{Var}(u,[0,T]).
+\]
+This implies that $u\in\text{BV}_\mathcal{R}([0,T],V)$.
+\end{proof}
+
+\subsection{A chain rule formula for the energy functional}
+
+\begin{prop}
+Let $u\in AC([0,T],V)$. Then $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$ and
+\begin{equation}
+\label{eqn:chain-rule}
+\frac{d}{dt}\mathcal{E}(u(t),t)=\dual{\partial_u\mathcal{E}(u(t),t),\dot u(t)}+\partial_t\mathcal{E}(u(t),t)\quad\text{for a.e. $t\in(0,T)$}.
+\end{equation}
+\end{prop}
+\begin{proof}
+\emph{Step 1.} Since $u$ is continuous then $K=u([0,T])$ is compact. Indeed let $u_n=u(t_n)$ be a sequence in $K$. Then up to a subsequence $t_n\to t$ and by continuity $u_n=u(t_n)\to u(t)$.
+
+\emph{Step 2.} Since $\mathcal{E}\in C^1(V\times[0,T])$ then by Proposition~\ref{prop:Lipschitz-c1-compact} it is Lipschitz in $K\times[0,T]$. Let $L>0$ be the Lipschitz constant.
+
+\emph{Step 3.} Let $0\le s<t\le T$ and $m\in L^1((0,T),(0,\infty))$ as in Definition~\ref{defi:ac-bv}. Then
+\begin{equation*}
+|\mathcal{E}(u(t),t)-\mathcal{E}(u(s),s)|\le L\left(\norm{u(t)-u(s)}+|t-s|\right)\le L\int_s^t\left(m(r)+r\right)dr.
+\end{equation*}
+This proves that $t\mapsto\mathcal{E}(u(t),t)$ is absolutely continuous in $[0,T]$.
+
+\emph{Step 4.} By Proposition~\ref{prop:ac-w} it follows that $u$ is a.e.\ differentiable in $(0,T)$. This implies formula~\eqref{eqn:chain-rule}.
+\end{proof}
+
+\subsection{Existence results in presence of positive viscosity}
+
+\begin{prop}
+Let $u_0\in V$. Then there exists $u_\eta\in\text{AC}([0,T],V)$ such that $u_\eta(0)=u_0$ and
+\begin{equation*}
+\partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for a.e. $t\in(0,T)$}.
+\end{equation*}
+Moreover the identity
+\begin{equation}
+\label{eqn:energy-identity}
+\mathcal{E}(u_\eta(t),t)+\int_s^t\left(\Phi_\eta(\dot u_\eta(r))+\Phi_\eta^*(-\partial_u\mathcal{E}(u_\eta(r),r)\right)dr=\mathcal{E}(u_\eta(s),s)+\int_s^t\partial_t\mathcal{E}(u_\eta(r),r)dr
+\end{equation}
+holds for every $0\le s<t\le T$.
+\end{prop}
+\begin{proof}
+I still have to report the proof of existence. We prove the identity~\eqref{eqn:energy-identity}. By the properties of subdifferentials
+\begin{equation*}
+\Phi_\eta(\dot u_\eta(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\dual{\partial_u\mathcal{E}(u_\eta(t),t),\dot u_\eta(t)}\quad\text{for a.e. $t\in(0,T)$}.
+\end{equation*}
+By~\eqref{eqn:chain-rule} we have
+\begin{equation*}
+\Phi_\eta(\dot u_\eta(t))+\Phi_\eta^*(-\partial_t\mathcal{E}(u_\eta(t),t))=-\frac{d}{dt}\mathcal{E}(u_\eta(t),t)+\partial_t\mathcal{E}(u_\eta(t),t)\quad\text{for a.e. $t\in(0,T)$}.
+\end{equation*}
+Integrating this identity in $(s,t)$ we get the thesis.
+\end{proof}
+
+\subsection{Contact dissipation potential}
+
+The dissipation contact potential $\mathfrak{p}\colon V\times V^*\to[0,\infty)$ is
+\begin{equation*}
+\mathfrak{p}(v,\xi)=\inf_{\eta>0}\left(\Phi_\eta(v)+\Phi_\eta^*(\xi)\right)=\inf_{\eta>0}\eta^{-1}\left(\Phi(\eta v)+\Phi^*(\xi)\right).
+\end{equation*}
+By~\eqref{eqn:dual-dissipation-1}
+\begin{equation*}
+\begin{split}
+\mathfrak{p}(v,\xi)&=\inf_{\eta>0}\left(\mathcal{R}(v)+\eta^{-1}\phi(\eta\norm{v})+\eta^{-1}\min_{\zeta\in K}\phi^*(\norm{\xi-\zeta})\right)=\\
+&=\mathcal{R}(v)+\inf_{\eta>0}\left[\eta^{-1}\min_{\zeta\in K}\left(\phi(\eta\norm{v})+\phi^*(\norm{\xi-\zeta})\right)\right]=\\
+&=\mathcal{R}(v)+\min_{\zeta\in K}\inf_{\eta>0}\frac{\phi(\eta\norm{v})+\phi^*(\norm{\xi-\zeta})}{\eta}
+\end{split}
+\end{equation*}
+where last equality holds because the minimum point does not depends on $\eta$. But for all $r$ and $\gamma$ in $\mathbb{R}$
+\begin{equation*}
+\inf_{\eta>0}\frac{\phi(\eta r)+\phi^*(\gamma)}{\eta}=\gamma r.
+\end{equation*}
+Indeed by Young--Fenchel inequality
+\begin{equation*}
+\frac{\phi(\eta r)+\phi^*(\gamma)}{\eta}\ge\gamma r
+\end{equation*}
+and the identity holds for $\eta$ such that $\gamma=\phi'(\eta r)$. Then
+\begin{equation}
+\label{eqn:contact-dissipation-potantial-split}
+\mathfrak{p}(v,\xi)=\mathcal{R}(v)+\norm{v}\min_{\zeta\in K}\norm{\xi-\zeta}.
+\end{equation}
+
+Let $\mathfrak{f}\colon V\times V\times[0,T]\to[0,\infty)$ defined by
+\begin{equation}
+\mathfrak{f}(u,v,t)=\mathfrak{p}(v,-\partial_u\mathcal{E}(u,t))=\mathcal{R}(v)+\mathfrak{e}(u,t)\norm{v}
+\end{equation}
+where $\mathfrak{e}\colon V\times[0,T]\to[0,\infty)$ is defined by
+\[
+\mathfrak{e}(u,t)=\min_{\zeta\in K}\norm{\partial_u\mathcal{E}(u,t)+\zeta}.
+\]
+Notice that $\mathfrak{e}(u,t)=0$ if and only if $-\partial_u\mathcal{E}(u,t)\in K$.
+
+\subsection{Parametrized balanced-viscosity solutions}
+
+Let $u_\eta\in\text{AC}([0,T],V)$ be the solution to the doubly nonlinear equation
+\begin{equation*}
+\partial_u\mathcal{E}(u_\eta(t),t)+\partial\Phi_\eta(\dot u_\eta(t))\ni0\quad\text{for $t\in(0,T)$}
+\end{equation*}
+The identity~\eqref{eqn:energy-identity} implies
+\begin{equation}
+\label{eqn:energy-inequality}
+\mathcal{E}(u_\eta(t),t)+\int_s^t\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dr\le\mathcal{E}(u_\eta(s),s)+\int_s^t\partial_t\mathcal{E}(u_\eta(t),t)dr
+\end{equation}
+for all $0\le s<t\le T$.
+\begin{lemma}
+\label{lemma:dissipation-bound}
+There exists a constant $C>0$ such that
+\begin{equation*}
+\int_0^T\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dt\le C\quad\text{for all $\eta>0$}.
+\end{equation*}
+\end{lemma}
+\begin{proof}
+Since $\mathfrak{f}\ge0$ by~\eqref{eqn:power-control} then inequality~\eqref{eqn:energy-inequality} implies
+\begin{equation*}
+\mathcal{E}(u_\eta(t),t)\le\mathcal{E}(u_0,0)+\int_0^t\partial_t\mathcal{E}(u(s),s)ds\le\mathcal{E}(u_0,0)+C\int_0^t(1+\mathcal{E}(u_\eta(s),s))ds.
+\end{equation*}
+By~\eqref{eqn:power-control} and Gronwall inequality $-1\le\mathcal{E}(u_\eta(t),t)\le C_1$ for all $t\in[0,T]$ and $\eta>0$. Then~\eqref{eqn:energy-inequality} implies
+\begin{equation*}
+\int_0^T\mathfrak{f}(u_\eta(t),\dot u_\eta(t),t)dt\le1+\mathcal{E}(u_0,0)+CT(1+C_1).
+\end{equation*}
+This concludes the proof.
+\end{proof}
+Let $\boldsymbol{s}_\eta\colon[0,T]\to[0,S_\eta]$ defined by
+\begin{equation}
+\label{eqn:energy-arc-lenght}
+\boldsymbol{s}_\eta(t)=t+\int_0^t\mathfrak{f}(u_\eta(s),\dot u_\eta(s),s)ds\quad\text{and}\quad S_\eta=\boldsymbol{s}_\eta(T).
+\end{equation}
+Let also
+\begin{equation*}
+\boldsymbol{t}_\eta=\boldsymbol{s}_\eta^{-1}\colon[0,S_\eta]\to[0,T]\quad\text{and}\quad\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)\colon[0,S_\eta]\to V.
+\end{equation*}
+To write the time-rescaled energy identity we introduce the map $\mathfrak{F}_\eta\colon V\times[0,T]\times V\times(0,\infty)\to[0,\infty)$ defined by
+\[
+\mathfrak{F}_\eta(u,t,v,a)=a\Phi_\eta(v/a)+\Phi_\eta^*(-\partial_u\mathcal{E}(u,t))-a\partial_t\mathcal{E}(u,t)=\mathcal{R}(v)+\mathfrak{E}_\eta(u,t,v,a)-a\partial_t\mathcal{E}(u,t),
+\]
+where $\mathfrak{E}_\eta\colon V\times[0,T]\times V\times(0,\infty)\to[0,\infty)$ is given by
+\[
+\begin{split}
+\mathfrak{E}_\eta(u,t,v,a)&=a\mathcal{V}_\eta(v/a)+a\Phi_\eta^*(-\partial_u\mathcal{E}(u,t))=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\min_{\zeta\in V^*}\phi^*(\norm{\partial_u\mathcal{E}(u,t)+\zeta})=\\
+&=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\phi^*\left(\min_{\zeta\in V^*}\norm{\partial_u\mathcal{E}(u,t)+\zeta}\right)=a\mathcal{V}_\eta(v/a)+\frac{a}{\eta}\phi^*(\mathfrak{e}(u,t)).
+\end{split}
+\]
+Then~\eqref{eqn:energy-identity} becomes
+\begin{equation*}
+\mathcal{E}(\boldsymbol{u}_\eta(t),\boldsymbol{t}_\eta(t))+\int_s^t\mathfrak{F}_\eta(\boldsymbol{u}_\eta(r),\boldsymbol{t}_\eta(r),\dot{\boldsymbol{u}}_\eta(r),\dot{\boldsymbol{t}}_\eta(r))dr=\mathcal{E}(\boldsymbol{u}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for all $0\le s<t\le S_\eta$}.
+\end{equation*}
+Identity~\eqref{eqn:energy-arc-lenght} implies
+\begin{equation}
+\label{eqn:normalization-rescaling}
+1=\dot{\boldsymbol{t}}_\eta(s)+\mathfrak{f}(\boldsymbol{u}_\eta(s),\dot{\boldsymbol{u}}_\eta(s),\boldsymbol{t}_\eta(s))\quad\text{for a.e.\ $s\in(0,S_\eta)$}.
+\end{equation}
+Now let $\mathfrak{F}\colon V\times[0,T]\times V\times[0,\infty)\to[0,\infty]$ defined by
+\[
+\mathfrak{F}(u,t,v,a)=\mathcal{R}(v)+\mathfrak{E}(u,t,v,a)-a\partial_t\mathcal{E}(u,t)
+\]
+where $\mathfrak{E}\colon V\times[0,T]\times V\times[0,\infty)\to[0,\infty]$
+\[
+\mathfrak{E}(u,t,v,a)=
+\begin{cases}
+\iota_K(-\partial_u\mathcal{E}(u,t)) & \text{if $a>0$} \\
+\mathfrak{e}(u,t)\norm{v} & \text{if $a=0$}.
+\end{cases}
+\]
+\begin{defi}
+We say that a pair $(\boldsymbol{u},\boldsymbol{t})\colon[0,S]\to V\times[0,T]$ is an admissible parametrized curve if
+\begin{itemize}
+\item[(i)] $\boldsymbol{t}$ is non decreasing and absolutely continuous, $\boldsymbol{u}\in\text{AC}_\mathcal{R}([0,S],D_E)$ for some $E>0$
+\item[(ii)] $\boldsymbol{u}$ locally absolutely continuous (with respect to $\norm{\cdot}$) in the open set
+\[
+G=\{s\in[0,S]\;|\;\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))>0\}=\{s\in[0,S]\;|\;-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\notin K\}
+\]
+\item[(iii)] the estimate
+\[
+\int_0^S\mathfrak{f}[\boldsymbol{u},\dot{\boldsymbol{u}},\boldsymbol{t}](s)ds=\int_0^S\mathcal{R}[\dot{\boldsymbol{u}}](s)ds+\int_G\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}ds<\infty
+\]
+holds.
+\end{itemize}
+For every admissible parametrized curve and for a.e.\ $s\in[0,S]$ is well defined
+\[
+\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](s)=\begin{cases}
+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\iota_K(-\partial_u\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s)))-\dot{\boldsymbol{t}}(s)\partial_t\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(s)) & \text{if $\dot{\boldsymbol{t}}(s)>0$} \\
+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)} & \text{if $\dot{\boldsymbol{t}}(s)=0$}.
+\end{cases}
+\]
+where is implicit that if $s\notin G$ then $\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}=0$.
+
+We denote with $\mathscr{A}([0,S],V\times[0,T])$ the set of all admissible parametrized curves and we say that $(\boldsymbol{u},\boldsymbol{t})$ is
+\begin{itemize}
+\item[(i)] non degenerate if $\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)>0$ for a.e.\ $s\in[0,S]$
+\item[(ii)] surjective if $\boldsymbol{t}(0)=0$ and $\boldsymbol{t}(S)=T$
+\item[(iii)] $\boldsymbol{m}$-normalized with $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$ if $(\boldsymbol{u},\boldsymbol{t})$ fulfills
+\[
+\dot{\boldsymbol{t}}(s)+\mathcal{R}[\dot{\boldsymbol{u}}](s)+\mathfrak{e}(\boldsymbol{u}(s),\boldsymbol{t}(s))\norm{\dot{\boldsymbol{u}}(s)}=\boldsymbol{m}(s)\quad\text{for a.e.\ $s\in(0,S)$}
+\]
+\end{itemize}
+\end{defi}
+\begin{defi}
+A parametrized balanced-viscosity solution is a non degenerate and surjective curve $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$ satisfying
+\[
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](r)dr=\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $0\le s<t\le S$}.
+\]
+\end{defi}
+\begin{lemma}
+\label{lemma:compactness-parametrized}
+Let $\boldsymbol{t}_n\in\text{AC}([0,S],[0,T])$ non decreasing and surjective. Let $E>0$ and $\boldsymbol{u}_n\in\text{AC}([0,S],D_E)$. Assume that there exists $L>0$ such that
+\begin{equation}
+\label{eqn:parametrized-curves-estimate-for-compactness}
+\dot{\boldsymbol{t}}_n(s)+\mathfrak{f}(\boldsymbol{u}_n(s),\dot{\boldsymbol{u}}_n(s),\boldsymbol{t}_n(s))\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\end{equation}
+Then up to a extracting a subsequence, $(\boldsymbol{u}_n,\boldsymbol{t}_n)$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],D_E\times[0,T])$. Moreover
+\[
+\dot{\boldsymbol{t}}(s)+\mathfrak{f}[\boldsymbol{u},\dot{\boldsymbol{u}},\boldsymbol{t}](s)\le L\quad\text{for a.e.\ $s\in(0,S)$}
+\]
+and the following lower semicontinuity properties holds
+\begin{gather*}
+\liminf_{n\to\infty}\int_s^t\mathcal{R}(\dot{\boldsymbol{u}}_n(r))dr\ge\int_s^t\mathcal{R}[\dot{\boldsymbol{u}}](r)dr \\
+\liminf_{n\to\infty}\int_s^t\mathfrak{e}(\boldsymbol{u}_n(r),\boldsymbol{t}_n(r))\norm{\dot{\boldsymbol{u}}_n(r)}dr\ge\int_s^t\mathfrak{e}(\boldsymbol{u}(r),\boldsymbol{t}(r))\norm{\dot{\boldsymbol{u}}(r)}dr \\
+\liminf_{n\to\infty}\int_s^t\mathfrak{E}_{\eta_n}(\boldsymbol{u}_n(r),\boldsymbol{t}_n(r),\dot{\boldsymbol{u}}_n(r),\dot{\boldsymbol{t}}_n(r))dr\ge\int_s^t\mathfrak{E}(\boldsymbol{u}(r),\boldsymbol{t}(r),\dot{\boldsymbol{u}}(r),\dot{\boldsymbol{t}}(r))dr
+\end{gather*}
+for every $0\le s<t\le S$ and $\eta_n\in(0,T)$ with $\eta_n\to0$.
+\end{lemma}
+\begin{proof}
+\emph{Step 1}. From the fact that $\boldsymbol{t}_n(0)=0$ and that $\dot{\boldsymbol{t}}_n$ are uniformly bounded (by~\eqref{eqn:parametrized-curves-estimate-for-compactness}), it follows that $\boldsymbol{t}_n$ are uniformly Lipschitz continuous. Then by Ascoli--Arzelà up to extracting a subsequence, $\boldsymbol{t}_n$ converges uniformly to some $\boldsymbol{t}\in C^{0,1}([0,T])$. VERIFICARE CHE $\boldsymbol{t}$ SODDISFA LE PROPRIETÀ RICHIESTE. 
+
+\emph{Step 2}. Since $\mathcal{R}$ is continuous and $D_E$ is weakly compact we can prove that for all $\delta>0$ there exists $M_\delta>0$ such that
+\[
+|v-w|\le\delta+M_\delta\mathcal{R}(v-w).
+\]
+Indeed by contradiction assume that there is some $\delta>0$ such that for all $n$ there exist $v_n$ and $w_n$ with
+\[
+|v_n-w_n|\ge\delta+n\mathcal{R}(v-w).
+\]
+Since $D_E$ is weakly compact, we can assume that $v_n\rightharpoonup v$ and $w_n\rightharpoonup w$. Up to extracting a subsequence we can also assume that $v_n\to v$ and $w_n\to w$ in $H$. QUI VA SISTEMATA LA SITUAZIONE. IL MOTIVO È CHE SERVIREBBE CONVERGENZA FORTE NELLA (SEMI)NORMA IN CUI $\mathcal{R}$ È CONTINUA. Then
+\[
+|v-w|\ge\delta+\limsup_{n\to\infty}n\mathcal{R}(v_n-w_n).
+\]
+This is a contradiction because necessarily $v\neq w$ so that $\mathcal{R}(v-w)>0$ and in this case
+\[
+\limsup_{n\to\infty}n\mathcal{R}(v_n-w_n)=\infty.
+\]
+Let $\omega\colon[0,\infty)\to[0,\infty)$ defined by $\omega(r)=\inf_{\delta>0}\left(\delta+M_\delta r\right)$. Notice that $\omega$ is non decreasing and  $\lim_{r\to0}\omega(r)=0$.
+
+\emph{Step 3}. By Jensen inequality and assumption~\eqref{eqn:parametrized-curves-estimate-for-compactness}
+\[
+\mathcal{R}(\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s))=|t-s|\mathcal{R}\left(\frac{1}{|t-r|}\int_s^t\dot{\boldsymbol{u}}_n(r)dr\right)\le\int_s^t\mathcal{R}(\dot{\boldsymbol{u}}_n(r))drl\le L|t-s|.
+\]
+Then
+\[
+|\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s)|\le\omega(\mathcal{R}(\boldsymbol{u}_n(t)-\boldsymbol{u}_n(s)))\le\omega(L|t-s|).
+\]
+This implies that $\boldsymbol{u}_n$ are equicontinuous with respect to $|\cdot|$. Then up to extracting a subsequence
+\[
+\lim_{n\to\infty}\sup_{s\in[0,S]}|\boldsymbol{u}(s)-\boldsymbol{u}_n(s)|=0
+\]
+for some $\boldsymbol{u}\in\text{AC}_{|\cdot|}([0,T],V)$. It follows thatB
+\end{proof}
+
+\begin{thm}[existence of parametrized solutions]
+Let $u_\eta\in\text{AC}([0,T],V)$ be solutions to the doubly nonlinear equation~\eqref{eqn:doubly-nonlinear-rescaled} with fixed initial condition $u_0\in V$. Consider non decreasing and surjective absolutely continuous time rescalings $\boldsymbol{t}_\eta\colon[0,S]\to[0,T]$ and let $\boldsymbol{u}_\eta=u_\eta(\boldsymbol{t}_\eta)$. Suppose that as $\eta\to0$
+\begin{equation}
+\label{eqn:normalization-hp}
+\boldsymbol{m}_\eta=\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)\overset{*}{\rightharpoonup}\boldsymbol{m}\quad\text{in $L^\infty((0,S))$}
+\end{equation}
+for some $\boldsymbol{m}\in L^\infty((0,S),(0,\infty))$. Then there exists a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_\eta,\boldsymbol{t}_\eta)$ converges uniformly on $[0,S]$ to a parametrized balanced viscosity solution $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Moreover $(\boldsymbol{u},\boldsymbol{t})$ is $\boldsymbol{m}$-normalized.
+\end{thm}
+\begin{proof}
+Arguing as in the proof of Lemma~\ref{lemma:dissipation-bound} one finds that there exists $E>0$ such that $\boldsymbol{u}_\eta(s)\in D_E$ for all $\eta>0$ and $s\in[0,S]$. Since~\eqref{eqn:normalization-hp} holds, there exists $L>0$ such that $\norm{\dot{\boldsymbol{t}}_\eta+\mathfrak{f}(\boldsymbol{u}_\eta,\dot{\boldsymbol{u}}_\eta,\boldsymbol{t}_\eta)}_\infty\le L$. Then the hypotheses of Lemma~\ref{lemma:compactness-parametrized} are satisfied and we can find a sequence $\eta_n\to0$ such that $(\boldsymbol{u}_{\eta_n},\boldsymbol{t}_{\eta_n})$ converges uniformly on $[0,S]$ to some $(\boldsymbol{u},\boldsymbol{t})\in\mathscr{A}([0,S],V\times[0,T])$. Since $\mathcal{E}\in C^1(V\times[0,T])$ then
+\begin{equation}
+\label{eqn:energy-convergence}
+\mathcal{E}(\boldsymbol{u}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))\to\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))\quad\text{for all $s\in[0,S]$}.
+\end{equation}
+Now, since $\dot{\boldsymbol{t}}_\eta$ are bounded in $L^\infty((0,S))$, up to extracting a subsequence it holds that $\dot{\boldsymbol{t}}_{\eta_n}\overset{*}{\rightharpoonup}\dot{\boldsymbol{t}}$ in $L^\infty((0,T))$. In particular $\dot{\boldsymbol{t}}_{\eta_n}\rightharpoonup\dot{\boldsymbol{t}}$ in $L^1((0,T))$. Then by Lemma~\ref{lemma:technical-convergence-integral}
+\begin{equation}
+\label{eqn:power-convergence}
+\liminf_{n\to\infty}\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r))dr\ge\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr.
+\end{equation}
+Now taking the inferior limit as $n\to\infty$ of the energy identity
+\[
+\mathcal{E}(\boldsymbol{u}_{\eta_n}(t),\boldsymbol{t}_{\eta_n}(t))+\int_s^t\mathfrak{F}_{\eta_n}(\boldsymbol{u}_{\eta_n}(r),\boldsymbol{t}_{\eta_n}(r),\dot{\boldsymbol{u}}_{\eta_n}(r),\dot{\boldsymbol{t}}_{\eta_n}(r))dr\le\mathcal{E}(\boldsymbol{u}_{\eta_n}(s),\boldsymbol{t}_{\eta_n}(s))\quad\text{for all $0\le s<t\le T$}
+\]
+taking into account~\eqref{eqn:energy-convergence},~\eqref{eqn:power-convergence} and the lower semicontinuity estimates of Lemma~\ref{lemma:compactness-parametrized}
+\[
+\mathcal{E}(\boldsymbol{u}(t),\boldsymbol{t}(t))+\int_s^t\mathfrak{F}[\boldsymbol{u},\boldsymbol{t},\dot{\boldsymbol{u}},\dot{\boldsymbol{t}}](r)dr\le\mathcal{E}(\boldsymbol{u}(s),\boldsymbol{t}(s))+\int_s^t\partial_t\mathcal{E}(\boldsymbol{u}(r),\boldsymbol{t}(r))dr
+\]
+for all $0\le s<t\le T$. ADESSO MANCA DA OTTENERE L'ALTRA STIMA (E VOLENDO MOSTRARE CHE SODDISFA LA GIUSTA NORMALIZZAZIONE).
+\end{proof}
+
+\begin{lemma}
+\label{lemma:technical-convergence-integral}
+Let $f_n,f,m_n,m\colon(0,T)\to[0,\infty]$ be measurable functions that satisfy
+\begin{gather*}
+\liminf_{n\to\infty}f_n(s)\ge f(s)\quad\text{for a.e.\ $s\in(0,T)$} \\
+m_n\rightharpoonup m\quad\text{in $L^1((0,T))$}.
+\end{gather*}
+Then
+\[
+\liminf_{n\to\infty}\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tf(s)m(s)ds.
+\]
+\end{lemma}
+\begin{proof}
+Let $g_k(s)=\inf_{n\ge k}\min\{f_n(s),n\}$. Notice that $g_k\in L^\infty((0,T))$. Fix $k$ and notice that for all $n\ge k$
+\[
+\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tg_k(s)m_n(s)ds.
+\]
+Taking the inferior limit as $n\to\infty$
+\[
+\liminf_{n\to\infty}\int_0^Tf_n(s)m_n(s)ds\ge\int_0^Tg_k(s)m(s)ds.
+\]
+Now $g_k$ is an increasing sequence and
+\[
+\lim_{k\to\infty}g_k(s)=\lim_{k\to\infty}\inf_{n\ge k}\min\{f_n(s),n\}=\liminf_{n\to\infty}f_n(s)\ge f(s)\quad\text{for a.e.\ $s\in(0,S)$}.
+\]
+The passing to the limit $k\to\infty$ and using monotone convergence the proof is concluded.
+\end{proof}
+
+\subsection{An example}
+
+Let $V=L^2(\Omega)$ with $\Omega\subset\mathbb{R}^d$ open and bounded. Let
+\begin{equation*}
+\mathcal{R}(v)=\int_\Omega|v|dx\quad\text{and}\quad\mathcal{V}(v)=\frac{1}{2}\int_\Omega|v|^2dx.
+\end{equation*}
+They satisfy the assumptions~(D). In particular the continuity of $\mathcal{R}$ follows from H\"older inequality
+\begin{equation*}
+|\mathcal{R}(v)-\mathcal{R}(w)|\le\int_\Omega\left||v|-|w|\right|dx\le\int_\Omega|v-w|dx\le C\norm{v-w}_2.
+\end{equation*}
+It holds that $K$ is the closed unit ball in $L^\infty(\Omega)$. Indeed if $\xi\in V^*=L^2(\Omega)$ satisfies $\norm{\xi}_\infty\le1$ then
+\begin{equation*}
+\mathcal{R}^*(\xi)=\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega\left(\xi v-|v|\right)dx\le\sup_{v\in V}\int_\Omega(|\xi|-1)|v|dx\le0
+\end{equation*}
+and $\mathcal{R}^*(\xi)\ge0$ trivially. If $\norm{\xi}_\infty>1$ then there exists $\epsilon>0$ and $w\in L^1(\Omega)$ such that $\dual{\xi,w}\ge1+\epsilon$. Since $L^2(\Omega)$ is dense in $L^1(\Omega)$ then for all $\delta>0$ there exist $v\in L^2(\Omega)$ such that $\norm{w-v}\le\delta$. Then for all $\lambda>0$
+\begin{equation*}
+\mathcal{R}^*(\xi)\ge\dual{\xi,\lambda v}-\norm{\lambda v}_1\ge\lambda\left(\dual{\xi,w}-\norm{w}_1-\delta(1+\norm{\xi})\right)\ge\lambda\left(\epsilon-\delta(1+\norm{\xi})\right).
+\end{equation*}
+Choosing $\delta$ such that $\epsilon-\delta(1+\norm{\xi})>0$ and letting $\lambda\to\infty$ we get $\mathcal{R}(\xi)=\infty$. Since $\mathcal{V}^*=\frac{1}{2}\norm{\cdot}_2^2$ and by~\eqref{eqn:dual-dissipation}
+\begin{equation*}
+\Phi_\epsilon^*(\xi)=\frac{1}{2\eta}\min_{\zeta\in K}\norm{\xi-\zeta}_2^2=\frac{1}{2\eta}\int_\Omega\min_{|\zeta|\le1}|\xi-\zeta|^2dx.
+\end{equation*}
+By~\eqref{eqn:contact-dissipation-potantial-split} it follows
+\begin{equation*}
+\mathfrak{p}(v,\xi)=\norm{v}_1+\norm{v}_2\min_{\zeta\in K}\norm{\xi-\zeta}_2.
+\end{equation*}
