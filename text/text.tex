@@ -1266,18 +1266,27 @@ By~\eqref{eqn:contact-dissipation-potantial-split} it follows
 \mathfrak{p}(v,\xi)=\norm{v}_1+\norm{v}_2\min_{\zeta\in K}\norm{\xi-\zeta}_2.
 \end{equation*}
 
-\subsection{An abstract existence theorem for constrained mechanical systems treated with the method of Lagrange multipliers}
+\section{An abstract existence theorem for constrained mechanical systems treated with the method of Lagrange multipliers}
+\label{sec:existence-theorem-abstract-constrained}
 
-In this subsection we present an existence theorem that we have developed extending the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations in order to include kinematical constraints treated with the method of Lagrange multipliers.
+In this subsection we develop an existence theory for kinematically constrained mechanical systems extending the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations including a kinematical constraint treated with the method of Lagrange multipliers. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
-\subsubsection*{Notation, assumptions and formulation of the problem}
+\subsection{Notation, assumptions and formulation of the problem}
 
-Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $0<c_P<C_P$ such that
+Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$ while the virtual velocities are denoted with $w=(v,\mu)\in Z$ with $v\in U$ and $\mu\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $0<c_P<C_P$ such that
 \begin{equation}
 \label{eqn:abstract-poincare}
 c_P\left(\norm{u}_H+|u|_U\right)\le\norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
 \end{equation}
-Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(z)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Up to redefining $C_L$ we can assume that $\text{Lip}(\mathcal{L})\le C_L$ and $\text{Lip}(\mathcal{L}')\le C_L$. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}u,u}$ with $\Psi_0$ and $\mathcal{A}$ satisfying the following properties:
+Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(z)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Up to redefining $C_L$ we can assume that $\text{Lip}(\mathcal{L})\le C_L$ and $\text{Lip}(\mathcal{L}')\le C_L$. The kinematical constrain can be written as $z\in K$ where
+\[
+K=\{z=(u,\lambda)\in Z\;|\;\lambda=\mathcal{L}(u)\}.
+\]
+We treat it with the method of Lagrange multiplier so we consider the reaction $\mathcal{P}\in N_K(z)\subset Z^*$, meaning that $\dual{\mathcal{P},w}=0$ for all $w=(v,\mu)\in Z$ satisfying $\lambda=\mathcal{L}'(u)v$. We parametrize $\mathcal{P}$ in terms of a $p\in\Lambda^*$ as
+\[
+\dual{\mathcal{P},w}=\dual{p,\mu-\mathcal{L}'(u)v}\quad\text{for all $w\in Z$}
+\]
+so that the normality condition is automatically satisfied. Let $\Psi\colon Z\to\mathbb{R}$ of the form $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}u,u}$ with $\Psi_0$ and $\mathcal{A}$ satisfying the following properties:
 \begin{itemize}
 \item[($\Psi$1)] $\Psi_0\in C^{1,1}_\text{loc}(H\times\Lambda)$ and there exist $C_\Psi^2,C^1_\Psi,C^0_\Psi>0$ with $\dual{D\Psi_0(z)w,w}\ge-C_\Psi^2\norm{w}_{H\times\Lambda}^2-C_\Psi^1\norm{w}_{H\times\Lambda}-C_\Psi^0$ for all $w\in Z$;
 \item[($\Psi$2)] there exists a constant $C_\Psi^3>0$ such that $\norm{D_\lambda\Psi_0(z)}_{\Lambda^*}\le C_\Psi^3\norm{z}_{H\times\Lambda}$;
@@ -1317,7 +1326,7 @@ D_\lambda\Psi_0(u(t),\lambda(t))-p(t)&=0 \\
 for a.e.\ $t\in(0,T)$.
 \end{prb}
 
-\subsubsection*{Existence theorem}
+\subsection{The existence theorem and its proof}
 
 We are now going to prove the following existence theorem.
 \begin{thm}
@@ -3980,6 +3989,7 @@ Using a time rescaling approach it is possible to prove also the existence of a 
 Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
 
 \chapter{Proposal of an alternative mechanical model: the regime of small deformations}
+\label{chap:pressure-sensitive-small}
 
 In this chapter we start the development an alternative approach to the modeling of dilatant and pressure sensitive plastic materials. The present chapter is confined to the regime of small deformations, the extension to large deformations will be performed in the subsequent chapter.
 
@@ -3991,7 +4001,7 @@ The chapter is organized as follows. In the first section we develop the model f
 
 \section{Formulation of the model}
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement filed $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and a damage variable $\alpha\colon\Omega\to[0,\infty)$. We split the plastic distortion as $E_p=\pi+\lambda I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in the following section. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement filed $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and a damage variable $\alpha\colon\Omega\to[0,\infty)$. We split the plastic distortion as $E_p=\pi+\frac{\lambda}{d}I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda=\tr E_p\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in the following section. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
 
  We consider a kinematical constrain of the form $\lambda=L(\alpha)$ where $L\colon[0,\infty)\to\mathbb{R}$ is assumed to be smooth and satisfying $L(0)=0$. This constrain models the fact that the volume changes of the microscopic structure of the body are directly linked with its damage state that represents qualitatively the amount of microcracks opened in the body. The constrain can be formulated in weak form as
 \[
@@ -4101,59 +4111,112 @@ Now the results follows from the fundamental lemma of the calculus of variations
 The strong form of the equilibrium conditions tell us that $p=-\frac{1}{d}\tr T_e$. Thus $p$ is identified with the pressure of the elastic stress but is does not include the pressure $-\frac{1}{d}\tr T$ of the purely macroscopic stress.
 \end{rmk}
 
-We now turn to the choice of the constitutive relations. We assume that the free energy functional $\Psi\colon Z\to\mathbb{R}$ is given by
+We now turn to the choice of the constitutive relations. We assume that the free energy functional $\Psi\colon Z\to\mathbb{R}$ is given by $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}y,y}$ with $\Psi_0\colon Z\to\mathbb{R}$ of the form
 \[
-\Psi(z)=\int_\Omega\left(\frac{\mathfrak{a}}{2}|\grad^2u|^2+W_e\left(\alpha,Eu-\pi-\frac{1}{d}\lambda\right)+W_p(\alpha,\pi)+\frac{\mathfrak{b}}{2}|\grad\pi|^2+W_d(\alpha)+\frac{\mathfrak{c}}{p_\alpha}|\grad\alpha|^{p_\alpha}\right)dx.
+\Psi_0(z)=\int_\Omega\left(W_e\left(\alpha,Eu-\pi-\frac{1}{d}\lambda I\right)+W_p(\alpha,\pi)+W_d(\alpha)\right)dx
 \]
-where $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $p_\alpha>d$, $W_e\colon[0,\infty)\times\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon[0,\infty)\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. We assume that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with
+and
 \[
-\Phi(p,h)=\int_\Omega\left(\frac{1}{2}\mathfrak{D}Ev:Ev+R(p,\rho)+\frac{\mathfrak{d}}{2}|\rho|^2+D(\rho,\beta)+\frac{\mathfrak{e}}{2}|\beta|^2\right)dx
+\frac{1}{2}\dual{\mathcal{A}y,y}=\int_\Omega\left(\frac{\mathfrak{a}}{2}|\grad^2u|^2+\frac{\mathfrak{b}}{2}|\grad\pi|^2+\frac{\mathfrak{c}}{2}|\grad\alpha|^2\right)dx.
 \]
-where the macroscopic viscosity tensor $\mathfrak{D}\in\text{Sym}\otimes\text{Sym}$ is symmetric and positive definite, $R\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic dissipation potential made dependent on the micropressure, $\mathfrak{d}>0$ is a plastic viscosity, $D\colon\text{DevSym}\times\mathbb{R}\to[0,\infty]$ a damage dissipation potential made dependent of the rate of deviatoric plastic distortion and $\mathfrak{e}>0$ is a damage viscosity. We asume that $R(p,\cdot)$ and $D$ are convex and vanish at the origin. Form these expressions for $\Psi$ and $\Phi$ we get the following constitutive relations
+Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon[0,\infty)\times\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon[0,\infty)\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. We assume that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
+\[
+\Phi_0(p,h)=\int_\Omega\left(R(p,\rho)+D(\rho,\beta)\right)dx
+\]
+and
+\[
+\frac{1}{2}\dual{\mathcal{D}h,h}=\int_\Omega\left(\frac{1}{2}\mathfrak{D}Ev:Ev+\frac{\mathfrak{d}}{2}|\rho|^2+\frac{\mathfrak{e}}{2}|\beta|^2\right)dx
+\]
+where the macroscopic viscosity tensor $\mathfrak{D}\in\text{Sym}\otimes\text{Sym}$ is symmetric and positive definite, $R\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic dissipation potential density made dependent on the micropressure, $\mathfrak{d}>0$ is a plastic viscosity, $D\colon\text{DevSym}\times\mathbb{R}\to[0,\infty]$ a damage dissipation potential density made dependent of the rate of deviatoric plastic distortion and $\mathfrak{e}>0$ is a damage viscosity. We assume that $R(p,\cdot)$ and $D$ are convex and vanish at the origin. Form these expressions for $\Psi$ and $\Phi$ we get the following constitutive relations
 \begin{align}
 T=\mathfrak{D}E\dot u\qquad & K=\mathfrak{a}\grad^2u \\
-T_e=\dind{W_e}{E_e}\left(\alpha,Eu-\pi-\frac{1}{d}\lambda\right)\qquad & \\
+T_e=\dind{W_e}{E_e}\left(\alpha,Eu-\pi-\frac{\lambda}{d}I\right)\qquad & \\
 T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\mathfrak{d}\dot\pi+\partial_\rho D(\dot\pi,\dot\alpha)\qquad & K_p=\mathfrak{b}\grad\pi \\
 \tau\in W_p'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}|\grad\alpha|^{p_\alpha-2}\grad\alpha.
 \end{align}
-\begin{rmk}(More specialized constitutive relations)
-We will specialize to the case
-\[
-W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,\quad W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)\quad\text{and}\quad R(p,\rho)=Y(p)\tilde R(\rho)
-\]
-Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric positive definite elasticity tensor. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is degradated by the damage through the function $d\colon[0,\infty)\to[0,\infty)$: a common choice is
-\[
-d(\alpha)=\begin{cases}
-(1-\alpha)^2 & \text{if $\alpha\in[0,1]$} \\
-0 & \text{if $\alpha>1$}.
-\end{cases}
-\]
-In this way when $\alpha=0$ the material is not damaged and when $\alpha\ge1$ the material is completely damaged and hardening disappears. The function $Y\colon\mathbb{R}\to[0,\infty)$ is the pressure dependent yield strength and the standard choice is
-\[
-Y(p)=\begin{cases}
-0 & \text{if $p<-\frac{Y_0}{\mathfrak{f}}$} \\
-Y_0+\mathfrak{f}p & \text{if $p\ge-\frac{Y_0}{\mathfrak{f}}$},
-\end{cases}
-\]
-where $\mathfrak{f}>0$. The function $\tilde R\colon\text{DevSym}\to[0,\infty)$ is supposed to be convex and satisfying $\tilde R(0)=0$. To describe the fact that the accumulation of deviatoric plastic strain is always accompanied by damaging, and to prescribe that damage is an unidirectional process (the fact that damage can only increase), we set
-\[
-D(\rho,\beta)=\iota_K(\rho,\beta)+\tilde D(\beta)
-\]
-where
-\[
-K=\{(\rho,\beta)\in\text{DevSym}\times\mathbb{R}\;|\;\beta\ge\mathfrak{g}|\rho|\}\quad\text{with $\mathfrak{g}>0$}
-\]
-and $\tilde{D}\colon[0,\infty)\to[0,\infty)$ is convex and satisfies $\tilde D(0)=0$.
-
-\end{rmk}
 
 \section{Existence theory}
 
-In this section we obtain an existence result for the model we have developed in previous section. To make the discussion more clear in the following subsection we prove an existence theorem in a more abstract setting. This theorem will be applied to our particular problem in the subsequent subsection.
+In this section we obtain an existence result for the model we have developed in previous section. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
+
+\subsection{Assumptions,definitions and formulation of the problem}
+
+To prove the existence theorem we consider a specialized version of the constitutive relations presented in previous section. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L)\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
+\[
+W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,\quad W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)\quad\text{and}\quad R(p,\rho)=Y(p)\tilde R(\rho)
+\]
+Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor; notice that we are not considering the possibility that damage affects the elastic response. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is instead degradated by the damage through the degradation function $d\colon[0,\infty)\to[0,\infty)$. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ and that there exists a constants $C_p^0,C_p^1>0$ such that $0\le\tilde W_p(\pi)\le C_p^1|\pi|+C_p^0$ and that $d\in C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty\le C_d$). Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\in C^{0,1}(\text{DevSym}\times\mathbb{R},[0,\infty])$ is convex, Lipschitz on its domain and $D(0,0)=0$.
+
+The function spaces where we formulate the problem are
+\begin{gather}
+Y=\{y=(u,\pi,\alpha)\;|\;\text{$u\in H^2_0(\Omega,\mathbb{R}^d)$, $\pi\in H^1(\Omega,\text{DevSym})$ and $\alpha\in H^1(\Omega)$}\} \\
+H=\{y=(u,\pi,\alpha)\;|\;\text{$u\in H^1_0(\Omega,\mathbb{R}^d)$, $\pi\in L^2(\Omega,\text{DevSym})$ and $\alpha\in L^2(\Omega)$}\} \\
+\Lambda=\Lambda^*=L^2(\Omega)
+\end{gather}
+and $Z=Y\times\Lambda$.
+\begin{rmk}(On notation)
+Notice that the function spaces and the variables defined here directly correspond with the abstract counterparts considered in Section~\ref{sec:existence-theorem-abstract-constrained} with the only difference that $U$ is replaced by $Y$, $u$ is replaced by $y$ and $v$ by $h$.
+\end{rmk}
+Taking into account the definitions made in previous section, we consider $\mathcal{L}\colon H\to\Lambda$, $\Psi\colon Z\to\mathbb{R}$, $\Psi_0\colon H\to\mathbb{R}$, $\mathcal{A}\in\mathscr{L}(Y,Y^*)$, $\Phi,\Phi_0\colon\Lambda^*\times\Lambda\to[0,\infty]$ and $\mathcal{D}\in\mathscr{L}(H,H^*)$. We also consider $f\in H^1((0,T),H^{-1}(\Omega,\mathbb{R}^3))$ with $f(0)=0$ and define $\mathcal{X}\in H^1((0,T),H^*)$ with
+\[
+\dual{\mathcal{X}(t),h}=\dual{f,v}\quad\text{for all $h\in H$}.
+\]
+Next consider the initial state $z_0=(y_0,\lambda_0)=0$.
+
+Following the discussion of Section~\ref{sec:existence-theorem-abstract-constrained} we consider the following problem.
+\begin{prb}
+\label{prb:pressure-sensitive-small}
+Find $(z,p)=(y,\lambda,p)$ with $y\in\text{AC}([0,T],Y)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$ such that $z(0)=z_0$ and
+\begin{align}
+D_y\Psi_0(z(t))+\mathcal{A}y(t)+\partial_h\Phi_0(p(t),\dot y(t))+\mathcal{D}\dot y(t)+\mathcal{L}'(y(t))^*p(t)&\ni\mathcal{X}(t) \\
+D_\lambda\Psi_0(z(t))-p(t)&=0 \\
+\lambda(t)&=\mathcal{L}(y(t))
+\end{align}
+for a.e.\ $t\in(0,T)$.
+\end{prb}
+
+%\begin{rmk}(Particular instances of constitutive relations)
+%A particular instance of the function $L$ is
+%\[
+%L(\alpha)=
+%\]
+%of $\tilde W_p$ and $d$ could be
+%\[
+%\tilde W_p(\pi)=\sqrt{\mathfrak{p}_1|\pi|^2+\mathfrak{p}_0}\quad\text{and}\quad d(\alpha)=\begin{cases}
+%(1-\alpha)^2 & \text{if $\alpha\in[0,1]$} \\
+%0 & \text{if $\alpha>1$},
+%\end{cases}
+%\]
+%where $\mathfrak{p}_0,\mathfrak{p}_1>0$. In this way when $\alpha=0$ the material is not damaged and when $\alpha\ge1$ the material is completely damaged and hardening disappears.
+%\end{rmk}
+%The function $Y\colon\mathbb{R}\to[0,\infty)$ is the pressure dependent yield strength and the standard choice is
+%\[
+%Y(p)=\begin{cases}
+%0 & \text{if $p<-\frac{Y_0}{\mathfrak{f}}$} \\
+%Y_0+\mathfrak{f}p & \text{if $p\ge-\frac{Y_0}{\mathfrak{f}}$},
+%\end{cases}
+%\]
+%where $\mathfrak{f}>0$. The function $\tilde R\colon\text{DevSym}\to[0,\infty)$ is supposed to be convex and satisfying $\tilde R(0)=0$. To describe the fact that the accumulation of deviatoric plastic strain is always accompanied by damaging, and to prescribe that damage is an unidirectional process (the fact that damage can only increase), we set
+%\[
+%D(\rho,\beta)=\iota_A(\rho,\beta)+\tilde D(\beta)
+%\]
+%where
+%\[
+%A=\{(\rho,\beta)\in\text{DevSym}\times\mathbb{R}\;|\;\beta\ge\mathfrak{g}|\rho|\}\quad\text{with $\mathfrak{g}>0$}
+%\]
+%and $\tilde{D}\colon[0,\infty)\to[0,\infty)$ is convex and satisfies $\tilde D(0)=0$.
+
+\subsection{Proof of the existence theorem}
 
 
-
-\subsection{Particularizing the abstract existence theorem to the }
+The existence theorem we are going to prove is the following.
+\begin{thm}
+Consider the assumptions of previous subsection. Then there exists $(z,p)=(y,\lambda,p)$ solution to Problem~\ref{prb:pressure-sensitive-small} with $y\in W^{1,\infty}((0,T),Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$.
+\end{thm}
+As anticipated, the proof rely on the abstract existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}, so our aim is now to verify the required hypotheses. This is done in the lemmas below.
+\begin{lemma}
+The map 
+\end{lemma}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 
