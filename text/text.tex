@@ -4141,11 +4141,11 @@ In this section we obtain an existence result for the model we have developed in
 
 \subsection{Assumptions,definitions and formulation of the problem}
 
-To prove the existence theorem we consider a specialized version of the constitutive relations presented in previous section. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L)\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
+To prove the existence theorem we consider a specialized version of the constitutive relations presented in previous section. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L),\text{Lip}(L')\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
 \[
 W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,\quad W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)\quad\text{and}\quad R(p,\rho)=Y(p)\tilde R(\rho)
 \]
-Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor; notice that we are not considering the possibility that damage affects the elastic response. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is instead degradated by the damage through the degradation function $d\colon[0,\infty)\to[0,\infty)$. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ and that there exists a constants $C_p^0,C_p^1>0$ such that $0\le\tilde W_p(\pi)\le C_p^1|\pi|+C_p^0$ and that $d\in C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty\le C_d$). Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\in C^{0,1}(\text{DevSym}\times\mathbb{R},[0,\infty])$ is convex, Lipschitz on its domain and $D(0,0)=0$.
+Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor; notice that we are not considering the possibility that damage affects the elastic response. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is instead degradated by the damage through the degradation function $d\colon[0,\infty)\to[0,\infty)$. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ and that there exists a constant $C_p>0$ such that $0\le\tilde W_p(\pi)\le C_p$, $|\tilde W_p'(\pi)|\le C_p,\text{Lip}(W_p),\text{Lip}(W_p')\le C_p$ and that $d\in C^{0,1}(\mathbb{R},[0,\infty))\cap C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty,\text{Lip}(d),\text{Lip}(d')\le C_d$). We require that $W_d\in C^{1,1}(\mathbb{R})$ and that there exists $C_d^2,C_d^1,C_d^0>0$ such that $-C_d^0\le W_d(\alpha)\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$ and $|W_d'(\alpha)\alpha|\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$. Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\in C^{0,1}(\text{DevSym}\times\mathbb{R},[0,\infty])$ is convex, Lipschitz on its domain and $D(0,0)=0$.
 
 The function spaces where we formulate the problem are
 \begin{gather}
@@ -4213,10 +4213,62 @@ The existence theorem we are going to prove is the following.
 \begin{thm}
 Consider the assumptions of previous subsection. Then there exists $(z,p)=(y,\lambda,p)$ solution to Problem~\ref{prb:pressure-sensitive-small} with $y\in W^{1,\infty}((0,T),Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$.
 \end{thm}
-As anticipated, the proof rely on the abstract existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}, so our aim is now to verify the required hypotheses. This is done in the lemmas below.
+As anticipated, the proof rely on the abstract existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}, so our aim is now to verify the required hypotheses. It is evident that $Y$ is compactly embedded in $H$. The properties of $\mathcal{L}$ are verified in the following lemma.
 \begin{lemma}
-The map 
+It holds that $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and $\norm{\mathcal{L}(y)}_\Lambda$, $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}$ are bounded uniformly in $y\in H$.
 \end{lemma}
+\begin{proof}
+It holds that $\norm{\mathcal{L}(y)}_\Lambda=\norm{L(\alpha)}_2\le C_L|\Omega|$ and $\norm{\mathcal{L}(y_1)-\mathcal{L}(y_2)}_\Lambda\le\norm{L(\alpha_1)-L(\alpha_2)}_2\le C_L\norm{\alpha_1-\alpha_2}_2\le C_L\norm{y_1-y_2}_H$. This proves that $\mathcal{L}\in C^{0,1}(H,\Lambda)$ and that $\norm{\mathcal{L}(y)}_\Lambda$ is uniformly bounded.
+
+Next notice that $\mathcal{L}$ is G\^ateaux differentiable with G\^ateaux derivative given by $\mathcal{L}'(y)h=L'(\alpha)\beta\in\Lambda$, since by a simple application of Lagrange theorem and dominated convergence theorem it holds that
+\[
+\left\|\frac{{L}(\alpha+\epsilon\beta)-{L}(\alpha)}{\epsilon}-L'(\alpha)\beta\right\|_\Lambda^2=\int_\Omega|L'(\alpha+\epsilon\eta\beta)-L'(\alpha)|^2|\beta|^2dx\to0
+\]
+as $\epsilon\to0$, where $\eta\in(0,1)$ depends on $\epsilon$ and $x$. The dominating function is $2C_L^2|\beta|^2\in L^1(\Omega)$ and since $L'$ is continuous it holds that $|L'(\alpha+\epsilon\eta\beta)-L'(\alpha)|\to0$ pointwise. It clearly holds that $\norm{\mathcal{L}'(y)h}_\Lambda=\norm{L'(\alpha)\beta}_\Lambda\le C_L\norm{\beta}_2\le C_L\norm{y}_H$ thus $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}\le C_L$ is uniformly bounded. Moreover $\norm{(\mathcal{L}'(y_1)-\mathcal{L}'(y_2))h}_\Lambda=\norm{({L}'(\alpha_1)-{L}'(\alpha_2))\beta}_\Lambda\le C_L\norm{\alpha_1-\alpha_2}_2\norm{\beta}_2\le C_L\norm{y_1-y_2}_H\norm{h}_H$ so that $\norm{\mathcal{L}'(y_1)-\mathcal{L}'(y_2)}_{\mathscr{L}(H,\Lambda)}\le C_L\norm{y_1-y_2}_H$. This shows that $\mathcal{L}'\in C^{0,1}(H,\mathscr{L}(H,\Lambda))$. This also implies that $\mathcal{L}$ is Frèchet differentiable.
+\end{proof}
+Next we verify the properties of $\Psi_0$.
+\begin{lemma}
+The map $\Psi_0$ satisfies the assumptions ($\Psi$1) and ($\Psi$2) of Section~\ref{sec:existence-theorem-abstract-constrained}.
+\end{lemma}
+\begin{proof}
+It is trivial to see that the elastic part of $\Psi_0$ satisfies the required hypotheses, and in particular
+\[
+\dual{D_\lambda\Psi_0(z),\mu}=-\int_\Omega\mathfrak{C}\frac{1}{d}\tr\left[\left(Eu-\pi-\frac{\lambda}{d}I\right)\right]\mu dx
+\]
+so that
+\[
+\norm{D_\lambda\Psi_0(z)}_{\Lambda^*}\le\frac{|\mathfrak{C}|}{d}\left\|Eu-\pi-\frac{\lambda}{d}I\right\|_2\le C_\Psi^3\norm{z}_{H\times\Lambda}
+\]
+for some $C_\Psi^3>0$.
+
+So we need to chech only that
+\[
+\Psi_1(z)=\int_\Omega\left(W_p(\alpha,\pi)+W_d(\alpha)\right)dx
+\]
+satisfies the required properties. Using the Lagrange theorem and the dominated convergence theorem we see that $\Psi_1$ admits the G\^ateaux differential
+\[
+\dual{D\Psi_1(z),w}=\int_\Omega\left(d'(\alpha)\tilde W_p(\pi)\beta+d(\alpha)\tilde W_p'(\pi):\rho+W_d'(\alpha)\beta\right)dx.
+\]
+In particular it is crucial the fact that $|\tilde W_p(\pi)|$ ha at most a linear growth in $\pi$, ensuring that $d'(\alpha)\tilde W_p(\pi)\beta\in L^1(\Omega)$. It is immediate to see that $|\dual{D\Psi_1(z),z}|$ as at most a quadratic growth in $\norm{z}_{H\times\Lambda}$. It remains to show that $D\Psi_1$ is Lipschitz, this will also imply that $\Psi_1$ is Frèchet differentiable. To this aim we notice that
+\[
+\begin{split}
+\left|\left\langle D_z\Psi_1(z_1)-D_z\Psi_1(z_2),w\right\rangle\right|&\le
+\begin{multlined}[t]
+\int_{\Omega}\left|d'(\alpha_1)\tilde W_p(\pi_1)-d'(\alpha_2)\tilde W_p(\pi_2)\right||\beta|\,dx+\\
++\int_{\Omega}\left|d(\alpha_1)\tilde W_p'(\pi_1)-d(\alpha_2)\tilde W_p'(\pi_2)\right||\rho|\,dx+\\
++\int_{\Omega}\left|W_d'(\alpha_1)-W_d'(\alpha_2)\right||\beta|\,dx\le
+\end{multlined}\\
+&\le
+\begin{multlined}[t]
+\left\|d'(\alpha_1)\tilde W_p(\pi_1)-d'(\alpha_2)\tilde W_p(\pi_2)\right\|_2\|\beta\|_2+\\
++\left\|d(\alpha_1)\tilde W_p'(\pi_1)-d(\alpha_2)\tilde W_p'(\pi_2)\right\|_2\|\rho\|_2+\\
++C_d\|\alpha_1-\alpha_2\|_2\|\beta\|_2\le
+\end{multlined}\\
+&\le C_d{C}_p\left(\|\pi_1-\pi_2\|_2+\|\alpha_1-\alpha_2\|_2\right)\left(\|\beta\|_2+\|\rho\|_2\right)+C_d\|\alpha_1-\alpha_2\|_2\|\beta\|_2,
+\end{split}
+\]
+where we used the crucial fact that $\tilde W_p$ and $\tilde W_p'$ are bounded. This estimate shows that $D_z\Psi_1$ is Frèchet differentiable.
+\end{proof}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 

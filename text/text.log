@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  24 MAY 2026 15:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  24 MAY 2026 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1997,22 +1997,22 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [71]
 
 [72]
+
+[73]
 Chapter 8
-
-
-[73
-
-
-]
-Chapter 9
 
 
 [74
 
 
 ]
+Chapter 9
 
-[75]
+
+[75
+
+
+]
 
 [76]
 
@@ -2039,52 +2039,52 @@ Chapter 9
 [87]
 
 [88]
+
+[89]
 Underfull \vbox (badness 3439) has occurred while \output is active []
 
 
-
-[89]
 
 [90]
 
 [91]
 
 [92]
+
+[93]
 Chapter 10
 
 
-[93
+[94
 
 
 ]
 
-[94]
+[95]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 5676.
+(hyperref)                removing `\noindent' on input line 5728.
 
-
-
-[95
-
-
-]
-Appendix A
 
 
 [96
 
 
 ]
-Appendix B
+Appendix A
 
 
 [97
 
 
 ]
+Appendix B
 
-[98]
+
+[98
+
+
+]
 
 [99]
 
@@ -2109,32 +2109,34 @@ Appendix B
 [109]
 
 [110]
+
+[111]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-6757.
+6809.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 6757.
+(Font)              scaled to size 10.0pt on input line 6809.
 
 
-[111
+[112
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 6758--6758
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 6810--6810
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[112]
+[113]
 
-[113] (./text.aux (./frontespizio.aux))
+[114] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2144,9 +2146,9 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48150 strings out of 473197
- 1056907 string characters out of 5718605
- 1938541 words of memory out of 5000000
+ 48152 strings out of 473197
+ 1056923 string characters out of 5718605
+ 1938543 words of memory out of 5000000
  69845 multiletter control sequences out of 15000+600000
  719641 words of font info for 276 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
@@ -2176,10 +2178,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (116 pages, 1019565 bytes).
+Output written on text.pdf (117 pages, 1025629 bytes).
 PDF statistics:
- 1809 PDF objects out of 2073 (max. 8388607)
- 1635 compressed objects within 17 object streams
- 606 named destinations out of 1000 (max. 500000)
+ 1816 PDF objects out of 2073 (max. 8388607)
+ 1641 compressed objects within 17 object streams
+ 608 named destinations out of 1000 (max. 500000)
  366 words of extra memory for PDF output out of 10000 (max. 10000000)
 
