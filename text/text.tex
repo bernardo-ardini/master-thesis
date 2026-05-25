@@ -931,11 +931,89 @@ we find that
 Now the quantity on the right hand side tends to infinity as $\norm{u}_U\to\infty$, so the thesis follows.
 %Now $\norm{u}_H\le\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}\le\norm{u}_H+C_L$ so that the thesis follows immediately.
 \end{proof}
-Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined as showed in the following lemma.
+Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined (in the sense that the solution to~\eqref{eqn:equation-unk} is unique) and satisfies some regularity properties, as showed in the following lemma.
 \begin{lemma}
 \label{lemma:properties-U}
-The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and $\mathcal{U}(\Lambda^*)$ is bounded in $U$.
+If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and is bounded (in the sense that it maps bounded subsets of $\Lambda^*$ into bounded subsets of $U$).
 \end{lemma}
+\begin{proof}
+First we prove that there exists a constant $B>0$ such that each solution $u\in U$ to~\eqref{eqn:equation-unk} satisfies $\norm{u}_U\le B$. Notice that $u\in U$ is a solution to~\eqref{eqn:equation-unk} if and only if
+\begin{equation}
+\label{eqn:equation-unk-explicit}
+\Xi(v)+\dual{F(u),v-u}\ge\Xi(u)+\dual{f_N^k,v-u}\quad\text{for all $v\in U$}.
+\end{equation}
+Choosing $v=u/2$ we get
+\[
+\Xi(u)-\Xi\left(\frac{u}{2}\right)+\frac{1}{2}\dual{F(u),u}-\frac{1}{2}\dual{f_N^k,u}\le0.
+\]
+This is equivalent to
+\begin{equation}
+\begin{multlined}
+\frac{1}{2}\langle \mathcal{A}u,u\rangle+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^k}{\tau_N}\right)+\frac{1}{2}\tau_N\langle\mathcal{D}(u-u_N^k),u-u_N^k\rangle-\\
+-\frac{1}{8}\langle \mathcal{A}u,u\rangle-\tau_N\Phi_0\left(p_N^k,\frac{\frac{u}{2}-u_N^k}{\tau_N}\right)-\frac{1}{2}\tau_N\left\langle \mathcal{D}\left(\frac{u}{2}-u_N^k\right),\frac{u}{2}-u_N^k\right\rangle+\\
++\frac{1}{2}\langle D_u\Psi(u,\mathcal{L}(u)),u\rangle+\frac{1}{2}\langle\mathcal{L}'(u)^*p_N^k,u\rangle-\frac{1}{2}\langle f_N^k,u\rangle\le0.
+\end{multlined} 
+\end{equation}
+After some simple estimates
+\[
+\begin{multlined}
+\frac{3C_A}{8}|u|_V^2-C_{\Phi}(\|p_N^k\|+1)\left(\frac{3}{2}\|u\|_H+2\|u_N^k\|_H\right)+\frac{3C_D}{8\tau_N}\|u\|_H^2-\\
+-\frac{3}{2\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H\|u\|_H-\frac{1}{\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H^2-\\
+-\frac{1}{2}C_{\Psi}^2(1+C_L)^2\|u\|_H^2-\frac{1}{2}C_{\Psi}^1(1+C_L)\|u\|_H-\frac{1}{2}C_{\Psi}^0-\\
+-\frac{1}{2}C_{\Psi}^3(1+C_L)C_L\|u\|_H-\frac{1}{2}C_L\|p_N^k\|_{\Lambda^*}\|u\|_H-\frac{1}{2}\|f_N^k\|_{H^*}\|u\|_H\le0
+\end{multlined}
+\]
+Choosing $N$ sufficiently large so that the coefficient
+\[
+\frac{3C_D}{8\tau_N}-\frac{1}{2}C_{\Psi}^2(1+C_L)^2
+\]
+of $\norm{u}_H^2$ is positive, we get that $\norm{u}_H^2$ is indeed bounded by a constant that is independent on $u$. Notice that this constant remains bounded as $p_N^k$ remains bounded in $\Lambda^*$.
+
+Next we prove that the solution to~\eqref{eqn:equation-unk} is unique, so that $\mathcal{U}$ is well defined. To this aim let $u_1,u_2\in U$ two solutions. We consider~\eqref{eqn:equation-unk-explicit} and we substitute $v=\frac{u_1+u_2}{2}$ and alternatively $u=u_1$ or $u=u_2$. Summing the two resultant inequalities together, we get
+\begin{equation}
+\label{eqn:estimates-unicity}
+\Xi(u_1)+\Xi(u_2)-2\Xi\left(\frac{u_1+u_2}{2}\right)+\frac{1}{2}\langle F(u_1)-F(u_2),u_1-u_2\rangle\le0
+\end{equation}
+that explicitly reads
+\[
+\begin{multlined}
+\frac{1}{2}\langle \mathcal{A}u_1,u_1\rangle+\frac{1}{2}\langle \mathcal{A}u_2,u_2\rangle-\left\langle \mathcal{A}\frac{u_1+u_2}{2},\frac{u_1+u_2}{2}\right\rangle+\\
++\tau_N\Phi_0\left(p_N^k,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p_N^k,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p_N^k,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)+\\
++\frac{1}{2\tau_N}\langle \mathcal{D}(u_1-u_N^k),u_1-u_N^k\rangle+\frac{1}{2\tau_N}\langle \mathcal{D}(u_2-u_N^k),u_2-u_N^k\rangle-\frac{1}{\tau_N}\left\langle \mathcal{D}\left(\frac{u_1+u_2}{2}-u_N^k\right),\frac{u_1+u_2}{2}-u_N^k\right\rangle+\\
++\frac{1}{2}\langle D_u\Psi_0(u_1,\mathcal{L}(u_1))-D_u\Psi_0(u_2,\mathcal{L}(u_2)),u_1-u_2\rangle+\frac{1}{2}\langle\mathcal{L}'(u_1)^*p_N^k-\mathcal{L}'(u_2)^*p_N^k,u_1-u_2\rangle\le0
+\end{multlined}
+\]
+Firstly we notice that
+\[
+\frac{1}{2}\dual{\mathcal{A}u_1,u_1}+\frac{1}{2}\dual{\mathcal{A}u_2,u_2}-\left\langle\mathcal{A}\frac{u_1+u_2}{2},\frac{u_1+u_2}{2}\right\rangle=\frac{1}{4}\dual{\mathcal{A}(u_1-u_2),u_1-u_2}\ge\frac{C_A}{4}|u_1-u_2|_U^2,
+\]
+that
+\[
+\tau_N\Phi_0\left(p_N^k,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p_N^k,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p_N^k,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)\ge0
+\]
+since $\Phi_0(p_N^k,\cdot)$ is convex, and that
+\[
+\begin{multlined}
+\frac{1}{2\tau_N}\dual{\mathcal{D}(u_1-u_N^k),(u_1-u_N^k)}+\frac{1}{2\tau_N}\dual{\mathcal{D}(u_2-u_N^k),(u_2-u_N^k)}-\frac{1}{\tau_N}\left\langle\mathcal{D}\left(\frac{u_1+u_2}{2}-u_N^k\right),\frac{u_1+u_2}{2}-u_N^k\right\rangle=\\
+=\frac{1}{4\tau_N}\dual{\mathcal{D}(u_1-u_2),u_1-u_2}\ge\frac{C_D}{4\tau_N}\norm{u_1-u_2}_H^2.
+\end{multlined}
+\]
+Secondly, since $u_1$ and $u_2$ are confined on a ball of radius $B$, there exists a local Lipschitz constant $C_\Psi^4>0$ such that
+\[
+\frac{1}{2}\langle D_u\Psi_0(u_1,\mathcal{L}(u_1))-D_u\Psi_0(u_2,\mathcal{L}(u_2)),u_1-u_2\rangle\ge-\frac{1}{2}C_\Psi^4\norm{u_1-u_2}_H^2.
+\]
+Eventually we have
+\[
+\frac{1}{2}\langle\mathcal{L}'(u_1)^*p_N^k-\mathcal{L}'(u_2)^*p_N^k,u_1-u_2\rangle\ge-\frac{1}{2}C_L\norm{p_N^k}_{\Lambda^*}\norm{u_1-u_2}_H^2.
+\]
+Thus, choosing $N$ sufficiently large such that
+\[
+\frac{C_D}{4\tau_N}-\frac{1}{2}C_\Psi^4-\frac{1}{2}C_L\norm{p_N^k}_{\Lambda^*}>0,
+\]
+the left hand side in~\eqref{eqn:estimates-unicity} bounds $\norm{u_1-u_2}_H^2$, so that $u_1=u_2$.
+
+Up to now we have proved that $\mathcal{U}$ is well defined and is bounded.
+\end{proof}
 To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^k\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
 \begin{equation}
 \label{eqn:fixed-point}
@@ -946,15 +1024,15 @@ where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\
 The map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
 \end{lemma}
 \begin{proof}
-The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\Lambda^*$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to\mathcal{U}(u)$ in $H$. Then bu continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\mathcal{T}(\Lambda^*)$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to u$ in $H$, for some $u\in U$. Then by continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
 \end{proof}
-Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{1,\dots,N\}$. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
+Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem, when $N$ is sufficiently large. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 \begin{rmk}[On notation]
 We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T),U)$ respectively the piecewise constant and affine interpolation of $\{u_N^k\}_{k=0}^N$. The derivative $\dot u_N$ is piecewise constant in the sense that a representative is given by
 \[
 \dot u_N(t)=\dot u_N^k:=\frac{u_N^k-u_N^{k-1}}{\tau_N}\quad\text{for all $t\in(t_N^{k-1},t_N^k]$ and $k\in\{1,\dots,N\}$}.
 \]
-We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$, and $p_N^0=p_0$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{0,\dots,N\}$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
+We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{1,\dots,N\}$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{\dot u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{0,\dots,N\}$, where we have defined $p_N^0=p_0=D_\lambda\Psi_0(z_0)$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
 \end{rmk}
 \begin{rmk}[The case $k=0$]
 Having set $u_N^{-1}=0$ and $p_N^0=p_0$, recalling that $f(0)=D_u\Psi(z_0)+\mathcal{A}u_0+\mathcal{L}'(u_0)^*p_0$ and noticing that $0\in\partial\Phi(p,0)$, it follows that~\eqref{eqn:first-equation-discrete} holds also for $k=0$.
@@ -3823,7 +3901,7 @@ In this chapter we extend the model treated in previous chapter to the regime of
 
 Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz be the reference configuration of the body. Its configuration is assumed to be completely described by the deformation field $\chi\colon\Omega\to\mathbb{R}^d$, the plastic distortion $F_p\colon\Omega\to\text{Lin}$ and the damage variable $\alpha\colon\Omega\to\mathbb{R}$. We denote with $z=(\chi,F_p,\alpha)\in Z$ the generic configuration of the body; the particular definition of configuration space $Z$ can only be understood once a complete theory of existence has been developed. We denote with $\tilde w=(\tilde v,\tilde V_p,\tilde\beta)\in Z$ the generic virtual velocity.
 
-We consider a kinematical constrain of the form $\det F_p=L(\alpha)$ where $J\colon\mathbb{R}\to(0,\infty)$ defines the relation between the volumetric part of the plastic distortion and the state of damage of the material. Thus the set of kinematically admissible configurations is $K=\{z=(\chi,F_p,\alpha)\in Z\;|\;\det F_p=J(\alpha)\}$. The constrain is imposed by including the constrain reaction $\mathcal{P}\in-N_K(z)$. We parametrize it in terms of a field $p\colon\Omega\to\mathbb{R}$ as
+We consider a kinematical constrain of the form $\det F_p=J(\alpha)$ where $J\colon\mathbb{R}\to(0,\infty)$ defines the relation between the volumetric part of the plastic distortion and the state of damage of the material. Thus the set of kinematically admissible configurations is $K=\{z=(\chi,F_p,\alpha)\in Z\;|\;\det F_p=J(\alpha)\}$. The constrain is imposed by including the constrain reaction $\mathcal{P}\in-N_K(z)$. We parametrize it in terms of a field $p\colon\Omega\to\mathbb{R}$ as
 \[
 \dual{\mathcal{P},\tilde w}=\int_\Omega p\left(\cof F_p:\tilde V_p-J'(\alpha)\tilde\beta\right)dx=\int_\Omega p\left(\tr\tilde L_p-J'(\alpha)\tilde\beta\right)dx
 \]
@@ -4337,7 +4415,7 @@ See~\cite{niremberg}.
 
 \begin{thm}[Schauder fixed point theorem]
 \label{thm:schauder}
-Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $f(C)\subset K$, where $K\subset C$ is compact. Then $F$ admits a fixed point.
+Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $F(C)\subset K$, where $K\subset C$ is compact. Then $F$ admits a fixed point.
 \end{thm}
 \begin{proof}
 See~\cite{niremberg}.
@@ -4345,7 +4423,7 @@ See~\cite{niremberg}.
 The following corollary holds.
 \begin{cor}
 \label{cor:schauder}
-Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $f(C)$ is precompact. Then $F$ admits a fixed point.
+Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $F(C)$ is precompact. Then $F$ admits a fixed point.
 \end{cor}
 \begin{proof}
 Let $F(C)\subset K\subset C$ be the closure of $F(C)$. It is clear that $K$ is compact. Then by Theorem~\ref{thm:schauder} it follows that $F$ has a fixed point.
