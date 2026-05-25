@@ -885,9 +885,10 @@ where $\Xi_\epsilon$ is the Yosida approximation of $\Xi$.
 We have that
 \[
 \begin{split}
-\dual{F(u),u}&=\dual{D_u\Psi_0(u,\mathcal{L}(u)),u}+\dual{\mathcal{L}'(u)^*p_N^k,u}\ge\\
-&\ge-C_\Psi^2\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}^2-C_\Psi^1\norm{(u,\mathcal{L}(u))}_{H\times\lambda}-C_\Psi^0-C_L\norm{p_N^k}_{\Lambda^*}\ge\\
-&\ge-C_\Psi^2(1+C_L)^2\norm{u}_H^2-C_\Psi^1(1+C_L)\norm{u}_H-C_\Psi^0-C_L\norm{p_N^k}_{\Lambda^*}.
+\dual{F(u),u}&=\dual{D_u\Psi_0(u,\mathcal{L}(u)),u}+\dual{\mathcal{L}'(u)^*p_N^k,u}=\\
+&=\dual{D\Psi_0(u,\mathcal{L}(u)),(u,\mathcal{L}(u))}-\dual{D_\lambda\Psi_0(u,\mathcal{L}(u)),\mathcal{L}(u)}+\dual{\mathcal{L}'(u)^*p_N^k,u}\ge\\
+&\ge-C_\Psi^2\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}^2-C_\Psi^1\norm{(u,\mathcal{L}(u))}_{H\times\lambda}-C_\Psi^0-C_\Psi^3C_L-C_L\norm{p_N^k}_{\Lambda^*}\ge\\
+&\ge-C_\Psi^2(1+C_L)^2\norm{u}_H^2-C_\Psi^1(1+C_L)\norm{u}_H-C_\Psi^0-C_\Psi^3C_L-C_L\norm{p_N^k}_{\Lambda^*}.
 \end{split}
 \]
 Next notice that for all $1>\epsilon>0$ it holds that
@@ -926,7 +927,7 @@ C_1:=\frac{C_D}{12\tau_N}-C_\Psi^2(1+C_L)^2>0
 \]
 we find that
 \[
-\frac{\Xi_\epsilon(u)+\dual{F(u),u}}{\norm{u}_U}\ge\frac{\frac{C_A}{6}|u|_U^2+C_1\norm{u}_H^2-C_\Psi^1(1+C_L)\norm{u}_H-C_\Psi^0-C_L\norm{p_N^k}_{\Lambda^*}-\frac{1}{2\tau_N}C_D\norm{u_N^k}_H^2}{\norm{u}_U}.
+\frac{\Xi_\epsilon(u)+\dual{F(u),u}}{\norm{u}_U}\ge\frac{\frac{C_A}{6}|u|_U^2+C_1\norm{u}_H^2-C_\Psi^1(1+C_L)\norm{u}_H-C_\Psi^0-C_\Psi^3C_L-C_L\norm{p_N^k}_{\Lambda^*}-\frac{1}{2\tau_N}C_D\norm{u_N^k}_H^2}{\norm{u}_U}.
 \]
 Now the quantity on the right hand side tends to infinity as $\norm{u}_U\to\infty$, so the thesis follows.
 %Now $\norm{u}_H\le\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}\le\norm{u}_H+C_L$ so that the thesis follows immediately.
@@ -934,10 +935,14 @@ Now the quantity on the right hand side tends to infinity as $\norm{u}_U\to\inft
 Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined (in the sense that the solution to~\eqref{eqn:equation-unk} is unique) and satisfies some regularity properties, as showed in the following lemma.
 \begin{lemma}
 \label{lemma:properties-U}
-If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and is bounded (in the sense that it maps bounded subsets of $\Lambda^*$ into bounded subsets of $U$).
+If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and is bounded, in the sense that it maps bounded subsets of $\Lambda^*$into bounded subsets of $U$. Moreover
+\[
+\norm{\mathcal{U}(p)}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}\quad\text{for all $p\in\Lambda^*$}
+\]
+where $C_U^0,C_U^1>0$ are constants independent on $p$ and $N$.
 \end{lemma}
 \begin{proof}
-First we prove that there exists a constant $B>0$ such that each solution $u\in U$ to~\eqref{eqn:equation-unk} satisfies $\norm{u}_U\le B$. Notice that $u\in U$ is a solution to~\eqref{eqn:equation-unk} if and only if
+First we prove that there exists a constant $B>0$ (depending on $p_N^k$) such that each solution $u\in U$ to~\eqref{eqn:equation-unk} satisfies $\norm{u}_U\le B$. Notice that $u\in U$ is a solution to~\eqref{eqn:equation-unk} if and only if
 \begin{equation}
 \label{eqn:equation-unk-explicit}
 \Xi(v)+\dual{F(u),v-u}\ge\Xi(u)+\dual{f_N^k,v-u}\quad\text{for all $v\in U$}.
@@ -955,19 +960,24 @@ This is equivalent to
 \end{multlined} 
 \end{equation}
 After some simple estimates
-\[
+\begin{equation}
+\label{eqn:boundedness}
 \begin{multlined}
-\frac{3C_A}{8}|u|_V^2-C_{\Phi}(\|p_N^k\|+1)\left(\frac{3}{2}\|u\|_H+2\|u_N^k\|_H\right)+\frac{3C_D}{8\tau_N}\|u\|_H^2-\\
+\frac{3C_A}{8}|u|_U^2-C_{\Phi}(\|p_N^k\|+1)\left(\frac{3}{2}\|u\|_H+2\|u_N^k\|_H\right)+\frac{3C_D}{8\tau_N}\|u\|_H^2-\\
 -\frac{3}{2\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H\|u\|_H-\frac{1}{\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H^2-\\
 -\frac{1}{2}C_{\Psi}^2(1+C_L)^2\|u\|_H^2-\frac{1}{2}C_{\Psi}^1(1+C_L)\|u\|_H-\frac{1}{2}C_{\Psi}^0-\\
 -\frac{1}{2}C_{\Psi}^3(1+C_L)C_L\|u\|_H-\frac{1}{2}C_L\|p_N^k\|_{\Lambda^*}\|u\|_H-\frac{1}{2}\|f_N^k\|_{H^*}\|u\|_H\le0
 \end{multlined}
-\]
-Choosing $N$ sufficiently large so that the coefficient
+\end{equation}
+Choosing $N$ sufficiently large we can make the coefficient
 \[
 \frac{3C_D}{8\tau_N}-\frac{1}{2}C_{\Psi}^2(1+C_L)^2
 \]
-of $\norm{u}_H^2$ is positive, we get that $\norm{u}_H^2$ is indeed bounded by a constant that is independent on $u$. Notice that this constant remains bounded as $p_N^k$ remains bounded in $\Lambda^*$.
+of $\norm{u}_H^2$ is positive. Then inequality~\eqref{eqn:boundedness} implies\footnote{The reasoning is as follows. First of all, taking into account Lemma~\ref{lemma:a-priori-0} below, we know that $\norm{u_N^k}_U\le C_0$ uniformly in $N$ and $k$. So we can replace $\norm{u_N^k}$ with $C_0$. Next call $x=|u|_U$, $y=\norm{u}_H$ and $z=\norm{p_N^k}_{\Lambda^*}$. Then the inequality can be rewritten as $Ax^2+NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ where all the coefficient are positive. From $NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ it follows that
+\[
+y\le\frac{2}{NB-C}(Dz+E)+2\sqrt{\frac{Fz+G}{NB-C}}.
+\]
+It is trivial that this implies the existence of $a,b>0$ independent on $p$ and $N$ such that $y\le a+bz$.} that $\norm{u}_U$ is indeed bounded by a constant that remains bounded as $p_N^k$ remains bounded and there exists $C_U^0,C_U^1>0$ independent on $N$ and $p_N^k$ such that $\norm{u}_H\le C_U^0+\frac{C_U^1}{N}\norm{p_N^k}_{\Lambda^*}$.
 
 Next we prove that the solution to~\eqref{eqn:equation-unk} is unique, so that $\mathcal{U}$ is well defined. To this aim let $u_1,u_2\in U$ two solutions. We consider~\eqref{eqn:equation-unk-explicit} and we substitute $v=\frac{u_1+u_2}{2}$ and alternatively $u=u_1$ or $u=u_2$. Summing the two resultant inequalities together, we get
 \begin{equation}
@@ -1012,19 +1022,25 @@ Thus, choosing $N$ sufficiently large such that
 \]
 the left hand side in~\eqref{eqn:estimates-unicity} bounds $\norm{u_1-u_2}_H^2$, so that $u_1=u_2$.
 
-Up to now we have proved that $\mathcal{U}$ is well defined and is bounded.
+Up to now we have proved that $\mathcal{U}$ and we have verified the boundedness properties.
 \end{proof}
 To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^k\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
 \begin{equation}
 \label{eqn:fixed-point}
 p_N^k=D_\lambda\Psi_0(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))=:\mathcal{T}(p_N^k)
 \end{equation}
-where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\eqref{eqn:fixed-point} follows from the Schauder fixed-point theorem in the form of Corollary~\ref{cor:schauder} thanks to the following lemma.
+where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\eqref{eqn:fixed-point} follows from the Schauder fixed-point theorem in the form of Corollary~\ref{cor:schauder-improved} thanks to the following lemma.
 \begin{lemma}
-The map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+If $N$ is sufficiently large, the map $\mathcal{T}$ belongs to $C^0(\Lambda^*,\Lambda^*)$ and maps each bounded subset of $\Lambda^*$ into a precompact set in $\Lambda^*$. Moreover there exists constants $C_T^0\in[0,\infty)$ and $C_T^1\in[0,1)$ such that $\norm{\mathcal{T}(p)}_{\Lambda^*}\le C_T^0+C_T^1\norm{p}_{\Lambda^*}$.
 \end{lemma}
 \begin{proof}
-The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$. Let $\{\mathcal{T}(p_n)\}\subset\mathcal{T}(\Lambda^*)$ with $\{p_n\}\subset\Lambda^*$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to u$ in $H$, for some $u\in U$. Then by continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+The continuity of $\mathcal{T}$ follows immediately from the continuity of $D_\lambda\Psi_0$, $\mathcal{L}$ and $\mathcal{U}$. Next we prove that $\mathcal{T}(B(0,r))$ is precompact in $\Lambda^*$ for all $r>0$. Let $\{\mathcal{T}(p_n)\}\subset\mathcal{T}(\Lambda^*)$ with $\{p_n\}\subset B(0,r)$. We need to prove that, up to extracting a subsequence, there exists $p\in\Lambda^*$ such that $\mathcal{T}(p_n)\to p$ in $\Lambda^*$. To this aim notice that $\mathcal{U}(p_n)$ are bounded in $U$ by Lemma~\ref{lemma:properties-U}, so that by the compact embedding of $U$ in $H$, up to extracting a further subsequence, it holds that $\mathcal{U}(u_n)\to u$ in $H$, for some $u\in U$. Then by continuity it follows that $\mathcal{T}(p_n)\to D_\lambda(u,L(u))\in\Lambda^*$. This means exactly that $\mathcal{T}(\Lambda^*)$ is precompact in $\Lambda^*$.
+
+Next we have
+\[
+\norm{\mathcal{T}(p)}_{\Lambda^*}\le C_\Psi^3(1+C_L)\norm{\mathcal{U}(p)}_H\le C_\Psi^3(1+C_L)\left(C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}\right).
+\]
+Choosing $N$ sufficiently large the thesis follows.
 \end{proof}
 Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem, when $N$ is sufficiently large. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 \begin{rmk}[On notation]
@@ -1035,7 +1051,7 @@ We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T
 We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{1,\dots,N\}$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{\dot u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{0,\dots,N\}$, where we have defined $p_N^0=p_0=D_\lambda\Psi_0(z_0)$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
 \end{rmk}
 \begin{rmk}[The case $k=0$]
-Having set $u_N^{-1}=0$ and $p_N^0=p_0$, recalling that $f(0)=D_u\Psi(z_0)+\mathcal{A}u_0+\mathcal{L}'(u_0)^*p_0$ and noticing that $0\in\partial\Phi(p,0)$, it follows that~\eqref{eqn:first-equation-discrete} holds also for $k=0$.
+Having set $u_N^{-1}=0$ and $p_N^0=p_0$, recalling that $f(0)=D_u\Psi(z_0)+\mathcal{A}u_0+\mathcal{L}'(u_0)^*p_0$ and noticing that $0\in\partial\Phi(p_0,0)$, it follows that~\eqref{eqn:first-equation-discrete} holds also for $k=0$.
 \end{rmk}
 We first obtain some a priori estimates. The first of them ensure that $u_N^k$ remain bounded in $U$.
 \begin{lemma}
@@ -4413,6 +4429,7 @@ See~\cite{niremberg}.
 
 \subsection{Fixed point theorems}
 
+A classical version of the Schauder fixed point in Banach spaces is the following.
 \begin{thm}[Schauder fixed point theorem]
 \label{thm:schauder}
 Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to C$ continuous such that $F(C)\subset K$, where $K\subset C$ is compact. Then $F$ admits a fixed point.
@@ -4427,6 +4444,14 @@ Let $X$ be a Banach space and $C\subset X$ closed and convex. Let $F\colon C\to 
 \end{cor}
 \begin{proof}
 Let $F(C)\subset K\subset C$ be the closure of $F(C)$. It is clear that $K$ is compact. Then by Theorem~\ref{thm:schauder} it follows that $F$ has a fixed point.
+\end{proof}
+We also report the following improved version.
+\begin{cor}
+\label{cor:schauder-improved}
+Let $X$ be a Banach space and let $F\colon X\to X$ continuous such that $F(B(0,r))$ is precompact in $X$ for all $r>0$. Assume also that there exists $a\in[0,\infty)$ and $b\in[0,1)$ such that $\norm{F(x)}_X\le a+b\norm{x}_X$ for all $x\in X$. Then $F$ admits a fixed point.
+\end{cor}
+\begin{proof}
+Let $C=\overline{B}(0,r)$ so that $F(C)\subset\overline{B}(0,a+br)$ and $K=\overline{F(C)}$ is compact. Notice that $F(C)\subset K\subset\overline{B}(0,a+br)$. We want to find $r>0$ such that $F$ maps $C$ into itself. This is certainly true if $a+br<r$ or equivalently $r>\frac{a}{1-b}$. With such $r$ then $F,C,K$ satisfy the hypotheses of Theorem~\ref{thm:schauder} so that the thesis follows.
 \end{proof}
 
 \subsection{Local existence theorem for Cauchy problems in Banach spaces}
