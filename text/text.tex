@@ -854,7 +854,7 @@ and $\Xi\colon U\to[0,\infty]$ by
 \[
 \Xi(u)=\frac{1}{2}\dual{\mathcal{A}u,u}+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2\tau_N}\dual{\mathcal{D}(u-u_N^{k-1}),u-u_N^{k-1}}.
 \]
-We prove that~\eqref{eqn:equation-unk} admits a solution $u_N^k$ for each $p_N^k$ fixed. To this aim we check the hypotheses needed to apply Corollary~\ref{cor:corollary-5-19} with $\Xi$ in place of $\Phi$ and $F$ in place of $A$. It is trivial that $\Xi$ is convex, lower semicontinuous and proper. The we prove that $F$ is pseudomonotone. This follows form the following lemma.
+Here is understood that $F$ and $\Xi$ depends parametrically on $p_N^k\in\Lambda^*$, $N$ and $u_N^k\in U$, but in order to keep the notation simpler we do not explicitly indicates them. We prove that~\eqref{eqn:equation-unk} admits a solution $u_N^k$ for each $p_N^k$ fixed. To this aim we check the hypotheses needed to apply Corollary~\ref{cor:corollary-5-19} with $\Xi$ in place of $\Phi$ and $F$ in place of $A$. It is trivial that $\Xi$ is convex, lower semicontinuous and proper. The fact that $F$ is pseudomonotone is proved in the following lemma.
 \begin{lemma}
 Let $U,H$ be separable and reflexive Banach spaces with $U$ embedded compactly and densely in $H$. Let $F\in C^0(H,H^*)$. Then $F$ is pseudomonotone as a map from $U$ to $U^*$.
 \end{lemma}
@@ -869,7 +869,7 @@ Since the subsequence $u_{n_k}$ was arbitrary, actually
 \]
 This implies that $F$ is presudomonotone as a map form $U$ to $U^*$.
 \end{proof}
-Next we need to verify the required coercivity property. This the content of the following lemma.
+Next we need to verify the required coercivity property. This is the content of the following lemma.
 \begin{lemma}
 If $N$ is sufficiently large, there exists a function $\zeta\colon[0,\infty)\to[0,\infty)$ with the property that
 \[
@@ -932,17 +932,19 @@ we find that
 Now the quantity on the right hand side tends to infinity as $\norm{u}_U\to\infty$, so the thesis follows.
 %Now $\norm{u}_H\le\norm{(u,\mathcal{L}(u))}_{H\times\Lambda}\le\norm{u}_H+C_L$ so that the thesis follows immediately.
 \end{proof}
-Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined (in the sense that the solution to~\eqref{eqn:equation-unk} is unique) and satisfies some regularity properties, as showed in the following lemma.
+Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p_N^k)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined (in the sense that the solution to~\eqref{eqn:equation-unk} is unique) and satisfies some regularity properties, as showed in the following lemma.
 \begin{lemma}
 \label{lemma:properties-U}
-If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, belongs to $C^0(\Lambda^*,H)$ and is bounded, in the sense that it maps bounded subsets of $\Lambda^*$into bounded subsets of $U$. Moreover
+If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, is demicontinuous from $\Lambda^*$ to $U$, belongs to $C^0(\Lambda^*,H)$ and is bounded, in the sense that it maps bounded subsets of $\Lambda^*$into bounded subsets of $U$. Moreover
 \[
 \norm{\mathcal{U}(p)}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}\quad\text{for all $p\in\Lambda^*$}
 \]
 where $C_U^0,C_U^1>0$ are constants independent on $p$ and $N$.
 \end{lemma}
 \begin{proof}
-First we prove that there exists a constant $B>0$ (depending on $p_N^k$) such that each solution $u\in U$ to~\eqref{eqn:equation-unk} satisfies $\norm{u}_U\le B$. Notice that $u\in U$ is a solution to~\eqref{eqn:equation-unk} if and only if
+Since we are now interested in the behavior of the solution set for $p_N^k$ variable, we explicitly replace it with a more generic symbol $p\in\Lambda^*$.
+
+First we prove that there exists a constant $B>0$ (depending on $p$) such that each solution $u\in U$ to~\eqref{eqn:equation-unk} satisfies $\norm{u}_U\le B$. Notice that $u\in U$ is a solution to~\eqref{eqn:equation-unk} if and only if
 \begin{equation}
 \label{eqn:equation-unk-explicit}
 \Xi(v)+\dual{F(u),v-u}\ge\Xi(u)+\dual{f_N^k,v-u}\quad\text{for all $v\in U$}.
@@ -954,30 +956,30 @@ Choosing $v=u/2$ we get
 This is equivalent to
 \begin{equation}
 \begin{multlined}
-\frac{1}{2}\langle \mathcal{A}u,u\rangle+\tau_N\Phi_0\left(p_N^k,\frac{u-u_N^k}{\tau_N}\right)+\frac{1}{2}\tau_N\langle\mathcal{D}(u-u_N^k),u-u_N^k\rangle-\\
--\frac{1}{8}\langle \mathcal{A}u,u\rangle-\tau_N\Phi_0\left(p_N^k,\frac{\frac{u}{2}-u_N^k}{\tau_N}\right)-\frac{1}{2}\tau_N\left\langle \mathcal{D}\left(\frac{u}{2}-u_N^k\right),\frac{u}{2}-u_N^k\right\rangle+\\
-+\frac{1}{2}\langle D_u\Psi(u,\mathcal{L}(u)),u\rangle+\frac{1}{2}\langle\mathcal{L}'(u)^*p_N^k,u\rangle-\frac{1}{2}\langle f_N^k,u\rangle\le0.
+\frac{1}{2}\langle \mathcal{A}u,u\rangle+\tau_N\Phi_0\left(p,\frac{u-u_N^k}{\tau_N}\right)+\frac{1}{2}\tau_N\langle\mathcal{D}(u-u_N^k),u-u_N^k\rangle-\\
+-\frac{1}{8}\langle \mathcal{A}u,u\rangle-\tau_N\Phi_0\left(p,\frac{\frac{u}{2}-u_N^k}{\tau_N}\right)-\frac{1}{2}\tau_N\left\langle \mathcal{D}\left(\frac{u}{2}-u_N^k\right),\frac{u}{2}-u_N^k\right\rangle+\\
++\frac{1}{2}\langle D_u\Psi(u,\mathcal{L}(u)),u\rangle+\frac{1}{2}\langle\mathcal{L}'(u)^*p,u\rangle-\frac{1}{2}\langle f_N^k,u\rangle\le0.
 \end{multlined} 
 \end{equation}
 After some simple estimates
 \begin{equation}
 \label{eqn:boundedness}
 \begin{multlined}
-\frac{3C_A}{8}|u|_U^2-C_{\Phi}(\|p_N^k\|+1)\left(\frac{3}{2}\|u\|_H+2\|u_N^k\|_H\right)+\frac{3C_D}{8\tau_N}\|u\|_H^2-\\
+\frac{3C_A}{8}|u|_U^2-C_{\Phi}(\|p\|+1)\left(\frac{3}{2}\|u\|_H+2\|u_N^k\|_H\right)+\frac{3C_D}{8\tau_N}\|u\|_H^2-\\
 -\frac{3}{2\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H\|u\|_H-\frac{1}{\tau_N}\|\mathcal{D}\|_{\mathscr{L}(H,H^*)}\|u_N^k\|_H^2-\\
 -\frac{1}{2}C_{\Psi}^2(1+C_L)^2\|u\|_H^2-\frac{1}{2}C_{\Psi}^1(1+C_L)\|u\|_H-\frac{1}{2}C_{\Psi}^0-\\
--\frac{1}{2}C_{\Psi}^3(1+C_L)C_L\|u\|_H-\frac{1}{2}C_L\|p_N^k\|_{\Lambda^*}\|u\|_H-\frac{1}{2}\|f_N^k\|_{H^*}\|u\|_H\le0
+-\frac{1}{2}C_{\Psi}^3(1+C_L)C_L\|u\|_H-\frac{1}{2}C_L\|p\|_{\Lambda^*}\|u\|_H-\frac{1}{2}\|f_N^k\|_{H^*}\|u\|_H\le0
 \end{multlined}
 \end{equation}
 Choosing $N$ sufficiently large we can make the coefficient
 \[
 \frac{3C_D}{8\tau_N}-\frac{1}{2}C_{\Psi}^2(1+C_L)^2
 \]
-of $\norm{u}_H^2$ is positive. Then inequality~\eqref{eqn:boundedness} implies\footnote{The reasoning is as follows. First of all, taking into account Lemma~\ref{lemma:a-priori-0} below, we know that $\norm{u_N^k}_U\le C_0$ uniformly in $N$ and $k$. So we can replace $\norm{u_N^k}$ with $C_0$. Next call $x=|u|_U$, $y=\norm{u}_H$ and $z=\norm{p_N^k}_{\Lambda^*}$. Then the inequality can be rewritten as $Ax^2+NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ where all the coefficient are positive. From $NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ it follows that
+of $\norm{u}_H^2$ is positive. Then inequality~\eqref{eqn:boundedness} implies\footnote{The reasoning is as follows. First of all, taking into account Lemma~\ref{lemma:a-priori-0} below, we know that $\norm{u_N^k}_U\le C_0$ uniformly in $N$ and $k$. So we can replace $\norm{u_N^k}$ with $C_0$. Next call $x=|u|_U$, $y=\norm{u}_H$ and $z=\norm{p}_{\Lambda^*}$. Then the inequality can be rewritten as $Ax^2+NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ where all the coefficient are positive. From $NB y^2-Cy^2-Dzy-Ey-Fz-G\le0$ it follows that
 \[
 y\le\frac{2}{NB-C}(Dz+E)+2\sqrt{\frac{Fz+G}{NB-C}}.
 \]
-It is trivial that this implies the existence of $a,b>0$ independent on $p$ and $N$ such that $y\le a+bz$.} that $\norm{u}_U$ is indeed bounded by a constant that remains bounded as $p_N^k$ remains bounded and there exists $C_U^0,C_U^1>0$ independent on $N$ and $p_N^k$ such that $\norm{u}_H\le C_U^0+\frac{C_U^1}{N}\norm{p_N^k}_{\Lambda^*}$.
+It is trivial that this implies the existence of $a,b>0$ independent on $p$ and $N$ such that $y\le a+bz$.} that $\norm{u}_U$ is indeed bounded by a constant that remains bounded as $p$ remains bounded and there exists $C_U^0,C_U^1>0$ independent on $N$ and $p$ such that $\norm{u}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}$.
 
 Next we prove that the solution to~\eqref{eqn:equation-unk} is unique, so that $\mathcal{U}$ is well defined. To this aim let $u_1,u_2\in U$ two solutions. We consider~\eqref{eqn:equation-unk-explicit} and we substitute $v=\frac{u_1+u_2}{2}$ and alternatively $u=u_1$ or $u=u_2$. Summing the two resultant inequalities together, we get
 \begin{equation}
@@ -988,9 +990,9 @@ that explicitly reads
 \[
 \begin{multlined}
 \frac{1}{2}\langle \mathcal{A}u_1,u_1\rangle+\frac{1}{2}\langle \mathcal{A}u_2,u_2\rangle-\left\langle \mathcal{A}\frac{u_1+u_2}{2},\frac{u_1+u_2}{2}\right\rangle+\\
-+\tau_N\Phi_0\left(p_N^k,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p_N^k,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p_N^k,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)+\\
++\tau_N\Phi_0\left(p,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)+\\
 +\frac{1}{2\tau_N}\langle \mathcal{D}(u_1-u_N^k),u_1-u_N^k\rangle+\frac{1}{2\tau_N}\langle \mathcal{D}(u_2-u_N^k),u_2-u_N^k\rangle-\frac{1}{\tau_N}\left\langle \mathcal{D}\left(\frac{u_1+u_2}{2}-u_N^k\right),\frac{u_1+u_2}{2}-u_N^k\right\rangle+\\
-+\frac{1}{2}\langle D_u\Psi_0(u_1,\mathcal{L}(u_1))-D_u\Psi_0(u_2,\mathcal{L}(u_2)),u_1-u_2\rangle+\frac{1}{2}\langle\mathcal{L}'(u_1)^*p_N^k-\mathcal{L}'(u_2)^*p_N^k,u_1-u_2\rangle\le0
++\frac{1}{2}\langle D_u\Psi_0(u_1,\mathcal{L}(u_1))-D_u\Psi_0(u_2,\mathcal{L}(u_2)),u_1-u_2\rangle+\frac{1}{2}\langle\mathcal{L}'(u_1)^*p-\mathcal{L}'(u_2)^*p,u_1-u_2\rangle\le0
 \end{multlined}
 \]
 Firstly we notice that
@@ -999,9 +1001,9 @@ Firstly we notice that
 \]
 that
 \[
-\tau_N\Phi_0\left(p_N^k,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p_N^k,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p_N^k,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)\ge0
+\tau_N\Phi_0\left(p,\frac{u_1-u_N^k}{\tau_N}\right)+\tau_N\Phi_0\left(p,\frac{u_2-u_N^k}{\tau_N}\right)-2\tau_N\Phi_0\left(p,\frac{\frac{u_1+u_2}{2}-u_N^k}{\tau_N}\right)\ge0
 \]
-since $\Phi_0(p_N^k,\cdot)$ is convex, and that
+since $\Phi_0(p,\cdot)$ is convex, and that
 \[
 \begin{multlined}
 \frac{1}{2\tau_N}\dual{\mathcal{D}(u_1-u_N^k),(u_1-u_N^k)}+\frac{1}{2\tau_N}\dual{\mathcal{D}(u_2-u_N^k),(u_2-u_N^k)}-\frac{1}{\tau_N}\left\langle\mathcal{D}\left(\frac{u_1+u_2}{2}-u_N^k\right),\frac{u_1+u_2}{2}-u_N^k\right\rangle=\\
@@ -1014,20 +1016,26 @@ Secondly, since $u_1$ and $u_2$ are confined on a ball of radius $B$, there exis
 \]
 Eventually we have
 \[
-\frac{1}{2}\langle\mathcal{L}'(u_1)^*p_N^k-\mathcal{L}'(u_2)^*p_N^k,u_1-u_2\rangle\ge-\frac{1}{2}C_L\norm{p_N^k}_{\Lambda^*}\norm{u_1-u_2}_H^2.
+\frac{1}{2}\langle\mathcal{L}'(u_1)^*p-\mathcal{L}'(u_2)^*p,u_1-u_2\rangle\ge-\frac{1}{2}C_L\norm{p}_{\Lambda^*}\norm{u_1-u_2}_H^2.
 \]
 Thus, choosing $N$ sufficiently large such that
 \[
-\frac{C_D}{4\tau_N}-\frac{1}{2}C_\Psi^4-\frac{1}{2}C_L\norm{p_N^k}_{\Lambda^*}>0,
+\frac{C_D}{4\tau_N}-\frac{1}{2}C_\Psi^4-\frac{1}{2}C_L\norm{p}_{\Lambda^*}>0,
 \]
 the left hand side in~\eqref{eqn:estimates-unicity} bounds $\norm{u_1-u_2}_H^2$, so that $u_1=u_2$.
 
-Up to now we have proved that $\mathcal{U}$ and we have verified the boundedness properties.
+Up to now we have proved that $\mathcal{U}$ and we have verified the boundedness properties. It remains to be proved that $\mathcal{U}$ satisfies the continuity properties. To this aim consider a sequence $\{p_n\}\subset\Lambda^*$ such that $p_n\to p$ in $\Lambda^*$ for some $p\in\Lambda^*$. Let $u_n=\mathcal{U}(p_n)$ and notice that, by the first part of the proof, $u_n$ are bounded in $U$. Thus for each subsequence $\{u_{n_j}\}$ there exists a further (not relabeled) subsequence such that $u_{n_j}\rightharpoonup u$ in $U$ and due to the compact embedding of $U$ into $H$, up to extracting a further subsequence, also $u_{n_j}\to u$ in $H$. In principle $u\in U$ depends on the particular subsequence, but, if we prove that $u=\mathcal{U}(p)$, it is actually unique and we conclude. To prove this we pass to the limit $j\to\infty$ on the equations satisfied by $u_{n_j}$. These can be written explicitly as
+\[
+\begin{multlined}
+\frac{1}{2}\langle Av,v\rangle+\tau_N\Phi_0\left(p_{n_j},\frac{v-u_N^k}{\tau_N}\right)+\frac{1}{2}\tau_N\langle D(v-u_N^k),v-u_N^k\rangle+\langle D_u\Phi_0(u_{n_j},\mathcal{L}(u_{n_j}))+\mathcal{L}'(u_{n_j})^*p_{n_j},v-u_{n_j}\rangle\ge\\
+\ge\frac{1}{2}\langle Au_{n_j},u_{n_j}\rangle+\tau_N\Phi_0\left(p_{n_j},\frac{u_{n_j}-u_N^k}{\tau_N}\right)+\frac{1}{2}\tau_N\langle D(u_{n_j}-u_N^k),u_{n_j}-u_N^k\rangle+\langle f,u_{n_j}-v\rangle.
+\end{multlined}
+\]
 \end{proof}
-To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^k\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
+To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^n\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
 \begin{equation}
 \label{eqn:fixed-point}
-p_N^k=D_\lambda\Psi_0(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))=:\mathcal{T}(p_N^k)
+p_N^n=D_\lambda\Psi_0(\mathcal{U}(p_N^n),\mathcal{L}(\mathcal{U}(p_N^n)))=:\mathcal{T}(p_N^n)
 \end{equation}
 where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\eqref{eqn:fixed-point} follows from the Schauder fixed-point theorem in the form of Corollary~\ref{cor:schauder-improved} thanks to the following lemma.
 \begin{lemma}
