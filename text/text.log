@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  25 MAY 2026 20:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  26 MAY 2026 03:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1568,7 +1568,7 @@ LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
 
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 117.
+(Font)              scaled to size 7.0pt on input line 121.
 [1
 
 
@@ -1639,7 +1639,7 @@ Overfull \vbox (1.75797pt too high) has occurred while \output is active []
 
 [6]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 423.
+(Font)              scaled to size 6.2pt on input line 424.
 
 
 [7]
@@ -1680,131 +1680,70 @@ LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
 
 [19]
 
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
-
 [20]
-
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
 
 [21]
 
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
-
 [22]
 
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
-
 [23]
-Overfull \hbox (1.08104pt too wide) detected at line 1033
-[][]
- []
-
-
-
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
 
 [24]
 
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 1063.
 
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 1063.
+
+
 
 [25]
 
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
-
 [26]
-Underfull \vbox (badness 1205) has occurred while \output is active []
-
-
-
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
 
 [27]
+Underfull \vbox (badness 1454) has occurred while \output is active []
 
 
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
 
 [28]
 
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1341.
-
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1341.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
-
 [29]
-
-
-Overfull \hbox (44.32178pt too wide) has occurred while \output is active
- \T1/zpltlf/m/n/7 2.4. AN ABSTRACT EXISTENCE THEOREM FOR CONSTRAINED MECHANICAL
- SYSTEMS TREATED WITH THE METHOD OF LAGRANGE MULTIPLIERS []
- []
 
 [30]
 
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 1437.
+
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 1437.
+
+
+
+[31]
+
+[32]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1359.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1455.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1359.
+(hyperref)                replaced by space on input line 1455.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1359.
+(hyperref)                removing `\noindent' on input line 1455.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1359.
+(Font)              scaled to size 20.74pt on input line 1455.
 
 
-[31
+[33
 
 
 ]
@@ -1812,51 +1751,47 @@ Chapter 3
 PGFPlots: reading {figures/necking-experimental.dat}
 
 
-[32
-
-
-]
-
-[33]
-Chapter 4
-
-
 [34
 
 
 ]
-Overfull \hbox (3.04405pt too wide) in paragraph at lines 1500--1501
+
+[35]
+Chapter 4
+
+
+[36
+
+
+]
+Overfull \hbox (3.04405pt too wide) in paragraph at lines 1596--1597
  \T1/zpltlf/b/n/10 4.1.2.Kinematics of the one di-men-sional model.[] \T1/zpltl
 f/m/n/10 We are now ready to build a purely one-dimensional
  []
 
 
 
-[35]
+[37]
 
-[36]
+[38]
 Missing character: There is no h in font eusm10!
 Missing character: There is no i in font eusm10!
 
 
-[37]
-
-[38]
-
 [39]
 
 [40]
+
+[41]
+
+[42]
 Chapter 5
 
 
-[41
+[43
 
 
 ]
-
-[42]
-
-[43]
 
 [44]
 
@@ -1877,9 +1812,13 @@ Chapter 5
 [52]
 
 [53]
+
+[54]
+
+[55]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 2746: fill between: activating layered grap
+Package pgfplots info on input line 2842: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1897,42 +1836,42 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 2746: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2842: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 2746.
+(Font)              scaled to size 8.0pt on input line 2842.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 2760: fill between: activating layered grap
+Package pgfplots info on input line 2856: fill between: activating layered grap
 hics
-Package pgfplots info on input line 2760: Setting layers 'axis background,axis 
+Package pgfplots info on input line 2856: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
 
-[54]
-PGFPlots: reading {figures/instability.dat}
-PGFPlots: reading {figures/instability.dat}
-
-
-[55]
-
 [56]
-PGFPlots: reading {figures/force.dat}
-PGFPlots: reading {figures/hessian.dat}
+PGFPlots: reading {figures/instability.dat}
+PGFPlots: reading {figures/instability.dat}
 
 
 [57]
 
 [58]
-LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 3071.
-LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.5pt on input line 3074.
+PGFPlots: reading {figures/force.dat}
+PGFPlots: reading {figures/hessian.dat}
 
 
 [59]
+
+[60]
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 3167.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 6.5pt on input line 3170.
+
+
+[61]
 PGFPlots: reading {figures/dets.dat}
 
 Missing character: There is no ; in font nullfont!
@@ -1947,51 +1886,51 @@ Missing character: There is no ; in font nullfont!
 PGFPlots: reading {figures/etan.dat}
 
 
-[60]
-
-[61]
-
 [62]
 
 [63]
 
+[64]
+
+[65]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 3380.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 3380.
+(hyperref)                replaced by space on input line 3476.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3380.
+(hyperref)                removing `\noindent' on input line 3476.
 
 
 
-[64
+[66
 
 
 ]
 Chapter 6
 
 
-[65
+[67
 
 
 ]
 
-[66]
-
-[67]
-
 [68]
 
 [69]
+
+[70]
+
+[71]
 Chapter 7
 
 
-[70
+[72
 
 
 ]
@@ -1999,46 +1938,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[71]
-
-[72]
-
 [73]
 
 [74]
 
 [75]
 
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3912.
-
-
-Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3912.
-
-
-
 [76]
-Chapter 8
+
+[77]
+
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 4008.
 
 
-[77
+Package amsmath Warning: Cannot use `split' here;
+(amsmath)                trying to recover with `aligned' on input line 4008.
 
 
-] (./old-pressure-sensitive.tex
 
 [78]
-Chapter 9
+Chapter 8
 
 
 [79
 
 
-]
+] (./old-pressure-sensitive.tex
 
 [80]
+Chapter 9
 
-[81]
+
+[81
+
+
+]
 
 [82]
 
@@ -2063,45 +1998,45 @@ Chapter 9
 [92]
 
 [93]
-Underfull \vbox (badness 3439) has occurred while \output is active []
-
-
 
 [94]
 
 [95]
+Underfull \vbox (badness 3439) has occurred while \output is active []
 
-[96])
+
+
+[96]
 
 [97]
 
+[98])
+
+[99]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4007.
+(hyperref)                removing `\noindent' on input line 4103.
 
-
-
-[98
-
-
-]
-Appendix A
-
-
-[99
-
-
-]
-Appendix B
 
 
 [100
 
 
 ]
+Appendix A
 
-[101]
 
-[102]
+[101
+
+
+]
+Appendix B
+
+
+[102
+
+
+]
 
 [103]
 
@@ -2122,32 +2057,36 @@ Appendix B
 [111]
 
 [112]
+
+[113]
+
+[114]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5097.
+5193.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5097.
+(Font)              scaled to size 10.0pt on input line 5193.
 
 
-[113
+[115
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5098--5098
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5194--5194
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[114]
+[116]
 
-[115] (./text.aux (./frontespizio.aux))
+[117] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
@@ -2157,10 +2096,10 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48178 strings out of 473197
- 1057464 string characters out of 5718605
- 1938814 words of memory out of 5000000
- 69857 multiletter control sequences out of 15000+600000
+ 48187 strings out of 473197
+ 1057643 string characters out of 5718605
+ 1938927 words of memory out of 5000000
+ 69862 multiletter control sequences out of 15000+600000
  721252 words of font info for 281 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,24n,105p,1901b,2249s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2193,10 +2132,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (118 pages, 1042890 bytes).
+Output written on text.pdf (120 pages, 1051013 bytes).
 PDF statistics:
- 1833 PDF objects out of 2073 (max. 8388607)
- 1657 compressed objects within 17 object streams
- 611 named destinations out of 1000 (max. 500000)
+ 1851 PDF objects out of 2073 (max. 8388607)
+ 1673 compressed objects within 17 object streams
+ 615 named destinations out of 1000 (max. 500000)
  358 words of extra memory for PDF output out of 10000 (max. 10000000)
 
