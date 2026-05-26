@@ -92,11 +92,19 @@
 
 \newpage
 
+\vspace*{\fill}
+
 \begin{center}
 \large\textsc{Abstract}
 \end{center}
 \vspace{1em}
-Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and correctly describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved. In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory by resorting to the theory of evolutionary variational inequalities for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking. The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (for example, the constraint of plastic incompressibility), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. We develop an existence theory using the Rothe method: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a saddle-point structure and is solved as follows: first, the volumetric plastic distortion is determined by applying the kinematical constraint; then, the other kinematical unknowns are found for an arbitrary internal pressure by solving a static nonlinear problem (the existence of solution is established using the Minty-Browder theorem). Finally, the internal pressure is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder theorem.
+Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and correctly describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved.
+
+In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory by resorting to the theory of evolutionary variational inequalities for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking.
+
+The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (for example, the constraint of plastic incompressibility), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. We develop an existence theory using the Rothe method: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a saddle-point structure and is solved as follows: first, the volumetric plastic distortion is determined by applying the kinematical constraint; then, the other kinematical unknowns are found for an arbitrary internal pressure by solving a static nonlinear problem (the existence of solution is established using the Minty-Browder theorem). Finally, the internal pressure is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem.
+
+\vspace*{\fill}
 
 \tableofcontents
 
@@ -256,6 +264,9 @@ In terms of $\Phi$, the dissipative inequality reads
 \end{equation}
 A possible condition ensuring~\eqref{eqn:modeling:dissipative-inequality} is that $\Phi(z,\cdot)$ is convex and $\Phi(z,0)=0$. Indeed if $(z,w)\in Z\times Z$ and $\xi\in\partial_w\Phi(z,w)$, then by definition of subdifferential, $0=\Phi(z,0)\ge\Phi(z,w)+\dual{\xi,0-w}$, so that $\dual{\xi,w}\ge\Phi(z,w)\ge0$.
 \end{rmk}
+\begin{rmk}[Rate-independent versus rate-dependent models]
+The a mechanical model described by~\eqref{eqn:modeling:doubly:nonlinear-neat} is said to be rate independent if when $z$ is a solution with loads $\mathcal{X}$, also $\tilde z(s)=z(\zeta(s))$ is a solution with loads $\mathcal{X}(s)=\mathcal{X}(\zeta(t))$, where $\zeta\colon[0,S]\to[0,T]$ is a smooth and monotone increasing reparametrization of time. Thus rate independence is equivalent to the requirement that $\partial\Phi(z,w)=\partial\Phi(z,\lambda w)$ for all $\lambda>0$. This is true is $\Phi(z,\lambda w)=\lambda\Phi(z,w)$ for all $\lambda>0$ and in this case $\Phi$ is said to be positively 1-homogeneous.
+\end{rmk}
 
 \subsection{Adding constraints with the method of Lagrange multipliers}
 \label{subsec:lagrange-multipliers}
@@ -399,6 +410,9 @@ B(0,Y) & \text{if $\dot E_p=0$} \\
 \left\{Y\dfrac{\dot E_p}{|\dot E_p|}\right\} & \text{if $\dot E_p\neq0$}.
 \end{cases}
 \]
+\begin{rmk}[Rate-dependent versus rate-dependent plasticity]
+A peculiar characteristic of the Von Mises constitutive relation is that $R$ is 1-homogeneous so that the plastic microforce $\partial R(\dot E_p)$ depends on the direction only of the plastic strain rate, but not depends on its modulus. As observed in previous subsection, this implies that the material response is rate-independent. From the modeling viewpoint, the behavior of metals at room temperature is only slightly rate dependent, and the rate-dependence increase with increasing temperatures.
+\end{rmk}
 Now, the microforce balance can be written as
 \[
 \dev T_e-B_p+\diver K_p\in\partial R(\dot E_p).
@@ -495,8 +509,13 @@ where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:p
 In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}.
 
 \section{An existence result for doubly nonlinear equations}
+\label{sec:roubickeck}
 
 In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even thought it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a quadratic growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
+
+\begin{rmk}
+The result presented in this section will not be directly used in the sequel of the thesis. We report it since it was the basis from which we developed the general existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}. The result presented in that section is indeed a generalization of the theorem of the present one, when a constrain is added and a dissipation potential depending on the Lagrange multiplier is considered.
+\end{rmk}
 
 \subsection{Assumptions and formulation of the problem}
 
@@ -526,12 +545,12 @@ Find $z\in AC([0,T],Z)$ such that $z(0)=z_0$ and $\mathcal{F}(z(t))+\partial\Phi
 
 \subsection{Existence theorem}
 
-The existence of solution to the above problem is established by the following theorem. We will report only some ideas of the proof, that is integrally reported in~\cite[Proposition 11.1]{roubicek-pde}.
+The existence of solution to the above problem is established by the following theorem. We will report only some ideas of the proof since they will utilized also to prove the existence result of Section~\ref{sec:existence-theorem-abstract-constrained}. A complete proof of the following theorem is integrally reported in~\cite[Proposition 11.1]{roubicek-pde}.
 \begin{thm}
 Under the assumption of previous subsection, there exists a solution $z\in W^{1,\infty}((0,T),Z)$ to Problem~\ref{prb:roubickeck} that also satisfies $\dot z\in C^0([0,T],Z)$.
 \end{thm}
-\begin{proof}[Idea of the proof]
-The proof relies on a time discretization approach, so it is first established the existence of solutions to a discrete-in-time version of the problem. Specifically fix $N\in\mathbb{N}$, let $\tau_N=T/N$ and $t_k=k\tau_N$ for $k\in\{0,\dots,N\}$, and consider the problem to find $\{z_N^k\}_{k=1}^N\subset Z$ such that $z_N^0=z_0$ and
+\begin{proof}[Sketch of the proof]
+The proof relies on a time discretization approach, so it is first established the existence of solutions to a discrete-in-time version of the problem: the continuous in time solution will be recovered as the limit of the discrete-in-time ones as the discretization step size vanishes. Specifically fix $N\in\mathbb{N}$, let $\tau_N=T/N$ and $t_k=k\tau_N$ for $k\in\{0,\dots,N\}$, and consider the problem to find $\{z_N^k\}_{k=1}^N\subset Z$ such that $z_N^0=z_0$ and
 \begin{equation}
 \label{eqn:discrete-roubickeck}
 \mathcal{F}(z_N^k)+\partial\Phi\left(\frac{z_N^k-z_N^{k-1}}{\tau_N}\right)\ni f_N^k\quad\text{for $k\in\{1,\dots,N\}$},
@@ -540,7 +559,7 @@ where
 \[
 f_N^k:=\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}f(s)ds.
 \]
-The existence of a discrete-in-time solution is proven inductively by solving iteratively~\eqref{eqn:discrete-roubickeck}: to this aim the Minty--Browder theorem in the form of Corollary~\ref{cor:corollary-5-19} is used.
+The existence of a discrete-in-time solution is proven inductively by solving iteratively~\eqref{eqn:discrete-roubickeck}: to this aim the Minty--Browder theorem in the form of Corollary~\ref{cor:corollary-5-19} is used. Here the quadratic growth of $\Phi$ is crucial to prove the required coercivity.
 
 Then one defines $z_N$ as the piecewise affine interpolation of $\{z_N^k\}_{k=0}^N$. The derivative $\dot z_N^k$ is piecewise constant and
 \[
@@ -548,289 +567,32 @@ Then one defines $z_N$ as the piecewise affine interpolation of $\{z_N^k\}_{k=0}
 \]
 We also set $\dot z_N^0:=0$. Let also $\hat z_N$ be the piecewise affine interpolation of $\{z_N^k\}_{k=0}^N$. Now notice that~\eqref{eqn:discrete-roubickeck} can be written more explicitly as
 \[
-\tau_N\Phi_0(w)\ge\tau_N\Phi_0(\dot z_N^k)+\dual{f_N^k-\mathcal{F}(z_N^k),w-\dot z_N^k}\quad\text{for all $z$ and $k\in\{1,\dots,N\}$}.
+\tau_N\Phi_0(w)\ge\tau_N\Phi_0(\dot z_N^k)+\dual{f_N^k-\mathcal{F}(z_N^k)-\mathcal{D}\dot z_N^k,w-\dot z_N^k}\quad\text{for all $z$ and $k\in\{1,\dots,N\}$}.
 \]
-Notice that due to the assumption that $\mathcal{F}(z_0)=f(0)$ this is true also for $k=0$. Next consider this inequality for $w=\dot z_N^k$ and for $k-1$ in place of $k$ and $w=\dot u_N^k$. Summing the resultant inequalities together, performing some estimates and summing the result for $k\in\{1,\dots,N\}$ one arrives at
+Notice that due to the assumption that $\mathcal{F}(z_0)=f(0)$ this is true also for $k=0$. Next consider this inequality for $w=\dot z_N^k$ and for $k-1$ in place of $k$ and $w=\dot z_N^k$. Summing the resultant inequalities together, performing some estimates and summing the result for $k\in\{1,\dots,N\}$ one arrives at
 \begin{equation}
-\frac{C_A}{2}|\dot u_N^n|_U^2+\frac{C_D}{2}\tau_N\sum_{k=1}^n\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2\le\frac{1}{C_D}\tau_N\sum_{k=1}^n\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+L^2\norm{\dot u_N^k}_H^2\right).
+\label{eqn:estimates-roubickeck}
+\frac{C_A}{2}|\dot z_N^n|_Z^2+\frac{C_D}{2}\tau_N\sum_{k=1}^n\left\lVert\frac{\dot z_N^k-\dot z_N^{k-1}}{\tau_N}\right\rVert_H^2\le\frac{1}{C_D}\tau_N\sum_{k=1}^n\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+L^2\norm{\dot z_N^k}_H^2\right).
 \end{equation}
+Letting
+\[
+S_N^n=\tau_N\sum_{k=1}^n\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2
+\]
+and noticing that
+\[
+\norm{\dot z_N^k}_H^2\le TS_N^k,
+\]
+it follows that
+\[
+\frac{C_D}{2}S_N^n\le\frac{1}{C_D}\tau_N\sum_{k=1}^n\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+L^2TS_N^k\right).
+\]
+The fact that $f\in H^1((0,T),H^*)$ implies that $\tau_N\sum_{k=1}^n\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2$ is bounded uniformly in $N$ and $n$. Then the discrete Gronwall inequality (Proposition~\ref{prop:gronwall}) implies that $S_N^n$ is bounded uniformly in $N$ and $n$. This gives a uniform bound on $\norm{\dot{\hat z}_N}_{L^2((0,T),H)}$. Returning back to~\eqref{eqn:estimates-roubickeck}, it follows that also $\norm{z_N}_{W^{1,\infty}((0,T),Z)}$ is uniformly bounded. Thus, up to extracting a subsequence, it holds that $z_N\overset{*}{\rightharpoonup}z$ in $W^{1,\infty}((0,T),Z)$. Moreover Aubin--Lions--Simons lemma (Theorem~\ref{thm:aubin-lions}) implies that $z_N\to z$ in $C^0([0,T],H)$ and $\hat{z}_N\to\dot z$ in $C^0([0,T],H)$. A simple estimate also implies that $\dot z_N\to\dot z$ in $L^2((0,T),H)$. This allows to pass in the limit $N\to\infty$ in~\eqref{eqn:discrete-roubickeck} thus proving that $z$ is a solution to the continuous-in-time problem.
 \end{proof}
 
-\section{An existence result for evolutionary variational inequalities}
-\label{sec:evi}
-
-Let $V$ be a separable and reflexive Banach space. Consider a mechanical system with space of configurations $V$ and assume that
-\begin{itemize}
-\item[(E)] the free energy $\Phi\colon V\to\mathbb{R}$ is quadratic in the sense that $\Psi(u)=\frac{1}{2}\dual{\mathcal{A}u,u}$ for some $\mathcal{A}\in\mathscr{L}(V,V^*)$, and $\Psi$ has superlinear growth, i.e.,
-\[
-\lim_{\norm{u}\to\infty}\frac{\Psi(u)}{\norm{u}}=\infty,
-\]
-\item[(D)] the dissipation potential $\Phi\colon V\to[0,\infty]$ is convex, proper, l.s.c., positively 1-homogeneous and Lipschitz on its domain.
-\end{itemize}
-Assumption $(E)$ immediately implies that $\Psi$ is Fréchet differentiable with Fréchet differential $\partial\Psi(u)=\mathcal{A}$ for all $u\in V$. Since $\Phi$ is convex and Lipschitz continuous on its domain then it admits a non empty subdifferential $\partial\Phi(v)$ for all $v\in\dom\Phi$. \textbf{Per il teorema di Rockafeller sappiamo che è subdifferenziabile nell'interno del suo dominio, poi però data la Lipschitzianità su tutto il bordo immagino che si possa dimostrare che è subdifferenziabile su tutto il dominio in realtà.} In this case Problem~\ref{prb:modeling:doubly-nonlinear} can be formulated explicitely as follows.
-\begin{prb}
-\label{prb:evi}
-Given $\mathscr{X}\in H^1((0,T),V^*)$ with $\mathcal{X}(0)=0$, find $u\in\text{AC}([0,T],V)$ such that $u(0)=0$ and
-\begin{equation}
-\label{eqn:evi}
-\dual{\mathcal{A}u(t),v-\dot u(t)}+\Phi(v)-\Phi(\dot u(t))\ge\dual{\mathcal{X}(t),v-\dot u(t)}\quad\text{for all $v\in V$}
-\end{equation}
-for a.e.\ $t\in(0,T)$.
-\end{prb}
-Inequalities of the form~\eqref{eqn:evi} are called \emph{evolutionary variational inequalities}. The following theorem ensure the existence and uniqueness of solutions to Problem~\ref{prb:evi}.
-\begin{thm}
-\label{thm:han-reddy}
-Let $V$ a separable and reflexive Banach space and let assumption (E) and (D) hold. Then for every $\mathcal{X}\in H^1((0,T),V^*)$ with $\mathcal{X}(0)=0$, there exists a unique $u\in\text{AC}([0,T],V)$ solution to Problem~\ref{prb:evi}.
-\end{thm}
-\begin{proof}
-See~\cite{han-reddy}. \textbf{Riportarla}.
-\end{proof}
-
-\section{Energetic solutions}
-\label{sec:energetic-solution}
-
-\subsection{Motivation}
-
-Let $Q$ be a separable and reflexive Banach space. Let $\mathcal{E}\colon Q\times[0,T]\to\mathbb{R}$ Fréchet differentiable such that $\mathcal{E}(\cdot,t)$ is convex for all $t\in[0,T]$ and let $\Phi\colon Q\times[0,\infty]$ be convex, lower semicontinuous and positively 1-homogeneous. Consider the following doubly nonlinear equation
-\begin{equation}
-\label{eqn:energetic:doubly-nonlinear}
-\partial_q\mathcal{E}(q(t),t)+\partial\Phi(\dot q(t))\ni 0.
-\end{equation}
-We say that $q\in\text{AC}([0,T],V)$ is a differentiable solution if~\eqref{eqn:energetic:doubly-nonlinear} holds for a.e.\ $t\in(0,T)$. From Proposition~\ref{prop:prop-pos-1-hom-convx} this is equivalent to
-\begin{equation}
-\label{eqn:energetic:equivalent-doubly-nonlinear}
--\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(0)\quad\text{and}\quad\Phi(\dot q(t))=-\dual{\partial_q\mathcal{E}(q(t),t),\dot q(t)}=-\frac{d}{dt}\mathcal{E}(q(t),t)+\partial_t\mathcal{E}(q(t),t)
-\end{equation}
-for a.e.\ $t\in(0,T)$. The first condition is the requirement that the conservative forces belong to the admissibility set $\partial\Phi(0)$. From the definition of subdifferential, this is equivalent to
-\[
-\Phi(\hat q-q(t))\ge\Phi(0)-\dual{\partial_q\mathcal{E}(q(t),t),\hat q-q(t)}\quad\text{for all $\hat{q}\in Q$}.
-\]
-Exploiting the convexity of $\mathcal{E}(\cdot,t)$ it follows that
-\[
-\mathcal{E}(\hat{q},t)-\mathcal{E}(q(t),t)\ge\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}=\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}.
-\]
-Then the first condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear}, implies
-\begin{equation}
-\label{eqn:energetic:stability-motivation}
-\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$},
-\end{equation}
-Since $\Phi$ is 1-homogeneous, also the inverse implication holds, indeed
-\[
-\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}=\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}\ge\frac{\Phi(\epsilon(\hat{q}-q(t))}{\epsilon}=\Phi(\hat{q}-q(t)).
-\]
-The mechanical meaning of condition~\eqref{eqn:energetic:stability-motivation} is the following: the energy $\mathcal{E}(q(t),t)-\mathcal{E}(\hat{q},t)$ released by the system while passing from $q(t)$ to $\hat{q}$ cannot exceed the dissipation $\Phi(\hat{q}-q(t))$. This is a stability condition. The second condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear} is the power balance. Integrating it on the interval $(0,t)$ for $t\in(0,T]$ we get the energy balance
-\[
-\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\int_0^t\Phi(\dot q(s))ds.
-\]
-The first integral is the work of external forces, while the second integral is the dissipation. The following lemma gives an alternative way to express the dissipation.
-\begin{lemma}
-For all $0\le s<t\le T$ let
-\[
-\text{Diss}_\Phi(q,[s,t])=\inf\left\{\sum_{k=1}^N\Phi(q(t_k)-q(t_{k-1}))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
-\]
-Then
-\[
-\text{Diss}_\Phi(q,[s,t])=\int_s^t\Phi(\dot q(r))dr.
-\]
-\end{lemma}
-\begin{proof}
-Consider any subdivision $\{t_k\}_{k=0}^N$ of $[s,t]$. By Jensen inequality and in view of the 1-homogeneity of $\Phi$, it holds that
-\[
-\Phi(q(t_k)-q(t_{k-1}))=\Phi\left((t_k-t_{k-1})\frac{1}{t_k-t_{k-1}}\int_{t_{k-1}}^{t^k}\dot q(r)dr\right)\le\int_{t_{k-1}}^{t_k}\Phi(\dot q(r))dr\quad\text{for all $k$}.
-\]
-Then the inequality
-\[
-\text{Diss}_\Phi(q,[s,t])\le\int_s^t\Phi(\dot q(r))dr
-\]
-holds. To prove the other inequality we split the interval $[s,t]$ into intervals
-\[
-I_k^n=\left[s+\frac{k-1}{n}(t-s),s+\frac{k}{n}(t-s)\right]
-\]
-for $k\in\{1,\dots,n\}$ with $n\in\mathbb{N}$. Then, by lower semicontinuity of $\Phi$ and by the Fatou's lemma,
-\[
-\begin{split}
-\int_s^{t}\Phi(\dot q(r))dr&\le\int_s^t\liminf_{n\to\infty}\frac{n}{t-s}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr\le\\
-&\le\liminf_{n\to\infty}\frac{n}{t-s}\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr.
-\end{split}
-\]
-Now
-\[
-\begin{split}
-\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr&=\sum_{k=1}^{n-1}\int_0^{\frac{t-s}{n}}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
-&\le\int_0^{\frac{t-s}{n}}\sum_{k=1}^{n-1}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
-&\le\frac{t-s}{n}\text{Diss}_\Phi(q,[s,t]).
-\end{split}
-\]
-We have proved that
-\[
-\int_s^{t}\Phi(\dot q(r))dr\le\text{Diss}_\Phi(q,[s,t])
-\]
-as desired.
-\end{proof}
-Summarizing, we have seen that~\eqref{eqn:energetic:doubly-nonlinear} is equivalent
-\begin{subequations}
-\label{eqn:energetic:motivation-definition}
-\begin{gather}
-\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
-\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\Phi(q,[0,t])\quad\text{for all $t\in[0,T]$}.
-\end{gather}
-\end{subequations}
-This conditions makes sense also if $\mathcal{E}$ is not Fréchet differentiable and $q$ is not absolutely continuous.
-
-This results suggest to define energetic solutions directly as evolutions $q\colon[0,T]\to Q$ satisfying~\eqref{eqn:energetic:motivation-definition} also when less regularity is assumed. We now explore further this possibility. Let $Q$ be a separable and reflexive Banach space and $\mathcal{E}\colon Q\times[0,T]\to[0,\infty]$. Rather than using a dissipation potential, we describe the system's dissipation in terms of a dissipation distance. This is defined as a map $\mathcal D\colon Q\times Q\to[0,\infty]$, where $\mathcal D(q_0,q_1)$ denotes the minimum energy dissipated by the system when it jumps from $q_0$ to $q_1$. The dissipation along an evolution $q\colon[0,T]\to Q$ in the time interval $[s,t]$ is defined as
-\[
-\text{Diss}_\mathcal{D}(q,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(q(t_{k-1}),q(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
-\]
-Then we say that $q$ is an energetic solution if
-\begin{subequations}
-\begin{gather}
-\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q(t),\hat{q})\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
-\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\mathcal{D}(q,[0,t])\quad\text{for all $t\in[0,T]$}.
-\end{gather}
-\end{subequations}
-In the following, the definition will be made more precise.
-
-\begin{rmk}
-\label{rmk:minimum-dissipation}
-Given a dissipation potential $\Phi\colon Q\times Q\to[0,\infty],\;(q,\dot q)\mapsto\Phi(q,\dot q)$, such that $\Phi(q,\cdot)$ is positively 1-homogeneous for all $q\in Q$, we can define the dissipation distance as
-\begin{equation}
-\label{eqn:energetic:dissipation-distance-definition}
-\mathcal{D}(q_0,q_1)=\inf\left\{\int_0^1\Phi(q(t),\dot{q}(t))dt\;\middle|\;\text{$q\in C^1([0,T],Q)$, $q(0)=q_0$ and $q(1)=q_1$}\right\}.
-\end{equation}
-Notice that the range of the integral can be choosen arbitrary due to the positive 1-homogeneity of $\Phi$. The particular choice~\eqref{eqn:energetic:dissipation-distance-definition} of $\mathcal{D}$ is motivated by the following \emph{formal} consideration. Let $q\colon[0,T]\to Q$ be an energetic solution. Fix $t\in[0,T]$, $w\in Q$, $\epsilon>0$ and let $\tilde q(r)=q(t)+r\epsilon w$. Then
-\[
-\mathcal{E}(q(t),t)\le\mathcal{E}(q(t)+\epsilon w,t)+\mathcal{D}(q(t),q(t)+\epsilon w)\le\mathcal{E}(q(t)+\epsilon w,t)+\int_0^1\Phi(\tilde q(r),\dot{\tilde q}(r))dr
-\]
-so that
-\[
--\frac{\mathcal{E}(q(t)+\epsilon w,t)-\mathcal{E}(q(t),t)}{\epsilon}\le\frac{1}{\epsilon}\int_0^1\Phi(q(t)+r\epsilon w,\epsilon w)dr=\int_0^1\Phi(q(t)+r\epsilon w,w)dr.
-\]
-Assuming enough regularity, we let $\epsilon\to 0$ and we get
-\[
--\dual{\partial_q\mathcal{E}(q(t),t),w}\le\Phi(q(t),w).
-\]
-This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(0)$. Differentiating the energy balance
-\[
--\partial_q\mathcal{E}(q(t),t)=\Phi(q(t),\dot{q}(t)).
-\]
-This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(q(t))$. Thus~\eqref{eqn:energetic:dissipation-distance-definition} formally implies that energetic solutions are also solutions to the Biot inclusion.
-\end{rmk}
-
-\subsection{Assumptions and preliminary results}
-
-Assume that
-\begin{itemize}[itemsep=0.5em]
-\item[(S1)] $Y$ and $Z$ separable and reflexive Banach spaces,
-\item[(S2)] $\mathscr{Y}$ and $\mathscr{Z}$ weakly closed subsets of $Y$ and $Z$ respectively.
-\end{itemize}
-Let $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumptions on the energy functional are that
-\begin{itemize}[itemsep=0.5em]
-\item[(E1)] $\mathcal{E}\colon[0,T]\times\mathscr{Q}\to(-\infty,\infty]$,
-\item[(E2)] for all $t\in[0,T]$ and $E\in\mathbb{R}$ the set $\mathscr{D}_E:=\{q\in\mathscr{Q}\;|\;\mathcal{E}(q,t)\le E\}$ is bounded and weakly closed
-\item[(E3)] there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$,
-\item[(E4)] for all $q\in\mathscr{D}$, the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$ and
-\begin{itemize}
-\item[(i)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
-\item[(ii)] for each $E\in\mathbb{E}$ there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}_E$ and $t,s\in[0,T]$
-\[
-|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|).
-\]
-\end{itemize}
-\end{itemize}
-Notice that~(E2) is equivalent to say that $\mathcal{E}$ is weakly lower semicontinuous and has bounded sublevels. Moreover~(E4, i) implies
-\begin{equation}
-\label{eqn:ES-gronwall}
-\parbox[c]{0.8\textwidth}{$\mathcal{E}(q,t_1)+C_0^E\le e^{C_1^E|t_1-t_0|}\left(\mathcal{E}(q,t_1)+C_0^E\right)$ for all $q\in\mathscr{D}$ and $t_0,t_1\in[0,T]$.}
-\end{equation}
-This follows from the following lemma.
-\begin{lemma}
-Let $f\in C^1([0,T])$ and there exists $a\in\mathbb{R}$ and $b>0$ such that
-$|\dot{f}(t)|\le b(f(t)+b)$ for all $t\in[0,T]$. Then for all $t_0,t_1\in[0,T]$ it holds $f(t_0)+a\le e^{b|t_1-t_0|}(f(t_1)+a)$.
-\end{lemma}
-\begin{proof}
-Let $z(t)=f(t)+a$. Then $|\dot z|\le bz$. It follows that $\dot z\le bz$ and
-\[
-z(t)\le z(t_0)+\int_{t_0}^{t}b z(s)ds\quad\text{for all $0\le t_0\le t_1\le T$}.
-\]
-By Proposition~\ref{prop:gronwall} it follows that $z(t_1)\le e^{b(t_1-t_0)}z(t_0)$ all for all $0\le t_0\le t_1\le T$. But it holds also $\dot z\le -bz$. If we set $\zeta(t)=z(T-t)$ then $\dot\zeta\le b\zeta$. Then reasoning as before we get $z(t_1)\le\zeta(T-t_1)\le e^{b(t_0-t_1)}\zeta(T-t_0)\le e^{b(t_0-t_1)}z(t_0)$ for all $0\le t_1\le t_0\le T$. This concludes the proof.
-\end{proof}
-The assumptions on the dissipation distance are
-\begin{itemize}[itemsep=0.5em]
-\item[(D1)] $\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$ is a quasidistance, that is $\mathcal{D}(z_0,z_1)=0$ if and only if $z_0=z_1$ and $\mathcal{D}(z_0,z_2)\le\mathcal{D}(z_0,z_1)+\mathcal{D}(z_1,z_2)$ for all $z_1,z_2\in\mathscr{Z}$,
-\item[(D2)] $\mathcal{D}$ is weakly lower semicontinuous, meaning that $z_n\rightharpoonup z$ and $\hat{z}_n\rightharpoonup\hat{z}$ implies $\mathcal{D}(z,\hat{z})\le\liminf_{n\to\infty}\mathcal{D}(z_n,\hat{z}_n)$.
-\end{itemize}
-For a given $q=(y,z)\in\mathscr{Q}$, sometimes we write $\mathcal{D}(q)$ to mean $\mathcal{D}(z)$.
-\begin{defi}
-A sequence $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is said to be stable if
-\[
-\sup_n\mathcal{E}(q_n,t_n)\le\infty\quad\text{and}\quad q_n\in\mathscr{S}(t_n)
-\]
-where the stable set is defined by
-\[
-\mathscr{S}(t)=\{q\in\mathscr{Q}\;|\;\text{$\mathcal{E}(q,t)<\infty$ and $\mathcal{E}(q,t)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q})$ for all $\hat{q}\in\mathscr{Q}$}\}
-\]
-\end{defi}
-We add the following assumptions regarding the stable set
-\begin{itemize}[itemsep=0.5em]
-\item[(C1)] for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$,
-\item[(C2)] the stable sets are closed in the sense that, if $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is a stable sequence such that $q_n\rightharpoonup q$ and $t_n\to t$, then $q\in\mathscr{S}(t)$.
-\end{itemize}
-
-\subsection{Definition of energetic solutions}
-
-We define energetic solutions as follows.
-\begin{defi}
-\label{def:energetic-solution}
-A map $q\colon[0,T]\to\mathscr{Q}$ is called energetic solution if it is stable at every instant, that is
-\begin{equation}
-\text{$q(t)\in\mathscr{S}(t)$ for all $t\in[0,T]$},
-\end{equation}
-if $t\mapsto\partial_t\mathcal{E}(q(t),t)$ belongs to $L^1((0,T))$ and the energy identity
-\[
-\mathcal{E}(q(t),t)+\text{Diss}_{\mathcal{D}}(z,[s,t])=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds
-\]
-holds for all $t\in[0,T]$. Here the dissipation is defined as
-\[
-\text{Diss}_\mathcal{D}(z,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(z(t_{k-1}),z(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}
-\]
-for all $0\le s<t\le T$.
-\end{defi}
-
-\subsection{Existence theorem}
-
-\begin{thm}(existence of energetic solution)
-\label{thm:existence-energetic-solutions}
-If the hypotheses (S), (E), (D) and (C) holds, then for all $q_0\in\mathscr{S}(0)$ there exists a bounded energetic solutions $q$ such that $q(0)=q_0$.
-\end{thm}
-
-\subsection{Tools to verify the compatibility conditions}
-
-\begin{prop}
-\label{prop:tool-verify-compatibility}
-Assume that the following property holds
-\begin{itemize}
-\item[(PC1)] for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ and for all $\hat{q}\in\mathscr{Q}$, there exist a sequence $\hat{q}_k$ such that
-\[
-\limsup_{k\to\infty}\left(\mathcal{E}(\hat{q}_k,t_k)+\mathcal{D}(q_k,\hat{q}_k)\right)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q}).
-\]
-\end{itemize}
-Then for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(q_k,t_k)=\mathcal{E}(q,t)$. Moreover (C2) holds.
-
-Assume that in addiction to (PC1) also the following property holds
-\begin{itemize}
-\item[(PC2)] for all $\epsilon>0$ and $E\in\mathbb{R}$, there exists $\delta>0$ such that for all $t,s\in[0,T]$ and $q\in\mathscr{Q}$ the implication
-\begin{equation}
-\text{$\mathcal{E}(q,t)\le E$ and $|t-s|<\delta$ implies $|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|<\epsilon$}
-\end{equation}
-holds.
-\end{itemize}
-Then (C1) holds.
-\end{prop}
-
-\section{An abstract existence theorem for constrained mechanical systems}
+\section{An existence theorem for constrained mechanical systems}
 \label{sec:existence-theorem-abstract-constrained}
 
-In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} which treats unconstrained doubly nonlinear equations. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
+In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
 \subsection{Notation, assumptions and formulation of the problem}
 
@@ -895,7 +657,9 @@ We are now going to prove the following existence theorem.
 \label{thm:abstract-existence}
 Under the assumptions previously stated, there exists a solution $(u,\lambda,p)$ to Problem~\ref{prb:existence-abstract}. Moreover $u\in W^{1,\infty}((0,T),U)$ and $\dot u\in C^0([0,T],H)$.
 \end{thm}
-The proof relies on a time-discretization approach. So we first prove the existence of a solution to a discrete-in-time version of Problem~\ref{prb:existence-abstract} that we now introduce. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
+The proof relies on a time-discretization approach: the time internal is subdivided with an arbitrary but fixed step size and the existence of solutions to it is established for sufficiently small step size; then the continuous-in-time solutions is obtained as the limit (in term of a subsequence) of the discrete-in-time solutions as the step size vanishes.
+
+So we first prove the existence of a solution to a discrete-in-time version of Problem~\ref{prb:existence-abstract} that we now introduce. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
 \begin{align}
 \label{eqn:first-equation-discrete}
 D_u\Psi_0(u_N^k,\lambda_N^k)+\mathcal{A}u_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{u_N^k-u_N^{k-1}}{\tau_N}+\mathcal{L}'(u_N^k)^*p_N^k&\ni f_N^k \\
@@ -1373,7 +1137,7 @@ Since $\norm{\dot u_N}_{L^2((0,T),U)}$ is bounded uniformly in $N$, it follows t
 
 To prove that $u_N(T)\rightharpoonup u(T)$ in $U$, observe that for any $\xi\in U^*$ it holds that
 \[
-\langle\xi,u_N(T)\rangle=\langle\xi,u_0+\int_0^T\dot{u}_N(t)dt\rangle\to\langle\xi,u_0+\int_0^T\dot{u}(t)dt\rangle=u(T),
+\langle\xi,u_N(T)\rangle=\langle\xi,u_0+\int_0^T\dot{u}_N(t)dt\rangle\to\langle\xi,u_0+\int_0^T\dot{u}(t)dt\rangle=\dual{\xi,u(T)},
 \]
 where we use that $\dot u_N\overset{*}{\rightharpoonup}\dot u$ in $L^\infty((0,T),U)$.
 \end{proof}
@@ -1425,7 +1189,7 @@ Now we have to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:exis
 \begin{equation}
 \label{eqn:inclusion-bochner-discrete}
 \begin{multlined}
-\int_0^L\big[\Phi_0(\bar{p}_N(t),v(t))-\Psi_0(\bar{p}_N(t),\dot u_N(t))+\\
+\int_0^L\big[\Phi_0(\bar{p}_N(t),v(t))-\Phi_0(\bar{p}_N(t),\dot u_N(t))+\\
 +\dual{D_u\Psi_0(\bar u_N(t),\bar\lambda_N(t))+\mathcal{A}\bar u_N(t)+\mathcal{D}\dot u_N(t)+\mathcal{L}'(\bar u_N(t))^*\bar p_N(t)-\bar f_N(t),v(t)-\dot u_N(t)}\big]dt\ge0
 \end{multlined}
 \end{equation}
@@ -1521,6 +1285,285 @@ for all $v\in L^\infty((0,T),U)$. Since $v$ is arbitrary this is equivalent to~\
 
 Thus we have proved Theorem~\ref{thm:abstract-existence}.
 
+\section{An existence result for rate-independent evolutionary equations with quadratic energy}
+\label{sec:evi}
+
+In this section we describe an existence result for evolutionary equations of the form~\eqref{eqn:modeling:doubly:nonlinear-neat} when the free energy $\Psi$ is quadratic and the dissipation potential does not depend on the configuration and is positively 1-homogeneous in its rate. It is treated from~\cite{han-reddy}. The fact that the dissipation potential does not have a quadratic growth prevents us from applying the existence theorem that we presented in Section~\ref{sec:roubickeck}.However, the fact that the free energy is quadratic and the dissipation potential is convex and 1-homogeneous still allows us to obtain sufficiently strong a priori estimates to demonstrate the existence of absolutely continuous solutions in time.
+
+The plasticity theory at small deformations described in Section~\ref{sec:plasticity-review} when a quadratic hardening function $w_p$ is assumed satisfies the assumptions required in this section. Moreover we will use the content of this section to prove the existence of solutions to the small deformation version of the model of a cylindrical bar in Chapter~\ref{chap:small-neck}.
+
+\subsection{Assumptions and formulation of the problem}
+
+Let $Z$ be a separable and reflexive Banach space. Assume that 
+\begin{itemize}
+\item[($\Psi$)] the free energy $\Psi\colon Z\to\mathbb{R}$ is quadratic in the sense that $\Psi(u)=\frac{1}{2}\dual{\mathcal{A}u,u}$ for some $\mathcal{A}\in\mathscr{L}(Z,Z^*)$ satisfying $\dual{\mathcal{A}z,z}\ge C_A\norm{z}_Z^2$ for some $C_A>0$;
+\item[($\Phi$)] the dissipation potential $\Phi\colon Z\to[0,\infty]$ is convex, proper, lower semicontinuous, positively 1-homogeneous and Lipschitz on its domain.
+\end{itemize}
+Assumption ($\Psi$) immediately implies that $\Psi$ is Fréchet differentiable with Fréchet differential $D\Psi(u)=\mathcal{A}$ for all $u\in V$. In this case Problem~\ref{prb:modeling:doubly-nonlinear} reads as follows.
+\begin{prb}
+\label{prb:evi}
+Given $f\in H^1((0,T),Z^*)$ with $f(0)=0$, find $Z\in\text{AC}([0,T],Z)$ such that $z(0)=0$ and $\mathcal{A}z(t)+\partial\Phi(\dot z(t))\ni f(t)$
+for a.e.\ $t\in(0,T)$.
+\end{prb}
+
+\subsection{Existence theorem}
+%\begin{equation}
+%\label{eqn:evi}
+%\dual{\mathcal{A}z(t),w-\dot u(t)}+\Phi(v)-\Phi(\dot u(t))\ge\dual{\mathcal{X}(t),v-\dot u(t)}\quad\text{for all $v\in V$}
+%\end{equation}
+The following theorem ensure the existence and uniqueness of solutions to Problem~\ref{prb:evi}. We report only a very brief sketch of the proof. The complete proof is reported in~\cite[Theorem 7.3, Theorem 7.4]{han-reddy}.
+\begin{thm}
+\label{thm:han-reddy}
+Under the previously stated assumptions, there exists a unique solution $z\in\text{AC}([0,T],Z)$ to Problem~\ref{prb:evi}. Moreover there exists a stability constant $C_S>0$ such that, for all loads $f_1,f_2\in H^1((0,T),Z^*)$ with $f_1(0)=f_2(0)=0$, the corresponding solutions $z_1,z_2\in\text{AC}((0,T),Z)$ satisfy
+\[
+\norm{z_1-z_2}_{L^\infty((0,T),Z)}\le C_S\norm{f_1-f_2}_{L^2((0,T),Z^*)}.
+\]
+\end{thm}
+\begin{proof}[Sketch of the proof]
+Also the proof of this theorem relies on a time-discretization approach.
+\end{proof}
+
+\section{Energetic solutions}
+\label{sec:energetic-solution}
+
+\subsection{Motivation}
+
+Let $Q$ be a separable and reflexive Banach space. Let $\mathcal{E}\colon Q\times[0,T]\to\mathbb{R}$ Fréchet differentiable such that $\mathcal{E}(\cdot,t)$ is convex for all $t\in[0,T]$ and let $\Phi\colon Q\times[0,\infty]$ be convex, lower semicontinuous and positively 1-homogeneous. Consider the following doubly nonlinear equation
+\begin{equation}
+\label{eqn:energetic:doubly-nonlinear}
+\partial_q\mathcal{E}(q(t),t)+\partial\Phi(\dot q(t))\ni 0.
+\end{equation}
+We say that $q\in\text{AC}([0,T],V)$ is a differentiable solution if~\eqref{eqn:energetic:doubly-nonlinear} holds for a.e.\ $t\in(0,T)$. From Proposition~\ref{prop:prop-pos-1-hom-convx} this is equivalent to
+\begin{equation}
+\label{eqn:energetic:equivalent-doubly-nonlinear}
+-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(0)\quad\text{and}\quad\Phi(\dot q(t))=-\dual{\partial_q\mathcal{E}(q(t),t),\dot q(t)}=-\frac{d}{dt}\mathcal{E}(q(t),t)+\partial_t\mathcal{E}(q(t),t)
+\end{equation}
+for a.e.\ $t\in(0,T)$. The first condition is the requirement that the conservative forces belong to the admissibility set $\partial\Phi(0)$. From the definition of subdifferential, this is equivalent to
+\[
+\Phi(\hat q-q(t))\ge\Phi(0)-\dual{\partial_q\mathcal{E}(q(t),t),\hat q-q(t)}\quad\text{for all $\hat{q}\in Q$}.
+\]
+Exploiting the convexity of $\mathcal{E}(\cdot,t)$ it follows that
+\[
+\mathcal{E}(\hat{q},t)-\mathcal{E}(q(t),t)\ge\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}=\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}.
+\]
+Then the first condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear}, implies
+\begin{equation}
+\label{eqn:energetic:stability-motivation}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$},
+\end{equation}
+Since $\Phi$ is 1-homogeneous, also the inverse implication holds, indeed
+\[
+\dual{\partial_q\mathcal{E}(q(t),t),\hat{q}-q(t)}=\lim_{\epsilon\to 0}\frac{\mathcal{E}(q(t)+\epsilon(\hat{q}-q(t)),t)-\mathcal{E}(q(t),t)}{\epsilon}\ge\frac{\Phi(\epsilon(\hat{q}-q(t))}{\epsilon}=\Phi(\hat{q}-q(t)).
+\]
+The mechanical meaning of condition~\eqref{eqn:energetic:stability-motivation} is the following: the energy $\mathcal{E}(q(t),t)-\mathcal{E}(\hat{q},t)$ released by the system while passing from $q(t)$ to $\hat{q}$ cannot exceed the dissipation $\Phi(\hat{q}-q(t))$. This is a stability condition. The second condition in~\eqref{eqn:energetic:equivalent-doubly-nonlinear} is the power balance. Integrating it on the interval $(0,t)$ for $t\in(0,T]$ we get the energy balance
+\[
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\int_0^t\Phi(\dot q(s))ds.
+\]
+The first integral is the work of external forces, while the second integral is the dissipation. The following lemma gives an alternative way to express the dissipation.
+\begin{lemma}
+For all $0\le s<t\le T$ let
+\[
+\text{Diss}_\Phi(q,[s,t])=\inf\left\{\sum_{k=1}^N\Phi(q(t_k)-q(t_{k-1}))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
+\]
+Then
+\[
+\text{Diss}_\Phi(q,[s,t])=\int_s^t\Phi(\dot q(r))dr.
+\]
+\end{lemma}
+\begin{proof}
+Consider any subdivision $\{t_k\}_{k=0}^N$ of $[s,t]$. By Jensen inequality and in view of the 1-homogeneity of $\Phi$, it holds that
+\[
+\Phi(q(t_k)-q(t_{k-1}))=\Phi\left((t_k-t_{k-1})\frac{1}{t_k-t_{k-1}}\int_{t_{k-1}}^{t^k}\dot q(r)dr\right)\le\int_{t_{k-1}}^{t_k}\Phi(\dot q(r))dr\quad\text{for all $k$}.
+\]
+Then the inequality
+\[
+\text{Diss}_\Phi(q,[s,t])\le\int_s^t\Phi(\dot q(r))dr
+\]
+holds. To prove the other inequality we split the interval $[s,t]$ into intervals
+\[
+I_k^n=\left[s+\frac{k-1}{n}(t-s),s+\frac{k}{n}(t-s)\right]
+\]
+for $k\in\{1,\dots,n\}$ with $n\in\mathbb{N}$. Then, by lower semicontinuity of $\Phi$ and by the Fatou's lemma,
+\[
+\begin{split}
+\int_s^{t}\Phi(\dot q(r))dr&\le\int_s^t\liminf_{n\to\infty}\frac{n}{t-s}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr\le\\
+&\le\liminf_{n\to\infty}\frac{n}{t-s}\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr.
+\end{split}
+\]
+Now
+\[
+\begin{split}
+\int_s^{t-\frac{t-s}{n}}\Phi\left(q\left(r+\frac{t-s}{n}\right)-q(r)\right)dr&=\sum_{k=1}^{n-1}\int_0^{\frac{t-s}{n}}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
+&\le\int_0^{\frac{t-s}{n}}\sum_{k=1}^{n-1}\Phi\left(q\left(\frac{k}{n}(t-s)+r\right)-q\left(\frac{k-1}{n}(t-s)+r\right)\right)dr\le\\
+&\le\frac{t-s}{n}\text{Diss}_\Phi(q,[s,t]).
+\end{split}
+\]
+We have proved that
+\[
+\int_s^{t}\Phi(\dot q(r))dr\le\text{Diss}_\Phi(q,[s,t])
+\]
+as desired.
+\end{proof}
+Summarizing, we have seen that~\eqref{eqn:energetic:doubly-nonlinear} is equivalent
+\begin{subequations}
+\label{eqn:energetic:motivation-definition}
+\begin{gather}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\Phi(\hat{q}-q(t))\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\Phi(q,[0,t])\quad\text{for all $t\in[0,T]$}.
+\end{gather}
+\end{subequations}
+This conditions makes sense also if $\mathcal{E}$ is not Fréchet differentiable and $q$ is not absolutely continuous.
+
+This results suggest to define energetic solutions directly as evolutions $q\colon[0,T]\to Q$ satisfying~\eqref{eqn:energetic:motivation-definition} also when less regularity is assumed. We now explore further this possibility. Let $Q$ be a separable and reflexive Banach space and $\mathcal{E}\colon Q\times[0,T]\to[0,\infty]$. Rather than using a dissipation potential, we describe the system's dissipation in terms of a dissipation distance. This is defined as a map $\mathcal D\colon Q\times Q\to[0,\infty]$, where $\mathcal D(q_0,q_1)$ denotes the minimum energy dissipated by the system when it jumps from $q_0$ to $q_1$. The dissipation along an evolution $q\colon[0,T]\to Q$ in the time interval $[s,t]$ is defined as
+\[
+\text{Diss}_\mathcal{D}(q,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(q(t_{k-1}),q(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}.
+\]
+Then we say that $q$ is an energetic solution if
+\begin{subequations}
+\begin{gather}
+\mathcal{E}(q(t),t)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q(t),\hat{q})\quad\text{for all $\hat{q}\in Q$ and all $t\in[0,T]$},\\
+\mathcal{E}(q(t),t)=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds+\text{Diss}_\mathcal{D}(q,[0,t])\quad\text{for all $t\in[0,T]$}.
+\end{gather}
+\end{subequations}
+In the following, the definition will be made more precise.
+
+\begin{rmk}
+\label{rmk:minimum-dissipation}
+Given a dissipation potential $\Phi\colon Q\times Q\to[0,\infty],\;(q,\dot q)\mapsto\Phi(q,\dot q)$, such that $\Phi(q,\cdot)$ is positively 1-homogeneous for all $q\in Q$, we can define the dissipation distance as
+\begin{equation}
+\label{eqn:energetic:dissipation-distance-definition}
+\mathcal{D}(q_0,q_1)=\inf\left\{\int_0^1\Phi(q(t),\dot{q}(t))dt\;\middle|\;\text{$q\in C^1([0,T],Q)$, $q(0)=q_0$ and $q(1)=q_1$}\right\}.
+\end{equation}
+Notice that the range of the integral can be choosen arbitrary due to the positive 1-homogeneity of $\Phi$. The particular choice~\eqref{eqn:energetic:dissipation-distance-definition} of $\mathcal{D}$ is motivated by the following \emph{formal} consideration. Let $q\colon[0,T]\to Q$ be an energetic solution. Fix $t\in[0,T]$, $w\in Q$, $\epsilon>0$ and let $\tilde q(r)=q(t)+r\epsilon w$. Then
+\[
+\mathcal{E}(q(t),t)\le\mathcal{E}(q(t)+\epsilon w,t)+\mathcal{D}(q(t),q(t)+\epsilon w)\le\mathcal{E}(q(t)+\epsilon w,t)+\int_0^1\Phi(\tilde q(r),\dot{\tilde q}(r))dr
+\]
+so that
+\[
+-\frac{\mathcal{E}(q(t)+\epsilon w,t)-\mathcal{E}(q(t),t)}{\epsilon}\le\frac{1}{\epsilon}\int_0^1\Phi(q(t)+r\epsilon w,\epsilon w)dr=\int_0^1\Phi(q(t)+r\epsilon w,w)dr.
+\]
+Assuming enough regularity, we let $\epsilon\to 0$ and we get
+\[
+-\dual{\partial_q\mathcal{E}(q(t),t),w}\le\Phi(q(t),w).
+\]
+This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(0)$. Differentiating the energy balance
+\[
+-\partial_q\mathcal{E}(q(t),t)=\Phi(q(t),\dot{q}(t)).
+\]
+This means that $-\partial_q\mathcal{E}(q(t),t)\in\partial\Phi(q(t),\cdot)(q(t))$. Thus~\eqref{eqn:energetic:dissipation-distance-definition} formally implies that energetic solutions are also solutions to the Biot inclusion.
+\end{rmk}
+
+\subsection{Assumptions and preliminary results}
+
+Assume that
+\begin{itemize}[itemsep=0.5em]
+\item[(S1)] $Y$ and $Z$ separable and reflexive Banach spaces,
+\item[(S2)] $\mathscr{Y}$ and $\mathscr{Z}$ weakly closed subsets of $Y$ and $Z$ respectively.
+\end{itemize}
+Let $Q=Y\times Z$ and $\mathscr{Q}=\mathscr{Y}\times\mathscr{Z}$. The assumptions on the energy functional are that
+\begin{itemize}[itemsep=0.5em]
+\item[(E1)] $\mathcal{E}\colon[0,T]\times\mathscr{Q}\to(-\infty,\infty]$,
+\item[(E2)] for all $t\in[0,T]$ and $E\in\mathbb{R}$ the set $\mathscr{D}_E:=\{q\in\mathscr{Q}\;|\;\mathcal{E}(q,t)\le E\}$ is bounded and weakly closed
+\item[(E3)] there exists $\mathscr{D}\subset\mathscr{Q}$ such that $\dom\mathcal{E}(\cdot,t)=\mathscr{D}$ for all $t\in[0,T]$,
+\item[(E4)] for all $q\in\mathscr{D}$, the function $\mathcal{E}(q,\cdot)$ is $C^1([0,T])$ and
+\begin{itemize}
+\item[(i)] there exist $C_1^E$ and $C_0^E$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $q\in\mathscr{Q}$ and $t\in[0,T]$,
+\item[(ii)] for each $E\in\mathbb{E}$ there exists a modulus of continuity $\omega^E$ such that for all $q\in\mathscr{D}_E$ and $t,s\in[0,T]$
+\[
+|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|\le\omega^E(|t-s|).
+\]
+\end{itemize}
+\end{itemize}
+Notice that~(E2) is equivalent to say that $\mathcal{E}$ is weakly lower semicontinuous and has bounded sublevels. Moreover~(E4, i) implies
+\begin{equation}
+\label{eqn:ES-gronwall}
+\parbox[c]{0.8\textwidth}{$\mathcal{E}(q,t_1)+C_0^E\le e^{C_1^E|t_1-t_0|}\left(\mathcal{E}(q,t_1)+C_0^E\right)$ for all $q\in\mathscr{D}$ and $t_0,t_1\in[0,T]$.}
+\end{equation}
+This follows from the following lemma.
+\begin{lemma}
+Let $f\in C^1([0,T])$ and there exists $a\in\mathbb{R}$ and $b>0$ such that
+$|\dot{f}(t)|\le b(f(t)+b)$ for all $t\in[0,T]$. Then for all $t_0,t_1\in[0,T]$ it holds $f(t_0)+a\le e^{b|t_1-t_0|}(f(t_1)+a)$.
+\end{lemma}
+\begin{proof}
+Let $z(t)=f(t)+a$. Then $|\dot z|\le bz$. It follows that $\dot z\le bz$ and
+\[
+z(t)\le z(t_0)+\int_{t_0}^{t}b z(s)ds\quad\text{for all $0\le t_0\le t_1\le T$}.
+\]
+By Proposition~\ref{prop:gronwall} it follows that $z(t_1)\le e^{b(t_1-t_0)}z(t_0)$ all for all $0\le t_0\le t_1\le T$. But it holds also $\dot z\le -bz$. If we set $\zeta(t)=z(T-t)$ then $\dot\zeta\le b\zeta$. Then reasoning as before we get $z(t_1)\le\zeta(T-t_1)\le e^{b(t_0-t_1)}\zeta(T-t_0)\le e^{b(t_0-t_1)}z(t_0)$ for all $0\le t_1\le t_0\le T$. This concludes the proof.
+\end{proof}
+The assumptions on the dissipation distance are
+\begin{itemize}[itemsep=0.5em]
+\item[(D1)] $\mathcal{D}\colon\mathscr{Z}\times\mathscr{Z}\to[0,\infty]$ is a quasidistance, that is $\mathcal{D}(z_0,z_1)=0$ if and only if $z_0=z_1$ and $\mathcal{D}(z_0,z_2)\le\mathcal{D}(z_0,z_1)+\mathcal{D}(z_1,z_2)$ for all $z_1,z_2\in\mathscr{Z}$,
+\item[(D2)] $\mathcal{D}$ is weakly lower semicontinuous, meaning that $z_n\rightharpoonup z$ and $\hat{z}_n\rightharpoonup\hat{z}$ implies $\mathcal{D}(z,\hat{z})\le\liminf_{n\to\infty}\mathcal{D}(z_n,\hat{z}_n)$.
+\end{itemize}
+For a given $q=(y,z)\in\mathscr{Q}$, sometimes we write $\mathcal{D}(q)$ to mean $\mathcal{D}(z)$.
+\begin{defi}
+A sequence $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is said to be stable if
+\[
+\sup_n\mathcal{E}(q_n,t_n)\le\infty\quad\text{and}\quad q_n\in\mathscr{S}(t_n)
+\]
+where the stable set is defined by
+\[
+\mathscr{S}(t)=\{q\in\mathscr{Q}\;|\;\text{$\mathcal{E}(q,t)<\infty$ and $\mathcal{E}(q,t)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q})$ for all $\hat{q}\in\mathscr{Q}$}\}
+\]
+\end{defi}
+We add the following assumptions regarding the stable set
+\begin{itemize}[itemsep=0.5em]
+\item[(C1)] for all stable sequences $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ such that $q_n\rightharpoonup q$ and $t_n\to t$, it holds that $\partial_t\mathcal{E}(q_n,t)\to\partial_t\mathcal{E}(q,t)$,
+\item[(C2)] the stable sets are closed in the sense that, if $(q_n,t_n)\in\mathscr{Q}\times[0,T]$ is a stable sequence such that $q_n\rightharpoonup q$ and $t_n\to t$, then $q\in\mathscr{S}(t)$.
+\end{itemize}
+
+\subsection{Definition of energetic solutions}
+
+We define energetic solutions as follows.
+\begin{defi}
+\label{def:energetic-solution}
+A map $q\colon[0,T]\to\mathscr{Q}$ is called energetic solution if it is stable at every instant, that is
+\begin{equation}
+\text{$q(t)\in\mathscr{S}(t)$ for all $t\in[0,T]$},
+\end{equation}
+if $t\mapsto\partial_t\mathcal{E}(q(t),t)$ belongs to $L^1((0,T))$ and the energy identity
+\[
+\mathcal{E}(q(t),t)+\text{Diss}_{\mathcal{D}}(z,[s,t])=\mathcal{E}(q(0),0)+\int_0^t\partial_t\mathcal{E}(q(s),s)ds
+\]
+holds for all $t\in[0,T]$. Here the dissipation is defined as
+\[
+\text{Diss}_\mathcal{D}(z,[s,t])=\sup\left\{\sum_{k=1}^N\mathcal{D}(z(t_{k-1}),z(t_k))\;\middle|\;s=t_0<\dots<t_N=t\right\}
+\]
+for all $0\le s<t\le T$.
+\end{defi}
+
+\subsection{Existence theorem}
+
+\begin{thm}(existence of energetic solution)
+\label{thm:existence-energetic-solutions}
+If the hypotheses (S), (E), (D) and (C) holds, then for all $q_0\in\mathscr{S}(0)$ there exists a bounded energetic solutions $q$ such that $q(0)=q_0$.
+\end{thm}
+
+\subsection{Tools to verify the compatibility conditions}
+
+\begin{prop}
+\label{prop:tool-verify-compatibility}
+Assume that the following property holds
+\begin{itemize}
+\item[(PC1)] for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ and for all $\hat{q}\in\mathscr{Q}$, there exist a sequence $\hat{q}_k$ such that
+\[
+\limsup_{k\to\infty}\left(\mathcal{E}(\hat{q}_k,t_k)+\mathcal{D}(q_k,\hat{q}_k)\right)\le\mathcal{E}(\hat{q},t)+\mathcal{D}(q,\hat{q}).
+\]
+\end{itemize}
+Then for all stable sequence $(q_k,t_k)$ such that $(q_k,t_k)\rightharpoonup(q,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(q_k,t_k)=\mathcal{E}(q,t)$. Moreover (C2) holds.
+
+Assume that in addiction to (PC1) also the following property holds
+\begin{itemize}
+\item[(PC2)] for all $\epsilon>0$ and $E\in\mathbb{R}$, there exists $\delta>0$ such that for all $t,s\in[0,T]$ and $q\in\mathscr{Q}$ the implication
+\begin{equation}
+\text{$\mathcal{E}(q,t)\le E$ and $|t-s|<\delta$ implies $|\partial_t\mathcal{E}(q,t)-\partial_t\mathcal{E}(q,s)|<\epsilon$}
+\end{equation}
+holds.
+\end{itemize}
+Then (C1) holds.
+\end{prop}
+
 \input{balanced-viscosity.tex}
 
 \part{One dimensional model of a plastic cylindrical bar}
@@ -1575,7 +1618,7 @@ Our analysis cannot be considered conclusive since it is not yet able to show th
 %\end{figure}
 %Nella prima fase della prova il comportamento del provino è elastico (il tratto che appare ripido in figura). Successivamente viene raggiunto il limite di snervamento e in un primo momento la forza assiale cresce all'aumentare della deformazione. Questo comportamento è noto come \emph{incrudimento} ovvero l'aumento della resistenza interna del materiale allo snervamento man mano che la deformazione plastica si accumula. L'effetto incrudimento è in competizione con il restringimento della sezione del provino che tende invece ad indebolire il materiale, dal momento che la forza assiale viene distribuita su una sezione sempre più piccola. Questo porta alla diminuzione della pendenza nella curva in figura, finché la forza non incomincia a diminuire quando l'effetto geometrico della diminuzione della sezione prevale sull'incrudimento. Considère osservò che il raggiungimento del massimo della forza di trazione corrisponde approssimativamente al momento in cui la barra, che inizialmente si era deformata in modo uniforme su tutta la sua lunghezza, inizia a restringersi maggiormente in un punto localizzato. Questo fenomeno, che era già conosciuto in passato sebbene non fosse stato ancora caratterizzato in modo quantitativo, è noto come \emph{strizione}. Il criterio che lega l'inzio della strizione al raggiungimento del massimo della forza di trazione è ora conosciuto appunto come \emph{criterio di Considère}. Sperimentalmente si osserva che la lunghezza della zona interessata dalla strizione è indipendente dalla lunghezza della barra ma cresce con l'aumentare del diametro.
 
-\chapter{One-dimensional model at small deformations}
+\chapter{Model at small deformations}
 \label{chap:small-neck}
 
 In this chapter we develop and analyze a version of the one dimensional model aiming to describe the behavior of the metallic bar under tension under the assumption of small deformations. We split our discussion into three sections. The first section is devoted to the development of the model, the second to an existence and uniqueness results. The last section treats the explicit solution of two boundary value problems describing the tensile testing of the bar. In both the cases we show that the small deformation model is not able to predict the necking phenomenon. 
@@ -3784,7 +3827,7 @@ Following the usual ideas of gradient plasticity theory that we have saw repeate
 +\int_\Omega\left(T_p:\tilde\rho+K_p\threedots\grad\tilde\rho\right)dx+\int_\Omega\left(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta\right)dx,
 \end{multlined}
 \]
-where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is due to the need of a sufficient regularization in view of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the microstress. In Figure~\ref{fig:rheological} we
+where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the microstress. In Figure~\ref{fig:rheological} we
 report a picture that represents schematically the meaning of the first three integral in the expression of $\mathcal{I}$.
 \begin{figure}
 \centering
@@ -3998,15 +4041,13 @@ The map $\Psi_0$ satisfies the assumptions ($\Psi$1) and ($\Psi$2) of Section~\r
 \begin{proof}
 It is trivial to see that the elastic part of $\Psi_0$ satisfies the required hypotheses, and in particular
 \[
-\dual{D_\lambda\Psi_0(z),\mu}=-\int_\Omega\mathfrak{C}\frac{1}{d}\tr\left[\left(Eu-\pi-\frac{\lambda}{d}I\right)\right]\mu dx
+\dual{D_\lambda\Psi_0(z),\mu}=-\int_\Omega\frac{1}{d}\tr\left[\mathfrak{C}\left(Eu-\pi-\frac{\lambda}{d}I\right)\right]\mu dx
 \]
 so that
 \[
 \norm{D_\lambda\Psi_0(z)}_{\Lambda^*}\le\frac{|\mathfrak{C}|}{d}\left\|Eu-\pi-\frac{\lambda}{d}I\right\|_2\le C_\Psi^3\norm{z}_{H\times\Lambda}
 \]
-for some $C_\Psi^3>0$.
-
-So we need to chech only that
+for some $C_\Psi^3>0$. So we need to chech only that
 \[
 \Psi_1(z)=\int_\Omega\left(W_p(\alpha,\pi)+W_d(\alpha)\right)dx
 \]
