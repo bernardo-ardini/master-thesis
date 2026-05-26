@@ -496,7 +496,7 @@ In this chapter are discussed some existence results for the abstract evolutiona
 
 \section{An existence result for doubly nonlinear equations}
 
-In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even thought it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a superliner growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
+In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even thought it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a quadratic growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
 
 \subsection{Assumptions and formulation of the problem}
 
@@ -512,10 +512,49 @@ for a.e.\ $t\in(0,T)$. The map $\mathcal{F}\colon Z\to Z^*$ is supposed to be of
 \[
 \mathcal{F}(z)=\mathcal{B}(z)+\frac{1}{2}\dual{\mathcal{A}z,z}.
 \]
-Here $\mathcal{A}\in\mathscr{L}(Z,Z^*)$ is coercive with respect to $|\cdot|_Z$ in the sense that there exists a constant $C_A>0$ such that $\dual{\mathcal{A}z,z}\ge C_A|z|_Z^2$. The map $\mathcal{B}$ is Lipschitz as a map from $H$ to $H^*$. The dissipation potential $\Phi\colon H\to[0,\infty]$ is supposed to be of the form
+Here $\mathcal{A}\in\mathscr{L}(Z,Z^*)$ is coercive with respect to $|\cdot|_Z$ in the sense that there exists a constant $C_A>0$ such that $\dual{\mathcal{A}z,z}\ge C_A|z|_Z^2$. The map $\mathcal{B}$ is Lipschitz as a map from $H$ to $H^*$ with Lipschitz constant $L$. The dissipation potential $\Phi\colon H\to[0,\infty]$ is supposed to be of the form
 \[
-\Phi(w)=\Phi_0(w)+\frac{1}{2}
-\]convex, lower semicontinuous
+\Phi(w)=\Phi_0(w)+\frac{1}{2}\dual{\mathcal{D}w,w},
+\]
+where $\Phi_0\colon H\to[0,\infty]$ is convex, lower semicontinuous, satisfying $\Phi_0(0)=0$ and $\mathcal{D}\in\mathscr{L}(H,H^*)$ is coercive in $H$ in the sense that there exists a constant $C_D>0$ such that $\dual{\mathcal{D}w,w}\ge C_D\norm{w}_H^2$. Next we assume that $f\in H^1((0,T),H^*)$, that $z_0\in Z$ and that the compatibility condition $\mathcal{F}(z_0)=f(0)$ holds.
+
+Now the problem that we consider is the following.
+\begin{prb}
+\label{prb:roubickeck}
+Find $z\in AC([0,T],Z)$ such that $z(0)=z_0$ and $\mathcal{F}(z(t))+\partial\Phi(\dot z(t))\ni f(t)$ for a.e.\ $t\in(0,T)$.
+\end{prb}
+
+\subsection{Existence theorem}
+
+The existence of solution to the above problem is established by the following theorem. We will report only some ideas of the proof, that is integrally reported in~\cite[Proposition 11.1]{roubicek-pde}.
+\begin{thm}
+Under the assumption of previous subsection, there exists a solution $z\in W^{1,\infty}((0,T),Z)$ to Problem~\ref{prb:roubickeck} that also satisfies $\dot z\in C^0([0,T],Z)$.
+\end{thm}
+\begin{proof}[Idea of the proof]
+The proof relies on a time discretization approach, so it is first established the existence of solutions to a discrete-in-time version of the problem. Specifically fix $N\in\mathbb{N}$, let $\tau_N=T/N$ and $t_k=k\tau_N$ for $k\in\{0,\dots,N\}$, and consider the problem to find $\{z_N^k\}_{k=1}^N\subset Z$ such that $z_N^0=z_0$ and
+\begin{equation}
+\label{eqn:discrete-roubickeck}
+\mathcal{F}(z_N^k)+\partial\Phi\left(\frac{z_N^k-z_N^{k-1}}{\tau_N}\right)\ni f_N^k\quad\text{for $k\in\{1,\dots,N\}$},
+\end{equation}
+where
+\[
+f_N^k:=\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}f(s)ds.
+\]
+The existence of a discrete-in-time solution is proven inductively by solving iteratively~\eqref{eqn:discrete-roubickeck}: to this aim the Minty--Browder theorem in the form of Corollary~\ref{cor:corollary-5-19} is used.
+
+Then one defines $z_N$ as the piecewise affine interpolation of $\{z_N^k\}_{k=0}^N$. The derivative $\dot z_N^k$ is piecewise constant and
+\[
+\dot z_N(t)=\dot z_N^k:=\frac{z_N^k-z_N^{k-1}}{\tau_N}\quad\text{for $t\in(t_N^{k-1},t_N^k]$ and $k\in\{1,\dots,N\}$}.
+\]
+We also set $\dot z_N^0:=0$. Let also $\hat z_N$ be the piecewise affine interpolation of $\{z_N^k\}_{k=0}^N$. Now notice that~\eqref{eqn:discrete-roubickeck} can be written more explicitly as
+\[
+\tau_N\Phi_0(w)\ge\tau_N\Phi_0(\dot z_N^k)+\dual{f_N^k-\mathcal{F}(z_N^k),w-\dot z_N^k}\quad\text{for all $z$ and $k\in\{1,\dots,N\}$}.
+\]
+Notice that due to the assumption that $\mathcal{F}(z_0)=f(0)$ this is true also for $k=0$. Next consider this inequality for $w=\dot z_N^k$ and for $k-1$ in place of $k$ and $w=\dot u_N^k$. Summing the resultant inequalities together, performing some estimates and summing the result for $k\in\{1,\dots,N\}$ one arrives at
+\begin{equation}
+\frac{C_A}{2}|\dot u_N^n|_U^2+\frac{C_D}{2}\tau_N\sum_{k=1}^n\left\lVert\frac{\dot u_N^k-\dot u_N^{k-1}}{\tau_N}\right\rVert_H^2\le\frac{1}{C_D}\tau_N\sum_{k=1}^n\left(\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2+L^2\norm{\dot u_N^k}_H^2\right).
+\end{equation}
+\end{proof}
 
 \section{An existence result for evolutionary variational inequalities}
 \label{sec:evi}
@@ -4092,7 +4131,7 @@ Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal
 &-J'(\alpha)p-\tau+\diver\kappa=0\quad\text{in $\Omega$} \\
 &\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$},
 \end{align*}
-where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $\Pi$ is the projector onto the tangent space to the boundary of $\Omega$ and $\xi$ is the outer normal vector to the boundary $d-1$ dimensional face and tangent to it.
+where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $\Pi$ is the projector onto the tangent space to the boundary of $\Omega$, $\xi$ is the outer normal vector to the boundary of a $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
 \end{prop}
 \begin{proof}
 The proof is similar to that of the analogous result of previous chapter.
