@@ -90,11 +90,17 @@
 
 \include{frontespizio}
 
+\newpage
+
+\begin{center}
+\large\textsc{Abstract}
+\end{center}
+\vspace{1em}
+Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and correctly describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved. In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory by resorting to the theory of evolutionary variational inequalities for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking. The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (for example, the constraint of plastic incompressibility), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. We develop an existence theory using the Rothe method: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a saddle-point structure and is solved as follows: first, the volumetric plastic distortion is determined by applying the kinematical constraint; then, the other kinematical unknowns are found for an arbitrary internal pressure by solving a static nonlinear problem (the existence of solution is established using the Minty-Browder theorem). Finally, the internal pressure is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder theorem.
+
 \tableofcontents
 
 \newpage
-
-
 
 \mainmatter
 
@@ -224,9 +230,10 @@ Then the constitutive relations can be written as $\mathcal{I}(t)\in\hat{\mathca
 \hat{\mathcal{I}}(z,w)=\partial\Psi(z)+\partial_w\Phi(z,w).
 \end{equation}
 In this case the equilibrium condition reads
-\[
+\begin{equation}
+\label{eqn:modeling:doubly:nonlinear-neat}
 \partial\Psi(z(t))+\partial_w\Phi(z(t),\dot z(t))\ni\mathcal{I}(t)=\mathcal{X}(t)\quad\text{for a.e.\ $t\in(0,T)$}
-\]
+\end{equation}
 or
 \begin{equation}
 \label{eqn:modeling:doubly-nonlinear}
@@ -484,6 +491,31 @@ where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:p
 
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
+
+In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}.
+
+\section{An existence result for doubly nonlinear equations}
+
+In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even thought it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a superliner growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
+
+\subsection{Assumptions and formulation of the problem}
+
+Let $Z$ and $H$ be a reflexive and separable Banach spaces with $Z$ compactly and densely embedded in $H$. Notice that $Z\subset H\subset H^*\subset Z^*$. We assume that there exists a seminorm $|\cdot|_Z$ in $Z$ and $0<c_P<C_P$ such that
+\[
+c_P(\norm{z}_H+|z|_Z)\le\norm{z}_Z\le C_P(\norm{z}_H+|z|_Z)
+\]
+for all $z\in Z$. We are interested in the doubly nonlinear equation of the form
+\[
+\mathcal{F}(z(t))+\partial\Phi(\dot z(t))\ni f(t)
+\]
+for a.e.\ $t\in(0,T)$. The map $\mathcal{F}\colon Z\to Z^*$ is supposed to be of the form
+\[
+\mathcal{F}(z)=\mathcal{B}(z)+\frac{1}{2}\dual{\mathcal{A}z,z}.
+\]
+Here $\mathcal{A}\in\mathscr{L}(Z,Z^*)$ is coercive with respect to $|\cdot|_Z$ in the sense that there exists a constant $C_A>0$ such that $\dual{\mathcal{A}z,z}\ge C_A|z|_Z^2$. The map $\mathcal{B}$ is Lipschitz as a map from $H$ to $H^*$. The dissipation potential $\Phi\colon H\to[0,\infty]$ is supposed to be of the form
+\[
+\Phi(w)=\Phi_0(w)+\frac{1}{2}
+\]convex, lower semicontinuous
 
 \section{An existence result for evolutionary variational inequalities}
 \label{sec:evi}
@@ -755,8 +787,6 @@ holds.
 \end{itemize}
 Then (C1) holds.
 \end{prop}
-
-\input{balanced-viscosity.tex}
 
 \section{An abstract existence theorem for constrained mechanical systems}
 \label{sec:existence-theorem-abstract-constrained}
@@ -1451,6 +1481,8 @@ for almost every $t\in(0,T)$. Now we can take the supremum limit for $N\to\infty
 for all $v\in L^\infty((0,T),U)$. Since $v$ is arbitrary this is equivalent to~\eqref{eqn:problem-abstract-first}.
 
 Thus we have proved Theorem~\ref{thm:abstract-existence}.
+
+\input{balanced-viscosity.tex}
 
 \part{One dimensional model of a plastic cylindrical bar}
 \label{part:his-model}
@@ -3963,7 +3995,11 @@ In particular it is crucial the fact that $|\tilde W_p(\pi)|$ ha at most a linea
 \]
 where we used the crucial fact that $\tilde W_p$ and $\tilde W_p'$ are bounded. This estimate shows that $D_z\Psi_1$ is Frèchet differentiable.
 \end{proof}
-The properties of $\Phi_0$ are verified in the following lemma.
+The linear operator $\mathcal{A}$ is trivially continuous and is coercive with respect to the seminorm $|\cdot|_Y$ in $Y$ defined by
+\[
+|y|_Z^2=\int_\Omega\frac{1}{2}\left(|\grad^2u|^2+|\grad\pi|^2+|\grad\alpha|^2\right)dx.
+\]
+It is trivial to see that $\norm{\cdot}_Y,\norm{\cdot}_H$ and $|\cdot|_Y$ satisfy the property~\eqref{eqn:abstract-poincare}. The properties of $\Phi_0$ are verified in the following lemma.
 \begin{lemma}
 The map $\Phi_0$ satisfies ($\Phi$1), ($\Phi$2) and ($\Phi$3) of Section~\ref{sec:existence-theorem-abstract-constrained}.
 \end{lemma}
@@ -4009,7 +4045,7 @@ and the third
 \]
 This concludes the proof.
 \end{proof}
-To complete the check of the hypotheses needed to apply the theorem of Section~\ref{sec:existence-theorem-abstract-constrained} we are left with the check of condition~\eqref{eqn:initial-stability}. It is enough to notice that $0=\mathcal{L}(0)$, $p_0=D_\lambda\Psi_0(0)=0$ and $D_u\Psi_0(0)=0$.
+That $\mathcal{D}$ belongs to $\mathscr{L}(H,H^*)$ is trivial and the coercivity follows immediately from the Korn inequality. To complete the check of the hypotheses needed to apply the theorem of Section~\ref{sec:existence-theorem-abstract-constrained} we are left with the check of condition~\eqref{eqn:initial-stability}. It is enough to notice that $0=\mathcal{L}(0)$, $p_0=D_\lambda\Psi_0(0)=0$ and $D_u\Psi_0(0)=0$.
 
 Now that we have completed the check of all the hypotheses, Theorem~\ref{thm:existence-pressure-small} follows.
 

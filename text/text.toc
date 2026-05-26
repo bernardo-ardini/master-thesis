@@ -9,26 +9,28 @@
 \contentsline {subsection}{\tocsubsection {}{1.2.1}{Plasticity theory at small deformations}}{5}{subsection.1.2.1}%
 \contentsline {subsection}{\tocsubsection {}{1.2.2}{Plasticity theory at large deformations}}{7}{subsection.1.2.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{2}{Solution concepts and general existence results}}{9}{chapter.2}%
-\contentsline {section}{\tocsection {}{2.1}{An existence result for evolutionary variational inequalities}}{9}{section.2.1}%
-\contentsline {section}{\tocsection {}{2.2}{Energetic solutions}}{9}{section.2.2}%
-\contentsline {subsection}{\tocsubsection {}{2.2.1}{Motivation}}{9}{subsection.2.2.1}%
-\contentsline {subsection}{\tocsubsection {}{2.2.2}{Assumptions and preliminary results}}{11}{subsection.2.2.2}%
-\contentsline {subsection}{\tocsubsection {}{2.2.3}{Definition of energetic solutions}}{12}{subsection.2.2.3}%
-\contentsline {subsection}{\tocsubsection {}{2.2.4}{Existence theorem}}{12}{subsection.2.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.2.5}{Tools to verify the compatibility conditions}}{12}{subsection.2.2.5}%
-\contentsline {section}{\tocsection {}{2.3}{Balanced-viscosity solutions}}{13}{section.2.3}%
-\contentsline {subsection}{\tocsubsection {}{2.3.1}{Introduction}}{13}{subsection.2.3.1}%
-\contentsline {subsection}{\tocsubsection {}{2.3.2}{Assumptions}}{13}{subsection.2.3.2}%
-\contentsline {subsection}{\tocsubsection {}{2.3.3}{Preliminary results regarding the dissipation potential}}{13}{subsection.2.3.3}%
-\contentsline {subsection}{\tocsubsection {}{2.3.4}{Absolutely continuous and BV evolutions}}{14}{subsection.2.3.4}%
-\contentsline {subsection}{\tocsubsection {}{2.3.5}{A chain rule formula for the energy functional}}{15}{subsection.2.3.5}%
-\contentsline {subsection}{\tocsubsection {}{2.3.6}{Existence results in presence of positive viscosity}}{15}{subsection.2.3.6}%
-\contentsline {subsection}{\tocsubsection {}{2.3.7}{Contact dissipation potential}}{16}{subsection.2.3.7}%
-\contentsline {subsection}{\tocsubsection {}{2.3.8}{Parametrized balanced-viscosity solutions}}{16}{subsection.2.3.8}%
-\contentsline {subsection}{\tocsubsection {}{2.3.9}{An example}}{19}{subsection.2.3.9}%
-\contentsline {section}{\tocsection {}{2.4}{An abstract existence theorem for constrained mechanical systems}}{20}{section.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.4.1}{Notation, assumptions and formulation of the problem}}{20}{subsection.2.4.1}%
-\contentsline {subsection}{\tocsubsection {}{2.4.2}{The existence theorem and its proof}}{21}{subsection.2.4.2}%
+\contentsline {section}{\tocsection {}{2.1}{An existence result for doubly nonlinear equations}}{9}{section.2.1}%
+\contentsline {subsection}{\tocsubsection {}{2.1.1}{Assumptions and formulation of the problem}}{9}{subsection.2.1.1}%
+\contentsline {section}{\tocsection {}{2.2}{An existence result for evolutionary variational inequalities}}{9}{section.2.2}%
+\contentsline {section}{\tocsection {}{2.3}{Energetic solutions}}{10}{section.2.3}%
+\contentsline {subsection}{\tocsubsection {}{2.3.1}{Motivation}}{10}{subsection.2.3.1}%
+\contentsline {subsection}{\tocsubsection {}{2.3.2}{Assumptions and preliminary results}}{12}{subsection.2.3.2}%
+\contentsline {subsection}{\tocsubsection {}{2.3.3}{Definition of energetic solutions}}{13}{subsection.2.3.3}%
+\contentsline {subsection}{\tocsubsection {}{2.3.4}{Existence theorem}}{13}{subsection.2.3.4}%
+\contentsline {subsection}{\tocsubsection {}{2.3.5}{Tools to verify the compatibility conditions}}{13}{subsection.2.3.5}%
+\contentsline {section}{\tocsection {}{2.4}{An abstract existence theorem for constrained mechanical systems}}{13}{section.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.4.1}{Notation, assumptions and formulation of the problem}}{14}{subsection.2.4.1}%
+\contentsline {subsection}{\tocsubsection {}{2.4.2}{The existence theorem and its proof}}{14}{subsection.2.4.2}%
+\contentsline {section}{\tocsection {}{2.5}{Balanced-viscosity solutions}}{26}{section.2.5}%
+\contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{26}{subsection.2.5.1}%
+\contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{26}{subsection.2.5.2}%
+\contentsline {subsection}{\tocsubsection {}{2.5.3}{Preliminary results regarding the dissipation potential}}{26}{subsection.2.5.3}%
+\contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{27}{subsection.2.5.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5.5}{A chain rule formula for the energy functional}}{28}{subsection.2.5.5}%
+\contentsline {subsection}{\tocsubsection {}{2.5.6}{Existence results in presence of positive viscosity}}{28}{subsection.2.5.6}%
+\contentsline {subsection}{\tocsubsection {}{2.5.7}{Contact dissipation potential}}{29}{subsection.2.5.7}%
+\contentsline {subsection}{\tocsubsection {}{2.5.8}{Parametrized balanced-viscosity solutions}}{29}{subsection.2.5.8}%
+\contentsline {subsection}{\tocsubsection {}{2.5.9}{An example}}{32}{subsection.2.5.9}%
 \contentsline {part}{Part\ 1. \enspace \noindent One dimensional model of a plastic cylindrical bar}{33}{part.1}%
 \contentsline {chapter}{\tocchapter {Chapter}{3}{Introduction}}{34}{chapter.3}%
 \contentsline {chapter}{\tocchapter {Chapter}{4}{One-dimensional model at small deformations}}{36}{chapter.4}%
