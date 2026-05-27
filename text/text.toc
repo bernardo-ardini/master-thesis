@@ -15,25 +15,28 @@
 \contentsline {section}{\tocsection {}{2.2}{An existence theorem for constrained mechanical systems}}{11}{section.2.2}%
 \contentsline {subsection}{\tocsubsection {}{2.2.1}{Notation, assumptions and formulation of the problem}}{12}{subsection.2.2.1}%
 \contentsline {subsection}{\tocsubsection {}{2.2.2}{The existence theorem and its proof}}{12}{subsection.2.2.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Solution of the discrete-in-time problem}}{13}{section*.2}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{A priori estimates and construction of the limit solution}}{17}{section*.3}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Passage to the limit}}{22}{section*.4}%
 \contentsline {section}{\tocsection {}{2.3}{An existence result for rate-independent evolutionary equations with quadratic energy}}{24}{section.2.3}%
 \contentsline {subsection}{\tocsubsection {}{2.3.1}{Assumptions and formulation of the problem}}{24}{subsection.2.3.1}%
 \contentsline {subsection}{\tocsubsection {}{2.3.2}{Existence theorem}}{24}{subsection.2.3.2}%
-\contentsline {section}{\tocsection {}{2.4}{Energetic solutions}}{24}{section.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.4.1}{Motivation}}{24}{subsection.2.4.1}%
-\contentsline {subsection}{\tocsubsection {}{2.4.2}{Assumptions and preliminary results}}{26}{subsection.2.4.2}%
-\contentsline {subsection}{\tocsubsection {}{2.4.3}{Definition of energetic solutions}}{27}{subsection.2.4.3}%
-\contentsline {subsection}{\tocsubsection {}{2.4.4}{Existence theorem}}{27}{subsection.2.4.4}%
+\contentsline {section}{\tocsection {}{2.4}{Energetic solutions}}{25}{section.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.4.1}{Motivation}}{25}{subsection.2.4.1}%
+\contentsline {subsection}{\tocsubsection {}{2.4.2}{Assumptions and preliminary results}}{27}{subsection.2.4.2}%
+\contentsline {subsection}{\tocsubsection {}{2.4.3}{Definition of energetic solutions}}{28}{subsection.2.4.3}%
+\contentsline {subsection}{\tocsubsection {}{2.4.4}{Existence theorem}}{28}{subsection.2.4.4}%
 \contentsline {subsection}{\tocsubsection {}{2.4.5}{Tools to verify the compatibility conditions}}{28}{subsection.2.4.5}%
 \contentsline {section}{\tocsection {}{2.5}{Balanced-viscosity solutions}}{28}{section.2.5}%
 \contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{28}{subsection.2.5.1}%
-\contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{28}{subsection.2.5.2}%
+\contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{29}{subsection.2.5.2}%
 \contentsline {subsection}{\tocsubsection {}{2.5.3}{Preliminary results regarding the dissipation potential}}{29}{subsection.2.5.3}%
-\contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{29}{subsection.2.5.4}%
-\contentsline {subsection}{\tocsubsection {}{2.5.5}{A chain rule formula for the energy functional}}{30}{subsection.2.5.5}%
-\contentsline {subsection}{\tocsubsection {}{2.5.6}{Existence results in presence of positive viscosity}}{30}{subsection.2.5.6}%
+\contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{30}{subsection.2.5.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5.5}{A chain rule formula for the energy functional}}{31}{subsection.2.5.5}%
+\contentsline {subsection}{\tocsubsection {}{2.5.6}{Existence results in presence of positive viscosity}}{31}{subsection.2.5.6}%
 \contentsline {subsection}{\tocsubsection {}{2.5.7}{Contact dissipation potential}}{31}{subsection.2.5.7}%
-\contentsline {subsection}{\tocsubsection {}{2.5.8}{Parametrized balanced-viscosity solutions}}{31}{subsection.2.5.8}%
-\contentsline {subsection}{\tocsubsection {}{2.5.9}{An example}}{34}{subsection.2.5.9}%
+\contentsline {subsection}{\tocsubsection {}{2.5.8}{Parametrized balanced-viscosity solutions}}{32}{subsection.2.5.8}%
+\contentsline {subsection}{\tocsubsection {}{2.5.9}{An example}}{35}{subsection.2.5.9}%
 \contentsline {part}{Part\ 1. \enspace \noindent One dimensional model of a plastic cylindrical bar}{36}{part.1}%
 \contentsline {chapter}{\tocchapter {Chapter}{3}{Introduction}}{37}{chapter.3}%
 \contentsline {chapter}{\tocchapter {Chapter}{4}{Model at small deformations}}{39}{chapter.4}%
@@ -46,12 +49,12 @@
 \contentsline {section}{\tocsection {}{4.3}{Analytical solution to the tensile test problem}}{43}{section.4.3}%
 \contentsline {subsection}{\tocsubsection {}{4.3.1}{Tensile test with free-sliding ends}}{43}{subsection.4.3.1}%
 \contentsline {subsection}{\tocsubsection {}{4.3.2}{Tensile test with clamped ends}}{43}{subsection.4.3.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Setup of the problem}}{43}{section*.6}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Solution in the elastic range}}{44}{section*.7}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Solution in the plastic range}}{44}{section*.8}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Determination of $\epsilon $}}{45}{section*.9}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Absence of necking}}{45}{section*.10}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{The limit of thin bar}}{45}{section*.11}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Setup of the problem}}{43}{section*.9}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Solution in the elastic range}}{44}{section*.10}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Solution in the plastic range}}{44}{section*.11}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Determination of $\epsilon $}}{45}{section*.12}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Absence of necking}}{45}{section*.13}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{The limit of thin bar}}{45}{section*.14}%
 \contentsline {chapter}{\tocchapter {Chapter}{5}{Model at large deformations}}{46}{chapter.5}%
 \contentsline {section}{\tocsection {}{5.1}{Formulation}}{46}{section.5.1}%
 \contentsline {subsection}{\tocsubsection {}{5.1.1}{Motivation form the multidimensional kinematics}}{46}{subsection.5.1.1}%
@@ -60,9 +63,9 @@
 \contentsline {subsection}{\tocsubsection {}{5.1.4}{Constitutive relations}}{48}{subsection.5.1.4}%
 \contentsline {section}{\tocsection {}{5.2}{Existence result}}{48}{section.5.2}%
 \contentsline {subsection}{\tocsubsection {}{5.2.1}{Formulation of the initial boundary value problem}}{48}{subsection.5.2.1}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Dirichlet conditions}}{49}{section*.12}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Function spaces}}{49}{section*.13}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Energy functional and dissipation distance}}{49}{section*.14}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Dirichlet conditions}}{49}{section*.15}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Function spaces}}{49}{section*.16}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Energy functional and dissipation distance}}{49}{section*.17}%
 \contentsline {subsection}{\tocsubsection {}{5.2.2}{Assumptions and preliminary results}}{49}{subsection.5.2.2}%
 \contentsline {subsection}{\tocsubsection {}{5.2.3}{Verification the properties of the energy functional}}{51}{subsection.5.2.3}%
 \contentsline {subsection}{\tocsubsection {}{5.2.4}{Verification the properties of the dissipation distance}}{55}{subsection.5.2.4}%
@@ -72,9 +75,9 @@
 \contentsline {section}{\tocsection {}{5.3}{Qualitative analysis of the tensile test problem}}{58}{section.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.3.1}{Purely elastic model}}{58}{subsection.5.3.1}%
 \contentsline {subsection}{\tocsubsection {}{5.3.2}{Elastoplastic model}}{60}{subsection.5.3.2}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Stability under force control}}{61}{section*.17}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Regularized stability}}{63}{section*.19}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{True instability}}{66}{section*.21}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Stability under force control}}{61}{section*.20}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Regularized stability}}{63}{section*.22}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{True instability}}{66}{section*.24}%
 \contentsline {part}{Part\ 2. \enspace \noindent A model describing pressure sensitive and dilatant plastic materials}{69}{part.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{6}{Introduction and review of preexisting mechanical models}}{70}{chapter.6}%
 \contentsline {section}{\tocsection {}{6.1}{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}}{70}{section.6.1}%
@@ -101,19 +104,19 @@
 \contentsline {subsection}{\tocsubsection {}{9.2.2}{Function spaces}}{87}{subsection.9.2.2}%
 \contentsline {subsection}{\tocsubsection {}{9.2.3}{Formulation of the problem}}{87}{subsection.9.2.3}%
 \contentsline {subsection}{\tocsubsection {}{9.2.4}{Global existence}}{87}{subsection.9.2.4}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{87}{section*.24}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{91}{section*.25}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Existence of the discrete in time solution}}{87}{section*.27}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Construction of the continuous in time solution}}{91}{section*.28}%
 \contentsline {subsection}{\tocsubsection {}{9.2.5}{Example of constitutive relations}}{96}{subsection.9.2.5}%
 \contentsline {subsection}{\tocsubsection {}{9.2.6}{Further regularity hypotheses}}{96}{subsection.9.2.6}%
 \contentsline {subsection}{\tocsubsection {}{9.2.7}{Local existence and uniqueness and global uniqueness}}{96}{subsection.9.2.7}%
 \contentsline {subsection}{\tocsubsection {}{9.2.8}{Bifurcation analysis}}{98}{subsection.9.2.8}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{98}{section*.26}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{99}{section*.27}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{100}{section*.28}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Some considerations}}{98}{section*.29}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Study on the invertibility of the stiffness operator}}{99}{section*.30}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Intuition about the localization process}}{100}{section*.31}%
 \contentsline {section}{\tocsection {}{9.3}{Numerical approximation}}{101}{section.9.3}%
 \contentsline {subsection}{\tocsubsection {}{9.3.1}{Formulation}}{101}{subsection.9.3.1}%
 \contentsline {subsection}{\tocsubsection {}{9.3.2}{Validation}}{101}{subsection.9.3.2}%
-\contentsline {part}{\noindent Collection of useful results}{103}{part*.29}%
+\contentsline {part}{\noindent Collection of useful results}{103}{part*.32}%
 \contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{104}{appendix.A}%
 \contentsline {section}{\tocsection {}{A.1}{Tensors}}{104}{section.A.1}%
 \contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{105}{appendix.B}%
@@ -131,4 +134,4 @@
 \contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{111}{subsection.B.3.5}%
 \contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{117}{subsection.B.3.6}%
 \contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{117}{section.B.4}%
-\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{118}{appendix*.30}%
+\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{118}{appendix*.33}%

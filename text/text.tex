@@ -659,6 +659,8 @@ Under the assumptions previously stated, there exists a solution $(u,\lambda,p)$
 \end{thm}
 The proof relies on a time-discretization approach: the time internal is subdivided with an arbitrary but fixed step size and the existence of solutions to it is established for sufficiently small step size; then the continuous-in-time solutions is obtained as the limit (in term of a subsequence) of the discrete-in-time solutions as the step size vanishes.
 
+\subsubsection*{Solution of the discrete-in-time problem}
+
 So we first prove the existence of a solution to a discrete-in-time version of Problem~\ref{prb:existence-abstract} that we now introduce. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
 \begin{align}
 \label{eqn:first-equation-discrete}
@@ -915,6 +917,9 @@ Next we have
 \]
 Choosing $N$ sufficiently large the thesis follows.
 \end{proof}
+
+\subsubsection*{A priori estimates and construction of the limit solution}
+
 Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem, when $N$ is sufficiently large. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 \begin{rmk}[On notation]
 We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T),U)$ respectively the piecewise constant and affine interpolation of $\{u_N^k\}_{k=0}^N$. The derivative $\dot u_N$ is piecewise constant in the sense that a representative is given by
@@ -1185,6 +1190,8 @@ Moreover
 The convergence of $p_N$ and $\bar p_N$ follows similarly form the fact that $\mathcal{L}$ is Lipschitz and $D_\lambda\Psi_0$ is locally Lipschitz.
 \end{proof}
 
+\subsubsection*{Passage to the limit}
+
 Now we have to prove that $(u,\lambda,p)$ is a solution to Problem~\ref{prb:existence-abstract}. Notice that~\eqref{eqn:problem-abstract-second},~\eqref{eqn:problem-abstract-third} are satisfied by construction and $z(0)=z_0$. Then we only have to show that~\eqref{eqn:problem-abstract-first} is satisfied for a.e.\ $t\in(0,T)$. To this aim, notice that~\eqref{eqn:first-equation-discrete} can be written as
 \begin{equation}
 \label{eqn:inclusion-bochner-discrete}
@@ -1302,7 +1309,7 @@ Let $Z$ be a separable and reflexive Banach space. Assume that
 Assumption ($\Psi$) immediately implies that $\Psi$ is Fréchet differentiable with Fréchet differential $D\Psi(u)=\mathcal{A}$ for all $u\in V$. In this case Problem~\ref{prb:modeling:doubly-nonlinear} reads as follows.
 \begin{prb}
 \label{prb:evi}
-Given $f\in H^1((0,T),Z^*)$ with $f(0)=0$, find $Z\in\text{AC}([0,T],Z)$ such that $z(0)=0$ and $\mathcal{A}z(t)+\partial\Phi(\dot z(t))\ni f(t)$
+Given $f\in H^1((0,T),Z^*)$ with $f(0)=0$, find $z\in\text{AC}([0,T],Z)$ such that $z(0)=0$ and $\mathcal{A}z(t)+\partial\Phi(\dot z(t))\ni f(t)$
 for a.e.\ $t\in(0,T)$.
 \end{prb}
 
@@ -1314,13 +1321,36 @@ for a.e.\ $t\in(0,T)$.
 The following theorem ensure the existence and uniqueness of solutions to Problem~\ref{prb:evi}. We report only a very brief sketch of the proof. The complete proof is reported in~\cite[Theorem 7.3, Theorem 7.4]{han-reddy}.
 \begin{thm}
 \label{thm:han-reddy}
-Under the previously stated assumptions, there exists a unique solution $z\in\text{AC}([0,T],Z)$ to Problem~\ref{prb:evi}. Moreover there exists a stability constant $C_S>0$ such that, for all loads $f_1,f_2\in H^1((0,T),Z^*)$ with $f_1(0)=f_2(0)=0$, the corresponding solutions $z_1,z_2\in\text{AC}((0,T),Z)$ satisfy
+Under the previously stated assumptions, there exists a unique solution $z\in\text{AC}([0,T],Z)$ to Problem~\ref{prb:evi}. It holds in particular that $\dot z\in L^2((0,T),Z)$. Moreover there exists a stability constant $C_S>0$ such that, for all loads $f_1,f_2\in H^1((0,T),Z^*)$ with $f_1(0)=f_2(0)=0$, the corresponding solutions $z_1,z_2\in\text{AC}((0,T),Z)$ satisfy
 \[
 \norm{z_1-z_2}_{L^\infty((0,T),Z)}\le C_S\norm{f_1-f_2}_{L^2((0,T),Z^*)}.
 \]
 \end{thm}
 \begin{proof}[Sketch of the proof]
-Also the proof of this theorem relies on a time-discretization approach.
+Also the proof of this theorem relies on a time-discretization approach. Thus fix $N\in\mathbb{N}$ and let $\tau_N=T/N$ and $t_N^k=k\tau_N$ for $k\in\{0,\dots,N\}$. We look for a discrete-in-time solution $\{z_N^k\}_{k=0}^N$ satisfying $z_N^0=z_0$ and
+\[
+\mathcal{A}z_N^k+\partial\Phi\left(\frac{z_N^k-z_N^{k-1}}{\tau_N}\right)\ni f_N^k\quad\text{for $k\in\{1,\dots,N\}$, where $f_N^k:=f(t_N^k)$.}
+\]
+Letting
+\[
+\Delta z_N^k:=z_N^k-z_N^{k-1},
+\]
+this can be written explicitly as
+\[
+\left\langle\mathcal{A}z_N^k,w-\frac{\Delta z_N^k}{\tau_N}\right\rangle+\Phi(w)-\Phi\left(\frac{\Delta z_N^k}{\tau_N}\right)\ge\left\langle f_N^k,w-\frac{\Delta z_N^k}{\tau_N}\right\rangle\quad\text{for all $w\in Z$}.
+\]
+Since $\Phi$ is positively 1-homogeneous, this is equivalent to
+\begin{equation}
+\label{eqn:differential-inequality}
+\langle\mathcal{A}\Delta z_N^k,w-\Delta z_N^k\rangle+\Phi(w)-\Phi(\Delta z_N^k)\ge\langle f_N^k-\mathcal{A}z_N^{k-1},w-\Delta z_N^k\rangle\quad\text{for all $w\in Z$}.
+\end{equation}
+If we define $\mathcal{J}\colon Z\to\mathbb{R}\cup\{\infty\}$ by
+\[
+\mathcal{J}_N^k(w)=\frac{1}{2}\dual{\mathcal{A}w,w}+\Phi(w)-\dual{f_N^k-\mathcal{A}z_N^{k-1},w},
+\]
+it is possible to prove that $\Delta z_N^k$ is a solution to~\eqref{eqn:differential-inequality} if and only if it is a minimizer of $\mathcal{J}_N^k$. Now the existence of a minimizer can be proved through the direct method of the calculus of variations using the fact that $\mathcal{J}_N^k$ is strongly lower semicontinuous, coercive in the norm of $Z$ and convex, so that it is weakly lower semicontinuous and has weakly compact sublevels. Thus we have proved the existence of the discrete-in-time solution.
+
+To obtain the continuous-in-time solution, first some a priori estimates are obtained. These are performed in a similar way to what was seen in the proof of the existence theorem in Section~\ref{sec:roubickeck}. That is, the variational inequality is considered at step $k$ and $k-1$ with $w$ respectively $\Delta z_N^{k-1}$ and $\Delta z_N^k$, and the resulting inequalities are added together. Then the result is summed for $k$ form 1 to $N$. This provide a uniform bound on $\norm{z_N}_{L^\infty((0,T),Z)}$ and $\norm{\dot z_N}_{L^2((0,T),Z)}$, where $z_N$ is the piecewise affine interpolation of $\{z_N^k\}_{k=0}^N$. Compactness allows to extract a subsequence such that $z_N\overset{*}{\rightharpoonup}z$ in $L^\infty((0,T),Z)$ and $\dot z_N\rightharpoonup\dot z$ in $L^2((0,T),Z)$. This in turns allows to pass to the limit in the variational inequality~\eqref{eqn:variational-inequality} thus proving that $z$ is a solution.
 \end{proof}
 
 \section{Energetic solutions}
