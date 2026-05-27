@@ -782,7 +782,6 @@
       \field{journaltitle}{Journal für die reine und angewandte Mathematik}
       \field{title}{Existence results for a class of rate-independent material models with nonconvex elastic energies}
       \field{year}{2006}
-      \true{nocite}
     \endentry
     \entry{morafrancfort}{article}{}{}
       \name{author}{2}{}{%
@@ -1355,7 +1354,6 @@
       \field{journaltitle}{Mechanics and Industry}
       \field{title}{A micromechanical inspired model for the coupled to damage elasto-plastic behavior of geomaterials under compression}
       \field{year}{2019}
-      \true{nocite}
     \endentry
     \entry{ppv-maugin}{article}{}{}
       \name{author}{1}{}{%
@@ -1481,7 +1479,61 @@
       \field{labeltitlesource}{title}
       \field{title}{Rate-Independent Systems Theory and Application}
       \field{year}{2015}
-      \true{nocite}
+    \endentry
+    \entry{mielke1999mathematical}{inproceedings}{}{}
+      \name{author}{2}{}{%
+        {{hash=a5814e325cb8249271101b7b7a9c6599}{%
+           family={Mielke},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=ede8fafe99234954b785b5ce89358f7c}{%
+           family={Theil},
+           familyi={T\bibinitperiod},
+           given={Florian},
+           giveni={F\bibinitperiod}}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=200394d45c8d97b25583b5007b2b440e}{%
+           family={Alber},
+           familyi={A\bibinitperiod},
+           given={Hans-Dieter},
+           giveni={H\bibinithyphendelim D\bibinitperiod}}}%
+        {{hash=bed2ff564b9f366353219aeac35cab26}{%
+           family={Balean},
+           familyi={B\bibinitperiod},
+           given={Robin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=4a25c0a5f26fbf01dc1b3ecaefe09175}{%
+           family={Farwig},
+           familyi={F\bibinitperiod},
+           given={Reinhard},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Shaker--Verlag}%
+      }
+      \strng{namehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{fullhash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{fullhashraw}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{bibnamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{authorbibnamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{authornamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{authorfullhash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{authorfullhashraw}{f2dddb6dc4c79281af8e70e2b3ccbb71}
+      \strng{editorbibnamehash}{0f10d682cb63c8e991837dc1ac571280}
+      \strng{editornamehash}{0f10d682cb63c8e991837dc1ac571280}
+      \strng{editorfullhash}{0f10d682cb63c8e991837dc1ac571280}
+      \strng{editorfullhashraw}{0f10d682cb63c8e991837dc1ac571280}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the Workshop on ``Models of Continuum Mechanics in Analysis and Engineering''}
+      \field{title}{A Mathematical Model for Rate--Independent Phase Transformations with Hysteresis}
+      \field{year}{1999}
+      \field{pages}{117\bibrangedash 129}
+      \range{pages}{13}
     \endentry
     \entry{vonMises1928}{article}{}{}
       \name{author}{1}{}{%
