@@ -148,6 +148,7 @@ The second gradient plasticity model we focus on regards plastic materials whose
 
 % modulus of continuity
 % frechet, gateaux, subdifferential
+% N={1,2,...}
 
 \chapter{Introductory notions regarding mechanical modeling and plasticity theory}
 \label{chap:modeling}
@@ -1001,7 +1002,7 @@ Notice that by Jensen inequality
 \]
 Moreover
 \[
-\tau_N\sum_{k=1}^n\|f_N^k\|_{H^*}^2=\tau_N\sum_{k=1}^n\left\|\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}f(s)\,ds\right\|_{H^*}^2\le\tau_N\sum_{k=1}^n\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}\|f(s)\|_{H^*}^2\,ds=\|f\|_{L^2((0,T),H^*)}^2
+\tau_N\sum_{k=1}^N\|f_N^k\|_{H^*}^2=\tau_N\sum_{k=1}^N\left\|\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}f(s)\,ds\right\|_{H^*}^2\le\tau_N\sum_{k=1}^N\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}\|f(s)\|_{H^*}^2\,ds=\|f\|_{L^2((0,T),H^*)}^2
 \]
 By H\"older and Young inequalities
 \[
@@ -1387,13 +1388,13 @@ Choosing $1<c<1+\frac{\mathfrak{b}}{C_\mathfrak{C}}$ it follows that $\dual{\mat
 \section{Energetic solutions}
 \label{sec:energetic-solution}
 
-In this section we present the notion of energetic solution following~\cite{francfort,rate-independent-systems}. This is a very flexible notion of solution for rate-independent systems since it does not requires differentiability assumptions of the energy and the dissipation potential and includes also situations in which the evolution may exhibit jumps.
+In this section we present the notion of energetic solutions following~\cite{francfort,rate-independent-systems}. This is a very flexible notion of solution for rate-independent systems since it does not requires differentiability assumptions of the energy and the dissipation potential and allows to treat also situations in which the evolution may exhibit jumps.
 
-Before setting up the problem and clarifying the assumptions from Subsection~\ref{subsec:assumptions-energetic}, in the following subsection we give an introduction that will serve as a motivation of Definition~\ref{def:energetic-solution}.
+Before setting up the problem and clarifying the assumptions starting from Subsection~\ref{subsec:assumptions-energetic}, in the following subsection we give an introduction that will serve as a motivation of Definition~\ref{def:energetic-solution}.
 
 \subsection{Introduction and motivation}
 
-Let $Z$ be a separable and reflexive Banach space. Let the total energy $\mathcal{E}\colon Z\times[0,T]\to\mathbb{R}$ Fréchet differentiable such that $\mathcal{E}(\cdot,t)$ is convex for all $t\in[0,T]$ and let the dissipation potential $\Phi\colon Z\to[0,\infty]$ be convex, lower semicontinuous and positively 1-homogeneous. Consider the doubly nonlinear equation in the form~\eqref{eqn:modeling:doubly-nonlinear}, that is also reported below:
+Let $Z$ be a separable and reflexive Banach space. Let the total energy $\mathcal{E}\colon Z\times[0,T]\to\mathbb{R}$ be Fréchet differentiable and such that $\mathcal{E}(\cdot,t)$ is convex for all $t\in[0,T]$. Let the dissipation potential $\Phi\colon Z\to[0,\infty]$ be convex, lower semicontinuous and positively 1-homogeneous. Consider the doubly nonlinear equation in the form~\eqref{eqn:modeling:doubly-nonlinear}, that is also reported below:
 \begin{equation}
 \label{eqn:energetic:doubly-nonlinear}
 D_z\mathcal{E}(z(t),t)+\partial\Phi(\dot z(t))\ni 0.
@@ -1598,26 +1599,50 @@ for all $0\le s<t\le T$.
 
 \subsection{Existence theorem}
 
-The existence of energetic solutions is established by the following theorem.
+The existence of energetic solutions is established by the following theorem. The complete proof can be found in~\cite{francfort}.
 \begin{thm}(existence of energetic solution)
 \label{thm:existence-energetic-solutions}
 If the hypotheses (Z), ($\mathcal{E}$), ($\mathcal{D}$) and (C) holds, then for all $z_0\in\mathscr{S}(0)$ there exists a bounded energetic solutions $z$ such that $z(0)=z_0$.
 \end{thm}
+%\begin{proof}[Sketch of the proof]
+%The proof is based on a time-discretization approach. So first a discrete-in-time solution is built, then some a priori estimates are performed, then in the limit of vanishing time step a convergent subsequence is extracted. Eventually the limit evolutions is proved to be an energetic solution.
+%
+%\textit{Construction of the discrete-in-time solution.} Fix $N\in\mathbb{N}$ and let $\tau_N=T/N$ and $t_N^k=k\tau_N$ for $k\in\{0,\dots,N\}$. We consider the problem to find $\{z_N^k\}_{k=0}^N\subset\mathscr{L}(Z)$ such that $z_N^0=z_0$ and
+%\[
+%z_N^k\in\argmin_{z\in\mathscr{Z}}(\mathcal{E}(z,t_N^k)+\mathcal{D}(z_N^{k-1},z))\quad\text{for $k\in\{0,\dots,N\}$.}
+%\]
+%The existence to this problem follows immediately from application of the direct method of the calculus of variations: let $\{z_n\}_{n\in\mathbb{N}}\subset\mathscr{Z}$ be a minimizing sequence: it belongs to a sublevel of $\mathcal{E}(\cdot,t_N^k)+\mathcal{D}(z_N^{k-1},\cdot)$ so it is bounded; by reflexivity of $Z$, up to a extracting a subsequence it converges weakly to some $z\in\mathscr{Z}$; then using the fact that both $\mathcal{D}(\cdot,t_N^k)$ and $\mathcal{D}(z_N^{k-1},\cdot)$ are weakly lower semicontinuous it follows indeed that $z$ is a minimizer. In this argument we use that fact that $z_0$ is table to prove inductively that $\mathcal{E}(\cdot,t_N^k)+\mathcal{D}(z_N^{k-1},\cdot)$ is not everywhere infinite. It is easy to prove that the discrete solutions are stable, in the sense that $z_N^k\in\mathscr{S}(t_N^k)$ for all $k\in\{0,\dots,N\}$. Indeed by construction we know that
+%\[
+%\mathcal{E}(z_N^k,t_N^k)+\mathcal{D}(z_N^{k-1},z_N^k)\le\mathcal{E}(\hat z,t_N^k)+\mathcal{D}(z_N^{k-1},\hat z)\quad\text{for all $\hat z\in\mathscr{Z}$}.
+%\]
+%By the triangle inequality it follows that
+%\[
+%\mathcal{D}(z_N^{k-1},\hat z)\le\mathcal{D}(z_N^{k-1},z_N^k)+\mathcal{D}(z_N^k,\hat z).
+%\]
+%Then
+%\[
+%\mathcal{E}(z_N^k,t_N^k)\le\mathcal{E}(\hat z,t_N^k)+\mathcal{D}(z_N^k,\hat z)\quad\text{for all $\hat z\in\mathscr{Z}$}.
+%\]
+%This means exactly that $z_N^k\in\mathscr{S}(t_N^k)$.
+%
+%\textit{A priori estimates on the discrete solutions.} 
+%\end{proof}
 
-\subsection{Tools to verify the compatibility conditions}
+\subsection{Tool to verify the compatibility conditions}
 
+The proposition below is useful to verify the compatibility conditions (C) and will turn to be useful in the proof of the existence theorem of Chapter~\ref{chap:large-neck}. 
 \begin{prop}
 \label{prop:tool-verify-compatibility}
 Assume that the following property holds
 \begin{itemize}
-\item[(PC1)] for all stable sequence $(z_k,t_k)$ such that $(z_k,t_k)\rightharpoonup(z,t)$ and for all $\hat{z}\in\mathscr{Z}$, there exist a sequence $\hat{z}_k$ such that
+\item[(PC1)] for all stable sequence $\{(z_k,t_k)\}_{k\in\mathbb{N}}\subset\mathscr{Z}$ such that $(z_k,t_k)\rightharpoonup(z,t)$ and for all $\hat{z}\in\mathscr{Z}$, there exist a sequence $\{\hat{z}_k\}_{k\in\mathbb{N}}\subset\mathscr{Z}$ such that
 \[
 \limsup_{k\to\infty}\left(\mathcal{E}(\hat{z}_k,t_k)+\mathcal{D}(q_k,\hat{q}_k)\right)\le\mathcal{E}(\hat{z},t)+\mathcal{D}(q,\hat{q}).
 \]
 \end{itemize}
-Then for all stable sequence $(z_k,t_k)$ such that $(z_k,t_k)\rightharpoonup(z,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(z_k,t_k)=\mathcal{E}(z,t)$. Moreover (C2) holds.
+Then for all stable sequence $\{(z_k,t_k)\}_{k\in\mathbb{Z}}\subset\mathscr{Z}$ such that $(z_k,t_k)\rightharpoonup(z,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(z_k,t_k)=\mathcal{E}(z,t)$. Moreover (C2) holds.
 
-Assume that in addiction to (PC1) also the following property holds
+Assume that, in addiction to (PC1), also the following property holds
 \begin{itemize}
 \item[(PC2)] for all $\epsilon>0$ and $E\in\mathbb{R}$, there exists $\delta>0$ such that for all $t,s\in[0,T]$ and $z\in\mathscr{Z}$ the implication
 \begin{equation}
@@ -1627,6 +1652,9 @@ holds.
 \end{itemize}
 Then (C1) holds.
 \end{prop}
+\begin{proof}
+See~\cite{francfort}.
+\end{proof}
 
 \input{balanced-viscosity.tex}
 
@@ -3891,7 +3919,7 @@ Following the usual ideas of gradient plasticity theory that we have saw repeate
 +\int_\Omega\left(T_p:\tilde\rho+K_p\threedots\grad\tilde\rho\right)dx+\int_\Omega\left(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta\right)dx,
 \end{multlined}
 \]
-where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the microstress. In Figure~\ref{fig:rheological} we
+where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. In Figure~\ref{fig:rheological} we
 report a picture that represents schematically the meaning of the first three integral in the expression of $\mathcal{I}$.
 \begin{figure}
 \centering
@@ -3930,7 +3958,7 @@ The fourth integral describe the response of the damage variable, in particular 
 \[
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde vdx,
 \]
-where $f\colon\Omega\to\mathbb{R}^d$ is the volumetric force and $h\colon\partial\Omega$ is the surface force acting on the external boundary. For simplicity we assume that no external torque is applied to the body and that there is no external action on the microscopic configuration. These additional external loads could be added to describe more accurately the external actions acting on the body.
+where $f\colon\Omega\to\mathbb{R}^d$ is the volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the surface force acting on the external boundary. For simplicity we assume that no external torque is applied to the body and that there is no external loads acring on the microscopic configuration. These additional external loads could be added to describe more accurately the external actions acting on the body.
 
 Now the equilibrium condition is $-\mathcal{I}+\mathcal{X}+\mathcal{P}=0$. The following lemma gives its strong form.
 \begin{prop}
@@ -4003,14 +4031,38 @@ where the macroscopic viscosity tensor $\mathfrak{D}\in\text{Sym}\otimes\text{Sy
 T=\mathfrak{D}E\dot u\qquad & K=\mathfrak{a}\grad^2u \\
 T_e=\dind{W_e}{E_e}\left(\alpha,Eu-\pi-\frac{\lambda}{d}I\right)\qquad & \\
 T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\mathfrak{d}\dot\pi+\partial_\rho D(\dot\pi,\dot\alpha)\qquad & K_p=\mathfrak{b}\grad\pi \\
-\tau\in W_p'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}|\grad\alpha|^{p_\alpha-2}\grad\alpha.
+\tau\in W_d'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}\grad\alpha.
 \end{align}
+Particular choices of constitutive relations are proposed and discussed in the following section
+
+\section{Particular choices of constitutive relations}
+
+We consider an linear elastic response of the form corresponding to the choice
+\[
+W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,
+\]
+where $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is a symmetric and positive definite elasticity tensor. Next we assume that the hardening free energy is of the form
+\[
+W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)
+\]
+where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ and $d\colon\mathbb{R}\to[0,\infty)$ and 
+\begin{rmk}(Damage of the elastic response)
+In principle we could consider an elastic response that is influenced by damage, for example
+\[
+W_e(\alpha,E_e)=\frac{d(\alpha)}{2}\mathfrak{C}E_e:E_e.
+\]
+Here $d\colon\mathbb{R}\to[0,\infty)$ is the function that describe how the elastic response is deteriorated by damage. However, as we will see in the following section, devoted to the development of the existing theory, this would require that $\alpha$ and its variations $\beta$ should belongs to $L^\infty(\Omega)$. In particular this is required to ensure the Fréchet differentiability of $\Psi$. Indeed the formal G\^ateaux derivative of the elastic free energy along $z=(v,\rho,\beta,\mu)$ contains the term
+\[
+\int_\Omega\frac{d'(\alpha)\beta}{2}\mathfrak{C}\left(Eu-\pi-\frac{\lambda}{d}\right):\left(Eu-\pi-\frac{\lambda}{d}\right)dx.
+\]
+If $d'$ is assumed to be bounded, this integral to make sense, it is required . This, in turn, would force us to introduce a stronger regularization on the damage field (for example introducing the dependence on higher orders of $\alpha$). Alternatively to this one could maintain the gradient regularization on $\alpha$ only, but substitute the quadratic dependence of $W_e$ on $E_e$ with a response of the form. 
+\end{rmk}
 
 \section{Existence theory}
 
 In this section we obtain an existence result for the model we have developed in previous section. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
 
-\subsection{Assumptions,definitions and formulation of the problem}
+\subsection{Assumptions, definitions and formulation of the problem}
 
 To prove the existence theorem we consider a specialized version of the constitutive relations presented in previous section. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L),\text{Lip}(L')\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
 \[

@@ -26,7 +26,7 @@
 \contentsline {subsection}{\tocsubsection {}{2.4.1}{Introduction and motivation}}{26}{subsection.2.4.1}%
 \contentsline {subsection}{\tocsubsection {}{2.4.2}{Assumptions, preliminary results and definition of energetic solutions}}{28}{subsection.2.4.2}%
 \contentsline {subsection}{\tocsubsection {}{2.4.3}{Existence theorem}}{29}{subsection.2.4.3}%
-\contentsline {subsection}{\tocsubsection {}{2.4.4}{Tools to verify the compatibility conditions}}{29}{subsection.2.4.4}%
+\contentsline {subsection}{\tocsubsection {}{2.4.4}{Tool to verify the compatibility conditions}}{29}{subsection.2.4.4}%
 \contentsline {section}{\tocsection {}{2.5}{Balanced-viscosity solutions}}{30}{section.2.5}%
 \contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{30}{subsection.2.5.1}%
 \contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{30}{subsection.2.5.2}%
@@ -34,7 +34,7 @@
 \contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{31}{subsection.2.5.4}%
 \contentsline {subsection}{\tocsubsection {}{2.5.5}{A chain rule formula for the energy functional}}{32}{subsection.2.5.5}%
 \contentsline {subsection}{\tocsubsection {}{2.5.6}{Existence results in presence of positive viscosity}}{32}{subsection.2.5.6}%
-\contentsline {subsection}{\tocsubsection {}{2.5.7}{Contact dissipation potential}}{32}{subsection.2.5.7}%
+\contentsline {subsection}{\tocsubsection {}{2.5.7}{Contact dissipation potential}}{33}{subsection.2.5.7}%
 \contentsline {subsection}{\tocsubsection {}{2.5.8}{Parametrized balanced-viscosity solutions}}{33}{subsection.2.5.8}%
 \contentsline {subsection}{\tocsubsection {}{2.5.9}{An example}}{36}{subsection.2.5.9}%
 \contentsline {part}{Part\ 1. \enspace \noindent One dimensional model of a plastic cylindrical bar}{37}{part.1}%
@@ -88,9 +88,10 @@
 \contentsline {section}{\tocsection {}{6.3}{An existence result for non-associative plasticity}}{74}{section.6.3}%
 \contentsline {chapter}{\tocchapter {Chapter}{7}{Proposal of an alternative mechanical model: the regime of small deformations}}{76}{chapter.7}%
 \contentsline {section}{\tocsection {}{7.1}{Formulation of the model}}{76}{section.7.1}%
-\contentsline {section}{\tocsection {}{7.2}{Existence theory}}{79}{section.7.2}%
-\contentsline {subsection}{\tocsubsection {}{7.2.1}{Assumptions,definitions and formulation of the problem}}{79}{subsection.7.2.1}%
-\contentsline {subsection}{\tocsubsection {}{7.2.2}{Proof of the existence theorem}}{80}{subsection.7.2.2}%
+\contentsline {section}{\tocsection {}{7.2}{Particular choices of constitutive relations}}{79}{section.7.2}%
+\contentsline {section}{\tocsection {}{7.3}{Existence theory}}{80}{section.7.3}%
+\contentsline {subsection}{\tocsubsection {}{7.3.1}{Assumptions, definitions and formulation of the problem}}{80}{subsection.7.3.1}%
+\contentsline {subsection}{\tocsubsection {}{7.3.2}{Proof of the existence theorem}}{81}{subsection.7.3.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{83}{chapter.8}%
 \contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{83}{section.8.1}%
 \contentsline {chapter}{\tocchapter {Chapter}{9}{Small deformation model}}{85}{chapter.9}%
