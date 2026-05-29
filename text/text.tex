@@ -3683,6 +3683,7 @@ We have obtained similar results to those we just explicitly described even enri
 \label{part:my-model}
 
 \chapter{Introduction and review of preexisting mechanical models}
+\label{chap:intro-pressure-sensitive}
 
 Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to describe the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a characterization of the yield limit. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
 
@@ -3812,16 +3813,17 @@ When $d=2$ it is easy to check that $F$ in~\eqref{eqn:F-mohr-coulomb} can be als
 f(A)=\sqrt{2}|\dev A|+(\tr A)\sin\phi-2c\cos\phi.
 \end{equation}
 In the general case, this formula suggest to consider the yield function $f\colon\text{Sym}\to\mathbb{R}$ of the form
-\[
-f(A)=|\dev A|-\left(Y_0-\alpha\frac{\tr A}{d}\right)
-\]
-where $Y_0>0$ and $\alpha>0$. The corresponding criterion is known as Drucker--Prager yield criterion and can be seen as an approximation of the Mohr--Coulomb criterion. Since the hydrostatic pressure is $p=-\tr T/d$, the Drucker--Prager criterion can be formulated as $|\dev T|\le Y(p)=Y_0+\alpha p$. Thus it is a generalization of the Von Mises criterion where the yield strength is made dependent on the hydrostratic pressure.
+\begin{equation}
+\label{eqn:f}
+f(A)=|\dev A|-\left(f_0-a\frac{\tr A}{d}\right)
+\end{equation}
+where $f_0>0$ and $a>0$. The corresponding criterion is known as Drucker--Prager yield criterion and can be seen as an approximation of the Mohr--Coulomb criterion. Since the hydrostatic pressure is $p=-\tr T/d$, the Drucker--Prager criterion can be formulated as $|\dev T|\le f_0+ap$. Thus it is a generalization of the Von Mises criterion where the yield strength is made dependent on the hydrostratic pressure.
 
 \subsection{Non associated flow rules and the dilatancy angle}
 
 Restrict now to the case of the Drucker--Prager criterion, the discussion being similar in the case of the Mohr--Coulomb crierion. If the normality rule corresponding to $g=f$ is assumed then $E_p$ evolves as
 \[
-\dot E_p=\gamma\dind{f}{T}(A_p)=\gamma\left[\frac{\dev A_p}{|\dev A_p|}+\frac{\alpha}{d}I\right]
+\dot E_p=\gamma\dind{f}{T}(A_p)=\gamma\left[\frac{\dev A_p}{|\dev A_p|}+\frac{a}{d}I\right]
 \]
 where $\gamma$ is the plastic multiplier that is required to satisfy the Kuhn--Tucker compatibility conditions
 \[
@@ -3829,21 +3831,22 @@ where $\gamma$ is the plastic multiplier that is required to satisfy the Kuhn--T
 \]
 Then it holds that
 \[
-|\dev\dot E_p|=\gamma\quad\text{and}\tr\dot E_p=\gamma\alpha
+|\dev\dot E_p|=\gamma\quad\text{and}\tr\dot E_p=\gamma a
 \]
 so
 \[
-\tr\dot E_p=\alpha|\dev\dot E_p|.
+\tr\dot E_p=a|\dev\dot E_p|.
 \]
 This implies that the accumulation of deviatoric plastic distortion is always accompanied with an increase in the volumetric plastic distortion. This behavior is called dilatancy and is common in granular materials. However the normality rule overestimates the dilatancy, so that one would like to consider a relation of the type
 \[
-\tr\dot E_p=\beta|\dev\dot E_p|
+\tr\dot E_p=b|\dev\dot E_p|
 \]
-with $\beta<\alpha$. This motivate the need of introducing a non-associated flow rule by choosing $g$ as
-\[
-g(A)=|\dev A|-\left(K_0-\beta\frac{\tr A}{d}\right)
-\]
-with $K_0,\beta>0$. In the case $d=2$ we can define $g$ with the same structure as $f$ in~\eqref{eqn:f-mohr-coulomb-2d}, that is
+with $b<a$. This motivate the need of introducing a non-associated flow rule by choosing $g$ as
+\begin{equation}
+\label{eqn:g}
+g(A)=|\dev A|-\left(g_0-b\frac{\tr A}{d}\right)
+\end{equation}
+with $K_0,b>0$. In the case $d=2$ we can define $g$ with the same structure as $f$ in~\eqref{eqn:f-mohr-coulomb-2d}, that is
 \[
 g(A)=\sqrt{2}|\dev A|+(\tr A)\sin\psi-2c\cos\psi
 \]
@@ -3856,15 +3859,15 @@ An existence theorem for non-associative compressible plasticity at small deform
 \label{thm:existence-non-associative}
 Let $\Omega\subset\mathbb{R}^d$ be open, bounded and Lipschitz and $\Gamma_D\partial\Omega$ non-empty and relatively open. Let $\mathfrak{C}\in\mathscr{L}(\text{Sym},\text{Sym})$ the elasticity tensor and suppose that there exists $c>0$ such that $\mathfrak{C}E:E\ge c|E|^2$ for all $E\in\text{Sym}$. Let $\eta>0$ a plastic viscosity. Let $K\subset\text{DevSym}$ be bounded, closed and convex and such that $0\in\inter K$, and define the admissibility set
 \[
-C=\left\{A\in\text{Sym}\;|\;\text{$A\in\alpha(\Pi-\tr A)K$ and $\tr A\ge-M$}\right\}
+C=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in a\left(\Pi-\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\}
 \]
-for some $\alpha>0$, $\Pi>0$ and $M>0$. Let also
+for some $a>0$, $\Pi>0$ and $M>0$. Let also
 \[
-G=\left\{A\in\text{Sym}\;|\;\text{$A\in\beta(\Theta-\tr A)K$ and $\tr A\ge-M$}\right\},
+G=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in b\left(\Theta-\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\},
 \]
-where $\beta>0$ and $\Theta>0$. Define  $f$ and $g$ as the signed distance from $C$ and $G$ respectively, and let $\hat{R}$ defined as in~\eqref{eqn:R-hat}. Let $\bar u\in H^1((0,T),H^1(\Omega,\mathbb{R}^d))$ and $(u_0,E_p^0)\in H^1(\Omega,\mathbb{R}^d)\times L^2(\Omega,\text{Sym})$ such that $u_0=\bar{u}(0)$ in $\Gamma_D$ in the sense of the trace. Then there exists a unique couple $(u,E_p)$ with
+where $b>0$ and $\Theta>0$. Define  $f$ and $g$ as the signed distance from $C$ and $G$ respectively, and let $\hat{R}$ defined as in~\eqref{eqn:R-hat}. Let $(u_0,E_p^0)\in H^1_0(\Omega,\mathbb{R}^d)\times L^2(\Omega,\text{Sym})$. Then there exists a unique couple $(u,E_p)$ with
 \[
-u\in H^1((0,T),H^1(\Omega,\mathbb{R}^d))\quad\text{and}\quad E_p\in W^{1,\infty}((0,T),L^2(\Omega,\text{Sym}))
+u\in H^1((0,T),H^1_0(\Omega,\mathbb{R}^d))\quad\text{and}\quad E_p\in W^{1,\infty}((0,T),L^2(\Omega,\text{Sym}))
 \]
 such that, setting $T=\mathfrak{C}(Eu-E_p)$, the following conditions hold:
 \begin{itemize}
@@ -3875,15 +3878,16 @@ such that, setting $T=\mathfrak{C}(Eu-E_p)$, the following conditions hold:
 \]
 \item[(iii)] the flow rule
 \[
-\eta\dot E_p(t)-T(t)+\partial_{\dot E_p}\hat{R}(T_p(t),\dot E_p(t))\ni0\quad\text{for all $t\in[0,T]$.}
+\eta\dot E_p(t)-T(t)+\partial_{\dot E_p}\hat{R}(T(t),\dot E_p(t))\ni0\quad\text{for all $t\in[0,T]$.}
 \]
 \end{itemize}
 \end{thm}
-\begin{rmk}
+\begin{rmk}(The limit of vanishing viscosity)
 Using a time rescaling approach it is possible to prove also the existence of a limit solution $(u,E_p)$ in the limit $\eta\to0^+$ of vanishing viscosity, with $u\in C^0([0,T],\text{BD}(\Omega))$ and $E_p\in W^{1,\infty}((0,T),\mathscr{M}(\bar\Omega,\text{Sym}))$, where $\text{BD}(\Omega)$ is the space of functions of bounded variations and $\mathscr{M}(\bar\Omega,\text{Sym})$ the space of bounded Radon measures.
 \end{rmk}
-
+\begin{rmk}(The cap model)
 Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
+\end{rmk}
 
 \chapter{Proposal of an alternative mechanical model: the regime of small deformations}
 \label{chap:pressure-sensitive-small}
@@ -3965,6 +3969,7 @@ where $f\colon\Omega\to\mathbb{R}^d$ is the volumetric force and $h\colon\partia
 
 Now the equilibrium condition is $-\mathcal{I}+\mathcal{X}+\mathcal{P}=0$. The following lemma gives its strong form.
 \begin{prop}
+\label{prop:strong-form-pressure-sensitive-small}
 Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal{I}$, $\mathcal{X}$ and $\mathcal{P}$ are smooth, the strong form of the equilibrium condition is
 \begin{align*}
 &\diver(T+T_e-\diver K)+f=0\quad\text{in $\Omega$} \\
@@ -4043,7 +4048,7 @@ Particular choices of constitutive relations are proposed and discussed in the f
 We assume that the material consists of an assembly of interlocking elastic crystalline grains, possibly held together by a binding matrix. The macroscopic deformation of the body described by $u$ is due to the combination of the following two phenomena:
 \begin{itemize}
 \item[(i)] the mutual (irreversible) displacement of the grains described by the plastic strain $E_p$, including their deviatoric sliding described by $\pi=\dev E_p$ and the opening of microcracks between the grains described by $\lambda=\tr E_p$,
-\item[(ii)] the (reversible) elastic deformation of the crystalline structure of each grain, described by $E_e=Eu-E_p$.
+\item[(ii)] the (reversible) elastic deformation of the crystalline structure of the grains, described by $E_e=Eu-E_p$.
 \end{itemize}
 The internal variable $\alpha$ is a qualitative description of the damage state of the material associated with the fact that the cohesion between the grains deteriorates. The kinematical constrain $\lambda=L(\alpha)$ reflect the fact that the damage is correlated with the formations of microcracks. The internal pressure $p$ describes how much the grains are pushed against each other (if $p\ge0$) or bonded by the binding matrix (if $p\le0$), see also Remark~\ref{rmk:interpretation-of-p} above.
 
@@ -4055,11 +4060,11 @@ Starting from this micro-mechanical picture we are now in position to give an in
 
 \subsubsection*{Spherical plastic response and damage response}
 
-The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$. As we will see in the next section an appropriate choice of $D$ allows to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
 
 \subsubsection*{Macroscopic response}
 
-In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However these terms we can give to them a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads.
+In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads.
 
 \section{More particularized constitutive assumptions}
 
@@ -4080,17 +4085,46 @@ B(0,Y(p)) & \text{if $\dot\pi=0$} \\
 \left\{Y(p)\frac{\dot\pi}{|\dot\pi|}\right\} & \text{if $\dot\pi\neq0$}.
 \end{cases}
 \]
-Here $Y\colon\mathbb{R}\to\mathbb{R}$ is supposed to be continuous. The simplest choice, motivated by the yield criteria discussed in Section~\ref{sec:yield-criteria}, is $Y(p)=Y_0+\mathfrak{f}p$ with $Y_0>0$ and $\mathfrak{f}>0$. We then assume that the hardening free energy is of the form
+Here $Y\colon\mathbb{R}\to[0,\infty)$ is supposed to be continuous. The simplest choice, motivated by the yield criteria discussed in Section~\ref{sec:yield-criteria}, is $Y(p)=Y_0+\mathfrak{f}p$ with $Y_0>0$ and $\mathfrak{f}>0$. We then assume that the hardening free energy is of the form
 \[
 W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)
 \]
-where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is smooth and $d\colon\mathbb{R}\to[0,1]$ is a smooth function that is bounded, non-increasing and $d(0)=0$. This describe a plastic hardening that possibly deteriorates as damage growths.
-\begin{rmk}[Possible micro-mechanical interpretation of $W_e$ and $W_p$]
-We assume that the material is composed by the assembly of elastic grains interlocked together.  The elastic free energy density $W_e$ is associated with the elastic energy stored inside the grains due to their deformations. The deformation of the grains is described by the elastic strain $E_e=Eu-E_p$ since it 
-\end{rmk}
-\begin{rmk}
-The typical choice of
-\end{rmk}
+where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is smooth and $d\colon\mathbb{R}\to[0,1]$ is a smooth function that is bounded, non-increasing and $d(0)=0$. This describe a plastic hardening that possibly deteriorates as damage growths. To describe the unidirectional character of damage and to link its evolutions with the accumulation deviatoric plastic distortion, we assume that
+\[
+D(\rho,\beta)=\iota_Q(\rho,\beta)\quad\text{where $Q=\{(\rho,\beta)\in\text{DevSym}\times\mathbb{R}\;|\;\beta\ge|\rho|\}$}.
+\]
+This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is always accompanied with an increase of damage and thus a change in the spherical plastic strain. In this way we can model the dilatant behavior of granular materials.
+
+We now want to show that this constitutive framework is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non associated materials.
+\begin{prop}
+Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Then the model described in this chapter coincides formally with the model described in Chapter~\ref{chap:intro-pressure-sensitive} when $f$, $g$ are given by~\eqref{eqn:f} and~\eqref{eqn:g}.
+\end{prop}
+\begin{proof}
+To prove the theorem we need to verify that the model of the present chapter provides the same macroscopic balance of forces, the same admissibility condition for the stress and the same flow rule for the plastic strain.
+
+That the macroscopic equation is $\diver T_e+f=0$ for both is trivial. Next we prove that yield condition $f(T_e)=0$ and the frow rule. To this aim we notice that the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+\[
+\left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\ge0$}.
+\]
+Then the balance of plastic and damage microforces when $\dot\pi\neq0$ can be written as
+\begin{gather}
+\dev T_e-Y(p)\frac{\dot\pi}{|\dot\pi|}+\tilde\tau\frac{\dot\pi}{|\dot\pi|}=0 \\
+-L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0,
+\end{gather}
+where we recall, from Proposition~\ref{prop:strong-form-pressure-sensitive-small}, that $p=-\frac{1}{d}\tr T_e$. Thus we have
+\[
+\dev T_e=\left(Y(p)+L'(\alpha)p+\dind{W_d}{\alpha}(\alpha)\right)\frac{\dot\pi}{|\dot\pi|}.
+\]
+It follows that
+\[
+|\dev T_e|=Y(p)+L'(\alpha)p+\dind{W_d}{\alpha}(\alpha)=(a-b)p+bp+f_0=f_0-\frac{a}{d}\tr T_e
+\]
+which is equivalent to $f(T_e)=0$ so that the yield condition is satisfied. Moreover there exists $\gamma\ge0$ such that
+\[
+\dot\pi=\gamma\frac{\dev T_e}{|\dev T_e|}.
+\]
+From $\dot\lambda=L'(\alpha)\dot\alpha=b|\dot\pi|$ we conclude that the also flow rule is satisfied.
+\end{proof}
 
 \section{Existence theory}
 
