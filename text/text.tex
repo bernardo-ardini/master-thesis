@@ -100,9 +100,9 @@
 \vspace{1em}
 Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and correctly describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved.
 
-In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory by resorting to the theory of evolutionary variational inequalities for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking.
+In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory, by resorting to the theory of evolutionary variational inequalities of Han and Reddy for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking.
 
-The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (for example, the constraint of plastic incompressibility), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. We develop an existence theory using the Rothe method: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the volumetric plastic distortion is determined by applying the kinematical constraint; then, the other kinematical unknowns are found for an arbitrary internal pressure by solving a static nonlinear problem (the existence of solution is established using the Minty-Browder theorem). Finally, the internal pressure is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem.
+The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. This approach is able to formally reproduce the classical one, even thought its mathematical and modeling foundations differ, avoiding the need of considering non associated flow rules (that are known to be mathematically more difficult to handle) and providing directly a clearer variational structure to the problem. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (linking it to a damage field describing the amount of microcraks opened within the material), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. To prove that the model admits solutions, we develop a general existence theory for constrained mechanical systems and in presence of a dissipation potential possibly depending on the Lagrange multiplier. The proof is based on a time discretization approach: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the constrain is exploited to explicitate an unknown in terms of the remaining unknowns; these are found for an arbitrary value of the Lagrange multiplier by solving a static nonlinear problem (the existence of solution is established using a non-smooth version of the Minty--Browder theorem). Finally, the Lagrange multiplier is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem.
 
 \vspace*{\fill}
 
@@ -145,6 +145,10 @@ The second gradient plasticity model we focus on regards plastic materials whose
 %I would like also to confirm the above considerations by a numerical study of the problem using the finite element method. The proof of the existence theorem is close to the numerical scheme that would be used, so we have in part established the convergence of the numerical method. I would use the monolithic approach proposed in~\cite{panteghini-bardella} and to obviate the need of globally $C^1$ finite element to handle the second gradient I would adopt the mortar method (we use discontinuous Lagrange polynomial of order two and we impose weakly the continuity and the continuity of the gradient across the elements with Lagrange multipliers supported on the element edges representing tractions and torques exchanged between the elements)\footnote{I saw this method applied for the numerical treatment of Navier--Stokes-$\alpha\beta$ model of Gurtin and Fried but I cannot find the paper any more.}. If the viscosity is kept positive the problem could be solved with a standard Newton--Raphson procedure applying a time step size adaptivity procedure to slow down during the fast localization process. This should work until the viscosity is so small that the problem requires a too small time step to be solved.
 
 \chapter*{Premise}
+
+\section*{Organization of the material}
+
+\section*{Remark on notation and recall of basic notions}
 
 % modulus of continuity
 % frechet, gateaux, subdifferential
@@ -410,7 +414,7 @@ where $\mathcal{b}_2>0$ is a constant with the dimensions of a stress and $l>0$ 
 \[
 \partial R(\dot E_p)=
 \begin{cases}
-B(0,Y) & \text{if $\dot E_p=0$} \\
+\bar B(0,Y) & \text{if $\dot E_p=0$} \\
 \left\{Y\dfrac{\dot E_p}{|\dot E_p|}\right\} & \text{if $\dot E_p\neq0$}.
 \end{cases}
 \]
@@ -598,7 +602,9 @@ The fact that $f\in H^1((0,T),H^*)$ implies that $\tau_N\sum_{k=1}^n\left\lVert\
 \section{An existence theorem for constrained mechanical systems}
 \label{sec:existence-theorem-abstract-constrained}
 
-In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
+In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}.
+
+Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
 \subsection{Notation, assumptions and formulation of the problem}
 
@@ -663,6 +669,10 @@ We are now going to prove the following existence theorem.
 \label{thm:abstract-existence}
 Under the assumptions previously stated, there exists a solution $(u,\lambda,p)$ to Problem~\ref{prb:existence-abstract}. Moreover $u\in W^{1,\infty}((0,T),U)$ and $\dot u\in C^0([0,T],H)$.
 \end{thm}
+\begin{rmk}(Ideas behind the proof)
+In this remark we describe which where the ideas behind the method we used to prove the existence of solution. As we said before, the starting point was the proof of~\cite[Proposition~11.1]{roubicek-pde}, whose sketch we reported in Section~\ref{sec:roubickeck}. The ideas behind the a priori estimates needed to pass to the limit af vanishing time step are taken directly from there. The true difficulty was to extend 
+\end{rmk}
+
 The proof relies on a time-discretization approach: the time internal is subdivided with an arbitrary but fixed step size and the existence of solutions to it is established for sufficiently small step size; then the continuous-in-time solutions is obtained as the limit (in term of a subsequence) of the discrete-in-time solutions as the step size vanishes.
 
 \subsubsection*{Solution of the discrete-in-time problem}
@@ -3898,7 +3908,7 @@ The approach we are going to present is based on the believe that some kinematic
 
 The kinematical constrain that we will consider will be a one-to-one relation between the volumetric plastic distortion and an internal variable, representing the damage state of the body. This picture was suggested by the qualitative discussion in~\cite{micro-geo}, where the idea that the increase in the volumetric part of the plastic distortion in geomaterials is due to the formations of microcracks, is proposed. This led to authors to couple plasticity with damage, even though they do not explicitly consider a link between the volumetric plastic distortion and the damage variable. This is instead our assumption.
 
-The chapter is organized as follows. In the first section we the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed thus leading to more particularized constitutive relations in the third section. In the fourth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
+The chapter is organized as follows. In the first section the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed thus leading to the development more particularized constitutive relations in the third section. In the fourth section we also establish the formal equivalence of our model to the classical one described in previous section when particular constitutive relations are chosen. In the fifth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
 
 \section{Formulation of the model}
 
@@ -4081,7 +4091,7 @@ R(p,\rho)=Y(p)|\rho|
 so that the plastic microforce is given by
 \[
 \partial_\rho R(p,\dot\pi)=\begin{cases}
-B(0,Y(p)) & \text{if $\dot\pi=0$} \\
+\bar B(0,Y(p)) & \text{if $\dot\pi=0$} \\
 \left\{Y(p)\frac{\dot\pi}{|\dot\pi|}\right\} & \text{if $\dot\pi\neq0$}.
 \end{cases}
 \]
@@ -4095,18 +4105,20 @@ D(\rho,\beta)=\iota_Q(\rho,\beta)\quad\text{where $Q=\{(\rho,\beta)\in\text{DevS
 \]
 This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is always accompanied with an increase of damage and thus a change in the spherical plastic strain. In this way we can model the dilatant behavior of granular materials.
 
-We now want to show that this constitutive framework is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non associated materials.
-\begin{prop}
-Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Then the model described in this chapter coincides formally with the model described in Chapter~\ref{chap:intro-pressure-sensitive} when $f$, $g$ are given by~\eqref{eqn:f} and~\eqref{eqn:g}.
+\section{Formally recovering the classical approach}
+
+In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
+\begin{prop}[Formal equivalence with the classical approach]
+Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Then the model described in this chapter coincides formally with the model described in Chapter~\ref{chap:intro-pressure-sensitive} when $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g}.
 \end{prop}
 \begin{proof}
 To prove the theorem we need to verify that the model of the present chapter provides the same macroscopic balance of forces, the same admissibility condition for the stress and the same flow rule for the plastic strain.
 
-That the macroscopic equation is $\diver T_e+f=0$ for both is trivial. Next we prove that yield condition $f(T_e)=0$ and the frow rule. To this aim we notice that the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+That the macroscopic equation is $\diver T_e+f=0$ for both is trivial. Next we prove that admissibility condition $f(T_e)\le0$ and the frow rule are satisfied. To this aim we notice that when $\dot\pi\neq0$ the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
 \[
 \left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\ge0$}.
 \]
-Then the balance of plastic and damage microforces when $\dot\pi\neq0$ can be written as
+Then the balance of plastic and damage microforces can be written as
 \begin{gather}
 \dev T_e-Y(p)\frac{\dot\pi}{|\dot\pi|}+\tilde\tau\frac{\dot\pi}{|\dot\pi|}=0 \\
 -L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0,
@@ -4123,8 +4135,24 @@ which is equivalent to $f(T_e)=0$ so that the yield condition is satisfied. More
 \[
 \dot\pi=\gamma\frac{\dev T_e}{|\dev T_e|}.
 \]
-From $\dot\lambda=L'(\alpha)\dot\alpha=b|\dot\pi|$ we conclude that the also flow rule is satisfied.
+From $\dot\lambda=L'(\alpha)\dot\alpha=b|\dot\pi|=b\gamma$ we conclude that
+\[
+\dot E_p=\dot\pi+\frac{\dot\lambda}{d}I=\gamma\dind{g}{A}(T_e)
+\]
+so that the flow rule is satisfied. When $\dot\pi=0$ then $\dot\alpha=0$ and the generic element of $\partial D(0,0)$ is of the form $(\tilde T_p,\tilde\tau)\in\text{DevSym}\times\mathbb{R}$ with $\tilde\tau\le-|\tilde T_p|$. Moreover the generic element of $\partial_\rho R(p)$ is a $\bar T_p\in\text{DevSym}$ with $|\bar T_p|\le Y(p)$. Then the balance of plastic and damage microforces
+\begin{gather}
+\dev T_e-\bar T_p-\tilde T_p=0 \\
+-L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0,
+\end{gather}
+gives
+\[
+|\dev T_e|\le|\bar T_p|+|\tilde T_p|\le Y(p)+L'(\alpha)p+\dind{W_d}{\alpha}(\alpha)=f_0-\frac{a}{d}\tr T_e
+\]
+which is equivalent to $f(T_e)\le0$. Thus we have proved that $T_e$ satisfies the admissibility condition.
 \end{proof}
+\begin{rmk}
+For simplicity, with the previous proposition, we have proved the equivalence between our model for pressure sensitive plastic materials and the classical approach, in the particular case in which Drucker--Prager yield criterion is adopted. However the result still holds with more general yield criteria.
+\end{rmk}
 
 \section{Existence theory}
 
@@ -4132,11 +4160,14 @@ In this section we obtain an existence result for the model we have developed in
 
 \subsection{Assumptions, definitions and formulation of the problem}
 
-To prove the existence theorem we consider a specialized version of the constitutive relations presented in previous section. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L),\text{Lip}(L')\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
+We start giving the assumptions on the constitutive relations that we found sufficient to ensure the existence of solutions. We suppose that the function $L$, defining the kinematical relation between $\alpha$ and $\lambda$, satisfies $L\in C^{1,1}(\mathbb{R})$, $\norm{L}_\infty,\norm{L'}_\infty,\text{Lip}(L),\text{Lip}(L')\le C_L$ for some constant $C_L>0$ and $L(0)=0$. We further assume that
 \[
 W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,\quad W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)\quad\text{and}\quad R(p,\rho)=Y(p)\tilde R(\rho)
 \]
 Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor; notice that we are not considering the possibility that damage affects the elastic response. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is instead degradated by the damage through the degradation function $d\colon[0,\infty)\to[0,\infty)$. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ with $\tilde W_p(0)=0$, $\tilde W_p'(0)=0$ and that there exists a constant $C_p>0$ such that $0\le\tilde W_p(\pi)\le C_p$, $|\tilde W_p'(\pi)|\le C_p,\text{Lip}(W_p),\text{Lip}(W_p')\le C_p$ and that $d\in C^{0,1}(\mathbb{R},[0,\infty))\cap C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty,\text{Lip}(d),\text{Lip}(d')\le C_d$). We require that $W_d\in C^{1,1}(\mathbb{R})$ with $W_d'(0)=0$ and that there exists $C_d^2,C_d^1,C_d^0>0$ such that $-C_d^0\le W_d(\alpha)\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$ and $|W_d'(\alpha)\alpha|\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$. Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\in C^{0,1}(\text{DevSym}\times\mathbb{R},[0,\infty])$ is convex, Lipschitz on its domain and $D(0,0)=0$.
+\begin{rmk}(Exclusion of the original model of Drucker and Prager)
+Notice that the assumptions that we have just stated prevent us from considering the constitutive relations that allowed us to show the equivalence between our formulation and the original one of Drucker and Prager. This is not limiting since it is known~\cite{morafrancfort} that the original model of Drucker and Prager is not mathematically well posed.
+\end{rmk}
 
 The function spaces where we formulate the problem are
 \begin{gather}
@@ -4317,6 +4348,8 @@ Now that we have completed the check of all the hypotheses, Theorem~\ref{thm:exi
 
 In this chapter we extend the model treated in previous chapter to the regime of large deformations. Our discussion will be limited to the modeling aspect, leaving the development of an existence theory as an open problem.
 
+The present chapter is merely a generalization of the previous one, so we will not enter again in the details of the micro-mechanical interpretation and of the choice of constitutive relations, since the discussion is completely analogous.
+
 \section{Formulation of the model}
 
 Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz be the reference configuration of the body. Its configuration is assumed to be completely described by the deformation field $\chi\colon\Omega\to\mathbb{R}^d$, the plastic distortion $F_p\colon\Omega\to\text{Lin}$ and the damage variable $\alpha\colon\Omega\to\mathbb{R}$. We denote with $z=(\chi,F_p,\alpha)\in Z$ the generic configuration of the body; the particular definition of configuration space $Z$ can only be understood once a complete theory of existence has been developed. We denote with $\tilde w=(\tilde v,\tilde V_p,\tilde\beta)\in Z$ the generic virtual velocity.
@@ -4397,7 +4430,7 @@ p=-\frac{1}{d\det F_p}\tr(F_e^TP_e).
 Thus $p$ is a sort of pressure of the push forward of the elastic Piola stress into the local elastically relaxed space.
 \end{rmk}
 
-\input{old-pressure-sensitive.tex}
+%\input{old-pressure-sensitive.tex}
 
 \appendix
 \part*{Collection of useful results}
