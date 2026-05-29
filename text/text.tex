@@ -3893,13 +3893,13 @@ The approach we are going to present is based on the believe that some kinematic
 
 The kinematical constrain that we will consider will be a one-to-one relation between the volumetric plastic distortion and an internal variable, representing the damage state of the body. This picture was suggested by the qualitative discussion in~\cite{micro-geo}, where the idea that the increase in the volumetric part of the plastic distortion in geomaterials is due to the formations of microcracks, is proposed. This led to authors to couple plasticity with damage, even though they do not explicitly consider a link between the volumetric plastic distortion and the damage variable. This is instead our assumption.
 
-The chapter is organized as follows. In the first section we develop the model focusing in the modeling aspects. In the second section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}.
+The chapter is organized as follows. In the first section we the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed thus leading to more particularized constitutive relations in the third section. In the fourth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
 
 \section{Formulation of the model}
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement field $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and a damage variable $\alpha\colon\Omega\to[0,\infty)$. We split the plastic distortion as $E_p=\pi+\frac{\lambda}{d}I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda=\tr E_p\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in the following section. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement field $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and an internal damage variable $\alpha\colon\Omega\to\mathbb{R}$. Only nonnegative values of $\alpha$ will be considered: $\alpha=0$ corresponds to a sound material while $\alpha\to\infty$ to a completely damaged material. We split the plastic distortion as $E_p=\pi+\frac{\lambda}{d}I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda=\tr E_p\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in the following section. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
 
- We consider a kinematical constrain of the form $\lambda=L(\alpha)$, where $L\colon[0,\infty)\to\mathbb{R}$ is assumed to be smooth and satisfying $L(0)=0$. This constrain models the fact that the volume changes of the microscopic structure of the body are directly linked with its damage state that represents qualitatively the amount of microcracks opened in the body. The constrain can be formulated in weak form as
+ We consider a kinematical constrain of the form $\lambda=L(\alpha)$, where $L\colon\mathbb{R}\to\mathbb{R}$ is assumed to be smooth and satisfying $L(0)=0$. This constrain models the fact that the volume changes of the microscopic structure of the body are directly linked with its damage state that represents qualitatively the amount of microcracks opened in the body. The constrain can be formulated in weak form as
 \[
 \int_\Omega\lambda qdx=\int_\Omega L(\alpha)qdx=:\dual{q,\mathcal{L}(y)}\quad\text{for all $q\in\Lambda^*$},
 \]
@@ -3909,16 +3909,18 @@ where we have introduced the map $\mathcal{L}\colon Y\to\Lambda$. The set of kin
 \]
 so that the normality condition between the reaction and the set of admissible configurations is automatically satisfied.
 \begin{rmk}(Mechanical interpretation of $p$)
-Notice that the constraint reaction $\mathcal{P}$ ``pushes'' $\lambda$ towards positive or negative values according to the sign of $p$, so that $p$ can be mechanically interpreted as a microscopic internal pressure. If $L'(\alpha)>0$ then the constraint reaction also ``push'' the damage variable $\alpha$ towards the opposite direction. In this case, when $p<0$, the damage is ``pushed'' to increase. This behavior can be exploited to model the tendency of geomaterials to damage when subject to traction. The tendency of geomaterials to damage in presence shear loads will emerge by the coupling with the plastic-behavior.
+\label{rmk:interpretation-of-p}
+Notice that the constraint reaction $\mathcal{P}$ ``pushes'' $\lambda$ towards positive or negative values according to the sign of $p$, so that $p$ can be mechanically interpreted as a microscopic internal pressure. If $L'(\alpha)>0$ then the constraint reaction also ``push'' the damage variable $\alpha$ towards the opposite direction. In this case, when $p<0$, the damage is ``pushed'' to increase. This behavior can be exploited to model the tendency of geomaterials to damage when subject to traction. The tendency of geomaterials to damage in presence shear loads will emerge by the coupling with the plastic behavior.
 \end{rmk}
 
 Following the usual ideas of gradient plasticity theory that we have saw repeatedly in previous chapters, we assume that the internal generalized force is given of the form
-\[
+\begin{equation}
+\label{eqn:internal-power}
 \begin{multlined}
 \dual{\mathcal{I},\tilde w}=\int_\Omega\left(T:\grad\tilde v+K\threedots\grad^2\tilde v\right)dx+\int_\Omega T_e:\tilde V_edx+\\
 +\int_\Omega\left(T_p:\tilde\rho+K_p\threedots\grad\tilde\rho\right)dx+\int_\Omega\left(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta\right)dx,
 \end{multlined}
-\]
+\end{equation}
 where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. In Figure~\ref{fig:rheological} we
 report a picture that represents schematically the meaning of the first three integral in the expression of $\mathcal{I}$.
 \begin{figure}
@@ -4012,13 +4014,13 @@ The strong form of the equilibrium conditions tell us that $p=-\frac{1}{d}\tr T_
 
 We now turn to the choice of the constitutive relations. We assume that the free energy functional $\Psi\colon Z\to\mathbb{R}$ is given by $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}y,y}$ with $\Psi_0\colon Z\to\mathbb{R}$ of the form
 \[
-\Psi_0(z)=\int_\Omega\left(W_e\left(\alpha,Eu-\pi-\frac{1}{d}\lambda I\right)+W_p(\alpha,\pi)+W_d(\alpha)\right)dx
+\Psi_0(z)=\int_\Omega\left(W_e\left(Eu-\pi-\frac{1}{d}\lambda I\right)+W_p(\alpha,\pi)+W_d(\alpha)\right)dx
 \]
 and
 \[
 \frac{1}{2}\dual{\mathcal{A}y,y}=\int_\Omega\left(\frac{\mathfrak{a}}{2}|\grad^2u|^2+\frac{\mathfrak{b}}{2}|\grad\pi|^2+\frac{\mathfrak{c}}{2}|\grad\alpha|^2\right)dx.
 \]
-Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon[0,\infty)\times\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon[0,\infty)\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. We assume that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
+Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. We assume that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
 \[
 \Phi_0(p,h)=\int_\Omega\left(R(p,\rho)+D(\rho,\beta)\right)dx
 \]
@@ -4029,33 +4031,51 @@ and
 where the macroscopic viscosity tensor $\mathfrak{D}\in\text{Sym}\otimes\text{Sym}$ is symmetric and positive definite, $R\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic dissipation potential density made dependent on the micropressure, $\mathfrak{d}>0$ is a plastic viscosity, $D\colon\text{DevSym}\times\mathbb{R}\to[0,\infty]$ a damage dissipation potential density made dependent of the rate of deviatoric plastic distortion and $\mathfrak{e}>0$ is a damage viscosity. We assume that $R(p,\cdot)$ and $D$ are convex and vanish at the origin. Form these expressions for $\Psi$ and $\Phi$ we get the following constitutive relations
 \begin{align}
 T=\mathfrak{D}E\dot u\qquad & K=\mathfrak{a}\grad^2u \\
-T_e=\dind{W_e}{E_e}\left(\alpha,Eu-\pi-\frac{\lambda}{d}I\right)\qquad & \\
-T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\mathfrak{d}\dot\pi+\partial_\rho D(\dot\pi,\dot\alpha)\qquad & K_p=\mathfrak{b}\grad\pi \\
-\tau\in W_d'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}\grad\alpha.
+T_e=\dind{W_e}{E_e}\left(Eu-\pi-\frac{\lambda}{d}I\right)\qquad & \\
+T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\partial_\rho D(\dot\pi,\dot\alpha)+\mathfrak{d}\dot\pi\qquad & K_p=\mathfrak{b}\grad\pi \\
+\tau\in \dind{W_p}{\alpha}(\alpha,\pi)+W_d'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}\grad\alpha.
 \end{align}
-Particular choices of constitutive relations are proposed and discussed in the following section
+Particular choices of constitutive relations are proposed and discussed in the following section.
 
-\section{Particular choices of constitutive relations}
+\section{A possible micro-mechanical interpretation of the model}
+
+We assume that the material consists of an assembly of interlocking elastic crystalline grains, possibly held together by a binding matrix. The macroscopic deformation of the body described by $u$ is due to the combination of the following two phenomena:
+\begin{itemize}
+\item[(i)] the mutual (irreversible) displacement of the grains described by the plastic strain $E_p$, including their deviatoric sliding described by $\pi=\dev E_p$ and the opening of microcracks between the grains described by $\lambda=\tr E_p$,
+\item[(ii)] the (reversible) elastic deformation of the crystalline structure of each grain, described by $E_e=Eu-E_p$.
+\end{itemize}
+The internal variable $\alpha$ is a qualitative description of the damage state of the material associated with the fact that the cohesion between the grains deteriorates. The kinematical constrain $\lambda=L(\alpha)$ reflect the fact that the damage is correlated with the formations of microcracks. The internal pressure $p$ describes how much the grains are pushed against each other (if $p\ge0$) or bonded by the binding matrix (if $p\le0$), see also Remark~\ref{rmk:interpretation-of-p} above.
+
+Starting from this micro-mechanical picture we are now in position to give an interpretation to the terms appearing in the expression~\eqref{eqn:internal-power} of the generalized internal power and in the definition of the free energy and dissipation potential.
+
+\subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains that opposes to their deformation and $W_e$ represents the elastic energy stored by them.
+
+\subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addiction of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
+
+\subsubsection*{Spherical plastic response and damage response}
+
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$. As we will see in the next section an appropriate choice of $D$ allows to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+
+\subsubsection*{Macroscopic response}
+
+In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However these terms we can give to them a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads.
+
+\section{More particularized constitutive assumptions}
 
 We consider an linear elastic response of the form corresponding to the choice
 \[
-W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,
+W_e(\alpha,E_e)=d_e(\alpha)\frac{1}{2}\mathfrak{C}E_e:E_e,
 \]
-where $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is a symmetric and positive definite elasticity tensor. Next we assume that the hardening free energy is of the form
+where $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is a symmetric and positive definite elasticity tensor and $d_e\colon\mathbb{R}\to[0,1]$ is smooth, non-increasing and satisfies $d_e(0)=1$. The function $d_e$ allows to describe the fact that the elastic stiffness of the material is reduced as the damage accumulates. Next we assume that the hardening free energy is of the form
 \[
-W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)
+W_p(\alpha,\pi)=d_p(\alpha)\tilde W_p(\pi)
 \]
-where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ and $d\colon\mathbb{R}\to[0,\infty)$ and 
-\begin{rmk}(Damage of the elastic response)
-In principle we could consider an elastic response that is influenced by damage, for example
-\[
-W_e(\alpha,E_e)=\frac{d(\alpha)}{2}\mathfrak{C}E_e:E_e.
-\]
-Here $d\colon\mathbb{R}\to[0,\infty)$ is the function that describe how the elastic response is deteriorated by damage. However, as we will see in the following section, devoted to the development of the existing theory, this would require that $\alpha$ and its variations $\beta$ should belongs to $L^\infty(\Omega)$. In particular this is required to ensure the Fréchet differentiability of $\Psi$. Indeed the formal G\^ateaux derivative of the elastic free energy along $z=(v,\rho,\beta,\mu)$ contains the term
-\[
-\int_\Omega\frac{d'(\alpha)\beta}{2}\mathfrak{C}\left(Eu-\pi-\frac{\lambda}{d}\right):\left(Eu-\pi-\frac{\lambda}{d}\right)dx.
-\]
-If $d'$ is assumed to be bounded, this integral to make sense, it is required . This, in turn, would force us to introduce a stronger regularization on the damage field (for example introducing the dependence on higher orders of $\alpha$). Alternatively to this one could maintain the gradient regularization on $\alpha$ only, but substitute the quadratic dependence of $W_e$ on $E_e$ with a response of the form. 
+where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is smooth and $d_p\colon\mathbb{R}\to[0,\infty)$ is a function with the same properties of $d_p$.
+\begin{rmk}[Possible micro-mechanical interpretation of $W_e$ and $W_p$]
+We assume that the material is composed by the assembly of elastic grains interlocked together.  The elastic free energy density $W_e$ is associated with the elastic energy stored inside the grains due to their deformations. The deformation of the grains is described by the elastic strain $E_e=Eu-E_p$ since it 
+\end{rmk}
+\begin{rmk}
+The typical choice of
 \end{rmk}
 
 \section{Existence theory}
