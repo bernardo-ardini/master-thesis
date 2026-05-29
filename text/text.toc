@@ -94,9 +94,9 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Spherical plastic response and damage response}}{80}{section*.28}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Macroscopic response}}{80}{section*.29}%
 \contentsline {section}{\tocsection {}{7.3}{More particularized constitutive assumptions}}{80}{section.7.3}%
-\contentsline {section}{\tocsection {}{7.4}{Existence theory}}{80}{section.7.4}%
+\contentsline {section}{\tocsection {}{7.4}{Existence theory}}{81}{section.7.4}%
 \contentsline {subsection}{\tocsubsection {}{7.4.1}{Assumptions, definitions and formulation of the problem}}{81}{subsection.7.4.1}%
-\contentsline {subsection}{\tocsubsection {}{7.4.2}{Proof of the existence theorem}}{81}{subsection.7.4.2}%
+\contentsline {subsection}{\tocsubsection {}{7.4.2}{Proof of the existence theorem}}{82}{subsection.7.4.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{84}{chapter.8}%
 \contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{84}{section.8.1}%
 \contentsline {chapter}{\tocchapter {Chapter}{9}{Small deformation model}}{86}{chapter.9}%

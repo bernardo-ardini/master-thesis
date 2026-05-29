@@ -3772,6 +3772,7 @@ The quantity $\diver K_p$ is not defined as a function in general. This prevents
 \end{rmk}
 
 \section{The Mohr--Coulomb and Drucker--Prager yield criterion and non associated flow rules}
+\label{sec:yield-criteria}
 
 In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterion can be formulated within the notation of previous section. Moreover we will describe the non-associated flow rule commonly employed to describe dilatancy.
 
@@ -4062,15 +4063,28 @@ In the formulation of the model we have also included a purely macroscopic respo
 
 \section{More particularized constitutive assumptions}
 
-We consider an linear elastic response of the form corresponding to the choice
+Taking into consideration the micro-mechanical interpretation provided in previous section, we now propose specialized constitutive relations. Further technical assumptions will be given in the following section devoted to the development of the existence theory.
+
+We consider a linear elastic response by choosing an elastic free energy density of the form
 \[
-W_e(\alpha,E_e)=d_e(\alpha)\frac{1}{2}\mathfrak{C}E_e:E_e,
+W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,
 \]
-where $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is a symmetric and positive definite elasticity tensor and $d_e\colon\mathbb{R}\to[0,1]$ is smooth, non-increasing and satisfies $d_e(0)=1$. The function $d_e$ allows to describe the fact that the elastic stiffness of the material is reduced as the damage accumulates. Next we assume that the hardening free energy is of the form
+where $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is a symmetric and positive definite elasticity tensor and $d_e\colon\mathbb{R}\to[0,1]$. Next we assume that the plastic dissipation potential density is of the form
 \[
-W_p(\alpha,\pi)=d_p(\alpha)\tilde W_p(\pi)
+R(p,\rho)=Y(p)|\rho|
 \]
-where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is smooth and $d_p\colon\mathbb{R}\to[0,\infty)$ is a function with the same properties of $d_p$.
+so that the plastic microforce is given by
+\[
+\partial_\rho R(p,\dot\pi)=\begin{cases}
+B(0,Y(p)) & \text{if $\dot\pi=0$} \\
+\left\{Y(p)\frac{\dot\pi}{|\dot\pi|}\right\} & \text{if $\dot\pi\neq0$}.
+\end{cases}
+\]
+Here $Y\colon\mathbb{R}\to\mathbb{R}$ is supposed to be continuous. The simplest choice, motivated by the yield criteria discussed in Section~\ref{sec:yield-criteria}, is $Y(p)=Y_0+\mathfrak{f}p$ with $Y_0>0$ and $\mathfrak{f}>0$. We then assume that the hardening free energy is of the form
+\[
+W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)
+\]
+where $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is smooth and $d\colon\mathbb{R}\to[0,1]$ is a smooth function that is bounded, non-increasing and $d(0)=0$. This describe a plastic hardening that possibly deteriorates as damage growths.
 \begin{rmk}[Possible micro-mechanical interpretation of $W_e$ and $W_p$]
 We assume that the material is composed by the assembly of elastic grains interlocked together.  The elastic free energy density $W_e$ is associated with the elastic energy stored inside the grains due to their deformations. The deformation of the grains is described by the elastic strain $E_e=Eu-E_p$ since it 
 \end{rmk}
