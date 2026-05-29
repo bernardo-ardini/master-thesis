@@ -157,6 +157,8 @@ The second gradient plasticity model we focus on regards plastic materials whose
 \chapter{Introductory notions regarding mechanical modeling and plasticity theory}
 \label{chap:modeling}
 
+In this introductory chapter we 
+
 %\section{Review of kinematics of deformable bodies}
 
 \section{A general framework for developing mechanical models}
@@ -514,7 +516,7 @@ where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:p
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
 
-In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}. In Section~\ref{sec:roubickeck} we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations when the dissipation potential has a quadratic growth. We will see that the quadratic growth of the dissipation potential allows to seek solution which are absolutely continuous in time, since in this case the dissipative generalized force is sufficiently strong to avoid jumps. In Section~\ref{sec:existence-theorem-abstract-constrained} we prove a new existence result that extend that of previous section to the case in which an unilateral kinematical constrain is added: the constrain is treated including a Lagrange multiplier and the dissipation potential is made dependent on it. This is the result that will used to develop the existence theory for the model discussed in Part~\ref{part:my-model}. In Section~\ref{sec:evi} is reported the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations with a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even thought the dissipation potential has not a quadratic growth, it is possible to find solutions that are absolutely continuous in time: this is due to the particular combination of the fact that the energy is quadratic and the dissipation potential is 1-homogeneous. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar at small deformations. In Section~\ref{sec:energetic-solution} we will present the notion of energetic solution as presented in~\cite{francfort,rate-independent-systems}. This is a very general solution concept for rate independent systems introduced by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and possible non-convex free energies. The main feature of this formulation is that it does not require any type of differentiability of the free energy or the dissipation potential and of the solution with respect to time: indeed their definition is based on a global stability conditions that does not requires to consider local variations. This is particularly useful when the nonlinearities involved in the model would be difficult to handle in terms of variations and when the evolution can exhibit jumps. Energetic solutions are suitable to prove the existence of solutions for rate-independent plasticity at large deformations: we will indeed use it to develop the existence theory for the model of a metallic cylindrical bar at large deformations in Chapter~\ref{chap:large-neck}.
+In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}. In Section~\ref{sec:roubickeck} we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations when the dissipation potential has a quadratic growth. We will see that the quadratic growth of the dissipation potential allows to seek solution which are absolutely continuous in time, since in this case the dissipative generalized force is sufficiently strong to avoid jumps. In Section~\ref{sec:existence-theorem-abstract-constrained} we prove a new existence result that extend that of previous section to the case in which an unilateral kinematical constrain is added: the constrain is treated including a Lagrange multiplier and the dissipation potential is made dependent on it. This is the result that will use to develop the existence theory for the model discussed in Part~\ref{part:my-model}. In Section~\ref{sec:evi} is reported the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations with a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even thought the dissipation potential has not a quadratic growth, it is possible to find solutions that are absolutely continuous in time: this is due to the particular combination of the fact that the energy is quadratic and the dissipation potential is 1-homogeneous. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar at small deformations. In Section~\ref{sec:energetic-solution} we will present the notion of energetic solutions as presented in~\cite{francfort,rate-independent-systems}. This is a very general solution concept for rate independent systems introduced by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and possible non-convex free energies. The main feature of this formulation is that it does not require any type of differentiability of the free energy or the dissipation potential and of the solution with respect to time: indeed their definition is based on a global stability conditions that does not requires to consider local variations. This is particularly useful when the nonlinearities involved in the model would be difficult to handle in terms of variations and when the evolution can exhibit jumps. Energetic solutions are suitable to prove the existence of solutions for rate-independent plasticity at large deformations: we will indeed use it to develop the existence theory for the model of a metallic cylindrical bar at large deformations in Chapter~\ref{chap:large-neck}.
 
 The results of this chapter, except for that in Section~\ref{sec:existence-theorem-abstract-constrained}, are known results, so that in these cases we will report only a sketch of the proofs, referring to the original sources for the complete discussion. Instead the proof of our new result in Section~\ref{sec:existence-theorem-abstract-constrained} will be reported integrally.
 
@@ -670,7 +672,7 @@ We are now going to prove the following existence theorem.
 Under the assumptions previously stated, there exists a solution $(u,\lambda,p)$ to Problem~\ref{prb:existence-abstract}. Moreover $u\in W^{1,\infty}((0,T),U)$ and $\dot u\in C^0([0,T],H)$.
 \end{thm}
 \begin{rmk}(Ideas behind the proof)
-In this remark we describe which where the ideas behind the method we used to prove the existence of solution. As we said before, the starting point was the proof of~\cite[Proposition~11.1]{roubicek-pde}, whose sketch we reported in Section~\ref{sec:roubickeck}. The ideas behind the a priori estimates needed to pass to the limit af vanishing time step are taken directly from there. The true difficulty was to extend 
+In this remark we describe which where the ideas behind the method we used to prove the existence of solution. As we said before, the starting point was the proof of~\cite[Proposition~11.1]{roubicek-pde}, whose sketch we reported in Section~\ref{sec:roubickeck}. The ideas behind the a priori estimates needed to pass to the limit af vanishing time step are taken directly from there. The true difficulty was to extend the proof of the existence of solutions to the incremental problem.
 \end{rmk}
 
 The proof relies on a time-discretization approach: the time internal is subdivided with an arbitrary but fixed step size and the existence of solutions to it is established for sufficiently small step size; then the continuous-in-time solutions is obtained as the limit (in term of a subsequence) of the discrete-in-time solutions as the step size vanishes.
@@ -3695,15 +3697,15 @@ We have obtained similar results to those we just explicitly described even enri
 \chapter{Introduction and review of preexisting mechanical models}
 \label{chap:intro-pressure-sensitive}
 
-Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to describe the mechanical behavior of soils, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a characterization of the yield limit. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
+Until the 1950s, the application of plasticity theory remained confined to metals. In 1952, Drucker and Prager~\cite{DruckerPrager1952} used the same framework of metal plasticity to describe the mechanical behavior of soils and rocks, interpreting the classic Mohr-Coulomb~\cite{Coulomb1776,Mohr1900} failure criterion as a characterization of the yield limit. They also proposed a new yield criterion, now known as the Drucker-Prager criterion.
 
-The characteristic of the Mohr-Coulomb and the Drucker-Prager yield criteria, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material is composed. The sliding is opposed by the internal friction between the grains and increases as the grains are pressed against each other. As we saw in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, in the classical formulation of plasticity theory, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below). In this case the flow rule is said to be \emph{associated}. In the case in which the admissibility criterion also takes pressure into account, the normality condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs, the grains slide over each other and, in doing so, they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule has the drawback of overestimating the dilatancy. To overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
+The characteristic of the Mohr-Coulomb and the Drucker-Prager yield criteria, absent in the classical plasticity of metals, is that the yield strength increases with increasing pressure. This behavior is appropriate to describe the plasticity of materials such as soils and rocks due to their granular nature. In fact in these cases the plastic behavior is due to the sliding of the grains of which the material is composed. The sliding is opposed by the internal friction between the grains and increases as the grains are pressed against each other. As we saw in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, in the classical formulation of plasticity theory, once the admissibility set for the stress is fixed, the flow rule of the plastic strain is automatically determined by the normality condition of the plastic flow law (see Remark~\ref{rmk:flow-rule} and the discussion reported below). In this case the flow rule is said to be \emph{associated}. When the admissibility criterion also takes pressure into account, the normality condition dictates that the plastic stain cannot remain deviatoric, so the hypothesis of plastic incompressibility must be abandoned. This actually corresponds to a real mechanical phenomenon called \emph{dilatancy} and has a precise micromechanical interpretation: when the plastic flow occurs, the grains slide over each other and, in doing so, they pass from a more optimal packing configuration to a less optimal one, causing an increase in volume. However, the associated flow rule has the drawback of overestimating the dilatancy. To overcome this, non-associated flow rules have been developed, i.e., the plastic flow law is chosen independently of the set of admissible stresses.
 
-The use of the non-associated flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory. However recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
+The use of the non-associated flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory, in the sense that it cannot immediately rewritten as a balance of generalized forces, including both a macroscopic and a microscopic equilibrium. For that reason the usual formulation of non-associated plasticity is not compatible with the view of mechanical systems presented in Section~\ref{sec:ppv}. However, recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeling}, where the idea the internal plastic friction depends on pressure is made clearer than it appears in the original formulation of Drucker--Prager and its non-associated modification. In fact, we believe that the procedure proposed by Drucker and Prager of using the same conceptual apparatus of the plasticity of metals, modifying only the yield criterion to include the influence of pressure and dilatancy, is a mostly formal approach and not directly corresponding to the mechanical intuition that the internal friction of the material depends on pressure. Moreover the fact of having to artificially alter the plastic flow rule making it non-associated leads us to find a more elegant and unitary description. In addition to the modeling benefits just mentioned, the formulation we propose also brings benefits from the point of view of the development of the existence theory. In fact, being by construction based on the balance of generalized forces (the macroscopic ones together with the plastic microforces), it admits a clearer variational formulation.
+This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, directly coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv}, where the intuition of Coulomb~\cite{Coulomb1776} that the friction between the grains increase with their contact pressure is made explicit. We will see that our model, if particular constitutive revelations are assumed, is formally able to recover the equations provided by the original approach. But, since our model possesses a clear variational structure by construction, no ad hoc reformulations are required to restore it, allowing us to establish an existence theory in a more direct and elegant manner.
 
-The discussion is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are dedicated to the formulation of our alternative approach.
+The discussion is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are instead dedicated to the formulation of our alternative approach.
 
 \section{Extension of plasticity theory incorporating plastic compressibility and non-associated flow rules}
 \label{sec:plasticity-review-soil}
@@ -3761,7 +3763,7 @@ where $\hat{R}\colon\text{Sym}\times\text{Sym}\to[0,\infty]$ is defined as
 \end{equation}
 \end{lemma}
 \begin{proof}
-It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$. Instead, if $A_p\in\partial\hat{C}(A_p)$ then $f(A_p)=0$ so that $\hat{C}(A_p)=L(A_p)$ and $N_{\hat{C}(A_p)}(A_p)=N_{L(A_p)}$. This proves the first equivalence.
+It is trivial to see that $A_p\in\hat{C}(A_p)$ if and only if $f(A_p)\le 0$, or equivalently $A_p\in C$. Moreover $A_p\in\inter\hat{C}(A_p)$ if and only if $A_p\in\inter C$ and $A_p\in\partial\hat{C}(A_p)$ if and only if $A_p\in\partial C$. This implies also that if $A_p\in\inter C$, then $N_{\hat{C}(A_p)}(A_p)=\{0\}$. Instead, if $A_p\in\partial C$ then $f(A_p)=0$ so that $\hat{C}(A_p)=L(A_p)$ and $N_{\hat{C}(A_p)}(A_p)=N_{L(A_p)}$. This proves the first equivalence.
 
 The second equivalence follows from a well known results of complex analysis~\cite[Corollary 5.2]{ekeland-temam}.
 \end{proof}
@@ -3782,7 +3784,7 @@ A_p=T_e-B_p+\diver K_p.
 The quantity $\diver K_p$ is not defined as a function in general. This prevents the possibility of defining $R$ from $\hat R$ by a simple substitution. In this case, see~\cite{StefanelliVikelis2024}, the definition of $R$ kept as in~\eqref{eqn:Rhat-R}.
 \end{rmk}
 
-\section{The Mohr--Coulomb and Drucker--Prager yield criterion and non associated flow rules}
+\section{The Mohr--Coulomb and Drucker--Prager yield criteria and non associated flow rules}
 \label{sec:yield-criteria}
 
 In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterion can be formulated within the notation of previous section. Moreover we will describe the non-associated flow rule commonly employed to describe dilatancy.
@@ -3831,9 +3833,9 @@ where $f_0>0$ and $a>0$. The corresponding criterion is known as Drucker--Prager
 
 \subsection{Non associated flow rules and the dilatancy angle}
 
-Restrict now to the case of the Drucker--Prager criterion, the discussion being similar in the case of the Mohr--Coulomb crierion. If the normality rule corresponding to $g=f$ is assumed then $E_p$ evolves as
+Restrict now to the case of the Drucker--Prager criterion, the discussion being similar in the case of the Mohr--Coulomb crierion. If the normality rule corresponding to $g=f$ is assumed, then $E_p$ evolves as
 \[
-\dot E_p=\gamma\dind{f}{T}(A_p)=\gamma\left[\frac{\dev A_p}{|\dev A_p|}+\frac{a}{d}I\right]
+\dot E_p=\gamma\dind{f}{A}(A_p)=\gamma\left[\frac{\dev A_p}{|\dev A_p|}+\frac{a}{d}I\right]
 \]
 where $\gamma$ is the plastic multiplier that is required to satisfy the Kuhn--Tucker compatibility conditions
 \[
@@ -3841,7 +3843,7 @@ where $\gamma$ is the plastic multiplier that is required to satisfy the Kuhn--T
 \]
 Then it holds that
 \[
-|\dev\dot E_p|=\gamma\quad\text{and}\tr\dot E_p=\gamma a
+|\dev\dot E_p|=\gamma\quad\text{and}\quad\tr\dot E_p=\gamma a
 \]
 so
 \[
@@ -3856,7 +3858,7 @@ with $b<a$. This motivate the need of introducing a non-associated flow rule by 
 \label{eqn:g}
 g(A)=|\dev A|-\left(g_0-b\frac{\tr A}{d}\right)
 \end{equation}
-with $K_0,b>0$. In the case $d=2$ we can define $g$ with the same structure as $f$ in~\eqref{eqn:f-mohr-coulomb-2d}, that is
+with $g_0,b>0$. In the case $d=2$ we can define $g$ with the same structure as $f$ in~\eqref{eqn:f-mohr-coulomb-2d}, that is
 \[
 g(A)=\sqrt{2}|\dev A|+(\tr A)\sin\psi-2c\cos\psi
 \]
@@ -3867,15 +3869,15 @@ where $c\ge0$ is still the cohesion and $\psi\in[0,\pi/2)$ is called the dilatan
 An existence theorem for non-associative compressible plasticity at small deformations has been derived in~\cite{morafrancfort} and is reported below. It is obtained assuming no hardening and adding a viscous plastic microforce.
 \begin{thm}
 \label{thm:existence-non-associative}
-Let $\Omega\subset\mathbb{R}^d$ be open, bounded and Lipschitz and $\Gamma_D\partial\Omega$ non-empty and relatively open. Let $\mathfrak{C}\in\mathscr{L}(\text{Sym},\text{Sym})$ the elasticity tensor and suppose that there exists $c>0$ such that $\mathfrak{C}E:E\ge c|E|^2$ for all $E\in\text{Sym}$. Let $\eta>0$ a plastic viscosity. Let $K\subset\text{DevSym}$ be bounded, closed and convex and such that $0\in\inter K$, and define the admissibility set
+Let $\Omega\subset\mathbb{R}^d$ be open, bounded and Lipschitz. Let $\mathfrak{C}\in\mathscr{L}(\text{Sym},\text{Sym})$ be a symmetric and positive definite elasticity tensor. Let $\eta>0$ a plastic viscosity. Let $K\subset\text{DevSym}$ be bounded, closed and convex and such that $0\in\inter K$, and define the admissibility set
 \[
-C=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in a\left(\Pi-\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\}
+C=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in\left(f_0-a\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\}
 \]
-for some $a>0$, $\Pi>0$ and $M>0$. Let also
+for some $a>0$, $f_0>0$ and $M>0$. Let also
 \[
-G=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in b\left(\Theta-\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\},
+G=\left\{A\in\text{Sym}\;|\;\text{$\dev A\in\left(g_0-b\frac{\tr A}{d}\right)K$ and $\tr A\ge-M$}\right\},
 \]
-where $b>0$ and $\Theta>0$. Define  $f$ and $g$ as the signed distance from $C$ and $G$ respectively, and let $\hat{R}$ defined as in~\eqref{eqn:R-hat}. Let $(u_0,E_p^0)\in H^1_0(\Omega,\mathbb{R}^d)\times L^2(\Omega,\text{Sym})$. Then there exists a unique couple $(u,E_p)$ with
+where $b>0$ and $g_0>0$. Define  $f$ and $g$ as the signed distance from $C$ and $G$ respectively, and let $\hat{R}$ defined as in~\eqref{eqn:R-hat}. Let $(u_0,E_p^0)\in H^1_0(\Omega,\mathbb{R}^d)\times L^2(\Omega,\text{Sym})$. Then there exists a unique couple $(u,E_p)$ with
 \[
 u\in H^1((0,T),H^1_0(\Omega,\mathbb{R}^d))\quad\text{and}\quad E_p\in W^{1,\infty}((0,T),L^2(\Omega,\text{Sym}))
 \]
@@ -3892,11 +3894,11 @@ such that, setting $T=\mathfrak{C}(Eu-E_p)$, the following conditions hold:
 \]
 \end{itemize}
 \end{thm}
-\begin{rmk}(The limit of vanishing viscosity)
+\begin{rmk}[The limit of vanishing viscosity]
 Using a time rescaling approach it is possible to prove also the existence of a limit solution $(u,E_p)$ in the limit $\eta\to0^+$ of vanishing viscosity, with $u\in C^0([0,T],\text{BD}(\Omega))$ and $E_p\in W^{1,\infty}((0,T),\mathscr{M}(\bar\Omega,\text{Sym}))$, where $\text{BD}(\Omega)$ is the space of functions of bounded variations and $\mathscr{M}(\bar\Omega,\text{Sym})$ the space of bounded Radon measures.
 \end{rmk}
-\begin{rmk}(The cap model)
-Notice that the original Drucker--Prager model is not covered by the hypotheses of Theorem~\ref{thm:existence-non-associative} since it does not involve the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. However the addition of this constrain is common in the modeling of soil and is known as the cap model. It is added to better the describe the volumetric behavior of the material under compressive loads.
+\begin{rmk}[The cap models]
+Notice that, in the notation of the statement of Theorem~\ref{thm:existence-non-associative}, the Drucker--Prager model is recovered if one set $K=\bar B(0,1)\subset\text{DevSym}$, except for the addiction of the condition $\tr A\ge-M$ in the definition of the sets $C$ and $G$. This additional condition is required to make $C$ and $G$ bounded subsets of $\text{DevSym}$. This is a technical requirement needed to prove the existence theorem. However, adding condition to bound the set of admissible deformations under compressive loads is a common practice also from the modeling viewpoint and this kind of models are known as cap models. Indeed this adjustment allows to describe the possibility to compact the material with compressive loads.
 \end{rmk}
 
 \chapter{Proposal of an alternative mechanical model: the regime of small deformations}
@@ -3908,7 +3910,7 @@ The approach we are going to present is based on the believe that some kinematic
 
 The kinematical constrain that we will consider will be a one-to-one relation between the volumetric plastic distortion and an internal variable, representing the damage state of the body. This picture was suggested by the qualitative discussion in~\cite{micro-geo}, where the idea that the increase in the volumetric part of the plastic distortion in geomaterials is due to the formations of microcracks, is proposed. This led to authors to couple plasticity with damage, even though they do not explicitly consider a link between the volumetric plastic distortion and the damage variable. This is instead our assumption.
 
-The chapter is organized as follows. In the first section the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed thus leading to the development more particularized constitutive relations in the third section. In the fourth section we also establish the formal equivalence of our model to the classical one described in previous section when particular constitutive relations are chosen. In the fifth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
+The chapter is organized as follows. In the first section the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed, thus leading to the development of more particularized constitutive relations in the third section. In the fourth section we also establish the formal equivalence of our model to the classical one described in previous section when particular constitutive relations are chosen. In the fifth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
 
 \section{Formulation of the model}
 
@@ -3967,8 +3969,7 @@ report a picture that represents schematically the meaning of the first three in
 \end{tikzpicture}
 \caption{Rheological model describing the choice of the internal generalized force. The
 box in upper branch represents the (generic) macroscopic response. In the lower branch,
-the spring represents the elastic response and the piston represents the microscopic response. We
-notice that the microscopic response besides the usual dissipative plastic microforce force can include conservative microforces to model hardening. A more detailed discussion on constitutive relations is in Section~\ref{subsec:constitutive}.}
+the spring represents the elastic response and the piston represents the plastic response. A more detailed discussion on the micro-mechanical interpretation is in Section~\ref{sec:micro-mechanical}.}
 \label{fig:rheological-new}
 \end{figure}
 The fourth integral describe the response of the damage variable, in particular $\tau\colon\Omega\to\mathbb{R}$ is the damage microforce and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage microstress. The external generalized force is assumed to be given by
@@ -4054,6 +4055,7 @@ T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\partial_\rho D(\do
 Particular choices of constitutive relations are proposed and discussed in the following section.
 
 \section{A possible micro-mechanical interpretation of the model}
+\label{sec:micro-mechanical}
 
 We assume that the material consists of an assembly of interlocking elastic crystalline grains, possibly held together by a binding matrix. The macroscopic deformation of the body described by $u$ is due to the combination of the following two phenomena:
 \begin{itemize}
@@ -4109,21 +4111,36 @@ This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is
 
 In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
 \begin{prop}[Formal equivalence with the classical approach]
-Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Then the model described in this chapter coincides formally with the model described in Chapter~\ref{chap:intro-pressure-sensitive} when $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g}.
-\end{prop}
-\begin{proof}
-To prove the theorem we need to verify that the model of the present chapter provides the same macroscopic balance of forces, the same admissibility condition for the stress and the same flow rule for the plastic strain.
-
-That the macroscopic equation is $\diver T_e+f=0$ for both is trivial. Next we prove that admissibility condition $f(T_e)\le0$ and the frow rule are satisfied. To this aim we notice that when $\dot\pi\neq0$ the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive} the, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
 \[
-\left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\ge0$}.
+\dot E_p\in
+\begin{cases}
+\{0\} & \text{if $f(T_p)<0$} \\
+N_{L(T_e)}(T_e) & \text{if $f(T_p)=0$},
+\end{cases}
+\]
+provided that
+\begin{itemize}
+\item[(i)] $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g},
+\item[(ii)] it holds that $-b\frac{\tr T_e}{d}>-f_0$ along the whole evolution.
+\end{itemize}
+\end{prop}
+\begin{rmk}
+Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body.
+\end{rmk}
+\begin{proof}
+We distinguish two cases, according to fact that $\dot\pi$ is zero or different form zero.
+
+\textit{Case $\dot\pi\neq0$.} We first prove that $\dot\alpha=|\dot\pi|$. If this was false, in view of the constrain $\dot\alpha\ge|\dot\pi|$, it must holds $\dot\alpha>|\dot\pi|$ and in this case $\partial D(\dot\pi,\dot\alpha)=\{0\}$. Then the balance of the damage microforce becomes $-L'(\alpha)p-W_d'(\alpha)=0$ or $-bp-f_0=0$. From Proposition~\ref{prop:strong-form-pressure-sensitive-small} we know that $p=-\frac{\tr T_e}{d}$. Thus $-b\frac{\tr T_e}{d}=-f_0$ contradicting (ii). We conclude that $\dot\alpha=|\dot\pi|$ so the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+\[
+\left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\le0$}.
 \]
 Then the balance of plastic and damage microforces can be written as
 \begin{gather}
 \dev T_e-Y(p)\frac{\dot\pi}{|\dot\pi|}+\tilde\tau\frac{\dot\pi}{|\dot\pi|}=0 \\
--L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0,
+-L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0.
 \end{gather}
-where we recall, from Proposition~\ref{prop:strong-form-pressure-sensitive-small}, that $p=-\frac{1}{d}\tr T_e$. Thus we have
+Thus we have
 \[
 \dev T_e=\left(Y(p)+L'(\alpha)p+\dind{W_d}{\alpha}(\alpha)\right)\frac{\dot\pi}{|\dot\pi|}.
 \]
@@ -4139,10 +4156,12 @@ From $\dot\lambda=L'(\alpha)\dot\alpha=b|\dot\pi|=b\gamma$ we conclude that
 \[
 \dot E_p=\dot\pi+\frac{\dot\lambda}{d}I=\gamma\dind{g}{A}(T_e)
 \]
-so that the flow rule is satisfied. When $\dot\pi=0$ then $\dot\alpha=0$ and the generic element of $\partial D(0,0)$ is of the form $(\tilde T_p,\tilde\tau)\in\text{DevSym}\times\mathbb{R}$ with $\tilde\tau\le-|\tilde T_p|$. Moreover the generic element of $\partial_\rho R(p)$ is a $\bar T_p\in\text{DevSym}$ with $|\bar T_p|\le Y(p)$. Then the balance of plastic and damage microforces
+so that the flow rule is satisfied.
+
+\textit{Case $\dot\pi=0$.} When $\dot\pi=0$ then $\dot\alpha=0$ for the same reasoning of before. Then the generic element of $\partial D(0,0)$ is of the form $(\tilde T_p,\tilde\tau)\in\text{DevSym}\times\mathbb{R}$ with $\tilde\tau\le-|\tilde T_p|$. Moreover the generic element of $\partial_\rho R(p)$ is a $\bar T_p\in\text{DevSym}$ with $|\bar T_p|\le Y(p)$. Then the balance of plastic and damage microforces
 \begin{gather}
 \dev T_e-\bar T_p-\tilde T_p=0 \\
--L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0,
+-L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0
 \end{gather}
 gives
 \[
