@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  30 MAY 2026 14:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  30 MAY 2026 19:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1598,18 +1598,18 @@ Premise
 ]
 Chapter 1
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 173.
+(Font)              scaled to size 10.0pt on input line 171.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.0pt on input line 173.
+(Font)              scaled to size 10.0pt on input line 171.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 173.
+(Font)              scaled to size 7.3pt on input line 171.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 175.
+(Font)              scaled to size 10.0pt on input line 173.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 180.
+(Font)              scaled to size 7.3pt on input line 178.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 180.
-LaTeX Font Info:    Trying to load font information for U+eus on input line 192
+(Font)              scaled to size 5.5pt on input line 178.
+LaTeX Font Info:    Trying to load font information for U+eus on input line 190
 .
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
@@ -1622,7 +1622,7 @@ File: ueus.fd 2013/01/14 v3.01 Euler Script
 live/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}]
 
 [3]
-Overfull \hbox (3.44603pt too wide) in paragraph at lines 292--294
+Overfull \hbox (3.44603pt too wide) in paragraph at lines 290--292
 [][][]\T1/zpltlf/m/sc/10 Example \T1/zpltlf/m/n/10 1.12\T1/zpltlf/m/sc/10 . []\
 T1/zpltlf/m/n/10 (Ex-am-ple []1.3[] con-tin-ued) To en-sure that $\OML/npxmi/m/
 it/10 \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
@@ -1646,7 +1646,7 @@ Missing character: There is no b in font eusm10!
 
 [7]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 455.
+(Font)              scaled to size 6.2pt on input line 453.
 
 
 [8]
@@ -1669,18 +1669,15 @@ Chapter 2
 [14]
 
 [15]
-Overfull \vbox (1.86555pt too high) has occurred while \output is active []
-
-
 
 [16]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 916.
+(amsmath)                trying to recover with `aligned' on input line 914.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 916.
+(amsmath)                trying to recover with `aligned' on input line 914.
 
 
 
@@ -1697,11 +1694,11 @@ Package amsmath Warning: Cannot use `split' here;
 [22]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1295.
+(amsmath)                trying to recover with `aligned' on input line 1296.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1295.
+(amsmath)                trying to recover with `aligned' on input line 1296.
 
 
 Underfull \vbox (badness 2653) has occurred while \output is active []
@@ -1717,7 +1714,7 @@ Underfull \vbox (badness 2653) has occurred while \output is active []
 [26]
 
 [27]
-Overfull \hbox (2.78784pt too wide) in paragraph at lines 1508--1511
+Overfull \hbox (2.78784pt too wide) in paragraph at lines 1509--1512
 [][][]\T1/zpltlf/m/sc/10 Remark \T1/zpltlf/m/n/10 2.23\T1/zpltlf/m/sc/10 . []\T
 1/zpltlf/m/n/10 (Choice of the dis-si-pa-tion dis-tance) []Given a dis-si-pa-ti
 on po-ten-tial $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10 Z \LMS/npxsy/m/n
@@ -1754,19 +1751,19 @@ LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
 [36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1673.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1674.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1673.
+(hyperref)                replaced by space on input line 1674.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1673.
+(hyperref)                removing `\noindent' on input line 1674.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1673.
+(Font)              scaled to size 20.74pt on input line 1674.
 
 
 [37
@@ -1790,7 +1787,7 @@ Chapter 4
 
 
 ]
-Overfull \hbox (3.04405pt too wide) in paragraph at lines 1814--1815
+Overfull \hbox (3.04405pt too wide) in paragraph at lines 1815--1816
  \T1/zpltlf/b/n/10 4.1.2.Kinematics of the one di-men-sional model.[] \T1/zpltl
 f/m/n/10 We are now ready to build a purely one-dimensional
  []
@@ -1841,7 +1838,7 @@ Chapter 5
 [59]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 3060: fill between: activating layered grap
+Package pgfplots info on input line 3061: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1859,16 +1856,16 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 3060: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3061: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 3060.
+(Font)              scaled to size 8.0pt on input line 3061.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 3074: fill between: activating layered grap
+Package pgfplots info on input line 3075: fill between: activating layered grap
 hics
-Package pgfplots info on input line 3074: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3075: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
@@ -1889,9 +1886,9 @@ PGFPlots: reading {figures/hessian.dat}
 
 [64]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 3385.
+(Font)              scaled to size 6.0pt on input line 3386.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.5pt on input line 3388.
+(Font)              scaled to size 6.5pt on input line 3389.
 
 
 [65]
@@ -1918,16 +1915,16 @@ PGFPlots: reading {figures/etan.dat}
 [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 3694.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3695.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 3694.
+(hyperref)                replaced by space on input line 3695.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3694.
+(hyperref)                removing `\noindent' on input line 3695.
 
 
 
@@ -1959,7 +1956,7 @@ Chapter 7
 ]
 
 LaTeX Warning: Reference `fig:rheological' on page 77 undefined on input line 3
-941.
+942.
 
 
 
@@ -1978,11 +1975,11 @@ LaTeX Warning: Reference `fig:rheological' on page 77 undefined on input line 3
 [83]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4358.
+(amsmath)                trying to recover with `aligned' on input line 4366.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4358.
+(amsmath)                trying to recover with `aligned' on input line 4366.
 
 
 
@@ -2000,7 +1997,7 @@ Chapter 8
 [87]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4455.
+(hyperref)                removing `\noindent' on input line 4463.
 
 
 
@@ -2048,12 +2045,12 @@ Appendix B
 [102]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5545.
+5553.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5545.
+(Font)              scaled to size 10.0pt on input line 5553.
 
 
 [103
@@ -2062,7 +2059,7 @@ LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5546--5546
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 5554--5554
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
@@ -2091,7 +2088,7 @@ Here is how much of TeX's memory you used:
  69841 multiletter control sequences out of 15000+600000
  723627 words of font info for 279 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 99i,23n,105p,2816b,2251s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 99i,23n,105p,2819b,2251s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
 , replaced by a fixed one
@@ -2121,10 +2118,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (109 pages, 1000650 bytes).
+Output written on text.pdf (109 pages, 1001669 bytes).
 PDF statistics:
- 1786 PDF objects out of 2073 (max. 8388607)
- 1620 compressed objects within 17 object streams
+ 1787 PDF objects out of 2073 (max. 8388607)
+ 1621 compressed objects within 17 object streams
  578 named destinations out of 1000 (max. 500000)
  374 words of extra memory for PDF output out of 10000 (max. 10000000)
 

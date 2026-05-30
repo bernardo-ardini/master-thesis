@@ -98,7 +98,7 @@
 \large\textsc{Abstract}
 \end{center}
 \vspace{1em}
-Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and correctly describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved.
+Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved.
 
 In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory, by resorting to the theory of evolutionary variational inequalities of Han and Reddy for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking.
 
@@ -156,8 +156,6 @@ The second gradient plasticity model we focus on regards plastic materials whose
 
 \chapter{Introductory notions regarding mechanical modeling and plasticity theory}
 \label{chap:modeling}
-
-In this introductory chapter we 
 
 %\section{Review of kinematics of deformable bodies}
 
@@ -516,7 +514,7 @@ where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:p
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
 
-In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}. In Section~\ref{sec:roubickeck} we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations when the dissipation potential has a quadratic growth. We will see that the quadratic growth of the dissipation potential allows to seek solution which are absolutely continuous in time, since in this case the dissipative generalized force is sufficiently strong to avoid jumps. In Section~\ref{sec:existence-theorem-abstract-constrained} we prove a new existence result that extend that of previous section to the case in which an unilateral kinematical constrain is added: the constrain is treated including a Lagrange multiplier and the dissipation potential is made dependent on it. This is the result that will use to develop the existence theory for the model discussed in Part~\ref{part:my-model}. In Section~\ref{sec:evi} is reported the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations with a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even thought the dissipation potential has not a quadratic growth, it is possible to find solutions that are absolutely continuous in time: this is due to the particular combination of the fact that the energy is quadratic and the dissipation potential is 1-homogeneous. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar at small deformations. In Section~\ref{sec:energetic-solution} we will present the notion of energetic solutions as presented in~\cite{francfort,rate-independent-systems}. This is a very general solution concept for rate independent systems introduced by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and possible non-convex free energies. The main feature of this formulation is that it does not require any type of differentiability of the free energy or the dissipation potential and of the solution with respect to time: indeed their definition is based on a global stability conditions that does not requires to consider local variations. This is particularly useful when the nonlinearities involved in the model would be difficult to handle in terms of variations and when the evolution can exhibit jumps. Energetic solutions are suitable to prove the existence of solutions for rate-independent plasticity at large deformations: we will indeed use it to develop the existence theory for the model of a metallic cylindrical bar at large deformations in Chapter~\ref{chap:large-neck}.
+In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}. In Section~\ref{sec:roubickeck} we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations when the dissipation potential has a quadratic growth. We will see that the quadratic growth of the dissipation potential allows to seek solution which are absolutely continuous in time, since in this case the dissipative generalized force is sufficiently strong to avoid jumps. In Section~\ref{sec:existence-theorem-abstract-constrained} we prove a new existence result that extend that of previous section to the case in which an unilateral kinematical constrain is added: the constrain is treated including a Lagrange multiplier and the dissipation potential is made dependent on it. This is the result that we will use to develop the existence theory for the model discussed in Part~\ref{part:my-model}. In Section~\ref{sec:evi} is reported the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations with a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even thought the dissipation potential has not a quadratic growth, it is possible to find solutions that are absolutely continuous in time: this is due to the particular combination of the fact that the energy is quadratic and the dissipation potential is 1-homogeneous. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar at small deformations. In Section~\ref{sec:energetic-solution} we will present the notion of energetic solutions as presented in~\cite{francfort,rate-independent-systems}. This is a very general solution concept for rate independent systems introduced by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and possible non-convex free energies. The main feature of this formulation is that it does not require any type of differentiability of the free energy or the dissipation potential and of the solution with respect to time: indeed their definition is based on a global stability conditions that does not requires to consider local variations. This is particularly useful when the nonlinearities involved in the model would be difficult to handle in terms of variations and when the evolution can exhibit jumps. Energetic solutions are suitable to prove the existence of solutions for rate-independent plasticity at large deformations: we will indeed use it to develop the existence theory for the model of a metallic cylindrical bar at large deformations in Chapter~\ref{chap:large-neck}.
 
 The results of this chapter, except for that in Section~\ref{sec:existence-theorem-abstract-constrained}, are known results, so that in these cases we will report only a sketch of the proofs, referring to the original sources for the complete discussion. Instead the proof of our new result in Section~\ref{sec:existence-theorem-abstract-constrained} will be reported integrally.
 
@@ -672,14 +670,14 @@ We are now going to prove the following existence theorem.
 Under the assumptions previously stated, there exists a solution $(u,\lambda,p)$ to Problem~\ref{prb:existence-abstract}. Moreover $u\in W^{1,\infty}((0,T),U)$ and $\dot u\in C^0([0,T],H)$.
 \end{thm}
 \begin{rmk}(Ideas behind the proof)
-In this remark we describe which where the ideas behind the method we used to prove the existence of solution. As we said before, the starting point was the proof of~\cite[Proposition~11.1]{roubicek-pde}, whose sketch we reported in Section~\ref{sec:roubickeck}. The ideas behind the a priori estimates needed to pass to the limit af vanishing time step are taken directly from there. The true difficulty was to extend the proof of the existence of solutions to the incremental problem.
+In this remark we describe which where the ideas behind the method we used to prove the existence of solution. As we said before, the starting point was the proof of~\cite[Proposition~11.1]{roubicek-pde}, whose sketch we reported in Section~\ref{sec:roubickeck}. The idea to use the time discretization approach and the way in which the priori estimates are performed, is taken directly from there. The true difficulty was to extend the proof of the existence of solutions to the incremental problem that arises from the time discretization. The procedure that we have developed is a nonlinear generalization of the one used to prove the existence of solutions to the generalized linear saddle point problem in Theorem~\ref{thm:mixed-elliptic}.
 \end{rmk}
 
 The proof relies on a time-discretization approach: the time internal is subdivided with an arbitrary but fixed step size and the existence of solutions to it is established for sufficiently small step size; then the continuous-in-time solutions is obtained as the limit (in term of a subsequence) of the discrete-in-time solutions as the step size vanishes.
 
 \subsubsection*{Solution of the discrete-in-time problem}
 
-So we first prove the existence of a solution to a discrete-in-time version of Problem~\ref{prb:existence-abstract} that we now introduce. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
+So we first prove the existence of a solution to a discrete-in-time version of Problem~\ref{prb:existence-abstract} that we now introduce. Let $N\in\mathbb{N}$, $\tau_N=T/N$, $t_N^k=k\tau_N$ for $k\in\{0,\dots, N\}$. The discrete problem requires to find $\{z_N^k\}_{k=0}^N\subset Z$ and $\{p_N^k\}_{k=1}^N\subset\Lambda^*$ such that $z_N^0=z_0$ and
 \begin{align}
 \label{eqn:first-equation-discrete}
 D_u\Psi_0(u_N^k,\lambda_N^k)+\mathcal{A}u_N^k+\partial\Phi_0\left(p_N^k,\frac{u_N^k-u_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{u_N^k-u_N^{k-1}}{\tau_N}+\mathcal{L}'(u_N^k)^*p_N^k&\ni f_N^k \\
@@ -701,7 +699,7 @@ For each $N\in\mathbb{N}$ and $p_N^k\in\Lambda^*$ fixed, this is a nonlinear equ
 \label{eqn:equation-unk}
 F(u_N^k)+\partial\Xi(u_N^k)\ni f_N^k,
 \end{equation}
-where $F\colon V\to V^*$ is defined by
+where $F\colon U\to U^*$ is defined by
 \[
 F(u)=D_u\Psi_0(u,\mathcal{L}(u))+\mathcal{L}'(u)^*p_N^k
 \]
@@ -714,7 +712,7 @@ Here is understood that $F$ and $\Xi$ depends parametrically on $p_N^k\in\Lambda
 Let $U,H$ be separable and reflexive Banach spaces with $U$ embedded compactly and densely in $H$. Let $F\in C^0(H,H^*)$. Then $F$ is pseudomonotone as a map from $U$ to $U^*$.
 \end{lemma}
 \begin{proof}
-Let $u_n\rightharpoonup u$ in $V$. Then for each subsequence $u_{n_k}$ there exists a further (not relabeled) subsequence such that $u_{n_k}\to u$ in $H$. By continuity of $F$ it holds that $F(u_{n_k})\to F(u)$ in $H^*$. Then
+Let $u_n\rightharpoonup u$ in $U$. Then for each subsequence $u_{n_k}$ there exists a further (not relabeled) subsequence such that $u_{n_k}\to u$ in $H$. By continuity of $F$ it holds that $F(u_{n_k})\to F(u)$ in $H^*$. Then
 \[
 \lim_{k\to\infty}\dual{F(u_{n_k}),u_{n_k}-v}=\dual{F(u),u-v}\quad\text{for all $v\in U$}.
 \]
@@ -793,7 +791,7 @@ Now the quantity on the right hand side tends to infinity as $\norm{u}_U\to\inft
 Hence we know that for all $p_N^k\in\Lambda^*$ there exists $u_N^k=\mathcal{U}(p_N^k)$ such that~\eqref{eqn:equation-unk} holds. The map $\mathcal{U}\colon\Lambda^*\to U$ is well defined (in the sense that the solution to~\eqref{eqn:equation-unk} is unique) and satisfies some regularity properties, as showed in the following lemma.
 \begin{lemma}
 \label{lemma:properties-U}
-If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, is demicontinuous from $\Lambda^*$ to $U$, belongs to $C^0(\Lambda^*,H)$ and is bounded, in the sense that it maps bounded subsets of $\Lambda^*$into bounded subsets of $U$. Moreover
+If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well defined, is demicontinuous from $\Lambda^*$ to $U$, belongs to $C^0(\Lambda^*,H)$ and is bounded, in the sense that it maps bounded subsets of $\Lambda^*$ into bounded subsets of $U$. Moreover
 \[
 \norm{\mathcal{U}(p)}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}\quad\text{for all $p\in\Lambda^*$}
 \]
@@ -892,9 +890,9 @@ Up to now we have proved that $\mathcal{U}$ is well defined and we have verified
 \ge\frac{1}{2}\langle Au_{n_j},u_{n_j}\rangle+\tau_N\Phi_0\left(p_{n_j},\frac{u_{n_j}-u_N^{k-1}}{\tau_N}\right)+\frac{1}{2}\tau_N\langle D(u_{n_j}-u_N^{k-1}),u_{n_j}-u_N^{k-1}\rangle+\langle f,u_{n_j}-v\rangle.
 \end{multlined}
 \]
-Since $u\mapsto\frac{1}{2}\dual{\mathcal{A}u,u}$ form $U$ to $\mathbb{R}$ is convex and strongly continuous so it is also weakly continuous. Then
+Since $u\mapsto\frac{1}{2}\dual{\mathcal{A}u,u}$ form $U$ to $\mathbb{R}$ is convex and strongly continuous so it is also weakly lower semicontinuous. Then
 \[
-\frac{1}{2}\dual{\mathcal{A}u_{n_j},u_{n_j}}\to\frac{1}{2}\dual{\mathcal{A}u,u}.
+\liminf_{j\to\infty}\frac{1}{2}\dual{\mathcal{A}u_{n_j},u_{n_j}}\ge\frac{1}{2}\dual{\mathcal{A}u,u}.
 \]
 That
 \[
@@ -917,10 +915,10 @@ is trivial due to the strong convergence of $p_{n_j}$ in $\Lambda^*$ and $u_{n_j
 \]
 The remaining terms are treated analogously.
 \end{proof}
-To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^n\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
+To complete the existence of the discrete-in-time solution it remains to show that there exists $p_N^k\in\Lambda^*$ such that also~\eqref{eqn:second-equation-discrete} is satisfied. This can be written as the following fixed point problem:
 \begin{equation}
 \label{eqn:fixed-point}
-p_N^n=D_\lambda\Psi_0(\mathcal{U}(p_N^n),\mathcal{L}(\mathcal{U}(p_N^n)))=:\mathcal{T}(p_N^n)
+p_N^k=D_\lambda\Psi_0(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))=:\mathcal{T}(p_N^k)
 \end{equation}
 where $\mathcal{T}\colon\Lambda^*\to\Lambda^*$. The existence of a solution to~\eqref{eqn:fixed-point} follows from the Schauder fixed-point theorem in the form of Corollary~\ref{cor:schauder-improved} thanks to the following lemma.
 \begin{lemma}
@@ -938,18 +936,21 @@ Choosing $N$ sufficiently large the thesis follows.
 
 \subsubsection*{A priori estimates and construction of the limit solution}
 
-Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem, when $N$ is sufficiently large. Now we need to pass to limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
+Summarizing, up to now we have proved the existence of $(u_N^k,\lambda_N^k)=(\mathcal{U}(p_N^k),\mathcal{L}(\mathcal{U}(p_N^k)))\in Z$ for $k\in\{0,\dots,N\}$ and $p_N^k\in\Lambda^*$ for $k\in\{1,\dots,N\}$, solutions to the discrete-in-time problem, when $N$ is sufficiently large. Now we need to pass to the limit $N\to\infty$ in order to prove the existence of the continuous-in-time solution.
 \begin{rmk}[On notation]
-We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T),U)$ respectively the piecewise constant and affine interpolation of $\{u_N^k\}_{k=0}^N$. The derivative $\dot u_N$ is piecewise constant in the sense that a representative is given by
+We denote with $\bar u_N\in W^{1,\infty}((0,T),U)$ and $u_N\in W^{1,\infty}((0,T),U)$ respectively the piecewise constant and affine interpolation of $\{u_N^k\}_{k=0}^N$. In particular
+\[
+\bar u_N(0)=u_N^0=u_0\quad\text{and}\quad\bar u_N(t)=u_N^k\quad\text{for all $t\in(t_N^{k-1},t_N^k]$ and $k\in\{1,\dots,N\}$}.
+\] The derivative $\dot u_N$ is piecewise constant in the sense that a representative is given by
 \[
 \dot u_N(t)=\dot u_N^k:=\frac{u_N^k-u_N^{k-1}}{\tau_N}\quad\text{for all $t\in(t_N^{k-1},t_N^k]$ and $k\in\{1,\dots,N\}$}.
 \]
-We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{0,\dots,N\}$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{\dot u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ for and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{0,\dots,N\}$, where we have defined $p_N^0=p_0=D_\lambda\Psi_0(z_0)$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
+We also formally set $u_N^{-1}=u_0$ so that $\dot u_N^0:=0$. We notice that $\dot u_N^k\in D_\Phi$ for all $k\in\{0,\dots,N\}$. We denote with $\hat u_N\in W^{1,\infty}((0,T),U)$ the affine interpolation of $\{\dot u_N^k\}_{k=0}^N$. We set $\lambda_N(t)=\mathcal{L}(u_N(t))$, $\bar\lambda_N(t)=\mathcal{L}(\bar u_N(t))$, $p_N(t)=D_\lambda\Psi_0(u_N(t),\lambda_N(t))$ and $\bar p_N(t)=D_\lambda\Psi_0(\bar u_N(t),\bar\lambda_N(t))$ for all $t\in[0,T]$. Notice that $\lambda_N^k=\lambda_N(t_N^k)=\bar\lambda_N(t_N^k)$ and $p_N^k=p_N(t_N^k)=\bar p_N(t_N^k)$ for $k\in\{0,\dots,N\}$, where we have defined $p_N^0=p_0=D_\lambda\Psi_0(z_0)$. Let also $\bar f_N$ be the piecewise constant interpolation of $\{f_N^k\}_{k=0}^N$.
 \end{rmk}
 \begin{rmk}[The case $k=0$]
 Having set $u_N^{-1}=0$ and $p_N^0=p_0$, recalling that $f(0)=D_u\Psi(z_0)+\mathcal{A}u_0+\mathcal{L}'(u_0)^*p_0$ and noticing that $0\in\partial\Phi(p_0,0)$, it follows that~\eqref{eqn:first-equation-discrete} holds also for $k=0$.
 \end{rmk}
-We first obtain some a priori estimates. The first estimate is obtained by testing the equation at each step $k$ separately and allows to get a uniform bound on $\norm{u_N}_{L^\infty((0,T),U)}$.
+We now obtain some a priori estimates. The first estimate is obtained by testing the equation at each step $k$ separately and allows to get a uniform bound on $\norm{u_N}_{L^\infty((0,T),U)}$.
 \begin{lemma}
 \label{lemma:a-priori-0}
 There exists a constant $C_0>0$ such that $\norm{u_N}_{L^\infty((0,T),U)}\le C_0$ for all $N$. Moreover also $\norm{\dot u_N}_{L^2((0,T),H)}$ is uniformly bounded in $N$.
@@ -971,7 +972,7 @@ Since
 and performing some trivial estimates, we find that
 \[
 \begin{multlined}
-\frac{1}{2\tau_N}\langle \mathcal Au_N^k,u_N^k\rangle-\frac{1}{2\tau_N}\langle \mathcal Au_N^{k-1},u_N^{k-1}\rangle+\langle D\dot{u}_N^k,\dot{u}_N^k\rangle\le\\
+\frac{1}{2\tau_N}\langle \mathcal Au_N^k,u_N^k\rangle-\frac{1}{2\tau_N}\langle \mathcal Au_N^{k-1},u_N^{k-1}\rangle+\langle \mathcal D\dot{u}_N^k,\dot{u}_N^k\rangle\le\\
 \le\|f_N^k\|_{H^*}\|\dot{u}_N^k\|_H+C_\Psi^2(1+C_L)^2\norm{u_N^k}_H^2+C_\Psi^1(1+C_L)\norm{u_N^k}_H+C_\Psi^0+\\
 +C_\Psi^3(1+C_L)\norm{u_N^k}_H+C_LC_\Psi^3(1+C_L)\|u_N^k\|_H\|\dot{u}_N^k\|_H.
 \end{multlined}
@@ -1003,16 +1004,16 @@ Summing for $k$ from 1 to $n$, we obtain
 \end{equation}
 Now let
 \[
-S_N^n=\tau_N\sum_{k=1}^n\norm{\dot u_N}_H^2.
+S_N^n=\tau_N\sum_{k=1}^n\norm{\dot u_N^k}_H^2.
 \]
 Notice that by Jensen inequality
 \[
 \begin{split}
-\|u_N^k\|_H^2&=\left\|\sum_{j=1}^k({u}_N^j-{u}_N^{j-1})\right\|_H^2\le k^2\left(\frac{1}{k}\sum_{j=1}^k\|{u}_N^j-{u}_N^{j-1}\|_H\right)^2\le k^2\frac{1}{k}\sum_{j=1}^k\|{u}_N^j-{u}_N^{j-1}\|_H^2=\\
-&=k\tau_N\;\tau_N\sum_{j=1}^k\left\|\frac{{u}_N^j-{u}_N^{j-1}}{\tau_N}\right\|_H^2\le TS_N^k.
+\|u_N^k-u_0\|_H^2&=\left\|\sum_{j=1}^k({u}_N^j-{u}_N^{j-1})\right\|_H^2\le k^2\left(\frac{1}{k}\sum_{j=1}^k\|{u}_N^j-{u}_N^{j-1}\|_H\right)^2\le k^2\frac{1}{k}\sum_{j=1}^k\|{u}_N^j-{u}_N^{j-1}\|_H^2=\\
+&=k\tau_N\;\tau_N\sum_{j=1}^k\left\|\frac{{u}_N^j-{u}_N^{j-1}}{\tau_N}\right\|_H^2\le TS_N^k,
 \end{split}
 \]
-Moreover
+thus $\norm{u_N^k}_H^2\le2\norm{u_0}_H^2+2TS_N^k$. Moreover
 \[
 \tau_N\sum_{k=1}^N\|f_N^k\|_{H^*}^2=\tau_N\sum_{k=1}^N\left\|\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}f(s)\,ds\right\|_{H^*}^2\le\tau_N\sum_{k=1}^N\frac{1}{\tau_N}\int_{t_N^{k-1}}^{t_N^k}\|f(s)\|_{H^*}^2\,ds=\|f\|_{L^2((0,T),H^*)}^2
 \]
@@ -1024,7 +1025,7 @@ Then~\eqref{eqn:inequality-first-order} implies that
 \[
 \begin{multlined}
 \frac{3}{4}C_DS_N^n\le\frac{2}{C_D}\|f\|_{L^2((0,T),H^*)}^2+\\
-+\left[TC_\Psi^2(1+C_L)^2+T\frac{2}{C_D}C_L^2(C_\Psi^3)^2(1+C_L)^2+\frac{(C_\Psi^1+C_\Psi^3)(1+C_L)}{2}\right]\tau_N\sum_{k=1}^nS_N^k+\\
++2T\left[C_\Psi^2(1+C_L)^2+\frac{2}{C_D}C_L^2(C_\Psi^3)^2(1+C_L)^2+\frac{(C_\Psi^1+C_\Psi^3)(1+C_L)}{2}\right]\left[\tau_N\sum_{k=1}^nS_N^k+\norm{u_0}_H^2\right]+\\
 +(C_\Psi^1+C_\Psi^3)(1+C_L)\frac{T}{2}+TC_\Psi^0+\frac{1}{2}\dual{\mathcal{A}u_0,u_0}.
 \end{multlined}
 \]
@@ -1173,7 +1174,7 @@ We now that
 \begin{split}
 \|\dot{u}_N-\hat{u}_N\|_{L^2((0,T),H)}^2&=\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\left\|\dot{u}_N^k-\dot{u}_N^{k-1}-\frac{t-t_N^{k-1}}{\tau_N}(\dot{u}_N^k-\dot{u}_N^{k-1})\right\|_H^2dt\le\\
 &\le\sum_{k=1}^N\int_{t_N^{k-1}}^{t_N^k}\|\dot{u}_N^k-\dot{u}_N^{k-1}\|_H^2\left(1-\frac{t-t_N^{k-1}}{\tau_N}\right)^2dt=\\
-&=\left[\int_0^{\tau_N}\left(1-\frac{s}{\tau_N}\right)^2ds\right]\tau_N\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}^2=\frac{\tau_N^2}{\sqrt{3}}\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}^2.
+&=\left[\int_0^{\tau_N}\left(1-\frac{s}{\tau_N}\right)^2ds\right]\tau_N\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}^2=\frac{\tau_N^2}{3}\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}^2.
 \end{split}
 \]
 Since $\norm{\dot{\hat{u}}_N}_{L^2((0,T),H)}$ is bounded uniformly in $N$, it follows that $\|\dot{u}_N-\hat{u}_N\|_{L^2((0,T),H)}\to0$.
@@ -4175,7 +4176,7 @@ For simplicity, with the previous proposition, we have proved the equivalence be
 
 \section{Existence theory}
 
-In this section we obtain an existence result for the model we have developed in previous section. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
+In this section we obtain an existence result for the model we have developed in previous sections. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
 
 \subsection{Assumptions, definitions and formulation of the problem}
 
@@ -4183,9 +4184,9 @@ We start giving the assumptions on the constitutive relations that we found suff
 \[
 W_e(\alpha,E_e)=\frac{1}{2}\mathfrak{C}E_e:E_e,\quad W_p(\alpha,\pi)=d(\alpha)\tilde W_p(\pi)\quad\text{and}\quad R(p,\rho)=Y(p)\tilde R(\rho)
 \]
-Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor; notice that we are not considering the possibility that damage affects the elastic response. The hardening free energy density $\tilde W_p\colon\text{DevSym}\to[0,\infty)$ is instead degradated by the damage through the degradation function $d\colon[0,\infty)\to[0,\infty)$. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ with $\tilde W_p(0)=0$, $\tilde W_p'(0)=0$ and that there exists a constant $C_p>0$ such that $0\le\tilde W_p(\pi)\le C_p$, $|\tilde W_p'(\pi)|\le C_p,\text{Lip}(W_p),\text{Lip}(W_p')\le C_p$ and that $d\in C^{0,1}(\mathbb{R},[0,\infty))\cap C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty,\text{Lip}(d),\text{Lip}(d')\le C_d$). We require that $W_d\in C^{1,1}(\mathbb{R})$ with $W_d'(0)=0$ and that there exists $C_d^2,C_d^1,C_d^0>0$ such that $-C_d^0\le W_d(\alpha)\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$ and $|W_d'(\alpha)\alpha|\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$. Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\in C^{0,1}(\text{DevSym}\times\mathbb{R},[0,\infty])$ is convex, Lipschitz on its domain and $D(0,0)=0$.
+Here $\mathfrak{C}\in\text{Sym}\otimes\text{Sym}$ is the symmetric and positive definite elasticity tensor. We suppose that $\tilde W_p\in C^{1,1}(\text{DevSym},[0,\infty))$ with $\tilde W_p(0)=0$, $\tilde W_p'(0)=0$ and that there exists a constant $C_p>0$ such that $0\le\tilde W_p(\pi)\le C_p$, $|\tilde W_p'(\pi)|\le C_p,\text{Lip}(W_p),\text{Lip}(W_p')\le C_p$ and that $d\in C^{1,1}(\mathbb{R},[0,\infty))$ is bounded and with bounded derivative (we call $C_d>0$ a constant such that $\norm{d}_\infty,\norm{d'}_\infty,\text{Lip}(d),\text{Lip}(d')\le C_d$). We require that $W_d\in C^{1,1}(\mathbb{R})$ with $W_d'(0)=0$ and that there exist $C_d^2,C_d^1,C_d^0>0$ such that $-C_d^0\le W_d(\alpha)\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$ and $|W_d'(\alpha)\alpha|\le C_d^2|\alpha|^2+C_d^1|\alpha|+C_d^0$. Next we assume that the plastic dissipation potential density is of the form $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y\in C^{0,1}(\mathbb{R},[0,\infty))$ and $\tilde R\in C^{0,1}(\text{DevSym},[0,\infty))$ convex and satisfying $\tilde R(0)=0$. We eventually assume that $D\colon\text{DevSym}\times\mathbb{R}\to[0,\infty]$ is convex, lower semicontinuous, Lipschitz on its domain and $D(0,0)=0$.
 \begin{rmk}(Exclusion of the original model of Drucker and Prager)
-Notice that the assumptions that we have just stated prevent us from considering the constitutive relations that allowed us to show the equivalence between our formulation and the original one of Drucker and Prager. This is not limiting since it is known~\cite{morafrancfort} that the original model of Drucker and Prager is not mathematically well posed.
+Notice that the assumptions that we have just stated prevent us from considering the constitutive relations that allowed us to show the equivalence between our formulation and the original one of Drucker and Prager in previous section. This is not limiting since it is known~\cite{morafrancfort} that the original model of Drucker and Prager is mathematically ill posed.
 \end{rmk}
 
 The function spaces where we formulate the problem are
@@ -4198,9 +4199,9 @@ and $Z=Y\times\Lambda$. Here we have assumed for simplicity that homogeneous bou
 \begin{rmk}(On notation)
 Notice that the function spaces and the variables defined here directly correspond with the abstract counterparts considered in Section~\ref{sec:existence-theorem-abstract-constrained} with the only difference that $U$ is replaced by $Y$, $u$ is replaced by $y$ and $v$ by $h$.
 \end{rmk}
-Taking into account the definitions made in previous section, we consider $\mathcal{L}\colon H\to\Lambda$, $\Psi\colon Z\to\mathbb{R}$, $\Psi_0\colon H\to\mathbb{R}$, $\mathcal{A}\in\mathscr{L}(Y,Y^*)$, $\Phi,\Phi_0\colon\Lambda^*\times\Lambda\to[0,\infty]$ and $\mathcal{D}\in\mathscr{L}(H,H^*)$. We also consider $f\in H^1((0,T),H^{-1}(\Omega,\mathbb{R}^3))$ with $f(0)=0$ and define $\mathcal{X}\in H^1((0,T),H^*)$ with
+Taking into account the definitions made in previous sections, we consider $\mathcal{L}\colon H\to\Lambda$, $\Psi\colon Z\to\mathbb{R}$, $\Psi_0\colon H\to\mathbb{R}$, $\mathcal{A}\in\mathscr{L}(Y,Y^*)$, $\Phi,\Phi_0\colon\Lambda^*\times\Lambda\to[0,\infty]$ and $\mathcal{D}\in\mathscr{L}(H,H^*)$. We also consider $f\in H^1((0,T),H^{-1}(\Omega,\mathbb{R}^3))$ with $f(0)=0$ and define $\mathcal{X}\in H^1((0,T),H^*)$ with
 \[
-\dual{\mathcal{X}(t),h}=\dual{f,v}\quad\text{for all $h\in H$}.
+\dual{\mathcal{X}(t),h}=\dual{f(t),v}\quad\text{for all $h\in H$ and $t\in[0,T]$}.
 \]
 Next consider the initial state $z_0=(y_0,\lambda_0)=0$.
 
@@ -4260,13 +4261,13 @@ As anticipated, the proof rely on the abstract existence theorem of Section~\ref
 It holds that $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and $\norm{\mathcal{L}(y)}_\Lambda$, $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}$ are bounded uniformly in $y\in H$.
 \end{lemma}
 \begin{proof}
-It holds that $\norm{\mathcal{L}(y)}_\Lambda=\norm{L(\alpha)}_2\le C_L|\Omega|$ and $\norm{\mathcal{L}(y_1)-\mathcal{L}(y_2)}_\Lambda\le\norm{L(\alpha_1)-L(\alpha_2)}_2\le C_L\norm{\alpha_1-\alpha_2}_2\le C_L\norm{y_1-y_2}_H$. This proves that $\mathcal{L}\in C^{0,1}(H,\Lambda)$ and that $\norm{\mathcal{L}(y)}_\Lambda$ is uniformly bounded.
+It holds that $\norm{\mathcal{L}(y)}_\Lambda=\norm{L(\alpha)}_2\le C_L|\Omega|$ and $\norm{\mathcal{L}(y_1)-\mathcal{L}(y_2)}_\Lambda=\norm{L(\alpha_1)-L(\alpha_2)}_2\le C_L\norm{\alpha_1-\alpha_2}_2\le C_L\norm{y_1-y_2}_H$. This proves that $\mathcal{L}\in C^{0,1}(H,\Lambda)$ and that $\norm{\mathcal{L}(y)}_\Lambda$ is uniformly bounded.
 
 Next notice that $\mathcal{L}$ is G\^ateaux differentiable with G\^ateaux derivative given by $\mathcal{L}'(y)h=L'(\alpha)\beta\in\Lambda$, since by a simple application of Lagrange theorem and dominated convergence theorem it holds that
 \[
 \left\|\frac{{L}(\alpha+\epsilon\beta)-{L}(\alpha)}{\epsilon}-L'(\alpha)\beta\right\|_\Lambda^2=\int_\Omega|L'(\alpha+\epsilon\eta\beta)-L'(\alpha)|^2|\beta|^2dx\to0
 \]
-as $\epsilon\to0$, where $\eta\in(0,1)$ depends on $\epsilon$ and $x$. The dominating function is $2C_L^2|\beta|^2\in L^1(\Omega)$ and since $L'$ is continuous it holds that $|L'(\alpha+\epsilon\eta\beta)-L'(\alpha)|\to0$ pointwise. It clearly holds that $\norm{\mathcal{L}'(y)h}_\Lambda=\norm{L'(\alpha)\beta}_\Lambda\le C_L\norm{\beta}_2\le C_L\norm{y}_H$ thus $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}\le C_L$ is uniformly bounded. Moreover $\norm{(\mathcal{L}'(y_1)-\mathcal{L}'(y_2))h}_\Lambda=\norm{({L}'(\alpha_1)-{L}'(\alpha_2))\beta}_\Lambda\le C_L\norm{\alpha_1-\alpha_2}_2\norm{\beta}_2\le C_L\norm{y_1-y_2}_H\norm{h}_H$ so that $\norm{\mathcal{L}'(y_1)-\mathcal{L}'(y_2)}_{\mathscr{L}(H,\Lambda)}\le C_L\norm{y_1-y_2}_H$. This shows that $\mathcal{L}'\in C^{0,1}(H,\mathscr{L}(H,\Lambda))$. This also implies that $\mathcal{L}$ is Frèchet differentiable.
+as $\epsilon\to0$, where $\eta\in(0,1)$ depends on $\epsilon$ and $x$. The dominating function is $4C_L^2|\beta|^2\in L^1(\Omega)$ and since $L'$ is continuous it holds that $|L'(\alpha+\epsilon\eta\beta)-L'(\alpha)|\to0$ pointwise. It clearly holds that $\norm{\mathcal{L}'(y)h}_\Lambda=\norm{L'(\alpha)\beta}_\Lambda\le C_L\norm{\beta}_2\le C_L\norm{y}_H$ thus $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}\le C_L$ is uniformly bounded. Moreover $\norm{(\mathcal{L}'(y_1)-\mathcal{L}'(y_2))h}_\Lambda=\norm{({L}'(\alpha_1)-{L}'(\alpha_2))\beta}_\Lambda\le C_L\norm{\alpha_1-\alpha_2}_2\norm{\beta}_2\le C_L\norm{y_1-y_2}_H\norm{h}_H$ so that $\norm{\mathcal{L}'(y_1)-\mathcal{L}'(y_2)}_{\mathscr{L}(H,\Lambda)}\le C_L\norm{y_1-y_2}_H$. This shows that $\mathcal{L}'\in C^{0,1}(H,\mathscr{L}(H,\Lambda))$. This also implies that $\mathcal{L}$ is Frèchet differentiable.
 \end{proof}
 Next we verify the properties of $\Psi_0$.
 \begin{lemma}
@@ -4289,7 +4290,7 @@ satisfies the required properties. Using the Lagrange theorem and the dominated 
 \[
 \dual{D\Psi_1(z),w}=\int_\Omega\left(d'(\alpha)\tilde W_p(\pi)\beta+d(\alpha)\tilde W_p'(\pi):\rho+W_d'(\alpha)\beta\right)dx.
 \]
-In particular it is crucial the fact that $|\tilde W_p(\pi)|$ ha at most a linear growth in $\pi$, ensuring that $d'(\alpha)\tilde W_p(\pi)\beta\in L^1(\Omega)$. It is immediate to see that $|\dual{D\Psi_1(z),z}|$ as at most a quadratic growth in $\norm{z}_{H\times\Lambda}$. It remains to show that $D\Psi_1$ is Lipschitz, this will also imply that $\Psi_1$ is Frèchet differentiable. To this aim we notice that
+In particular it is crucial the fact that $|\tilde W_p(\pi)|$ has at most a linear growth in $\pi$, ensuring that $d'(\alpha)\tilde W_p(\pi)\beta\in L^1(\Omega)$. It is immediate to see that $|\dual{D\Psi_1(z),z}|$ as at most a quadratic growth in $\norm{z}_{H\times\Lambda}$. It remains to show that $D\Psi_1$ is Lipschitz, this will also imply that $\Psi_1$ is Frèchet differentiable. To this aim we notice that
 \[
 \begin{split}
 \left|\left\langle D_z\Psi_1(z_1)-D_z\Psi_1(z_2),w\right\rangle\right|&\le
@@ -4307,7 +4308,14 @@ In particular it is crucial the fact that $|\tilde W_p(\pi)|$ ha at most a linea
 &\le C_d{C}_p\left(\|\pi_1-\pi_2\|_2+\|\alpha_1-\alpha_2\|_2\right)\left(\|\beta\|_2+\|\rho\|_2\right)+C_d\|\alpha_1-\alpha_2\|_2\|\beta\|_2,
 \end{split}
 \]
-where we used the crucial fact that $\tilde W_p$ and $\tilde W_p'$ are bounded. This estimate shows that $D_z\Psi_1$ is Frèchet differentiable.
+where we used the crucial assumption that $\tilde W_p$ and $\tilde W_p'$ are bounded to make the estimate
+\[
+\begin{split}
+\left\|d'(\alpha_1)\tilde W_p(\pi_1)-d'(\alpha_2)\tilde W_p(\pi_2)\right\|_2&\le\left\|d'(\alpha_1)(\tilde W_p(\pi_1)-\tilde W_p(\pi_2))\right\|_2+\left\|(d'(\alpha_1)-d'(\alpha_2)\tilde W_p(\pi_2)\right\|_2\le\\
+&\le C_dC_p\norm{\pi_1-\pi_2}_2+C_dC_p\norm{\alpha_1-\alpha_2}_2
+\end{split}
+\]
+and the similar one with $\left\|d(\alpha_1)\tilde W_p'(\pi_1)-d(\alpha_2)\tilde W_p'(\pi_2)\right\|_2$. This shows that $D_z\Psi_1$ is Frèchet differentiable.
 \end{proof}
 The linear operator $\mathcal{A}$ is trivially continuous and is coercive with respect to the seminorm $|\cdot|_Y$ in $Y$ defined by
 \[
@@ -4325,11 +4333,11 @@ It is trivial to see that $\Phi_0(p,0)=0$ and that $\Phi_0(p,\cdot)$ is convex. 
 To this aim, up to extracting a subsequence $\{h_{k_j}\}_{j\in\mathbb{N}}$, we can assume that the inferior limit is actually a limit, and extracting a further subsequence we can assume that $h_{k_j}\to h$ a.e.\ in $\Omega$. Thus by Fatou lemma
 \[
 \begin{split}
-\liminf_{k\to\infty}\Phi_0(p,h_k)&=\lim_{j\to\infty}\Phi_0(p,h_{k_j})=\lim_{j\to\infty}\int_\Omega\left(Y(p)\tilde R(\rho_{h_j})+D(\rho_{k_h},\beta_{h_j})\right)dx\ge\\
-&\ge\int_\Omega\liminf_{j\to\infty}\left(Y(p)\tilde R(\rho_{h_j})+D(\rho_{k_j},\beta_{k_j})\right)dx\ge\int_\Omega\left(Y(p)\tilde R(\rho)+D(\rho,\beta)\right)dx=\Phi_0(p,h).
+\liminf_{k\to\infty}\Phi_0(p,h_k)&=\lim_{j\to\infty}\Phi_0(p,h_{k_j})=\lim_{j\to\infty}\int_\Omega\left(Y(p)\tilde R(\rho_{k_j})+D(\rho_{k_h},\beta_{k_j})\right)dx\ge\\
+&\ge\int_\Omega\liminf_{j\to\infty}\left(Y(p)\tilde R(\rho_{k_j})+D(\rho_{k_j},\beta_{k_j})\right)dx\ge\int_\Omega\left(Y(p)\tilde R(\rho)+D(\rho,\beta)\right)dx=\Phi_0(p,h).
 \end{split}
 \]
-Moreover it is trivial to see that $\dom\Phi_0=\Lambda^*\times D_\Phi$ with $D_\Phi\subset H$ convex. The fact that $\Phi_0(p,\cdot)$ is lower semicontinuous implies that $D_\Phi$ is closed. Thus we have proved ($\Phi$1) and ($\Phi$2).
+In the last inequality we have used the fact that $\tilde R$ is continuous and $D$ is lower semicontinuous. Moreover it is trivial to see that $\dom\Phi_0=\Lambda^*\times D_\Phi$. The fact that $D_\Phi\subset H$ is closed and convex follows from the convexity and lower semicontinuity of $\Phi(p,\cdot)$. The fact that $\Phi_0(p,\cdot)$ is lower semicontinuous implies that $D_\Phi$ is closed. Thus we have proved ($\Phi$1) and ($\Phi$2).
 
 Now we check ($\Phi$3). Let $p,p_1,p_2\in\Lambda^*$ and $h,h_1,h_2\in D_\Phi$. Then we immediately check the first inequality
 \[
@@ -4729,7 +4737,7 @@ and that if $q\in Q$ satisfies
 \[
 b(q,\tilde v)=0\quad\text{for all $\tilde v\in\tilde V$}
 \]
-then $q=0$. Let $c\colon\tilde Q\times V\to\mathbb{R}$ be a bilinear form. Let $Z=\left\{z\in V\middle|\text{$b(\tilde q,z)=0$ for all $\tilde q\in\tilde Q$}\right\}$ and define $W=V/Z$. Assume that there exists $N>0$ such that
+then $q=0$. Let $c\colon\tilde Q\times V\to\mathbb{R}$ be a bilinear form. Let $Z=\left\{z\in V\middle|\text{$c(\tilde q,z)=0$ for all $\tilde q\in\tilde Q$}\right\}$ and define $W=V/Z$. Assume that there exists $N>0$ such that
 \[
 c(\tilde q,v)\le N\norm{\tilde q}_{\tilde Q}\norm{v}_{V}\quad\text{for all $\tilde q\in\tilde Q$ and $v\in V$}.
 \]
@@ -4777,7 +4785,7 @@ We identify $w$ with one of its representative in $V$ and we can choose it such 
 \[
 a(w,\tilde v)\le L\norm{w}_V\norm{\tilde v}_{\tilde V}.
 \]
-Then $a(w,\cdot)\in\tilde V'\subset\tilde Z'$. Then $\dual{f,\cdot}-a(w,\cdot)\in\tilde Z'$. Then by Theorem~\ref{thm:babuska} the equation
+Then $a(w,\cdot)\in\tilde V'\subset\tilde Z'$ so that $\dual{f,\cdot}-a(w,\cdot)\in\tilde Z'$. Then by Theorem~\ref{thm:babuska} the equation
 \[
 a(z,\tilde z)=\dual{f,\tilde z}-a(w,\tilde z)\quad\text{for all $\tilde z\in\tilde Z$}
 \]
@@ -4794,7 +4802,7 @@ and
 \[
 \norm{u}_V\le\frac{1}{\gamma}\left(1+\frac{L}{\alpha}\right)\norm{g}_{\tilde Q'}+\frac{1}{\alpha}\norm{f}_{\tilde V'}.
 \]
-Now we notice by~\eqref{eqn:u-eqn} we have
+Now we notice that by~\eqref{eqn:u-eqn} we have
 \[
 \dual{f,\tilde z}-a(u,\tilde z)=\dual{f,\tilde z}-a(w,\tilde z)-a(z,\tilde z)=0\quad\text{for all $\tilde z\in\tilde Z$}.
 \]
