@@ -3992,7 +3992,7 @@ Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal
 &-L'(\alpha)p-\tau+\diver\kappa=0\quad\text{in $\Omega$} \\
 &\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$},
 \end{align*}
-where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $P$ is the projector onto the tangent space to the boundary of $\Omega$ and $\xi$ is the outer normal vector to the boundary $d-1$ dimensional face and tangent to it.
+where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $P$ is the projector onto the tangent space to the boundary of $\Omega$ and $\xi$ is the outer normal vector to the boundary $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
 \end{prop}
 \begin{proof}
 By integration by parts we can write
@@ -4076,7 +4076,7 @@ The spherical part of the plastic strain is subject to the push of the elastic s
 
 \subsubsection*{Macroscopic response}
 
-In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads.
+In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads and was already been employed in the modeling of soils and rocks (see~\cite[Chapter 10]{bifurcation-geomechanics}).
 
 \section{More particularized constitutive assumptions}
 
@@ -4111,7 +4111,7 @@ This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is
 
 In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
 \begin{prop}[Formal equivalence with the classical approach]
-Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive} the, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
+Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
 \[
 \dot E_p\in
 \begin{cases}
@@ -4121,17 +4121,17 @@ N_{L(T_e)}(T_e) & \text{if $f(T_p)=0$},
 \]
 provided that
 \begin{itemize}
-\item[(i)] $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g},
-\item[(ii)] it holds that $-b\frac{\tr T_e}{d}>-f_0$ along the whole evolution.
+\item[(i)] $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g}, with $b\le a$, and
+\item[(ii)] it holds that $p=-\frac{\tr T_e}{d}>-\frac{f_0}{a}$ along the whole evolution.
 \end{itemize}
 \end{prop}
 \begin{rmk}
-Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body.
+Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body. If (ii) is violated, then the original Drucker--Prager model became ill-posed, since no elastic stress exists satisfying the admissibility condition $f(T_e)\le0$. 
 \end{rmk}
 \begin{proof}
 We distinguish two cases, according to fact that $\dot\pi$ is zero or different form zero.
 
-\textit{Case $\dot\pi\neq0$.} We first prove that $\dot\alpha=|\dot\pi|$. If this was false, in view of the constrain $\dot\alpha\ge|\dot\pi|$, it must holds $\dot\alpha>|\dot\pi|$ and in this case $\partial D(\dot\pi,\dot\alpha)=\{0\}$. Then the balance of the damage microforce becomes $-L'(\alpha)p-W_d'(\alpha)=0$ or $-bp-f_0=0$. From Proposition~\ref{prop:strong-form-pressure-sensitive-small} we know that $p=-\frac{\tr T_e}{d}$. Thus $-b\frac{\tr T_e}{d}=-f_0$ contradicting (ii). We conclude that $\dot\alpha=|\dot\pi|$ so the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+\textit{Case $\dot\pi\neq0$.} We first prove that $\dot\alpha=|\dot\pi|$. If this was false, in view of the constrain $\dot\alpha\ge|\dot\pi|$, it must holds $\dot\alpha>|\dot\pi|$ and in this case $\partial D(\dot\pi,\dot\alpha)=\{0\}$. Then the balance of the damage microforce becomes $-L'(\alpha)p-W_d'(\alpha)=0$ or $-bp-f_0=0$. But from (ii) it follows that $-bp-f_0<\left(\frac{b}{a}-1\right)f_0\le0$, this is a contradiction. We conclude that $\dot\alpha=|\dot\pi|$ so the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
 \[
 \left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\le0$}.
 \]
