@@ -96,7 +96,7 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Spherical plastic response and damage response}}{80}{section*.30}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Macroscopic response}}{80}{section*.31}%
 \contentsline {section}{\tocsection {}{7.3}{More particularized constitutive assumptions}}{80}{section.7.3}%
-\contentsline {section}{\tocsection {}{7.4}{Formally recovering the classical approach}}{81}{section.7.4}%
+\contentsline {section}{\tocsection {}{7.4}{Formally recovering the classical model}}{81}{section.7.4}%
 \contentsline {section}{\tocsection {}{7.5}{Existence theory}}{82}{section.7.5}%
 \contentsline {subsection}{\tocsubsection {}{7.5.1}{Assumptions, definitions and formulation of the problem}}{82}{subsection.7.5.1}%
 \contentsline {subsection}{\tocsubsection {}{7.5.2}{Proof of the existence theorem}}{83}{subsection.7.5.2}%
