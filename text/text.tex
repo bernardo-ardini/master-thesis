@@ -602,7 +602,7 @@ The fact that $f\in H^1((0,T),H^*)$ implies that $\tau_N\sum_{k=1}^n\left\lVert\
 \section{An existence theorem for constrained mechanical systems}
 \label{sec:existence-theorem-abstract-constrained}
 
-In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}.
+In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. We will also prove the uniqueness and stability of solutions.
 
 Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
@@ -1304,12 +1304,115 @@ for almost every $t\in(0,T)$. Now we can take the supremum limit for $N\to\infty
 \label{eqn:inclusion-bochner}
 \begin{multlined}
 \int_0^L\big[\Phi_0(p(t),v(t))-\Psi_0(p(t),\dot u(t))+\\
-+\dual{D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}\bar u(t)+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)-f(t),v(t)-\dot u(t)}\big]dt\ge0
++\dual{D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}u(t)+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)-f(t),v(t)-\dot u(t)}\big]dt\ge0
 \end{multlined}
 \end{equation}
-for all $v\in L^\infty((0,T),U)$. Since $v$ is arbitrary this is equivalent to~\eqref{eqn:problem-abstract-first}.
+for all $v\in L^\infty((0,T),U)$. Since $v$ is arbitrary this is equivalent to
+\begin{equation}
+\label{eqn:explicit-inclusion}
+\begin{multlined}
+\Phi_0(p(t),v)-\Psi_0(p(t),\dot u(t))+\\
++\dual{D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}u(t)+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)-f(t),v-\dot u(t)}\ge0
+\end{multlined}
+\end{equation}
+for all $v\in U$ and a.Considere.\ $t\in(0,T)$. This is in turn is equivalent to~\eqref{eqn:problem-abstract-first}.
 
 Thus we have proved Theorem~\ref{thm:abstract-existence}.
+
+\subsection{Uniqueness and stability}
+
+We now prove that the solution to Problem~\ref{prb:existence-abstract} is unique and that it depends continuously on the data of the problem.
+\begin{thm}
+Let $z_1^0,z_2^0\in V$ and $f_1,f_2\in H^1((0,T),H^*)$ such that
+\[
+\lambda_i^0=\mathcal{L}(u_i^0)\quad\text{and}\quad f_i(0)=D_u\Psi_0(z_i^0)+\mathcal{A}z_i^0+\mathcal{L}'(u_i^0)p_i^0\quad\text{for $i\in\{1,2\}$}
+\]
+where $p_i=0=D_\lambda\Psi_0(z_i^0)$. For $i\in\{1,2\}$ let $(z_i,p_i)$ be the solution to Problem~\ref{prb:existence-abstract} corresponding to initial data $z_i^0$ and forcing $f_i$. Then for all $M>0$ the exists a constant $C_S>0$ such that the estimates
+\[
+\begin{multlined}
+\norm{u_1-u_2}_{L^\infty((0,T),U)}+\norm{\dot u_1-\dot u_2}_{L^2((0,T),H)}+\norm{\lambda_1-\lambda_2}_{L^\infty((0,T),\Lambda)}+\norm{p_1-p_2}_{L^\infty((0,T),\Lambda^*)}\le\\
+\le C_S(\norm{u_1^0-u_2^0}_Z+\norm{f_1-f_2}_{L^2((0,T),H^*)})
+\end{multlined}
+\]
+holds, for all $u_i^0$ and $f_i$ with $\norm{f_i}_{H^1((0,T),H^*)}$. In particular the solution to Problem~\ref{prb:existence-abstract} is unique.
+\end{thm}
+\begin{proof}
+First of all we notice that, by the a priori estimates of previous subsection, there exists a constant $C_0$ independent on $(z_i,p_i)$ such that $\norm{u_i}_U,\norm{\lambda_i}_\Lambda,\norm{p_i}_{\Lambda^*}\le C_0$.
+
+Next, since $u_1$ and $u_2$ are solutions, then~\eqref{eqn:explicit-inclusion} holds with $(z_i,p_i)$ in place of $(z,p)$, $\dot u_j(t)$ in place of $v$ and $f_i(t)$ in place of $f(t)$ for $i\in\{1,2\}$ and $j\in\{1,2\}$ with $j\neq i$. Summing them together we arrive at
+\begin{equation}
+\label{eqn:inequality-stability}
+\begin{multlined}
+\Phi_0(p_1,\dot{u}_2)-\Phi_0(p_1,\dot{u}_1)+\Phi_0(p_2,\dot{u}_1)-\Phi_0(p_2,\dot{u}_2)\ge\\
+\ge-\langle f_2-f_1,\dot{u}_2-\dot{u}_1\rangle+\langle D_u\Psi_0({u}_2,\lambda_2)-D_u\Psi_0({u}_1,\lambda_1),\dot{u}_2-\dot{u}_1\rangle+\\
++\langle \mathcal A(u_2-u_1),\dot{u}_2-\dot{u}_1\rangle+\langle \mathcal D(\dot{u}_2-\dot{u}_2),\dot{u}_2-\dot{u}_1\rangle+\\
++\langle\mathcal{L}'(u_2)^*p_2-\mathcal{L}'(u_1)^*p_1,\dot{u}_2-\dot{u}_1\rangle.
+\end{multlined}
+\end{equation}
+But
+\[
+\begin{multlined}
+|\langle\mathcal{L}'(u_2)^*p_2-\mathcal{L}'(u_1)^*p_1,\dot{u}_2-\dot{u}_1\rangle|\le\\
+\begin{split}
+&\le|\langle\mathcal{L}'(u_2)^*p_2-\mathcal{L}'(u_2)^*p_1,\dot{u}_2-\dot{u}_1\rangle|+|\langle\mathcal{L}'(u_2)^*p_1-\mathcal{L}'(u_1)^*p_1,\dot{u}_2-\dot{u}_1\rangle|\le\\
+&\le C_L\norm{p_2-p_1}_{\Lambda^*}\norm{\dot u_2-\dot u_1}_H+C_L\norm{u_2-u_1}_H\norm{p_1}_{\Lambda^*}\norm{\dot u_2-\dot u_1}_H\le\\
+&\le C_L(C_\Psi^4(1+C_L)+C_0)\norm{u_1-u_2}_H\norm{\dot u_1-\dot u_2}_H
+\end{split}
+\end{multlined}
+\]
+where we have used that
+\[
+\norm{p_2-p_1}_{\Lambda^*}=\norm{D_\lambda\Psi_0(u_1,\mathcal{L}(u_1))-D_\lambda\Psi_0(u_1,\mathcal{L}(u_1))}_{\Lambda^*}\le C_\Psi^4(1+C_L)\norm{u_1-u_2}_H.
+\]
+Here $C_\Psi^4$ is the local Lipschitz constant of $D\Psi_0$ in the bounded set of $z=(u,\lambda)\in H\times\Lambda$ with $\norm{u}_H,\norm{\lambda}_\Lambda\le C_0$. With analogous estimates we easily find that~\eqref{eqn:inequality-stability} implies
+\[
+\begin{multlined}
+\frac{d}{dt}\left[\frac{1}{2}\dual{\mathcal{A}(u_1-u_2),u_1-u_2}\right]+\frac{C_D}{2}\norm{\dot u_1-\dot u_2}_H^2\le\\
+\le\norm{f_1-f_2}_{H^*}\norm{\dot u_1-\dot u_2}_H+C_1\norm{u_1-u_2}_H\norm{\dot u_1-\dot u_2}_H,
+\end{multlined}
+\]
+where
+\[
+C_1=\left[C_\Psi^4(1+C_L)+C_\Phi C_\Psi^4(1+C_L)+C_L(C_\Psi^4(1+C_L)+C_0)\right].
+\]
+By Young inequality
+\[
+\begin{multlined}
+\frac{d}{dt}\left[\frac{1}{2}\dual{\mathcal{A}(u_1-u_2),u_1-u_2}\right]+\frac{C_D}{6}\norm{\dot u_1-\dot u_2}_H^2\le\\
+\le\frac{3}{2C_D}\norm{f_1-f_2}_{H^*}^2+\frac{3C_1^2}{2C_D}\norm{u_1-u_2}_H^2.
+\end{multlined}
+\]
+Integrating in $(0,t)$ we get
+\begin{equation}
+\label{eqn:inequality-stability-1}
+\begin{multlined}
+\frac{C_A}{2}|u_1(t)-u_2(t)|_U^2+\frac{C_D}{6}\int_0^t\norm{\dot u_1(s)-\dot u_2(s)}_H^2ds\le\\
+\le\frac{1}{2}\dual{\mathcal{A}(u_1^0-u_2^0),u_1^0-u_2^0}+\frac{3}{2C_D}\norm{f_1-f_2}_{L^2((0,T),H^*)}^2+\frac{3C_1^2}{2C_D}\int_0^t\norm{u_1(s)-u_2(s)}_H^2ds.
+\end{multlined}
+\end{equation}
+Now let
+\[
+S(t)=\int_0^t\norm{\dot u_1(s)-\dot u_2(s)}_H^2ds
+\]
+and notice that by Jensen inequality
+\[
+\begin{split}
+\norm{u_1(t)-u_2(t)}_H^2&\le\left(\norm{u_1^0-u_2^0}_H+\int_0^t\norm{\dot u_1(s)-\dot u_2(s)}_Hds\right)^2\le\\
+&\le2\norm{u_1^0-u_2^0}_H^2+2\left(\int_0^t\norm{\dot u_1(s)-\dot u_2(s)}_Hds\right)^2\le\\
+&\le2\norm{u_1^0-u_2^0}_H^2+2T\int_0^t\norm{\dot u_1(s)-\dot u_2(s)}_H^2ds\le\\
+&\le2\norm{u_1^0-u_2^0}_H^2+2TS(t).
+\end{split}
+\]
+Thus form~\eqref{eqn:inequality-stability-1} we get
+\[
+\frac{C_D}{6}S(t)\le\frac{1}{2}\dual{\mathcal{A}(u_1^0-u_2^0),u_1^0-u_2^0}+\frac{3}{2C_D}\norm{f_1-f_2}_{L^2((0,T),H^*)}^2+\frac{3TC_1^2}{C_D}\norm{u_1^0-u_2^0}_H^2+\frac{3TC_1^2}{C_D}\int_0^tS(s)ds.
+\]
+Then the continuous Gronwall inequality (Proposition~\ref{prop:gronwall}) gives
+\[
+U(t)\le e^{\frac{18T^2C_1^2}{C_D^2}}\left[\frac{3}{C_D}\|A\|_{\mathscr{L}(U,U^*)}|u_1^0-u_2^0|_U^2+\frac{9}{C_D^2}\|f_1-f_2\|_{L^2((0,T),H^*)}^2+\frac{18TC_1^2}{C_D^2}\norm{u_1^0-u_2^0}_H^2\right]
+\]
+This implies that $\norm{\dot u_1-\dot u_2}_{L^2((0,T),H)}$ is bounded by a constant times $\norm{u_1^0-u_2^0}_Z+\norm{f_1-f_2}_{L^2((0,T),H^*)}$. Thus also $\norm{u_1-u_2}_{L^\infty((0,T),H)}$ is bounded by the same quantity. Exploiting again~\eqref{eqn:inequality-stability-1} we conclude that actually $\norm{u_1-u_2}_{L^\infty((0,T),U)}$ is bounded by the same quantity. Eventually, exploiting the fact that $D\Psi_0$ is Locally Lipschitz and $L$ is Lipschitz, the same bounds can be bound for $\norm{\lambda_1-\lambda_2}_{L^\infty((0,T),\Lambda)}$ and $\norm{p_1-p_2}_{L^\infty((0,T),\Lambda^*)}$. From this the thesis follows.
+\end{proof}
 
 \section{An existence result for rate-independent evolutionary equations with quadratic energy}
 \label{sec:evi}
@@ -2130,7 +2233,7 @@ In the limit $l\to0^+$ the solution $u_2$ that we have found converges pointwise
 \begin{proof}
 It is a direct computation.
 \end{proof}
-This results confirm the absence of necking in the small deformation model. Indeed it says that a thin bar deforms almost uniformly. 
+This results confirm the absence of necking in the small deformation model. Indeed it says that a thin bar deforms almost uniformly.
 
 %\subsubsection*{Some plots}
 %
@@ -4113,7 +4216,7 @@ This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is
 
 In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
 \begin{prop}[Formal equivalence with the classical model]
-Assume the constitutive relations of the particularized form considered in Section~\ref{sec:particular-constitutive}. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
+Consider the constitutive relations of the particularized form considered in Section~\ref{sec:particular-constitutive}. Assume that $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ and the viscosities $\mathfrak{D}$, $\mathfrak{d}$ and $\mathfrak{e}$ are zero. Assume also that $L(\alpha)=b\alpha$, $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$.  Assume now that a smooth evolution $(z,p)$ satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
 \[
 \dot E_p\in
 \begin{cases}
@@ -4493,7 +4596,7 @@ In this chapter we collect some tools of linear and nonlinear analysis used in t
 \label{prop:gronwall}
 Let $z\in L^\infty((0,T))$. Let $C\in\mathbb{R}$ and $\alpha$, $\beta$ in $L^1((0,T),[0,\infty))$ such that
 \begin{equation*}
-z(t)\le C+\int_0^t\left(\alpha(s)y(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
+z(t)\le C+\int_0^t\left(\alpha(s)z(s)+\beta(s)\right)ds\quad\text{for a.e. $t\in(0,T)$}.
 \end{equation*}
 Then
 \begin{equation*}
