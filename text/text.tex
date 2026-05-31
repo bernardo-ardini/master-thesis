@@ -3255,7 +3255,7 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,q)$ with $\theta>0$, $v_2<0$ and $q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability under force control occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,q)$ with $\theta>0$, $v_2<0$ and $q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
 \begin{figure}[htp]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$\eta$},ylabel={$\bar F$},xmin=1,xmax=1.35,width=0.45\textwidth]
@@ -3283,7 +3283,7 @@ with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to
 \[
 \mathscr{Z}^\varsigma_t=\{\hat z=(\hat y,\hat P)\in\mathscr{Z}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
-Then the following lemma express a relation between the minimality of $\mathcal{J}_t$ and similar conditions for $\mathcal{J}_t^\varsigma$ that can be useful.
+The following lemma express how the minimality of $\mathcal{J}_t$is related to that of $\mathcal{J}_t^\varsigma$.
 \begin{lemma}
 The global stability condition
 \begin{equation}
@@ -3931,7 +3931,7 @@ so that the normality condition between the reaction and the set of admissible c
 Notice that the constraint reaction $\mathcal{P}$ ``pushes'' $\lambda$ towards positive or negative values according to the sign of $p$, so that $p$ can be mechanically interpreted as a microscopic internal pressure. If $L'(\alpha)>0$ then the constraint reaction also ``push'' the damage variable $\alpha$ towards the opposite direction. In this case, when $p<0$, the damage is ``pushed'' to increase. This behavior can be exploited to model the tendency of geomaterials to damage when subject to traction. The tendency of geomaterials to damage in presence shear loads will emerge by the coupling with the plastic behavior.
 \end{rmk}
 
-Following the usual ideas of gradient plasticity theory that we have saw repeatedly in previous chapters, we assume that the internal generalized force is given of the form
+Following the usual ideas of gradient plasticity theory that we have seen repeatedly in previous chapters, we assume that the internal generalized force is given of the form
 \begin{equation}
 \label{eqn:internal-power}
 \begin{multlined}
@@ -3939,8 +3939,8 @@ Following the usual ideas of gradient plasticity theory that we have saw repeate
 +\int_\Omega\left(T_p:\tilde\rho+K_p\threedots\grad\tilde\rho\right)dx+\int_\Omega\left(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta\right)dx,
 \end{multlined}
 \end{equation}
-where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. In Figure~\ref{fig:rheological} we
-report a picture that represents schematically the meaning of the first three integral in the expression of $\mathcal{I}$.
+where $\tilde V_e:=E\tilde v-\tilde\rho-\tilde\mu I$. The first integral is related to the macroscopic response. Here $T\colon\Omega\to\text{Sym}$ is the macrostress and $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the macrohyperstress. The presence of the second order gradient of $\tilde v$ is needed to ensure compactness for the proof of the existence theorem. The second integral describe the coupling between the macroscopic and the microscopic response and $T_e\colon\Omega\to\text{Sym}$ is the elastic stress. The third integral is associated with the plastic response. Here $T_p\colon\Omega\to\text{DevSym}$ is the plastic deviatoric microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic deviatoric microstress. In Figure~\ref{fig:rheological-new} we
+report a picture that represents schematically the meaning of the first three integrals in the expression of $\mathcal{I}$.
 \begin{figure}
 \centering
 \begin{tikzpicture}[thick, scale=1]
@@ -4038,7 +4038,7 @@ and
 \[
 \frac{1}{2}\dual{\mathcal{A}y,y}=\int_\Omega\left(\frac{\mathfrak{a}}{2}|\grad^2u|^2+\frac{\mathfrak{b}}{2}|\grad\pi|^2+\frac{\mathfrak{c}}{2}|\grad\alpha|^2\right)dx.
 \]
-Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. We assume that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
+Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. Next we choose that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
 \[
 \Phi_0(p,h)=\int_\Omega\left(R(p,\rho)+D(\rho,\beta)\right)dx
 \]
@@ -4051,35 +4051,36 @@ where the macroscopic viscosity tensor $\mathfrak{D}\in\text{Sym}\otimes\text{Sy
 T=\mathfrak{D}E\dot u\qquad & K=\mathfrak{a}\grad^2u \\
 T_e=\dind{W_e}{E_e}\left(Eu-\pi-\frac{\lambda}{d}I\right)\qquad & \\
 T_p\in\dind{W_p}{\pi}(\alpha,\pi)+\partial_\rho R(p,\dot\pi)+\partial_\rho D(\dot\pi,\dot\alpha)+\mathfrak{d}\dot\pi\qquad & K_p=\mathfrak{b}\grad\pi \\
-\tau\in \dind{W_p}{\alpha}(\alpha,\pi)+W_d'(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}\grad\alpha.
+\tau\in \dind{W_p}{\alpha}(\alpha,\pi)+\dind{W_d}{\alpha}(\alpha)+\partial_\beta D(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha\qquad & \kappa=\mathfrak{c}\grad\alpha.
 \end{align}
-Particular choices of constitutive relations are proposed and discussed in the following section.
+A more particularized choice of constitutive relations is proposed and discussed in Section~\ref{sec:particular-constitutive}.
 
 \section{A possible micro-mechanical interpretation of the model}
 \label{sec:micro-mechanical}
 
 We assume that the material consists of an assembly of interlocking elastic crystalline grains, possibly held together by a binding matrix. The macroscopic deformation of the body described by $u$ is due to the combination of the following two phenomena:
 \begin{itemize}
-\item[(i)] the mutual (irreversible) displacement of the grains described by the plastic strain $E_p$, including their deviatoric sliding described by $\pi=\dev E_p$ and the opening of microcracks between the grains described by $\lambda=\tr E_p$,
-\item[(ii)] the (reversible) elastic deformation of the crystalline structure of the grains, described by $E_e=Eu-E_p$.
+\item[(i)] the mutual (irreversible) displacement of the grains described by the plastic strain $E_p$, including their deviatoric sliding described by $\pi=\dev E_p$ and the opening of microcracks within binding matrix the between the grains described by $\lambda=\tr E_p$,
+\item[(ii)] the (reversible) elastic deformation of the crystalline structure of the grains and the binding matrix, described by $E_e=Eu-E_p$.
 \end{itemize}
-The internal variable $\alpha$ is a qualitative description of the damage state of the material associated with the fact that the cohesion between the grains deteriorates. The kinematical constrain $\lambda=L(\alpha)$ reflect the fact that the damage is correlated with the formations of microcracks. The internal pressure $p$ describes how much the grains are pushed against each other (if $p\ge0$) or bonded by the binding matrix (if $p\le0$), see also Remark~\ref{rmk:interpretation-of-p} above.
+The internal variable $\alpha$ is a qualitative description of the damage state of the material associated with the fact that the cohesion between the grains deteriorates. The kinematical constrain $\lambda=L(\alpha)$ reflect the fact that the damage is correlated with the opening of microcracks, that in turn are associated with an increase of volume. The internal pressure $p$ describes how much the grains are pushed against each other (if $p\ge0$) or bonded by the binding matrix (if $p\le0$), see also Remark~\ref{rmk:interpretation-of-p} above.
 
 Starting from this micro-mechanical picture we are now in position to give an interpretation to the terms appearing in the expression~\eqref{eqn:internal-power} of the generalized internal power and in the definition of the free energy and dissipation potential.
 
-\subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains that opposes to their deformation and $W_e$ represents the elastic energy stored by them.
+\subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains and the binding matrix that opposes to their deformation and $W_e$ represents the stored elastic energy.
 
-\subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addiction of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
+\subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal, reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addiction of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
 
-\subsubsection*{Spherical plastic response and damage response}
+\subsubsection*{Volumetric plastic response and damage response}
 
-The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
 
 \subsubsection*{Macroscopic response}
 
 In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads and was already been employed in the modeling of soils and rocks (see~\cite[Chapter 10]{bifurcation-geomechanics}).
 
 \section{More particularized constitutive assumptions}
+\label{sec:particular-constitutive}
 
 Taking into consideration the micro-mechanical interpretation provided in previous section, we now propose specialized constitutive relations. Further technical assumptions will be given in the following section devoted to the development of the existence theory.
 
@@ -4112,7 +4113,7 @@ This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is
 
 In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
 \begin{prop}[Formal equivalence with the classical model]
-Assume the constitutive relations of the particularized form considered in this section. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
+Assume the constitutive relations of the particularized form considered in Section~\ref{sec:particular-constitutive}. Assume that $T$, $K$, $K_p$, $\kappa$ vanish. Assume also that $L(\alpha)=b\alpha$ $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$. Assume now that a smooth evolution satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
 \[
 \dot E_p\in
 \begin{cases}
@@ -4122,7 +4123,7 @@ N_{L(T_e)}(T_e) & \text{if $f(T_p)=0$},
 \]
 provided that
 \begin{itemize}
-\item[(i)] $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\, the ones given by~\eqref{eqn:f} and~\eqref{eqn:g}, with $b\le a$, and
+\item[(i)] $f$, $g$ are the functions associated to (non-associative) Drucker Prager model, i.e.\ the ones given by~\eqref{eqn:f} and~\eqref{eqn:g}, and
 \item[(ii)] it holds that $p=-\frac{\tr T_e}{d}>-\frac{f_0}{a}$ along the whole evolution.
 \end{itemize}
 \end{prop}

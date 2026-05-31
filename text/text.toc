@@ -93,7 +93,7 @@
 \contentsline {section}{\tocsection {}{7.2}{A possible micro-mechanical interpretation of the model}}{79}{section.7.2}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Elastic response}}{79}{section*.28}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Deviatoric plastic response}}{80}{section*.29}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Spherical plastic response and damage response}}{80}{section*.30}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Volumetric plastic response and damage response}}{80}{section*.30}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Macroscopic response}}{80}{section*.31}%
 \contentsline {section}{\tocsection {}{7.3}{More particularized constitutive assumptions}}{80}{section.7.3}%
 \contentsline {section}{\tocsection {}{7.4}{Formally recovering the classical model}}{81}{section.7.4}%
