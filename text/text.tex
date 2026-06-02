@@ -608,7 +608,7 @@ Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek
 
 \subsection{Notation, assumptions and formulation of the problem}
 
-Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$ while the virtual velocities are denoted with $w=(v,\mu)\in Z$ with $v\in U$ and $\mu\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exists $0<c_P<C_P$ such that
+Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lambda$ be the space of configurations. The generic configuration is $z=(u,\lambda)\in Z$ with $u\in U$ and $\lambda\in\Lambda$ while the virtual velocities are denoted with $w=(v,\mu)\in Z$ with $v\in U$ and $\mu\in\Lambda$. Assume that $H\supset U$ is a separable and reflexive Banach space and that the embedding of $U$ in $H$ dense and compact. Let also $|\cdot|_U$ be a seminorm in $U$ satisfying the abstract Poincaré inequality, i.e., there exist $0<c_P<C_P$ such that
 \begin{equation}
 \label{eqn:abstract-poincare}
 c_P\left(\norm{u}_H+|u|_U\right)\le\norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
@@ -2261,27 +2261,27 @@ This results confirm the absence of necking in the small deformation model. Inde
 \chapter{Model at large deformations}
 \label{chap:large-neck}
 
-As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations. This is the content of this chapter. The discussion is structures as in the previous chapter. In the first section we develop the model, in the second section we obtain an existence theorem of solutions to the boundary value problem produced by that model. In the third section we face the problem of studying the boundary value problem describing the tensile test: in this case we will not be able to obtain any explicit solution, so we will propose some methods to gain qualitative insight on the behavior of the solution, in particular regarding the onset of necking.
+As we showed in the previous chapter, the one dimensional small deformations model of a bar is not able to predict necking. This leads us to refine the one dimensional model allowing large deformations. This is the content of this chapter. The discussion is structures as in the previous chapter. In the first section we develop the model, in the second section we obtain an existence theorem. In the third section we face the problem of studying the boundary value problem describing the tensile test: in this case we will not be able to obtain any explicit solution, so we will propose some methods to gain qualitative insight on the behavior of the solution, in particular regarding the onset of necking.
 
 \section{Formulation}
 
-In a similar manner to the previous chapter, before developing the strictly one-dimensional model, we examine the kinematics of a fully multidimensional bar under large strain. We assume that bending and shear are neglected; consequently, cross-sections remain plane, undergoing only axial translation and uniform transversal stretching.
+In a similar manner to the previous chapter, before developing the strictly one-dimensional model, we examine the kinematics of a fully multidimensional bar under large strain. We assume that bending and shear are neglected. Consequently, cross-sections remain plane, undergoing only axial translation and uniform transversal stretching.
 
-\subsection{Motivation form the multidimensional kinematics}
+\subsection{Motivation from the multidimensional kinematics}
 
-Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(X,Y)\in\Omega$ with $X\in(0,L)$ and $Y\in\Sigma$. We consider deformations of the form
+Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(x,y)\in\Omega\subset\mathbb{R}^d$ with $x\in(0,L)\subset\mathbb{R}$ and $y\in\Sigma\subset\mathbb{R}^{d-1}$. We consider deformations of the form
 \begin{equation}
 \label{eqn:necking-large:deformation}
-(X,Y)\mapsto\begin{pmatrix}
-\chi_1(X) \\
-\chi_2(X)Y
+(x,y)\mapsto\begin{pmatrix}
+\chi_1(x) \\
+\chi_2(x)y
 \end{pmatrix}
 \end{equation}
-where $\chi_1\colon(0,L)\to\mathbb{R}$ satisfy $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. The corresponding deformation gradient is
+where $\chi_1\colon(0,L)\to\mathbb{R}$ satisfies $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. The corresponding deformation gradient is
 \[
 F=\begin{pmatrix}
 \chi_1' & 0 \\
-\chi_2'Y & \chi_2I
+\chi_2'y & \chi_2I
 \end{pmatrix}.
 \]
 The plastic distortion is assumed to be of the form
@@ -2296,14 +2296,14 @@ where $P\colon(0,L)\to(0,\infty)$. This choice implies plastic incompressibility
 \[
 F_e=FF_p^{-1}=\begin{pmatrix}
 \chi_1'P^{-1} & 0 \\
-\chi_2'P^{-1}Y & \chi_2P^\frac{1}{d-1}I
+\chi_2'P^{-1}y & \chi_2P^\frac{1}{d-1}I
 \end{pmatrix}=
 \begin{pmatrix}
 E_1 & 0 \\
-GY & E_2I
+E_3y & E_2I
 \end{pmatrix},
 \]
-where we have defined $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
+where we have defined $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $E_3=\chi_2'P^{-1}$.
 %We define
 %\[
 %e_1=\log E_1=\epsilon_1-p\quad\text{and}\quad e_2=\log E_2=\epsilon_2+(d-1)^{-1}p.
@@ -2342,45 +2342,47 @@ where we have defined $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=
 %%a(I_1-d)+b(I_2-d)+w(I_3) & \text{if $d=3$}.
 %%\end{cases}
 %%\]
-To motivate the development of the one-dimensional constitutive relations, we examine the neo-Hookean elastic free-energy density under the aforementioned kinematic assumptions. This will serve as a basis for the development of the constitutive model presented in the following section. Assuming the particular kinematic assumptions above, the first principal invariant of $C_e=F_e^TF_e$ is
+
+To motivate the development of the one-dimensional constitutive relations, we examine the neo-Hookean elastic free-energy density under the aforementioned kinematic assumptions. This will serve as a basis for the development of the constitutive model presented in Subsection~\ref{subsec:constitutive-large-neck}. We recall that the neo--Hookean elastic free energy density~\cite{rivlin1948large} is given by
 \[
-I_e=\tr(C_e)=E_1^2+G^2|Y|^2+E_2^2
+W_e(F_e)=C\left(\tr(J_e^{-2/d}C_e)-d\right)+w_e(J_e),
 \]
-and the determinant of $F_e$ is
+where $C_e=F_e^TF_e$ and $J_e=\det F_e$. Here $J_e$ represents the volumetric elastic distortion, while $w_e$ describes the elastic energy stored by this volumetric component. Conversely the tensor $J_e^{-2/d}C_e$ describes the shear part of the elastic distortion and $C>0$ is the stiffness associated to it. Assuming now the particular kinematic assumptions above, we find that
 \[
-J_e=\det F_e=E_1E_2,
+\tr(C_e)=E_1^2+E_3^2|y|^2+(d-1)E_2^2\quad\text{and}\quad J_e=\det F_e=E_1E_2^{d-1},
 \]
-so that the neo-Hookean elastic free energy density is given by
+so that the neo-Hookean elastic free energy density reduces to
 \begin{equation}
 \label{eqn:necking-large:neo-hookean}
-\psi_e=C\left(\frac{I_e}{J_e}-2\right)+w(J_e)=C\left(\frac{E_1^2+G^2|Y|^2+E_2^2}{E_1E_2}-2\right)+w(E_1E_2).
+W_e(F_e)=C\left(\frac{E_1^2+E_3^2|y|^2+(d-1)E_2^2}{(E_1E_2^{d-1})^{2/d}}-d\right)+w_e(E_1E_2^{d-1}).
 \end{equation}
 
+We are now ready to develop the simplified one-dimensional model.
 
 \subsection{Kinematics}
 
 We now proceed to develop a purely one-dimensional model of the bar. This model is formulated independently of the fully multidimensional one; therefore, the discussion in the previous subsection should be viewed merely as a motivation for the specific choices made in the following derivation.
 
-Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. As suggested by the multidimensional kinematics, we define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $G=\chi_2'P^{-1}$.
+Let $L>0$ the length of the cylindrical bar. The macroscopic configuration of the bar is described by $\chi_1\colon(0,L)\to\mathbb{R}$ with $\chi_1'>0$ and $\chi_2\colon(0,L)\to(0,\infty)$. Here $\chi_1$ describes the positions of the sections and $\chi_2$ is the transversal deformation factor of the sections. The configuration of the microscopic structure of the bar, that is the plastic distortion, is described by $P\colon(0,L)\to(0,\infty)$. As suggested by the multidimensional kinematics, we define the elastic distortions as $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $E_3=\chi_2'P^{-1}$.
 
-The configuration space $Z$ of the system are thus the elements of the form $z=(\chi,P)\colon(0,L)\to\mathbb{R}\times(0,\infty)\times(0,\infty)$. The virtual rates are denoted as $\tilde w=(\tilde v,\tilde Q)\colon(0,L)\to\mathbb{R}\times(0,\infty)\times(0,\infty)$. The right functional setting will be discussed in Section~\ref{sec:existence-necking} where the existence theorem is proved.
+The configuration space $Z$ of the system are thus the elements of the form $z=(\chi,P)\colon(0,L)\to(\mathbb{R}\times(0,\infty))\times(0,\infty)$. The virtual rates are denoted as $\tilde w=(\tilde v,\tilde Q)\colon(0,L)\to(\mathbb{R}\times(0,\infty))\times(0,\infty)$. The right functional setting will be discussed in Section~\ref{sec:existence-necking} where the existence theorem is proved.
 
 \subsection{Statics}
 
 The internal generalized force is chosen so that clearly appear the elastic forces and stresses, conjugate to the virtual rates of the elastic distortions, and plastic microforces and microstresses power, conjugate to the the virtual rate of the plastic distortion and its spatial derivative:
 \[
-\dual{\mathcal{I},\tilde w}=\int_0^L\left(\zeta\tilde{\dot G}+\sigma_1\tilde{\dot E}_1+\sigma_2\tilde{\dot E}_2\right)dX+\int_0^L\left(\tau\tilde{Q}+\kappa\tilde{Q}'\right)dX.
+\dual{\mathcal{I},\tilde w}=\int_0^L\left(\sigma_1\tilde{\dot E}_1+\sigma_2\tilde{\dot E}_2+\sigma_3\tilde{\dot E}_3\right)dX+\int_0^L\left(\tau\tilde{Q}+\kappa\tilde{Q}'\right)dX.
 \]
-Here $\zeta\colon(0,L)\to\mathbb{R}$ is the transversal elastic stress, $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress and $\sigma_2\colon(0,L)\to\mathbb{R}$ is the transversal elastic force, while $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force and $\kappa\colon(0,L)\to\mathbb{R}$ the microscopic stress. Moreover the virtual rates $\tilde{\dot E}_1$, $\tilde{\dot E}_2$ and $\tilde{\dot G}$ are defined by the relations
+Here $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress, $\sigma_2\colon(0,L)\to\mathbb{R}$ is the transversal elastic force and $\sigma_3\colon(0,L)\to\mathbb{R}$ is the transversal elastic stress, while $\tau\colon(0,L)\to\mathbb{R}$ is the microscopic force and $\kappa\colon(0,L)\to\mathbb{R}$ the microscopic stress. Moreover the virtual rates $\tilde{\dot E}_1$, $\tilde{\dot E}_2$ and $\tilde{\dot E}_3$ are defined by the relations
 \begin{gather*}
-G^{-1}\tilde{\dot G}=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q} \\
 E_1^{-1}\tilde{\dot E}_1=(\chi_1')^{-1}\tilde{v}_1'-P^{-1}\tilde{Q} \\
-E_2^{-1}\tilde{\dot E}_2=\chi_2^{-1}\tilde{v}_2+(d-1)^{-1}P^{-1}\tilde{Q},
+E_2^{-1}\tilde{\dot E}_2=\chi_2^{-1}\tilde{v}_2+(d-1)^{-1}P^{-1}\tilde{Q}\\
+E_3^{-1}\tilde{\dot E}_3=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q} \\,
 \end{gather*}
 Taking into account these definitions the internal generalized force can be rewritten more explicitly as
 \begin{multline*}
-\dual{\mathcal{I},\tilde w}=\int_0^LG\zeta\left((\chi_2')^{-1}\tilde v_2'-P^{-1}\tilde Q\right)dX+\\
-+\int_0^L\left[E_1\sigma_1\left((\chi_1')^{-1}\tilde v_1'-P^{-1}\tilde Q\right)+E_2\sigma_2\left(\chi_2^{-1}\tilde v_2+(d-1)^{-1}P^{-1}\tilde Q\right)\right]dX+\\
+\dual{\mathcal{I},\tilde w}=\\
+=\int_0^L\left[E_1\sigma_1\left((\chi_1')^{-1}\tilde v_1'-P^{-1}\tilde Q\right)+E_2\sigma_2\left(\chi_2^{-1}\tilde v_2+(d-1)^{-1}P^{-1}\tilde Q\right)+E_3\sigma_3\left((\chi_2')^{-1}\tilde v_2'-P^{-1}\tilde Q\right)\right]dX+\\
 +\int_0^L\left[\tau\tilde Q+\kappa\tilde Q'\right]dX.
 \end{multline*}
 \begin{rmk}
@@ -2401,9 +2403,9 @@ The local form of the equilibrium condition is
 \begin{gather}
 (P^{-1}\sigma_1)'+f_1=0\quad\text{in $(0,L)$} \\
 h_1(X)=P(X)^{-1}\sigma_1(X)\quad\text{for $X\in\{0,L\}$} \\
--P^{\frac{1}{d-1}}\sigma_2+(P^{-1}\zeta)'+f_2=0\quad\text{in $(0,L)$} \\
-h_2(X)=P(X)^{-1}\zeta(X)\quad\text{for $X\in\{0,L\}$} \\
-\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta-\tau+\kappa'=0\quad\text{for $X\in\{0,L\}$} \\
+-P^{\frac{1}{d-1}}\sigma_2+(P^{-1}\sigma_3)'+f_2=0\quad\text{in $(0,L)$} \\
+h_2(X)=P(X)^{-1}\sigma_3(X)\quad\text{for $X\in\{0,L\}$} \\
+\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\sigma_3-\tau+\kappa'=0\quad\text{for $X\in\{0,L\}$} \\
 \kappa(X)=0\quad\text{for $X\in\{0,L\}$}
 \end{gather}
 \end{subequations}
@@ -2411,28 +2413,28 @@ h_2(X)=P(X)^{-1}\zeta(X)\quad\text{for $X\in\{0,L\}$} \\
 \begin{proof}
 Rearranging the terms we have
 \begin{multline*}
-\dual{\mathcal{I},\tilde w}=\int_0^L\left[P^{-1}\sigma_1\tilde v_1'+P^{\frac{1}{d-1}}\sigma_2\tilde v_2+P^{-1}\zeta\tilde v_2'\right]dX+\\
-+\int_0^L\left[\left(\tau-\chi_1'P^{-2}\sigma_1+(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2-\chi_2'P^{-2}\zeta\right)\tilde Q+\kappa\tilde Q'\right]dX.
+\dual{\mathcal{I},\tilde w}=\int_0^L\left[P^{-1}\sigma_1\tilde v_1'+P^{\frac{1}{d-1}}\sigma_2\tilde v_2+P^{-1}\sigma_3\tilde v_2'\right]dX+\\
++\int_0^L\left[\left(\tau-\chi_1'P^{-2}\sigma_1+(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2-\chi_2'P^{-2}\sigma_3\right)\tilde Q+\kappa\tilde Q'\right]dX.
 \end{multline*}
 By integration by parts and application of the fundamental lemma of the calculus of variation we get the thesis.
 \end{proof}
 As we did also in the previous chapter, we define the Mandel stress as the elastic force felt by the microscopic configuration, that is
 \begin{equation}
 \label{eqn:neck-large-mandel}
-m=\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\zeta.
+m=\chi_1'P^{-2}\sigma_1-(d-1)^{-1}\chi_2P^{\frac{1}{d-1}-1}\sigma_2+\chi_2'P^{-2}\sigma_3.
 \end{equation}
 
 \subsection{Constitutive relations}
 
 To appropriately build the constitutive relations we consider a free energy $\Psi\colon Z\to\mathbb{R}$ and a dissipation potential $\Phi\colon Z\to\mathbb{R}$ of the same structure that we sow in the previous plasticity models.
 \begin{equation}
-\Psi(z)=\int_0^L\left(W(E_1,E_2,G)+H(P,P')\right)dX\quad\text{and}\quad\Phi(z,\dot z)=\int_0^LR(P,\dot P)dX.
+\Psi(z)=\int_0^L\left(W(E_1,E_2,E_3)+H(P,P')\right)dX\quad\text{and}\quad\Phi(z,\dot z)=\int_0^LR(P,\dot P)dX.
 \end{equation}
 Here $W\colon(0,\infty)\times(0,\infty)\times\mathbb{R}\to\mathbb{R}$ and $H\colon(0,\infty)\times\mathbb{R}\to\mathbb{R}$ are the smooth elastic and plastic free energy densities, and $R\colon(0,\infty)\times\mathbb{R}\to[0,\infty]$, convex in $\dot P$ and satisfying $R(0)=0$, is dissipation potential per unit axial length. Consistently with that choice of $\Psi$ and $\Phi$ we find the following constitutive relations
 \begin{subequations}
 \label{eqn:constitutive-neck-large}
 \begin{gather}
-\sigma_i=\dind{W}{E_i}\quad\text{and}\quad\zeta=\dind{W}{G} \\
+\sigma_i=\dind{W}{E_i}\quad\text{for $i\in\{1,2,3\}$} \\
 \tau\in\dind{H}{P}+P^{-1}\partial_{\dot P}R\quad\text{and}\quad\kappa=\dind{H}{P'}.
 \end{gather}
 \end{subequations}
@@ -2448,12 +2450,15 @@ The general discussion made in Section~\ref{sec:ppv} of Chapter~\ref{chap:modeli
 %\]
 %By definition of subdifferential we have $0=R(0)\ge R(P^{-1}\dot P)-\xi P^{-1}\dot P$ so that $\xi P^{-1}\dot P\ge R(P^{-1}\dot P)\ge0$. This implies that the dissipation is nonnegative.
 %\end{proof}
-We will see particular examples of constitutive relations in the next section, after we have clarified which assumptions are required to produce boundary value problems which are well-posed. This is indeed the content of next section.
+We will see particular examples of constitutive relations in Subsection~\ref{subsec:constitutive-large-neck}, after we have clarified which assumptions are required to produce boundary value problems which are well-posed. This is indeed the content of next section.
 
 \section{Existence result}
 \label{sec:existence-necking}
 
 In this section we prove the existence of energetic solutions. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply the abstract existence result provided by Theorem~\ref{thm:existence-energetic-solutions}.
+\begin{rmk}[On the value of $d$]
+The proof of the existence theorem will be made under the assumption that $d=2$. This will simplify the computations a bit.
+\end{rmk}
 
 \subsection{Formulation of the initial boundary value problem}
 
@@ -2474,9 +2479,9 @@ with $y_i\colon(0,L)\to\mathbb{R}$, $y_1'>0$ and $y_2>0$, and requiring that
 \[
 y_1(X)=X\quad\text{for $X\in\Gamma_D^1$}\quad\text{and}\quad y_2(X)=1\quad\text{for $X\in\Gamma_D^2$}.
 \]
-Having made that change of variables, the unknown of the problem are $y$ and $P$. We notice that the elastic distortions $E_1,E_2$ and $G$ are given by
+Having made that change of variables, the unknown of the problem are $y$ and $P$. We notice that the elastic distortions $E_1,E_2$ and $E_3$ are given by
 \[
-E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P\quad\text{and}\quad G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
+E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P\quad\text{and}\quad E_3=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
 \]
 
 \subsubsection*{Function spaces}
@@ -2510,8 +2515,8 @@ D(P_0,P_1)=\inf\left\{\int_0^1R(P(t),\dot{P}(t))dt\;\middle|\;\text{$P\in C^1([0
 \subsection{Assumptions and preliminary results}
 
 We now discuss the assumptions under which we will prove the validity of hypotheses ($\mathcal{E}$1)-($\mathcal{E}$4), ($\mathcal{D}$1)-($\mathcal{D}$2) and (C1)-(C2) of Section~\ref{sec:energetic-solution} in Appendix~\ref{chap:solution-concepts}. Subsequently, these assumptions will be implicitly supposed to be valid and will not be recalled.
-\begin{rmk}[on notation]
-Sometimes the notation $G=E_3$ and $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$, then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
+\begin{rmk}[On notation]
+Sometimes the notation $E=(E_1,E_2,E_3)$ will be used. Given $E,N\in\mathbb{R}^3$, then $NE\in\mathbb{R}^3$ is the component-wise multiplication between $E$ and $N$, i.e., $(NE)_i=N_iE_i$ for $i\in\{1,2,3\}$.
 \end{rmk}
 
 The assumption on the Dirichlet data is
@@ -2528,11 +2533,11 @@ The elastic free energy density is supposed to satisfy the following assumptions
 \begin{itemize}[itemsep=1em]
 \item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous such that
 \[
-W(E_1,E_2,G)=\mathbb{W}(E_1,E_2,G,E_1E_2)
+W(E)=\mathbb{W}(E_1,E_2,E_3,E_1E_2)
 \]
-for all $E_1,E_2,G\in\mathbb{R}$ and $\mathbb{W}$ is convex in $(E_1,G,E_1E_2)$,
-\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,G)\ge C_W(-1+|E_1|^{q_W}+|E_2|^{q_W}+|G|^{q_W})$ for all $E_1,E_2,G\in\mathbb{R}$,
-\item[(W3)] $W(E_1,E_2,G)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
+for all $E\in\mathbb{R}^3$ and $\mathbb{W}$ is convex in $(E_1,E_3,E_1E_2)$,
+\item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,E_3)\ge C_W(-1+|E_1|^{q_W}+|E_2|^{q_W}+|E_3|^{q_W})$ for all $E_1,E_2,E_3\in\mathbb{R}$,
+\item[(W3)] $W(E_1,E_2,E_3)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
 \item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$, $C^W_1>0$ and a modulus of continuity $\omega^W$ such that
 \begin{itemize}
 \item[(i)] for all $E\in\dom W$ and $i\in\{1,2,3\}$ it holds $\left|E_i\dind{W}{E_i}(E)\right|\le C_1^W(C_0^W+W(E))$,
@@ -2687,24 +2692,24 @@ where now $\rho=1+q_W/q_H$. Last inequality holds since $P>\Pi$ a.e.\ on the sub
 \end{equation}
 Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_{q_Y}$, $\norm{y}_{q_Y}$, $\norm{P}_{q_H}$ and $\norm{P'}_{r_H}$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,{q_Y}}$ is bounded. It remains to prove that $\norm{y_2'}_{q_Y}$ is bounded. Let
 \[
-G=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
+E_3=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
 \]
 Then
 \[
-y_2'=\frac{GP-g_2'(y_1,t)y_1'y_2}{g_2(y_1,t)}.
+y_2'=\frac{E_3P-g_2'(y_1,t)y_1'y_2}{g_2(y_1,t)}.
 \]
 Il follows that
 \[
 \begin{split}
-\norm{y_2'}_{q_Y}&\le\frac{1}{\gamma}\norm{GP}_{q_Y}+\frac{1}{\gamma}\norm{g_2'(y_1,t)y_1'y_2}_{q_Y}\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'y_2}_{q_Y}\le\\
-&\le\frac{1}{\gamma}\norm{G}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_{q_Y}\norm{y_2}_\infty.
+\norm{y_2'}_{q_Y}&\le\frac{1}{\gamma}\norm{E_3P}_{q_Y}+\frac{1}{\gamma}\norm{g_2'(y_1,t)y_1'y_2}_{q_Y}\le\frac{1}{\gamma}\norm{E_3}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'y_2}_{q_Y}\le\\
+&\le\frac{1}{\gamma}\norm{E_3}_{q_W}\norm{P}_{q_H}+\frac{\Gamma}{\gamma}\norm{y_1'}_{q_Y}\norm{y_2}_\infty.
 \end{split}
 \]
 Since $L^\infty((0,T))$ is continuously embedded in $W^{1,q_Y}((0,L))$, it follows that for all $\epsilon>0$ there exists $C>0$ such that
 \[
 \norm{y_2}_\infty\le C(\norm{y_2}_{q_Y}+\epsilon\norm{y_2'}_{q_Y})\quad\text{for all $y_2\in W^{1,{q_Y}}((0,L))$}.
 \]
-On a sublevel of $\mathcal{E}$ the quantities $\norm{G}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_{q_Y}$ and $\norm{y_2}_{q_Y}$ are bounded, so that there exists $M>0$ such that
+On a sublevel of $\mathcal{E}$ the quantities $\norm{E_3}_{q_W}$, $\norm{P}_{q_H}$, $\norm{y_1'}_{q_Y}$ and $\norm{y_2}_{q_Y}$ are bounded, so that there exists $M>0$ such that
 \[
 \norm{y_2'}_{q_Y}\le M(1+\epsilon\norm{y_2'}_{q_Y}).
 \]
@@ -2811,14 +2816,14 @@ Since $g_1'>0$ and $g_2>0$, it is clear that
 \mathscr{D}=\left\{(y,P)\in Y\times Q\;\middle|\;\text{$y_1',y_2,P>0$ a.e.\ on $(0,L)$}\right\}.
 \]
 
-\emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $G=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,G)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,G)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
+\emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $E_3=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,E_3)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,E_3)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
 \[
-\frac{d}{dt}W(E_1,E_2,G)=E_1\dind{W}{E_1}(E_1,E_2,G)\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)}+E_2\dind{W}{E_2}(E_1,E_2,G)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}+G\dind{W}{G}(E_1,E_2,G)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}
+\frac{d}{dt}W(E_1,E_2,E_3)=E_1\dind{W}{E_1}(E_1,E_2,E_3)\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)}+E_2\dind{W}{E_2}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}+E_3\dind{W}{E_3}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}
 \]
 there. We have to prove that for all $t\in[0,T]$, there exists
 \begin{equation}
 \label{eqn:partial-time-derivative-energy}
-\partial_t\mathcal{E}(z,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,G)dX.
+\partial_t\mathcal{E}(z,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,E_3)dX.
 \end{equation}
 By Lagrange theorem there exists $\eta\in(0,1)$ depending on $X$, $t$ and $\epsilon$, such that
 \[
@@ -2833,7 +2838,7 @@ Then, by dominated convergence theorem, we can pass to the limit $\epsilon\to 0$
 
 \emph{Proof of (ii).} Taking into account the fact that $\frac{\dot{g}'_1}{g'_1}$ and $\frac{\dot{g}_2}{g_2}$ are bounded in $\mathbb{R}\times[0,T]$, assumption (W4, i) yields
 \[
-|\partial_t\mathcal{E}(y,P,t)|\le 3C_1^W\max\left\{\bigg\lVert\frac{\dot{g}'_1}{g'_1}\bigg\rVert_\infty,\bigg\lVert\frac{\dot{g}_2}{g_2}\bigg\rVert_\infty\right\}\int_\Omega(C_0^W+W(E_1,E_2,G))dX.
+|\partial_t\mathcal{E}(y,P,t)|\le 3C_1^W\max\left\{\bigg\lVert\frac{\dot{g}'_1}{g'_1}\bigg\rVert_\infty,\bigg\lVert\frac{\dot{g}_2}{g_2}\bigg\rVert_\infty\right\}\int_\Omega(C_0^W+W(E_1,E_2,E_3))dX.
 \]
 This implies the existence of $C_0^E\in\mathbb{R}$ and $C_1^E>0$ such that $|\partial_t\mathcal{E}(q,t)|\le C_1^E(C_0^E+\mathcal{E}(q,t))$ for all $(q,t)\in\mathscr{D}\times[0,T]$.
 
@@ -2928,15 +2933,15 @@ We now discuss particular constitutive relations that satisfies the hypotheses r
 
 Taking inspiration from the neo-Hooken elastic free energy density~\eqref{eqn:necking-large:neo-hookean}, we consider
 \[
-W(E_1,E_2,G)=
+W(E_1,E_2,E_3)=
 \begin{cases}
-\mathbb{W}(E_1,E_2,G,E_1E_2) & \text{if $E_1>0$ and $E_2>0$} \\
+\mathbb{W}(E_1,E_2,E_3,E_1E_2) & \text{if $E_1>0$ and $E_2>0$} \\
 \infty & \text{otherwise},
 \end{cases}
 \]
 with
 \[
-\quad \mathbb{W}(E_1,E_2,G,J)=A\frac{|E_1-1|^p+|E_2-1|^p+|lG|^p}{J^\alpha}+B|J-1|^r
+\quad \mathbb{W}(E_1,E_2,E_3,J)=A\frac{|E_1-1|^p+|E_2-1|^p+|lE_3|^p}{J^\alpha}+B|J-1|^r
 \]
 where $A,B,l>0$, $r>1$, $0<\alpha\le p-1$ and $p>1+\frac{\alpha}{r}$. The parameter $l>0$ is connected with the diameter of the cross section $\Sigma$. We now check that this particular $W$ satisfies (W1), (W2), (W3) and (W4) of previous section. We start with the check of the assumptions (W1) and (W2). Hypotheses (W1) is a consequence of the following lemma.
 \begin{lemma}
@@ -2974,7 +2979,7 @@ This is exactly the thesis.
 \end{proof}
 We now prove the growth condition (W2) for $q_W=p/\left(1+\frac{\alpha}{r}\right)>1$. Lemma~\ref{lemma:inverse-young} yields for all $\delta>0$ and $\rho>1$ that
 \begin{multline}
-\mathbb{W}(E_1,E_2,G,J)\ge A\rho\delta^\frac{\rho-1}{\rho}|E_1-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|E_2-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|lG|^\frac{p}{\rho}-\\
+\mathbb{W}(E_1,E_2,E_3,J)\ge A\rho\delta^\frac{\rho-1}{\rho}|E_1-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|E_2-1|^\frac{p}{\rho}+A\rho\delta^\frac{\rho-1}{\rho}|lE_3|^\frac{p}{\rho}-\\
 -(2A+1)(\rho-1)\delta J^\frac{\alpha}{\rho-1}+B|J-1|^r.
 \end{multline}
 Choosing $\rho$ such that $\frac{\alpha}{\rho-1}=r$ we get $\frac{p}{\rho}=q_H$. Moreover choosing $\delta>0$ sufficiency small we have
@@ -3081,11 +3086,11 @@ In the purely elastic model, equations~\eqref{eqn:indeinite-equation-necking-lar
 \label{eqn:indefinite-equations-necking-large-elastic}
 \begin{gather}
 \sigma_1'=0\quad\text{in $(0,L)$} \\
--\sigma_2+\zeta'=0\quad\text{in $(0,L)$} \\
-\zeta(X)=0\quad\text{for $X\in\{0,L\}$}.
+-\sigma_2+\sigma_3'=0\quad\text{in $(0,L)$} \\
+\sigma_3(X)=0\quad\text{for $X\in\{0,L\}$}.
 \end{gather}
 \end{subequations}
-From the first equation it follows that $\sigma_1=F$, where $F$ is a constant, representing the axial reaction force needed to impose the boundary conditions on $\chi_1$. The constitutive relations yields $\sigma_1=W_1(E_1,E_2,G)$, $\sigma_2=W_2(E_1,E_2,G)$ and $\zeta=W_3(E_1,E_2,G)$, where $E_1=\chi_1'$, $E_2=\chi_2$ and $G=\chi_2'$. We have denoted the partial derivatives of $W$ with respect to its arguments $E_1$, $E_2$ and $G$ with the subscripts $1,2$ and $3$ respectively. Inserting these constitutive relations into~\eqref{eqn:indefinite-equations-necking-large-elastic}, we get
+From the first equation it follows that $\sigma_1=F$, where $F$ is a constant, representing the axial reaction force needed to impose the boundary conditions on $\chi_1$. The constitutive relations yields $\sigma_1=W_1(E_1,E_2,E_3)$, $\sigma_2=W_2(E_1,E_2,E_3)$ and $\sigma_3=W_3(E_1,E_2,E_3)$, where $E_1=\chi_1'$, $E_2=\chi_2$ and $E_3=\chi_2'$. We have denoted the partial derivatives of $W$ with respect to its arguments $E_1$, $E_2$ and $E_3$ with the subscripts $1,2$ and $3$ respectively. Inserting these constitutive relations into~\eqref{eqn:indefinite-equations-necking-large-elastic}, we get
 \begin{subequations}
 \label{eqn:definite-equations-necking-large-elastic}
 \begin{gather}
@@ -3094,7 +3099,7 @@ From the first equation it follows that $\sigma_1=F$, where $F$ is a constant, r
 W_3(\chi_1'(X),\chi_2(X),\chi_2'(X))=0\quad\text{for $X\in\{0,L\}$}.
 \end{gather}
 \end{subequations}
-We first look for homogeneous solutions of the form $\bar{\chi}_1(X,t)=\eta(t)X$, $\bar\chi_2(X,t)=\bar E_2(t)$ where $\bar E_2\colon(0,T)\to(0,\infty)$ is the only unknown. We will refer to a solution of this type as a trivial solution. Notice that $\bar E_1(t)=\bar\chi_1(X,t)=\eta(t)$ and $\bar G(t)=\bar\chi_2'(X,t)=0$ for all $X\in(0,L)$ and $t\in[0,T]$. To find $\bar E_2$ we need only to solve the nonlinear equation
+We first look for homogeneous solutions of the form $\bar{\chi}_1(X,t)=\eta(t)X$, $\bar\chi_2(X,t)=\bar E_2(t)$ where $\bar E_2\colon(0,T)\to(0,\infty)$ is the only unknown. We will refer to a solution of this type as a trivial solution. Notice that $\bar E_1(t)=\bar\chi_1(X,t)=\eta(t)$ and $\bar E_3(t)=\bar\chi_2'(X,t)=0$ for all $X\in(0,L)$ and $t\in[0,T]$. To find $\bar E_2$ we need only to solve the nonlinear equation
 \[
 W_2(\eta(t),\bar E_2(t),0)=0.
 \]
@@ -3118,7 +3123,7 @@ together with the boundary conditions
 v_1(X)=0\quad\text{for $X\in\{0,L\}$} \\
 v_2'(X)=0\quad\text{for $X\in\{0,L\}$}.
 \end{gather}
-We have denoted with a superimposed bar, the evaluation at $(\eta,\bar E_2,0)$. From mechanical ground, it is reasonable to assume that $\sigma_i=W_i$ for $i\in\{1,2\}$ is even in $G$ and $\zeta=W_3$ is odd in $G$. Then $\bar W_{i3}=0$ for $i\in\{1,2\}$. Moreover we assume that $\bar W_{33}>0$, $\bar W_{11}>0$, $\bar W_{22}>0$. Then~\eqref{eqn:perturbed-eqn} simplifies to
+We have denoted with a superimposed bar, the evaluation at $(\eta,\bar E_2,0)$. From mechanical ground, it is reasonable to assume that $\sigma_i=W_i$ for $i\in\{1,2\}$ is even in $E_3$ and $\sigma_3=W_3$ is odd in $E_3$. Then $\bar W_{i3}=0$ for $i\in\{1,2\}$. Moreover we assume that $\bar W_{33}>0$, $\bar W_{11}>0$, $\bar W_{22}>0$. Then~\eqref{eqn:perturbed-eqn} simplifies to
 \begin{subequations}
 \begin{gather}
 \bar W_{11}v_1''+\bar W_{12}v_2'=0\quad\text{in $(0,L)$} \\
@@ -3479,7 +3484,7 @@ K=\begin{pmatrix}
     \bar{W}_{y_3y_1} & \bar{W}_{y_3y_2} & \bar{W}_{y_3y_3}+\bar{H}_{PP}+\bar{D}_{22}^+ \\
 \end{pmatrix}.
 \]
-Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $G=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\bar{D}_{22}^+$ denotes the partial derivatives of $D^+$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{z}(t))w=0$ is
+Here the bar denotes quantities computed along the trivial solution. It is understood that $W$ is computed in $E_1=\eta y_1'P^{-1}$, $E_2=y_2P$ and $E_3=y_2'P^{-1}$ so it can be considered as a function of $\eta,y_1',y_2,y_2',y_3$. Moreover $\bar{D}_{22}^+$ denotes the partial derivatives of $D^+$ with respect to its second argument. Now, the strong form of $\partial^2\mathcal{I}_t^+(\bar{z}(t))w=0$ is
 \begin{equation}
 \label{eqn:2order}
 Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},

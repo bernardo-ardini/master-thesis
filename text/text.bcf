@@ -2424,69 +2424,70 @@
     <bcf:citekey order="41" intorder="1">Needleman1972</bcf:citekey>
     <bcf:citekey order="42" intorder="1">antman</bcf:citekey>
     <bcf:citekey order="43" intorder="1">AudolyHutchinson2020</bcf:citekey>
-    <bcf:citekey order="44" intorder="1">mielke</bcf:citekey>
-    <bcf:citekey order="45" intorder="1">steffranc</bcf:citekey>
-    <bcf:citekey order="46" intorder="1">progetto-ponno</bcf:citekey>
-    <bcf:citekey order="47" intorder="1">DruckerPrager1952</bcf:citekey>
-    <bcf:citekey order="48" intorder="1">Coulomb1776</bcf:citekey>
-    <bcf:citekey order="48" intorder="2">Mohr1900</bcf:citekey>
-    <bcf:citekey order="49" intorder="1">morafrancfort</bcf:citekey>
-    <bcf:citekey order="49" intorder="2">StefanelliVikelis2024</bcf:citekey>
-    <bcf:citekey order="50" intorder="1">Coulomb1776</bcf:citekey>
-    <bcf:citekey order="51" intorder="1">Laborde1987</bcf:citekey>
-    <bcf:citekey order="51" intorder="2">morafrancfort</bcf:citekey>
-    <bcf:citekey order="51" intorder="3">StefanelliVikelis2024</bcf:citekey>
-    <bcf:citekey order="52" intorder="1">ekeland-temam</bcf:citekey>
-    <bcf:citekey order="53" intorder="1">StefanelliVikelis2024</bcf:citekey>
-    <bcf:citekey order="54" intorder="1">Lubliner1990</bcf:citekey>
-    <bcf:citekey order="55" intorder="1">morafrancfort</bcf:citekey>
-    <bcf:citekey order="56" intorder="1">Coulomb1776</bcf:citekey>
-    <bcf:citekey order="57" intorder="1">micro-geo</bcf:citekey>
-    <bcf:citekey order="58" intorder="1">Coulomb1776</bcf:citekey>
-    <bcf:citekey order="59" intorder="1">bifurcation-geomechanics</bcf:citekey>
-    <bcf:citekey order="60" intorder="1">morafrancfort</bcf:citekey>
-    <bcf:citekey order="61" intorder="1">math-tool-ns</bcf:citekey>
-    <bcf:citekey order="62" intorder="1">nicolaides</bcf:citekey>
-    <bcf:citekey order="63" intorder="1">niremberg</bcf:citekey>
+    <bcf:citekey order="44" intorder="1">rivlin1948large</bcf:citekey>
+    <bcf:citekey order="45" intorder="1">mielke</bcf:citekey>
+    <bcf:citekey order="46" intorder="1">steffranc</bcf:citekey>
+    <bcf:citekey order="47" intorder="1">progetto-ponno</bcf:citekey>
+    <bcf:citekey order="48" intorder="1">DruckerPrager1952</bcf:citekey>
+    <bcf:citekey order="49" intorder="1">Coulomb1776</bcf:citekey>
+    <bcf:citekey order="49" intorder="2">Mohr1900</bcf:citekey>
+    <bcf:citekey order="50" intorder="1">morafrancfort</bcf:citekey>
+    <bcf:citekey order="50" intorder="2">StefanelliVikelis2024</bcf:citekey>
+    <bcf:citekey order="51" intorder="1">Coulomb1776</bcf:citekey>
+    <bcf:citekey order="52" intorder="1">Laborde1987</bcf:citekey>
+    <bcf:citekey order="52" intorder="2">morafrancfort</bcf:citekey>
+    <bcf:citekey order="52" intorder="3">StefanelliVikelis2024</bcf:citekey>
+    <bcf:citekey order="53" intorder="1">ekeland-temam</bcf:citekey>
+    <bcf:citekey order="54" intorder="1">StefanelliVikelis2024</bcf:citekey>
+    <bcf:citekey order="55" intorder="1">Lubliner1990</bcf:citekey>
+    <bcf:citekey order="56" intorder="1">morafrancfort</bcf:citekey>
+    <bcf:citekey order="57" intorder="1">Coulomb1776</bcf:citekey>
+    <bcf:citekey order="58" intorder="1">micro-geo</bcf:citekey>
+    <bcf:citekey order="59" intorder="1">Coulomb1776</bcf:citekey>
+    <bcf:citekey order="60" intorder="1">bifurcation-geomechanics</bcf:citekey>
+    <bcf:citekey order="61" intorder="1">morafrancfort</bcf:citekey>
+    <bcf:citekey order="62" intorder="1">math-tool-ns</bcf:citekey>
+    <bcf:citekey order="63" intorder="1">nicolaides</bcf:citekey>
     <bcf:citekey order="64" intorder="1">niremberg</bcf:citekey>
-    <bcf:citekey order="65" intorder="1">intro-pde</bcf:citekey>
-    <bcf:citekey order="66" intorder="1">roubicek-pde</bcf:citekey>
+    <bcf:citekey order="65" intorder="1">niremberg</bcf:citekey>
+    <bcf:citekey order="66" intorder="1">intro-pde</bcf:citekey>
     <bcf:citekey order="67" intorder="1">roubicek-pde</bcf:citekey>
-    <bcf:citekey order="68" intorder="1" nocite="1">structural-geology</bcf:citekey>
-    <bcf:citekey order="69" intorder="2" nocite="1">panteghini-bardella</bcf:citekey>
-    <bcf:citekey order="70" intorder="3">bifurcation-geomechanics</bcf:citekey>
-    <bcf:citekey order="71" intorder="4">intro-pde</bcf:citekey>
-    <bcf:citekey order="72" intorder="5" nocite="1">quarteronivalli</bcf:citekey>
-    <bcf:citekey order="73" intorder="6">gurtin-anand-small</bcf:citekey>
-    <bcf:citekey order="74" intorder="7">gurtin-anand-large</bcf:citekey>
-    <bcf:citekey order="75" intorder="8" nocite="1">gurtin</bcf:citekey>
-    <bcf:citekey order="76" intorder="9">gurtin-anand-fried</bcf:citekey>
-    <bcf:citekey order="77" intorder="10" nocite="1">ciarlet</bcf:citekey>
-    <bcf:citekey order="78" intorder="11" nocite="1">brenner-scott</bcf:citekey>
-    <bcf:citekey order="79" intorder="12" nocite="1">bonet-wood</bcf:citekey>
-    <bcf:citekey order="80" intorder="13">nicolaides</bcf:citekey>
-    <bcf:citekey order="81" intorder="14" nocite="1">boffi-brezzi-fortin</bcf:citekey>
-    <bcf:citekey order="82" intorder="15">roubicek-pde</bcf:citekey>
-    <bcf:citekey order="83" intorder="16">antman</bcf:citekey>
-    <bcf:citekey order="84" intorder="17">gurtin-fried</bcf:citekey>
-    <bcf:citekey order="85" intorder="18">math-tool-ns</bcf:citekey>
-    <bcf:citekey order="86" intorder="19">non-smooth-thermomechanics</bcf:citekey>
-    <bcf:citekey order="87" intorder="20">han-reddy</bcf:citekey>
-    <bcf:citekey order="88" intorder="21">micro-geo</bcf:citekey>
-    <bcf:citekey order="89" intorder="22" nocite="1">energetic-geomaterials</bcf:citekey>
-    <bcf:citekey order="90" intorder="23" nocite="1">bigoni-book</bcf:citekey>
-    <bcf:citekey order="91" intorder="24" nocite="1">bigoni-thesis</bcf:citekey>
-    <bcf:citekey order="92" intorder="25" nocite="1">bigoni-non-associative</bcf:citekey>
-    <bcf:citekey order="93" intorder="26" nocite="1">daldessol09</bcf:citekey>
-    <bcf:citekey order="94" intorder="27" nocite="1">CapCri23</bcf:citekey>
-    <bcf:citekey order="95" intorder="28" nocite="1">mierosBV</bcf:citekey>
-    <bcf:citekey order="96" intorder="29">morafrancfort</bcf:citekey>
-    <bcf:citekey order="97" intorder="30">niremberg</bcf:citekey>
-    <bcf:citekey order="98" intorder="31">rate-independent-systems</bcf:citekey>
-    <bcf:citekey order="99" intorder="32">francfort</bcf:citekey>
-    <bcf:citekey order="100" intorder="33" nocite="1">MieRosSav13</bcf:citekey>
-    <bcf:citekey order="101" intorder="34">steffranc</bcf:citekey>
-    <bcf:citekey order="102" intorder="35" nocite="1">duhem1906</bcf:citekey>
+    <bcf:citekey order="68" intorder="1">roubicek-pde</bcf:citekey>
+    <bcf:citekey order="69" intorder="1" nocite="1">structural-geology</bcf:citekey>
+    <bcf:citekey order="70" intorder="2" nocite="1">panteghini-bardella</bcf:citekey>
+    <bcf:citekey order="71" intorder="3">bifurcation-geomechanics</bcf:citekey>
+    <bcf:citekey order="72" intorder="4">intro-pde</bcf:citekey>
+    <bcf:citekey order="73" intorder="5" nocite="1">quarteronivalli</bcf:citekey>
+    <bcf:citekey order="74" intorder="6">gurtin-anand-small</bcf:citekey>
+    <bcf:citekey order="75" intorder="7">gurtin-anand-large</bcf:citekey>
+    <bcf:citekey order="76" intorder="8" nocite="1">gurtin</bcf:citekey>
+    <bcf:citekey order="77" intorder="9">gurtin-anand-fried</bcf:citekey>
+    <bcf:citekey order="78" intorder="10" nocite="1">ciarlet</bcf:citekey>
+    <bcf:citekey order="79" intorder="11" nocite="1">brenner-scott</bcf:citekey>
+    <bcf:citekey order="80" intorder="12" nocite="1">bonet-wood</bcf:citekey>
+    <bcf:citekey order="81" intorder="13">nicolaides</bcf:citekey>
+    <bcf:citekey order="82" intorder="14" nocite="1">boffi-brezzi-fortin</bcf:citekey>
+    <bcf:citekey order="83" intorder="15">roubicek-pde</bcf:citekey>
+    <bcf:citekey order="84" intorder="16">antman</bcf:citekey>
+    <bcf:citekey order="85" intorder="17">gurtin-fried</bcf:citekey>
+    <bcf:citekey order="86" intorder="18">math-tool-ns</bcf:citekey>
+    <bcf:citekey order="87" intorder="19">non-smooth-thermomechanics</bcf:citekey>
+    <bcf:citekey order="88" intorder="20">han-reddy</bcf:citekey>
+    <bcf:citekey order="89" intorder="21">micro-geo</bcf:citekey>
+    <bcf:citekey order="90" intorder="22" nocite="1">energetic-geomaterials</bcf:citekey>
+    <bcf:citekey order="91" intorder="23" nocite="1">bigoni-book</bcf:citekey>
+    <bcf:citekey order="92" intorder="24" nocite="1">bigoni-thesis</bcf:citekey>
+    <bcf:citekey order="93" intorder="25" nocite="1">bigoni-non-associative</bcf:citekey>
+    <bcf:citekey order="94" intorder="26" nocite="1">daldessol09</bcf:citekey>
+    <bcf:citekey order="95" intorder="27" nocite="1">CapCri23</bcf:citekey>
+    <bcf:citekey order="96" intorder="28" nocite="1">mierosBV</bcf:citekey>
+    <bcf:citekey order="97" intorder="29">morafrancfort</bcf:citekey>
+    <bcf:citekey order="98" intorder="30">niremberg</bcf:citekey>
+    <bcf:citekey order="99" intorder="31">rate-independent-systems</bcf:citekey>
+    <bcf:citekey order="100" intorder="32">francfort</bcf:citekey>
+    <bcf:citekey order="101" intorder="33" nocite="1">MieRosSav13</bcf:citekey>
+    <bcf:citekey order="102" intorder="34">steffranc</bcf:citekey>
+    <bcf:citekey order="103" intorder="35" nocite="1">duhem1906</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">
