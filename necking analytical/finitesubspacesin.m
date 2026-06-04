@@ -2,14 +2,16 @@ clear;
 close all;
 clc;
 
+d=3;
+
 syms E1 E2 E3 P dP P0 real;
 
 A=1.1e6;B=1.1e6;l=4;p=2;r=2;alpha=1;
 %syms A B l p r alpha real;
 %assert((alpha>0)&(r>1)&(alpha<=p-1)&(p>1+alpha/r));
-W=A*(((E1-1)^2)^(p/2)+((E2-1)^2)^(p/2)+((l*E3)^2)^(p/2))/(E1*E2)^alpha+B*((E1*E2-1)^2)^(r/2);
+W=A*(((E1-1)^2)^(p/2)+((E2-1)^2)^(p/2)+((l*E3)^2)^(p/2))/(E1*E2^(d-1))^alpha+B*((E1*E2^(d-1)-1)^2)^(r/2);
 
-C=0.9e3;D=10;E=1e3;l=0.1;Pi=0.1;q=1.3;delta=17;
+C=0.9e3;D=10;E=1e3;l=0.01;Pi=0.1;q=1.3;delta=17;
 %syms C D E ll Pi q delta real;
 %H=C*((P-1)^2)^(q/2)+D/(P-Pi)+E*((l*dP)^2)^(q/2);
 H=C*(P^q+q/delta*exp(-delta*(P-1)))+D/(P-Pi)+E*(l*dP)^2;
@@ -22,7 +24,7 @@ D=Y*log(P/P0);
 syms eta y1 dy1 y2 dy2 y3 dy3 real;
 
 in=[E1,E2,E3,P,dP,P0];
-out=[eta/y3,y2*y3,0,y3,0,y3];
+out=[eta/y3,y2*y3^(1/(d-1)),0,y3,0,y3];
 
 W0=subs(W,in(1:end-1),out(1:end-1));
 H0=subs(H,in(1:end-1),out(1:end-1));
@@ -40,7 +42,7 @@ D2=subs(diff(D,P),in,out);
 D22=subs(diff(D,P,P),in,out);
 
 in=[E1,E2,E3,P,dP];
-out=[eta*dy1/y3,y2*y3,dy2/y3,y3,dy3];
+out=[eta*dy1/y3,y2*y3^(1/(d-1)),dy2/y3,y3,dy3];
 
 W=subs(W,in,out);
 H=subs(H,in,out);
@@ -73,7 +75,7 @@ for i=1:N
     if yield==0
         han=matlabFunction(subs(W2,[eta,y3],[etas(i),1]));
         sol=fsolve(han,0.9);
-        ma=subs(subs(eta/y3^2*W1-y2*W2-H1),[eta,y3,y2],[etas(i),1,sol]);
+        ma=subs(subs(eta/y3^2*W1-1/(d-1)*y2*y3^(1/(d-1)-1)*W2-H1),[eta,y3,y2],[etas(i),1,sol]);
         res{i}.y2=sol;
         res{i}.y3=1;
         res{i}.yield=0;
@@ -84,7 +86,7 @@ for i=1:N
     end
         
     if yield==1
-        han=matlabFunction(subs([W2,eta/y3^2*W1-y2*W2-H1-D2],eta,etas(i)),'Vars',{[y2,y3]});
+        han=matlabFunction(subs([W2,eta/y3^2*W1-1/(d-1)*y2*y3^(1/(d-1)-1)*W2-H1-D2],eta,etas(i)),'Vars',{[y2,y3]});
         sol=fsolve(han,[0.9,1.1]);
 
         in=[eta,y2,y3,L];

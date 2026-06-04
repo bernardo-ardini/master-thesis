@@ -481,12 +481,13 @@ This gives the constitutive relations
 P_e\in\dind{W_e}{F_e}(F_e),\quad T_p\in\dind{W_p}{F_p}(F_p,\grad F_p)+\dind{R}{\dot F_p}(F_p,\dot F_p)\quad\text{and}\quad K_p\in\dind{W_p}{\grad F_p}(F_p,\grad F_p).
 \]
 The elastic free energy density $W_e\colon\text{Lin}\to\mathbb{R}\cup\{\infty\}$ is assumed to satisfy $W(F_e)=\infty$ if and only if $\det F_e\le0$ (in order to enforce the impenetrability constrain) and to be differentiable on its domain. The requirement that the energy is indifferent with respect to superimposed rigid motions impose $W_e$ to be of the form $W_e(F_e)=\hat{W}_e(F_e^TF_e)$ for some $W_e\colon\text{Sym}\to\mathbb{R}\cup\{\infty\}$. Similarly the plastic free energy density $W_p\colon\text{Lin}\times\left(\text{Lin}\otimes\mathbb{R}\right)\to\mathbb{R}\cup\{\infty\}$ is supposed to satisfy $W_p(F_p,\grad F_p)=\infty$ if $\det F_p\neq1$ so that the plastic incompressibility is implied. The analogue of the Von Mises constitutive relation (known as $J_2$ flow theory) is obtained choosing
-\[
+\begin{equation}
+\label{eqn:R-large-3D}
 R(F_p,\dot F_p)=\begin{cases}
 Y|\dot F_pF_p^{-1}| & \text{if $\det F_p=1$} \\
 \infty & \text{otherwise}.
 \end{cases}
-\]
+\end{equation}
 Notice that in this definition appears the deviatoric plastic rate $L_p=\dot F_pF_p^{-1}$ (see also Remark~\ref{rmk:plasticity-lie-group}).
 
 \begin{rmk}
@@ -2492,9 +2493,9 @@ Here $g_1'$ and $g_2'$ are the partial derivatives of $g_1$ and $g_2$ with respe
 
 \subsubsection*{Function spaces}
 
-Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ be the space of $y$ and $Q=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ be the space of $P$. Let $Z=Y\times Q$. The Dirichlet conditions are imposed requiring that $y,P$ belong respectively to the admissible spaces
+Let $Y=W^{1,q_Y}((0,L),\mathbb{R}^2)$ with $q_Y\in(1,\infty)$ be the space of $y$ and $\mathscr{Q}=L^{q_H}((0,L))\cap W^{1,r_H}((0,L))$ with $q_H\in(1,\infty)$, $r_H\in(1,q_H]$ be the space of $P$. Let $Z=Y\times\mathscr{Q}$. The Dirichlet conditions are imposed requiring that $y$ belong respectively to the admissible space
 \[
-\mathscr{Y}=\left\{y\in Y\;\middle|\;\text{$y_1(X)=X$ for $X\in\Gamma_D^1$ and $y_2(X)=1$ for $X\in\Gamma_D^2$}\right\}\quad\text{and}\quad\mathscr{Q}=Q.
+\mathscr{Y}=\left\{y\in Y\;\middle|\;\text{$y_1(X)=X$ for $X\in\Gamma_D^1$ and $y_2(X)=1$ for $X\in\Gamma_D^2$}\right\}.
 \]
 Let $\mathscr{Z}=\mathscr{Y}\times\mathscr{Q}$. It is evident that $\mathscr{Z}$ is a weakly closed subset of $Z$. We also define the space of allowed variations in $\mathscr{Z}$ as
 \[
@@ -3054,12 +3055,12 @@ Y\frac{|\dot P|}{P} & \text{if $P\ge\Pi$} \\
 \infty & \text{otherwise},
 \end{cases}
 \end{equation}
-where $Y>0$ is the yield strength. The corresponding dissipation distance density $D\colon\mathbb{R}\to[0,\infty]$ can be calculated by mean of formula~\eqref{eqn:dissipation-distance-density}. We find that
+where $Y>0$ is the yield strength. This is the natural one-dimensional version of the dissipation potential~\eqref{eqn:R-large-3D} of multidimensional plasticity at large deformations. The corresponding dissipation distance density $D\colon\mathbb{R}\to[0,\infty]$ can be calculated by mean of formula~\eqref{eqn:dissipation-distance-density}. We find that
 \begin{equation}
 \label{eqn:dissipation-distance-density-particular}
 D(P_0,P_1)=
 \begin{cases}
-Y|\log P_1-\log P_0| & \text{if $P_0,P_1\ge p$} \\
+Y|\log P_1-\log P_0| & \text{if $P_0,P_1\ge\Pi$} \\
 \infty & \text{otherwise}.
 \end{cases}
 \end{equation}
@@ -3075,7 +3076,7 @@ This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ i
 
 \section{Qualitative analysis of the tensile test problem}
 
-We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$ and $\eta$ is nondecreasing. To handle the boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
+We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$ and $\eta$ is nondecreasing. To handle these boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
 
 We will see that a trivial strong solution to this problem is the spatially homogeneous one that is $\bar{y}_1(X,t)=X$ for all $X\in(0,L)$ and $t\in[0,T]$, $\bar{y}_2(\cdot,t)$ and $\bar{P}(\cdot,t)$ constant for all $t\in[0,T]$. However we expect that this trivial solution is unstable when $\eta$ is sufficiently large, in the sense that it does not satisfy the global stability condition
 \[
@@ -3083,7 +3084,7 @@ We will see that a trivial strong solution to this problem is the spatially homo
 \]
 The instability of the trivial solution would correspond with the onset of necking, when a non uniform localized solution becomes energetically favorable.
 
-We will discuss first the stability of the trivial solution when the elastic response only is considered. In this case we will be able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain explicit results, however we can gain some insight about the phenomenology of necking.
+We will discuss first the stability of the trivial solution when the elastic response only is considered. In this case we will be able to obtain some explicit results. Then we will show our efforts to extend the analysis also in the elastoplastic case. In this second case we cannot obtain fully explicit results, however we can gain some insight about the phenomenology of necking.
 \begin{rmk}
 Most of the stability analysis below is only formal. Some additional effort should be made in order to get fully rigorous results. The mathematical theory that should be employed to reach a full justification of the procedure below is that of bifurcation theory in Banach spaces, probably with some nontrivial adjustments needed to treat the nonsmooth character of plasticity theory. Some results regarding this theory in the smooth context and applications to instability phenomena in nonlinear elasticity can be found in our review~\cite{progetto-ponno}.
 \end{rmk}
@@ -3262,16 +3263,16 @@ We notice that the particular choice of the parameters in~\eqref{eqn:choice-para
 \subsection{Elastoplastic model}
 \label{subsec:plastic-model}
 
-We now study the tensile test in the complete elastoplastic model. We start with explaining how a trivial solution of the form $\bar{y}_1(X,t)=\eta(t)X$, $\bar{y}_2(X,t)=\bar{y}_2(t)$ and $\bar P(X,t)=\bar{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$ can be computed. In the elastic range, $\bar y_2(t)$ can be found as we showed previously while $\bar P(t)=1$. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\bar P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\bar P,\dot{\bar P})=Y/\bar P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\bar y_2$ and $\bar P$.
+We now study the tensile test in the complete elastoplastic model. We start with explaining how a trivial solution of the form $\bar{y}_1(X,t)=\eta(t)X$, $\bar{y}_2(X,t)=\bar{y}_2(t)$ and $\bar P(X,t)=\bar{P}(t)$ for all $X\in(0,L)$ and $t\in[0,T]$ can be computed. In the elastic range, $\bar y_2(t)$ can be found as we showed previously setting $\bar P(t)=1$ fixed. When the Madel stress~\eqref{eqn:neck-large-mandel} overcomes the yield strength $Y$, then $\dot{\bar P}>0$ and the plastic force is everywhere given by $\partial_{\dot P}R(\bar P,\dot{\bar P})=Y/\bar P$. Then the balance of microforces coupled with the balance in the transversal direction gives a nonlinear algebraic equation that allows to compute $\bar y_2$ and $\bar P$.
 
 Next we study the stability of the trivial solution so we have to check whether the global stability condition
 \begin{equation}
 \label{eqn:stability-necking}
-\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar{P}(t),\hat P)\quad\text{for all $(\hat y,\hat P)\in\mathscr{Z}$}.
+\mathcal{E}(\bar{y}(t),\bar{P}(t),t)\le\mathcal{E}(y,P,t)+\mathcal{D}(\bar{P}(t),P)\quad\text{for all $(y,P)\in\mathscr{Z}$}.
 \end{equation}
 is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathcal{D}(P_0,P_1)\ge0$ and equality holds if and only if $P_0=P_1$, the global stability condition is equivalent to say that $(\bar y(t),\bar P(t))$ is a global minimizer of $\mathcal{J}_t\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ defined by
 \[
-\mathcal{J}_t(\hat y,\hat Q)=\mathcal{E}(\hat y,\hat P,t)+\mathcal{D}(\bar P(t),\hat P).
+\mathcal{J}_t(y,Q)=\mathcal{E}(y,P,t)+\mathcal{D}(\bar P(t),P).
 \]
 The aim of what follows would be to identify conditions that ensure that, for sufficiently large elongations,~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
 \begin{rmk}
@@ -3284,14 +3285,14 @@ We start our analysis assuming that the stability condition is not violated in t
 
 To introduce this first simplified stability condition, let us define
 \[
-\bar F(t)=\bar{P}(t)^{-1}W_1(\eta(t)\bar{P}(t)^{-1},\bar{y}_2(t)\bar P(t),\bar{y}_2'(t)\bar{P}(t)^{-1}),
+\bar F(t)=\bar{P}(t)^{-1}W_1(\eta(t)\bar{P}(t)^{-1},\bar{y}_2(t)\bar P(t)^\frac{1}{d-1},\bar{y}_2'(t)\bar{P}(t)^{-1}),
 \]
 the reaction tensile force acting on the ends of the bar along the trivial solution. Consider the function $J_t\colon(0,\infty)^3\to\mathbb{R}\cup\{\infty\}$ given by
 \[
-J_t(\rho,y_2,P)=W(\rho P^{-1},y_2P,0)+H(P,0)+D(\bar{P}(t),P)-\bar{F}(t)\rho.
+J_t(\rho,y_2,P)=W(\rho P^{-1},y_2P^\frac{1}{d-1},0)+H(P,0)+D(\bar{P}(t),P)-\bar{F}(t)\rho.
 \]
 The quantity $J_t(\rho,y_2,P)-J_t(\eta(t),\bar{y}_2(t),\bar{P}(t))$ is the energy per unit length that must be supplied to the system to bring it from the configuration $\bar y_1(t)$, $\bar y_2(t)$ and $\bar P(t)$ to the configuration $y_1(X)=\rho X$, $y_2(X)=y_2$ and $P(X)=P$ if the ends are now left free to move and the tensile force is kept equal to $\bar F(t)$. It includes both the energy stored by the system in the form of free energy and the energy dissipated as the plastic distortion is changed. Now our first simplified stability condition is the following.
-\begin{defi}[stability under force control]
+\begin{defi}[Stability under force control]
 We say that the trivial uniform solution at time $t\in(0,T]$, is stable under force control if $(\eta(t),\bar{y}_2(t),\bar{P}(t))$ is a local minimizer of $J_t$.
 \end{defi}
 The mechanical meaning of this definition is the following: the trivial uniform solution $(\eta,\bar{y}_2(t),\bar{P}(t))$ is stable under force control when it is the most energetically favored configuration among all other uniform configurations when the condition of fixed tensile force is applied. We now study whether the stability of the trivial uniform solution under force control is lost for sufficiently large elongations when the particular constitutive relations proposed in Section~\ref{subsec:constitutive-large-neck} are considered. In this particular case $J_t$ is not differentiable at $P=\bar{P}(t)$ but $J_t\in C^1(\mathscr H^+_t)$ and $J_t\in C^1(\mathscr H^-_t)$, where
@@ -3394,23 +3395,23 @@ It is easy to see that the constitutive model described in Section~\ref{subsec:c
 
 We now turn to our second simplified notion of stability whose introduction is motivated by the follwing considerations. The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$, difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck} and we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ as
 \[
-\mathcal{J}_t^\varsigma(\hat y,\hat P,t)=\int_0^LW(\eta(t)\hat y_1'\hat P^{-1},\hat y_2\hat P,\hat y_2'\hat P^{-1})dX+\int_0^LH(\hat P,\hat P')dX+\int_0^LD^\varsigma(\bar P(t),\hat P)dt,
+\mathcal{J}_t^\varsigma(y,P,t)=\int_0^LW(\eta(t)y_1'P^{-1},y_2P^\frac{1}{d-1},y_2'P^{-1})dX+\int_0^LH(P,P')dX+\int_0^LD^\varsigma(\bar P(t),P)dt,
 \]
-with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\varsigma(\hat z)$ if $\hat z\in\mathscr{Z}^\varsigma_t$, where
+with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to write $\mathcal{J}_t(z)=\mathcal{J}_t^\varsigma(z)$ if $z\in\mathscr{Z}^\varsigma_t$, where
 \[
-\mathscr{Z}^\varsigma_t=\{\hat z=(\hat y,\hat P)\in\mathscr{Z}\;|\;\text{$\varsigma(\hat P-\bar P(t))\ge0$ in $(0,L)$}\}.
+\mathscr{Z}^\varsigma_t=\{z=(y,P)\in\mathscr{Z}\;|\;\text{$\varsigma(P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
 The following lemma express how the minimality of $\mathcal{J}_t$is related to that of $\mathcal{J}_t^\varsigma$.
 \begin{lemma}
 The global stability condition
 \begin{equation}
 \label{eqn:min-neck}
-\mathcal{J}_t(\bar{z}(t))\le\mathcal{J}_t(\hat z)\quad\text{for all $\hat z\in\mathscr{Z}$}
+\mathcal{J}_t(\bar{z}(t))\le\mathcal{J}_t(z)\quad\text{for all $z\in\mathscr{Z}$}
 \end{equation}
 implies the following couple of one-sided  global stability conditions
 \begin{equation}
 \label{eqn:min-neck-sigma}
-\mathcal{J}_t^\varsigma(\bar{z}(t))\le\mathcal{J}_t^\varsigma(\hat z)\quad\text{for all $\hat z\in\mathscr{Z}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
+\mathcal{J}_t^\varsigma(\bar{z}(t))\le\mathcal{J}_t^\varsigma(z)\quad\text{for all $z\in\mathscr{Z}^\varsigma_t$ and $\varsigma\in\{\pm1\}$}.
 \end{equation}
 %Moreover if $\overline q(t)$ satisfies
 %\begin{subequations}
@@ -3464,7 +3465,7 @@ Thus a sufficient condition for instability is that at least one among~\eqref{eq
 \dual{\partial\mathcal{J}^-_t(\bar z(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}-2Y\int_0^L\frac{q}{\bar P(t)}dX=-2Y\int_0^L\frac{q}{\bar P(t)}dX\ge0.
 \]
 This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat z$ near $\bar z(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\bar P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow. So we turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,q)\in Z_0$ with $q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}<0$, we have indeed that ~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentation of our attempts in that direction), in what follows we presents a simplified analysis in which the constraint $q\ge0$ is disregarded. This leads us to the following second simplified notion of stability.
-\begin{defi}[regularized stability]
+\begin{defi}[Regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
 \begin{rmk}
@@ -3821,7 +3822,7 @@ The characteristic of the Mohr-Coulomb and the Drucker-Prager yield criteria, ab
 
 The use of the non-associated flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory, in the sense that it cannot immediately rewritten as a balance of generalized forces, including both a macroscopic and a microscopic equilibrium. For that reason the usual formulation of non-associated plasticity is not compatible with the view of mechanical systems presented in Section~\ref{sec:ppv}. However, recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, directly coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv}, where the intuition of Coulomb~\cite{Coulomb1776} that the friction between the grains increase with their contact pressure is made explicit. We will see that our model, if particular constitutive revelations are assumed, is formally able to recover the equations provided by the original approach. But, since our model possesses a clear variational structure by construction, no ad hoc reformulations are required to restore it, allowing us to establish an existence theory in a more direct and elegant manner.
+This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, directly coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv}, where the intuition of Coulomb~\cite{Coulomb1776} that the friction between the grains increase with their contact pressure is made explicit. We will see that our model, if particular constitutive revelations are assumed, is formally able to recover the equations provided by the original approach. But, since our model possesses a clear variational structure by construction, no artificial reformulations are required to restore it, allowing us to establish an existence theory in a more direct way.
 
 The discussion is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} to account for plastic compressibility and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are instead dedicated to the formulation of our alternative approach.
 
@@ -3830,7 +3831,7 @@ The discussion is organized as follows. This introductory chapter reviews the st
 
 We now describe how the theory presented in Section~\ref{sec:plasticity-review} is extended to include plastic compressibility and non-associated flow rules. The formulation presented here is the standard way used to perform that extension. In the following chapters we will propose an alternative approach.
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assumed since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review} of Chapter~\ref{chap:modeling}, we require that the internal and external virtual power functionals are of the form
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of a body. Its configurations are assumed to be the couples $z=(u,E_p)\in Z$ where $u\colon\Omega\to\mathbb{R}^d$ is the displacement and $E_p\colon\Omega\to\text{Sym}$ is the plastic strain. Notice that plastic incompressibility is not assumed since $E_p$ is not required to be deviatoric. The elastic strain is $E_e=Eu-E_p$. Analogously of what we did in Section~\ref{sec:plasticity-review}, we require that the internal and external virtual power functionals are of the form
 \[
 \dual{\mathcal{I},\tilde w}=\int_\Omega\left(T_e:\tilde V_e+T_p:\tilde V_p\right)dx
 \quad\text{and}\quad
@@ -3848,7 +3849,7 @@ We now discuss the choice of constitutive relations. We assume that the free ene
 \[
 \Psi(z)=\int_\Omega\left(W_e(E_e)+W_p(E_p)\right)dx,
 \]
-where $W_e$ and $W_p$ form $\text{Sym}$ to $\mathbb{R}$ are the elastic and plastic free energy densities which are supposed to be differentiable. This gives the constitutive relation for the elastic stress $T_e=W_e'(E_e)$. If we split the plastic force $T_p$ as the sum of a conservative back-stress $B_p$ and a dissipative plastic force $A_p$, then $B_p=W_p'(E_p)$. Notice that, having written $T_p=A_p+B_p$, the equilibrium of microforces can be written as
+where $W_e$ and $W_p$ from $\text{Sym}$ to $\mathbb{R}$ are the elastic and plastic free energy densities which are supposed to be differentiable. This gives the constitutive relation for the elastic stress $T_e=W_e'(E_e)$. If we split the plastic force $T_p$ as the sum of a conservative back-stress $B_p$ and a dissipative plastic force $A_p$, then $B_p=W_p'(E_p)$. Notice that, having written $T_p=A_p+B_p$, the equilibrium of microforces can be written as
 \begin{equation}
 \label{eqn:Ap}
 A_p=T_e-B_p=-\dind{W}{E_p}(Eu,E_p)\quad\text{in $\Omega$},
@@ -3909,7 +3910,7 @@ In this section we show how the Mohr--Coulomb and Drucker--Prager yield criterio
 
 \subsection{The Mohr--Coulomb criterion}
 
-The Mohr--Coulomb criterion was the first criterion failure of cohesive materials such as rocks and soil. The original formulation states that failure happen at a material point where the Cauchy stress tensor $T\in\text{Sym}$ there exists a direction $n\in\partial B(0,1)$ such that
+The Mohr--Coulomb criterion was the first criterion failure of cohesive materials such as rocks and soil. The original formulation states that failure happen at a material point where the Cauchy stress tensor $T\in\text{Sym}$ if there exists a direction $n\in\partial B(0,1)$ such that
 \begin{equation}
 \label{eqn:mhor-coulomb}
 \tau=-\sigma\tan\phi+c,
@@ -3921,7 +3922,7 @@ where $\sigma=Tn\cdot n$ and $\tau=|Tn-\sigma n|$ are the normal and shear stres
 %\text{centered at $\left(\dfrac{T_\text{min}+T_\text{max}}{2},0\right)$ and with radius $\dfrac{T_\text{max}-T_\text{min}}{2}$},
 %\]
 %where $T_\text{min}$ and $T_\text{max}$ are the largest and smallest eigenvalues to $T$. The boundary of this circle is entirely covered. Then failure occur when the circle became tangent to the cone.
-After some computations one finds that the failure criterion can be written directly in term of $T$ as
+After some computations (see~\cite{Lubliner1990} again) one finds that the failure criterion can be written directly in term of $T$ as
 \begin{equation}
 \label{eqn:f-mohr-coulomb}
 f(T)=F(\dev T)+\frac{2}{d}(\tr T)\sin\phi-2c\cos\phi=0.
@@ -4001,7 +4002,7 @@ u\in H^1((0,T),H^1_0(\Omega,\mathbb{R}^d))\quad\text{and}\quad E_p\in W^{1,\inft
 \]
 such that, setting $T=\mathfrak{C}(Eu-E_p)$, the following conditions hold:
 \begin{itemize}
-\item[(i)] the initial condition $u(0)=u_0$,
+\item[(i)] the initial condition $u(0)=u_0$ and $E_p(0)=E_p^0$,
 \item[(ii)] the macroscopic equilibrium
 \[
 \diver T(t)=0\quad\text{in the sense of distributions for all $t\in[0,T]$,}
@@ -4184,13 +4185,13 @@ The internal variable $\alpha$ is a qualitative description of the damage state 
 
 Starting from this micro-mechanical picture we are now in position to give an interpretation to the terms appearing in the expression~\eqref{eqn:internal-power} of the generalized internal power and in the definition of the free energy and dissipation potential.
 
-\subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains and the binding matrix that opposes to their deformation and $W_e$ represents the stored elastic energy.
+\subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains and the binding matrix that opposes to their elastic deformation and $W_e$ represents the stored elastic energy.
 
 \subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal, reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addiction of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
 
 \subsubsection*{Volumetric plastic response and damage response}
 
-The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that impose the constrain $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that is the reaction associated to the constraint $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
 
 \subsubsection*{Macroscopic response}
 
@@ -4372,7 +4373,7 @@ The existence theorem we are going to prove is the following.
 \label{thm:existence-pressure-small}
 Consider the assumptions of previous subsection. Then there exists $(z,p)=(y,\lambda,p)$ solution to Problem~\ref{prb:pressure-sensitive-small} with $y\in W^{1,\infty}((0,T),Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$.
 \end{thm}
-As anticipated, the proof rely on the abstract existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}, so our aim is now to verify the required hypotheses. It is evident that $Y$ is compactly embedded in $H$. The properties of $\mathcal{L}$ are verified in the following lemma.
+As anticipated, the proof relies on the abstract existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}, so our aim is now to verify the required hypotheses. It is evident that $Y$ is compactly embedded in $H$. The properties of $\mathcal{L}$ are verified in the following lemma.
 \begin{lemma}
 It holds that $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and $\norm{\mathcal{L}(y)}_\Lambda$, $\norm{\mathcal{L}'(y)}_{\mathscr{L}(H,\Lambda)}$ are bounded uniformly in $y\in H$.
 \end{lemma}
