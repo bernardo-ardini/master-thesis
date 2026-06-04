@@ -514,9 +514,17 @@ where $T_p$ and $K_p$ does not coincides with the ones appearing in~\eqref{eqn:p
 \chapter{Solution concepts and general existence results}
 \label{chap:solution-concepts}
 
-In this chapter are discussed some existence results for the abstract evolutionary equations discussed in Section~\ref{sec:ppv}. In Section~\ref{sec:roubickeck} we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations when the dissipation potential has a quadratic growth. We will see that the quadratic growth of the dissipation potential allows to seek solution which are absolutely continuous in time, since in this case the dissipative generalized force is sufficiently strong to avoid jumps. In Section~\ref{sec:existence-theorem-abstract-constrained} we prove a new existence result that extend that of previous section to the case in which an unilateral kinematical constrain is added: the constrain is treated including a Lagrange multiplier and the dissipation potential is made dependent on it. This is the result that we will use to develop the existence theory for the model discussed in Part~\ref{part:my-model}. In Section~\ref{sec:evi} is reported the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations with a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even thought the dissipation potential has not a quadratic growth, it is possible to find solutions that are absolutely continuous in time: this is due to the particular combination of the fact that the energy is quadratic and the dissipation potential is 1-homogeneous. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar at small deformations. In Section~\ref{sec:energetic-solution} we will present the notion of energetic solutions as presented in~\cite{francfort,rate-independent-systems}. This is a very general solution concept for rate independent systems introduced by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and possible non-convex free energies. The main feature of this formulation is that it does not require any type of differentiability of the free energy or the dissipation potential and of the solution with respect to time: indeed their definition is based on a global stability conditions that does not requires to consider local variations. This is particularly useful when the nonlinearities involved in the model would be difficult to handle in terms of variations and when the evolution can exhibit jumps. Energetic solutions are suitable to prove the existence of solutions for rate-independent plasticity at large deformations: we will indeed use it to develop the existence theory for the model of a metallic cylindrical bar at large deformations in Chapter~\ref{chap:large-neck}.
+This chapter discusses several existence results for the abstract evolutionary equations introduced in Section~\ref{sec:ppv}.
 
-The results of this chapter, except for that in Section~\ref{sec:existence-theorem-abstract-constrained}, are known results, so that in these cases we will report only a sketch of the proofs, referring to the original sources for the complete discussion. Instead the proof of our new result in Section~\ref{sec:existence-theorem-abstract-constrained} will be reported integrally.
+In Section~\ref{sec:roubickeck}, we present the existence result~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear equations where the dissipation potential exhibits quadratic growth. We will show that this quadratic growth allows us to seek solutions that are absolutely continuous in time, as the dissipative generalized force is sufficiently strong to prevent jumps.
+
+In Section~\ref{sec:existence-theorem-abstract-constrained}, we prove a new existence result that extends the one from the previous section to cases involving an unilateral kinematical constraint. This constraint is handled by introducing a Lagrange multiplier, upon which the dissipation potential is made dependent. This new result will be fundamental to developing the existence theory for the model discussed in Part~\ref{part:my-model}.
+
+Section~\ref{sec:evi} reports the existence result~\cite[Theorem 7.3]{han-reddy} for evolution equations featuring a quadratic free energy and a 1-homogeneous dissipation potential. In this case, even though the dissipation potential does not have quadratic growth, it is still possible to find solutions that are absolutely continuous in time. This is due to the specific combination of a quadratic energy and a 1-homogeneous dissipation potential. This result will be applied in Chapter~\ref{chap:small-neck} to develop the existence theory for the one-dimensional model of a metallic cylindrical bar undergoing small deformations.
+
+In Section~\ref{sec:energetic-solution}, we present the notion of energetic solutions as introduced in~\cite{francfort,rate-independent-systems}. This is a highly general solution concept for rate-independent systems, originally proposed by Mielke and Theil~\cite{mielke1999mathematical} in 1999 to treat rate-independent systems with nonlinear and potentially non-convex free energies. The main feature of this formulation is that it does not require any differentiability of the free energy, the dissipation potential, or the solution with respect to time; indeed, its definition is based on a global stability condition that does not require local variations. This approach is particularly advantageous when the model's nonlinearities are difficult to handle via variations, and when the evolution is prone to jumps. Energetic solutions are well-suited for proving the existence of solutions in rate-independent plasticity under large deformations. Consequently, we will employ this framework in Chapter~\ref{chap:large-neck} to develop the existence theory for the model of a metallic cylindrical bar at large deformations.
+
+The results in this chapter, except for the one in Section~\ref{sec:existence-theorem-abstract-constrained}, are already known in the literature. Therefore, we will only outline the sketches of their proofs, referring to the original sources for the full discussion. Conversely, the proof of our new result in Section~\ref{sec:existence-theorem-abstract-constrained} will be presented in full.
 
 \section{An existence result for doubly nonlinear equations}
 \label{sec:roubickeck}
@@ -613,7 +621,7 @@ Let $U,\Lambda$ be separable and reflexive Banach spaces and let $Z=U\times\Lamb
 \label{eqn:abstract-poincare}
 c_P\left(\norm{u}_H+|u|_U\right)\le\norm{u}_U\le C_P\left(\norm{u}_H+|u|_U\right)\quad\text{for all $u\in U$.}
 \end{equation}
-Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(u)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(U,H)}\le C_L$ for all $u\in U$. Up to redefining $C_L$ we can assume that $\text{Lip}(\mathcal{L})\le C_L$ and $\text{Lip}(\mathcal{L}')\le C_L$. The kinematical constrain can be written as $z\in K$ where
+Let $\mathcal{L}\in C^{0,1}(H,\Lambda)\cap C^{1,1}(H,\Lambda)$ and consider the kinematical constraint $\lambda=\mathcal{L}(u)$. We assume that there exists a constant $C_L>0$ such that $\norm{\mathcal{L}(u)}_\Lambda\le C_L$ and $\norm{\mathcal{L}'(u)}_{\mathscr{L}(H,\Lambda)}\le C_L$ for all $u\in U$. Up to redefining $C_L$ we can assume that $\text{Lip}(\mathcal{L})\le C_L$ and $\text{Lip}(\mathcal{L}')\le C_L$. The kinematical constrain can be written as $z\in K$ where
 \[
 K=\{z=(u,\lambda)\in Z\;|\;\lambda=\mathcal{L}(u)\}.
 \]
@@ -2020,7 +2028,7 @@ The problem associated with the model described in this chapter is of the form o
 \int_0^L\left[\frac{1}{2}\kappa(u_1'+(d-1)u_2)^2+\frac{1}{2}\mu\left(u_1'-u_2-\frac{d}{d-1}p\right)^2+\frac{1}{2}l^2\mu |u_2'|^2+\frac{1}{2}Bp^2\right]dx
 \end{multlined}
 \]
-Its Fréchet differential is $\mathcal{A}=\partial\Psi\colon Z\to Z^*$ given by
+Its Fréchet differential is $\mathcal{A}=D\Psi\colon Z\to Z^*$ given by
 \[
 \dual{\mathcal{A}z,w}=
 \begin{multlined}[t]
@@ -2041,12 +2049,12 @@ The external generalized force is $\mathcal{X}\colon[0,T]\to Z^*$,
 Now to prove the existence of solution we need only to satisfy the assumptions of Theorem~\ref{thm:han-reddy}. This will be done under the following assumptions:
 \begin{itemize}
 \item[(G)] $L>0$ and $d=2$ or $d=3$,
-\item[($\psi$)] $\kappa$, $\mu$, $l$ and $B$ are positive constants,
-\item[(R)] $R\colon\mathbb{R}\to\mathbb{R}$ is given by $R(q)=Y|q|$ for some $Y>0$,
+\item[($\Psi$)] $\kappa$, $\mu$, $l$ and $B$ are positive constants,
+\item[($\Phi$)] $R\colon\mathbb{R}\to\mathbb{R}$ is given by $R(q)=Y|q|$ for some $Y>0$,
 \item[($f$)] $f\in H^1((0,T),U^*)$ and $f(0)=0$.
 \end{itemize}
 \begin{thm}
-Assume hypotheses (G), ($\psi$), (R) and ($f$). Then there exists a unique $z\in\text{AC}([0,T],Z)$ satisfying $z(0)=0$ and $\mathcal{A}z(t)+\partial\Phi(\dot z(t))\ni\mathcal{X}(t)$ for a.e.\ $t\in(0,T)$.
+Assume hypotheses (G), ($\Psi$), ($\Phi$) and ($f$). Then there exists a unique $z\in\text{AC}([0,T],Z)$ satisfying $z(0)=0$ and $\mathcal{A}z(t)+\partial\Phi(\dot z(t))\ni\mathcal{X}(t)$ for a.e.\ $t\in(0,T)$.
 \end{thm}
 \begin{proof}
 We verify the hypothesis of Theorem~\ref{thm:han-reddy}.
@@ -2455,10 +2463,7 @@ We will see particular examples of constitutive relations in Subsection~\ref{sub
 \section{Existence result}
 \label{sec:existence-necking}
 
-In this section we prove the existence of energetic solutions. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply the abstract existence result provided by Theorem~\ref{thm:existence-energetic-solutions}.
-\begin{rmk}[On the value of $d$]
-The proof of the existence theorem will be made under the assumption that $d=2$. This will simplify the computations a bit.
-\end{rmk}
+In this section, we prove the existence of energetic solutions to the model presented in the previous section. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply the abstract existence result provided by Theorem~\ref{thm:existence-energetic-solutions}.
 
 \subsection{Formulation of the initial boundary value problem}
 
@@ -2481,8 +2486,9 @@ y_1(X)=X\quad\text{for $X\in\Gamma_D^1$}\quad\text{and}\quad y_2(X)=1\quad\text{
 \]
 Having made that change of variables, the unknown of the problem are $y$ and $P$. We notice that the elastic distortions $E_1,E_2$ and $E_3$ are given by
 \[
-E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P\quad\text{and}\quad E_3=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
+E_1=g_1'(y_1,t)y_1'P^{-1},\quad E_2=g_2(y_1,t)y_2P^{\frac{1}{d-1}}\quad\text{and}\quad E_3=g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}.
 \]
+Here $g_1'$ and $g_2'$ are the partial derivatives of $g_1$ and $g_2$ with respect to $y_1$.
 
 \subsubsection*{Function spaces}
 
@@ -2499,7 +2505,7 @@ Z_0=\left\{w=(v,q)\in Z\;\middle|\text{$w_1(X)=v_1(X)=0$ for $X\in\{0,L\}$}\righ
 
 To complete the formulation of the initial boundary value problem, we need to specify the energy functional $\mathcal{E}\colon\mathscr{Z}\times[0,T]\to(-\infty,\infty]$ and the dissipation distance $\mathcal{D}\colon\mathscr{Q}\times\mathscr{Q}\to[0,\infty]$. The energy functional is defined by
 \begin{multline*}
-\mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
+\mathcal{E}(y,P,t)=\int_0^L W\left(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P^\frac{1}{d-1},g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\right)dX+\\
 +\int_0^LH(P,P')dX-\int_0^L\left(f_1(t)g_1(y_1,t)+f_2(t)g_2(y_1,t)y_2\right)dX.
 \end{multline*}
 The dissipation distance can be expressed in term of a dissipation distance density $D\colon\mathbb{R}^2\to[0,\infty]$ as
@@ -2533,9 +2539,9 @@ The elastic free energy density is supposed to satisfy the following assumptions
 \begin{itemize}[itemsep=1em]
 \item[(W1)] there exists $\mathbb{W}\colon\mathbb{R}^4\to(-\infty,\infty]$ continuous such that
 \[
-W(E)=\mathbb{W}(E_1,E_2,E_3,E_1E_2)
+W(E)=\mathbb{W}(E_1,E_2,E_3,E_1E_2^{d-1})
 \]
-for all $E\in\mathbb{R}^3$ and $\mathbb{W}$ is convex in $(E_1,E_3,E_1E_2)$,
+for all $E\in\mathbb{R}^3$ and $\mathbb{W}$ is jointly convex in the first, third and fourth variables (but possibly non-convex in the second),
 \item[(W2)] there exist $C_W>0$ and $q_W\in(1,\infty)$ such that $W(E_1,E_2,E_3)\ge C_W(-1+|E_1|^{q_W}+|E_2|^{q_W}+|E_3|^{q_W})$ for all $E_1,E_2,E_3\in\mathbb{R}$,
 \item[(W3)] $W(E_1,E_2,E_3)=\infty$ if and only if $E_1\le0$ or $E_2\le0$,
 \item[(W4)] $W$ is differentiable in $\dom W$ and there exist $C^W_0\in\mathbb{R}$, $C^W_1>0$ and a modulus of continuity $\omega^W$ such that
@@ -2616,9 +2622,9 @@ To handle correctly the nonlinear coupling between elastic and plastic distortio
 
 The requirements on the dissipation potential density are
 \begin{itemize}[itemsep=1em]
-\item[(d1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is lower semicontinuous,
-\item[(d2)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$,
-\item[(d3)] $D$ is finite and continuous on $[\Pi,\infty)\times[\Pi,\infty)$, where $\Pi$ is the constant appearing in (H3).
+\item[(D1)] $D\colon\mathbb{R}^2\to[0,\infty]$ is lower semicontinuous,
+\item[(D2)] $D$ is a quasidistance, in the sense that $D(P_0,P_1)=0$ if and only if $P_0=P_1$ and $D(P_0,P_2)\le D(P_0,P_1)+D(P_1,P_2)$ for all $P_0,P_1,P_2\in\mathbb{R}$,
+\item[(D2)] $D$ is finite and continuous on $[\Pi,\infty)\times[\Pi,\infty)$, where $\Pi$ is the constant appearing in (H3).
 \end{itemize}
 
 \subsection{Verification the properties of the energy functional}
@@ -2683,12 +2689,15 @@ This implies that
 \end{equation}
 Similarly by H\"older and Young inequalities, for all $\delta>0$
 \[
-\norm{y_2}_{q_Y}^{q_Y}=\norm{y_2PP^{-1}}_{q_Y}^{q_Y}\le\norm{y_2P}_{q_W}^{q_Y}\norm{P^{-1}}_{q_H}^{q_Y}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-1}}_{q_H}^{q_H}\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}L\Pi^{-q_H}
+\begin{split}
+\norm{y_2}_{q_Y}^{q_Y}&=\norm{y_2P^\frac{1}{d-1}P^{-\frac{1}{d-1}}}_{q_Y}^{q_Y}\le\norm{y_2P^\frac{1}{d-1}}_{q_W}^{q_Y}\norm{P^{-\frac{1}{d-1}}}_{q_H}^{q_Y}\le\frac{1}{\rho\delta^\rho}\norm{y_2P^\frac{1}{d-1}}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}\norm{P^{-\frac{1}{d-1}}}_{q_H}^{q_H}\le\\
+&\le\frac{1}{\rho\delta^\rho}\norm{y_2P}_{q_W}^{q_W}+\frac{\delta^{\rho^*}}{\rho^*}L\Pi^{-\frac{q_H}{d-1}}
+\end{split}
 \]
 where now $\rho=1+q_W/q_H$. Last inequality holds since $P>\Pi$ a.e.\ on the sublevels of $\mathcal{E}$. Then
 \begin{equation}
 \label{eqn:bound-y2}
-\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}\Pi^{-q_H}.
+\norm{g_2(y_1,t)y_2P}_{q_W}^{q_W}\ge\gamma^{q_W}\rho\delta^\rho\norm{y_2}_q^q-\gamma^{q_W}\frac{\rho}{\rho^*}\delta^{\rho+\rho^*}\Pi^{-\frac{q_H}{d-1}}.
 \end{equation}
 Substituting~\eqref{eqn:bound-y1'} and~\eqref{eqn:bound-y2} into \eqref{eqn:LS-neck-coercivity-1} with $\delta$ sufficiently small, one gets that on sublevels of $\mathcal{E}$ the norms $\norm{y_1'}_{q_Y}$, $\norm{y}_{q_Y}$, $\norm{P}_{q_H}$ and $\norm{P'}_{r_H}$ are bounded. By Poincaré inequality it follows that also $\norm{y_1}_{1,{q_Y}}$ is bounded. It remains to prove that $\norm{y_2'}_{q_Y}$ is bounded. Let
 \[
@@ -2716,7 +2725,7 @@ On a sublevel of $\mathcal{E}$ the quantities $\norm{E_3}_{q_W}$, $\norm{P}_{q_H
 Choosing $\epsilon$ small enough, it follows that $\norm{y_2'}_{q_Y}$ is bounded on the sublevels of $\mathcal{E}$. This concludes the proof.
 \end{proof}
 We now move to the proof of the weak lower semicontinuity of $\mathcal E$. We first need the following technical result.
-\begin{prop}[convergence of elastic distortion]
+\begin{prop}[Convergence of the elastic distortions]
 \label{prop:convergence-minors}
 Let $y^k,y\in W^{1,q_Y}((0,L),\mathbb{R}\times\mathbb{R})$ and $P_k,P\in C^0([0,L])$ such that
 \begin{gather*}
@@ -2732,9 +2741,9 @@ Assume also that $P_k,P\ge \Pi>0$ a.e.\ in $(0,L)$. Let also $\gamma_1^k,\gamma_
 Then, up to extracting a subsequence,
 \begin{align*}
 \gamma_1^k(y_1^k)'P_k^{-1}&\rightharpoonup \gamma_1y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-\gamma_2^ky_2^kP_k&\to \gamma_2y_2P\quad&\text{in $C^0([0,L])$} \\
+\gamma_2^ky_2^kP_k^\frac{1}{d-1}&\to \gamma_2y_2P^\frac{1}{d-1}\quad&\text{in $C^0([0,L])$} \\
 \rho_2^k(y_1^k)'y_2^kP_k^{-1}+\gamma_2^k(y_2^k)'P_k^{-1}&\rightharpoonup \rho_2y_1'y_2P^{-1}+\gamma_2y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-\gamma_1^k(y_1^k)'\gamma_2^ky_2^k&\rightharpoonup \gamma_1y_1'\gamma_2y_2\quad&\text{in $L^1((0,L))$}
+\gamma_1^k(y_1^k)'(\gamma_2^ky_2^k)^{d-1}&\rightharpoonup \gamma_1y_1'(\gamma_2y_2)^{d-1}\quad&\text{in $L^1((0,L))$}
 \end{align*}
 \end{prop}
 \begin{proof}
@@ -2791,9 +2800,9 @@ Since $y_1^k$ converges to $y_1$ uniformly, then $y_1^k(t)$ takes values in a bo
 Applying Proposition~\ref{prop:convergence-minors}, it follows that, up to extracting a subsequence,
 \begin{align*}
 g_1'(y_1^k,t)(y_1^k)'P_k^{-1}&\rightharpoonup g_1(y_1,t)y_1'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-g_2(y_1^k,t)y_2^kP_k&\to g_2(y_1,t)y_2P\quad&\text{in $C^0([0,L])$} \\
+g_2(y_1^k,t)y_2^kP_k^\frac{1}{d-1}&\to g_2(y_1,t)y_2P^\frac{1}{d-1}\quad&\text{in $C^0([0,L])$} \\
 g_2'(y_1^k,t)(y_1^k)'y_2^kP_k^{-1}+g_2(y_1^k,t)(y_2^k)'P_k^{-1}&\rightharpoonup g_2'(y_1,t)y_1'y_2P^{-1}+g_2(y_1,t)y_2'P^{-1}\quad&\text{in $L^1((0,L))$} \\
-g_1'(y_1^k,t)(y_1^k)'g_2(y_1^k,t)y_2^k&\rightharpoonup g_1'(y_1,t)y_1'g_2(y_1,t)y_2\quad&\text{in $L^1((0,L))$}.
+g_1'(y_1^k,t)(y_1^k)'(g_2(y_1^k,t)y_2^k)^{d-1}&\rightharpoonup g_1'(y_1,t)y_1'(g_2(y_1,t)y_2)^{d-1}\quad&\text{in $L^1((0,L))$}.
 \end{align*}
 By these convergence results, together with $P_k\to P$ in $C^0([0,L])$ and $P_k'\rightharpoonup P'$ in $L^{r_H}((0,T))$, and by the convexity assumptions (W0) and (H0), we can apply Theorem~\ref{thm:lower-semicontinuity-integral-functional} which leads to~\eqref{eqn:lower-semicontinuity-E-limit}. This concludes the proof.
 \end{proof}
@@ -2816,23 +2825,23 @@ Since $g_1'>0$ and $g_2>0$, it is clear that
 \mathscr{D}=\left\{(y,P)\in Y\times Q\;\middle|\;\text{$y_1',y_2,P>0$ a.e.\ on $(0,L)$}\right\}.
 \]
 
-\emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P$ and $E_3=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,E_3)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,E_3)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
+\emph{Proof of (i)} Let $E_1=g_1'(y_1,t)y_1'P^{-1}$, $E_2=g_2(y_1,t)y_2P^\frac{1}{d-1}$ and $E_3=g_2(y_1,t)y_2'P^{-1}$ as functions of $(y,y',P,t)\in\mathbb{R}^2\times\mathbb{R}^2\times\mathbb{R}\times t\in[0,T]$. Let $q=(y,P)\in\mathscr{D}$. Then $(E_1,E_2,E_3)\in\dom W$ a.e.\ on $(0,L)$ and everywhere on $[0,T]$. Then $t\mapsto W(E_1,E_2,E_3)$ is differentiable in $[0,T]$ and a.e.\ in $(0,L)$ and
 \[
-\frac{d}{dt}W(E_1,E_2,E_3)=E_1\dind{W}{E_1}(E_1,E_2,E_3)\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)}+E_2\dind{W}{E_2}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}+E_3\dind{W}{E_3}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}
+\frac{d}{dt}W(E_1,E_2,E_3)=E_1\dind{W}{E_1}(E_1,E_2,E_3)\frac{\dot{g}'_1(y_1,t)}{g'_1(y_1,t)}+E_2\dind{W}{E_2}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}+E_3\dind{W}{E_3}(E_1,E_2,E_3)\frac{\dot{g}_2(y_1,t)}{g_2(y_1,t)}.
 \]
-there. We have to prove that for all $t\in[0,T]$, there exists
+Here the dot over $g_1$a nd $g_2$ denote the partial derivative with respect to time $t$, while the prime still denote the partial derivative with respect to $y_1$. We have to prove that for all $t\in[0,T]$, there exists
 \begin{equation}
 \label{eqn:partial-time-derivative-energy}
 \partial_t\mathcal{E}(z,t)=\lim_{\epsilon\to0}\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(E_1,E_2,E_3)dX.
 \end{equation}
 By Lagrange theorem there exists $\eta\in(0,1)$ depending on $X$, $t$ and $\epsilon$, such that
 \[
-\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^LW(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})dX.
+\frac{\mathcal{E}(z,t+\epsilon)-\mathcal{E}(z,t)}{\epsilon}=\int_0^L\frac{d}{dt}W(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})dX.
 \]
 For $\epsilon$ small, $g_1'(y_1,t+\eta\epsilon)/g_1'(y_1,t)$ and $g_2(y_1,t+\eta\epsilon)/g_2(y_1,t)$ are close to 1 uniformly on $(0,L)\times[0,T]$. Thus, for $\epsilon$ small enough, we can apply Lemma~\ref{lemma:tipo-ball-kirchhoff-control} and we get
 \begin{multline*}
--C_0^W\le W(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})\le\\
-\le C(W(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2(y_1,t)y_2'P^{-1})+C_0^W)\in L^1((0,L)).
+\left|\frac{d}{dt}W(g_1'(y_1,t+\eta\epsilon)y_1'P^{-1},g_2(y_1,t+\eta\epsilon)y_2P,g_2(y_1,t+\eta\epsilon)y_2'P^{-1})\right|\le\\
+\le 3C(W(g_1'(y_1,t)y_1'P^{-1},g_2(y_1,t)y_2P,g_2(y_1,t)y_2'P^{-1})+C_0^W)\in L^1((0,L)).
 \end{multline*}
 Then, by dominated convergence theorem, we can pass to the limit $\epsilon\to 0$ and we get~\eqref{eqn:partial-time-derivative-energy}.
 
@@ -2850,7 +2859,7 @@ as functions of $(X,t)\in(0,L)\times[0,T]$. Then
 \[
 \frac{d}{dt}W(E)=K\cdot V.
 \]
-Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $q$ such that
+Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $z$ such that
 \[
 |V(t)-V(s)|\le\omega^V(|t-s|)\quad\text{and}\quad\max\left\{\frac{g_1'(y_1,s)}{g_1'(y_1,t)},\frac{g_2(y_1,s)}{g_2(y_1,t)}\right\}\le\omega^V(|t-s|)
 \]
@@ -2868,7 +2877,7 @@ This concludes the proof.
 
 \subsection{Verification the properties of the dissipation distance}
 
-Notice that (d1) implies that $\mathcal{D}$ is well defined. Property ($\mathcal{D}$1) follows immediately form (d2). We now prove ($\mathcal{D}$2).
+Notice that (D1) implies that $\mathcal{D}$ is well defined. Property ($\mathcal{D}$1) follows immediately form (D2). We now prove ($\mathcal{D}$2).
 \begin{prop}
 Let $P_k\rightharpoonup P$ and $\hat{P}_k\rightharpoonup\hat{P}$ in $Q$. Then $\mathcal{D}(P,\hat{P})\le\liminf_{k\to\infty}\mathcal{D}(P_k,\hat{P}_k)$.
 \end{prop}
@@ -2914,7 +2923,7 @@ Since $\hat{z}\in\mathscr{D}$, then (H3) implies that $\hat{P}>\Pi$ a.e.\ in $(0
 \[
 \lim_{k\to\infty}\mathcal{D}(P_k,\hat{P})=\lim_{k\to\infty}\int_0^LD(P_p,\hat{P})dX=\mathcal{D}(P,\hat{P}),
 \]
-where last inequality holds because $D$ is finite and continuous on $[\Pi,\infty)\times[\Pi,\infty)$ by (d3). This concludes the proof.
+where last inequality holds because $D$ is finite and continuous on $[\Pi,\infty)\times[\Pi,\infty)$ by (D2). This concludes the proof.
 \end{proof}
 
 \subsection{Conclusion of the existence proof}
@@ -2935,7 +2944,7 @@ Taking inspiration from the neo-Hooken elastic free energy density~\eqref{eqn:ne
 \[
 W(E_1,E_2,E_3)=
 \begin{cases}
-\mathbb{W}(E_1,E_2,E_3,E_1E_2) & \text{if $E_1>0$ and $E_2>0$} \\
+\mathbb{W}(E_1,E_2,E_3,E_1E_2^{d-1}) & \text{if $E_1>0$ and $E_2>0$} \\
 \infty & \text{otherwise},
 \end{cases}
 \]
@@ -3062,7 +3071,7 @@ This implies $D(P_0,P_1)\ge Y|\log P_1-\log P_0|$. If $P_i<\Pi$ for some $i\in\{
 \[
 \int_0^1R(P(t),\dot{P}(t))dt=Y\int_0^1\left|\frac{\dot{P}(t)}{P(t)}\right|dt=Y|\log P_1-\log P_1|.
 \]
-This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ in~\eqref{eqn:dissipation-distance-density-particular} satisfies the assumptions (d1), (d2) and (d3).
+This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ in~\eqref{eqn:dissipation-distance-density-particular} satisfies the assumptions (D1), (D2) and (D2).
 
 \section{Qualitative analysis of the tensile test problem}
 
@@ -4219,7 +4228,7 @@ This impose that $\dot\alpha\ge|\dot\pi|$ so that a deviatoric plastic strain is
 
 \section{Formally recovering the classical model}
 
-In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials described in Chapter~\ref{chap:intro-pressure-sensitive}.
+In this section we show that the constitutive framework outlined in previous section is able to provide, at least formally at the level of the strong form of the equations, the same equations predicted by the usual framework of non-associated plastic materials with the Drucker--Prager yield condition described in Chapter~\ref{chap:intro-pressure-sensitive}.
 \begin{prop}[Formal equivalence with the classical model]
 Consider the constitutive relations of the particularized form considered in Section~\ref{sec:particular-constitutive}. Assume that $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ and the viscosities $\mathfrak{D}$, $\mathfrak{d}$ and $\mathfrak{e}$ are zero. Assume also that $L(\alpha)=b\alpha$, $Y(p)=(a-b)p$, $W_p=0$ and $W_d(\alpha)=f_0\alpha$, where $b,f_0>0$ and $a\ge b$.  Assume now that a smooth evolution $(z,p)$ satisfying the balance equations exists. Then, recalling the notation of Chapter~\ref{chap:intro-pressure-sensitive}, the evolution satisfies the admissibility condition $f(T_e)\le0$ and the flow rule
 \[
@@ -4236,21 +4245,21 @@ provided that
 \end{itemize}
 \end{prop}
 \begin{rmk}
-Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body. If (ii) is violated, then the original Drucker--Prager model became ill-posed, since no elastic stress exists satisfying the admissibility condition $f(T_e)\le0$. 
+Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body. If (ii) is violated, then the original Drucker--Prager model (and also our model since the viscous and gradient regularization has been removed, see also Section~\ref{sec:existence-small}) became ill-posed, since no elastic stress exists satisfying the admissibility condition $f(T_e)\le0$. 
 \end{rmk}
 \begin{proof}
 We distinguish two cases, according to fact that $\dot\pi$ is zero or different form zero.
 
-\textit{Case $\dot\pi\neq0$.} We first prove that $\dot\alpha=|\dot\pi|$. If this was false, in view of the constrain $\dot\alpha\ge|\dot\pi|$, it must holds $\dot\alpha>|\dot\pi|$ and in this case $\partial D(\dot\pi,\dot\alpha)=\{0\}$. Then the balance of the damage microforce becomes $-L'(\alpha)p-W_d'(\alpha)=0$ or $-bp-f_0=0$. But from (ii) it follows that $-bp-f_0<\left(\frac{b}{a}-1\right)f_0\le0$, this is a contradiction. We conclude that $\dot\alpha=|\dot\pi|$ so the generic element of $\partial D(\dot\pi,\dot\alpha)$ is of the form
+\textit{Case $\dot\pi\neq0$.} We first prove that $\dot\alpha=|\dot\pi|$. If this was false, in view of the constrain $\dot\alpha\ge|\dot\pi|$, it must holds $\dot\alpha>|\dot\pi|$ and in this case $\partial D(\dot\pi,\dot\alpha)=\{0\}$. Then the balance of the damage microforce becomes $-L'(\alpha)p-W_d'(\alpha)=0$ or $-bp-f_0=0$. But from (ii) it follows that $-bp-f_0<\left(\frac{b}{a}-1\right)f_0\le0$, this is a contradiction. We conclude that $\dot\alpha=|\dot\pi|$ so the generic element of $\partial D(\dot\pi,\dot\alpha)=N_Q(\dot\pi,\dot\alpha)$ is of the form
 \[
-\left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for $\tilde\tau\le0$}.
+\left(-\tilde\tau\frac{\dot\pi}{|\dot\pi|},\tilde\tau\right)\quad\text{for some $\tilde\tau\le0$}.
 \]
 Then the balance of plastic and damage microforces can be written as
 \begin{gather}
 \dev T_e-Y(p)\frac{\dot\pi}{|\dot\pi|}+\tilde\tau\frac{\dot\pi}{|\dot\pi|}=0 \\
 -L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0.
 \end{gather}
-Thus we have
+Thus, making $\tilde\tau$ explicit from the second equation and substituting into the first, we have
 \[
 \dev T_e=\left(Y(p)+L'(\alpha)p+\dind{W_d}{\alpha}(\alpha)\right)\frac{\dot\pi}{|\dot\pi|}.
 \]
@@ -4268,7 +4277,7 @@ From $\dot\lambda=L'(\alpha)\dot\alpha=b|\dot\pi|=b\gamma$ we conclude that
 \]
 so that the flow rule is satisfied.
 
-\textit{Case $\dot\pi=0$.} When $\dot\pi=0$ then $\dot\alpha=0$ for the same reasoning of before. Then the generic element of $\partial D(0,0)$ is of the form $(\tilde T_p,\tilde\tau)\in\text{DevSym}\times\mathbb{R}$ with $\tilde\tau\le-|\tilde T_p|$. Moreover the generic element of $\partial_\rho R(p)$ is a $\bar T_p\in\text{DevSym}$ with $|\bar T_p|\le Y(p)$. Then the balance of plastic and damage microforces
+\textit{Case $\dot\pi=0$.} When $\dot\pi=0$ then $\dot\alpha=0$ for the same reasoning of before. Then the generic element of $\partial D(0,0)=N_Q(0,0)$ is of the form $(\tilde T_p,\tilde\tau)\in\text{DevSym}\times\mathbb{R}$ with $\tilde\tau\le-|\tilde T_p|$. Moreover the generic element of $\partial_\rho R(p,0)$ is a $\bar T_p\in\text{DevSym}$ with $|\bar T_p|\le Y(p)$. Then the balance of plastic and damage microforces
 \begin{gather}
 \dev T_e-\bar T_p-\tilde T_p=0 \\
 -L'(\alpha)p-\dind{W_d}{\alpha}(\alpha)-\tilde\tau=0
@@ -4279,11 +4288,9 @@ gives
 \]
 which is equivalent to $f(T_e)\le0$. Thus we have proved that $T_e$ satisfies the admissibility condition.
 \end{proof}
-\begin{rmk}
-For simplicity, with the previous proposition, we have proved the equivalence between our model for pressure sensitive plastic materials and the classical model, in the particular case in which Drucker--Prager yield criterion is adopted. However the result still holds with more general yield criteria.
-\end{rmk}
 
 \section{Existence theory}
+\label{sec:existence-small}
 
 In this section we obtain an existence result for the model we have developed in previous sections. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
 

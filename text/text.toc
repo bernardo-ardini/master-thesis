@@ -19,14 +19,14 @@
 \contentsline {subsection}{\tocsubsection {}{2.2.2}{The existence theorem and its proof}}{13}{subsection.2.2.2}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Solution of the discrete-in-time problem}}{13}{section*.4}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{A priori estimates and construction of the limit solution}}{18}{section*.5}%
-\contentsline {subsubsection}{\tocsubsubsection {}{}{Passage to the limit of vanishing step size}}{22}{section*.6}%
+\contentsline {subsubsection}{\tocsubsubsection {}{}{Passage to the limit of vanishing step size}}{23}{section*.6}%
 \contentsline {subsection}{\tocsubsection {}{2.2.3}{Uniqueness and stability}}{24}{subsection.2.2.3}%
 \contentsline {section}{\tocsection {}{2.3}{An existence result for rate-independent evolutionary equations with quadratic energy}}{26}{section.2.3}%
 \contentsline {subsection}{\tocsubsection {}{2.3.1}{Assumptions and formulation of the problem}}{26}{subsection.2.3.1}%
 \contentsline {subsection}{\tocsubsection {}{2.3.2}{Existence theorem}}{26}{subsection.2.3.2}%
 \contentsline {subsection}{\tocsubsection {}{2.3.3}{Application to plasticity theory at small strain}}{27}{subsection.2.3.3}%
-\contentsline {section}{\tocsection {}{2.4}{Energetic solutions}}{27}{section.2.4}%
-\contentsline {subsection}{\tocsubsection {}{2.4.1}{Introduction and motivation}}{27}{subsection.2.4.1}%
+\contentsline {section}{\tocsection {}{2.4}{Energetic solutions}}{28}{section.2.4}%
+\contentsline {subsection}{\tocsubsection {}{2.4.1}{Introduction and motivation}}{28}{subsection.2.4.1}%
 \contentsline {subsection}{\tocsubsection {}{2.4.2}{Assumptions, preliminary results and definition of energetic solutions}}{30}{subsection.2.4.2}%
 \contentsline {subsection}{\tocsubsection {}{2.4.3}{Existence theorem}}{31}{subsection.2.4.3}%
 \contentsline {subsection}{\tocsubsection {}{2.4.4}{Tool to verify the compatibility conditions}}{31}{subsection.2.4.4}%
@@ -34,7 +34,7 @@
 \contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{31}{subsection.2.5.1}%
 \contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{32}{subsection.2.5.2}%
 \contentsline {subsection}{\tocsubsection {}{2.5.3}{Preliminary results regarding the dissipation potential}}{32}{subsection.2.5.3}%
-\contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{32}{subsection.2.5.4}%
+\contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{33}{subsection.2.5.4}%
 \contentsline {subsection}{\tocsubsection {}{2.5.5}{A chain rule formula for the energy functional}}{34}{subsection.2.5.5}%
 \contentsline {subsection}{\tocsubsection {}{2.5.6}{Existence results in presence of positive viscosity}}{34}{subsection.2.5.6}%
 \contentsline {subsection}{\tocsubsection {}{2.5.7}{Contact dissipation potential}}{34}{subsection.2.5.7}%
@@ -73,7 +73,7 @@
 \contentsline {subsection}{\tocsubsection {}{5.2.3}{Verification the properties of the energy functional}}{54}{subsection.5.2.3}%
 \contentsline {subsection}{\tocsubsection {}{5.2.4}{Verification the properties of the dissipation distance}}{58}{subsection.5.2.4}%
 \contentsline {subsection}{\tocsubsection {}{5.2.5}{Verification of the compatibility conditions}}{58}{subsection.5.2.5}%
-\contentsline {subsection}{\tocsubsection {}{5.2.6}{Conclusion of the existence proof}}{58}{subsection.5.2.6}%
+\contentsline {subsection}{\tocsubsection {}{5.2.6}{Conclusion of the existence proof}}{59}{subsection.5.2.6}%
 \contentsline {subsection}{\tocsubsection {}{5.2.7}{Particular constitutive relations that satisfy the hypotheses of the existence theorem}}{59}{subsection.5.2.7}%
 \contentsline {section}{\tocsection {}{5.3}{Qualitative analysis of the tensile test problem}}{61}{section.5.3}%
 \contentsline {subsection}{\tocsubsection {}{5.3.1}{Purely elastic model}}{61}{subsection.5.3.1}%
