@@ -31,7 +31,7 @@
 \contentsline {subsection}{\tocsubsection {}{2.4.3}{Existence theorem}}{31}{subsection.2.4.3}%
 \contentsline {subsection}{\tocsubsection {}{2.4.4}{Tool to verify the compatibility conditions}}{31}{subsection.2.4.4}%
 \contentsline {section}{\tocsection {}{2.5}{Balanced-viscosity solutions}}{31}{section.2.5}%
-\contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{31}{subsection.2.5.1}%
+\contentsline {subsection}{\tocsubsection {}{2.5.1}{Introduction}}{32}{subsection.2.5.1}%
 \contentsline {subsection}{\tocsubsection {}{2.5.2}{Assumptions}}{32}{subsection.2.5.2}%
 \contentsline {subsection}{\tocsubsection {}{2.5.3}{Preliminary results regarding the dissipation potential}}{32}{subsection.2.5.3}%
 \contentsline {subsection}{\tocsubsection {}{2.5.4}{Absolutely continuous and BV evolutions}}{33}{subsection.2.5.4}%
@@ -101,24 +101,27 @@
 \contentsline {section}{\tocsection {}{7.5}{Existence theory}}{84}{section.7.5}%
 \contentsline {subsection}{\tocsubsection {}{7.5.1}{Assumptions, definitions and formulation of the problem}}{84}{subsection.7.5.1}%
 \contentsline {subsection}{\tocsubsection {}{7.5.2}{Proof of the existence theorem}}{85}{subsection.7.5.2}%
-\contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{88}{chapter.8}%
-\contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{88}{section.8.1}%
-\contentsline {part}{\noindent Collection of useful results}{90}{part*.32}%
-\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{91}{appendix.A}%
-\contentsline {section}{\tocsection {}{A.1}{Tensors}}{91}{section.A.1}%
-\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{92}{appendix.B}%
-\contentsline {section}{\tocsection {}{B.1}{Some classical results}}{92}{section.B.1}%
-\contentsline {subsection}{\tocsubsection {}{B.1.1}{A general form of the Gronwall inequality}}{92}{subsection.B.1.1}%
-\contentsline {section}{\tocsection {}{B.2}{Linear functional analysis}}{93}{section.B.2}%
-\contentsline {subsection}{\tocsubsection {}{B.2.1}{Other}}{93}{subsection.B.2.1}%
-\contentsline {subsection}{\tocsubsection {}{B.2.2}{Bochner spaces}}{93}{subsection.B.2.2}%
-\contentsline {subsection}{\tocsubsection {}{B.2.3}{Generalized mixed elliptic problems}}{94}{subsection.B.2.3}%
-\contentsline {section}{\tocsection {}{B.3}{Nonlinear functional analysis}}{97}{section.B.3}%
-\contentsline {subsection}{\tocsubsection {}{B.3.1}{Other}}{97}{subsection.B.3.1}%
-\contentsline {subsection}{\tocsubsection {}{B.3.2}{Implicit function theorem}}{97}{subsection.B.3.2}%
-\contentsline {subsection}{\tocsubsection {}{B.3.3}{Fixed point theorems}}{98}{subsection.B.3.3}%
-\contentsline {subsection}{\tocsubsection {}{B.3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{98}{subsection.B.3.4}%
-\contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{98}{subsection.B.3.5}%
-\contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{104}{subsection.B.3.6}%
-\contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{104}{section.B.4}%
-\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{105}{appendix*.33}%
+\contentsline {section}{\tocsection {}{7.6}{Numerical approximation}}{87}{section.7.6}%
+\contentsline {subsection}{\tocsubsection {}{7.6.1}{Contact torques as Lagrange multipliers}}{87}{subsection.7.6.1}%
+\contentsline {subsection}{\tocsubsection {}{7.6.2}{Formulation of the numerical scheme}}{88}{subsection.7.6.2}%
+\contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{90}{chapter.8}%
+\contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{90}{section.8.1}%
+\contentsline {part}{\noindent Collection of useful results}{92}{part*.32}%
+\contentsline {chapter}{\tocappendix {Appendix}{A}{Notation}}{93}{appendix.A}%
+\contentsline {section}{\tocsection {}{A.1}{Tensors}}{93}{section.A.1}%
+\contentsline {chapter}{\tocappendix {Appendix}{B}{Tools from mathematical analysis}}{94}{appendix.B}%
+\contentsline {section}{\tocsection {}{B.1}{Some classical results}}{94}{section.B.1}%
+\contentsline {subsection}{\tocsubsection {}{B.1.1}{A general form of the Gronwall inequality}}{94}{subsection.B.1.1}%
+\contentsline {section}{\tocsection {}{B.2}{Linear functional analysis}}{95}{section.B.2}%
+\contentsline {subsection}{\tocsubsection {}{B.2.1}{Other}}{95}{subsection.B.2.1}%
+\contentsline {subsection}{\tocsubsection {}{B.2.2}{Bochner spaces}}{95}{subsection.B.2.2}%
+\contentsline {subsection}{\tocsubsection {}{B.2.3}{Generalized mixed elliptic problems}}{96}{subsection.B.2.3}%
+\contentsline {section}{\tocsection {}{B.3}{Nonlinear functional analysis}}{99}{section.B.3}%
+\contentsline {subsection}{\tocsubsection {}{B.3.1}{Other}}{99}{subsection.B.3.1}%
+\contentsline {subsection}{\tocsubsection {}{B.3.2}{Implicit function theorem}}{99}{subsection.B.3.2}%
+\contentsline {subsection}{\tocsubsection {}{B.3.3}{Fixed point theorems}}{100}{subsection.B.3.3}%
+\contentsline {subsection}{\tocsubsection {}{B.3.4}{Local existence theorem for Cauchy problems in Banach spaces}}{100}{subsection.B.3.4}%
+\contentsline {subsection}{\tocsubsection {}{B.3.5}{Browder--Minty theorem}}{100}{subsection.B.3.5}%
+\contentsline {subsection}{\tocsubsection {}{B.3.6}{Lower semicontinuity of integral functionals}}{106}{subsection.B.3.6}%
+\contentsline {section}{\tocsection {}{B.4}{Convex analysis}}{106}{section.B.4}%
+\contentsline {chapter}{\tocchapter {\chaptername }{}{Bibliography}}{107}{appendix*.33}%

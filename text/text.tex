@@ -71,6 +71,7 @@
 \DeclareMathOperator{\codim}{codim}
 \DeclareMathOperator{\Iso}{Iso}
 \DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diam}{diam}
 
 \DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
 \DeclarePairedDelimiter{\dual}{\langle}{\rangle}
@@ -1422,6 +1423,9 @@ U(t)\le e^{\frac{18T^2C_1^2}{C_D^2}}\left[\frac{3}{C_D}\|A\|_{\mathscr{L}(U,U^*)
 \]
 This implies that $\norm{\dot u_1-\dot u_2}_{L^2((0,T),H)}$ is bounded by a constant times $\norm{u_1^0-u_2^0}_Z+\norm{f_1-f_2}_{L^2((0,T),H^*)}$. Thus also $\norm{u_1-u_2}_{L^\infty((0,T),H)}$ is bounded by the same quantity. Exploiting again~\eqref{eqn:inequality-stability-1} we conclude that actually $\norm{u_1-u_2}_{L^\infty((0,T),U)}$ is bounded by the same quantity. Eventually, exploiting the fact that $D\Psi_0$ is Locally Lipschitz and $L$ is Lipschitz, the same bounds can be bound for $\norm{\lambda_1-\lambda_2}_{L^\infty((0,T),\Lambda)}$ and $\norm{p_1-p_2}_{L^\infty((0,T),\Lambda^*)}$. From this the thesis follows.
 \end{proof}
+\begin{rmk}[Convergence of entire sequence of time-discrete approximations]
+In previous subsection, the proof of the existence of solutions ensure that for all subsequence of $\{z_N\}_N$ and $\{p_N\}_N$ there exist a further subsequence that converges (with the notion of convergence specified there) to a solution of the problem. However, since the solution of the problem is unique, as we have just shown, then actually the whole sequence converges to the unique solution. This could be interesting in view of numerical approximations.
+\end{rmk}
 
 \section{An existence result for rate-independent evolutionary equations with quadratic energy}
 \label{sec:evi}
@@ -4091,7 +4095,11 @@ box in upper branch represents the (generic) macroscopic response. In the lower 
 the spring represents the elastic response and the piston represents the plastic response. A more detailed discussion on the micro-mechanical interpretation is in Section~\ref{sec:micro-mechanical}.}
 \label{fig:rheological-new}
 \end{figure}
-The fourth integral describe the response of the damage variable, in particular $\tau\colon\Omega\to\mathbb{R}$ is the damage microforce and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage microstress. The external generalized force is assumed to be given by
+The fourth integral describe the response of the damage variable, in particular $\tau\colon\Omega\to\mathbb{R}$ is the damage microforce and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage microstress.
+\begin{rmk}[On second-gradient mechanical models]
+The presence of $\grad^2\tilde v$ in the expression $\dual{\mathcal{I},\tilde v}$ classifies the model that we are developing as a second-gradient mechanical model. The features of these models is that adjacent parts of the body can exchange torques distributed along the contact surface, as we will show in Subsection~\ref{subsec:torques}. Models where distributed contact torques are considered has been introduced in the sixties by Toupin~\cite{toupin1962elastic} and Mindlin~\cite{mindlin1964microstructure} and has been formulated in the framework of the principle of virtual powers as second-gradient models in the seventies by Germain~\cite{germain}.
+\end{rmk}
+The external generalized force is assumed to be given by
 \[
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde vdx,
 \]
@@ -4487,6 +4495,115 @@ This concludes the proof.
 That $\mathcal{D}$ belongs to $\mathscr{L}(H,H^*)$ is trivial and the coercivity follows immediately from the Korn inequality. To complete the check of the hypotheses needed to apply the theorem of Section~\ref{sec:existence-theorem-abstract-constrained} we are left with the check of condition~\eqref{eqn:initial-stability}. It is enough to notice that $0=\mathcal{L}(0)$, $p_0=D_\lambda\Psi_0(0)=0$ and $D_u\Psi_0(0)=0$.
 
 Now that we have completed the check of all the hypotheses, Theorem~\ref{thm:existence-pressure-small} follows.
+
+\section{Numerical approximation}
+
+This section is devoted to the development of a numerical scheme to approximate the solutions to the model that we have introduced and analyzed in the previous sections.
+
+\subsection{Contact torques as Lagrange multipliers}
+\label{subsec:torques}
+
+Before starting to develop the numerical scheme, we show that the fact that the present model is a second-gradient model, implies that adjacent portions of the body can exchanges torques distributed along their contact surface. This can be seen by relaxing the constraint of continuity of the normal derivative of $u$ across an hypersurface embedded in $\Sigma$ and imposing it afterwards with the method of Lagrange multipliers. The associated Lagrange multiplier is indeed interpreted as the torque exchanged by the two sides of the body across $\Sigma$.
+
+The content of this subsection, in addition to having an intrinsic interest since it clarifies the mechanical meaning of second gradient theories, will be particularly interesting for the development of the numerical scheme starting from the subsequent subsection. It will allow us to not have to use complex finite elements with global $C^1$ regularity. The consideration we are about to make will in fact suggest a way to neglect this regularity constraint at the level of definition of the space of configurations, and to reintroduce it in a weak sense subsequently through the method of Lagrange multipliers.
+
+We have seen in Section~\ref{sec:existence-small} that a generic configuration $z\in Z$ of the system has $u\in H^2(\Omega,\mathbb{R}^d)$. Now we consider a piecewise oriented smooth hypersurface $\Sigma\subset\Omega$ with unit outer normal vector $n$ defined almost everywhere on $\Sigma$. Then we define a larger space of configurations $Z_\Sigma=Y_\Sigma\times\Lambda$ with
+\[
+Y_\Sigma=\{(u,\pi,\alpha)\;|\;\text{$u\in H^1(\Omega,\mathbb{R}^d)\cap H^2(\Omega\setminus\Sigma,\mathbb{R}^d)$, $\pi\in H^1(\Omega,\text{DevSym})$ and $\alpha\in L^2(\Omega)$}\}.
+\]
+We denote with $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]$ the jump of $\dind{u}{n}$ across $\Sigma$, that is the difference between its trace between the positive and negative sides of $\Sigma$. The space $Z$ is the space of the elements of $Z_\Sigma$ satisfying the additional constraint that $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ on $\Sigma$. This is proved in the following lemma.
+\begin{lemma}
+An $u\in H^1(\Omega)\cap H^2(\Omega\setminus\Sigma)$ belongs to $H^2(\Omega)$ if and only if $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ on $\Sigma$ in the sense of the trace.
+\end{lemma}
+\begin{proof}[Sketch of the proof]
+If $u\in H^2(\Omega)$ then $\grad u\in H^1(\Omega,\mathbb{R}^d)$. Then the trace of $\grad u$ on $\Sigma$ is well defined and belongs to $H^{1/2}(\Sigma,\mathbb{R}^d)$. In particular $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ on $\Sigma$.
+
+Conversely assume that $u\in H^1(\Omega)\cap H^2(\Omega\setminus\Sigma)$ and that $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ on $\Sigma$. This implies that $\grad^2 u\in L^2(\Omega\setminus\Sigma,\text{Lin})$ and that
+\[
+\int_{\Omega\setminus\Sigma} u_{,i}\phi_{i,j}dx=-\int_{\Omega\setminus\Sigma} u_{,ij}\phi_idx\quad\text{for all $\phi\in C^\infty_c(\Omega\setminus\Sigma,\mathbb{R})$}.
+\]
+Notice that $\grad^2 u$ can be trivially extended to a function in $L^2(\Omega,\text{Lin})$. To prove that $u\in H^2(\Omega)$ we have to prove that
+\[
+\int_{\Omega} u_{,i}\phi_{i,j}dx=-\int_{\Omega} u_{,ij}\phi_{i}dx\quad\text{for all $\phi\in C^\infty_c(\Omega,\mathbb{R}^d)$}.
+\]
+To this aim consider $\phi\in C^\infty_c(\Omega,\mathbb{R}^d)$ such that $K=\supp\phi$ has a nontrivial intersection with $\Sigma$. Let $K^+$ and $K^-$ the closed subsets of $K$ that stays from the positive and negative sides of $\Sigma$ respectively. Then by the Green formula for Sobolev functions
+\[
+\begin{split}
+\int_{\Omega} u_{,i}\phi_{i,j}dx&=\int_{K^+} u_{,i}\phi_{i,j}dx+\int_{K^-} u_{,i}\phi_{i,j}dx=\\
+&=-\int_{\Omega} u_{,ij}\phi_{i}dx-\int_\Sigma[\!\!\,[u_{,i}]\,\!\!]\phi_{i}n_jdx.
+\end{split}
+\]
+Now we can spit $[\!\!\,[\grad u]\,\!\!]=[\!\!\,[\grad_\Sigma u]\,\!\!]+\big[\!\!\big[\dind{u}{n}\big]\!\!\big]n=[\!\!\,[\grad_\Sigma u]\,\!\!]$, where $\grad_\Sigma$ denotes the tangential gradient. If we prove that $[\!\!\,[\grad_\Sigma u]\,\!\!]=0$ we have done. We prove this when $u$ is smooth in $\Omega\setminus\Sigma$ up to the internal and external boundaries (the general result follows for density). In this case the fact that $u\in H^1(\Omega)$ implies that $[\![u]\!]=0$ in $\Sigma$. Then $[\!\!\,[\grad_\Sigma u]\,\!\!]=0$ follows trivially.
+\end{proof}
+
+Now we consider the original problem formulated in the space $Z_\Sigma$, with the constrain $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ imposed with the method of Lagrange multipliers. So we add a Lagrange multiplier $\mathcal{M}\in -N_Z(z)\subset Z^*_\Sigma$. It can be parametrized in terms of a field $m\in M_\Sigma:=H^{-1/2}(\Sigma,\mathbb{R}^d)$ as
+\[
+\dual{\mathcal{M},w}=\left\langle m,\Big[\!\!\Big[\dind{v}{n}\Big]\!\!\Big]\right\rangle.
+\]
+This formula shows that $\mathcal{M}$ acts as an internal torque that opposes to differences of the normal derivatives of $u$ across $\Sigma$. Now the problem can be formulated as follows.
+\begin{prb}
+\label{prb:reformulated}
+Find $z=(y,\lambda)$ with $y\in AC([0,T],Y_\Sigma)$, $\lambda\in C^0([0,T],\Lambda)$, $p\in C^0([0,T],\Lambda^*)$ and $m\colon[0,T]\to M_\Sigma$ such that $z(0)=z_0=0$ and
+\begin{align}
+D\Psi_0(z(t))+\mathcal{A}y(t)+\partial_h\Phi(p(t),\dot y(t))+\mathcal{D}\dot y(t)-\mathcal{P}(t)-\mathcal{M}(t)&\ni\mathcal{X}(t) \\
+\lambda(t)&=\mathcal{L}(y(t)) \\
+\left\langle l,\Big[\!\!\Big[\dind{u}{n}(t)\Big]\!\!\Big]\right\rangle&=0
+\end{align}
+for all $l\in M_\Sigma$ and a.e.\ $t\in(0,T)$. We recall that $\dual{\mathcal{P}(t),w}=\dual{\mathcal{L}(y(t))^*p(t),h}-\dual{p(t),\mu}$ and $\dual{\mathcal{M}(t),w}=\left\langle m(t),\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle.$
+\end{prb}
+
+\subsection{Formulation of the numerical scheme}
+
+Consider a family of regular triangulations $\{\mathscr{K}_\mathscr{l}\}_{\mathscr{l}>0}$ of $\Omega$. The generic $d$-simplex $K\in\mathscr{K}_\mathscr{l}$ is supposed to satisfy $\diam K\le\mathscr{l}$. We consider the finite element spaces
+\begin{align*}
+Y_\mathscr{l}&=\Biggl\{y=(u,\pi,\alpha)\;\Biggm|\;
+\begin{aligned}
+& \text{$u\in H^1(\Omega,\mathbb{R}^d)$, $\pi\in H^1(\Omega,\text{DevSym})$, $\alpha\in H^1(\Omega)$} \\
+& \text{$u|_K\in\mathscr{P}_2(\mathbb{R}^d)$, $\pi|_K\in\mathscr{P}_1(\text{DevSym})$, $\alpha|_K\in\mathscr{P}_1$ for all $K\in\mathscr{K}_\mathscr{l}$}
+\end{aligned}\Biggr\} \\
+\Lambda_\mathscr{l}&=\left\{\lambda\;|\;\text{$\lambda\in L^2(\Omega)$, $\lambda|_K\in\mathscr{P}_0$ for all $K\in\mathscr{K}_\mathscr{l}$}\right\} \\
+P_\mathscr{l}&=\left\{p\;|\;\text{$p\in L^2(\Omega)$, $p|_K\in\mathscr{P}_0$ for all $K\in\mathscr{K}_\mathscr{l}$}\right\} \\
+M_\mathscr{l}&=\left\{m\;|\;\text{$m\in L^2(\Sigma_\mathscr{l},\mathbb{R}^d)$, $m|_L\in\mathscr{P}_0(\mathbb{R}^d)$ for all $L\in\mathscr{S}_\mathscr{l}$}\right\}
+\end{align*}
+which are the discrete approximations of the analogous spaces introduced previously in the continuum setting. Here $\mathscr{P}_d(S)$ denotes the space of functions taking values on the tensor space $S$ whose components are polynomials of degree $d$ (when $S$ is omitted it is implicit that the functions are scalars). Moreover $\mathscr{S}_\mathscr{l}$ is the skeleton of the triangulation, that is the set of all internal $d-1$-dimensional faces of the $d$-simplexes belonging to $\mathscr{K}_\mathscr{l}$, and $\Sigma_\mathscr{l}=\bigcup_{L\in\mathscr{S}_\mathscr{l}}L$.
+
+%For each field $f\in\{z,y,u,\pi,\alpha,\lambda,p,m\}$ let $X^f_\mathscr{l}$ its finite element space. We know that there exists  $M^f_\mathscr{l}\in\mathscr{L}(\mathbb{R}^{n^f_\mathscr{l}},X^f_\mathscr{l})$ such that $f=M^f_\mathscr{l}\mathsf{f}$. Here $n_\mathscr{l}^f=\dim X^f_\mathscr{l}$ and $\mathsf{f}\in\mathbb{R}^{n_\mathscr{l}^f}$ is the vector of the components of $f$ with respect to the basis described by $M^f_\mathscr{l}$. Notice that $M^f_\mathscr{l}$ can be seen as a function from the domain where $f$ is defined to $\mathscr{L}(\mathbb{R}^{n_\mathscr{l}^f},S^f)$, where $S^f$ is the tensor space where the values of $f$ stay.
+
+Now we formulate the time-continuous finite element approximation of Problem~\ref{prb:reformulated}. This formulation assumes that $\Phi$ is G\^ateaux differentiable: particular instances will be consider in the following subsections.
+\begin{prb}[Time-continuous finite element approximation]
+\label{prb:fem}
+Find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in AC([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
+\begin{align}
+\dual{D\Psi_0(z_\mathscr{l}(t))+\mathcal{A}y_\mathscr{l}(t)+D_h\Phi(p_\mathscr{l}(t),\dot y_\mathscr{l}(t))+\mathcal{D}\dot y_\mathscr{l}(t)-\mathcal{P}_\mathscr{l}(t)-\mathcal{M}_\mathscr{l}(t)-\mathcal{X}(t),w}&=0 \\
+\dual{q,\lambda_\mathscr{l}(t)-\mathcal{L}(y_\mathscr{l}(t))}&=0 \\
+\left\langle l,\Big[\!\!\Big[\dind{u_\mathscr{l}}{n}(t)\Big]\!\!\Big]\right\rangle&=0
+\end{align}
+for all $w\in Z_\mathscr{l}$, $q\in P_\mathscr{l}$, $l\in M_\mathscr{l}$ and a.e.\ $t\in(0,T)$. Here $\big[\!\!\big[\dind{u_\mathscr{l}}{n}(t)\big]\!\!\big]$ denotes the difference of the trace of $\dind{u_\mathscr{l}}{n}(t)$ across the internal faces of the simplexes of the triangulation according to an arbitrary (but fixed) orientation. Moreover $\dual{\mathcal{P}_\mathscr{l}(t),w}=\dual{\mathcal{L}(y_\mathscr{l}(t))^*p_\mathscr{l}(t),h}-\dual{p_\mathscr{l}(t),\mu}$ and $\dual{\mathcal{M}_\mathscr{l}(t),w}=\left\langle m_\mathscr{l}(t),\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle$.
+\end{prb}
+The time discretization is performed with an implicit scheme, as we did in the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}. For all $\tau>0$ consider a partition of $[0,T]$ of the form $0=t^0_\tau<\dots<t^{N_\tau}_\tau=T$ with $t_\tau^k-t_\tau^{k-1}\le\tau$ for $k\in\{1,\dots,N_\tau\}$.
+\begin{prb}[Time-discrete finite element approximation]
+Find $\{z_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$, $\{p_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$ and $\{m_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$ such that $z_{\mathscr{l}\tau}^0=0$ and
+\begin{align}
+\dual{D\Psi_0(z_{\mathscr{l}\tau}^k)+\mathcal{A}y_{\mathscr{l}\tau}^k+D_h\Phi\left(p_{\mathscr{l}\tau}^k,\frac{y_{\mathscr{l}\tau}^k-y_{\mathscr{l}\tau}^{k-1}}{t_\tau^k-t_\tau^{k-1}}\right)+\mathcal{D}\frac{y_{\mathscr{l}\tau}^k-y_{\mathscr{l}\tau}^{k-1}}{t_\tau^k-t_\tau^{k-1}}-\mathcal{P}_{\mathscr{l}\tau}^k-\mathcal{M}_{\mathscr{l}\tau}^k-\mathcal{X}(t_\tau^k),w}&=0 \\
+\dual{q,\lambda_{\mathscr{l}\tau}^k-\mathcal{L}(y_{\mathscr{l}\tau}^k)}&=0 \\
+\left\langle l,\Big[\!\!\Big[\dind{u_{\mathscr{l}\tau}^k}{n}\Big]\!\!\Big]\right\rangle&=0
+\end{align}
+for all $w\in Z_\mathscr{l}$, $q\in P_\mathscr{l}$, $l\in M_\mathscr{l}$ and $k\in{1,\dots,N_\tau}$. Moreover $\dual{\mathcal{P}_{\mathscr{l}\tau}^k,w}=\dual{\mathcal{L}(y_{\mathscr{l}\tau}^k)^*p_{\mathscr{l}\tau}^k,h}-\dual{p_{\mathscr{l}\tau}^k,\mu}$ and $\dual{\mathcal{M}_{\mathscr{l}\tau}^k,w}=\left\langle m_{\mathscr{l}\tau}^k,\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle$.
+\end{prb}
+This problem reduces to solve a series of nonlinear algebraic problem. This can be done with a standard Newton method.
+\begin{rmk}[On the implementation of the Newton method ]
+To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
+\end{rmk}
+\begin{rmk}[On the choice of the time step size]
+The choice of the time step can be performed as follows. An initial step sized is decided. Then after each step the step size for the next iteration is chosen as
+\[
+\tau_\text{next}=\tau_\text{current}\sqrt{\frac{\text{tol}}{\text{err}}}.
+\]
+Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
+\end{rmk}
+\begin{rmk}[On the convergence of the numerical scheme]
+We did not studied the details of the convergence of the numerical scheme. We know from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the time discretization provides convergent solutions. It would be necessary to study how the finite dimensional approximation of the function spaces affects the convergence of the scheme. We notice however that, since the proof of the Minty--Browder theorem provided in Section~\ref{subsec:minty-browder} is based on a Galerkin approximation, it expected that the finite element approximation provides convergent solutions. We also recall from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the existence of the solution at each time step is ensured only if a sufficiently time step is chosen. This is likely to remain true in the finite element setting.
+\end{rmk}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 
@@ -5065,6 +5182,7 @@ Up to choose a smaller $T$ we can assume that $TL<1$. In this case $T$ is a stri
 \end{proof}
 
 \subsection{Browder--Minty theorem}
+\label{subsec:minty-browder}
 
 The results of this section are taken from~\cite{intro-pde} and~\cite{roubicek-pde}.
 

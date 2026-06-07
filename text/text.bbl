@@ -1041,6 +1041,48 @@
       \field{title}{Tractions, Balances, and Boundary Conditions for Nonsimple Materials with Application to Liquid Flow at Small-Length Scales}
       \field{year}{2006}
     \endentry
+    \entry{hairer1993solving}{book}{}{}
+      \name{author}{3}{}{%
+        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+           family={Hairer},
+           familyi={H\bibinitperiod},
+           given={Ernst},
+           giveni={E\bibinitperiod}}}%
+        {{hash=e2a327e4bae8c663573f99fda9abbf8e}{%
+           family={N{ø}rsett},
+           familyi={N\bibinitperiod},
+           given={Syvert\bibnamedelima P.},
+           giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=6715424cc951a02c09b3082a661642ab}{%
+           family={Wanner},
+           familyi={W\bibinitperiod},
+           given={Gerhard},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Berlin Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer-Verlag}%
+      }
+      \strng{namehash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{fullhash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{fullhashraw}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{bibnamehash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{authorbibnamehash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{authornamehash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{authorfullhash}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{authorfullhashraw}{421fb1b1a33804a98ee63d6fca553680}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{Second Revised Edition}
+      \field{series}{Springer Series in Computational Mathematics}
+      \field{title}{Solving Ordinary Differential Equations I: Nonstiff Problems}
+      \field{volume}{8}
+      \field{year}{1993}
+    \endentry
     \entry{han-reddy}{book}{}{}
       \name{author}{2}{}{%
         {{hash=f56ffa8cb519b2d44ca3800350a0e4c3}{%
@@ -1537,6 +1579,35 @@
       \field{year}{1999}
       \field{pages}{117\bibrangedash 129}
       \range{pages}{13}
+    \endentry
+    \entry{mindlin1964microstructure}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=5d1d065ce925c326532034101e0df546}{%
+           family={Mindlin},
+           familyi={M\bibinitperiod},
+           given={Raymond\bibnamedelima D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{5d1d065ce925c326532034101e0df546}
+      \strng{fullhash}{5d1d065ce925c326532034101e0df546}
+      \strng{fullhashraw}{5d1d065ce925c326532034101e0df546}
+      \strng{bibnamehash}{5d1d065ce925c326532034101e0df546}
+      \strng{authorbibnamehash}{5d1d065ce925c326532034101e0df546}
+      \strng{authornamehash}{5d1d065ce925c326532034101e0df546}
+      \strng{authorfullhash}{5d1d065ce925c326532034101e0df546}
+      \strng{authorfullhashraw}{5d1d065ce925c326532034101e0df546}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archive for Rational Mechanics and Analysis}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Micro-structure in linear elasticity}
+      \field{volume}{16}
+      \field{year}{1964}
+      \field{pages}{51\bibrangedash 78}
+      \range{pages}{28}
     \endentry
     \entry{vonMises1928}{article}{}{}
       \name{author}{1}{}{%
@@ -2067,6 +2138,35 @@
       \verb{doi}
       \verb 10.1051/cocv/2024017
       \endverb
+    \endentry
+    \entry{toupin1962elastic}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=fd1dcb1ba674039feb2ed3a3d5140453}{%
+           family={Toupin},
+           familyi={T\bibinitperiod},
+           given={Richard\bibnamedelima A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{fullhash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{fullhashraw}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{bibnamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{authorbibnamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{authornamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{authorfullhash}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{authorfullhashraw}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archive for Rational Mechanics and Analysis}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{Elastic materials with couple-stresses}
+      \field{volume}{11}
+      \field{year}{1962}
+      \field{pages}{385\bibrangedash 414}
+      \range{pages}{30}
     \endentry
     \entry{Tresca1872}{article}{}{}
       \name{author}{1}{}{%
