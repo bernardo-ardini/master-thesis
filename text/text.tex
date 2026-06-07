@@ -4321,7 +4321,7 @@ H=\{y=(u,\pi,\alpha)\;|\;\text{$u\in H^1_0(\Omega,\mathbb{R}^d)$, $\pi\in L^2(\O
 \Lambda=\Lambda^*=L^2(\Omega)
 \end{gather}
 and $Z=Y\times\Lambda$. Here we have assumed for simplicity that homogeneous boundary conditions on $u$ are imposed; the general case is a trivial extension, but we do not treat it to avoid an excessively involved notation.
-\begin{rmk}(On notation)
+\begin{rmk}[On notation]
 Notice that the function spaces and the variables defined here directly correspond with the abstract counterparts considered in Section~\ref{sec:existence-theorem-abstract-constrained} with the only difference that $U$ is replaced by $Y$, $u$ is replaced by $y$ and $v$ by $h$.
 \end{rmk}
 Taking into account the definitions made in previous sections, we consider $\mathcal{L}\colon H\to\Lambda$, $\Psi\colon Z\to\mathbb{R}$, $\Psi_0\colon H\to\mathbb{R}$, $\mathcal{A}\in\mathscr{L}(Y,Y^*)$, $\Phi,\Phi_0\colon\Lambda^*\times\Lambda\to[0,\infty]$ and $\mathcal{D}\in\mathscr{L}(H,H^*)$. We also consider $f\in H^1((0,T),H^{-1}(\Omega,\mathbb{R}^3))$ with $f(0)=0$ and define $\mathcal{X}\in H^1((0,T),H^*)$ with
@@ -4590,7 +4590,7 @@ Find $\{z_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$, $\{p_{\mathscr{l}\tau}^k\}_{k=0
 \end{align}
 for all $w\in Z_\mathscr{l}$, $q\in P_\mathscr{l}$, $l\in M_\mathscr{l}$ and $k\in{1,\dots,N_\tau}$. Moreover $\dual{\mathcal{P}_{\mathscr{l}\tau}^k,w}=\dual{\mathcal{L}(y_{\mathscr{l}\tau}^k)^*p_{\mathscr{l}\tau}^k,h}-\dual{p_{\mathscr{l}\tau}^k,\mu}$ and $\dual{\mathcal{M}_{\mathscr{l}\tau}^k,w}=\left\langle m_{\mathscr{l}\tau}^k,\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle$.
 \end{prb}
-This problem reduces to solve a series of nonlinear algebraic problem. This can be done with a standard Newton method.
+This problem reduces to solve a series of nonlinear algebraic problems. This can be done with a standard Newton method.
 \begin{rmk}[On the implementation of the Newton method ]
 To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
 \end{rmk}
@@ -4602,8 +4602,12 @@ The choice of the time step can be performed as follows. An initial step sized i
 Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
 \end{rmk}
 \begin{rmk}[On the convergence of the numerical scheme]
-We did not studied the details of the convergence of the numerical scheme. We know from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the time discretization provides convergent solutions. It would be necessary to study how the finite dimensional approximation of the function spaces affects the convergence of the scheme. We notice however that, since the proof of the Minty--Browder theorem provided in Section~\ref{subsec:minty-browder} is based on a Galerkin approximation, it expected that the finite element approximation provides convergent solutions. We also recall from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the existence of the solution at each time step is ensured only if a sufficiently time step is chosen. This is likely to remain true in the finite element setting.
+We did not studied the details of the convergence of the numerical scheme as $\mathscr{l}\to0$ and $\tau\to0$. We know from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the time discretization provides convergent solutions. It would be necessary to study how the finite dimensional approximation of the function spaces affects the convergence of the scheme. We notice however that, since the proof of the Minty--Browder theorem provided in Section~\ref{subsec:minty-browder} is based on a Galerkin approximation, it expected that the finite element approximation provides convergent solutions. We also recall from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the existence of the solution at each time step is ensured only if a sufficiently time step is chosen. This is likely to remain true in the finite element setting.
 \end{rmk}
+
+\subsection{Validation of the numerical scheme}
+
+\subsection{Some examples}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 

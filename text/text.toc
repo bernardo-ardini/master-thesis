@@ -104,6 +104,8 @@
 \contentsline {section}{\tocsection {}{7.6}{Numerical approximation}}{87}{section.7.6}%
 \contentsline {subsection}{\tocsubsection {}{7.6.1}{Contact torques as Lagrange multipliers}}{87}{subsection.7.6.1}%
 \contentsline {subsection}{\tocsubsection {}{7.6.2}{Formulation of the numerical scheme}}{88}{subsection.7.6.2}%
+\contentsline {subsection}{\tocsubsection {}{7.6.3}{Validation of the numerical scheme}}{89}{subsection.7.6.3}%
+\contentsline {subsection}{\tocsubsection {}{7.6.4}{Some examples}}{89}{subsection.7.6.4}%
 \contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{90}{chapter.8}%
 \contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{90}{section.8.1}%
 \contentsline {part}{\noindent Collection of useful results}{92}{part*.32}%
