@@ -147,9 +147,65 @@ The second gradient plasticity model we focus on regards plastic materials whose
 
 \chapter*{Premise}
 
-\section*{Organization of the material}
+\section*{Organization ans summary of the material}
+
+The thesis is introduced by two preliminary chapters that serve as a common basis upon which the two main parts of the thesis are founded, each dedicated to one of the gradient elastoplasticity models that we have investigated. Chapter~\ref{chap:modeling} contains only known facts that we have reorganized in a unitary fashion. In particular we present a general framework to systematically develop mechanical models based on the principle of virtual powers and we show how it is applied to formulate the most common gradient plasticity models, both at small and large deformations. In Chapter~\ref{chap:solution-concepts} we introduce some general existence theorems for the evolutionary equations that arise from the class mechanical models described in the previous chapter. These are mostly known results except to that of Section~\ref{sec:existence-theorem-abstract-constrained} where we have developed an existence theory for constrained doubly nonlinear equations where the dissipation potential can depend on the Lagrange multiplier. This result will be used in the second part of the thesis.
+
+Part~\ref{part:his-model} is devoted to the development and analysis of a one-dimensional model of a metallic cylindrical bar. In Chapter~\ref{chap:intro-neck} we provide an introduction where we motivate the interest in studying such a model in view of a qualitative study of the necking phenomenon in the tensile test. In Chapter~\ref{chap:small-neck} we develop the one-dimensional model of the bar in the regime of small deformations and, after having discussed the existence of solutions by resorting to the theory of evolutionary equations of Han and Reddy~\cite{han-reddy}, we show that it is not able to predict necking. In Chapter~\ref{chap:large-neck} we extend the model to the regime of large deformations, we develop and existence theory using the notion of energetic solutions of Mielke and Theil~\cite{rate-independent-systems,francfort}, and then we provide a (not conclusive) qualitative analysis of whether the model is able to describe the necking phenomenon. In particular we will find a lower bound for the elongation at which necking possibly occurs, but we will not be able to show in a complete and rigorous way that necking must indeed occur.
+
+In Part~\ref{part:my-model} we develop a model to describe pressure sensitive and dilatant plastic materials. In Chapter~\ref{chap:intro-pressure-sensitive} we review the existing models, that are the models commonly employed in geothecnical engineering whuch are based on the failure criteria such that of Tresca--Coulomb and Drucker--Pragaer and employs non-associated flow rules to avoid the overestimation of the dilatancy. We also report a known existence result. In Chapter~\ref{chap:pressure-sensitive-small} we develop an alternative model, valid in the regime of small deformations. The aim of this model is to avoid the need of considering non-associated flow rules and providing a framework for describing pressure sensitive and dilatant plastic materials that is compatible with the general view of mechanical systems discussed in Chapter~\ref{chap:modeling}. In addition to avoiding the mathematical difficulties entailed by non-associated plasticity, this model provides a more explicit representation of geomaterial mechanics. Indeed, the underlying idea is that a kinematic constraint must exist between the volumetric and deviatoric parts of the plastic strain. This arises from the fact that deviatoric sliding among the constituent grains is possible only if they pass from a higher to a lower packing density configuration, thus opening microcracks within the binding matrix. The Lagrange multiplier associated with this constraint is interpreted as the contact pressure between the grains, and the constitutive relations for the plastic force are chosen to be dependent on it. This approach describes the frictional mechanism between grains in a manner that is faithful to Coulomb's original intuition~\cite{Coulomb1776}.
 
 \section*{Remark on notation and recall of basic notions}
+
+Here we set some notation that will adopted throughout the thesis.
+
+\subsection*{General mathematical notation}
+
+The set of natural numbers excluding zero is denoted as $\mathbb{N}$ while $\mathbb{N}_0=\mathbb{N}\cup\{0\}$. The symbol $\subset$ never excludes equality. A set valued map from a set $X$ to another set $Y$ is declared as $f\colon X\rightsquigarrow Y$.
+
+All the topological notions used in this thesis must be intended in their sequential definition.
+
+\subsection*{Notation of tensor algebra}
+
+In the Euclidean space $\mathbb{R}^d$ we consider the spaces of tensors defined in Table~\ref{tab:tensors}.
+\begin{table}
+\caption{Definition of some tensor spaces.}
+\label{tab:tensors}
+\begin{tabular}{cc}
+\toprule
+$\text{Vec}=\mathbb{R^d}$ & $d$-dimensional vectors \\
+$\text{Lin}=\mathbb{R}^{d\times d}$ & $d\times d$ matrices \\
+$\text{Lin}^+$ & $d\times d$ matrices with positive determinant \\
+$\text{Sym}$ & $d\times d$ symmetric matrices \\
+$\text{Dev}$ & $d\times d$ deviatoric matrices \\
+$\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
+$\text{DevPla}$ & defined as $\text{DevSym}\times(\text{DevSym}\otimes\mathbb{R})$ \\
+$\text{Lin}^1$ & $d\times d$ matrices with unit determinant \\
+\bottomrule
+\end{tabular}
+\end{table}
+In that table the symbol $\otimes$ denotes the tensor product between tensors and tensor spaces. For example it also holds that $\mathbb{R}^d\otimes\dots\otimes\mathbb{R}^d:=\mathbb{R}^{d\times\dots\times d}$ and in particular $\text{Lin}=\mathbb{R}^d\otimes\mathbb{R}^d$ and $\mathbb{R}^{d\times d\times d}=\text{Lin}\otimes\mathbb{R}$. Given $v,w\in\mathbb{R}^d$ their tensor product $v\otimes w\in\text{Lin}$ is defined by $(v\otimes w)_{ij}=v_iw_j$. Similarly, given $A\in\text{Lin}$ and $v\in\mathbb{R}^d$ the third order tensor $A\otimes v\in\mathbb{R}^{d\times d\times d}$ is defined by $(A\otimes v)_{ijk}=A_{ij}v_k$.
+
+The tensor spaces are endowed with the inner product obtained by the contraction of all indices. For example if $v,w\in\mathbb{R}^d$, $A,B\in\mathbb{R}^{d\times d}$ and $T,S\in\mathbb{R}^{d\times d\times d}$ then the scalar products between them are defined as
+\[
+v\cdot w=v_iw_i,\quad A:B=A_{ij}B_{ij}\quad\text{and}\quad T\threedots S=T_{ijk}S_{ijk}.
+\]
+We will use Eisenstein summation convection throughout all the thesis. Wi will also use the Frobisher norm defined by
+\[
+|v|=(v\cdot v)^{1/2},\quad|A|=(A:A)^{1/2}\quad\text{and}\quad|T|=(T\threedots T)^{1/2}.
+\]
+
+For each $A\in\text{Lin}$ we denote with $\sym A\in\text{Sym}$ and $\ske A\in\text{Sym}$ is symmetric and skew-symmetric parts. The deviatoric part of $A$ is $\dev A=A-\frac{1}{d}\tr A\in\text{Dev}$.
+
+\subsection*{Notation for functional analysis}
+
+Given a Banach space $X$, endowed with a norm $\norm{\cdot}_X$, we denote with $X^*$ its dual endowed with the usual dual norm $\norm{\cdot}_{X^*}$. The actions of an element $\xi\in X^*$ on some $x\in X$ will be denoted with $\dual{\xi,x}$. The space $X$ is endowed with the strong and weak compactness convergence and $X^*$ with the strong and weak-star convergence. We recall that if $X$ is reflexive then $X^*$ is weakly-star compactly embedded in itself, while if $X$ is also separable $X$ is weakly compactly embedded in itself.
+
+Given two Banach spaces $X$ and $Y$ the Banach space of linear and continuous maps from $X$ to $Y$ is denoted as $\mathscr{L}(X,Y)$ and is endowed with the usual operator norm $\norm{\cdot}_{\mathscr{L}(X,Y)}$. The action of some $L\in\mathscr{L}(X,Y)$ on any $x$ in $X$ is denoted as $Lx\in Y$. Moreover the adjoint operator $L^*\in\mathscr{L}(Y^*,X^*)$ is defined by $\dual{L^*\zeta,x}=\dual{\zeta,Lx}$ for all $\zeta\in Y^*$ and $x\in X$. We recall that $\norm{L^*}_{\mathscr{L}(Y^*,X^*)}=\norm{L}_{\mathscr{L}(X,Y)}$.
+
+ Given an open subset $U\subset X$ and a G\^ateaux differentiable map $F\colon U\to Y$, its G\^ateaux differential is denoted as $DF\colon U\to\mathscr{L}(X,Y)$. The set of continuous maps from $X$ to $Y$ is denoted as $C^0(X,Y)$ while the set of Frèchet differentiable maps with continuous Frèchet differential as $C^1(X,Y)$ and similarly for maps with higher Frèchet regularity.
+
+Given an $\Omega\subset\mathbb{R}^d$ open the space of $p$-integrable function is denoted as $L^p(\Omega)$ for all $p\in[1,\infty]$. Its norm is simply denoted as $\norm{\cdot}_{L^p(\Omega)}$ or more simply as $\norm{\cdot}_p$ or $\norm{}_{0,p}$. The H\"older conjugate exponent $p^*\in[0,\infty]$ is defined by $\frac{1}{p}+\frac{1}{p^*}=1$ and we recall that $L^{p^*}(\Omega)=L^p(\Omega)^*$. The set of Sobolev functions of exponent $p$ and with $m\in\mathbb{N}_0$ derivatives is denoted by $W^{m,p}(\Omega)$ and when $p=2$ by $H^m(\Omega)$. The usual norm is denoted as $\norm{\cdot}_{W^{1,p}(\Omega)}$ or simply $\norm{\cdot}_{m,p}$. The closure of the $C^\infty_c(\Omega)$ functions on the Sobolev spaces are denoted as $W^{m,p}_0(\Omega)$ and $H^m_0(\Omega)$ and its dual as $W^{-m,p^*}(\Omega)$ and $H^{-m}(\Omega)$. We recall that each $W^{m,p}(\Omega)$ is reflexive and separable and when $p=\infty$ then $W^{m,\infty}(\Omega)$ is the dual space of a reflexive Banach space. This allows to apply the weak and weak-star compactness embeddings recalled above. Recall also that by Rellich--Kondrachov theorem, when $\Omega$ is bounded and Lipschitz and $p\in[1,d)$, then $W^{1,p}(\Omega)$ is embedded in $L^q(\Omega)$ for all $q\in[1,p^\#]$ where $p^\#$ is the Sobolev conjugate exponent defined by $\frac{1}{p^\#}=\frac{1}{p}-\frac{1}{d}$ and the embedding is compact when $q\in[1,p^\#)$. When $p\in(d,\infty]$ then, by Morrey's theorem, $W^{1,p}(\Omega)$ is compactly embedded in $C^{0,\alpha}(\bar\Omega)$ with $\alpha=1-\frac{d}{p}$. In the case $p=d$ we know that $W^{1,d}(\Omega)$ is compactly embedded in $L^q(\Omega)$ for all $q\in[1,\infty)$. We recall also Poincaré inequality that asserts that, when $\Omega$ is bounded, in the space of functions in $W^{1,p}(\Omega)$ that vanish on a portion of their domain, the norm $\norm{\cdot}_{1,p}$ is equivalent to $u\mapsto\norm{\grad u}_p$. A similar result is valid in the space $H^1(\Omega,\mathbb{R}^d)$: in this case Korn inequality ensures that the norm $\norm{\cdot}_{1,2}$ is equivalent to $u\mapsto\norm{Eu}_2$ where $Eu=\sym\grad u$ is the symmetric gradient of $u$.
 
 % modulus of continuity
 % frechet, gateaux, subdifferential
@@ -460,15 +516,15 @@ Consistently with that, for all $z,\tilde w\in Z$, we define $\tilde V_e=(\grad\
 Motivated by Remark~\ref{rmk:plasticity-simplified}, we decide that for $z=(\chi,F_p)\in Z$ with $\det F_p>0$, the internal and and external virtual power functionals are of the form
 \begin{equation}
 \label{eqn:ppv-large-plasticity}
-\dual{\mathcal{I},\tilde w}=\int_\Omega P_e:\tilde V_edx+\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx
+\dual{\mathcal{I},\tilde w}=\int_\Omega \Pi_e:\tilde V_edx+\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx
 \quad\text{and}\quad
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
 \end{equation}
-Here $P_e\colon\Omega\to\text{Lin}$ is the elastic first Piola stress, $T_p\colon\Omega\to\text{Lin}$ is the plastic microforce, $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the plastic microstress, $f\colon\Omega\to\mathbb{R}^d$ is the external volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the external surface force. The strong form of the equilibrium equation $\mathcal{I}=\mathcal{X}$ can be easily obtained using the Green lemma and the fundamental lemma of the calculus of variations; we find
+Here $\Pi_e\colon\Omega\to\text{Lin}$ is the elastic first Piola stress, $T_p\colon\Omega\to\text{Lin}$ is the plastic microforce, $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ is the plastic microstress, $f\colon\Omega\to\mathbb{R}^d$ is the external volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the external surface force. The strong form of the equilibrium equation $\mathcal{I}=\mathcal{X}$ can be easily obtained using the Green lemma and the fundamental lemma of the calculus of variations; we find
 \begin{gather*}
-\diver(P_eF_p^{-T})+f=0\quad\text{in $\Omega$} \\
-P_eF_p^{-T}n=h\quad\text{in $\partial\Omega$} \\
-F_e^TP_eF_p^{-T}-T_p+\diver K_p=0\quad\text{in $\Omega$} \\
+\diver(\Pi_eF_p^{-T})+f=0\quad\text{in $\Omega$} \\
+\Pi_eF_p^{-T}n=h\quad\text{in $\partial\Omega$} \\
+F_e^T\Pi_eF_p^{-T}-T_p+\diver K_p=0\quad\text{in $\Omega$} \\
 K_pn=0\quad\text{in $\partial\Omega$}.
 \end{gather*}
 This corresponds to the balance of macroscopic and microscopic forces.
@@ -479,7 +535,7 @@ The choice of the constitutive relations follows the same criteria used with the
 \]
 This gives the constitutive relations
 \[
-P_e\in\dind{W_e}{F_e}(F_e),\quad T_p\in\dind{W_p}{F_p}(F_p,\grad F_p)+\dind{R}{\dot F_p}(F_p,\dot F_p)\quad\text{and}\quad K_p\in\dind{W_p}{\grad F_p}(F_p,\grad F_p).
+\Pi_e\in\dind{W_e}{F_e}(F_e),\quad T_p\in\dind{W_p}{F_p}(F_p,\grad F_p)+\dind{R}{\dot F_p}(F_p,\dot F_p)\quad\text{and}\quad K_p\in\dind{W_p}{\grad F_p}(F_p,\grad F_p).
 \]
 The elastic free energy density $W_e\colon\text{Lin}\to\mathbb{R}\cup\{\infty\}$ is assumed to satisfy $W(F_e)=\infty$ if and only if $\det F_e\le0$ (in order to enforce the impenetrability constrain) and to be differentiable on its domain. The requirement that the energy is indifferent with respect to superimposed rigid motions impose $W_e$ to be of the form $W_e(F_e)=\hat{W}_e(F_e^TF_e)$ for some $W_e\colon\text{Sym}\to\mathbb{R}\cup\{\infty\}$. Similarly the plastic free energy density $W_p\colon\text{Lin}\times\left(\text{Lin}\otimes\mathbb{R}\right)\to\mathbb{R}\cup\{\infty\}$ is supposed to satisfy $W_p(F_p,\grad F_p)=\infty$ if $\det F_p\neq1$ so that the plastic incompressibility is implied. The analogue of the Von Mises constitutive relation (known as $J_2$ flow theory) is obtained choosing
 \begin{equation}
@@ -609,10 +665,10 @@ it follows that
 The fact that $f\in H^1((0,T),H^*)$ implies that $\tau_N\sum_{k=1}^n\left\lVert\frac{f_N^k-f_N^{k-1}}{\tau_N}\right\rVert_{H^*}^2$ is bounded uniformly in $N$ and $n$. Then the discrete Gronwall inequality (Proposition~\ref{prop:gronwall}) implies that $S_N^n$ is bounded uniformly in $N$ and $n$. This gives a uniform bound on $\norm{\dot{\hat z}_N}_{L^2((0,T),H)}$. Returning back to~\eqref{eqn:estimates-roubickeck}, it follows that also $\norm{z_N}_{W^{1,\infty}((0,T),Z)}$ is uniformly bounded. Thus, up to extracting a subsequence, it holds that $z_N\overset{*}{\rightharpoonup}z$ in $W^{1,\infty}((0,T),Z)$. Moreover Aubin--Lions--Simons lemma (Theorem~\ref{thm:aubin-lions}) implies that $z_N\to z$ in $C^0([0,T],H)$ and $\hat{z}_N\to\dot z$ in $C^0([0,T],H)$. A simple estimate also implies that $\dot z_N\to\dot z$ in $L^2((0,T),H)$. This allows to pass in the limit $N\to\infty$ in~\eqref{eqn:discrete-roubickeck} thus proving that $z$ is a solution to the continuous-in-time problem.
 \end{proof}
 
-\section{An existence theorem for constrained mechanical systems}
+\section{An existence theorem for constrained doubly nonlinear equations}
 \label{sec:existence-theorem-abstract-constrained}
 
-In this subsection we develop an existence theory for kinematically constrained mechanical systems. We will consider a specialized class of the constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. We will also prove the uniqueness and stability of solutions.
+In this subsection we develop an existence theory for constrained doubly nonlinear equations. We will consider a specialized form of the equations that arise from the class of constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. Besides the existence result we will also prove the uniqueness and stability of solutions.
 
 Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
@@ -4567,11 +4623,15 @@ Y_\mathscr{l}&=\Biggl\{y=(u,\pi,\alpha)\;\Biggm|\;
 P_\mathscr{l}&=\left\{p\;|\;\text{$p\in L^2(\Omega)$, $p|_K\in\mathscr{P}_0$ for all $K\in\mathscr{K}_\mathscr{l}$}\right\} \\
 M_\mathscr{l}&=\left\{m\;|\;\text{$m\in L^2(\Sigma_\mathscr{l},\mathbb{R}^d)$, $m|_L\in\mathscr{P}_0(\mathbb{R}^d)$ for all $L\in\mathscr{S}_\mathscr{l}$}\right\}
 \end{align*}
-which are the discrete approximations of the analogous spaces introduced previously in the continuum setting. Here $\mathscr{P}_d(S)$ denotes the space of functions taking values on the tensor space $S$ whose components are polynomials of degree $d$ (when $S$ is omitted it is implicit that the functions are scalars). Moreover $\mathscr{S}_\mathscr{l}$ is the skeleton of the triangulation, that is the set of all internal $d-1$-dimensional faces of the $d$-simplexes belonging to $\mathscr{K}_\mathscr{l}$, and $\Sigma_\mathscr{l}=\bigcup_{L\in\mathscr{S}_\mathscr{l}}L$.
+Here $\mathscr{P}_d(S)$ denotes the space of functions taking values on the tensor space $S$ whose components are polynomials of degree $d$ (when $S$ is omitted it is implicit that the functions are scalars). Moreover $\mathscr{S}_\mathscr{l}$ is the skeleton of the triangulation, that is the set of all internal $d-1$-dimensional faces of the $d$-simplexes belonging to $\mathscr{K}_\mathscr{l}$, and $\Sigma_\mathscr{l}=\bigcup_{L\in\mathscr{S}_\mathscr{l}}L$.
 
+Notice that the finite element spaces that we are just defined are the natural distretization of the spaces of the continuous problem. In particular notice that the space $Y_\mathscr{l}$ is a finite element subspace of
+\[
+Y_{\Sigma_\mathscr{l}}=\{(u,\pi,\alpha)\;|\;\text{$u\in H^1(\Omega,\mathbb{R}^d)\cap H^2(\Omega\setminus\Sigma_\mathscr{l},\mathbb{R}^d)$, $\pi\in H^1(\Omega,\text{DevSym})$ and $\alpha\in L^2(\Omega)$}\}.
+\]
+Indeed if $y\in Y_\mathscr{l}$ then $u$ it is obviously $H^2$ inside each simplex of the triangulation. To make $y$ belonging to the original space of configuration $Z$ we should add the constrain that the jump of $\dind{u}{n}$ across the edges of the mesh vanish. This is imposed weakly throught the Lagrange multiplier $m\in M_\mathscr{l}$
 %For each field $f\in\{z,y,u,\pi,\alpha,\lambda,p,m\}$ let $X^f_\mathscr{l}$ its finite element space. We know that there exists  $M^f_\mathscr{l}\in\mathscr{L}(\mathbb{R}^{n^f_\mathscr{l}},X^f_\mathscr{l})$ such that $f=M^f_\mathscr{l}\mathsf{f}$. Here $n_\mathscr{l}^f=\dim X^f_\mathscr{l}$ and $\mathsf{f}\in\mathbb{R}^{n_\mathscr{l}^f}$ is the vector of the components of $f$ with respect to the basis described by $M^f_\mathscr{l}$. Notice that $M^f_\mathscr{l}$ can be seen as a function from the domain where $f$ is defined to $\mathscr{L}(\mathbb{R}^{n_\mathscr{l}^f},S^f)$, where $S^f$ is the tensor space where the values of $f$ stay.
-
-Now we formulate the time-continuous finite element approximation of Problem~\ref{prb:reformulated}. This formulation assumes that $\Phi$ is G\^ateaux differentiable: particular instances will be consider in the following subsections.
+as showed in following time-continuous finite element approximation of Problem~\ref{prb:reformulated}. This formulation assumes that $\Phi$ is G\^ateaux differentiable: particular instances will be consider in the following subsections.
 \begin{prb}[Time-continuous finite element approximation]
 \label{prb:fem}
 Find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in AC([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
@@ -4774,11 +4834,11 @@ The field $p$ still have the mechanical interpretation of a internal plastic mic
 The structure of the internal and external generalized forces is chosen in complete analogy with the model at small deformations. In particular the internal generalized force is assumed to be given by
 \[
 \begin{multlined}
-\dual{\mathcal{J},\tilde w}=\int_\Omega(P:\grad\tilde v+K\threedots\grad^2\tilde v)dx+\int_\Omega P_e:\tilde V_edx+\\
+\dual{\mathcal{J},\tilde w}=\int_\Omega(\Pi:\grad\tilde v+K\threedots\grad^2\tilde v)dx+\int_\Omega \Pi_e:\tilde V_edx+\\
 +\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx+\int_\Omega(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta)dx,
 \end{multlined}
 \]
-where $P\colon\Omega\to\text{Lin}$ is the macroscopic Piola stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ can be called the macroscopic Piola hyperstress, $P_e\colon\Omega\to\text{Lin}$ is the elastic hyperstress. We recall from Section~\ref{sec:plasticity-review} that $\tilde V_e:=(\grad\tilde v)F_p^{-1}-F_e\tilde V_pF_p^{-1}$ is the elastic distortion rate. The plastic response is characterized as usual by the plastic microforce $T_p\colon\Omega\to\text{Lin}$ and by the plastic microstress $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$. The damage variable is subject to the damage microforce $\tau\colon\Omega\to\mathbb{R}$ and to the damage microstress $\kappa\colon\Omega\to\mathbb{R}^d$. The external generalized force is supposed to be given by
+where $\Pi\colon\Omega\to\text{Lin}$ is the macroscopic Piola stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ can be called the macroscopic Piola hyperstress, $\Pi_e\colon\Omega\to\text{Lin}$ is the elastic hyperstress. We recall from Section~\ref{sec:plasticity-review} that $\tilde V_e:=(\grad\tilde v)F_p^{-1}-F_e\tilde V_pF_p^{-1}$ is the elastic distortion rate. The plastic response is characterized as usual by the plastic microforce $T_p\colon\Omega\to\text{Lin}$ and by the plastic microstress $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$. The damage variable is subject to the damage microforce $\tau\colon\Omega\to\mathbb{R}$ and to the damage microstress $\kappa\colon\Omega\to\mathbb{R}^d$. The external generalized force is supposed to be given by
 \[
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde vdx,
 \]
@@ -4789,15 +4849,15 @@ In complete analogy to the results of previous chapter, the strong form of the e
 \label{prop:strong-form-pressure-large}
 Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal{I}$, $\mathcal{X}$ and $\mathcal{P}$ are smooth, the strong form of the equilibrium condition is
 \begin{align*}
-&\diver(P+P_eF_p^{-T}-\diver K)+f=0\quad\text{in $\Omega$} \\
-&(P+P_eF_p^{-1}-\diver K)n-\diver_\Pi((Kn)\Pi)=h\quad\text{in $\Gamma_N\cap\partial^{d-1}\Omega$} \\
+&\diver(\Pi+\Pi_eF_p^{-T}-\diver K)+f=0\quad\text{in $\Omega$} \\
+&(\Pi+\Pi_eF_p^{-1}-\diver K)n-\diver_P((Kn)P)=h\quad\text{in $\Gamma_N\cap\partial^{d-1}\Omega$} \\
 &\{\!\!\{(Kn)\xi\}\!\!\}=0\quad\text{in $\partial^{d-2}\Omega$} \\
-&F_e^TP_eF_p^{-T}-T_p+\diver K_p+p\cof F_p=0\quad\text{in $\Omega$} \\
+&F_e^T\Pi_eF_p^{-T}-T_p+\diver K_p+p\cof F_p=0\quad\text{in $\Omega$} \\
 &K_p n=0\quad\text{in $\partial^{d-1}\Omega$} \\
 &-J'(\alpha)p-\tau+\diver\kappa=0\quad\text{in $\Omega$} \\
 &\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$},
 \end{align*}
-where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $\Pi$ is the projector onto the tangent space to the boundary of $\Omega$, $\xi$ is the outer normal vector to the boundary of a $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
+where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $P$ is the projector onto the tangent space to the boundary of $\Omega$, $\xi$ is the outer normal vector to the boundary of a $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
 \end{prop}
 \begin{proof}
 The proof is similar to that of the analogous result of previous chapter.
