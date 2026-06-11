@@ -230,7 +230,7 @@ Some historical information about the birth of the principle of virtual powers c
 Kinematics is concerned with the description of the possible \emph{configurations} of a mechanical system. We assume that they can be described as the elements of a separable and reflexive Banach space $Z$, the \emph{space of configurations}.
 \begin{ex}
 \label{ex:modeling:particles}
-Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by the matrices $x=(x_1,\dots x_N)\in\mathbb{R}^{d\times N}$, where $x_{\alpha}\in\mathbb{R}^d$ with $\alpha\in\{1,\dots,N\}$ is the position of the $\alpha$th material point.
+Consider $N$ material points in $\mathbb{R}^d$. Their configuration can be described by the matrices $x=(x_1,\dots x_N)\in\mathbb{R}^{d\times N}$, where $x_{\alpha}\in\mathbb{R}^d$ with $\alpha\in\{1,\dots,N\}$ is the position of the $\alpha$-th material point.
 \end{ex}
 \begin{ex}
 \label{ex:modeling:large-strain}
@@ -253,7 +253,7 @@ A generalized force can be seen as an element $F=(F_1,\dots,F_N)\in(\mathbb{R}^{
 \[
 \dual{F,\tilde v}=\sum_{\alpha=1}^NF_\alpha\cdot\tilde v_\alpha.
 \]
-Here $F_\alpha$ is the force acting on the $\alpha$th material point.
+Here $F_\alpha$ is the force acting on the $\alpha$-th material point.
 \end{ex}
 \begin{ex}(Example~\ref{ex:modeling:large-strain} continued)
 Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
@@ -434,7 +434,11 @@ Motivated by the consideration in Remark~\ref{rmk:plasticity-simplified}, we con
 \quad\text{and}\quad
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde v
 \end{equation}
-respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ is the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure. The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde V_p$, could be added, but in order to keep the discussion simpler we neglect them.
+respectively. In the expression of the internal virtual power, $T_e\colon\Omega\to\text{Sym}$ is called the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ is called the plastic microforce and $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ the plastic microstress. The fact that $K_p$ appears qualifies the plasticity theory we are developing as a gradient plasticity theory. In contrast to classical plasticity, where $K_p=0$, gradient plasticity allows a ``contact'' interaction at the level of the microscopic structure.
+\begin{rmk}[On the nomenclature of micro/macro forces, stresses and hyperstresses]
+In this thesis, we follow the convention of calling stresses and forces the static fields conjugate with the first-order gradients of the kinematic fields and the kinematic fields themselves, respectively. Hyperstresses, instead, denote the static fields conjugate to higher-order gradients. Thus, we refer to $T_p$ as a plastic microforce even though it has the dimensions of a stress according to the usual definition.
+\end{rmk}
+The external virtual power includes a volumetric force $f\colon\Omega\to\mathbb{R}^d$ and a surface force $h\colon\partial\Omega\to\mathbb{R}^d$. Also external microforces acting on the microscopic configuration, i.e. terms conjugate to the plastic virtual rate $\tilde V_p$, could be added, but in order to keep the discussion simpler we neglect them.
 
 By a simple application of the Green theorem and the fundamental lemma of the calculus of variations, one easily get the strong form of the equilibrium condition $\mathcal{I}=\mathcal{X}$,
 \begin{subequations}
@@ -450,14 +454,9 @@ The first two conditions express the balance of macroscopic forces, while the la
 
 The choice of constitutive relations is driven by the idea that the elastic response is conservative while the plastic response is dissipative. Thus one choose a free energy $\Psi\colon Z\to\mathbb{R}$ and a dissipation potential $\Phi\colon Z\to[0,\infty)$ of the form
 \[
-\Psi(z)=\int_\Omega W_e(E_e)dx+\int_\Omega W_p(E_p,\grad E_p)dx\quad\text{and}\quad\Phi(\dot z)=\int_\Omega R(\dot E_p)dx,
+\Psi(z)=\int_\Omega W_e(E_e)dx+\int_\Omega W_p(E_p,\grad E_p)dx\quad\text{and}\quad\Phi(\dot z)=\int_\Omega R(\dot E_p)dx.
 \]
-where
-\begin{itemize}
-\item[(i)] the elastic energy density $W_e\colon\text{Sym}\to\mathbb{R}$ and the plastic energy density $W_p\colon\text{DevPla}\to\mathbb{R}$ are differentiable and
-\item[(ii)] the plastic dissipation potential density $R\colon\text{DevSym}\to[0,\infty)$ is convex and satisfies $R(0)=0$.
-\end{itemize}
-The condition $\mathcal{I}\in\partial\Psi(z)+\partial\Phi(\dot z)$ imposes that
+Here, $W_e\colon\text{Sym}\to\mathbb{R}$ is the elastic free energy density that describes the energy stored by the material due to the reversible elastic distortions of its crystalline structure. The plastic free energy density (or kinematical hardening energy density) $W_p\colon\text{DevPla}\to\mathbb{R}$ enables the description of the increasing resistance of the material to plastic distortions as they accumulate. As we will see, this energy contribution will give rise to a conservative plastic microforce called the back-stress, which is associated with kinematic hardening. We assume that both $W_e$ and $W_p$ are differentiable. The function $R\colon\text{DevSym}\to[0,\infty)$ is the dissipation potential and characterizes the dissipative plastic response of the material. We assume that $R$ is convex and satisfies $R(0)=0$. The condition $\mathcal{I}\in\partial\Psi(z)+\partial\Phi(\dot z)$ imposes that
 \[
 T_e=\dind{W_e}{E_e}(E_e),\qquad T_p\in\dind{W_p}{E_p}(E_p,\grad E_p)+\partial R(\dot E_p)\quad\text{and}\quad K_p=\dind{W_p}{\grad E_p}(E_p,\grad E_p).
 \]
@@ -469,7 +468,7 @@ where $\kappa>0$ is the bulk modulus and $\mu$ is the shear modulus. A possible 
 \[
 W_p(E_p,\grad E_p)=w_p(E_p)+\frac{1}{2}l^2\mathfrak{b}_2|\grad E_p|^2
 \]
-where $\mathcal{b}_2>0$ is a constant with the dimensions of a stress and $l>0$ is a constant with the dimensions of length. The term containing the gradient of $E_p$ act as a regularization of the plastic strain field, since it penalize sharp variations of $E_p$. Moreover it includes an internal length scale on the model, that is otherwise absent in the classical non-gradient plasticity theory. The quantity $B_p=w_p'(E_p)$ is called back-stress and represents the conservative part of the plastic microforce. The classical Von Mises rate rate-independent constitutive relation for the dissipative part of the plastic microforce is obtained choosing $R(\dot E_p)=Y|\dot E_p|$, where $Y>0$ is the yield strength. In this case
+where $\mathfrak{b}_2>0$ is a constant with the dimensions of a stress and $l>0$ is a constant with the dimensions of length. The term containing the gradient of $E_p$ act as a regularization of the plastic strain field, since it penalize sharp variations of $E_p$. Moreover it includes an internal length scale on the model, that is otherwise absent in the classical non-gradient plasticity theory. The quantity $B_p=w_p'(E_p)$ is called back-stress and represents the conservative part of the plastic microforce. The classical Von Mises rate rate-independent constitutive relation for the dissipative part of the plastic microforce is obtained choosing $R(\dot E_p)=Y|\dot E_p|$, where $Y>0$ is the yield strength. In this case
 \[
 \partial R(\dot E_p)=
 \begin{cases}
@@ -484,7 +483,7 @@ Now, the microforce balance can be written as
 \[
 \dev T_e-B_p+\diver K_p\in\partial R(\dot E_p).
 \]
-The mechanical meaning of Von Mises costitutive relation is that, when $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
+The mechanical meaning of Von Mises costitutive relation is that, when $|\dev T_e-B_p+\diver K_p|<Y$, then $\dot E_p=0$ and no plastic strain accumulates. If one choose $w_p(E_p)=\frac{1}{2}\mathfrak{B}_1|E_p|^2$, then $B_p=\mathfrak{B}_1E_p$ so that the back-stress model an increasing resistance of the material to plastic flow. This behavior is common in metals and is called kinematical hardening. Refined hardening models can be obtained by choosing $w_p$ appropriately.
 \begin{rmk}
 \label{rmk:flow-rule}
 More general expression of $R$ can be obtained as follows. One choose a bounded, closed and convex set $C\subset\text{DevSym}$ and impose that
@@ -672,7 +671,7 @@ The fact that $f\in H^1((0,T),H^*)$ implies that $\tau_N\sum_{k=1}^n\left\lVert\
 
 In this subsection we develop an existence theory for constrained doubly nonlinear equations. We will consider a specialized form of the equations that arise from the class of constrained mechanical models treated with the method of Lagrange multipliers that we described in Subsection~\ref{subsec:lagrange-multipliers}. Besides the existence result we will also prove the uniqueness and stability of solutions.
 
-Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addiction of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
+Our existence result is an extension of that in~\cite[Proposition 11.1]{roubicek-pde} that was discussed in the previous section. Our extension consists in the addition of a kinematical constrain and of a possible dependence of the dissipation potential on the Lagrange multiplier. The motivation that lead us to develop that existence theory is the application presented in Chapter~\ref{chap:pressure-sensitive-small} of Part~\ref{part:my-model}.
 
 \subsection{Notation, assumptions and formulation of the problem}
 
@@ -1488,7 +1487,7 @@ In previous subsection, the proof of the existence of solutions ensure that for 
 \section{An existence result for rate-independent evolutionary equations with quadratic energy}
 \label{sec:evi}
 
-In this section we describe an existence result for evolutionary equations of the form~\eqref{eqn:modeling:doubly:nonlinear-neat} when the free energy $\Psi$ is quadratic and the dissipation potential does not depend on the configuration and is positively 1-homogeneous in its rate. It is treated from~\cite{han-reddy}. The fact that the dissipation potential does not have a quadratic growth prevents us from applying the existence theorem that we presented in Section~\ref{sec:roubickeck}.However, the fact that the free energy is quadratic and the dissipation potential is convex and 1-homogeneous still allows us to obtain sufficiently strong a priori estimates to demonstrate the existence of absolutely continuous solutions in time.
+In this section we describe an existence result for evolutionary equations of the form~\eqref{eqn:modeling:doubly:nonlinear-neat} when the free energy $\Psi$ is quadratic and the dissipation potential does not depend on the configuration and is positively 1-homogeneous in its rate. It is taken from~\cite{han-reddy}. The fact that the dissipation potential does not have a quadratic growth prevents us from applying the existence theorem that we presented in Section~\ref{sec:roubickeck}.However, the fact that the free energy is quadratic and the dissipation potential is convex and 1-homogeneous still allows us to obtain sufficiently strong a priori estimates to demonstrate the existence of absolutely continuous solutions in time.
 
 The plasticity theory at small deformations described in Section~\ref{sec:plasticity-review} when a quadratic hardening function $w_p$ is assumed satisfies the assumptions required in this section. Moreover we will use the content of this section to prove the existence of solutions to the small deformation version of the model of a cylindrical bar in Chapter~\ref{chap:small-neck}.
 
@@ -1829,7 +1828,7 @@ Assume that the following property holds
 \end{itemize}
 Then for all stable sequence $\{(z_k,t_k)\}_{k\in\mathbb{Z}}\subset\mathscr{Z}$ such that $(z_k,t_k)\rightharpoonup(z,t)$ it holds that $\lim_{k\to\infty}\mathcal{E}(z_k,t_k)=\mathcal{E}(z,t)$. Moreover (C2) holds.
 
-Assume that, in addiction to (PC1), also the following property holds
+Assume that, in addition to (PC1), also the following property holds
 \begin{itemize}
 \item[(PC2)] for all $\epsilon>0$ and $E\in\mathbb{R}$, there exists $\delta>0$ such that for all $t,s\in[0,T]$ and $z\in\mathscr{Z}$ the implication
 \begin{equation}
@@ -1862,7 +1861,7 @@ table[x=eta,y=F] {figures/necking-experimental.dat};
 \caption{Trend of the tensile force $F$ as the elongation $\eta=l/L$ varies (where $L$ is the initial length and $l$ the length in the deformed configuration) taken from the experimental data in~\cite{Considere1885}. The sample is made of soft iron and has a length $L=201$ mm and a diameter of 16 mm in the initial configuration.}
 \label{fig:considere}
 \end{figure}
-In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considère experimentally observed that the length of the region affected by the neck is independent of the length of the bar but increases with the diameter.
+In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considère experimentally observed that the length of the region affected by the neck is independent on the length of the bar but increases with the diameter.
 
 %I primi contributi verso la comprensione teorica del fenomeno del necking nell'ambito della teoria della plasticità risalgono alla seconda metà del Novecento, quando è il fenomeno è stato studiato come manifestazione della perdita di stabilità della \emph{soluzione triaviale}, cioè quella in cui la barra rimane in uno stato di deformazione uniforme. In un lavoro~\cite{Hill1958} del 1958, R. Hill ha sviluppato una teoria generale per trattare i fenomeni di biforcazione e di perdita di stabilità nell'ambito della teoria della plasticità incrementale. La teoria della plasticità incrementale era il framework utilizzato prima che venisse introdotta, negli anni Settanta, la moderna teoria della plasticità basata su solide base variazionali, quella che abbiamo discusso nei capitoli introduttivi~\ref{}. Nella teoria della plasticità incrementale la relazione costitutiva lega il rate dello stress al rate dello strain, cosicché il \emph{problema incrementale} di determinare ad ogni istante il campo velocità del solido elastoplastico emerge naturalmente. La teoria della biforcazione di Hill riguarda l'unicità della soluzione di tale problema incrementale. Utilizzando la teoria della biforcazione di Hill, negli anni Settanta in~\cite{HillHutchinson1975,HutchinsonMiles1974}, viene dimostrato che la perdita di stabilita della soluzione uniforme avviene poco dopo che la forza di trazione raggiunge il suo massimo, in accordo con il criterio di Considère. Nello stesso periodo viene effettuata anche la prima simulazione numerica mediante gli elementi finiti dell'occorenza del fenomeno del necking~\cite{Needleman1972} permettendo per la prima volta di predire accuratemante la forma del neck.
 %
@@ -2690,7 +2689,7 @@ The requirements on the dissipation potential density are
 \item[(D2)] $D$ is finite and continuous on $[\Pi,\infty)\times[\Pi,\infty)$, where $\Pi$ is the constant appearing in (H3).
 \end{itemize}
 
-\subsection{Verification the properties of the energy functional}
+\subsection{Verification of the properties of the energy functional}
 
 We start with the following lemma which is necessary to handle the nonlinear coupling between elastic and plastic distortion.
 \begin{lemma}
@@ -2922,11 +2921,11 @@ as functions of $(X,t)\in(0,L)\times[0,T]$. Then
 \[
 \frac{d}{dt}W(E)=K\cdot V.
 \]
-Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $z$ such that
+Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent on $z$ such that
 \[
 |V(t)-V(s)|\le\omega^V(|t-s|)\quad\text{and}\quad\max\left\{\frac{g_1'(y_1,s)}{g_1'(y_1,t)},\frac{g_2(y_1,s)}{g_2(y_1,t)}\right\}\le\omega^V(|t-s|)
 \]
-on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent of $z$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
+on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent on $z$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
 \[
 \begin{split}
 |\partial_t\mathcal{E}(z,t)-\partial_t\mathcal{E}(z,s)|&\le\int_0^L|K(t)\cdot V(t)-K(s)\cdot V(s)|dX\le\\
@@ -3109,7 +3108,7 @@ H=C\left(P+\frac{1}{\delta}e^{-\delta(P-1)}\right).
 \]
 Formula~\eqref{eqn:hardening-amstrong-federik-modified} is a modification of this as the linear growth in $P$ has been substituted with a superlinear growth in order to satisfy (H2). The superlinear growth makes $\beta$ unbounded as $\beta\to\infty$, but the main features of the original Armstrong--Frederick model are preserved.
 \end{rmk}
-The disipation potential density can be chosen as
+The dissipation potential density can be chosen as
 \begin{equation}
 R(P,\dot P)=
 \begin{cases}
@@ -3369,7 +3368,7 @@ Then, wether $(\eta(t),\bar y_2(t),\bar P(t))$ is a local minimum of $J_t$ depen
 \[
 h(t)=\nabla^2 J_t(\eta(t),\bar y_2(t),\bar P(t)^+).
 \]
-It is clear that at $t=0$ the trivial solution is stable and that $h(0)$ is positive definite. Then instability under force control occurs when $h(t)$ become singular. We now show that this happen exactly when $\bar{F}$ reaches its maximum, suggesting an agreement between our model with the Considère criterion. Indeed the following lemma holds.
+It is clear that at $t=0$ the trivial solution is stable and that $h(0)$ is positive definite. Then instability under force control occurs when $h(t)$ become singular. We now show that this happens exactly when $\bar{F}$ reaches its maximum, suggesting an agreement between our model with the Considère criterion. Indeed the following lemma holds.
 \begin{lemma}
 \label{lemma:stability-force}
 Let
@@ -3463,7 +3462,7 @@ with $D^\varsigma(P_0,P_1)=\varsigma Y\log(P_1/P_0)$. This definitions allows to
 \[
 \mathscr{Z}^\varsigma_t=\{z=(y,P)\in\mathscr{Z}\;|\;\text{$\varsigma(P-\bar P(t))\ge0$ in $(0,L)$}\}.
 \]
-The following lemma express how the minimality of $\mathcal{J}_t$is related to that of $\mathcal{J}_t^\varsigma$.
+The following lemma expresses how the minimality of $\mathcal{J}_t$is related to that of $\mathcal{J}_t^\varsigma$.
 \begin{lemma}
 The global stability condition
 \begin{equation}
@@ -3561,7 +3560,7 @@ Here the bar denotes quantities computed along the trivial solution. It is under
 \label{eqn:2order}
 Aw''+Bw'+Cw=0\quad\text{in $(0,L)$},
 \end{equation}
-together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have defined $A=M$, $B=(N-N^T)/2$ and $C=-K$. After some tedious computations one finds
+together with the boundary conditions $w_1(X)=0$, $w_2'(X)=0$ and $w_3'(X)=0$ for $X\in\{0,L\}$. We have defined $A=M$, $B=(N-N^T)/2$ and $C=-K$. After some tedious and trivial computations one finds
 \begingroup
 \tiny
 \begin{subequations}
@@ -3844,7 +3843,7 @@ S
 c_1 \\ c_2
 \end{pmatrix}<0\right\}.
 \]
-From the numerical computations it result that for $\eta>\eta_1$ matrix $S$ is of the form
+From the numerical computations it result that for $\eta>\eta_1$ the matrix $S$ is of the form
 \[
 S=\begin{pmatrix}
 S_{11} & 0 \\
@@ -3884,7 +3883,7 @@ The characteristic of the Mohr-Coulomb and the Drucker-Prager yield criteria, ab
 
 The use of the non-associated flow law involves additional mathematical complications because it breaks the standard variational structure of classical plasticity theory, in the sense that it cannot immediately rewritten as a balance of generalized forces, including both a macroscopic and a microscopic equilibrium. For that reason the usual formulation of non-associated plasticity is not compatible with the view of mechanical systems presented in Section~\ref{sec:ppv}. However, recently~\cite{morafrancfort,StefanelliVikelis2024} it has been demonstrated that non-associated plasticity actually admits a variational formulation and existence results have been obtained.
 
-This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, directly coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv}, where the intuition of Coulomb~\cite{Coulomb1776} that the friction between the grains increase with their contact pressure is made more explicit. We will see that our model, if particular constitutive revelations are assumed, is formally able to recover the equations provided by the original approach. But, since our model possesses a clear variational structure by construction, no artificial reformulations are required to restore it, allowing us to establish an existence theory in a more direct way.
+This second part of the thesis is dedicated to the development of an alternative approach to describe plastic materials exhibiting pressure sensitivity and dilatancy. The aim is to build a mechanical theory, directly coherent with the general view of a mechanical systems described in Section~\ref{sec:ppv}, where the intuition of Coulomb~\cite{Coulomb1776} that the friction between the grains increase with their contact pressure is made more explicit. We will see that our model, if particular constitutive relations are assumed, is formally able to recover the equations provided by the original approach. But, since our model possesses a clear variational structure by construction, no artificial reformulations are required to restore it, allowing us to establish an existence theory in a more direct way.
 
 The discussion is organized as follows. This introductory chapter reviews the standard extension of the plasticity theory presented in Section~\ref{sec:plasticity-review} in order to account for plastic dilatancy and non-associated flow rules. Furthermore, we describe the Drucker--Prager yield criterion and provide an overview of the known existence results. For the sake of simplicity, this review is confined to the case of small deformations. The following chapters are instead dedicated to the formulation of our alternative approach.
 
@@ -3977,7 +3976,7 @@ The Mohr--Coulomb criterion was the first criterion failure of cohesive material
 \label{eqn:mhor-coulomb}
 \tau=-\sigma\tan\phi+c,
 \end{equation}
-Here $\phi\in[0,\pi/2)$ is called the angle of internal friction and $c\ge0$ the cohesion. The idea behind~\eqref{eqn:mhor-coulomb} is that the resistance of the material to shear stresses increases with compression. That intuition was originally stated by Coulomb~\cite{Coulomb1776} in 1776. One can show (see~\cite{Lubliner1990}) that failure occur on the two hyperplanes whose normal form an angle of $\pi/2+\phi/2$ with respect to the eigenspace corresponding to the greatest eigenvalue; this is the reason why $\phi$ is called the angle of internal friction.
+Here $\phi\in[0,\pi/2)$ is called the angle of internal friction and $c\ge0$ the cohesion. The idea behind~\eqref{eqn:mhor-coulomb} is that the resistance of the material to shear stresses increases with compression. That intuition was originally stated by Coulomb~\cite{Coulomb1776} in 1776. One can show (see~\cite{Lubliner1990}) that failure occurs on the two hyperplanes whose normal form an angle of $\pi/2+\phi/2$ with respect to the eigenspace corresponding to the smallest eigenvalue (this is the direction of maximum compression); this is the reason why $\phi$ is called the angle of internal friction.
 %In the Mohr plane, that is the half plane of the couples $(\sigma,\tau)\in\mathbb{R}\times[0,\infty)$, the failure locus determined by~\eqref{eqn:mhor-coulomb} is a cone as showed in Figure~\ref{fig:mhor-coulomb}.
 %Now in can be shown (see~\cite{Lubliner1990}) that as $n$ varies in $\partial B(0,1)$ the couples $(\sigma,\tau)$ are confined within a circle 
 %\[
@@ -4085,17 +4084,17 @@ Notice that, in the notation of the statement of Theorem~\ref{thm:existence-non-
 \chapter{Proposal of an alternative mechanical model: the regime of small deformations}
 \label{chap:pressure-sensitive-small}
 
-In this chapter we develop an alternative approach to the modeling of dilatant and pressure sensitive plastic materials. We will confine to the regime of small deformations, the extension to large deformations will be performed in the following chapter.
+In this chapter we develop an alternative approach to the modeling of dilatant and pressure sensitive plastic materials. We will confine ourself to the regime of small deformations, the extension to large deformations will be performed in the following chapter.
 
 The approach we are going to present is based on the believe that some kinematical constrain on the volumetric part of the plastic distortion must be considered and that the constraint must be treated with the method of Lagrange multipliers. The Lagrange multiplier associated with that constrain is interpreted as a micropressure, representing how much the grains constituting the materials are pressed against each other. The friction between the grains is then modeled as a frictional internal microforce opposing deviatoric plastic rates and depending on the micropressure, according to the original intuition of Coulomb~\cite{Coulomb1776}.
 
-The kinematical constrain that we will consider will be a one-to-one relation between the volumetric plastic distortion and an internal variable, representing the damage state of the body. This picture was suggested by the qualitative discussion in~\cite{micro-geo}, where the idea that the increase in the volumetric part of the plastic distortion in geomaterials is due to the formations of microcracks, is proposed. This led to authors to couple plasticity with damage, even though they do not explicitly consider a link between the volumetric plastic distortion and the damage variable. This is instead our assumption.
+The kinematical constrain that we will consider will be a one-to-one relation between the volumetric plastic distortion and an internal variable, representing the damage state of the body. This picture was suggested by the qualitative discussion in~\cite{micro-geo}, where the idea that the increase in the volumetric part of the plastic distortion in geomaterials is due to the formations of microcracks, is proposed. This led the authors to couple plasticity with damage, even though they do not explicitly consider a link between the volumetric plastic distortion and the damage variable. This is instead our assumption.
 
 The chapter is organized as follows. In the first section the model is formally developed in its generality. In the second section a micro-mechanical interpretation is proposed, thus leading to the development of more particularized constitutive relations in the third section. In the fourth section we also establish the formal equivalence of our model to the classical one described in previous section when particular constitutive relations are chosen. In the fifth section we prove an existence result exploiting the abstract existence theory that we have developed in Section~\ref{sec:existence-theorem-abstract-constrained}, thus clarifying the mathematical formulation of the problem and the assumptions on constitutive relations.
 
 \section{Formulation of the model}
 
-Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement field $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and an internal damage variable $\alpha\colon\Omega\to\mathbb{R}$. Only nonnegative values of $\alpha$ will be considered: $\alpha=0$ corresponds to a sound material while $\alpha\to\infty$ to a completely damaged material. We split the plastic distortion as $E_p=\pi+\frac{\lambda}{d}I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda=\tr E_p\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in the following section. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
+Let $\Omega\subset\mathbb{R}^d$, open, bounded and Lipschitz, be the reference configuration of the body. Assume that the configuration of the body is fully described by the displacement field $u\colon\Omega\to\mathbb{R}^d$, the plastic distortion\footnote{For simplicity we assume that $E_p$ is symmetric, thus excluding plastic spin.} $E_p\colon\Omega\to\text{Sym}$ and an internal damage variable $\alpha\colon\Omega\to\mathbb{R}$. Only nonnegative values of $\alpha$ will be considered so that the evolution of $\alpha$ will be constrained accordingly: $\alpha=0$ corresponds to a sound material while $\alpha\to\infty$ to a completely damaged material. We split the plastic distortion as $E_p=\pi+\frac{\lambda}{d}I$ where $\pi=\dev E_p\colon\Omega\to\text{DevSym}$ is the deviatoric plastic distortion and $\lambda=\tr E_p\colon\Omega\to\mathbb{R}$ the volumetric plastic distortion. The generic configuration of the body is $z=(u,\pi,\alpha,\lambda)=(y,\lambda)\in Z$ with $y=(u,\pi,\alpha)\in Y$ and $\lambda\in\Lambda$: the spaces $Z$, $Y$ and $\Lambda$ will be precisely defined in Section~\ref{sec:existence-small}. The virtual rates will be denoted as $\tilde w=(\tilde h,\tilde\mu)\in Z$ with $\tilde h=(\tilde v,\tilde\rho,\tilde\beta)\in Y$ and $\tilde\mu\in\Lambda$.
 
  We consider a kinematical constrain of the form $\lambda=L(\alpha)$, where $L\colon\mathbb{R}\to\mathbb{R}$ is assumed to be smooth and satisfying $L(0)=0$. This constrain models the fact that the volume changes of the microscopic structure of the body are directly linked with its damage state that represents qualitatively the amount of microcracks opened in the body. The constrain can be formulated in weak form as
 \[
@@ -4161,7 +4160,7 @@ The external generalized force is assumed to be given by
 \[
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde vdx,
 \]
-where $f\colon\Omega\to\mathbb{R}^d$ is the volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the surface force acting on the external boundary. For simplicity we assume that no external torque is applied to the body and that there is no external loads acring on the microscopic configuration. These additional external loads could be added to describe more accurately the external actions acting on the body.
+where $f\colon\Omega\to\mathbb{R}^d$ is the volumetric force and $h\colon\partial\Omega\to\mathbb{R}^d$ is the surface force acting on the external boundary. For simplicity we assume that no external torque is applied to the body and that there is no external loads acting on the microscopic configuration. These additional external loads could be added to describe more accurately the external actions acting on the body.
 
 Now the equilibrium condition is $-\mathcal{I}+\mathcal{X}+\mathcal{P}=0$. The following lemma gives its strong form.
 \begin{prop}
@@ -4219,10 +4218,11 @@ We now turn to the choice of the constitutive relations. We assume that the free
 \Psi_0(z)=\int_\Omega\left(W_e\left(Eu-\pi-\frac{1}{d}\lambda I\right)+W_p(\alpha,\pi)+W_d(\alpha)\right)dx
 \]
 and
-\[
+\begin{equation}
+\label{eqn:energy-gradients}
 \frac{1}{2}\dual{\mathcal{A}y,y}=\int_\Omega\left(\frac{\mathfrak{a}}{2}|\grad^2u|^2+\frac{\mathfrak{b}}{2}|\grad\pi|^2+\frac{\mathfrak{c}}{2}|\grad\alpha|^2\right)dx.
-\]
-Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$, $W_e\colon\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. Next we choose that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
+\end{equation}
+Here $\mathfrak{a},\mathfrak{b},\mathfrak{c}>0$ have the dimension of a stress times the quare of a length, $W_e\colon\text{Sym}\to[0,\infty)$ is the elastic energy density, $W_p\colon\mathbb{R}\times\text{DevSym}\to[0,\infty)$ is the plastic hardening energy density and $W_d\colon[0,\infty)\to\mathbb{R}$ is the density of the energy captured by damage. We assume that $W_e,W_p,W_d$ are smooth. Next we choose that the dissipation potential functional is of the form $\Phi\colon\Lambda^*\times Y\to[0,\infty]$ with $\Phi(p,h)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ where
 \[
 \Phi_0(p,h)=\int_\Omega\left(R(p,\rho)+D(\rho,\beta)\right)dx
 \]
@@ -4253,20 +4253,20 @@ Starting from this micro-mechanical picture we are now in position to give an in
 
 \subsubsection*{Elastic response} The elastic stress $T_e$ is the elastic internal action of the grains and the binding matrix that opposes to their elastic deformation and $W_e$ represents the stored elastic energy.
 
-\subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal, reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addiction of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
+\subsubsection*{Deviatoric plastic response} The forces exchanged by the grains in the ``direction'' of deviatoric sliding are described by $T_p$ and $K_p$ which opposes to the push of the elastic stress. In particular the presence of $K_p$ (qualifying the model as a model of gradient elastoplasticity) allows to make this internal interaction nonlocal, reflecting the finite size of the grains: the internal length scale is determined by how the constitutive parameter $\mathfrak{b}$ relates to other local stiffness parameters. The plastic dissipation potential density $R$ aims to describe the internal friction between the grains and is assumed to depends on the pressure in accordance with Coulomb intuition~\cite{Coulomb1776}. Instead the hardening free energy density $W_p$ can describe an additional resistance of the grains to slide, due to the geometric interlocking between them. The dependence of $W_p$ on $\alpha$ reflects the deterioration of the capacity of the grains to interlock due to increasing damage. The addition of the plastic viscosity regularizes the evolution of $\pi$ introducing rate dependence.
 
 \subsubsection*{Volumetric plastic response and damage response}
 
-The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that is the reaction associated to the constraint $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describe the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that is the reaction associated to the constraint $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describes the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
 
 \subsubsection*{Macroscopic response}
 
-In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addiction of the hyperstress allows to include contact torques and to consider concentrated loads and was already been employed in the modeling of soils and rocks (see~\cite[Chapter 10]{bifurcation-geomechanics}).
+In the formulation of the model we have also included a purely macroscopic response in terms of a macroscopic stress $T$ and a macroscopic hyperstress $K$. This is done primary for a mathematical need in view of the proof of the existing theorem. The viscous stress add a viscous regularization, the conservative hyperstress ensure compactness. However we can give to these terms a mechanical interpretation. The viscous stress can describe an overall viscosity of the material, for example due the presence of fluid filling the voids between the grains. The addition of the hyperstress allows to include contact torques and to consider concentrated loads and was already been employed in the modeling of soils and rocks (see~\cite[Chapter 10]{bifurcation-geomechanics}).
 
 \section{More particularized constitutive assumptions}
 \label{sec:particular-constitutive}
 
-Taking into consideration the micro-mechanical interpretation provided in previous section, we now propose specialized constitutive relations. Further technical assumptions will be given in the following section devoted to the development of the existence theory.
+Taking into consideration the micro-mechanical interpretation provided in the previous section, we now propose specialized constitutive relations. Further technical assumptions will be given in the following section devoted to the development of the existence theory.
 
 We consider a linear elastic response by choosing an elastic free energy density of the form
 \[
@@ -4314,7 +4314,7 @@ provided that
 \end{itemize}
 \end{prop}
 \begin{rmk}
-Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body. If (ii) is violated, then the original Drucker--Prager model (and also our model since the viscous and gradient regularization has been removed, see also Section~\ref{sec:existence-small}) became ill-posed, since no elastic stress exists satisfying the admissibility condition $f(T_e)\le0$. 
+Assumption (ii) is certainly true if sufficiently small external traction loads are imposed on the body. If (ii) is violated, then the original Drucker--Prager model (and also our model since the viscous and gradient regularization has been removed, see also Section~\ref{sec:existence-small}) becomes ill-posed, since no elastic stress exists satisfying the admissibility condition $f(T_e)\le0$. 
 \end{rmk}
 \begin{proof}
 We distinguish two cases, according to fact that $\dot\pi$ is zero or different form zero.
@@ -4673,7 +4673,7 @@ We did not studied the details of the convergence of the numerical scheme as $\m
 
 To validate the numerical scheme we solve numerically a boundary value problem that admits an analytical solution.
 
-\subsubsection*{Choice of constitutive relations} We consider the constitutive relations that we introduced in Section~\ref{sec:particular-constitutive} and Section~\ref{sec:recovering}. So set to zero the viscosities $\mathfrak D$, $\mathfrak{d}$, $\mathfrak{e}$ and also the gradient stiffnesses $\mathfrak{a}$, $\mathfrak{b}$ and $\mathfrak{c}$. We choose $L(\alpha)=b\alpha$ with $b>0$. Moreover the elastic response is assumed to linear and isotropic, that is
+\subsubsection*{Choice of the constitutive relations} We consider the constitutive relations that we introduced in Section~\ref{sec:particular-constitutive} and Section~\ref{sec:recovering}. So set to zero the viscosities $\mathfrak D$, $\mathfrak{d}$, $\mathfrak{e}$ and also the gradient stiffnesses $\mathfrak{a}$, $\mathfrak{b}$ and $\mathfrak{c}$. We choose $L(\alpha)=b\alpha$ with $b>0$. Moreover the elastic response is assumed to linear and isotropic, that is
 \[
 T_e=2\mathfrak{m}E_e+\mathfrak{l}(\tr E_e)I
 \]
@@ -4812,7 +4812,168 @@ Now, since the solution is uniform, the fineness $\mathscr{l}$ of the mesh does 
 \label{fig:eta-to-zero}
 \end{figure}
 
-\subsection{Some examples}
+\subsection{An example}
+\label{subsec:numerical-example}
+
+We conclude the present section with an application of the numerical scheme to a particular boundary value problem in two dimensions.
+
+\subsubsection*{Choice of the constitutive relations}
+
+We consider consider constitutive relations of the form considered in Section~\ref{sec:particular-constitutive} that are compatible with the assumption of Section~\ref{sec:existence-small}. In particular we set
+\[
+L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right],
+\]
+where $\alpha_0>0$ and $b=\sqrt{2}\sin\psi$ with the dilatancy angle $\psi\in[0,\pi/2)$. We assume a linear isotropic elastic response with elasticity tensor
+\[
+\mathfrak{C}=2\mathfrak{m}I_{(2\times2)\times(2\times2)}+\mathfrak{l}\;I_{2\times2}\otimes I_{2\times2},
+\]
+where $\mathfrak{m}>0$ and $\mathfrak{l}>-\mathfrak{m}$ are the Lamé constants. For simplicity we set $W_p=0$, thus excluding kinematic hardening. Then we set
+\[
+W_d(\alpha)=f_0\alpha_1\left[1-\exp\left(-\frac{\alpha}{\alpha_1}\right)\right],
+\]
+where $\alpha_1>0$ and $f_0=\sqrt{2}c\cos\phi$ with $c>0$ the cohesion and $\phi\in[\psi,\pi/2)$ the friction angle. Notice that $\dind{W_d}{\alpha}(\alpha)$ is decreasing. This means that the resistance of the material to damage and plastically flow decreases as the damage increases: this behavior is common is soils and is knows as~\emph{softening}. We conclude the definition of the constitutive relations by setting
+\[
+R(p,\rho)=(a-b)p|\rho|,
+\]
+where $a=\sqrt{2}\sin\phi$.
+\begin{rmk}[Formally recovering the original Drucker--Prager model]
+Notice that in the limit of $\alpha$ much smaller then $\alpha_0$ and $\alpha_1$ we have
+\[
+L(\alpha)=b\alpha\quad\text{and}\quad W_d(\alpha)=f_0\alpha.
+\]
+Recalling the discussion in Section~\ref{sec:recovering} we have that, in this limit, and in the limit of small gradient regularization and viscosity, the classical model of Drucker and Prager is recovered.
+\end{rmk}
+\begin{rmk}[On the choice of the numerical values of the constitutive parameters]
+The aim of the numerical example that we are describing is to illustrate the and the qualitative features of the model. There is no pretense of describing an actual mechanical system. For that reason the choice of the numerical parameter is made quite arbitrary. In what follows we will assume the following particular numerical values. The Lamé constant are set $\mathfrak{m}=\mathfrak{l}=100$. The cohesion is chosen as $c=0.5$ and we will consider friction and dilatancy angles $(\phi,\psi)\in\{(0,0),(30^\circ,5^\circ)\}$. Notice that when $\phi=\psi=0$ the model reduces to that of Von Mises with softening and viscous and gradient regularization. We set $\alpha_0=\alpha_1=1$. Moreover we set the viscosities as
+\[
+\mathfrak{D}=2\eta I_{(2\times2)\times(2\times2)}+\eta\;I_{2\times2}\otimes I_{2\times2},\quad\mathfrak{d}=\eta,\quad\text{and}\quad\mathfrak{e}=\eta
+\]
+for a common $\eta=3$, and the parameters of the gradient regularization as
+\[
+\mathfrak{a}=2\zeta,\quad\mathfrak{b}=0.9\zeta\quad\text{and}\quad\mathfrak{c}=0.7\zeta
+\]
+for a $\zeta>0$ that will varied.
+\end{rmk}
+
+\subsubsection*{Definition of the boundary value problem}
+
+Consider the square $\Omega\subset(-2,2)\times(-1,1)$ depicted in Figure~\ref{fig:bvp}. The left size and the bottom side are kept fixed but tangential sliding is permitted. In the segment from (0,1) to (2,1), a downward vertical displacement is prescribed, still allowing for tangential sliding. More explicitly we impose the boundary conditions
+\begin{align*}
+u_1(t)&=0\quad\text{on $\{-2\}\times(-1,1)$ for all $t\in[0,T]$} \\
+u_2(t)&=0\quad\text{on $(-2,2)\times\{-1\}$} \\
+u_2(t)&=-\frac{1-\cos\left(\pi\frac{t}{T}\right)}{2}U\quad\text{on $(0,2)\times\{1\}$}.
+\end{align*}
+for all $t\in[0,T]$. Here $U=2e-2$ and $T=60$. We assume that no external volume forces on the bulk or tractions of the free boundaries are imposed.
+\begin{figure}
+\centering
+\begin{minipage}[c]{0.45\textwidth}
+\centering
+\begin{tikzpicture}
+\draw[thick](-2,-1)rectangle(2,1);
+\foreach\x in{-2,-1.3333,-0.6667,0,0.6667,1.3333,2}{
+\begin{scope}[shift={(\x,-1)}]
+\draw[thin](0,0)--(-0.15,-0.2)--(0.15,-0.2)--cycle;
+\draw[thin](-0.08,-0.24)circle(0.04);
+\draw[thin](0.08,-0.24)circle(0.04);
+\end{scope}
+}
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\begin{scope}[shift={(-2,\y)}]
+\draw[thin](0,0)--(-0.2,0.15)--(-0.2,-0.15)--cycle;
+\draw[thin](-0.24,0.08)circle(0.04);
+\draw[thin](-0.24,-0.08)circle(0.04);
+\end{scope}
+}
+\foreach\x in{0,0.6667,1.3333,2}{
+\begin{scope}[shift={(\x,1)}]
+\draw[thin](0,0)--(-0.15,0.2)--(0.15,0.2)--cycle;
+\draw[thin](-0.08,0.24)circle(0.04);
+\draw[thin](0.08,0.24)circle(0.04);
+\end{scope}
+}
+\footnotesize
+\node[anchor=north]at(0,1){$(0,1)$};
+\node[anchor=north east]at(2,1){$(2,1)$};
+\node[anchor=south east]at(2,-1){$(2,-1)$};
+\node[anchor=south west]at(-2,-1){$(-2,-1)$};
+\node[anchor=north west]at(-2,1){$(-2,1)$};
+\end{tikzpicture}
+\end{minipage}
+\begin{minipage}[c]{0.45\textwidth}
+\includegraphics[trim=18mm 110mm 18mm 100mm, clip, width=0.8\textwidth]{figures/mesh.pdf}
+\end{minipage}
+\caption{On the left, illustration of the boundary conditions for the numerical example of Subsection~\ref{subsec:numerical-example}. On the right a typical mesh used for the computations. Through a series of trials, we ensured that the formation of the shear band is not influenced by the mesh refinement location.}
+\label{fig:bvp}
+\end{figure}
+
+\subsubsection*{Discussion on the results}
+
+In Figure~\ref{fig:results} are reported the plots of the value of the damage variable $\alpha$ and the pressure $p$ at a chosen time $t$ for some values of the constitutive parameters specified therein.
+
+Notice that a region of concentrated damage (it is a shear band since also the deviatoric plastic strain concentrates there since, due to the relation $\dot\alpha\ge|\dot\pi|$, it holds that $\alpha\approx|\pi|$) initiates at the midpoint of the top edge of the rectangle and propagates toward the bottom-right corner. When $\phi=0^\circ$ (in the third row) the shear band has on orientation of $45^\circ$ degrees with respect to the direction of the compressive load (the vertical one). Conversely, when $\phi=30^\circ$ (the first and second row), the shear is less inclined with respect to the vertical direction. This result is expected because, as previously observed in Chapter~\ref{chap:intro-pressure-sensitive}, the Mohr–Coulomb criterion (of which the Drucker–Prager model is an approximation) predicts that failure occurs along a plane inclined at $45^\circ-\phi/2=30^\circ$ with respect to the principal stress direction corresponding to the most compressive stress.
+
+As we can see comparing the first and second row of Figure~\ref{fig:results}, expected when $\zeta$ became smaller the width of the shear band reduces. The profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ are shown in Figure~\ref{fig:shear-band} for some values of $\zeta$.
+\begin{figure}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$s$},ylabel={$\alpha$},xmin=0,xmax=2.8284,width=0.44\textwidth,legend pos=north east]
+\addplot[color=black,solid]table[header=false,x index=0,y index=1]{figures/shearband4.dat};
+\addlegendentry{$\zeta=0.7$};
+\addplot[color=black,loosely dashed]table[header=false,x index=0,y index=1]{figures/shearband1.dat};
+\addlegendentry{$\zeta=1$};
+\addplot[color=black,dashed]table[header=false,x index=0,y index=1]{figures/shearband2.dat};
+\addlegendentry{$\zeta=2$};
+\addplot[color=black,dashdotted]table[header=false,x index=0,y index=1]{figures/shearband3.dat};
+\addlegendentry{$\zeta=4$};
+\end{axis}
+\end{tikzpicture}
+\caption{Profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ for some values of $\zeta$.}
+\label{fig:shear-band}
+\end{figure}
+\begin{figure}[p]
+\begin{minipage}[c]{0.15\textwidth}
+\footnotesize
+\begin{gather}
+t=33.6 \\
+\phi=30^\circ \\
+\psi=5^\circ \\
+\zeta=0.7
+\end{gather}
+\end{minipage}
+\begin{minipage}[c]{0.75\textwidth}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al4.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p4.pdf}
+\end{minipage}
+\\
+\begin{minipage}[c]{0.15\textwidth}
+\footnotesize
+\begin{gather}
+t=33.6 \\
+\phi=30^\circ \\
+\psi=5^\circ \\
+\zeta=2
+\end{gather}
+\end{minipage}
+\begin{minipage}[c]{0.75\textwidth}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al2.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p2.pdf}
+\end{minipage}
+\\
+\begin{minipage}[c]{0.15\textwidth}
+\footnotesize
+\begin{gather}
+t=26.0 \\
+\phi=0^\circ \\
+\psi=0^\circ \\
+\zeta=2
+\end{gather}
+\end{minipage}
+\begin{minipage}[c]{0.75\textwidth}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p.pdf}
+\end{minipage}
+\caption{Each row contains the plot of $\alpha$ (on the left) and $p$ (on the right). The values of the time instant $t$, the friction and dilatancy angles $\psi$ and $\phi$ and the value of $\zeta$ (that we recall is the multiplier of the coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ associated with the gradient terms in the definition of the free energy) are reported at the beginning of each row. The displacement shown in the plots is magnified 10 times.}
+\label{fig:results}
+\end{figure}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  9 JUN 2026 03:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  11 JUN 2026 08:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1646,12 +1646,13 @@ $\T1/zpltlf/m/n/10 , one choose $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10
 [7]
 
 [8]
-Missing character: There is no b in font eusm10!
-
 
 [9]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 512.
+(Font)              scaled to size 6.2pt on input line 511.
+
+Overfull \vbox (3.00629pt too high) has occurred while \output is active []
+
 
 
 [10]
@@ -1678,11 +1679,11 @@ Chapter 2
 [18]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 982.
+(amsmath)                trying to recover with `aligned' on input line 981.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 982.
+(amsmath)                trying to recover with `aligned' on input line 981.
 
 
 
@@ -1701,22 +1702,22 @@ Package amsmath Warning: Cannot use `split' here;
 [25]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1364.
+(amsmath)                trying to recover with `aligned' on input line 1363.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1364.
+(amsmath)                trying to recover with `aligned' on input line 1363.
 
 
 
 [26]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1429.
+(amsmath)                trying to recover with `aligned' on input line 1428.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1429.
+(amsmath)                trying to recover with `aligned' on input line 1428.
 
 
 
@@ -1727,7 +1728,7 @@ Package amsmath Warning: Cannot use `split' here;
 [29]
 
 [30]
-Overfull \hbox (2.78784pt too wide) in paragraph at lines 1683--1686
+Overfull \hbox (2.78784pt too wide) in paragraph at lines 1682--1685
 [][][]\T1/zpltlf/m/sc/10 Remark \T1/zpltlf/m/n/10 2.25\T1/zpltlf/m/sc/10 . []\T
 1/zpltlf/m/n/10 (Choice of the dis-si-pa-tion dis-tance) []Given a dis-si-pa-ti
 on po-ten-tial $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10 Z \LMS/npxsy/m/n
@@ -1766,19 +1767,19 @@ LaTeX Font Info:    Font shape `OT1/minzpl/b/n' will be
 [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1848.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1847.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1848.
+(hyperref)                replaced by space on input line 1847.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1848.
+(hyperref)                removing `\noindent' on input line 1847.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1848.
+(Font)              scaled to size 20.74pt on input line 1847.
 
 
 [41
@@ -1802,7 +1803,7 @@ Chapter 4
 
 
 ]
-Overfull \hbox (3.04405pt too wide) in paragraph at lines 1989--1990
+Overfull \hbox (3.04405pt too wide) in paragraph at lines 1988--1989
  \T1/zpltlf/b/n/10 4.1.2.Kinematics of the one di-men-sional model.[] \T1/zpltl
 f/m/n/10 We are now ready to build a purely one-dimensional
  []
@@ -1853,7 +1854,7 @@ Chapter 5
 [63]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 3241: fill between: activating layered grap
+Package pgfplots info on input line 3240: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -1871,16 +1872,16 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 3241: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3240: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 3241.
+(Font)              scaled to size 8.0pt on input line 3240.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 3255: fill between: activating layered grap
+Package pgfplots info on input line 3254: fill between: activating layered grap
 hics
-Package pgfplots info on input line 3255: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3254: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
@@ -1901,9 +1902,9 @@ PGFPlots: reading {figures/hessian.dat}
 
 [68]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 3566.
+(Font)              scaled to size 6.0pt on input line 3565.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.5pt on input line 3569.
+(Font)              scaled to size 6.5pt on input line 3568.
 
 
 [69]
@@ -1930,16 +1931,16 @@ PGFPlots: reading {figures/etan.dat}
 [73]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 3875.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3874.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 3875.
+(hyperref)                replaced by space on input line 3874.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3875.
+(hyperref)                removing `\noindent' on input line 3874.
 
 
 
@@ -2043,45 +2044,100 @@ Missing character: There is no ; in font nullfont!
 )
 
 [93]
+<figures/mesh.pdf, id=1389, 614.295pt x 794.97pt>
+File: figures/mesh.pdf Graphic file (type pdf)
+<use figures/mesh.pdf>
+Package pdftex.def Info: figures/mesh.pdf  used on input line 4903.
+(pdftex.def)             Requested size: 165.9361pt x 64.01173pt.
+
 
 [94]
+PGFPlots: reading {figures/shearband4.dat}
+
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/shearband1.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/shearband2.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {figures/shearband3.dat}
+Missing character: There is no ; in font nullfont!
+<../ephemeroscopy/test/postprocess/al4.pdf, id=1405, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/al4.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/al4.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/al4.pdf  used on inp
+ut line 4943.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+<../ephemeroscopy/test/postprocess/p4.pdf, id=1407, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/p4.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/p4.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/p4.pdf  used on inpu
+t line 4944.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+<../ephemeroscopy/test/postprocess/al2.pdf, id=1409, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/al2.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/al2.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/al2.pdf  used on inp
+ut line 4957.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+<../ephemeroscopy/test/postprocess/p2.pdf, id=1411, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/p2.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/p2.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/p2.pdf  used on inpu
+t line 4958.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+<../ephemeroscopy/test/postprocess/al.pdf, id=1413, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/al.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/al.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/al.pdf  used on inpu
+t line 4971.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+<../ephemeroscopy/test/postprocess/p.pdf, id=1415, 614.295pt x 794.97pt>
+File: ../ephemeroscopy/test/postprocess/p.pdf Graphic file (type pdf)
+<use ../ephemeroscopy/test/postprocess/p.pdf>
+Package pdftex.def Info: ../ephemeroscopy/test/postprocess/p.pdf  used on input
+ line 4972.
+(pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
+
+
+[95 <./figures/mesh.pdf>]
+
+[96 <../ephemeroscopy/test/postprocess/al4.pdf> <../ephemeroscopy/test/postproc
+ess/p4.pdf> <../ephemeroscopy/test/postprocess/al2.pdf> <../ephemeroscopy/test/
+postprocess/p2.pdf> <../ephemeroscopy/test/postprocess/al.pdf> <../ephemeroscop
+y/test/postprocess/p.pdf>]
 Chapter 8
-
-
-[95
-
-
-]
-
-[96]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 4906.
-
 
 
 [97
 
 
 ]
-Appendix A
 
+[98]
 
-[98
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\noindent' on input line 5067.
 
-
-]
-Appendix B
 
 
 [99
 
 
 ]
+Appendix A
 
-[100]
 
-[101]
+[100
+
+
+]
+Appendix B
+
+
+[101
+
+
+]
 
 [102]
 
@@ -2102,45 +2158,58 @@ Appendix B
 [110]
 
 [111]
+
+[112]
+
+[113]
 Bibliography
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5997.
+6158.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5997.
+(Font)              scaled to size 10.0pt on input line 6158.
 
 
-[112
+[114
 
 
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 5998--5998
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 6159--6159
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
 
 
 
-[113]
+[115]
 
-[114] (./text.aux (./frontespizio.aux))
+[116] (./text.aux (./frontespizio.aux))
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                text
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'text.run.xml'.
 \openout1 = `text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 48250 strings out of 473197
- 1059374 string characters out of 5718605
- 2005543 words of memory out of 5000000
- 69910 multiletter control sequences out of 15000+600000
+ 48344 strings out of 473197
+ 1062399 string characters out of 5718605
+ 2017605 words of memory out of 5000000
+ 69985 multiletter control sequences out of 15000+600000
  723627 words of font info for 279 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,23n,105p,2190b,2268s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2173,10 +2242,10 @@ ve/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx
 /zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on text.pdf (118 pages, 1074816 bytes).
+Output written on text.pdf (120 pages, 1384451 bytes).
 PDF statistics:
- 1920 PDF objects out of 2073 (max. 8388607)
- 1744 compressed objects within 18 object streams
- 620 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2019 PDF objects out of 2073 (max. 8388607)
+ 1819 compressed objects within 19 object streams
+ 631 named destinations out of 1000 (max. 500000)
+ 459 words of extra memory for PDF output out of 10000 (max. 10000000)
 
