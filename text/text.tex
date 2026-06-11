@@ -101,9 +101,11 @@
 \vspace{1em}
 Gradient elastoplasticity theories include the dependence on the gradient of the field describing the plastic distortion within a solid body. From the modeling viewpoint, this is motivated by the need to incorporate an internal characteristic length scale and describe size effects. The addition of the dependence on the plastic distortion gradient entails also mathematical benefits for the proof of existence theorems. Indeed, it ensures a sufficiently strong compactness to perform the various passages to the limit when nonlinearities -- which come from complex constitutive models or the geometry of large deformation -- are involved.
 
-In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces. The first model we study is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We consider two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory, by resorting to the theory of evolutionary variational inequalities of Han and Reddy for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining qualitative insights about the onset of necking.
+In this thesis, we develop and analyze some models of gradient plasticity, mainly addressing the modeling aspects and the existence theory. To develop the mechanical models, we systematically adopt a general framework based on the principle of virtual powers and inspired by the approach to gradient plasticity of Gurtin and Anand, where a microscopic balance of microforces -- those describing the plastic response -- is added alongside the usual macroscopic balance of forces.
 
-The second gradient plasticity model we focus on regards plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. This approach is able to formally reproduce the classical one, even thought its mathematical and modeling foundations differ, avoiding the need of considering non associated flow rules (that are known to be mathematically more difficult to handle) and providing directly a clearer variational structure to the problem. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (linking it to a damage field describing the amount of microcraks opened within the material), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. To prove that the model admits solutions, we develop a general existence theory for constrained mechanical systems and in presence of a dissipation potential possibly depending on the Lagrange multiplier. The proof is based on a time discretization approach: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the constrain is exploited to explicitate an unknown in terms of the remaining unknowns; these are found for an arbitrary value of the Lagrange multiplier by solving a static nonlinear problem (the existence of solution is established using a non-smooth version of the Minty--Browder theorem). Finally, the Lagrange multiplier is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem.
+The first model we develop is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We build two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory, by resorting to the theory of evolutionary variational inequalities of Han and Reddy for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining some qualitative insights about the onset of necking.
+
+The second gradient plasticity model that we develop aims to describe plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. Our approach is able to formally reproduce the classical one when particular constitutive relations are assumed, even thought its mathematical and modeling foundations differ, avoiding the need of considering non associated flow rules (that are known to be mathematically more difficult to handle) and providing directly a clearer variational structure to the problem. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (linking it to a damage field describing the amount of microcraks opened within the material), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. To prove that the proposed model admits solutions, we develop a general existence theory for constrained mechanical systems with a dissipation potential possibly depending on the Lagrange multiplier. The proof is based on a time discretization approach: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the constrain is exploited to explicitate an unknown in terms of the remaining unknowns; these are found for an arbitrary value of the Lagrange multiplier by solving a static nonlinear problem (the existence of solution is established using a non-smooth version of the Minty--Browder theorem). Finally, the Lagrange multiplier is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem. Having established the existence of solutions we propose a numerical scheme based on the finite element method to approximate the solutions to our model, we validate it empirically comparing the numerical results with an explicit analytical solution, and we eventually provide the numerical solution of a particular boundary value problem.
 
 \vspace*{\fill}
 
@@ -151,11 +153,11 @@ The second gradient plasticity model we focus on regards plastic materials whose
 
 \section*{Summary and organization of the material}
 
-The thesis is introduced by two preliminary chapters that serve as a common basis upon which the two main parts of the thesis are founded, each dedicated to one of the gradient elastoplasticity models that we have investigated. Chapter~\ref{chap:modeling} contains only known facts that we have reorganized in a unitary fashion. In particular we present a general framework to systematically develop mechanical models based on the principle of virtual powers and we show how it is applied to formulate the most common gradient plasticity models, both at small and large deformations. In Chapter~\ref{chap:solution-concepts} we introduce some general existence theorems for the evolutionary equations that arise from the class mechanical models described in the previous chapter. These are mostly known results except to that of Section~\ref{sec:existence-theorem-abstract-constrained} where we have developed an existence theory for constrained doubly nonlinear equations where the dissipation potential can depend on the Lagrange multiplier. This result will be used in the second part of the thesis.
+The thesis is introduced by two preliminary chapters that serve as a common basis upon which the two main parts of the thesis are founded, each dedicated to one of the gradient elastoplasticity models that we have investigated. Chapter~\ref{chap:modeling} contains only known facts that we have reorganized in a unitary fashion. In particular we present a general framework to systematically develop mechanical models based on the principle of virtual powers and we show how it is applied to formulate the most common gradient plasticity models, both at small and large deformations. In Chapter~\ref{chap:solution-concepts} we introduce some general existence theorems for the evolutionary equations that arise from the class of mechanical models described in the first chapter. These are mostly known results except to that of Section~\ref{sec:existence-theorem-abstract-constrained} where we have developed a novel existence theory for constrained doubly nonlinear equations with a dissipation potential possibly dependent on the Lagrange multiplier. This result will be used to prove the existence of solutions to the model discussed in the second part of the thesis.
 
-Part~\ref{part:his-model} is devoted to the development and analysis of a one-dimensional model of a metallic cylindrical bar. In Chapter~\ref{chap:intro-neck} we provide an introduction where we motivate the interest in studying such a model in view of a qualitative study of the necking phenomenon in the tensile test. In Chapter~\ref{chap:small-neck} we develop the one-dimensional model of the bar in the regime of small deformations and, after having discussed the existence of solutions by resorting to the theory of evolutionary equations of Han and Reddy~\cite{han-reddy}, we show that it is not able to predict necking. In Chapter~\ref{chap:large-neck} we extend the model to the regime of large deformations, we develop and existence theory using the notion of energetic solutions of Mielke and Theil~\cite{rate-independent-systems,francfort}, and then we provide a (not conclusive) qualitative analysis of whether the model is able to describe the necking phenomenon. In particular we will find a lower bound for the elongation at which necking possibly occurs, but we will not be able to show in a complete and rigorous way that necking must indeed occur.
+Part~\ref{part:his-model} is devoted to the development and analysis of a new one-dimensional model of a metallic cylindrical bar. In Chapter~\ref{chap:intro-neck} we provide an introduction where we motivate the interest in studying such a model in view of a qualitative study of the necking phenomenon in the tensile test. In Chapter~\ref{chap:small-neck} the model formulated in the regime of small deformations and, after having discussed the existence of solutions by resorting to the theory of evolutionary equations of Han and Reddy~\cite{han-reddy}, we show that it is not able to predict necking. In Chapter~\ref{chap:large-neck} we extend our model to the regime of large deformations, we develop and existence theory using the notion of energetic solutions of Mielke and Theil~\cite{rate-independent-systems,francfort}, and eventually we provide a (not conclusive) qualitative analysis of whether the model is able to describe the necking phenomenon. In particular we will find a lower bound for the elongation at which necking possibly occurs, but we will not be able to show in a complete and rigorous way that necking must indeed occur.
 
-In Part~\ref{part:my-model} we develop a model to describe pressure sensitive and dilatant plastic materials. In Chapter~\ref{chap:intro-pressure-sensitive} we review the existing models, that are the models commonly employed in geothecnical engineering whuch are based on the failure criteria such that of Tresca--Coulomb and Drucker--Pragaer and employs non-associated flow rules to avoid the overestimation of the dilatancy. We also report a known existence result. In Chapter~\ref{chap:pressure-sensitive-small} we develop an alternative model, valid in the regime of small deformations. The aim of this model is to avoid the need of considering non-associated flow rules and providing a framework for describing pressure sensitive and dilatant plastic materials that is compatible with the general view of mechanical systems discussed in Chapter~\ref{chap:modeling}. In addition to avoiding the mathematical difficulties entailed by non-associated plasticity, this model provides a more explicit representation of geomaterial mechanics. Indeed, the underlying idea is that a kinematic constraint must exist between the volumetric and deviatoric parts of the plastic strain. This arises from the fact that deviatoric sliding among the constituent grains is possible only if they pass from a higher to a lower packing density configuration, thus opening microcracks within the binding matrix. The Lagrange multiplier associated with this constraint is interpreted as the contact pressure between the grains, and the constitutive relations for the plastic force are chosen to be dependent on it. This approach describes the frictional mechanism between grains in a manner that is faithful to Coulomb's original intuition~\cite{Coulomb1776}.
+In Part~\ref{part:my-model} we develop a new model to describe pressure sensitive and dilatant plastic materials. The motivation  This is motivated by the need. In Chapter~\ref{chap:intro-pressure-sensitive} we review the existing models commonly employed in geothecnical engineering. These models employs the same framework of metal plasticity but allowing for plastic dilatancy and considering yield criteria that include the hydrostatic pressure, such that of Tresca--Coulomb and Drucker--Pragaer. Moreover they possibly employs non-associated flow rules to avoid the overestimation of the dilatancy. In the same chapter we report a known existence result for this kind of models. In Chapter~\ref{chap:pressure-sensitive-small} we develop a new alternative model, valid in the regime of small deformations. The aim of our model is to avoid the need of considering non-associated flow rules (that are known to be mathematically complicated since breaks the standard variational nature of associated plasticity theory) and providing a framework for describing pressure sensitive and dilatant plastic materials that is compatible with the general view of mechanical systems discussed in Chapter~\ref{chap:modeling}. In addition to avoiding the mathematical difficulties entailed by non-associated plasticity, this model provides a more explicit representation of geomaterial mechanics. Indeed, the underlying idea is that a kinematic constraint must exist between the volumetric and deviatoric parts of the plastic strain. This arises from the fact that deviatoric sliding among the constituent grains is possible only if they pass from a higher to a lower packing density configuration, thus opening microcracks within the binding matrix. The Lagrange multiplier associated with this constraint is interpreted as the contact pressure between the grains, and the constitutive relations for the plastic force are chosen to be dependent on it. This approach describes the frictional mechanism between grains in a manner that is faithful to Coulomb's original intuition~\cite{Coulomb1776}.
 
 \section*{Remark on notation and recall of basic notions}
 
@@ -192,16 +194,16 @@ The tensor spaces are endowed with the inner product obtained by the contraction
 \[
 v\cdot w=v_iw_i,\quad A:B=A_{ij}B_{ij}\quad\text{and}\quad T\threedots S=T_{ijk}S_{ijk}.
 \]
-We will use Eisenstein summation convection throughout all the thesis. Wi will also use the Frobisher norm defined by
+We will use Eisenstein summation convection throughout all the thesis. We will also use the Frobenius norm defined by
 \[
 |v|=(v\cdot v)^{1/2},\quad|A|=(A:A)^{1/2}\quad\text{and}\quad|T|=(T\threedots T)^{1/2}.
 \]
 
-For each $A\in\text{Lin}$ we denote with $\sym A\in\text{Sym}$ and $\ske A\in\text{Sym}$ is symmetric and skew-symmetric parts. The deviatoric part of $A$ is $\dev A=A-\frac{1}{d}\tr A\in\text{Dev}$.
+For each $A\in\text{Lin}$ we denote with $\sym A\in\text{Sym}$ and $\ske A\in\text{Sym}$ is symmetric and skew-symmetric parts. The deviatoric part of $A$ is $\dev A=A-\frac{1}{d}\tr A\in\text{Dev}$ while we will refer to $\frac{\tr A}{d}I$ to its spherical part.
 
 \subsection*{Notation for functional analysis}
 
-Given a Banach space $X$, endowed with a norm $\norm{\cdot}_X$, we denote with $X^*$ its dual endowed with the usual dual norm $\norm{\cdot}_{X^*}$. The actions of an element $\xi\in X^*$ on some $x\in X$ will be denoted with $\dual{\xi,x}$. The space $X$ is endowed with the strong and weak compactness convergence and $X^*$ with the strong and weak-star convergence. We recall that if $X$ is reflexive then $X^*$ is weakly-star compactly embedded in itself, while if $X$ is also separable $X$ is weakly compactly embedded in itself.
+Given a Banach space $X$, endowed with a norm $\norm{\cdot}_X$, we denote with $X^*$ its dual endowed with the usual dual norm $\norm{\cdot}_{X^*}$. The actions of an element $\xi\in X^*$ on some $x\in X$ will be denoted with $\dual{\xi,x}$. The space $X$ is endowed with the strong and weak compactness convergence and $X^*$ with the strong and weak-star convergence. We recall that if $X$ is reflexive then $X^*$ is weakly-star compactly embedded in itself, while if $X$ is also separable then $X$ is weakly compactly embedded in itself.
 
 Given two Banach spaces $X$ and $Y$ the Banach space of linear and continuous maps from $X$ to $Y$ is denoted as $\mathscr{L}(X,Y)$ and is endowed with the usual operator norm $\norm{\cdot}_{\mathscr{L}(X,Y)}$. The action of some $L\in\mathscr{L}(X,Y)$ on any $x$ in $X$ is denoted as $Lx\in Y$. Moreover the adjoint operator $L^*\in\mathscr{L}(Y^*,X^*)$ is defined by $\dual{L^*\zeta,x}=\dual{\zeta,Lx}$ for all $\zeta\in Y^*$ and $x\in X$. We recall that $\norm{L^*}_{\mathscr{L}(Y^*,X^*)}=\norm{L}_{\mathscr{L}(X,Y)}$.
 
@@ -4633,10 +4635,9 @@ Y_{\Sigma_\mathscr{l}}=\{(u,\pi,\alpha)\;|\;\text{$u\in H^1(\Omega,\mathbb{R}^d)
 \]
 Indeed if $y\in Y_\mathscr{l}$ then $u$ it is obviously $H^2$ inside each simplex of the triangulation. To make $y$ belonging to the original space of configuration $Z$ we should add the constrain that the jump of $\dind{u}{n}$ across the edges of the mesh vanish. This is imposed weakly throught the Lagrange multiplier $m\in M_\mathscr{l}$
 %For each field $f\in\{z,y,u,\pi,\alpha,\lambda,p,m\}$ let $X^f_\mathscr{l}$ its finite element space. We know that there exists  $M^f_\mathscr{l}\in\mathscr{L}(\mathbb{R}^{n^f_\mathscr{l}},X^f_\mathscr{l})$ such that $f=M^f_\mathscr{l}\mathsf{f}$. Here $n_\mathscr{l}^f=\dim X^f_\mathscr{l}$ and $\mathsf{f}\in\mathbb{R}^{n_\mathscr{l}^f}$ is the vector of the components of $f$ with respect to the basis described by $M^f_\mathscr{l}$. Notice that $M^f_\mathscr{l}$ can be seen as a function from the domain where $f$ is defined to $\mathscr{L}(\mathbb{R}^{n_\mathscr{l}^f},S^f)$, where $S^f$ is the tensor space where the values of $f$ stay.
-as showed in following time-continuous finite element approximation of Problem~\ref{prb:reformulated}. This formulation assumes that $\Phi$ is G\^ateaux differentiable: particular instances will be consider in the following subsections.
-\begin{prb}[Time-continuous finite element approximation]
+as showed in following time-continuous finite element approximation of Problem~\ref{prb:reformulated}. \begin{prb}[Time-continuous finite element approximation]
 \label{prb:fem}
-Find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in AC([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
+Assume that $\Phi$ is G\^ateaux differentiable. Then find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in AC([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
 \begin{align}
 \dual{D\Psi_0(z_\mathscr{l}(t))+\mathcal{A}y_\mathscr{l}(t)+D_h\Phi(p_\mathscr{l}(t),\dot y_\mathscr{l}(t))+\mathcal{D}\dot y_\mathscr{l}(t)-\mathcal{P}_\mathscr{l}(t)-\mathcal{M}_\mathscr{l}(t)-\mathcal{X}(t),w}&=0 \\
 \dual{q,\lambda_\mathscr{l}(t)-\mathcal{L}(y_\mathscr{l}(t))}&=0 \\
@@ -4654,26 +4655,65 @@ Find $\{z_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$, $\{p_{\mathscr{l}\tau}^k\}_{k=0
 \end{align}
 for all $w\in Z_\mathscr{l}$, $q\in P_\mathscr{l}$, $l\in M_\mathscr{l}$ and $k\in{1,\dots,N_\tau}$. Moreover $\dual{\mathcal{P}_{\mathscr{l}\tau}^k,w}=\dual{\mathcal{L}(y_{\mathscr{l}\tau}^k)^*p_{\mathscr{l}\tau}^k,h}-\dual{p_{\mathscr{l}\tau}^k,\mu}$ and $\dual{\mathcal{M}_{\mathscr{l}\tau}^k,w}=\left\langle m_{\mathscr{l}\tau}^k,\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle$.
 \end{prb}
-This problem reduces to solve a series of nonlinear algebraic problems. This can be done with a standard Newton method.
-\begin{rmk}[On the implementation of the Newton method ]
-To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
-\end{rmk}
-\begin{rmk}[On the choice of the time step size]
-The choice of the time step can be performed as follows. An initial step sized is decided. Then after each step the step size for the next iteration is chosen as
+This problem reduces to solve a series of nonlinear algebraic problems of the type $F_{\mathscr{l}\tau}^k(z_{\mathscr{l}\tau}^k,p_{\mathscr{l}\tau}^k)=0$. To solve them, we can apply the semismooth Newton method, which is briefly reviewed in Section~\ref{sec:seminewton}. We will not investigate whether the required hypotheses are satisfied, leaving the verification of the convergence of the numerical scheme to an empirical level. Here, we notice heuristically that, in order to formally apply the Newton method, we must at least restrict ourselves to $\Phi$ that are G\^ateaux differentiable with a piecewise differentiable G\^ateaux differential. This impose to regularize $R$ and $D$ when they are not sufficiently regular. We are interested to the case $R(p,\rho)=Y(p)\tilde R(\rho)$, with $Y$ smooth and $\tilde R(\rho)=|\rho|$, and
 \[
-\tau_\text{next}=\tau_\text{current}\sqrt{\frac{\text{tol}}{\text{err}}}.
+D(\rho,\beta)=\iota_Q\quad\text{with $Q=\{(\rho,\beta)\in\text{DevSym}\times\mathbb{R}\;|\;\beta\ge|\rho|\}$}.
 \]
-Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
-\end{rmk}
-\begin{rmk}[On the convergence of the numerical scheme]
-We did not studied the details of the convergence of the numerical scheme as $\mathscr{l}\to0$ and $\tau\to0$. We know from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the time discretization provides convergent solutions. It would be necessary to study how the finite dimensional approximation of the function spaces affects the convergence of the scheme. We notice however that, since the proof of the Minty--Browder theorem provided in Section~\ref{subsec:minty-browder} is based on a Galerkin approximation, it expected that the finite element approximation provides convergent solutions. We also recall from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the existence of the solution at each time step is ensured only if a sufficiently time step is chosen. This is likely to remain true in the finite element setting.
+So we replace $\tilde R$ and $D$ with their Yosida approximations $\tilde R_\eta$ and $D_\eta$. In the following lemma we compute them and we study their regularity.
+\begin{lemma}
+The Yosida approximations of $\tilde R$ and $D$ are
+\[
+\tilde R_\eta(\rho)
+=\begin{cases}
+\frac{|\rho|^2}{2\eta} & \text{if $|\rho|\le\eta$} \\
+|\rho|-\frac{1}{2\eta} & \text{if $|\rho|>\eta$}
+\end{cases}
+\qquad\text{and}\qquad
+D_\eta(\rho,\beta)
+=\begin{cases}
+0 & \text{if $\beta\ge|\rho|$} \\
+\frac{(|\rho|-\beta)^2}{4\eta} & \text{if $-|\rho|<\beta<|\rho|$} \\
+\frac{|\rho|^2+\beta^2}{2\eta} & \text{if $\beta\le-|\rho|$}
+\end{cases}
+\]
+for all $\eta>0$. Moreover $\tilde R_\eta$ and $D_\eta$ is of class $C^1$ and piecewise $C^2$.
+\end{lemma}
+\begin{proof}
+We have that
+\[
+\tilde R_\eta(\rho)=\inf_{\chi\in\text{DevSym}}\left[\frac{|\rho-\chi|^2}{2\eta}+|\chi|\right]=\inf_{t\ge0}\inf_{\substack{\chi\in\text{DevSym}\\|\chi|=1}}
+\left[\frac{|\rho-t\chi|^2}{2\eta}+t\right]=\inf_{t\ge0}\left[\frac{|\rho|^2(t-1)^2}{2\eta}+|\rho|t\right].
+\]
+Now this last function of $t$ is minimized for $t=1-\frac{\eta}{|\rho|}$ if $|\rho|>\eta$ and for $t=0$ if $|\rho|>\le\eta$. Substituting one finds the expression in the statement.
+
+Next
+\[
+D_\eta(\rho,\beta)=\frac{1}{2\eta}\text{dist}_Q(\rho,\beta)^2.
+\]
+This is zero if $(\rho,\beta)\in Q$. If $\beta\le-|\rho|$ then the nearest point in the cone $Q$ is $(0,0)$ so that in this case
+\[
+\tilde R_\eta(\rho,\beta)=\frac{|\rho|^2+\beta^2}{2\eta}.
+\]
+If instead $-|\rho|<\beta<|\rho|$ the the nearest point to $(\rho,\beta)$ in the cone $Q$ is its projection on the lateral side. This is of the form $(t\rho,t|\rho|)$ for some $t\in(0,1)$. Then we should find the minimum over such $t$ of
+\[
+(t-1)^2|\rho|^2+(t|\rho|-\beta).
+\]
+It is easy to see that this minimum is $\frac{(|\rho|-\beta)^2}{2}$ so that
+\[
+\tilde R_\eta(\rho,\beta)=\frac{(|\rho|-\beta)^2}{4\eta}.
+\]
+
+Now it is simple to check that $\tilde R_\eta$ and $D_\eta$ satisfy the stated regularity.
+\end{proof}
+\begin{rmk}[On the lack of $C^2$ regularity of $\tilde R_\eta$ and $D_\eta$]
+As reported in Section~\ref{sec:seminewton}, the semismooth Newton method requires the computation of an arbitrary element of the Clarke subdifferential. Thus, at points where $\tilde R_\eta $ and $D_\eta$ do not admit a second gradient, we can arbitrarily choose either of the two limiting values at the jump.
 \end{rmk}
 
 \subsection{Validation of the numerical scheme}
 
 To validate the numerical scheme we solve numerically a boundary value problem that admits an analytical solution.
 
-\subsubsection*{Choice of the constitutive relations} We consider the constitutive relations that we introduced in Section~\ref{sec:particular-constitutive} and Section~\ref{sec:recovering}. So set to zero the viscosities $\mathfrak D$, $\mathfrak{d}$, $\mathfrak{e}$ and also the gradient stiffnesses $\mathfrak{a}$, $\mathfrak{b}$ and $\mathfrak{c}$. We choose $L(\alpha)=b\alpha$ with $b>0$. Moreover the elastic response is assumed to linear and isotropic, that is
+\subsubsection*{Choice of the constitutive relations} We consider the constitutive relations that we introduced in Section~\ref{sec:particular-constitutive} and Section~\ref{sec:recovering}. So set to zero the viscosities $\mathfrak D$, $\mathfrak{d}$, $\mathfrak{e}$ and also the gradient stiffnesses $\mathfrak{a}$, $\mathfrak{b}$ and $\mathfrak{c}$. We choose $L(\alpha)=b\alpha$ with $b>0$. Moreover the elastic response is assumed to be linear and isotropic, that is
 \[
 T_e=2\mathfrak{m}E_e+\mathfrak{l}(\tr E_e)I
 \]
@@ -4757,52 +4797,7 @@ This completes the computation of the solution.
 
 \subsubsection*{Numerical solution}
 
-To numerically solve the above boundary value problem we first have to regularize the dissipation potentials. So we replace $R$ and $D$ with their Yosida approximations $R_\epsilon$ and $D_\epsilon$. We now indeed that the Yosida approximation of a convex function is always convex G\^ateaux differentiable (see Lemma~\ref{lemma:yosida}) and is suitable for the application of the (semi-smooth) Newton method.
-\begin{lemma}
-The Yosida approximations of $R$ and $D$ are
-\[
-R_\eta(\rho)
-=\begin{cases}
-\frac{|\rho|^2}{2\eta} & \text{if $|\rho|\le\eta$} \\
-|\rho|-\frac{1}{2\eta} & \text{if $|\rho|>\eta$}
-\end{cases}
-\qquad\text{and}\qquad
-D_\eta(\rho,\beta)
-=\begin{cases}
-0 & \text{if $\beta\ge|\rho|$} \\
-\frac{(|\rho|-\beta)^2}{4\eta} & \text{if $-|\rho|<\beta<|\rho|$} \\
-\frac{|\rho|^2+\beta^2}{2\eta} & \text{if $\beta\le-|\rho|$}
-\end{cases}
-\]
-for all $\eta>0$.
-\end{lemma}
-\begin{proof}
-We have that
-\[
-R_\eta(\rho)=\inf_{\chi\in\text{DevSym}}\left[\frac{|\rho-\chi|^2}{2\eta}+|\chi|\right]=\inf_{t\ge0}\inf_{\substack{\chi\in\text{DevSym}\\|\chi|=1}}
-\left[\frac{|\rho-t\chi|^2}{2\eta}+t\right]=\inf_{t\ge0}\left[\frac{|\rho|^2(t-1)^2}{2\eta}+|\rho|t\right].
-\]
-Now this last function of $t$ is minimized for $t=1-\frac{\eta}{|\rho|}$ if $|\rho|>\eta$ and for $t=0$ if $|\rho|>\le\eta$. Substituting one finds the expression in the statement.
-
-Next
-\[
-D_\eta(\rho,\beta)=\frac{1}{2\eta}\text{dist}_Q(\rho,\beta)^2.
-\]
-This is zero if $(\rho,\beta)\in Q$. If $\beta\le-|\rho|$ then the nearest point in the cone $Q$ is $(0,0)$ so that in this case
-\[
-R_\eta(\rho,\beta)=\frac{|\rho|^2+\beta^2}{2\eta}.
-\]
-If instead $-|\rho|<\beta<|\rho|$ the the nearest point to $(\rho,\beta)$ in the cone $Q$ is its projection on the lateral side. This is of the form $(t\rho,t|\rho|)$ for some $t\in(0,1)$. Then we should find the minimum over such $t$ of
-\[
-(t-1)^2|\rho|^2+(t|\rho|-\beta).
-\]
-It is easy to see that this minimum is $\frac{(|\rho|-\beta)^2}{2}$ so that
-\[
-R_\eta(\rho,\beta)=\frac{(|\rho|-\beta)^2}{4\eta}.
-\]
-This complete the proof.
-\end{proof}
-Now, since the solution is uniform, the fineness $\mathscr{l}$ of the mesh does not affect the accuracy of the solution. Indeed for all $\mathscr{l}$ the true solution belongs to the approximate finite element spaces. Thus the aim of this validation is to show that the overall numerical scheme and implementation work, and also to study the convergence to the exact solution as the parameter $\eta$, appearing in the Yosida approximation of $R$ and $D$, vanishes. The results are showed in Figure~\ref{fig:eta-to-zero}. In particular one can check that the convergence of $\alpha$, $\lambda$ and $p$ in the supremum norm on the time interval is linear in $\eta$.
+To numerically solve the above boundary value problem we regularize the dissipation potentials  $R$ and $D$ as discussed in the previous subsection, replacing them with their Yosida approximations $R_\epsilon$ and $D_\epsilon$. Now, since the solution is uniform, the fineness $\mathscr{l}$ of the mesh does not affect the accuracy of the solution. Indeed for all $\mathscr{l}$ the true solution belongs to the approximate finite element spaces. Thus the aim of this validation is to show that the overall numerical scheme and implementation work, and also to study the convergence to the exact solution as the parameter $\eta$, appearing in the Yosida approximation of $R$ and $D$, vanishes. The results are showed in Figure~\ref{fig:eta-to-zero}. In particular one can check that the convergence of $\alpha$, $\lambda$ and $p$ in the supremum norm on the time interval is linear in $\eta$.
 \begin{figure}[htp]
 \centering
 \input{figures/validation/alpha.tex}
@@ -4912,7 +4907,7 @@ In Figure~\ref{fig:results} are reported the plots of the value of the damage va
 
 Notice that a region of concentrated damage (it is a shear band since also the deviatoric plastic strain concentrates there since, due to the relation $\dot\alpha\ge|\dot\pi|$, it holds that $\alpha\approx|\pi|$) initiates at the midpoint of the top edge of the rectangle and propagates toward the bottom-right corner. When $\phi=0^\circ$ (in the third row) the shear band has on orientation of $45^\circ$ degrees with respect to the direction of the compressive load (the vertical one). Conversely, when $\phi=30^\circ$ (the first and second row), the shear is less inclined with respect to the vertical direction. This result is expected because, as previously observed in Chapter~\ref{chap:intro-pressure-sensitive}, the Mohr–Coulomb criterion (of which the Drucker–Prager model is an approximation) predicts that failure occurs along a plane inclined at $45^\circ-\phi/2=30^\circ$ with respect to the principal stress direction corresponding to the most compressive stress.
 
-As we can see comparing the first and second row of Figure~\ref{fig:results}, expected when $\zeta$ became smaller the width of the shear band reduces. The profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ are shown in Figure~\ref{fig:shear-band} for some values of $\zeta$.
+As we can see comparing the first and second row of Figure~\ref{fig:results}, when $\zeta$ became smaller, the damage variable $\alpha$ exhibits sharper variations. The profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ are shown in Figure~\ref{fig:shear-band} for some values of $\zeta$. We notice that the width of these profile seems not to change sensibly in $\zeta$. This means that the coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ tuning the amount gradient regularization do not determine any characteristic scale of the solution in the considered boundary value problem.
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[xlabel={$s$},ylabel={$\alpha$},xmin=0,xmax=2.8284,width=0.44\textwidth,legend pos=north east]
@@ -4974,6 +4969,22 @@ t=26.0 \\
 \caption{Each row contains the plot of $\alpha$ (on the left) and $p$ (on the right). The values of the time instant $t$, the friction and dilatancy angles $\psi$ and $\phi$ and the value of $\zeta$ (that we recall is the multiplier of the coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ associated with the gradient terms in the definition of the free energy) are reported at the beginning of each row. The displacement shown in the plots is magnified 10 times.}
 \label{fig:results}
 \end{figure}
+
+\subsection{Some details on the implementation}
+
+\begin{rmk}[On the implementation of the Newton method]
+To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
+\end{rmk}
+\begin{rmk}[On the choice of the time step size]
+The choice of the time step can be performed as follows. An initial step sized is decided. Then after each step the step size for the next iteration is chosen as
+\[
+\tau_\text{next}=\tau_\text{current}\sqrt{\frac{\text{tol}}{\text{err}}}.
+\]
+Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
+\end{rmk}
+\begin{rmk}[On the convergence of the numerical scheme]
+We did not studied the details of the convergence of the numerical scheme as $\mathscr{l}\to0$ and $\tau\to0$. We know from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the time discretization provides convergent solutions. It would be necessary to study how the finite dimensional approximation of the function spaces affects the convergence of the scheme. We notice however that, since the proof of the Minty--Browder theorem provided in Section~\ref{subsec:minty-browder} is based on a Galerkin approximation, it expected that the finite element approximation provides convergent solutions. We also recall from the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}, that the existence of the solution at each time step is ensured only if a sufficiently time step is chosen. This is likely to remain true in the finite element setting.
+\end{rmk}
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 
@@ -5087,6 +5098,47 @@ $\text{Lin}^1$ & $d\times d$ matrices with unit determinant \\
 \chapter{Tools from mathematical analysis}
 
 In this chapter we collect some tools of linear and nonlinear analysis used in the main body of this thesis.
+
+\section{Semismooth Newton method}
+\label{sec:seminewton}
+
+Consider the nonlinear algebraic equation $F(x)=0$ with $F\colon\mathbb{R}^n\to\mathbb{R}^n$. Given $x_0\in\mathbb{R}^n$, the Newton method consist in the iterative algorithm
+\[
+x_{k+1}=x_k+\delta_k\quad\text{with}\quad\delta_k=-\nabla F(x_k)^{-1}F(x_k)\quad\text{for $k\in\mathbb{N}_0$}.
+\]
+\begin{prop}[Local convergence of Newton method]
+Assume that $F$ is of class $C^1$ and $\nabla F$ is invertible and locally Lipschitz. Let also $x^*\in\mathbb{R}^n$ such that $F(x^*)=0$. Then there exists $\epsilon>0$ such that for all $x_0\in B(x^*,\epsilon)$ the sequence $\{x_k\}_{k\in\mathbb{N}_0}$ converges quadratically in the euclidean at $x^*$.
+\end{prop}
+\begin{proof}
+See~\cite{hintermuller2011semismooth}.
+\end{proof}
+The semismooth Newton method~\cite{qi1993nonsmooth} extends the Newton method when $F$ is not $C^1$.
+\begin{defi}
+Let $F\colon\mathbb{R}^n\to\mathbb{R}^n$ be locally Lipchitz. Let $D\subset\mathbb{R}^n$ be the set where $F$ is differentiable. The Clarke differential of $F$ is $\partial^CF\colon\mathbb{R}^n\rightsquigarrow\mathbb{R}^{n\times n}$ defined by
+\[
+\partial^CF(x)=\text{co}\{G\in\mathbb{R}^{n\times n}\;|\;\text{the exists $\{x_k\}_{k\in\mathbb{N}}\subset D$ such that $\nabla F(x_k)\to G$}\}
+\]
+where $\text{co}$ denotes the convex hull. Then $F$ is said to be semismooth if $F$ admits all the directional derivatives
+\[
+\lim_{t\to 0^+}\frac{F(x+th)-F(x)}{h}
+\]
+for all $x,h\in\mathbb{R}^n$ and
+\[
+|F(x+h)-F(x)-Gh|=\mathscr{o}(|h|)\quad\text{as $h\to 0$}
+\]
+for all $x\in\mathbb{R}$ and $G\in\partial^C F(x)$.
+\end{defi}
+Given $F$ semismooth and an initial guess $x_0\in\mathbb{R}^n$ the Newton semismooth method (if it is well defined) consists in the iterative algorithm
+\[
+x_{k+1}=x_k+\delta_k\quad\text{with}\quad\nabla \delta_k=-G_k^{-1}F(x_k)\quad\text{with $G_k$ any element in $\partial^CF(x_k)$}
+\]
+for $k\in\mathbb{N}_0$. The convergence of the semismooth Newton method is ensured in the following sense.
+\begin{prop}
+Let $F\colon\mathbb{R}^n\to\mathbb{R}^n$ be locally Lipschitz continuous and semismooth. Let $x^*\in\mathbb{R}^n$ such that $F(x^*)=0$ and every $G\in\partial^C F(x^*)$ is invertible. Then there exists $\epsilon>0$ such that for all $x_0\in B(x^*,\epsilon)$ the semismooth Newton method is well defined and the corresponding sequence $\{x_k\}_{k\in\mathbb{N}_0}$ converges to $x^*$.
+\end{prop}
+\begin{proof}
+See~\cite{hintermuller2011semismooth}.
+\end{proof}
 
 \section{Some classical results}
 
