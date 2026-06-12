@@ -1,7 +1,7 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\tocchapter {Chapter}{}{Premise}}{1}{chapter*.1}%
 \contentsline {section}{\tocsection {}{}{Contributions of this thesis}}{1}{section*.2}%
-\contentsline {section}{\tocsection {}{}{Summary and organization of the material}}{1}{section*.3}%
+\contentsline {section}{\tocsection {}{}{Summary and organization of the material}}{2}{section*.3}%
 \contentsline {section}{\tocsection {}{}{Remark on notation and recall of basic notions}}{2}{section*.4}%
 \contentsline {subsection}{\tocsubsection {}{}{General mathematical notation}}{2}{section*.5}%
 \contentsline {subsection}{\tocsubsection {}{}{Notation of tensor algebra}}{2}{section*.6}%
