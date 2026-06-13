@@ -408,6 +408,7 @@
       \strng{authornamehash}{0bdece84d96cf9669286a429a10b95e5}
       \strng{authorfullhash}{0bdece84d96cf9669286a429a10b95e5}
       \strng{authorfullhashraw}{0bdece84d96cf9669286a429a10b95e5}
+      \field{extraname}{1}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -416,6 +417,36 @@
       \field{title}{A rate-independent model for geomaterials under compression coupling strain gradient plasticity and damage}
       \field{year}{2025}
       \true{nocite}
+    \endentry
+    \entry{CriRos21}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=9f6fc096054bd75e382972b4841e5a10}{%
+           family={Caponi},
+           familyi={C\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=4d18b46a0308fd797be6a9ddd3d647c7}{%
+           family={Crismale},
+           familyi={C\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+      }
+      \strng{namehash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{fullhash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{fullhashraw}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{bibnamehash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{authorbibnamehash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{authornamehash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{authorfullhash}{0bdece84d96cf9669286a429a10b95e5}
+      \strng{authorfullhashraw}{0bdece84d96cf9669286a429a10b95e5}
+      \field{extraname}{2}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{SIAM}
+      \field{title}{Balanced viscosity solutions to a rate-indpendent coupled elasto-plastic damage system}
+      \field{year}{2021}
     \endentry
     \entry{ciarlet}{book}{}{}
       \name{author}{1}{}{%
@@ -1339,6 +1370,77 @@
       \field{pages}{369\bibrangedash 372}
       \range{pages}{4}
     \endentry
+    \entry{lewandowski2023multifield}{article}{}{}
+      \name{author}{9}{}{%
+        {{hash=94c03362b70d6061480454a087c4c362}{%
+           family={Lewandowski},
+           familyi={L\bibinitperiod},
+           given={Karol},
+           giveni={K\bibinitperiod}}}%
+        {{hash=9efdd27bae1fc624a03b17d8291a22b0}{%
+           family={Barbera},
+           familyi={B\bibinitperiod},
+           given={Daniele},
+           giveni={D\bibinitperiod}}}%
+        {{hash=a454fcbe1d52d1fae5dcbb30bd95e81b}{%
+           family={Blackwell},
+           familyi={B\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=153e6953303fbb34c7e4ccc3f6a2e2f1}{%
+           family={Roohi},
+           familyi={R\bibinitperiod},
+           given={Amir\bibnamedelima H.},
+           giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=ab475d613db40559c7c3de1fac06a4f0}{%
+           family={Athanasiadis},
+           familyi={A\bibinitperiod},
+           given={Ignatios},
+           giveni={I\bibinitperiod}}}%
+        {{hash=ac4aa8f51a47a9ae8386540a1dc1a4cf}{%
+           family={McBride},
+           familyi={M\bibinitperiod},
+           given={Andrew},
+           giveni={A\bibinitperiod}}}%
+        {{hash=85eb99c254587a8b351349f7be9aa3f1}{%
+           family={Steinmann},
+           familyi={S\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=2f298fe236a21651dd3abc83008c87a8}{%
+           family={Pearce},
+           familyi={P\bibinitperiod},
+           given={Chris},
+           giveni={C\bibinitperiod}}}%
+        {{hash=27a86909bdfd47b1b780de7f3300ae3e}{%
+           family={Kaczmarczyk},
+           familyi={K\bibinitperiod},
+           given={{Ł}ukasz},
+           giveni={Ł\bibinitperiod}}}%
+      }
+      \strng{namehash}{c8c84c5d182bec0674b3b0ce615bfebf}
+      \strng{fullhash}{549b58362853d771a83a05ef11d42d8d}
+      \strng{fullhashraw}{549b58362853d771a83a05ef11d42d8d}
+      \strng{bibnamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
+      \strng{authorbibnamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
+      \strng{authornamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
+      \strng{authorfullhash}{549b58362853d771a83a05ef11d42d8d}
+      \strng{authorfullhashraw}{549b58362853d771a83a05ef11d42d8d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0045-7825}
+      \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
+      \field{title}{Multifield finite strain plasticity: Theory and numerics}
+      \field{volume}{414}
+      \field{year}{2023}
+      \field{pages}{116101}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1016/j.cma.2023.116101
+      \endverb
+    \endentry
     \entry{Lubliner1990}{book}{}{}
       \name{author}{1}{}{%
         {{hash=f5d7f161a3a77393ad650b142b30cef6}{%
@@ -1518,7 +1620,6 @@
       \field{note}{cvgmt preprint}
       \field{title}{Balanced Viscosity (BV) solutions to infinite-dimensional rate-independent systems}
       \field{year}{2013}
-      \true{nocite}
       \verb{urlraw}
       \verb http://cvgmt.sns.it/paper/2242/
       \endverb

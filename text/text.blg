@@ -1,18 +1,18 @@
 [0] Config.pm:308> INFO - This is Biber 2.20
 [0] Config.pm:311> INFO - Logfile is 'text.blg'
-[50] biber:340> INFO - === Thu Jun 11, 2026, 12:31:43
-[60] Biber.pm:420> INFO - Reading 'text.bcf'
-[109] Biber.pm:994> INFO - Found 74 citekeys in bib section 0
-[120] Biber.pm:4463> INFO - Processing section 0
-[126] Biber.pm:4654> INFO - Looking for bibtex file 'bib.bib' for section 0
-[128] bibtex.pm:1713> INFO - LaTeX decoding ...
-[169] bibtex.pm:1519> INFO - Found BibTeX data source 'bib.bib'
-[461] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[461] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[461] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[462] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
-[504] bbl.pm:676> INFO - Writing 'text.bbl' with encoding 'UTF-8'
-[519] bbl.pm:779> INFO - Output to text.bbl
-[520] Biber.pm:131> WARN - legacy month field 'jan' in entry 'toupin1962elastic' is not an integer - this will probably not sort properly.
-[520] Biber.pm:131> WARN - legacy month field 'jan' in entry 'mindlin1964microstructure' is not an integer - this will probably not sort properly.
-[520] Biber.pm:133> INFO - WARNINGS: 2
+[52] biber:340> INFO - === Sun Jun 14, 2026, 00:17:27
+[63] Biber.pm:420> INFO - Reading 'text.bcf'
+[115] Biber.pm:994> INFO - Found 76 citekeys in bib section 0
+[128] Biber.pm:4463> INFO - Processing section 0
+[135] Biber.pm:4654> INFO - Looking for bibtex file 'bib.bib' for section 0
+[137] bibtex.pm:1713> INFO - LaTeX decoding ...
+[182] bibtex.pm:1519> INFO - Found BibTeX data source 'bib.bib'
+[508] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[508] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[508] Biber.pm:4283> INFO - Sorting list 'nty/global//global/global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[508] Biber.pm:4289> INFO - No sort tailoring available for locale 'en-US'
+[556] bbl.pm:676> INFO - Writing 'text.bbl' with encoding 'UTF-8'
+[574] bbl.pm:779> INFO - Output to text.bbl
+[574] Biber.pm:131> WARN - legacy month field 'jan' in entry 'toupin1962elastic' is not an integer - this will probably not sort properly.
+[574] Biber.pm:131> WARN - legacy month field 'jan' in entry 'mindlin1964microstructure' is not an integer - this will probably not sort properly.
+[574] Biber.pm:133> INFO - WARNINGS: 2

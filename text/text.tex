@@ -5011,8 +5011,8 @@ t=33.6 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al4.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p4.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al4.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p4.pdf}
 \end{minipage}
 \\
 \begin{minipage}[c]{0.15\textwidth}
@@ -5025,8 +5025,8 @@ t=33.6 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al2.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p2.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al2.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p2.pdf}
 \end{minipage}
 \\
 \begin{minipage}[c]{0.15\textwidth}
@@ -5039,14 +5039,16 @@ t=26.0 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/al.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeroscopy/test/postprocess/p.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p.pdf}
 \end{minipage}
 \caption{Each row contains the plot of $\alpha$ (on the left) and $p$ (on the right). The values of the time instant $t$, the friction and dilatancy angles $\psi$ and $\phi$ and the value of $\zeta$ (that we recall is the multiplier of the coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ associated with the gradient terms in the definition of the free energy) are reported at the beginning of each row. The displacement shown in the plots is magnified 10 times.}
 \label{fig:results}
 \end{figure}
 
 \subsection{Some details on the implementation}
+
+In the following remarks are reported some details on the actual implementation.
 
 \begin{rmk}[On the implementation of the Newton method]
 To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
@@ -5058,6 +5060,16 @@ The choice of the time step can be performed as follows. An initial step sized i
 \]
 Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
 \end{rmk}
+
+\section{Directions of possible further research}
+
+Here we collect some suggestions for future research.
+
+From the modeling viewpoint, a natural extension would be to incorporate compaction under compressive loadings, a phenomenon that is observed in geomaterials due to microcrack closure. In our current formulation, only dilatancy is allowed because the volumetric plastic strain is directly linked with the damage variable, which undergoes a unidirectional evolution.
+
+On the mathematical side, it would be interesting to study the limits of vanishing viscosity and vanishing gradient regularization. In the first case, the evolution is expected to develop jumps in time, which could be treated within the framework of balanced viscosity solutions~\cite{MieRosSav13}. In the second case, spatial discontinuities are expected to appear in the displacement field, while plastic strains and damage concentrate. As observed in similar models~\cite{CriRos21}, we expect that in the limit solution, the displacement field belongs to the space $\text{BD}(\Omega)$ of functions of bounded variation, and the plastic/damage fields belong to the space of bounded measures $\mathcal{M}(\Omega)$.
+
+Regarding the numerical approximation, future steps could include a complete convergence proof and the development of an adaptive mesh algorithm to better capture deformation localization. Finally, it would be useful to find an alternative way to handle the nonsmoothness of the dissipation potentials (for example, based on complementary functions, see~\cite{lewandowski2023multifield}), avoiding the Yosida regularization, which introduces ill-conditioning issues in our current numerical scheme when the regularization parameter becomes small.
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 \label{chap:pressure-sensitive-large}

@@ -1,5 +1,0 @@
-Dear professor,
-I attach the current version of the thesis. I have worked mainly on Section 5.3, in particular on Subsection 5.3.2. There I performed formally a local stability analysis of the trivial uniform solution. I have obtained a lower bound for the elongation at which instability occurs. I proved that this lower bound is located after the elongation corresponding to the maximum tensile force and converges to it as the length of the bar tends to infinity. This results is in agreement with Considère experimental criterion that states that necking occur after the tensile force reaches its maximum. I am still trying to prove that instability must occur at some sufficiently large elongation and to extend the analysis to the case that some defects are included in the constitutive relations (that is constitutive relations that depends explicitly on the axial position along the bar) in order to favor the onset of necking.
-
-Thank you and best regards,
-Bernardo Ardini

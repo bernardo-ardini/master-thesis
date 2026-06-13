@@ -109,7 +109,8 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Choice of the constitutive relations}}{87}{section*.40}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Definition of the boundary value problem}}{88}{section*.41}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Discussion on the results}}{89}{section*.43}%
-\contentsline {subsection}{\tocsubsection {}{7.6.5}{Some details on the implementation}}{89}{subsection.7.6.5}%
+\contentsline {subsection}{\tocsubsection {}{7.6.5}{Some details on the implementation}}{90}{subsection.7.6.5}%
+\contentsline {section}{\tocsection {}{7.7}{Directions of possible further research}}{90}{section.7.7}%
 \contentsline {chapter}{\tocchapter {Chapter}{8}{Proposal of an alternative mechanical model: the regime of large deformations}}{92}{chapter.8}%
 \contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{92}{section.8.1}%
 \contentsline {part}{\noindent Collection of useful results}{94}{part*.46}%
