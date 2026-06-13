@@ -11,10 +11,11 @@ A=1.1e6;B=1.1e6;l=4;p=2;r=2;alpha=1;
 %assert((alpha>0)&(r>1)&(alpha<=p-1)&(p>1+alpha/r));
 W=A*(((E1-1)^2)^(p/2)+((E2-1)^2)^(p/2)+((l*E3)^2)^(p/2))/(E1*E2^(d-1))^alpha+B*((E1*E2^(d-1)-1)^2)^(r/2);
 
-C=0.9e3;D=10;E=1e3;l=0.01;Pi=0.1;q=1.3;delta=17;
+C=0.1e3;D=10;E=1e3;l=0.01;Pi=0.1;q=1.3;delta=17;
 %syms C D E ll Pi q delta real;
 %H=C*((P-1)^2)^(q/2)+D/(P-Pi)+E*((l*dP)^2)^(q/2);
 H=C*(P^q+q/delta*exp(-delta*(P-1)))+D/(P-Pi)+E*(l*dP)^2;
+%H=C*exp()
 
 Y=3.8e3;
 %syms Y;
