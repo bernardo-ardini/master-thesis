@@ -622,7 +622,6 @@
       \field{journaltitle}{Calc Var PDEs}
       \field{title}{Quasistatic evolution for Cam-Clay plasticity: a weak formulation via viscoplastic regularization and time rescaling}
       \field{year}{2011}
-      \true{nocite}
     \endentry
     \entry{DavoliFrancfort2021}{article}{}{}
       \name{author}{2}{}{%
@@ -719,6 +718,41 @@
       \field{title}{La théorie physique: Son objet, sa structure}
       \field{year}{1906}
       \true{nocite}
+    \endentry
+    \entry{eisen1979selection}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=a7ac03ced13d8d4362967bf64f415427}{%
+           family={Eisen},
+           familyi={E\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{fullhash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{fullhashraw}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{bibnamehash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{authorbibnamehash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{authornamehash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{authorfullhash}{a7ac03ced13d8d4362967bf64f415427}
+      \strng{authorfullhashraw}{a7ac03ced13d8d4362967bf64f415427}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0025-2611}
+      \field{journaltitle}{Manuscripta Mathematica}
+      \field{number}{1}
+      \field{title}{A selection lemma for sequences of measurable sets, and lower semicontinuity of multiple integrals}
+      \field{volume}{27}
+      \field{year}{1979}
+      \field{pages}{73\bibrangedash 79}
+      \range{pages}{7}
+      \verb{doi}
+      \verb 10.1007/BF01297974
+      \endverb
     \endentry
     \entry{ekeland-temam}{book}{}{}
       \name{author}{2}{}{%

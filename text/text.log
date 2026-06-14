@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  14 JUN 2026 00:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  14 JUN 2026 02:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1984,39 +1984,39 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
 
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.0pt on input line 113.
+(Font)              scaled to size 7.0pt on input line 114.
 [1
 
 
 ]
 Contents
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 14.4pt on input line 113.
+(Font)              scaled to size 14.4pt on input line 114.
 (./text.toc
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 10.0pt on input line 40.
-
-
-[2
-
-
-])
+(Font)              scaled to size 8.0pt on input line 40.
+)
 \tf@toc=\write5
 \openout5 = `text.toc'.
 
 
 
-[3]
+[2
+
+
+]
 Premise
 LaTeX Font Info:    Trying to load font information for LGR+zpltlf on input lin
-e 153.
-LaTeX Font Info:    No file LGRzpltlf.fd. on input line 153.
+e 155.
+LaTeX Font Info:    No file LGRzpltlf.fd. on input line 155.
 
 LaTeX Font Warning: Font shape `LGR/zpltlf/m/n' undefined
-(Font)              using `LGR/cmr/m/n' instead on input line 153.
+(Font)              using `LGR/cmr/m/n' instead on input line 155.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
-(Font)              scaled to size 10.0pt on input line 157.
+(Font)              scaled to size 10.0pt on input line 159.
+LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
+(Font)              scaled to size 10.0pt on input line 163.
 
 
 [1
@@ -2028,15 +2028,15 @@ LaTeX Font Info:    Font shape `T1/zpltlf/m/it' will be
 
 [2]
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 10.0pt on input line 201.
+(Font)              scaled to size 10.0pt on input line 203.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 7.3pt on input line 201.
+(Font)              scaled to size 7.3pt on input line 203.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 10.0pt on input line 209.
+(Font)              scaled to size 10.0pt on input line 211.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 7.3pt on input line 213.
+(Font)              scaled to size 7.3pt on input line 215.
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 5.5pt on input line 213.
+(Font)              scaled to size 5.5pt on input line 215.
 
 Missing character: There is no d in font zplsym!
 
@@ -2052,14 +2052,14 @@ Chapter 1
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+eus on input line 288
+LaTeX Font Info:    Trying to load font information for U+eus on input line 290
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/ueus.fd
 File: ueus.fd 2013/01/14 v3.01 Euler Script
 )
 
 [6]
-Overfull \hbox (3.44603pt too wide) in paragraph at lines 388--390
+Overfull \hbox (3.44603pt too wide) in paragraph at lines 390--392
 [][][]\T1/zpltlf/m/sc/10 Example \T1/zpltlf/m/n/10 1.12\T1/zpltlf/m/sc/10 . []\
 T1/zpltlf/m/n/10 (Ex-am-ple []1.3[] con-tin-ued) To en-sure that $\OML/npxmi/m/
 it/10 \LMS/npxsy/m/n/10 ¹\OML/npxmi/m/it/10 x\LMS/npxsy/m/n/10 º 2 »\OT1/minzp
@@ -2081,7 +2081,7 @@ $\T1/zpltlf/m/n/10 , one choose $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10
 
 [10]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.2pt on input line 550.
+(Font)              scaled to size 6.2pt on input line 552.
 
 
 [11]
@@ -2108,11 +2108,11 @@ Chapter 2
 [19]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1020.
+(amsmath)                trying to recover with `aligned' on input line 1022.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1020.
+(amsmath)                trying to recover with `aligned' on input line 1022.
 
 
 
@@ -2131,22 +2131,22 @@ Package amsmath Warning: Cannot use `split' here;
 [26]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1402.
+(amsmath)                trying to recover with `aligned' on input line 1404.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1402.
+(amsmath)                trying to recover with `aligned' on input line 1404.
 
 
 
 [27]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1467.
+(amsmath)                trying to recover with `aligned' on input line 1469.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 1467.
+(amsmath)                trying to recover with `aligned' on input line 1469.
 
 
 
@@ -2157,7 +2157,7 @@ Package amsmath Warning: Cannot use `split' here;
 [30]
 
 [31]
-Overfull \hbox (2.78784pt too wide) in paragraph at lines 1721--1724
+Overfull \hbox (2.78784pt too wide) in paragraph at lines 1723--1726
 [][][]\T1/zpltlf/m/sc/10 Remark \T1/zpltlf/m/n/10 2.25\T1/zpltlf/m/sc/10 . []\T
 1/zpltlf/m/n/10 (Choice of the dis-si-pa-tion dis-tance) []Given a dis-si-pa-ti
 on po-ten-tial $\U/npxmia/m/it/10 ^^H [] [] \OML/npxmi/m/it/10 Z \LMS/npxsy/m/n
@@ -2175,19 +2175,19 @@ pxmi/m/it/10 z; []\LMS/npxsy/m/n/10 º 7!
 [34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 1886.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1888.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 1886.
+(hyperref)                replaced by space on input line 1888.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 1886.
+(hyperref)                removing `\noindent' on input line 1888.
 
 LaTeX Font Info:    Font shape `T1/zpltlf/b/n' will be
-(Font)              scaled to size 20.74pt on input line 1886.
+(Font)              scaled to size 20.74pt on input line 1888.
 
 
 [35
@@ -2211,7 +2211,7 @@ Chapter 4
 
 
 ]
-Overfull \hbox (3.04405pt too wide) in paragraph at lines 2027--2028
+Overfull \hbox (3.04405pt too wide) in paragraph at lines 2029--2030
  \T1/zpltlf/b/n/10 4.1.2.Kinematics of the one di-men-sional model.[] \T1/zpltl
 f/m/n/10 We are now ready to build a purely one-dimensional
  []
@@ -2262,7 +2262,7 @@ Chapter 5
 [57]
 PGFPlots: reading {figures/instabilityelref.dat}
 PGFPlots: reading {figures/instabilityelref.dat}
-Package pgfplots info on input line 3279: fill between: activating layered grap
+Package pgfplots info on input line 3282: fill between: activating layered grap
 hics
 \pgf@layerbox@axis background=\box71
 \pgf@layerboxsaved@axis background=\box72
@@ -2280,16 +2280,16 @@ hics
 \pgf@layerboxsaved@axis descriptions=\box84
 \pgf@layerbox@axis foreground=\box85
 \pgf@layerboxsaved@axis foreground=\box86
-Package pgfplots info on input line 3279: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3282: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 LaTeX Font Info:    Font shape `T1/zpltlf/m/sc' will be
-(Font)              scaled to size 8.0pt on input line 3279.
+(Font)              scaled to size 8.0pt on input line 3282.
 PGFPlots: reading {figures/instabilityel.dat}
 PGFPlots: reading {figures/instabilityel.dat}
-Package pgfplots info on input line 3293: fill between: activating layered grap
+Package pgfplots info on input line 3296: fill between: activating layered grap
 hics
-Package pgfplots info on input line 3293: Setting layers 'axis background,axis 
+Package pgfplots info on input line 3296: Setting layers 'axis background,axis 
 grid,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axi
 s foreground'...
 
@@ -2311,19 +2311,19 @@ PGFPlots: reading {figures/hessian.dat}
 [62]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3591.
+(amsmath)                trying to recover with `aligned' on input line 3594.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 3591.
+(amsmath)                trying to recover with `aligned' on input line 3594.
 
 
 
 [63]
 LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
-(Font)              scaled to size 6.0pt on input line 3636.
+(Font)              scaled to size 6.0pt on input line 3639.
 LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
-(Font)              scaled to size 6.5pt on input line 3639.
+(Font)              scaled to size 6.5pt on input line 3642.
 PGFPlots: reading {figures/dets.dat}
 
 Missing character: There is no ; in font nullfont!
@@ -2347,16 +2347,16 @@ PGFPlots: reading {figures/etan.dat}
 [67]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\leavevmode@ifvmode' on input line 3945.
+(hyperref)                removing `\leavevmode@ifvmode' on input line 3954.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 5.0pt
-(hyperref)                replaced by space on input line 3945.
+(hyperref)                replaced by space on input line 3954.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 3945.
+(hyperref)                removing `\noindent' on input line 3954.
 
 
 
@@ -2402,11 +2402,11 @@ Chapter 7
 [81]
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4622.
+(amsmath)                trying to recover with `aligned' on input line 4631.
 
 
 Package amsmath Warning: Cannot use `split' here;
-(amsmath)                trying to recover with `aligned' on input line 4622.
+(amsmath)                trying to recover with `aligned' on input line 4631.
 
 
 
@@ -2454,7 +2454,7 @@ Missing character: There is no ; in font nullfont!
 <figures/mesh.pdf, id=1301, 614.295pt x 794.97pt>
 File: figures/mesh.pdf Graphic file (type pdf)
 <use figures/mesh.pdf>
-Package pdftex.def Info: figures/mesh.pdf  used on input line 4974.
+Package pdftex.def Info: figures/mesh.pdf  used on input line 4983.
 (pdftex.def)             Requested size: 165.9361pt x 64.01173pt.
 PGFPlots: reading {figures/shearband4.dat}
 
@@ -2465,59 +2465,51 @@ PGFPlots: reading {figures/shearband2.dat}
 Missing character: There is no ; in font nullfont!
 PGFPlots: reading {figures/shearband3.dat}
 Missing character: There is no ; in font nullfont!
-<../ephemeros/test/postprocess/al4.pdf, id=1309, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/al4.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/al4.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/al4.pdf  used on input l
-ine 5014.
+<figures/alpha4.pdf, id=1309, 614.295pt x 794.97pt>
+File: figures/alpha4.pdf Graphic file (type pdf)
+<use figures/alpha4.pdf>
+Package pdftex.def Info: figures/alpha4.pdf  used on input line 5023.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
-<../ephemeros/test/postprocess/p4.pdf, id=1311, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/p4.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/p4.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/p4.pdf  used on input li
-ne 5015.
+<figures/pressure4.pdf, id=1311, 614.295pt x 794.97pt>
+File: figures/pressure4.pdf Graphic file (type pdf)
+<use figures/pressure4.pdf>
+Package pdftex.def Info: figures/pressure4.pdf  used on input line 5024.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
-<../ephemeros/test/postprocess/al2.pdf, id=1313, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/al2.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/al2.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/al2.pdf  used on input l
-ine 5028.
+<figures/alpha2.pdf, id=1313, 614.295pt x 794.97pt>
+File: figures/alpha2.pdf Graphic file (type pdf)
+<use figures/alpha2.pdf>
+Package pdftex.def Info: figures/alpha2.pdf  used on input line 5037.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
-<../ephemeros/test/postprocess/p2.pdf, id=1315, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/p2.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/p2.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/p2.pdf  used on input li
-ne 5029.
+<figures/pressure2.pdf, id=1315, 614.295pt x 794.97pt>
+File: figures/pressure2.pdf Graphic file (type pdf)
+<use figures/pressure2.pdf>
+Package pdftex.def Info: figures/pressure2.pdf  used on input line 5038.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
-<../ephemeros/test/postprocess/al.pdf, id=1317, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/al.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/al.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/al.pdf  used on input li
-ne 5042.
+<figures/alpha.pdf, id=1317, 614.295pt x 794.97pt>
+File: figures/alpha.pdf Graphic file (type pdf)
+<use figures/alpha.pdf>
+Package pdftex.def Info: figures/alpha.pdf  used on input line 5051.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
-<../ephemeros/test/postprocess/p.pdf, id=1319, 614.295pt x 794.97pt>
-File: ../ephemeros/test/postprocess/p.pdf Graphic file (type pdf)
-<use ../ephemeros/test/postprocess/p.pdf>
-Package pdftex.def Info: ../ephemeros/test/postprocess/p.pdf  used on input lin
-e 5043.
+<figures/pressure.pdf, id=1319, 614.295pt x 794.97pt>
+File: figures/pressure.pdf Graphic file (type pdf)
+<use figures/pressure.pdf>
+Package pdftex.def Info: figures/pressure.pdf  used on input line 5052.
 (pdftex.def)             Requested size: 165.93512pt x 87.07071pt.
 LaTeX Font Info:    Trying to load font information for T1+npxtt on input line 
-5051.
+5060.
 (/usr/share/texlive/texmf-dist/tex/latex/newpx/t1npxtt.fd
 File: t1npxtt.fd 2000/12/14 v1.0
 )
 LaTeX Font Info:    Font shape `T1/npxtt/m/n' will be
-(Font)              scaled to size 10.0pt on input line 5051.
+(Font)              scaled to size 10.0pt on input line 5060.
 
 
 [89 <./figures/mesh.pdf>]
 
 [90]
 
-[91 <../ephemeros/test/postprocess/al4.pdf> <../ephemeros/test/postprocess/p4.p
-df> <../ephemeros/test/postprocess/al2.pdf> <../ephemeros/test/postprocess/p2.p
-df> <../ephemeros/test/postprocess/al.pdf> <../ephemeros/test/postprocess/p.pdf
->]
+[91 <./figures/alpha4.pdf> <./figures/pressure4.pdf> <./figures/alpha2.pdf> <./
+figures/pressure2.pdf> <./figures/alpha.pdf> <./figures/pressure.pdf>]
 Chapter 8
 
 
@@ -2529,7 +2521,7 @@ Chapter 8
 [93]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\noindent' on input line 5164.
+(hyperref)                removing `\noindent' on input line 5173.
 
 
 
@@ -2577,7 +2569,7 @@ Bibliography
 
 
 ]
-Overfull \hbox (12.41876pt too wide) in paragraph at lines 6278--6278
+Overfull \hbox (12.41876pt too wide) in paragraph at lines 6302--6302
 []\T1/zpltlf/m/n/10 M.E. Gurtin and E. Fried. ``A con-tin-uum me-chan-i-cal the
 -ory for tur-bu-lence: a gen-er-al-ized Navier^^UStokes-
  []
@@ -2600,11 +2592,11 @@ Package logreq Info: Writing requests to 'text.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 51139 strings out of 473197
- 1114205 string characters out of 5718605
- 2082674 words of memory out of 5000000
- 72786 multiletter control sequences out of 15000+600000
- 696851 words of font info for 220 fonts, out of 8000000 for 9000
+ 51145 strings out of 473197
+ 1113706 string characters out of 5718605
+ 2083633 words of memory out of 5000000
+ 72792 multiletter control sequences out of 15000+600000
+ 699674 words of font info for 221 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  99i,23n,105p,2480b,2268s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2636,10 +2628,10 @@ live/texmf-dist/fonts/type1/public/newtx/txsym.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/public/newpx/zplb.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/newpx/zplr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/
 zplri.pfb>
-Output written on text.pdf (114 pages, 1375555 bytes).
+Output written on text.pdf (113 pages, 1371895 bytes).
 PDF statistics:
- 1931 PDF objects out of 2073 (max. 8388607)
- 1740 compressed objects within 18 object streams
+ 1944 PDF objects out of 2073 (max. 8388607)
+ 1754 compressed objects within 18 object streams
  595 named destinations out of 1000 (max. 500000)
- 459 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 467 words of extra memory for PDF output out of 10000 (max. 10000000)
 

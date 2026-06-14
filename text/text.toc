@@ -78,6 +78,7 @@
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Stability under force control}}{60}{section*.26}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{Regularized stability}}{62}{section*.28}%
 \contentsline {subsubsection}{\tocsubsubsection {}{}{True instability}}{66}{section*.30}%
+\contentsline {section}{\tocsection {}{5.4}{Directions of possible further research}}{67}{section.5.4}%
 \contentsline {part}{Part\ 2. \enspace \noindent A model describing pressure sensitive and dilatant plastic materials}{68}{part.2}%
 \contentsline {chapter}{\tocchapter {Chapter}{6}{Introduction and review of preexisting mechanical models}}{69}{chapter.6}%
 \contentsline {section}{\tocsection {}{6.1}{Extension of plasticity theory incorporating plastic dilatancy and non-associated flow rules}}{69}{section.6.1}%
@@ -115,14 +116,14 @@
 \contentsline {section}{\tocsection {}{8.1}{Formulation of the model}}{92}{section.8.1}%
 \contentsline {part}{\noindent Collection of useful results}{94}{part*.46}%
 \contentsline {chapter}{\tocappendix {Appendix}{A}{Tools from mathematical and numerical analysis}}{95}{appendix.A}%
-\contentsline {section}{\tocsection {}{A.1}{Gronwall inequality}}{95}{section.A.1}%
+\contentsline {section}{\tocsection {}{A.1}{A general version of Gronwall inequality}}{95}{section.A.1}%
 \contentsline {section}{\tocsection {}{A.2}{Linear functional analysis}}{95}{section.A.2}%
-\contentsline {subsection}{\tocsubsection {}{A.2.1}{Compactness in Sobolev spaces}}{95}{subsection.A.2.1}%
+\contentsline {subsection}{\tocsubsection {}{A.2.1}{Compactness in Sobolev spaces}}{96}{subsection.A.2.1}%
 \contentsline {subsection}{\tocsubsection {}{A.2.2}{Bochner spaces}}{96}{subsection.A.2.2}%
 \contentsline {subsection}{\tocsubsection {}{A.2.3}{Generalized mixed elliptic problems}}{97}{subsection.A.2.3}%
-\contentsline {section}{\tocsection {}{A.3}{Nonlinear functional analysis}}{99}{section.A.3}%
-\contentsline {subsection}{\tocsubsection {}{A.3.1}{Some lemmas regarding G\^ateaux and Frechèt differentials}}{99}{subsection.A.3.1}%
-\contentsline {subsection}{\tocsubsection {}{A.3.2}{Fixed point theorems}}{100}{subsection.A.3.2}%
+\contentsline {section}{\tocsection {}{A.3}{Nonlinear functional analysis}}{100}{section.A.3}%
+\contentsline {subsection}{\tocsubsection {}{A.3.1}{Some technical lemmas regarding G\^ateaux and Frechèt differentials}}{100}{subsection.A.3.1}%
+\contentsline {subsection}{\tocsubsection {}{A.3.2}{Schauder fixed point theorem}}{101}{subsection.A.3.2}%
 \contentsline {subsection}{\tocsubsection {}{A.3.3}{Browder--Minty theorem}}{101}{subsection.A.3.3}%
 \contentsline {subsection}{\tocsubsection {}{A.3.4}{Lower semicontinuity of integral functionals}}{106}{subsection.A.3.4}%
 \contentsline {section}{\tocsection {}{A.4}{Convex analysis}}{106}{section.A.4}%

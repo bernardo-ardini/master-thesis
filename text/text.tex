@@ -110,7 +110,9 @@ The second gradient plasticity model that we develop aims to describe plastic ma
 
 \vspace*{\fill}
 
+\footnotesize
 \tableofcontents
+\normalsize
 
 \newpage
 
@@ -656,7 +658,7 @@ where $\Phi_0\colon H\to[0,\infty]$ is convex, lower semicontinuous, satisfying 
 Now the problem that we consider is the following.
 \begin{prb}
 \label{prb:roubickeck}
-Find $z\in AC([0,T],Z)$ such that $z(0)=z_0$ and $\mathcal{F}(z(t))+\partial\Phi(\dot z(t))\ni f(t)$ for a.e.\ $t\in(0,T)$.
+Find $z\in\text{AC}([0,T],Z)$ such that $z(0)=z_0$ and $\mathcal{F}(z(t))+\partial\Phi(\dot z(t))\ni f(t)$ for a.e.\ $t\in(0,T)$.
 \end{prb}
 
 \subsection{Existence theorem}
@@ -3175,6 +3177,7 @@ This implies $D(P_0,P_1)\ge Y|\log P_1-\log P_0|$. If $P_i<\Pi$ for some $i\in\{
 This implies $D(P_0,P_1)=Y|\log P_1-\log P_0|$. Now it is easy to see that $D$ in~\eqref{eqn:dissipation-distance-density-particular} satisfies the assumptions (D1), (D2) and (D2).
 
 \section{Qualitative analysis of the tensile test problem}
+\label{sec:qualitative}
 
 We consider the following boundary value problem describing the tensile test: the bar in not subject to any distributed load, that is $f=0$. Moreover the end sections are left free to slide in the transversal direction, this means that $h_2(X,t)=0$ for $X\in\{0,L\}$ and $t\in[0,T]$ and $\Gamma_D^2=\emptyset$. The longitudinal position of the end sections is assigned, this means that $\Gamma_D^1=\{0,L\}$. In particular we consider the boundary conditions $\chi_1(X,t)=\eta(t)X$ for $X\in\{0,L\}$ and $t\in[0,T]$, where $\eta\in C^\infty([0,T],(0,\infty))$ is the imposed elongation. We suppose that $\eta(0)=1$ and $\eta$ is nondecreasing. To handle these boundary conditions we define $g\colon\mathbb{R}^2\times[0,T]\to\mathbb{R}^2$ by $g(y,t)=(\eta(t)y_1,y_2)$ so that $\chi(X,t)=\eta(t)y_1(X,t)$ and $\chi_2(X,t)=y_2(X,t)$. Then the unknowns of the problem are $y\colon(0,L)\times[0,T]\to\mathbb{R}^2$ and $P\colon(0,L)\times[0,T]\to\mathbb{R}$ with the constrain $y_1(X,t)=X$ for $X\in\{0,L\}$.
 
@@ -3942,6 +3945,23 @@ We have obtained similar results to those we just explicitly described even enri
 
 %[delta*(1-exp(-x/delta))-x/L*delta*(1-exp(-L/delta)),0,0;sin(pi*x/L),0,0;0,cos(pi/L*x),0;0,1,0;0,-x/delta*exp(-x/delta),0;0,-exp(-x/delta),0;0,0,exp(-x/delta)]
 
+\section{Directions of possible further research}
+
+Since our results are not conclusive, we hope that further research could clarify the remained open question that arose in Section~\ref{sec:qualitative}. In particular it remains to be understood whether the model can exhibit necking or whether the simplified kinematical assumptions are too much that exclude it.
+
+The first thing that should be tested is wheter changing constitutive model different results are obtained. We notice that the choice of the elestic free energy density is actually expected to be indifferent, since in metals elastic strains are small enough to make the nonlinearities of the constitutive relations for the elastic response completely unuseful, what matters is the linearized constitutive model. Also the choice of the dissipation potential is blocked, since the proposed one is the only that has sense to consider. What could be decisive is the chouce of the hardening free energy. We have explored the two costitutive models of Subsection~\ref{subsec:constitutive-large-neck} in a wide renge of values of the constitutive parameters. Other models could be considered, even thought our impression is that different chouce would produce similar results, since the constitutive models tat we considered seems to, at least qualitatively, covers the entire spectra of possible hardining behaviors.
+
+Something that could be considred is the addition of dependence of the constitutive relations on the position along the bar. Adding some imperfectoins on the material properties of the bar maybe is required to trigger necking, and maybe this the reson why our analysis,that assumed a perfect bar, was not able to detect necking. However the non uniformity of constiututive rletions will complicate the stability analysis much: in particular there is no trivial solutions that can be easily coimputed.
+
+In the case in which nemmeno the addition of imperfection produce necking then one sjìhould try to make more accurate the kinematiucal description of the bar. A possible complication would be to add an addictional lastic fiueld, for example assuming that
+\[
+F_p(x,y)=\begin{pmatrix}
+P & 0 \\
+Sy & P^{-\frac{1}{d-1}I}
+\end{pmatrix}
+\]
+with the addictional plastic distortion field $S\colon(0,L)\to\mathbb{R}$. Maybe this addictional feature of the model is able to produce necking.
+
 \part{A model describing pressure sensitive and dilatant plastic materials}
 \label{part:my-model}
 
@@ -4674,7 +4694,7 @@ Now we consider the original problem formulated in the space $Z_\Sigma$, with th
 where last inequality holds formally or exactly if $m$ is sufficiently regular. This formula shows that $\mathcal{M}$ acts as an internal torque that opposes to differences of the normal derivatives of $u$ across $\Sigma$. Now the problem can be formulated as follows.
 \begin{prb}
 \label{prb:reformulated}
-Find $z=(y,\lambda)$ with $y\in AC([0,T],Y_\Sigma)$, $\lambda\in C^0([0,T],\Lambda)$, $p\in C^0([0,T],\Lambda^*)$ and $m\colon[0,T]\to M_\Sigma$ such that $z(0)=z_0=0$ and
+Find $z=(y,\lambda)$ with $y\in\text{AC}([0,T],Y_\Sigma)$, $\lambda\in C^0([0,T],\Lambda)$, $p\in C^0([0,T],\Lambda^*)$ and $m\colon[0,T]\to M_\Sigma$ such that $z(0)=z_0=0$ and
 \begin{align}
 D\Psi_0(z(t))+\mathcal{A}y(t)+\partial_h\Phi(p(t),\dot y(t))+\mathcal{D}\dot y(t)-\mathcal{P}(t)-\mathcal{M}(t)&\ni\mathcal{X}(t) \\
 \lambda(t)&=\mathcal{L}(y(t)) \\
@@ -4707,7 +4727,7 @@ Indeed if $y\in Y_\mathscr{l}$ then $u$ it is obviously $H^2$ inside each simple
 %For each field $f\in\{z,y,u,\pi,\alpha,\lambda,p,m\}$ let $X^f_\mathscr{l}$ its finite element space. We know that there exists  $M^f_\mathscr{l}\in\mathscr{L}(\mathbb{R}^{n^f_\mathscr{l}},X^f_\mathscr{l})$ such that $f=M^f_\mathscr{l}\mathsf{f}$. Here $n_\mathscr{l}^f=\dim X^f_\mathscr{l}$ and $\mathsf{f}\in\mathbb{R}^{n_\mathscr{l}^f}$ is the vector of the components of $f$ with respect to the basis described by $M^f_\mathscr{l}$. Notice that $M^f_\mathscr{l}$ can be seen as a function from the domain where $f$ is defined to $\mathscr{L}(\mathbb{R}^{n_\mathscr{l}^f},S^f)$, where $S^f$ is the tensor space where the values of $f$ stay.
 as showed in following time-continuous finite element approximation of Problem~\ref{prb:reformulated}. \begin{prb}[Time-continuous finite element approximation]
 \label{prb:fem}
-Assume that $\Phi$ is G\^ateaux differentiable. Then find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in AC([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
+Assume that $\Phi$ is G\^ateaux differentiable. Then find $z_\mathscr{l}=(y_\mathscr{l},\lambda_\mathscr{l})$ with $y_\mathscr{l}\in\text{AC}([0,T],Y_\mathscr{l})$, $\lambda_\mathscr{l}\in C^0([0,T],\Lambda_\mathscr{l})$, $p_\mathscr{l}\in C^0([0,T],P_\mathscr{l})$ and $m_\mathscr{l}\colon[0,T]\to M_\mathscr{l}$ such that $z_\mathscr{l}(0)=0$ and
 \begin{align}
 \dual{D\Psi_0(z_\mathscr{l}(t))+\mathcal{A}y_\mathscr{l}(t)+D_h\Phi(p_\mathscr{l}(t),\dot y_\mathscr{l}(t))+\mathcal{D}\dot y_\mathscr{l}(t)-\mathcal{P}_\mathscr{l}(t)-\mathcal{M}_\mathscr{l}(t)-\mathcal{X}(t),w}&=0 \\
 \dual{q,\lambda_\mathscr{l}(t)-\mathcal{L}(y_\mathscr{l}(t))}&=0 \\
@@ -5011,8 +5031,8 @@ t=33.6 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al4.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p4.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/alpha4.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/pressure4.pdf}
 \end{minipage}
 \\
 \begin{minipage}[c]{0.15\textwidth}
@@ -5025,8 +5045,8 @@ t=33.6 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al2.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p2.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/alpha2.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/pressure2.pdf}
 \end{minipage}
 \\
 \begin{minipage}[c]{0.15\textwidth}
@@ -5039,8 +5059,8 @@ t=26.0 \\
 \end{gather}
 \end{minipage}
 \begin{minipage}[c]{0.75\textwidth}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/al.pdf}
-\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{../ephemeros/test/postprocess/p.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/alpha.pdf}
+\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.48\textwidth]{figures/pressure.pdf}
 \end{minipage}
 \caption{Each row contains the plot of $\alpha$ (on the left) and $p$ (on the right). The values of the time instant $t$, the friction and dilatancy angles $\psi$ and $\phi$ and the value of $\zeta$ (that we recall is the multiplier of the coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$ associated with the gradient terms in the definition of the free energy) are reported at the beginning of each row. The displacement shown in the plots is magnified 10 times.}
 \label{fig:results}
@@ -5048,7 +5068,7 @@ t=26.0 \\
 
 \subsection{Some details on the implementation}
 
-In the following remarks are reported some details on the actual implementation. The code can be found in~\url{URL}
+In the following remarks are reported some details on the actual implementation. The code can be found in~\url{https://github.com/bernardo-ardini/master-thesis.git}.
 
 \begin{rmk}[On the implementation of the Newton method]
 To improve the convergence of the Newton method it is useful to apply a line search algorithm. We have adopted the simplest choice of halving the Newton update until the error does not diminish under a certain factor with respect to its initial value. We used a factor equals to $1-10^{-4}$.
@@ -5067,9 +5087,9 @@ Here we collect some suggestions for future research.
 
 From the modeling viewpoint, a natural extension would be to incorporate compaction under compressive loadings, a phenomenon that is observed in geomaterials due to microcrack closure. In our current formulation, only dilatancy is allowed because the volumetric plastic strain is directly linked with the damage variable, which undergoes a unidirectional evolution.
 
-On the mathematical side, it would be interesting to study the limits of vanishing viscosity and vanishing gradient regularization. In the first case, the evolution is expected to develop jumps in time, which could be treated within the framework of balanced viscosity solutions~\cite{MieRosSav13}. In the second case, spatial discontinuities are expected to appear in the displacement field, while plastic strains and damage concentrate. As observed in similar models~\cite{CriRos21}, we expect that in the limit solution, the displacement field belongs to the space $\text{BD}(\Omega)$ of functions of bounded variation, and the plastic/damage fields belong to the space of bounded measures $\mathcal{M}(\Omega)$.
+On the mathematical side, it would be interesting to study the limits of vanishing viscosity and vanishing gradient regularization. In the first case, the evolution is expected to develop jumps in time, which could be treated within the framework of balanced viscosity solutions~\cite{MieRosSav13}. In the second case, spatial discontinuities are expected to appear in the displacement field, while plastic strains and damage concentrate. As observed in other models~\cite{daldessol09,CriRos21}, we expect that in the limit solution, the displacement field belongs to the space $\text{BD}(\Omega)$ of functions of bounded variation, and the plastic/damage fields belong to the space $\mathcal{M}(\Omega)$ of bounded measures.
 
-Regarding the numerical approximation, future steps could include a complete convergence proof and the development of an adaptive mesh algorithm to better capture deformation localization. Finally, it would be useful to find an alternative way to handle the nonsmoothness of the dissipation potentials (for example, based on complementary functions, see~\cite{lewandowski2023multifield}), avoiding the Yosida regularization, which introduces ill-conditioning issues in our current numerical scheme when the regularization parameter becomes small.
+Regarding the numerical approximation, future steps could include a complete convergence proof and the development of an adaptive mesh algorithm to better capture the localization of plastic strains and damage. Finally, it would be useful to find an alternative way to handle the nonsmoothness of the dissipation potentials (for example, based on complementary functions, see~\cite{lewandowski2023multifield}), avoiding the Yosida regularization, which introduces ill-conditioning issues in our current numerical scheme when the regularization parameter becomes small.
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 \label{chap:pressure-sensitive-large}
@@ -5166,10 +5186,11 @@ Thus $p$ is a sort of pressure of the push forward of the elastic Piola stress i
 \chapter{Tools from mathematical and numerical analysis}
 \label{chap:tools-math}
 
-In this chapter we collect some tools of linear and nonlinear analysis used in the main body of this thesis.
+In this chapter we collect some known tools of linear and nonlinear analysis used in the main body of this thesis.
 
-\section{Gronwall inequality}
+\section{A general version of Gronwall inequality}
 
+Gronwall inequality is quite useful to get a priori estimates for establishing the existence of solutions to evolutionary equations.
 \begin{prop}(Gronwall inequality)
 \label{prop:gronwall}
 Let $z\in L^\infty((0,T))$. Let $C\in\mathbb{R}$ and $\alpha$, $\beta$ in $L^1((0,T),[0,\infty))$ such that
@@ -5219,6 +5240,8 @@ z_k\le\left(C+\tau\sum_{j=1}^kb_j\right)e^{\tau\sum_{j=1}^ka_j}\quad\text{for $k
 
 \section{Linear functional analysis}
 
+This section is devoted to some results of linear functional analysis.
+
 \subsection{Compactness in Sobolev spaces}
 
 \begin{prop}
@@ -5233,9 +5256,10 @@ The result when $p>d$ follows from Morrey's theorem and a similar argument.
 
 \subsection{Bochner spaces}
 
+In this subsection we summarize some basic facts about the spaces of functions from some interval $(0,T)$ into a separable and reflexive Banach space $V$. These are known as Bochner spaces. Further details and the omitted proofs can be found in~\cite{roubicek-pde}.
 \begin{defi}
 \label{defi:ac-bv}
-Let $V$ be a Banach space. We say that $u\colon[0,T]\to V$ is absolutely continuous and we write $u\in AC([0,T],V)$ if there exists $m\in L^1((0,T),(0,\infty))$ such that
+Let $V$ be a Banach space. We say that $u\colon[0,T]\to V$ is absolutely continuous and we write $u\in\text{AC}([0,T],V)$ if there exists $m\in L^1((0,T),(0,\infty))$ such that
 \begin{equation*}
 \norm{u(t)-u(s)}\le\int_0^Tm(r)dr\quad\text{for all $0\le s<t\le T$.}
 \end{equation*}
@@ -5243,19 +5267,23 @@ Given $u\colon[0,T]\to V$ and $0\le a<b\le T$ we define the total variation on $
 \begin{equation*}
 \text{Var}(u,[a,b])=\sup\left\{\sum_{k=1}^N\norm{u(t_k)-u(t_{k-1})}\;\middle|\;a=t_0<\dots<t_N=b\right\}.
 \end{equation*}
-We say that $u$ has bounded variation and we write $u\in BV([0,T],V)$ if $\text{Var}(u,[0,T])<\infty$.
+We say that $u$ has bounded variation and we write $u\in\text{BV}([0,T],V)$ if $\text{Var}(u,[0,T])<\infty$. The space $L^p((0,T),V)$, with $p\in[1,\infty]$, is the space of $u\colon(0,T)\to V$ such that for all $f\in V^*$ the map $t\mapsto\dual{f,u(t)}$ is measurable and $t\mapsto\norm{u(t)}_V$ belongs to $L^p((0,T))$. We say that $u\in W^{1,p}((0,T),V)$ if $u\in L^p((0,T),V)$ an there exists $v\in L^p((0,T),V)$ such that
+\[
+\int_0^T\dual{f,u}\phi'dx=-\int_0^T\dual{f,v}\phi dx
+\]
+for all $\phi\in C^\infty_c((0,T))$. In this case we say that $v=\dot u$.
 \end{defi}
-
+It can be proved that 
 \begin{prop}
 \label{prop:ac-w}
-Let $V$ be a Banach space. Then $W^{1,1}((0,T),V)\subset AC([0,T],V)$. If $V$ is separable and reflexive the equality holds.
+Let $V$ be a Banach space. Then $W^{1,1}((0,T),V)\subset\text{AC}([0,T],V)$. If $V$ is separable and reflexive the equality holds.
 \end{prop}
 \begin{proof}
 Let $u\in W^{1,1}((0,T),V)$. Then
 \begin{equation*}
 \norm{u(t)-u(s)}=\left\lVert\int_s^t\dot u(r)dr\right\rVert\le\int_s^t\norm{\dot u(r)}dr.
 \end{equation*}
-This proves that $u\in AC([0,T],V)$ with $m=\norm{\dot u}$.
+This proves that $u\in\text{AC}([0,T],V)$ with $m=\norm{\dot u}$.
 
 Now suppose that $V$ is reflexive. We have that
 \begin{equation*}
@@ -5280,7 +5308,7 @@ from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v
 \end{equation*}
 \textbf{Now one should prove that this convergence is actually strong. This will show automatically that $u\in W^{1,1}((0,T),V)$.}
 \end{proof}
-
+The following is an useful compactness theorem in Bochner spaces.
 \begin{thm}[Aubin--Lions--Simon lemma]
 \label{thm:aubin-lions}
 Let $T>0$ and $V\subset H\subset E$ be Banach spaces. Assume that the embedding of $V$ in $H$ is compact and the embedding of $H$ in $E$ is continuous. Let $p$ and $q$ in $[1,\infty]$. Then the space
@@ -5297,8 +5325,9 @@ is compactly embedded in
 See~\cite[Theorem~II.5.16]{math-tool-ns}.
 \end{proof}
 
-
 \subsection{Generalized mixed elliptic problems}
+
+In this subsection we present the theory of linear generalized mixed elliptic problems. The relevance for this thesis is that the ideas behind the proof of the following Theorem~\ref{thm:mixed-elliptic} served as inspirations for the proof of our Theorem~\ref{sec:existence-theorem-abstract-constrained}.
 
 We start with the following theorem.
 \begin{thm}[Babu\^ska]
@@ -5501,7 +5530,9 @@ This concludes the proof.
 
 \section{Nonlinear functional analysis}
 
-\subsection{Some lemmas regarding G\^ateaux and Frechèt differentials}
+In this section we collect some result of nonlinear functional analysis.
+
+\subsection{Some technical lemmas regarding G\^ateaux and Frechèt differentials}
 
 \begin{lemma}
 \label{lemma:check-gateaux}
@@ -5573,7 +5604,7 @@ which is a contradiction.
 %See~\cite{niremberg}.
 %\end{proof}
 
-\subsection{Fixed point theorems}
+\subsection{Schauder fixed point theorem}
 
 A classical version of the Schauder fixed point in Banach spaces is the following.
 \begin{thm}[Schauder fixed point theorem]
@@ -5914,16 +5945,16 @@ Let $\Phi\colon X\to\mathbb{R}\cup\mathbb\{\infty\}$ be convex, proper and lower
 \Phi(x)\ge\limsup_{\epsilon\to 0^+}\Phi_\epsilon(x).
 \]
 \end{itemize}
-Let also $A\colon X\to X^*$ be pseudomonotone. Moreover assume that the following coercivity property holds: there exists $z\in\dom\Phi$ such that for all $1>\epsilon>0$ and $x\in X$ the inequality
-\begin{equation}
-\label{eqn:coercivity-property}
-\dfrac{\Phi_\epsilon(x)+\dual{A(x),x-z}}{\norm{x}_X}\ge\zeta(\norm{x}_X)
-\end{equation}
-holds. Here $\zeta\colon[0,\infty)\to[0,\infty)$ satisfies the condition
+Let also $A\colon X\to X^*$ be pseudomonotone. Moreover assume that the following coercivity property holds: there exists $\zeta\colon[0,\infty)\to[0,\infty)$ satisfying the condition
 \[
 \lim_{r\to\infty}\zeta(r)=\infty.
 \]
-Then for all $f\in X^*$ there exists $x\in X$ such that~\eqref{eqn:inclusion} holds.
+such that for all$1>\epsilon>0$ and $x\in X$ the inequality
+\begin{equation}
+\label{eqn:coercivity-property}
+\dfrac{\Phi_\epsilon(x)+\dual{A(x),x}}{\norm{x}_X}\ge\zeta(\norm{x}_X)
+\end{equation}
+holds. Then for all $f\in X^*$ there exists $x\in X$ such that~\eqref{eqn:inclusion} holds.
 \end{thm}
 \begin{proof}
 The map $\Phi_\epsilon'$ is monotone since $\Phi_\epsilon$ is convex. Then by Proposition~\ref{prop:sum-pseudomonotone} the operator $\Phi_\epsilon'+A$ is pseudomonotone. Moreover it is bounded and demicontinuous. The coercivity property~\eqref{eqn:coercivity-property} allows to apply Theorem~\ref{thm:browder-minty-generalized} to conclude thet for all $\epsilon>0$ there exists $x_\epsilon\in X$ such that $\Phi_\epsilon'(x_\epsilon)+A(x_\epsilon)\ni f$. This is equivalent to
@@ -5931,11 +5962,11 @@ The map $\Phi_\epsilon'$ is monotone since $\Phi_\epsilon$ is convex. Then by Pr
 \label{eqn:variational-inequality}
 \Phi_\epsilon(y)\ge\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\quad\text{for all $y\in X$}.
 \end{equation}
-The idea is now to prove that $\{x_\epsilon\}_{\epsilon>0}$ is bounded in $X$ in order to find a limit value by compactness. To this aim we notice that by property (ii) above, for each $\epsilon>0$ small enough the inequality $\Phi_\epsilon(z_\epsilon)\le\Phi(z)+1$ holds. Then by~\eqref{eqn:coercivity-property} and by~\eqref{eqn:variational-inequality} with $y=z$ we have
+The idea is now to prove that $\{x_\epsilon\}_{\epsilon>0}$ is bounded in $X$ in order to find a limit value by compactness. To this aim we notice that by property (ii) above, for each $\epsilon>0$ small enough the inequality $\Phi_\epsilon(0)\le\Phi(0)+1$ holds. Then by~\eqref{eqn:coercivity-property} and by~\eqref{eqn:variational-inequality} with $y=0$ we have
 \[
-\zeta(\norm{x_\epsilon})\norm{x_\epsilon}_X\le \Phi_\epsilon(x_\epsilon)+\dual{A(x_\epsilon),x_\epsilon-z}\le\Phi_\epsilon(z)+\dual{f,z-x_\epsilon}.
+\zeta(\norm{x_\epsilon})\norm{x_\epsilon}_X\le \Phi_\epsilon(x_\epsilon)+\dual{A(x_\epsilon),x_\epsilon}\le\Phi_\epsilon(0)-\dual{f,x_\epsilon}\le\Phi(0)+1-\norm{f}_{X^*}\norm{x_\epsilon}_X.
 \]
-This implies that $x_\epsilon\to0$. Then extracting a (not relabeled) subsequence we have $x_\epsilon\rightharpoonup x$. Then we take the supremum limit of~\eqref{eqn:variational-inequality}, and using properties (i, ii) above we get
+This implies that $\{x_\epsilon\}_{\epsilon>0}$ is bounded. Then extracting a (not relabeled) subsequence we have $x_\epsilon\rightharpoonup x$ in $X$. Then we take the supremum limit of~\eqref{eqn:variational-inequality}, and using properties (i, ii) above we get
 \[
 \begin{split}
 \Phi(y)&\ge\limsup_{\epsilon\to 0^+}\left[\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\right]\ge\liminf_{\epsilon\to 0^+}\left[\Phi_\epsilon(x_\epsilon)+\dual{f-A(x_\epsilon),y-x_\epsilon}\right]\ge\\
@@ -6002,7 +6033,7 @@ such that for all $1>\epsilon>0$
 where $\Phi_\epsilon$ is the Yosida approximation of $\Phi$. Then for each $f\in X^*$ there exists at least one $x\in X$ such that~\eqref{eqn:inclusion} holds.
 \end{cor}
 \begin{proof}
-Follows immediately form Lemma~\ref{lemma:yosida} and Theorem~\ref{thm:inclusion}.
+Follows immediately form Theorem~\ref{thm:inclusion} and Lemma~\ref{lemma:yosida}.
 \end{proof}
 %\begin{proof}
 %For all $\epsilon>0$ let $\Phi_\epsilon$ be the Yosida approximation of $\Phi$. In view of Lemma~\ref{lemma:yosida} and Theorem~\ref{thm:inclusion} get the thesis if we prove that~\eqref{eqn:coercivity-property} holds.
@@ -6074,25 +6105,29 @@ Then for all measurable $y\colon\Omega\to\mathbb{R}^n$ and $u\colon\Omega\to\mat
 \[
 I(y,u)=\int_\Omega f(x,y,u)dx.
 \]
-Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy $y_k\to y$ in measure and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy $u_k\to u$ in $L^1(\Omega,\mathbb{R}^n)$, then
+Moreover if $y_k,y\colon\Omega\to\mathbb{R}^n$ measurable satisfy $y_k\to y$ in measure and $u_k,u\in L^1(\Omega,\mathbb{R}^m)$ satisfy $u_k\rightharpoonup u$ in $L^1(\Omega,\mathbb{R}^n)$, then
 \[
 I(y,u)\le\liminf_{k\to\infty}I(y_k,u_k).
 \]
 \end{thm}
+\begin{proof}
+See~\cite{eisen1979selection}.
+\end{proof}
 
 \section{Convex analysis}
 
-\begin{ex}
-Let $f(v)=\frac{1}{2}\norm{v}^2$. Then $f^*(\xi)=\frac{1}{2}\norm{\xi}^2$. Indeed
-\begin{equation*}
-\dual{\xi,v}-\frac{1}{2}\norm{v}^2\le\frac{2\norm{\xi}\norm{v}-\norm{v}^2}{2}\le\frac{\norm{\xi}^2}{2}.
-\end{equation*}
-This implies $f^*(\xi)\le\frac{\norm{\xi}^2}{2}$. To get the opposite inequality, fix $\epsilon>0$ and let $v\in V$ such that $\norm{v}=\norm{\xi}$ and $\dual{\xi,v}\ge\norm{\xi}^2-\epsilon$. Then
-\begin{equation*}
-f^*(\xi)\ge\norm{\xi}^2-\epsilon-\frac{1}{2}\norm{\xi}^2\ge\frac{1}{2}\norm{\xi}^2-\epsilon.
-\end{equation*}
-By arbitrariness of $\epsilon$ we conclude.
-\end{ex}
+A complete presentation of convex analysis can be found in~\cite{ekeland-temam}. Here we limit to report a result, taken from~\cite{rate-independent-systems}, establishing some properties of positively 1-homogeneous convex functions. These types of functions are particularly important in rate independent plasticity, and more in general in the theory of rate-independent mechanical systems, since in this context the dissipation potentials are of this kind.
+%\begin{ex}
+%Let $f(v)=\frac{1}{2}\norm{v}^2$. Then $f^*(\xi)=\frac{1}{2}\norm{\xi}^2$. Indeed
+%\begin{equation*}
+%\dual{\xi,v}-\frac{1}{2}\norm{v}^2\le\frac{2\norm{\xi}\norm{v}-\norm{v}^2}{2}\le\frac{\norm{\xi}^2}{2}.
+%\end{equation*}
+%This implies $f^*(\xi)\le\frac{\norm{\xi}^2}{2}$. To get the opposite inequality, fix $\epsilon>0$ and let $v\in V$ such that $\norm{v}=\norm{\xi}$ and $\dual{\xi,v}\ge\norm{\xi}^2-\epsilon$. Then
+%\begin{equation*}
+%f^*(\xi)\ge\norm{\xi}^2-\epsilon-\frac{1}{2}\norm{\xi}^2\ge\frac{1}{2}\norm{\xi}^2-\epsilon.
+%\end{equation*}
+%By arbitrariness of $\epsilon$ we conclude.
+%\end{ex}
 
 %Let $f$ and $g$ from $V$ to $(-\infty,\infty]$. Their inf-convolution $f\square g\colon V\to(-\infty,\infty]$ is
 %\begin{equation*}
@@ -6166,7 +6201,7 @@ By arbitrariness of $\epsilon$ we conclude.
 %This concludes the proof.
 %\end{proof}
 
-\begin{prop}[properties of positively 1-homogeneous convex functions]
+\begin{prop}[Properties of positively 1-homogeneous convex functions]
 \label{prop:prop-pos-1-hom-convx}
 Let $f\colon V\to(-\infty,\infty]$ be a proper, l.s.c., positively 1-homogeneous and convex function. Then
 \begin{itemize}
