@@ -106,13 +106,13 @@ In this thesis, we develop and analyze some models of gradient plasticity, mainl
 
 The first model we develop is a simplified one-dimensional model of a metallic cylindrical bar. The assumption is that the configurations are described in terms of solely three fields defined along its length: the axial displacement of the cross section, their transversal dilation, and the axial plastic distortion. We build two versions of that model: a linearized model valid in the regime of small deformations, and a geometrically nonlinear model that allows for large deformations. In both cases, we develop an existence theory, by resorting to the theory of evolutionary variational inequalities of Han and Reddy for the small deformation model, and to the theory of energetic solutions of rate-independent systems by Mielke and Theil for the large deformation model. Then, we perform an analysis of the particular boundary value problem that describes the tensile test -- the problem in which an assigned tensile force or elongation is prescribed at the ends -- with the aim of understanding whether the model is able to describe the necking phenomenon. We show that the linearized model is not able to predict necking, and we perform a formal stability analysis of the model at large deformations, gaining some qualitative insights about the onset of necking.
 
-The second gradient plasticity model that we develop aims to describe plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. Our approach is able to formally reproduce the classical one when particular constitutive relations are assumed, even thought its mathematical and modeling foundations differ, avoiding the need of considering non associated flow rules (that are known to be mathematically more difficult to handle) and providing directly a clearer variational structure to the problem. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (linking it to a damage field describing the amount of microcraks opened within the material), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. To prove that the proposed model admits solutions, we develop a general existence theory for constrained mechanical systems with a dissipation potential possibly depending on the Lagrange multiplier. The proof is based on a time discretization approach: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the constrain is exploited to explicitate an unknown in terms of the remaining unknowns; these are found for an arbitrary value of the Lagrange multiplier by solving a static nonlinear problem (the existence of solution is established using a non-smooth version of the Minty--Browder theorem). Finally, the Lagrange multiplier is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem. Having established the existence of solutions we propose a numerical scheme based on the finite element method to approximate the solutions to our model, we validate it empirically comparing the numerical results with an explicit analytical solution, and we eventually provide the numerical solution of a particular boundary value problem.
+The second gradient plasticity model that we develop aims to describe plastic materials whose yield strength depends on hydrostatic pressure. Instead of adopting the theory of non-associated plasticity -- commonly employed in the geotechnical modeling of soils and rocks -- we propose an alternative approach. Our approach is able to formally reproduce the classical one when particular constitutive relations are assumed, even thought its mathematical and modeling foundations differ, avoiding the need of considering non associated flow rules (that are known to be mathematically more difficult to handle) and providing directly a clearer variational structure to the problem. The key idea is to include a kinematic constraint on the volumetric part of the plastic distortion (linking it to a damage field describing the amount of microcracks opened within the material), impose it through a Lagrange multiplier representing an internal pressure, and make the constitutive relation of the deviatoric plastic microforce dependent on it. To prove that the proposed model admits solutions, we develop a general existence theory for constrained mechanical systems with a dissipation potential possibly depending on the Lagrange multiplier. The proof is based on a time discretization approach: the problem is first discretized in time and the existence of a time-discrete approximate solution is established; then, the actual continuous-in-time solution is recovered in the limit of vanishing time step. The incremental problem that emerges from the time discretization has a nonlinear saddle-point structure and is solved as follows: first, the constrain is exploited to explicitate an unknown in terms of the remaining unknowns; these are found for an arbitrary value of the Lagrange multiplier by solving a static nonlinear problem (the existence of solution is established using a non-smooth version of the Minty--Browder theorem). Finally, the Lagrange multiplier is recovered as the solution of a fixed-point problem, the existence of which is obtained by an application of the Schauder fixed-point theorem. Having established the existence of solutions we propose a numerical scheme based on the finite element method to approximate the solutions to our model, we validate it empirically comparing the numerical results with an explicit analytical solution, and we eventually provide the numerical solution of a particular boundary value problem.
 
 \vspace*{\fill}
 
-\footnotesize
+\begin{spacing}{1.2}
 \tableofcontents
-\normalsize
+\end{spacing}
 
 \newpage
 
@@ -152,17 +152,17 @@ The second gradient plasticity model that we develop aims to describe plastic ma
 
 \chapter*{Premise}
 
-Elastoplasticity (from the Greek words \foreignlanguage{greek}{>elast'os}, that means ``flexible'', and \foreignlanguage{greek}{plastik'os}, that means ``that can be molded'') is the branch of solid mechanics that deals with solids that can accumulate irreversible deformations. Its distinctive features with respect to elasticity are the addition of a plastic distortion field alongside the macroscopic displacement field, aiming to describe the change of the microscopic configuration of the body that is associated with irreversible deformations, and the dissipative character of the evolution.
+Elastoplasticity (from the Greek words \foreignlanguage{greek}{>elast'os}, that means ``flexible'', and \foreignlanguage{greek}{plastik'os}, that means ``that can be molded'') is the branch of solid mechanics that deals with solids that can accumulate irreversible deformations. Its distinctive characteristics with respect to elasticity are the addition of a plastic distortion field alongside the macroscopic displacement field, aiming to describe the change of the microscopic configuration of the body that is associated with irreversible deformations, and the dissipative character of the evolution.
 
 A peculiar feature of elastoplastic materials, that is observed in many concrete situations, is their tendency to concentrate the plastic distortion in particular regions of the material. This is the mechanism that eventually leads to the failure of the material and for that reason has an important relevance in engineering. From the modeling viewpoint, the localization of the deformation is expected when the energy of the system is nonconvex and this happens either due the geometry of large deformations or the complexity of the constitutive model. The heuristic intuition is that nonconvexities introduce multiple locally optimal configurations, forcing the material to select among them and thereby leading to sharp variations of the plastic distortion.
 
-In the original elastoplasticity theory, the plastic response characterizing the behavior of the material at microscopic level, has an entirely local character, so that the sharp variations can arise as true discontinuities of the plastic field. In contrast, \emph{gradient elastoplasticity}, in which a dependence of the energy on the gradient of the plastic distortion is assumed, adds contact interactions at the level of the microscopic response and smooth outs discontinuities introducing an internal characteristic length scale of the material. From the mathematical viewpoint, the gradient regularization restores the existence of solution in Sobolev spaces. In particular it implies good compactness properties that allow to perform the various limit passages in the existence proofs.
+In the original elastoplasticity theory, the plastic response, characterizing the behavior of the material at microscopic level, has an entirely local character, so that the sharp variations can arise as true discontinuities of the plastic field. In contrast, \emph{gradient elastoplasticity}, in which a dependence of the energy on the gradient of the plastic distortion is assumed, adds contact interactions at the level of the microscopic response and smooths out discontinuities introducing an internal characteristic length scale of the material. From the mathematical viewpoint, the gradient regularization restores the existence of solution in Sobolev spaces. In particular it implies good compactness properties that allow to perform the various limit passages in the existence proofs.
 
 In the realm of metal elastoplasticity, an example of localization, that is due to the nonconvexity that arises from the geometry of large deformations, is the necking of a cylindrical bar under tension: at a certain stage of the test, the shrinkage of the cross sections is observed to become localized on a particular point along the bar. In the field of the elastoplasticity of geomaterials an example of localization is the formation of shear bands, that are narrow zones where shear deformations localizes. In this case the nonconvexity is due to softening, i.e., the reduction of the yield strength as plastic distortions accumulate. In this thesis we will develop and study some gradient elastoplasticity models regarding these two concrete examples, focusing mainly on modeling and development of the existence theory.
 
 \section*{Summary of the contributions of this thesis}
 
-The contributions of our thesis regard the development and analysis of two gradient plasticity models related to the above mentioned examples. The first part of the thesis is devoted to the development and study of a one-dimensional model of a cylindrical bar in the attempt to get some insight regarding the necking phenomenon. In the second part of the thesis we develop a new approach to model pressure sensitive and dilatant elastoplastic materials with the aim of overcoming the mathematical difficulties of non-associated plasticity models.
+The contributions of our thesis regard the development and analysis of two gradient plasticity models related to the above mentioned examples. The first part of the thesis is devoted to the development and study of a one-dimensional model of a cylindrical bar in the attempt to get some insight regarding the necking phenomenon. In the second part of the thesis we develop a new approach to model pressure sensitive and dilatant elastoplastic materials with the aim of overcoming the mathematical difficulties of non-associated plasticity models currently employed in this field.
 
 \subsection*{One dimensional model of a plastic cylindrical bar.}
 
@@ -170,7 +170,7 @@ As anticipated, in the first part of the thesis we develop and study a novel sim
 
 We first propose a version valid at small deformations and we prove the existence of solutions using the general existence result for evolutionary variational inequalities with quadratic energy of Han and Reddy~\cite{han-reddy}. We also show that the model is not able to predict necking. This is expected since necking is presumably due to the nonconvexities associated with large deformations.
 
-Then we extend the model to the regime of large deformations and we prove the existence of solutions within the framework of energetic solutions of Mielke and Theil~\cite{francfort,rate-independent-systems}. Moreover we perform a formal (still not conclusive) stability analysis of the uniform trivial solution to the boundary value problem describing the tensile test with elongation control. The aim would be to gain information regarding the initiation of necking. We characterize a lower bound for the elongation at which instability possibly occurs, and we show that this characterization is compatible with the experimental criterion of Considère, that asserts that necking starts shortly after the tensile force reaches its maximum. We were not able to show rigorously that instability must occur at a certain elongation. We instead consider a simplified stability condition, that we call \emph{stability under force control}, which is the stability of the auxiliary problem where the elongation control is replaced with a force control and the admissible configurations with macroscopic and plastic distortions fields that are uniform along the bar. We then show that the stability under force control is lost when the tensile force reaches its maximum.
+Then we extend the model to the regime of large deformations and we prove the existence of solutions within the framework of energetic solutions of Mielke and Theil~\cite{francfort,rate-independent-systems}. Moreover we perform a formal (still not conclusive) stability analysis of the uniform trivial solution to the boundary value problem describing the tensile test with elongation control. The aim would be to gain information regarding the initiation of necking. We characterize a lower bound for the elongation at which instability possibly occurs, and we show that this characterization is compatible with the experimental criterion of Considère, that asserts that necking starts shortly after the tensile force reaches its maximum. We were not able to show rigorously that instability must occur at a certain elongation. We instead consider a simplified stability condition, that we call \emph{stability under force control}, which is the stability of the auxiliary problem where the elongation control is replaced with a force control and the admissible configurations are those with macroscopic and plastic distortions fields that are uniform along the bar. We then show that the stability under force control is lost when the tensile force reaches its maximum.
 
 \subsection*{A model describing pressure sensitive and dilatant plastic materials}
 
@@ -182,9 +182,9 @@ The aim of our new formulation is to overcome the difficulties implied by non-as
 
 Although the mathematical and modeling foundations of our approach differ from those of the original one, we show that our model is able to formally yield the same equations when particular constitutive equations are assumed.
 
-To prove the existence of solutions to our model, we are led to develop a new abstract existence and uniqueness result for doubly nonlinear evolution equations in Banach spaces with constrains, where the dissipation potential can depend on the Lagrange multiplier. This existence result extends that of non-constrained doubly nonlinear equations in~\cite{roubicek-pde}. Even though we have developed a version of model both at large and small deformations, the existence results covers only the former. The development of an existence theory for the latter is left as an open problem.
+To prove the existence of solutions to our model, we are led to develop a new abstract existence and uniqueness result for doubly nonlinear evolution equations in Banach spaces with constrains, where the dissipation potential can depend on the Lagrange multiplier. This existence result extends that of non-constrained doubly nonlinear equations in~\cite{roubicek-pde}. Even though we have developed a version of model both at small and large deformations, the existence results covers only the former. The development of an existence theory for the latter is left as an open problem.
 
-We also propose a numerical scheme based on the finite element method to approximate the solutions to our model. We validate it comparing the numerical solution with an analytical one and we provide a concrete numerical example exhibiting the formation of a shear band. However additional efforts should be devoted to made the numerical scheme more affordable and efficient. 
+We also propose a numerical scheme, based on the finite element method, to approximate the solutions to our model. We validate it comparing the numerical solution with an analytical one and we provide a concrete numerical example exhibiting the formation of a shear band.
 
 \section*{Organization of the material}
 
@@ -192,9 +192,9 @@ The thesis is introduced by two preliminary chapters that serve as a common basi
 
 Part~\ref{part:his-model} is the devoted to the development and analysis of the one-dimensional model of a metallic cylindrical bar. In Chapter~\ref{chap:intro-neck} we provide an introduction where we motivate the interest in studying such a model in view of a qualitative study of the necking phenomenon in the tensile test. In Chapter~\ref{chap:small-neck} the model is formulated in the regime of small deformations and, after having discussed the existence of solutions, we show that it is not able to predict necking. In Chapter~\ref{chap:large-neck} we extend our model to the regime of large deformations, we develop and existence theory using the notion of energetic solutions and eventually we provide a (not conclusive) qualitative analysis of whether the model is able to describe the necking phenomenon.
 
-In Part~\ref{part:my-model} we develop our model to describe pressure sensitive and dilatant plastic materials. In Chapter~\ref{chap:intro-pressure-sensitive} we review the existing models commonly employed in geothecnical engineering and we report a known existence result. In Chapter~\ref{chap:pressure-sensitive-small} we develop our alternative approach restricting ourself to the regime of small deformations. In this chapter we also prove the existence of solutions by exploiting the abstract result obtained in Section~\ref{sec:existence-theorem-abstract-constrained}. We conclude the chapter describing the numerical scheme and illustrating the result of the numerical experiment. In Chapter~\ref{chap:pressure-sensitive-large} we extend our model to the regime of large deformations confining ourselves to the modeling aspects only.
+In Part~\ref{part:my-model} we develop our model to describe pressure sensitive and dilatant plastic materials. In Chapter~\ref{chap:intro-pressure-sensitive} we review the existing models commonly employed in geothecnical engineering and we report a known existence result. In Chapter~\ref{chap:pressure-sensitive-small} we develop our alternative approach restricting ourselves to the regime of small deformations. In this chapter we also prove the existence of solutions by exploiting the abstract result obtained in Section~\ref{sec:existence-theorem-abstract-constrained}. We conclude the chapter describing the numerical scheme and illustrating the result of the numerical experiment. In Chapter~\ref{chap:pressure-sensitive-large} we extend our model to the regime of large deformations confining ourselves to the modeling aspects only.
 
-\section*{Remark on notation and recall of basic notions}
+\section*{Remark on notation and recall of basic facts}
 
 Here we briefly set some notation that will adopted throughout the thesis and we recall some basics facts.
 
@@ -219,7 +219,7 @@ $\text{Lin}^1$ & $d\times d$ matrices with unit determinant \\
 $\text{Sym}$ & $d\times d$ symmetric matrices \\
 $\text{Dev}$ & $d\times d$ deviatoric matrices \\
 $\text{DevSym}$ & $d\times d$ symmetric and deviatoric matrices \\
-$\text{DevPla}$ & defined as $\text{DevSym}\times(\text{DevSym}\otimes\mathbb{R})$ \\
+%$\text{DevPla}$ & defined as $\text{DevSym}\times(\text{DevSym}\otimes\mathbb{R})$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -242,15 +242,45 @@ Given a Banach space $X$, endowed with a norm $\norm{\cdot}_X$, we denote with $
 
 Given two Banach spaces $X$ and $Y$ the Banach space of linear and continuous maps from $X$ to $Y$ is denoted as $\mathscr{L}(X,Y)$ and is endowed with the usual operator norm $\norm{\cdot}_{\mathscr{L}(X,Y)}$. The action of some $L\in\mathscr{L}(X,Y)$ on any $x$ in $X$ is denoted as $Lx\in Y$. Moreover the adjoint operator $L^*\in\mathscr{L}(Y^*,X^*)$ is defined by $\dual{L^*\zeta,x}=\dual{\zeta,Lx}$ for all $\zeta\in Y^*$ and $x\in X$. We recall that $\norm{L^*}_{\mathscr{L}(Y^*,X^*)}=\norm{L}_{\mathscr{L}(X,Y)}$.
 
- Given an open subset $U\subset X$ and a G\^ateaux differentiable map $F\colon U\to Y$, its G\^ateaux differential is denoted as $DF\colon U\to\mathscr{L}(X,Y)$. The set of continuous maps from $X$ to $Y$ is denoted as $C^0(X,Y)$ while the set of Frèchet differentiable maps with continuous Frèchet differential as $C^1(X,Y)$ and similarly for maps with higher Frèchet regularity.
+ Given an open subset $U\subset X$ and a G\^ateaux differentiable map $F\colon U\to Y$, its G\^ateaux differential is denoted as $DF\colon U\to\mathscr{L}(X,Y)$. The set of continuous maps from $X$ to $Y$ is denoted as $C^0(X,Y)$ while the set of Frèchet differentiable maps with continuous Frèchet differential as $C^1(X,Y)$ and similarly for maps with higher Frèchet regularity. The subdifferential of a convex map $F\colon V\to(-\infty,\infty]$ is denoted as $\partial F\colon V\rightsquigarrow V^*$.
 
-Given an $\Omega\subset\mathbb{R}^d$ open the space of $p$-integrable function is denoted as $L^p(\Omega)$ for all $p\in[1,\infty]$. Its norm is simply denoted as $\norm{\cdot}_{L^p(\Omega)}$ or more simply as $\norm{\cdot}_p$ or $\norm{}_{0,p}$. The H\"older conjugate exponent $p^*\in[1,\infty]$ is defined by $\frac{1}{p}+\frac{1}{p^*}=1$ and we recall that $L^{p^*}(\Omega)=L^p(\Omega)^*$. The set of Sobolev functions of exponent $p$ and with $m\in\mathbb{N}_0$ derivatives is denoted by $W^{m,p}(\Omega)$ and when $p=2$ by $H^m(\Omega)$. The usual norm is denoted as $\norm{\cdot}_{W^{1,p}(\Omega)}$ or simply $\norm{\cdot}_{m,p}$. The closure of the $C^\infty_c(\Omega)$ functions on the Sobolev spaces are denoted as $W^{m,p}_0(\Omega)$ and $H^m_0(\Omega)$ and its dual as $W^{-m,p^*}(\Omega)$ and $H^{-m}(\Omega)$. We recall that each $W^{m,p}(\Omega)$ is reflexive and separable and when $p=\infty$ then $W^{m,\infty}(\Omega)$ is the dual space of a reflexive Banach space. This allows to apply the weak and weak-star compactness embeddings recalled above. Recall also that by Rellich--Kondrachov theorem, when $\Omega$ is bounded and Lipschitz and $p\in[1,d)$, then $W^{1,p}(\Omega)$ is embedded in $L^q(\Omega)$ for all $q\in[1,p^\#]$ where $p^\#$ is the Sobolev conjugate exponent defined by $\frac{1}{p^\#}=\frac{1}{p}-\frac{1}{d}$ and the embedding is compact when $q\in[1,p^\#)$. When $p\in(d,\infty]$ then, by Morrey's theorem, $W^{1,p}(\Omega)$ is compactly embedded in $C^{0,\alpha}(\bar\Omega)$ with $\alpha=1-\frac{d}{p}$. In the case $p=d$ we know that $W^{1,d}(\Omega)$ is compactly embedded in $L^q(\Omega)$ for all $q\in[1,\infty)$. We recall also Poincaré inequality that asserts that, when $\Omega$ is bounded, in the space of functions in $W^{1,p}(\Omega)$ that vanish on a portion of their domain, the norm $\norm{\cdot}_{1,p}$ is equivalent to $u\mapsto\norm{\grad u}_p$. A similar result is valid in the space $H^1_0(\Omega,\mathbb{R}^d)$: in this case Korn inequality ensures that the norm $\norm{\cdot}_{1,2}$ is equivalent to $u\mapsto\norm{Eu}_2$ where $Eu=\sym\grad u$ is the symmetric gradient of $u$.
+Given an $\Omega\subset\mathbb{R}^d$ open, the space of $p$-integrable function is denoted as $L^p(\Omega)$ for all $p\in[1,\infty]$. Its norm is simply denoted as $\norm{\cdot}_{L^p(\Omega)}$ or more simply as $\norm{\cdot}_p$ or $\norm{\cdot}_{0,p}$. The H\"older conjugate exponent $p^*\in[1,\infty]$ is defined by $\frac{1}{p}+\frac{1}{p^*}=1$ and we recall that $L^{p^*}(\Omega)=L^p(\Omega)^*$. The set of Sobolev functions of exponent $p$ and with $m\in\mathbb{N}_0$ derivatives is denoted by $W^{m,p}(\Omega)$ and when $p=2$ by $H^m(\Omega)$. The usual norm is denoted as $\norm{\cdot}_{W^{1,p}(\Omega)}$ or simply $\norm{\cdot}_{m,p}$. The closure of the $C^\infty_c(\Omega)$ functions on the Sobolev spaces are denoted as $W^{m,p}_0(\Omega)$ and $H^m_0(\Omega)$ and its dual as $W^{-m,p^*}(\Omega)$ and $H^{-m}(\Omega)$. We recall that each $W^{m,p}(\Omega)$ is reflexive and separable for $p\in(1,\infty)$ and when $p=\infty$ then $W^{m,\infty}(\Omega)$ is the dual space of a reflexive Banach space. This allows to apply the weak and weak-star compactness embeddings recalled above. Recall also that by Rellich--Kondrachov theorem, when $\Omega$ is bounded and Lipschitz and $p\in[1,d)$, then $W^{1,p}(\Omega)$ is embedded in $L^q(\Omega)$ for all $q\in[1,p^\#]$ where $p^\#$ is the Sobolev conjugate exponent defined by $\frac{1}{p^\#}=\frac{1}{p}-\frac{1}{d}$ and the embedding is compact when $q\in[1,p^\#)$. When $p\in(d,\infty]$ then, by Morrey's theorem, $W^{1,p}(\Omega)$ is compactly embedded in $C^{0,\alpha}(\bar\Omega)$ with $\alpha=1-\frac{d}{p}$. In the case $p=d$ we know that $W^{1,d}(\Omega)$ is compactly embedded in $L^q(\Omega)$ for all $q\in[1,\infty)$. We recall also Poincaré inequality that asserts that, when $\Omega$ is bounded, in the space of functions in $W^{1,p}(\Omega)$ that vanish on a portion of their domain, the norm $\norm{\cdot}_{1,p}$ is equivalent to $u\mapsto\norm{\grad u}_p$. A similar result is valid in the space $H^1_0(\Omega,\mathbb{R}^d)$: in this case Korn inequality ensures that the norm $\norm{\cdot}_{1,2}$ is equivalent to $u\mapsto\norm{Eu}_2$ where $Eu=\sym\grad u$ is the symmetric gradient of $u$.
 
 A collection of some other tools from mathematical analysis that will be useful for our aims is in Appendix~\ref{chap:tools-math}.
 
-% modulus of continuity
-% frechet, gateaux, subdifferential
-% N={1,2,...}
+\subsection*{Notation of geometry on the Euclidean space}
+
+Let $M\subset\mathbb{R}^d$ be a piecewise smooth $m$-dimensional manifold, with $m\in\{0,\dots,d\}$. Given a map $f\in L^1(M,\mathcal{H}^m)$ we will simply write
+\[
+\int_Mfdx:=\int_Mfd\mathcal{H}^m.
+\]
+
+If $\Sigma\subset\mathbb{R}^d$ is an oriented piecewise smooth hypersurface we denote by $n\colon\Sigma\to\mathbb{R}^d$ the a.e.\ defined normal vector and by $P=I-n\otimes n\colon\Sigma\to\text{Lin}$ the projector into the tangent space. Given a function $f\colon\mathbb{R}^d\to\mathbb{R}$ its jump across $\Sigma$ is denoted by $[\![f]\!]$ while its normal derivative on $\Sigma$ is defined as
+\[
+\dind{f}{n}=\grad f\cdot n. 
+\]
+Given $f\colon\Sigma\to\mathbb{R}$, we define
+\[
+\grad_Pf=P(\grad f).
+\]
+Similarly, given a vector field $v\colon\Sigma\to\mathbb{R}^d$ we define
+\[
+\grad_P v=(\grad v)P\quad\text{and}\quad\diver_P v=\tr(\grad_P v)
+\]
+and given a tensor field $A\colon\Sigma\to\text{Lin}$ we define $\grad_PA\colon\Sigma\to\text{Lin}\otimes\mathbb{R}^d$ and $\diver_PA\colon\Sigma\to\mathbb{R}^d$ by
+\[
+(\grad_PA)_{ijk}=A_{ij,l}P_{lk}\quad\text{and}\quad(\diver_PA)\cdot a=\diver_P(A^Ta)\quad\text{for all $a\in\mathbb{R}^d$.}
+\]
+Similar definitions hold for higher order tensors. Given a vector field $v\colon\Sigma\to\mathbb{R}^d$ such that $Pv=v$ on $\Sigma$, the Stokes theorem implies that 
+\[
+\int_\Sigma\diver_Pvdx=\int_\Gamma\{\!\!\{v\cdot\xi\}\!\!\}dx,
+\]
+where $\Gamma$ is the set of internal and boundary $(d-2)$-dimensional edges of $\Sigma$, $\xi$ is the vector tangent to $\Sigma$ and outer normal to $\Gamma$, and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of the argument evaluated at the two sides of $\Gamma$ (on the boundary edges, only the inner side is considered).
+\begin{rmk*}
+All the functions involved in the above definitions are assumed to be sufficiently regular (for example piecewise smooth) for the expressions to be well-defined. Moreover, for the functions defined on $\Sigma$ only, it is assumed that they are extended to a neighborhood of $\Sigma$, the result being independent of the particular extension.
+\end{rmk*}
+
+Given $\Omega\subset\mathbb{R}^d$ open with piecewise smooth boundary, we denote by $\partial^m\Omega$ the set of its $m$-dimensional boundary faces.
 
 \chapter{Introductory notions regarding mechanical modeling and plasticity theory}
 \label{chap:modeling}
@@ -303,7 +333,7 @@ Consider the functional $\mathcal{F}\in W^{-1,p^*}(\Omega)^d$ of the form
 \]
 where $P\in L^{P^*}(\Omega,\mathbb{R}^{d\times d})$, $f\in L^{p^*}(\Omega)^d$ and $h\in L^{p^*}(\partial\Omega)^d$. The first integral represents a generalized force that acts in the direction of the local bending of the body, the second integral represents a volume force distributed over $\Omega$, the last integral a surface force distributed over $\partial\Omega$.
 \end{ex}
-Consider now a time interval $[0,T]$ and an actual evolution of the configuration of the system, $z\colon[0,T]\to Z$. For simplicity, in this discussion we assume that $z\in\text{AC}([0,T],Z)$ even thought less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to Z^*$ their sum. We require that equilibrium holds, that is
+Consider now a time interval $[0,T]$ and an actual evolution of the configuration of the system, $z\colon[0,T]\to Z$. For simplicity, in this discussion we assume that $z\in\text{AC}([0,T],Z)$ even though less regular evolutions, for example exhibiting jumps, can be considered as we will see subsequently in this thesis. Along its evolution, the mechanical system is subject to various generalized forces and we call $\mathcal{F}\colon[0,T]\to Z^*$ their sum. We require that equilibrium holds, that is
 \[
 \mathcal{F}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
 \]
@@ -629,7 +659,7 @@ The results in this chapter, except for the one in Section~\ref{sec:existence-th
 \section{An existence result for doubly nonlinear equations}
 \label{sec:roubickeck}
 
-In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even thought it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a quadratic growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
+In this section we discuss the existence results~\cite[Proposition 11.1]{roubicek-pde} for doubly nonlinear evolutionary equations in the form~\eqref{eqn:modeling:doubly:nonlinear-neat}. This result cover the case in which the free energy density $\Psi$ is smooth (actually the requirement is that the part of the generalized internal force that depends on the configuration only is single-valued, even though it may have a non-potential structure) and $\Phi$ does not depends on the configuration but on the rate only. The crucial assumption is that the dissipation potential has a quadratic growth: this will implies that the dissipative generalized force is strong enough, preventing the system to exhibiting jumps. This allows to seek the solution in the space of absolutely continuous evolutions.
 
 \begin{rmk}
 The result presented in this section will not be directly used in the sequel of the thesis. We report it since it was the basis from which we developed the general existence theorem of Section~\ref{sec:existence-theorem-abstract-constrained}. The result presented in that section is indeed a generalization of the theorem of the present one, when a constrain is added and a dissipation potential depending on the Lagrange multiplier is considered.
@@ -903,7 +933,7 @@ If $N$ is sufficiently large, the map $\mathcal{U}\colon\Lambda^*\to U$ is well 
 \[
 \norm{\mathcal{U}(p)}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}\quad\text{for all $p\in\Lambda^*$}
 \]
-where $C_U^0,C_U^1>0$ are constants independent on $p$ and $N$.
+where $C_U^0,C_U^1>0$ are constants independent of $p$ and $N$.
 \end{lemma}
 \begin{proof}
 Since we are now interested in the behavior of the solution set for $p_N^k$ variable, we explicitly replace it with a more generic symbol $p\in\Lambda^*$.
@@ -943,7 +973,7 @@ of $\norm{u}_H^2$ is positive. Then inequality~\eqref{eqn:boundedness} implies\f
 \[
 y\le\frac{2}{NB-C}(Dz+E)+2\sqrt{\frac{Fz+G}{NB-C}}.
 \]
-It is trivial that this implies the existence of $a,b>0$ independent on $p$ and $N$ such that $y\le a+bz$.} that $\norm{u}_U$ is indeed bounded by a constant that remains bounded as $p$ remains bounded and there exists $C_U^0,C_U^1>0$ independent on $N$ and $p$ such that $\norm{u}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}$.
+It is trivial that this implies the existence of $a,b>0$ independent of $p$ and $N$ such that $y\le a+bz$.} that $\norm{u}_U$ is indeed bounded by a constant that remains bounded as $p$ remains bounded and there exists $C_U^0,C_U^1>0$ independent of $N$ and $p$ such that $\norm{u}_H\le C_U^0+\frac{C_U^1}{N}\norm{p}_{\Lambda^*}$.
 
 Next we prove that the solution to~\eqref{eqn:equation-unk} is unique, so that $\mathcal{U}$ is well defined. To this aim let $u_1,u_2\in U$ two solutions. We consider~\eqref{eqn:equation-unk-explicit} and we substitute $v=\frac{u_1+u_2}{2}$ and alternatively $u=u_1$ or $u=u_2$. Summing the two resultant inequalities together, we get
 \begin{equation}
@@ -1411,7 +1441,7 @@ for almost every $t\in(0,T)$. Now we can take the supremum limit for $N\to\infty
 \begin{equation}
 \label{eqn:inclusion-bochner}
 \begin{multlined}
-\int_0^L\big[\Phi_0(p(t),v(t))-\Psi_0(p(t),\dot u(t))+\\
+\int_0^T\big[\Phi_0(p(t),v(t))-\Psi_0(p(t),\dot u(t))+\\
 +\dual{D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}u(t)+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)-f(t),v(t)-\dot u(t)}\big]dt\ge0
 \end{multlined}
 \end{equation}
@@ -1423,7 +1453,7 @@ for all $v\in L^\infty((0,T),U)$. Since $v$ is arbitrary this is equivalent to
 +\dual{D_u\Psi_0(u(t),\lambda(t))+\mathcal{A}u(t)+\mathcal{D}\dot u(t)+\mathcal{L}'(u(t))^*p(t)-f(t),v-\dot u(t)}\ge0
 \end{multlined}
 \end{equation}
-for all $v\in U$ and a.Considere.\ $t\in(0,T)$. This is in turn is equivalent to~\eqref{eqn:problem-abstract-first}.
+for all $v\in U$ and a.e.\ $t\in(0,T)$. This is in turn is equivalent to~\eqref{eqn:problem-abstract-first}.
 
 Thus we have proved Theorem~\ref{thm:abstract-existence}.
 
@@ -1445,7 +1475,7 @@ where $p_i=0=D_\lambda\Psi_0(z_i^0)$. For $i\in\{1,2\}$ let $(z_i,p_i)$ be the s
 holds, for all $u_i^0$ and $f_i$ with $\norm{f_i}_{H^1((0,T),H^*)}$. In particular the solution to Problem~\ref{prb:existence-abstract} is unique.
 \end{thm}
 \begin{proof}
-First of all we notice that, by the a priori estimates of previous subsection, there exists a constant $C_0$ independent on $(z_i,p_i)$ such that $\norm{u_i}_U,\norm{\lambda_i}_\Lambda,\norm{p_i}_{\Lambda^*}\le C_0$.
+First of all we notice that, by the a priori estimates of previous subsection, there exists a constant $C_0$ independent of $(z_i,p_i)$ such that $\norm{u_i}_U,\norm{\lambda_i}_\Lambda,\norm{p_i}_{\Lambda^*}\le C_0$.
 
 Next, since $u_1$ and $u_2$ are solutions, then~\eqref{eqn:explicit-inclusion} holds with $(z_i,p_i)$ in place of $(z,p)$, $\dot u_j(t)$ in place of $v$ and $f_i(t)$ in place of $f(t)$ for $i\in\{1,2\}$ and $j\in\{1,2\}$ with $j\neq i$. Summing them together we arrive at
 \begin{equation}
@@ -1902,7 +1932,7 @@ table[x=eta,y=F] {figures/necking-experimental.dat};
 \caption{Trend of the tensile force $F$ as the elongation $\eta=l/L$ varies (where $L$ is the initial length and $l$ the length in the deformed configuration) taken from the experimental data in~\cite{Considere1885}. The sample is made of soft iron and has a length $L=201$ mm and a diameter of 16 mm in the initial configuration.}
 \label{fig:considere}
 \end{figure}
-In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considère experimentally observed that the length of the region affected by the neck is independent on the length of the bar but increases with the diameter.
+In the first phase of the test, the behavior of the specimen is elastic (the steep part of the graph in the figure). Subsequently the yield point is reached and at first the axial force increases as the deformation increases. This behavior is known as \emph{hardening} and is due the increase in the internal resistance of the material to yield as the plastic deformation accumulates. The hardening effect competes with the shrinkage of the specimen section which tends to weaken the material, since the axial force is distributed over an increasingly smaller section. This leads to a decrease in the slope in the curve in the figure, until the force begins to decrease when the geometric effect of the decrease in section prevails over hardening. Considère observed that reaching the maximum tensile force corresponds approximately to the moment in which the bar, which had initially deformed uniformly along its entire length, begins to shrink more at a localized point, which experimentally is a priori undetermined, depending on the imperfections of the specimen. This phenomenon, which was already known before Considère studies although it had not yet been characterized quantitatively, is known as \emph{necking}. The criterion that links the start of the necking to the achievement of the maximum traction force is now known as \emph{Considère criterion}. Considère experimentally observed that the length of the region affected by the neck is independent of the length of the bar but increases with the diameter.
 
 %I primi contributi verso la comprensione teorica del fenomeno del necking nell'ambito della teoria della plasticità risalgono alla seconda metà del Novecento, quando è il fenomeno è stato studiato come manifestazione della perdita di stabilità della \emph{soluzione triaviale}, cioè quella in cui la barra rimane in uno stato di deformazione uniforme. In un lavoro~\cite{Hill1958} del 1958, R. Hill ha sviluppato una teoria generale per trattare i fenomeni di biforcazione e di perdita di stabilità nell'ambito della teoria della plasticità incrementale. La teoria della plasticità incrementale era il framework utilizzato prima che venisse introdotta, negli anni Settanta, la moderna teoria della plasticità basata su solide base variazionali, quella che abbiamo discusso nei capitoli introduttivi~\ref{}. Nella teoria della plasticità incrementale la relazione costitutiva lega il rate dello stress al rate dello strain, cosicché il \emph{problema incrementale} di determinare ad ogni istante il campo velocità del solido elastoplastico emerge naturalmente. La teoria della biforcazione di Hill riguarda l'unicità della soluzione di tale problema incrementale. Utilizzando la teoria della biforcazione di Hill, negli anni Settanta in~\cite{HillHutchinson1975,HutchinsonMiles1974}, viene dimostrato che la perdita di stabilita della soluzione uniforme avviene poco dopo che la forza di trazione raggiunge il suo massimo, in accordo con il criterio di Considère. Nello stesso periodo viene effettuata anche la prima simulazione numerica mediante gli elementi finiti dell'occorenza del fenomeno del necking~\cite{Needleman1972} permettendo per la prima volta di predire accuratemante la forma del neck.
 %
@@ -1922,7 +1952,9 @@ With the hope of being able to obtain the most explicit and analytically tractab
 
 In Chapter~\ref{chap:small-neck} we formulate a version of the model valid in the regime of small deformations. The existence and uniqueness of solutions to the initial boundary value problem produced by this model is established by resorting to the general theory of existence for evolutionary equations with quadratic energy presented in Section~\ref{sec:evi} of Chapter~\ref{chap:solution-concepts}. We then move on to study the initial boundary value problem associated with the tensile test. As one might expect, this model is not able to capture the onset of necking, which as we have discussed is an instability phenomenon intrinsically due to the nonlinearity induced by large deformations, and we show this by explicitly determining the solution. In Chapter~\ref{chap:large-neck} we refine the model so that it can describe the behavior of the bar at large deformations. The existence of solutions to the resulting evolutionary problem is studied through the notion of energy solutions described in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. We then approach the study of the stability of the trivial solution using the notion of global stability provided by the definition of energy solution itself. If we ignore the effect of plasticity by reducing ourselves to the purely elastic case we are able to obtain an explicit result which indicates that the solution in which the bar deforms uniformly loses stability after the tension force reaches its maximum. In the plastic case we are unable to obtain an equally explicit result. We will propose some heuristic considerations which suggest that the instability of the trivial solution also occurs in this case after the force reaches its maximum, in accordance with the Considére criterion.
 
-Our analysis cannot be considered conclusive since it is not yet able to show the occurrence of necking in a complete and rigorous way, nor is it capable of qualitatively describing the salient properties of the behavior of the bar following the triggering of the instability. We hope that a deeper analysis of this simplified one‑dimensional model will provide clearer insight into the mechanisms that govern the onset and evolution of necking.
+Our analysis cannot be considered conclusive since it is not yet able to show the occurrence of necking in a complete and rigorous way, nor is it capable of qualitatively describing the salient properties of the bar's behavior following the triggering of the instability. The partial result that we achieved is the characterization of a lower bound for the elongation at which instability of the trivial solution possibly occurs: in particular, we found that this lower bound follows the elongation at which the tensile force reaches its maximum, and converges to the maximum point when the length of the bar tends to infinity. This is in agreement with the Considère criterion.
+
+We hope that a deeper analysis of our simplified one-dimensional model, or a refinement of the model itself, will provide clearer insight into the mechanisms that govern the onset and evolution of necking. Some suggestions for further research are collected in Section~\ref{sec:directions-necking}.
 
 %Nel Mémoire del 1885~\cite{Considere1885}, l'ingegnere fracese M. Considère raccolse i suoi studi sulle prove sperimentali da lui effettuate sul comportamento meccanico dei metalli strutturali, il cui utilizzo come materiale da costruzione si era ormai ampiamente diffuso. Una parte del suo studio è dedicata alla prova di trazione di campioni cilindrici: una barra cilindrica viene posta in trazione controllandone l'allungamento e viene misurata la forza assiale a cui essa è soggetta. I dati sperimentali riportati da Considére sono mostrati in Figura~\ref{fig:considere}.
 %\begin{figure}[h]
@@ -2379,6 +2411,7 @@ As we showed in the previous chapter, the one-dimensional small deformations mod
 In a similar manner to the previous chapter, before developing the strictly one-dimensional model, we examine the kinematics of a fully multidimensional bar under large strain. We assume that bending and shear are neglected. Consequently, cross-sections remain plane, undergoing only axial translation and uniform transversal stretching.
 
 \subsection{Motivation from the multidimensional kinematics}
+\label{subsec:motivation-large}
 
 Let $\Omega=(0,L)\times\Sigma\subset\mathbb{R}^d$ with $L>0$ and $\Sigma\subset\mathbb{R}^{d-1}$ the reference configuration of the cylindrical bar. The generic material point will be denoted as $(x,y)\in\Omega\subset\mathbb{R}^d$ with $x\in(0,L)\subset\mathbb{R}$ and $y\in\Sigma\subset\mathbb{R}^{d-1}$. We consider deformations of the form
 \begin{equation}
@@ -2488,7 +2521,7 @@ Here $\sigma_1\colon(0,L)\to\mathbb{R}$ is the longitudinal elastic stress, $\si
 \begin{gather*}
 E_1^{-1}\tilde{\dot E}_1=(\chi_1')^{-1}\tilde{v}_1'-P^{-1}\tilde{Q} \\
 E_2^{-1}\tilde{\dot E}_2=\chi_2^{-1}\tilde{v}_2+(d-1)^{-1}P^{-1}\tilde{Q}\\
-E_3^{-1}\tilde{\dot E}_3=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q} \\,
+E_3^{-1}\tilde{\dot E}_3=(\chi_2')^{-1}\tilde{v}_2'-P^{-1}\tilde{Q}.
 \end{gather*}
 Taking into account these definitions, the internal generalized force can be rewritten more explicitly as
 \begin{multline*}
@@ -2569,6 +2602,7 @@ We will see particular examples of constitutive relations in Subsection~\ref{sub
 In this section, we prove the existence of energetic solutions to the model presented in the previous section. A self-contained introduction to this solution concept, including an explanation of the notation employed in this section, can be found in Section~\ref{sec:energetic-solution} of Chapter~\ref{chap:solution-concepts}. The aim of this section is to verify the hypotheses required to apply the abstract existence result provided by Theorem~\ref{thm:existence-energetic-solutions}.
 
 \subsection{Formulation of the initial boundary value problem}
+\label{subsec:formulation-bvp-neck}
 
 We now describe how the model formulated in the previous section, can be treated within the framework of energetic solutions.
 
@@ -2962,11 +2996,11 @@ as functions of $(X,t)\in(0,L)\times[0,T]$. Then
 \[
 \frac{d}{dt}W(E)=K\cdot V.
 \]
-Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent on $z$ such that
+Let $E\in\mathbb{R}$ and $z\in\mathscr{D}$ such that $\sup_{t\in[0,T]}\mathcal{E}(z,t)$ and let $t,s\in[0,T]$. By the regularity properties (G) of $g$, there exists modulus of continuity $\omega^V$ and $\omega^G$ independent of $z$ such that
 \[
 |V(t)-V(s)|\le\omega^V(|t-s|)\quad\text{and}\quad\max\left\{\frac{g_1'(y_1,s)}{g_1'(y_1,t)},\frac{g_2(y_1,s)}{g_2(y_1,t)}\right\}\le\omega^V(|t-s|)
 \]
-on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent on $z$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
+on $(0,L)$. Moreover $|K|\le 3C_1^W(W(E)+C_0^W)$ and there exists $M>0$ independent of $z$, such that $\norm{V}_\infty\le M$. Then by (W2, i) and (W2, ii),
 \[
 \begin{split}
 |\partial_t\mathcal{E}(z,t)-\partial_t\mathcal{E}(z,s)|&\le\int_0^L|K(t)\cdot V(t)-K(s)\cdot V(s)|dX\le\\
@@ -3008,7 +3042,7 @@ The last inequality holds since $D$ is lower semicontinuous. This concludes the 
 
 We now verify (C1) and (C2). In view of Proposition~\ref{prop:tool-verify-compatibility} we need to verify (PC1) and (PC2). Notice that (PC2) has been established in Proposition~\ref{prop:power-control-necking} (iii). Thus we need to verify (PC1) only. A stronger version of (PC1) is the following proposition.
 \begin{prop}
-Let $(z_k,t_k),(z,t)\in Z\times[0,T]$ such that $(z_k,t_k)\rightharpoonup(q,t)$ in $Z\times[0,T]$ and $z_k\in\mathscr{D}$. Then for all $\hat{z}\in Z$,
+Let $(z_k,t_k),(z,t)\in Z\times[0,T]$ such that $(z_k,t_k)\rightharpoonup(z,t)$ in $Z\times[0,T]$ and $z_k\in\mathscr{D}$. Then for all $\hat{z}\in Z$,
 \[
 \limsup_{k\to\infty}\left(\mathcal{E}(\hat{z},t_k)+\mathcal{D}(z_k,\hat{z})\right)\le\mathcal{E}(\hat{z},t)+\mathcal{D}(z,\hat{z}).
 \]
@@ -3379,7 +3413,7 @@ is satisfied. Since $\mathcal{D}$ is a quasidistance, and in particular $\mathca
 \]
 The aim of what follows would be to identify conditions that ensure that, for sufficiently large elongations,~\eqref{eqn:stability-necking} is violated, and to understand qualitatively the feature of the stable localized solution. We were actually not able to get conclusive results in this sense, so we now propose some heuristic considerations that suggest that instability in the form of necking is likely to occur if suitable constitutive relation for the hardening free energy density are chosen.
 \begin{rmk}
-Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observations and the theoretical and numerical studies mentioned in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds with the true condition for the beginning of necking. See also the discussion in Chapter~\ref{chap:solution-concepts} regarding the potential limitations of energetic solutions in identifying the exact onset of instability.
+Our study of stability will be local, meaning that we will study the behavior of $\mathcal{J}_t$ near $(\bar{y}(t),\bar{P}(t))$ only, taking into account first and second order variations. In particular our analysis will not be able to identify the cases in which $(\bar{y}(t),\bar{P}(t))$ is a local but not a global minimum of $\mathcal{J}_t$: if this happen, according to the definition of energetic solution, the configuration must jump from the trivial to the energetically favorable one. On the other hand the experimental observations and the theoretical and numerical studies mentioned in the introduction of Chapter~\ref{chap:intro-neck} suggest that necking happen without jumps. Thus we expect that the estimates we will find of the threshold of instability detected by our local analysis corresponds to the true condition for the beginning of necking.
 \end{rmk}
 %The aim of what follows is to study the conditions under which there exists $t\in(0,T]$ such that~\eqref{eqn:stability-necking} is violated and understand qualitatively the behavior of the true stable solution. We will show that choosing suitably the constitutive relations, there exists $t_0\in(0,T]$ such that, if $t>t_0$ then~\eqref{eqn:stability-necking} is violated. To see this we will look at the behavior of $\mathcal{J}_t$ locally near $(\bar y(t),\bar P(t))$ studying its first and second variations on the directions in which it is smooth (notice indeed that $\mathcal{J}_t$ is non-smooth due to the non-smooth dissipation distance $\mathcal{D}$). It will result that the direction in which $\mathcal{J}_t$ decreases, preventing $(\bar y(t),\bar P(t))$ to be a minimizer, corresponds to an instability mode qualitatively similar to that we found in the purely elastic model and shown in Figure~\ref{fig:instability-mode-elastic}. This is interpreted as the onset of a neck in one of the extremities of the bar.
 We start our analysis assuming that the stability condition is not violated in the elastic range. This is certainly true in the case of metals since yielding starts when the geometric nonlinearities have still a negligible effect. So fix $t\in[0,T]$ and suppose that the yield point has been already reached at that time. Given the difficulties in fully characterizing the true stability condition~\eqref{eqn:stability-necking}, we define instead two simplified stability conditions that can however give us some information about the occurrence of necking. We call them~\emph{stability under force control} and~\emph{regularized stability} and we discuss whether they are violated below. We will describe also our not conclusive attempts to get information regarding the occurrence of the \emph{true instability}.
@@ -3476,7 +3510,7 @@ But since
 \]
 the thesis follows.
 \end{proof}
-It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability under force control occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,q)$ with $\theta>0$, $v_2<0$ and $q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
+It is easy to see that the constitutive model described in Section~\ref{subsec:constitutive-large-neck} implies that $\det b(t)>0$. Then previous lemma shows indeed that instability under force control occur when $\bar F$ reaches its maximum. In Figure~\ref{fig:instabilitypl} the result is demonstrated numerically: we adopted the Armstrong--Frederick hardening function of Remark~\ref{rmk:am-fed} and we tuned the amount of hardening (in particular the parameters $C$ and $\delta$) so that $\bar{F}$ exhibited a maximum. By a numerical computation one can find also that at the instant $t_0\in(0,T]$ when $\det h(t_0)=0$, the kernel of $h(t_0)$ is the span of a vector of the form $(\theta,v_2,Q)$ with $\theta>0$, $v_2<0$ and $Q>0$. This means that, if at time $t_0$ the bar is constrained to remains uniform, allowed to change its length and with the tensile $\bar{F}(t_0)$ kept fixed, it tends to shrink and increase its plastic distortion. This behavior constitutes the expected mechanism for the initiation of necking. Returning to the actual boundary value problem where the elongation, rather than the tensile force, is controlled, our findings suggest that when the total elongation is sufficiently large, the bar tends to shrink and elongate more than what is predicted by the trivial uniform solution. However, since the global boundary conditions prevent this additional deformation from occurring everywhere, the bar can only satisfy this tendency at a specific point along its length, thus initiating the necking process.
 \begin{figure}[htp]
 \begin{tikzpicture}
 \begin{axis}[xlabel={$\eta$},ylabel={$\bar F$},xmin=1,xmax=1.35,width=0.45\textwidth]
@@ -3496,7 +3530,11 @@ It is easy to see that the constitutive model described in Section~\ref{subsec:c
 
 \subsubsection*{Regularized stability}
 
-We now turn to our second simplified notion of stability whose introduction is motivated by the follwing considerations. The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$, difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically we restrict to the particular constitutive relation for the dissipation potential discussed in Section~\ref{subsec:constitutive-large-neck} and we define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ as
+We now turn to our second simplified notion of stability whose introduction is motivated by the follwing considerations. The feature that makes inequality~\eqref{eqn:stability-necking}, or equivalently the minimality of $\mathcal{J}_t$ at $(\bar{y}(t),\bar{P}(t))$, difficult to analyze, is the lack of smoothness of $\mathcal{D}$. This indeed prevents us from considering the first and second variation of $\mathcal{J}_t$ to check whether $(\bar{y}(t),\bar{P}(t))$ is a (local) minima. The idea to circumvent these difficulties would be to consider only variations in the directions where the one-sided directional derivatives exists. Specifically, starting from the definition of the space of admissible variations $Z_0$ defined in Subsection~\ref{subsec:formulation-bvp-neck}, we restrict to variations belong either to one of the following spaces
+\[
+Z_0^\zeta=\{w=(v,Q)\in Z_0\;|\;\zeta Q\ge0\}
+\]
+for $\zeta\in\{\pm1\}$. We also define the two smooth functionals $\mathcal{J}_t^\varsigma\colon\mathscr{Z}\to\mathbb{R}\cup\{\infty\}$ for $\varsigma\in\{\pm1\}$ as
 \[
 \mathcal{J}_t^\varsigma(y,P,t)=\int_0^LW(\eta(t)y_1'P^{-1},y_2P^\frac{1}{d-1},y_2'P^{-1})dX+\int_0^LH(P,P')dX+\int_0^LD^\varsigma(\bar P(t),P)dt,
 \]
@@ -3563,17 +3601,16 @@ Since $\mathcal{J}_t(\hat z)=\mathcal{J}_t^\varsigma(\hat z)$ if $\hat z\in\math
 %\]
 %This is a contradiction.
 %\end{proof}
-Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now study whether this happen. Considering the way in which the trivial solution is computed (see the beginning of Section`\ref{subsec:plastic-model}) it is immediate to check that $\partial\mathcal{J}^+_t(\bar z(t))=0$ for all $t\in[0,T]$. This implies that for all $w=(v,Q)\in Z_0$ with $Q\le0$ in $(0,L)$, it holds that
-\[
-\dual{\partial\mathcal{J}^-_t(\bar z(t)),w}=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}-2Y\int_0^L\frac{Q}{\bar P(t)}dX=-2Y\int_0^L\frac{Q}{\bar P(t)}dX>0.
-\]
-This means that~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $\hat z$ near $\bar z(t)$, for all $t\in[0,T]$. This means that instability modes in which the plastic distortion $P$ diminish everywhere with respect to $\bar P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify reversal of plastic flow.
-\begin{rmk}
-We can immediately refine this last result by proving that are excluded instability modes where the plastic distortion diminish somewhere in $(0,L)$. For the following computations let $U\colon\mathbb{R}^4\to\mathbb{R}\cup\{\infty\}$ be defined by
+Thus a sufficient condition for instability is that at least one among~\eqref{eqn:min-neck-sigma} is violated, so we now study whether this happen.
+\begin{prop}
+It holds that $\partial\mathcal{J}^+_t(\bar z(t))=0$ and that $\dual{\partial\mathcal{J}^-_t(\bar z(t)),w}>0$ for all $w\in Z_0^-$. In particular~\eqref{eqn:min-neck-sigma} with $\varsigma=-1$ is satisfied, at least locally for $z$ near $\bar z(t)$.
+\end{prop}
+\begin{proof}
+Let $U\colon\mathbb{R}^4\to\mathbb{R}\cup\{\infty\}$ be defined by
 \[
 U(y_1',y_2,y_2',P)=W(\eta y_1'P^{-1},y_2P^\frac{1}{d-1},y_2'P^{-1}).
 \]
-and notice that the equilibrium equations satisfied by the trivial solution can be rewritten as
+and notice (see the beginning of this section) that the equilibrium equations satisfied by the trivial solution can be rewritten as
 \begin{gather}
 \frac{d}{dx}\dind{U}{y_1'}=0 \\
 \frac{d}{dx}\dind{U}{y_2'}-\dind{U}{y_2}=0 \\
@@ -3583,31 +3620,39 @@ with boundary conditions
 \[
 \dind{U}{y_2'}=0\quad\text{and}\quad\dind{H}{P'}=0\quad\text{in $\{0,L\}$}.
 \]
-Now consider a variation $w=(v,Q)\in Z_0$ and let $\Omega^\zeta=\{x\in(0,L)\;|\;\zeta Q(x)>0\}$.  Then
+Now consider a variation $w=(v,Q)\in Z_0$ and let $\Omega^\zeta=\{x\in(0,L)\;|\;\zeta Q(x)>0\}$. Then
 \[
 \begin{multlined}
 \frac{d}{d\epsilon}\mathcal{J}_t(\bar z(t)+\epsilon w)\Big|_{\epsilon=0}=\\
 \begin{split}
 &=\int_0^L\left(\dind{U}{y_1'}v_1'+\dind{U}{y_2}v_2+\dind{U}{y_2'}v_2'+\dind{H}{P}Q+\dind{H}{P'}Q'\right)dx+\int_{\Omega^+}\dind{D^+}{P_1}Qdx+\int_{\Omega^-}\dind{D^-}{P_1}Qdx=\\
-&=\int_0^L\left(\dind{U}{y_1'}v_1'+\dind{U}{y_2}v_2+\dind{U}{y_2'}v_2'+\dind{H}{P}Q+\dind{H}{P'}Q'+\dind{D^+}{P_1}Q\right)dx+\int_{\Omega^-}\left(\dind{D^-}{P_1}-\dind{D^+}{P_1}\right)Qdx.
+&=\int_0^L\left(\dind{U}{y_1'}v_1'+\dind{U}{y_2}v_2+\dind{U}{y_2'}v_2'+\dind{H}{P}Q+\dind{H}{P'}Q'+\dind{D^+}{P_1}Q\right)dx+\int_{\Omega^-}\left(\dind{D^-}{P_1}-\dind{D^+}{P_1}\right)Qdx=\\
+&=\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}+\int_{\Omega^-}\left(\dind{D^-}{P_1}-\dind{D^+}{P_1}\right)Qdx.
 \end{split}
 \end{multlined}
 \]
-Substituting the strong form of the equations and the boundary conditions just reported, we find that the first integral vanish. Moreover recalling the definition of $D^+$ and $D^-$ we find that
+Substituting the strong form of the equations and the boundary conditions just reported, we find that $\dual{\partial\mathcal{J}^+_t(\bar z(t)),w}=0$. Moreover recalling the definition of $D^+$ and $D^-$ we get that
+\[
+\frac{d}{d\epsilon}\mathcal{J}_t(\bar z(t)+\epsilon w)\Big|_{\epsilon=0}=-2Y\int_{\Omega^-}\frac{Q}{\bar P(t)}dX.
+\]
+When $w\in Z_0^-$ we have $\Omega^-=(0,L)$ so that $\frac{d}{d\epsilon}\mathcal{J}_t(\bar z(t)+\epsilon w)\Big|_{\epsilon=0}=\dual{\partial\mathcal{J}_t^-(\bar z(t)),w}>0$. This concludes the proof.
+\end{proof}
+\begin{rmk}
+The above proof actually show that
 \[
 \frac{d}{d\epsilon}\mathcal{J}_t(\bar z(t)+\epsilon w)\Big|_{\epsilon=0}=-2Y\int_{\Omega^-}\frac{Q}{\bar P(t)}dX>0
 \]
-if $|\Omega^-|>0$. This proves that the $\mathcal{J}_t$ growth along variations with $|\Omega^-|>0$ as anticipated.
+whenever $w_3=Q<0$ in a set of positive measure. This means that instability modes in which the plastic distortion $P$ diminish somewhere with respect to $\bar P(t)$ are excluded. This result is expected: as the bar remains under tension, there is no driving force that could justify a reversal of plastic flow.
 \end{rmk}
-We now turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. To this aim we could study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Z_0$ with $Q\ge0$ in $(0,L)$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}<0$, we have indeed that ~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentation of our attempts in that direction), in what follows we presents a simplified analysis in which the constraint $q\ge0$ is disregarded. This leads us to the following second simplified notion of stability.
+We now turn to study whether~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. The above proposition does not allow us to conclude nothing, so we should study the second variation of $\mathcal{J}_t^+$ at $(\bar{y}(t),\bar P(t))$: if we are able to find $w=(v,Q)\in Z_0^+$ such that $\dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,w}=\frac{d}{dt}\mathcal{J}_t(\bar z(t)+\epsilon w)<0$, we have indeed that ~\eqref{eqn:min-neck-sigma}, for $\varsigma=1$, is violated. Since our efforts to find such $w$ were unsuccessful (see also the subsection below which gives a presentation of our attempts in that direction), in what follows we presents a simplified analysis in which the constraint $w_3=Q\ge0$, implied in the definition of $Z_0^+$, is disregarded. This leads us to the following second simplified notion of stability.
 \begin{defi}[Regularized stability]
 We say that the trivial uniform solution satisfies the regularized stability condition at $t\in(0,T]$ if $\partial^2\mathcal{J}_t^+(\bar y(t),\bar P(t))$ is positive definite.
 \end{defi}
 \begin{rmk}
 \label{rmk:stability-regularized}
-We have already established that instability modes where $P$ decreases somewhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently then the regularized stability condition would imply true local stability. However, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,Q) \in Z_0$ with $Q\ge 0$ such that $\langle\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a lower bound for the onset of necking.
+We have already established that instability modes where $P$ decreases somewhere in $(0,L)$ are excluded. Furthermore, if the trivial uniform solution satisfies the regularized stability condition, instability modes where $P$ increases everywhere in $(0,L)$ are likewise excluded. Consequently then the regularized stability condition would imply true local stability. Conversely, if the trivial uniform solution becomes unstable in the regularized sense, true local stability is not necessarily compromised. Indeed, even if the second variation $\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))$ is not positive definite, no actual instability occurs as long as there is no direction $w=(v,Q) \in Z_0^+$ such that $\langle\partial^2\mathcal{I}_t^+(\bar{y}(t),\bar{P}(t))w,w\rangle<0$. These considerations imply that the instant at which regularized stability is lost represents a \emph{lower bound} for the onset of necking.
 \end{rmk}
-We now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w\in Z_0$ such that $\partial^2\mathcal{J}_t^+(\bar{z}(t))w = 0$. It is easy to prove that
+So we now seek the instant at which the regularized stability condition is lost. This can be achieved by determining whether there exists a non-trivial direction $w\in Z_0$ such that $\partial^2\mathcal{J}_t^+(\bar{z}(t))w = 0$. It is easy to prove that
 \[
 \dual{\partial^2\mathcal{J}_t^+(\bar z(t))w,\tilde w}=\int_0^L\left(M(t)w'\cdot \tilde w'+N(t)w\cdot\tilde w'+N^Tw'\cdot\tilde w+K(t)w\cdot\tilde w\right)dX
 \]
@@ -3808,7 +3853,7 @@ with $w^1=(w^1_1,w^1_2,w^1_3)$ satisfying $M_1w^1=0$. If we compute numerically 
 
 %The results obtained so far fail to prove either the instability of $\overline q(t)$ for $\eta > \eta_1$ or its stability for all $\eta < \eta_1$. Indeed when $\eta>\eta_1$ we know that there exists a direction $w=(v,Q)$ where $\mathcal{J}^+_t$ decreases, but since that $Q$ is not everywhere positive we cannot conclude that also $\mathcal{J}_t$ decreases in that direction. Conversely, when $\eta<\eta_1$ we know for sure that $\mathcal{J}_t$ increases in all that the directions $w=(v,Q)$ with $Q\ge0$ or with $Q\le0$, but not in directions whose $Q$ has mixed sign. However we expect that $\eta_1$ is at least an estimate of the critical elongation at which the trivial solution becomes unstable.
 
-\subsubsection*{True instability} In the previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{z}(t))$ never contains $w\in Z_0$ with $w_3=Q\ge 0$. However to prove that $\bar{z}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{z}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that such $w$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}<0$. Here we describe our attempts in that direction, that however were unsuccessful. Consider a finite dimensional subspace of $Z_0$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then the generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
+\subsubsection*{True instability} In the previous subsection we have proved that the kernel of $\partial^2\mathcal{J}^+_t(\bar{z}(t))$ never contains $w\in Z_0$ with $w_3=Q\ge 0$. However to prove that $\bar{z}(t)$ is not a minimizer of $\mathcal{J}^+_t(\bar{z}(t))$ for some $\eta>\eta_1$ it would be sufficient to show that some $w\in Z_0^+$ exists with the property that $\dual{\mathcal{J}^+_t(\bar{z}(t))w,w}<0$. Here we describe our attempts in that direction, that however were unsuccessful. Consider a finite dimensional subspace of $Z_0$ spanned by $\{w^1,\dots,w^m\}$ that we collect in the matrix field $O\colon(0,L)\to\mathbb{R}^{3\times m}$ given by $O=(w^1,\dots,w^m)$. Then the generic element of that subspace is $w=Oc$ where $c\in\mathbb{R}^m$. Thus
 \[
 \dual{\mathcal{J}^+_t(\bar{z}(t))w,w}=c^TG(t)c,
 \]
@@ -3945,22 +3990,32 @@ We have obtained similar results to those we just explicitly described even enri
 
 %[delta*(1-exp(-x/delta))-x/L*delta*(1-exp(-L/delta)),0,0;sin(pi*x/L),0,0;0,cos(pi/L*x),0;0,1,0;0,-x/delta*exp(-x/delta),0;0,-exp(-x/delta),0;0,0,exp(-x/delta)]
 
-\section{Directions of possible further research}
+\section{Possible directions of further research}
+\label{sec:directions-necking}
 
-Since our results are not conclusive, we hope that further research could clarify the remained open question that arose in Section~\ref{sec:qualitative}. In particular it remains to be understood whether the model can exhibit necking or whether the simplified kinematical assumptions are too much that exclude it.
+Further research should clarify the open question that arose in Section~\ref{sec:qualitative}. In particular, it remains to be understood whether the model can exhibit necking, or whether the simplified kinematical assumptions are restrictive enough to exclude it, thereby requiring a more complete kinematical description of the bar.
 
-The first thing that should be tested is wheter changing constitutive model different results are obtained. We notice that the choice of the elestic free energy density is actually expected to be indifferent, since in metals elastic strains are small enough to make the nonlinearities of the constitutive relations for the elastic response completely unuseful, what matters is the linearized constitutive model. Also the choice of the dissipation potential is blocked, since the proposed one is the only that has sense to consider. What could be decisive is the chouce of the hardening free energy. We have explored the two costitutive models of Subsection~\ref{subsec:constitutive-large-neck} in a wide renge of values of the constitutive parameters. Other models could be considered, even thought our impression is that different chouce would produce similar results, since the constitutive models tat we considered seems to, at least qualitatively, covers the entire spectra of possible hardining behaviors.
+Remaining within the current kinematical framework, the first aspect to be explored is whether changing the constitutive model can trigger the onset of necking. We notice that the choice of the particular elastic free energy density is expected to be indifferent, since in metals elastic strains are small enough to render the nonlinearities of the elastic constitutive relations negligible; what truly matters is the linearized constitutive model for the elastic response. What could instead be decisive is the choice of the hardening free energy.  We have explored the two constitutive models presented in Subsection~\ref{subsec:constitutive-large-neck} across a wide range of constitutive parameters. Other models could be considered, although our impression is that different choices would produce similar results, given that the models we analyzed already seem to cover the entire spectrum of possible hardening behaviors, at least from a qualitative perspective.
 
-Something that could be considred is the addition of dependence of the constitutive relations on the position along the bar. Adding some imperfectoins on the material properties of the bar maybe is required to trigger necking, and maybe this the reson why our analysis,that assumed a perfect bar, was not able to detect necking. However the non uniformity of constiututive rletions will complicate the stability analysis much: in particular there is no trivial solutions that can be easily coimputed.
+Still maintaining the same kinematical description, a second modification to consider is introducing a dependence of the constitutive relations on the position along the bar. Adding imperfections to the material properties of the bar might be necessary to trigger necking, which could explain why our analysis did not detect it. However, the non-uniformity of the constitutive relations will significantly complicate the stability analysis: in particular, trivial solutions can no longer be easily computed, and alternative strategies must be found.
 
-In the case in which nemmeno the addition of imperfection produce necking then one sjìhould try to make more accurate the kinematiucal description of the bar. A possible complication would be to add an addictional lastic fiueld, for example assuming that
+In the case that even the addition of imperfections fails to produce necking, 
+a more accurate kinematical description of the bar should be pursued. A possible 
+refinement would be to modify the kinematical constraining assumption of the 
+multidimensional kinematics considered in Subsection~\ref{subsec:motivation-large}, 
+by assuming that the plastic distortion field is of the form
 \[
 F_p(x,y)=\begin{pmatrix}
-P & 0 \\
-Sy & P^{-\frac{1}{d-1}I}
+P_1(x) & 0 \\
+P_2(x)y & P_1(x)^{-\frac{1}{d-1}}I
 \end{pmatrix}
 \]
-with the addictional plastic distortion field $S\colon(0,L)\to\mathbb{R}$. Maybe this addictional feature of the model is able to produce necking.
+where, alongside the already considered axial (and longitudinal due to plastic 
+incompressibility) distortion field $P_1\colon(0,L)\to\mathbb{R}$, the shear 
+plastic distortion field $P_2 \colon(0,L)\to\mathbb{R}$ has been introduced. 
+The addition of this descriptor of the plastic distortion might be required to 
+allow the bar enough freedom to localize deformation, thus making it 
+capable of describing the necking phenomenon.
 
 \part{A model describing pressure sensitive and dilatant plastic materials}
 \label{part:my-model}
@@ -4265,9 +4320,8 @@ Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal
 &p=-\frac{1}{d}\tr T_e\quad\text{in $\Omega$} \\
 &K_p n=0\quad\text{in $\partial^{d-1}\Omega$} \\
 &-L'(\alpha)p-\tau+\diver\kappa=0\quad\text{in $\Omega$} \\
-&\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$},
+&\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$}.
 \end{align*}
-where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $P$ is the projector onto the tangent space to the boundary of $\Omega$ and $\xi$ is the outer normal vector to the boundary $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
 \end{prop}
 \begin{proof}
 By integration by parts we can write
@@ -4285,13 +4339,13 @@ Kn:\grad_P\tilde v=(Kn)P:\grad_P\tilde v=\diver_P(P(Kn)^T\tilde v)-\diver_P((Kn)
 \]
 But by integration by parts
 \[
-\int_{\partial^{d-1}\Omega}\diver_P(P(Kn)^T\tilde v)dx=\int_{\partial^{d-2}\Omega}\{\!\!\{P(Kn)^T\tilde v\cdot\tau\}\!\!\}dx=\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\tau\}\!\!\}\cdot\tilde vdx.
+\int_{\partial^{d-1}\Omega}\diver_P(P(Kn)^T\tilde v)dx=\int_{\partial^{d-2}\Omega}\{\!\!\{P(Kn)^T\tilde v\cdot\xi\}\!\!\}dx=\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\xi\}\!\!\}\cdot\tilde vdx.
 \]
 Here $\{\!\!\{\cdot\}\!\!\}$ denotes sum of its argument evaluated on both sides of $\partial^{d-2}\Omega$ and $\tau$ denotes the unit normal vector to $\partial^{d-2}\Omega$ and outer tangent to $\partial^{d-1}\Omega$. We have obtained
 \begin{multline*}
 \int_\Omega\left(T:\grad\tilde v+K\threedots\grad^2\tilde v\right)dx=\\
 =-\int_\Omega\diver(T-\diver K)\cdot\tilde vdx+\int_{\partial^{d-1}\Omega}\left[(T-\diver K)n-\diver_P((Kn)P)\right]\cdot\tilde vdx+\\
-+\int_{\partial^{d-1}\Omega}(Kn)n\cdot\dind{\tilde v}{n}dx+\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\tau\}\!\!\}\cdot\tilde vdx.
++\int_{\partial^{d-1}\Omega}(Kn)n\cdot\dind{\tilde v}{n}dx+\int_{\partial^{d-2}\Omega}\{\!\!\{(Kn)\xi\}\!\!\}\cdot\tilde vdx.
 \end{multline*}
 Moreover the remaining terms of the internal generalized force can be written as
 \begin{multline*}
@@ -4348,7 +4402,7 @@ Starting from this micro-mechanical picture we are now in position to give an in
 
 \subsubsection*{Volumetric plastic response and damage response}
 
-The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that is the reaction associated to the constraint $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describes the energy expended to create damage (even thought it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
+The spherical part of the plastic strain is subject to the push of the elastic stress which is opposed by the internal pressure $p$ that is the reaction associated to the constraint $\lambda=L(\alpha)$. For simplicity we neglect the possibility that the material can be compacted under compressive loads by closing the microcracks, so that $\lambda$ is not allowed to evolve independently on damage. The damage variable receives the reaction $L'(\alpha)p$ that is opposed by the damage microforce $\tau$ and microstress $\kappa$. As for the deviatoric response, the presence of $\kappa$ makes the damage response nonlocal, reflecting the finite size of the grains determined by the parameter $\mathfrak{c}$. The dissipation potential density $D$ allows to relate the evolution of $\alpha$ to that of $\pi$: this is crucial to describe the fact that new microcracks opens during a deviatoric plastic straining. As we will see in the next section an appropriate choice of $D$ allows also to impose the unidirectional evolution of damage (the fact that damage can only increase with time). The damage free energy density $W_d$ describes the energy expended to create damage (even though it is stored as a free energy, it cannot be recovered due to the unidirectional evolution of damage). The term $\dind{W_p}{\alpha}(\alpha,\pi)$ is the damaging mechanism associated with decreasing plastic hardening. The damage viscosity is included to regularize the evolution of $\alpha$ and include rate dependence.
 
 \subsubsection*{Macroscopic response}
 
@@ -4452,7 +4506,7 @@ which is equivalent to $f(T_e)\le0$. Thus we have proved that $T_e$ satisfies th
 \section{Existence theory}
 \label{sec:existence-small}
 
-In this section we obtain an existence result for the model we have developed in previous sections. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
+In this section we obtain an existence result for the model we have developed in the previous sections. We will make use of the abstract existence theory developed in Section~\ref{sec:existence-theorem-abstract-constrained} whose development was indeed motivated by the present application.
 
 \subsection{Assumptions, definitions and formulation of the problem}
 
@@ -4684,7 +4738,7 @@ To this aim consider $\phi\in C^\infty_c(\Omega,\mathbb{R}^d)$ such that $K=\sup
 &=-\int_{\Omega} u_{,ij}\phi_{i}dx-\int_\Sigma[\!\!\,[u_{,i}]\,\!\!]\phi_{i}n_jdx.
 \end{split}
 \]
-Now we can spit $[\!\!\,[\grad u]\,\!\!]=[\!\!\,[\grad_\Sigma u]\,\!\!]+\big[\!\!\big[\dind{u}{n}\big]\!\!\big]n=[\!\!\,[\grad_\Sigma u]\,\!\!]$, where $\grad_\Sigma$ denotes the tangential gradient. If we prove that $[\!\!\,[\grad_\Sigma u]\,\!\!]=0$ we have done. We prove this when $u$ is smooth in $\Omega\setminus\Sigma$ up to the internal and external boundaries (the general result follows for density). In this case the fact that $u\in H^1(\Omega)$ implies that $[\![u]\!]=0$ in $\Sigma$. Then $[\!\!\,[\grad_\Sigma u]\,\!\!]=0$ follows trivially.
+Now we can spit $[\!\!\,[\grad u]\,\!\!]=[\!\!\,[\grad_P u]\,\!\!]+\big[\!\!\big[\dind{u}{n}\big]\!\!\big]n=[\!\!\,[\grad_P u]\,\!\!]$, where $\grad_P$ denotes the tangential gradient. If we prove that $[\!\!\,[\grad_P u]\,\!\!]=0$ we have done. We prove this when $u$ is smooth in $\Omega\setminus\Sigma$ up to the internal and external boundaries (the general result follows for density). In this case the fact that $u\in H^1(\Omega)$ implies that $[\![u]\!]=0$ in $\Sigma$. Then $[\!\!\,[\grad_P u]\,\!\!]=0$ follows trivially.
 \end{proof}
 
 Now we consider the original problem formulated in the space $Z_\Sigma$, with the constrain $\big[\!\!\big[\dind{u}{n}\big]\!\!\big]=0$ imposed with the method of Lagrange multipliers. So we add a Lagrange multiplier $\mathcal{M}\in -N_Z(z)\subset Z^*_\Sigma$. It can be parametrized in terms of a field $m\in M_\Sigma:=H^{-1/2}(\Sigma,\mathbb{R}^d)$ as
@@ -4735,7 +4789,10 @@ Assume that $\Phi$ is G\^ateaux differentiable. Then find $z_\mathscr{l}=(y_\mat
 \end{align}
 for all $w\in Z_\mathscr{l}$, $q\in P_\mathscr{l}$, $l\in M_\mathscr{l}$ and a.e.\ $t\in(0,T)$. Here $\big[\!\!\big[\dind{u_\mathscr{l}}{n}(t)\big]\!\!\big]$ denotes the difference of the trace of $\dind{u_\mathscr{l}}{n}(t)$ across the internal faces of the simplexes of the triangulation according to an arbitrary (but fixed) orientation. Moreover $\dual{\mathcal{P}_\mathscr{l}(t),w}=\dual{\mathcal{L}(y_\mathscr{l}(t))^*p_\mathscr{l}(t),h}-\dual{p_\mathscr{l}(t),\mu}$ and $\dual{\mathcal{M}_\mathscr{l}(t),w}=\left\langle m_\mathscr{l}(t),\big[\!\!\big[\dind{v}{n}\big]\!\!\big]\right\rangle$.
 \end{prb}
-The time discretization is performed with an implicit scheme, as we did in the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}. For all $\tau>0$ consider a partition of $[0,T]$ of the form $0=t^0_\tau<\dots<t^{N_\tau}_\tau=T$ with $t_\tau^k-t_\tau^{k-1}\le\tau$ for $k\in\{1,\dots,N_\tau\}$.
+\begin{rmk}
+The strategy that we have adopted of relaxing the constrain of continuity of the normal derivative of the displacement field across the elements and imposing it weakly with the method of Lagrange multiplier, prevent us from the need of building finite element spaces of function with global $C^1$ regularity. This method is inspired from~\cite{kim2009numerical,engel2002continuous}. In these reference are also suggested further modifications to improve stability that, for simplicity, we have not considered here.
+\end{rmk}
+The time discretization is performed with an implicit integration scheme, as we did in the proof of the existence theorem in Section~\ref{sec:existence-theorem-abstract-constrained}. For all $\tau>0$ consider a partition of $[0,T]$ of the form $0=t^0_\tau<\dots<t^{N_\tau}_\tau=T$ with $t_\tau^k-t_\tau^{k-1}\le\tau$ for $k\in\{1,\dots,N_\tau\}$.
 \begin{prb}[Time-discrete finite element approximation]
 Find $\{z_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$, $\{p_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$ and $\{m_{\mathscr{l}\tau}^k\}_{k=0}^{N_\tau}$ such that $z_{\mathscr{l}\tau}^0=0$ and
 \begin{align}
@@ -4774,7 +4831,7 @@ We have that
 \tilde R_\eta(\rho)=\inf_{\chi\in\text{DevSym}}\left[\frac{|\rho-\chi|^2}{2\eta}+|\chi|\right]=\inf_{t\ge0}\inf_{\substack{\chi\in\text{DevSym}\\|\chi|=1}}
 \left[\frac{|\rho-t\chi|^2}{2\eta}+t\right]=\inf_{t\ge0}\left[\frac{|\rho|^2(t-1)^2}{2\eta}+|\rho|t\right].
 \]
-Now this last function of $t$ is minimized for $t=1-\frac{\eta}{|\rho|}$ if $|\rho|>\eta$ and for $t=0$ if $|\rho|>\le\eta$. Substituting one finds the expression in the statement.
+Now this last function of $t$ is minimized for $t=1-\frac{\eta}{|\rho|}$ if $|\rho|>\eta$ and for $t=0$ if $|\rho|\le\eta$. Substituting one finds the expression in the statement.
 
 Next
 \[
@@ -4890,13 +4947,13 @@ This completes the computation of the solution.
 
 \subsubsection*{Numerical solution}
 
-To numerically solve the above boundary value problem we regularize the dissipation potentials  $R$ and $D$ as discussed in the previous subsection, replacing them with their Yosida approximations $R_\eta$ and $D_\eta$. Now, since the solution is uniform, the fineness $\mathscr{l}$ of the mesh does not affect the accuracy of the solution. Indeed for all $\mathscr{l}$ the true solution belongs to the approximate finite element spaces. Thus the aim of this validation is to show that the overall numerical scheme and implementation work, and also to study the convergence to the exact solution as the parameter $\eta$, appearing in the Yosida approximation of $R$ and $D$, vanishes. The results are showed in Figure~\ref{fig:eta-to-zero}. In particular one can check that the convergence of $\alpha$, $\lambda$ and $p$ in the supremum norm on the time interval is linear in $\eta$.
+To numerically solve the above boundary value problem we regularize the dissipation potentials  $R$ and $D$ as discussed in the previous subsection, replacing them with their Yosida approximations $R_\eta$ and $D_\eta$. Now, since the solution is uniform, the fineness $\mathscr{l}$ of the mesh does not affect the accuracy of the solution. Indeed for all $\mathscr{l}$ the true solution belongs to the approximate finite element spaces. Thus the aim of this validation is to show that the overall numerical scheme and implementation work, and also to study the convergence to the exact solution as the parameter $\eta$, appearing in the Yosida approximation of $R$ and $D$, vanishes. The results are showed in Figure~\ref{fig:eta-to-zero}. In particular one can check directly that the convergence of $\alpha$, $\lambda$ and $p$ in the supremum norm on the time interval is linear in $\eta$.
 \begin{figure}[htp]
 \centering
 \input{figures/validation/alpha.tex}
 \;
 \input{figures/validation/p.tex}
-\caption{Comparison between exact and computed evolutions of $\alpha$ and $p$ for some values of $\eta$. Similar result are found for $\lambda$. The parameters used are $L=2$, $H=1$, $\mathfrak{m}=100$, $\mathfrak{l}=100$, $a=\sqrt{2}\sin\phi$, $b=\sqrt{2}\sin\psi$ and $f_0=\sqrt{2}c\cos\phi$ with $\phi=30^\circ$, $\psi=5^\circ$ and $c=0.5$. Moreover the time $t$ ranges in $[0,60]$ and $\epsilon(t)=\frac{1.3\cdot 10^{-2}}{2}\left[1-\cos\left(\pi\frac{t}{60}\right)\right]$.}
+\caption{Comparison between exact and computed evolutions of $\alpha$ and $p$ for some values of $\eta$. Similar results are found for $\lambda$. The parameters used are $L=2$, $H=1$, $\mathfrak{m}=100$, $\mathfrak{l}=100$, $a=\sqrt{2}\sin\phi$, $b=\sqrt{2}\sin\psi$ and $f_0=\sqrt{2}c\cos\phi$ with $\phi=30^\circ$, $\psi=5^\circ$ and $c=0.5$. Moreover the time $t$ ranges in $[0,60]$ and $\epsilon(t)=\frac{1.3\cdot 10^{-2}}{2}\left[1-\cos\left(\pi\frac{t}{60}\right)\right]$.}
 \label{fig:eta-to-zero}
 \end{figure}
 
@@ -5003,7 +5060,7 @@ In Figure~\ref{fig:results} are reported the plots of the value of the damage va
 
 Notice that a region of concentrated damage (it is a shear band since also the deviatoric plastic strain concentrates there since, due to the relation $\dot\alpha\ge|\dot\pi|$, it holds that $\alpha\approx|\pi|$) initiates at the midpoint of the top edge of the rectangle and propagates toward the bottom-right corner. When $\phi=0^\circ$ (in the third row) the shear band has on orientation of $45^\circ$ degrees with respect to the direction of the compressive load (the vertical one). Conversely, when $\phi=30^\circ$ (the first and second row), the shear is less inclined with respect to the vertical direction. This result is expected because, as previously observed in Chapter~\ref{chap:intro-pressure-sensitive}, the Mohr–Coulomb criterion (of which the Drucker–Prager model is an approximation) predicts that failure occurs along a plane inclined at $45^\circ-\phi/2=30^\circ$ with respect to the principal stress direction corresponding to the most compressive stress.
 
-As we can see by comparing the first and second rows of Figure~\ref{fig:results}, when $\zeta$ becomes smaller, the damage variable $\alpha$ exhibits sharper variations. The profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ are shown in Figure~\ref{fig:shear-band} for different values of $\zeta$. We notice that the width of these profiles does not seem to change significantly with $\zeta$. This means that the coefficients $\mathfrak{a}$, $\mathfrak{b}$, and $\mathfrak{c}$, which tune the amount of gradient regularization, do not determine any characteristic scale of the solution. Investigating the reasons behind this quite unexpected result, and, in particular, whether it is a numerical artifact, is left to future research.
+As we can see by comparing the first and second rows of Figure~\ref{fig:results}, when $\zeta$ becomes smaller, the damage variable $\alpha$ exhibits sharper variations. The profiles of $\alpha$ as a function of the arc length $s$ along the segment connecting $(0,-1)$ with $(2,1)$ are shown in Figure~\ref{fig:shear-band} for different values of $\zeta$. We notice that the width of these profiles does not seem to change significantly with $\zeta$. This means that the coefficients $\mathfrak{a}$, $\mathfrak{b}$, and $\mathfrak{c}$, which tune the amount of gradient regularization, do not determine any characteristic scale of the solution to this boundary value problem. Investigating the reasons behind this result, and, in particular ensuring that it is not a numerical artifact, is left to future research.
 \begin{figure}
 \begin{tikzpicture}
 \begin{axis}[xlabel={$s$},ylabel={$\alpha$},xmin=0,xmax=2.8284,width=0.44\textwidth,legend pos=north east]
@@ -5081,7 +5138,7 @@ The choice of the time step can be performed as follows. An initial step sized i
 Here $\text{tol}$ is a prescribed tolerance and $\text{err}$ is the $L^2$ norm of the difference of the vector of components of the unknown $y$ as predicted by the explicit and the implicit scheme. This formula is taken from~\cite{hairer1993solving}. However we also apply the following rules. When the Newton method required more then four iteration to converge, the subsequent step size is chosen as the minimum between the predicted one and $2/3$ of the current one. When the Newton method does not converge withing seven iterations the step is repeated with at most an halved step size. 
 \end{rmk}
 
-\section{Directions of possible further research}
+\section{Suggestions for further research}
 
 Here we collect some suggestions for future research.
 
@@ -5089,7 +5146,7 @@ From the modeling viewpoint, a natural extension would be to incorporate compact
 
 On the mathematical side, it would be interesting to study the limits of vanishing viscosity and vanishing gradient regularization. In the first case, the evolution is expected to develop jumps in time, which could be treated within the framework of balanced viscosity solutions~\cite{MieRosSav13}. In the second case, spatial discontinuities are expected to appear in the displacement field, while plastic strains and damage concentrate. As observed in other models~\cite{daldessol09,CriRos21}, we expect that in the limit solution, the displacement field belongs to the space $\text{BD}(\Omega)$ of functions of bounded variation, and the plastic/damage fields belong to the space $\mathcal{M}(\Omega)$ of bounded measures.
 
-Regarding the numerical approximation, future steps could include a complete convergence proof and the development of an adaptive mesh algorithm to better capture the localization of plastic strains and damage. Finally, it would be useful to find an alternative way to handle the nonsmoothness of the dissipation potentials (for example, based on complementary functions, see~\cite{lewandowski2023multifield}), avoiding the Yosida regularization, which introduces ill-conditioning issues in our current numerical scheme when the regularization parameter becomes small.
+Regarding the numerical approximation, future steps could include a complete convergence proof, the implementation of the refinements of the method employed to handle the second-gradient nature of our model, suggested in~\cite{engel2002continuous} to improve stability, and the development of an adaptive mesh algorithm to better capture the localization of plastic strains and damage. Finally, it would be useful to find an alternative way to handle the nonsmoothness of the dissipation potentials (for example, based on complementary functions, see~\cite{lewandowski2023multifield}), avoiding the Yosida regularization, which introduces ill-conditioning issues in our current numerical scheme when the regularization parameter becomes small.
 
 \chapter{Proposal of an alternative mechanical model: the regime of large deformations}
 \label{chap:pressure-sensitive-large}
@@ -5118,7 +5175,7 @@ The structure of the internal and external generalized forces is chosen in compl
 +\int_\Omega\left(T_p:\tilde V_p+K_p\threedots\grad\tilde V_p\right)dx+\int_\Omega(\tau\tilde\beta+\kappa\cdot\grad\tilde\beta)dx,
 \end{multlined}
 \]
-where $\Pi\colon\Omega\to\text{Lin}$ is the macroscopic Piola stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ can be called the macroscopic Piola hyperstress, $\Pi_e\colon\Omega\to\text{Lin}$ is the elastic hyperstress. We recall from Section~\ref{sec:plasticity-review} that $\tilde V_e:=(\grad\tilde v)F_p^{-1}-F_e\tilde V_pF_p^{-1}$ is the elastic distortion rate. The plastic response is characterized as usual by the plastic microforce $T_p\colon\Omega\to\text{Lin}$ and by the plastic microstress $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$. The damage variable is subject to the damage microforce $\tau\colon\Omega\to\mathbb{R}$ and to the damage microstress $\kappa\colon\Omega\to\mathbb{R}^d$. The external generalized force is supposed to be given by
+where $\Pi\colon\Omega\to\text{Lin}$ is the macroscopic Piola stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ can be called the macroscopic Piola hyperstress, $\Pi_e\colon\Omega\to\text{Lin}$ is the elastic Piola hyperstress. We recall from Section~\ref{sec:plasticity-review} that $\tilde V_e:=(\grad\tilde v)F_p^{-1}-F_e\tilde V_pF_p^{-1}$ is the elastic distortion rate. The plastic response is characterized as usual by the plastic microforce $T_p\colon\Omega\to\text{Lin}$ and by the plastic microstress $K_p\colon\Omega\to\text{Lin}\otimes\mathbb{R}$. The damage variable is subject to the damage microforce $\tau\colon\Omega\to\mathbb{R}$ and to the damage microstress $\kappa\colon\Omega\to\mathbb{R}^d$. The external generalized force is supposed to be given by
 \[
 \dual{\mathcal{X},\tilde w}=\int_\Omega f\cdot\tilde vdx+\int_{\partial\Omega}h\cdot\tilde vdx,
 \]
@@ -5135,9 +5192,8 @@ Assuming that $\Omega$ is piecewise smooth and the fields appearing in $\mathcal
 &F_e^T\Pi_eF_p^{-T}-T_p+\diver K_p+p\cof F_p=0\quad\text{in $\Omega$} \\
 &K_p n=0\quad\text{in $\partial^{d-1}\Omega$} \\
 &-J'(\alpha)p-\tau+\diver\kappa=0\quad\text{in $\Omega$} \\
-&\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$},
+&\kappa\cdot n=0\quad\text{in $\partial^{d-1}\Omega$}.
 \end{align*}
-where $\partial^m\Omega$ denotes the set of $m$-dimensional faces of $\partial\Omega$ (for example in the case $d=2$ then $\partial^1\Omega$ are the edges and $\partial^0\Omega$ are the vertices of $\partial\Omega$). Moreover $P$ is the projector onto the tangent space to the boundary of $\Omega$, $\xi$ is the outer normal vector to the boundary of a $d-1$ dimensional face and tangent to it and $\{\!\!\{\cdot\}\!\!\}$ denotes the sum of a quantity defined along the two sides of a $d-2$ dimensional face.
 \end{prop}
 \begin{proof}
 The proof is similar to that of the analogous result of previous chapter.
@@ -5186,7 +5242,7 @@ Thus $p$ is a sort of pressure of the push forward of the elastic Piola stress i
 \chapter{Tools from mathematical and numerical analysis}
 \label{chap:tools-math}
 
-In this chapter we collect some known tools of linear and nonlinear analysis used in the main body of this thesis.
+In this chapter we collect some known tools of linear and nonlinear analysis and of numerical analysis used in the main body of this thesis.
 
 \section{A general version of Gronwall inequality}
 
@@ -5263,51 +5319,74 @@ Let $V$ be a Banach space. We say that $u\colon[0,T]\to V$ is absolutely continu
 \begin{equation*}
 \norm{u(t)-u(s)}\le\int_0^Tm(r)dr\quad\text{for all $0\le s<t\le T$.}
 \end{equation*}
-Given $u\colon[0,T]\to V$ and $0\le a<b\le T$ we define the total variation on $[a,b]$
+Given $u\colon[0,T]\to V$ and $0\le a<b\le T$ we define the total variation on $[a,b]$ by
 \begin{equation*}
 \text{Var}(u,[a,b])=\sup\left\{\sum_{k=1}^N\norm{u(t_k)-u(t_{k-1})}\;\middle|\;a=t_0<\dots<t_N=b\right\}.
 \end{equation*}
-We say that $u$ has bounded variation and we write $u\in\text{BV}([0,T],V)$ if $\text{Var}(u,[0,T])<\infty$. The space $L^p((0,T),V)$, with $p\in[1,\infty]$, is the space of $u\colon(0,T)\to V$ such that for all $f\in V^*$ the map $t\mapsto\dual{f,u(t)}$ is measurable and $t\mapsto\norm{u(t)}_V$ belongs to $L^p((0,T))$. We say that $u\in W^{1,p}((0,T),V)$ if $u\in L^p((0,T),V)$ an there exists $v\in L^p((0,T),V)$ such that
+We say that $u$ has bounded variation and we write $u\in\text{BV}([0,T],V)$ if $\text{Var}(u,[0,T])<\infty$. The space $L^p((0,T),V)$, with $p\in[1,\infty]$, is the space of $u\colon(0,T)\to V$ such that for all $f\in V^*$ the map $t\mapsto\dual{f,u(t)}$ is measurable and $t\mapsto\norm{u(t)}_V$ belongs to $L^p((0,T))$. A similar definition is that of $L^p_\text{loc}((0,T),V)$. Given $u\in L^1_\text{loc}((0,T),V)$, we say that $\dot u\in L^1_\text{loc}((0,T),V)$ is the weak derivative of $u$ if
 \[
-\int_0^T\dual{f,u}\phi'dx=-\int_0^T\dual{f,v}\phi dx
+\int_0^T\dual{f,u}\phi'dx=-\int_0^T\dual{f,\dot u}\phi dx
 \]
-for all $\phi\in C^\infty_c((0,T))$. In this case we say that $v=\dot u$.
+for all $\phi\in C^\infty_c((0,T))$. We say that $u\in W^{1,p}((0,T),V)$ if $u\in L^p((0,T),V)$ and $\dot u\in L^p((0,T),V)$.
 \end{defi}
-It can be proved that 
+The following propositions holds true.
 \begin{prop}
 \label{prop:ac-w}
-Let $V$ be a Banach space. Then $W^{1,1}((0,T),V)\subset\text{AC}([0,T],V)$. If $V$ is separable and reflexive the equality holds.
+It holds that $W^{1,1}((0,T),V)=\text{AC}([0,T],V)$. Moreover if $u\in\text{AC}([0,T],V)$ then
+\[
+\lim_{\tau\to0}\left\|\frac{u(t+\tau)-u(t)}{\tau}-\dot u(t)\right\|_V=0
+\]
+for a.e.\ $t\in(0,T)$.
 \end{prop}
-\begin{proof}
-Let $u\in W^{1,1}((0,T),V)$. Then
-\begin{equation*}
-\norm{u(t)-u(s)}=\left\lVert\int_s^t\dot u(r)dr\right\rVert\le\int_s^t\norm{\dot u(r)}dr.
-\end{equation*}
-This proves that $u\in\text{AC}([0,T],V)$ with $m=\norm{\dot u}$.
-
-Now suppose that $V$ is reflexive. We have that
-\begin{equation*}
-\left\lVert\frac{u(t+h)-u(t)}{h}\right\rVert\le\frac{1}{h}\int_t^{t+h}m(r)dr.
-\end{equation*}
-By the Lebesgue differentiation theorem the left hand side is bounded as $h\to 0$ for a.e.\ $t\in(0,T)$. Then for each $h_n\to 0$, up to extracting a subsequence,
-\begin{equation*}
-\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{for some $v\in V$}.
-\end{equation*}
-We prove that $v$ is common to each sequence. Since $V^*$ is separable and reflexive then there exists $\xi_i$ dense in $V^*$. Now for each $i$ the map $t\mapsto\dual{\xi_i,u(t)}$ is $AC([0,T])$. Then for a.e. $t\in(0,T)$
-\begin{equation}
-\label{eqn:convergence-test-derivivative-ac}
-\lim_{h\to0}\left\langle\xi_i,\frac{u(t+h)-u(t)}{h}\right\rangle\quad\text{exists for all $i$.}
-\end{equation}
-Then if $h_n\to0$ and $k_n\to 0$ are such that
-\begin{equation*}
-\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{and}\quad\frac{u(t+k_n)-u(t)}{k_n}\rightharpoonup w
-\end{equation*}
-from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v-w}=0$ for all $i$. This implies $v=w$. Up to now we have proved that there exists $v\colon(0,T)\to V$ such that
-\begin{equation*}
-\frac{u(t+h)-u(t)}{h}\rightharpoonup v(t)\quad\text{for a.e. $t\in(0,T)$}.
-\end{equation*}
-\textbf{Now one should prove that this convergence is actually strong. This will show automatically that $u\in W^{1,1}((0,T),V)$.}
-\end{proof}
+\begin{prop}
+The dual space of $L^p((0,T),V)$ is $L^{p^*}((0,T),V^*)$ with the duality given by
+\[
+\dual{f,u}=\int_0^T\dual{f(t),u(t)}dt
+\]
+for all $u\in L^p((0,T),V)$ and $f\in L^{p^*}((0,T),V^*)$.
+\end{prop}
+\begin{prop}(Lions--Magenes lemma)
+\label{prop:lions-magenes}
+Let $A\in\mathscr{L}(V,V^*)$ be self-adjoint, i.e., $A^*=A$. Then for all $u\in H^1((0,T),V)$ it holds that $\frac{1}{2}\dual{Au,u}\in\text{AC}([0,T])$ and
+\[
+\frac{d}{dt}\left[\frac{1}{2}\dual{Au(t),u(t)}\right]=\dual{Au(t),\dot u(t)}
+\]
+for a.e.\ $t\in(0,T)$.
+\end{prop}
+%\begin{prop}
+%\label{prop:ac-w}
+%Let $V$ be a Banach space. Then $W^{1,1}((0,T),V)\subset\text{AC}([0,T],V)$. If $V$ is separable and reflexive the equality holds.
+%\end{prop}
+%\begin{proof}
+%Let $u\in W^{1,1}((0,T),V)$. Then
+%\begin{equation*}
+%\norm{u(t)-u(s)}=\left\lVert\int_s^t\dot u(r)dr\right\rVert\le\int_s^t\norm{\dot u(r)}dr.
+%\end{equation*}
+%This proves that $u\in\text{AC}([0,T],V)$ with $m=\norm{\dot u}$.
+%
+%Now suppose that $V$ is reflexive. We have that
+%\begin{equation*}
+%\left\lVert\frac{u(t+h)-u(t)}{h}\right\rVert\le\frac{1}{h}\int_t^{t+h}m(r)dr.
+%\end{equation*}
+%By the Lebesgue differentiation theorem the left hand side is bounded as $h\to 0$ for a.e.\ $t\in(0,T)$. Then for each $h_n\to 0$, up to extracting a subsequence,
+%\begin{equation*}
+%\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{for some $v\in V$}.
+%\end{equation*}
+%We prove that $v$ is common to each sequence. Since $V^*$ is separable and reflexive then there exists $\xi_i$ dense in $V^*$. Now for each $i$ the map $t\mapsto\dual{\xi_i,u(t)}$ is $AC([0,T])$. Then for a.e. $t\in(0,T)$
+%\begin{equation}
+%\label{eqn:convergence-test-derivivative-ac}
+%\lim_{h\to0}\left\langle\xi_i,\frac{u(t+h)-u(t)}{h}\right\rangle\quad\text{exists for all $i$.}
+%\end{equation}
+%Then if $h_n\to0$ and $k_n\to 0$ are such that
+%\begin{equation*}
+%\frac{u(t+h_n)-u(t)}{h_n}\rightharpoonup v\quad\text{and}\quad\frac{u(t+k_n)-u(t)}{k_n}\rightharpoonup w
+%\end{equation*}
+%from~\eqref{eqn:convergence-test-derivivative-ac} it follows that $\dual{\xi_i,v-w}=0$ for all $i$. This implies $v=w$. Up to now we have proved that there exists $v\colon(0,T)\to V$ such that
+%\begin{equation*}
+%\frac{u(t+h)-u(t)}{h}\rightharpoonup v(t)\quad\text{for a.e. $t\in(0,T)$}.
+%\end{equation*}
+%\textbf{Now one should prove that this convergence is actually strong. This will show automatically that $u\in W^{1,1}((0,T),V)$.}
+%\end{proof}
 The following is an useful compactness theorem in Bochner spaces.
 \begin{thm}[Aubin--Lions--Simon lemma]
 \label{thm:aubin-lions}
@@ -5570,25 +5649,25 @@ We have
 This concludes the proof.
 \end{proof}
 
-\begin{prop}
-\label{prop:Lipschitz-c1-compact}
-Let $V$ a Banach space and let $f\in C^1(V)$ and $K\subset V$ compact. Then $f$ is Lipschitz continuous on $K$.
-\end{prop}
-\begin{proof}
-By contradiction let $u_n$ and $v_n$ two sequences in $K$ such that
-\begin{equation*}
-\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\ge n.
-\end{equation*}
-By compactness of $K$ up to extracting subsequences we can assume that $u_n\to u$ and $v_n\to v$. If $u\neq v$ then
-\begin{equation*}
-\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\to\frac{|F(u)-F(v)|}{\norm{u-v}}<\infty
-\end{equation*}
-which is a contradiction. If $u=v$ then
-\begin{equation*}
-\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}=\frac{|\dual{DF(u),u_n-v_n}+o(\norm{u_n-v_n})|}{\norm{u_n-v_n}}\le\norm{DF(u)}+o(1)\to\norm{DF(u)}<\infty
-\end{equation*}
-which is a contradiction.
-\end{proof}
+%\begin{prop}
+%\label{prop:Lipschitz-c1-compact}
+%Let $V$ a Banach space and let $f\in C^1(V)$ and $K\subset V$ compact. Then $f$ is Lipschitz continuous on $K$.
+%\end{prop}
+%\begin{proof}
+%By contradiction let $u_n$ and $v_n$ two sequences in $K$ such that
+%\begin{equation*}
+%\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\ge n.
+%\end{equation*}
+%By compactness of $K$ up to extracting subsequences we can assume that $u_n\to u$ and $v_n\to v$. If $u\neq v$ then
+%\begin{equation*}
+%\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}\to\frac{|F(u)-F(v)|}{\norm{u-v}}<\infty
+%\end{equation*}
+%which is a contradiction. If $u=v$ then
+%\begin{equation*}
+%\frac{|F(u_n)-F(v_n)|}{\norm{u_n-v_n}}=\frac{|\dual{DF(u),u_n-v_n}+o(\norm{u_n-v_n})|}{\norm{u_n-v_n}}\le\norm{DF(u)}+o(1)\to\norm{DF(u)}<\infty
+%\end{equation*}
+%which is a contradiction.
+%\end{proof}
 
 %\subsection{Implicit function theorem}
 %

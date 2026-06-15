@@ -41,10 +41,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{ASME Journal of Engineering Materials and Technology}
       \field{title}{On the microstructural origin of certain inelastic models}
-      \field{volume}{106}
       \field{year}{1984}
-      \field{pages}{326\bibrangedash 330}
-      \range{pages}{5}
     \endentry
     \entry{antman}{book}{}{}
       \name{author}{1}{}{%
@@ -72,59 +69,24 @@
       \field{title}{Nonlinear Problems of Elasticity}
       \field{year}{2005}
     \endentry
-    \entry{AudolyHutchinson2020}{article}{}{}
-      \name{author}{2}{}{%
-        {{hash=3251bd705349d0f780fea3d541f2baf1}{%
-           family={Audoly},
-           familyi={A\bibinitperiod},
-           given={Basile},
-           giveni={B\bibinitperiod}}}%
-        {{hash=7f10bc8978e05ed377464951f9d14434}{%
-           family={Hutchinson},
-           familyi={H\bibinitperiod},
-           given={John\bibnamedelima W.},
-           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{fullhash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{fullhashraw}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{bibnamehash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{authorbibnamehash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{authornamehash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{authorfullhash}{efbfd70416f2d3ec3adf672521d8adec}
-      \strng{authorfullhashraw}{efbfd70416f2d3ec3adf672521d8adec}
-      \field{sortinit}{A}
-      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
-      \field{title}{Analysis of necking based on a one-dimensional model}
-      \field{volume}{136}
-      \field{year}{2020}
-      \field{pages}{103720}
-      \range{pages}{1}
-    \endentry
     \entry{progetto-ponno}{online}{}{}
       \name{author}{1}{}{%
-        {{hash=9105389ff8f28e2760887f1c4a6c5b42}{%
-           family={B.},
-           familyi={B\bibinitperiod},
-           given={Ardini},
-           giveni={A\bibinitperiod}}}%
+        {{hash=ccb68ea4ebeee26bbc9a522761a0bf64}{%
+           family={Ardini},
+           familyi={A\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
       }
-      \strng{namehash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{fullhash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{fullhashraw}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{bibnamehash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{authorbibnamehash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{authornamehash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{authorfullhash}{9105389ff8f28e2760887f1c4a6c5b42}
-      \strng{authorfullhashraw}{9105389ff8f28e2760887f1c4a6c5b42}
-      \field{sortinit}{B}
-      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \strng{namehash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{fullhash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{fullhashraw}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{bibnamehash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{authorbibnamehash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{authornamehash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{authorfullhash}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \strng{authorfullhashraw}{ccb68ea4ebeee26bbc9a522761a0bf64}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Application of Bifurcation Theory to the study of buckling in Nonlinear Elasticity}
@@ -136,40 +98,64 @@
       \verb https://raw.githubusercontent.com/bernardo-ardini/dynamical-systems-project/main/report/report.pdf
       \endverb
     \endentry
+    \entry{AudolyHutchinson2020}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=d79378b8155b4772ec71e40853d84d31}{%
+           family={Audoly},
+           familyi={A\bibinitperiod},
+           given={B.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=dfda9f1f34f1f8c03d374c8319680911}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{fullhash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{fullhashraw}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{bibnamehash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{authorbibnamehash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{authornamehash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{authorfullhash}{01049ee5779a7bc85f18ae46d0631706}
+      \strng{authorfullhashraw}{01049ee5779a7bc85f18ae46d0631706}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
+      \field{title}{Analysis of necking based on a one-dimensional model}
+      \field{year}{2020}
+    \endentry
     \entry{BertramForest2020}{book}{}{}
-      \name{editor}{2}{}{%
-        {{hash=f99339c443fc622b67f1cee30fa76697}{%
+      \name{author}{2}{}{%
+        {{hash=5a02f179e879dcae63d974996421fc05}{%
            family={Bertram},
            familyi={B\bibinitperiod},
-           given={Albrecht},
+           given={A.},
            giveni={A\bibinitperiod}}}%
-        {{hash=80fba63977c9cef3695a99662ff8e8c7}{%
+        {{hash=db78bffa5af2ec02b03a6e1bfa684909}{%
            family={Forest},
            familyi={F\bibinitperiod},
-           given={Samuel},
+           given={S.},
            giveni={S\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Cham}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{fullhash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{fullhashraw}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{bibnamehash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{editorbibnamehash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{editornamehash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{editorfullhash}{3900680d31feae6f60a68f7f597e7a09}
-      \strng{editorfullhashraw}{3900680d31feae6f60a68f7f597e7a09}
+      \strng{namehash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{fullhash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{fullhashraw}{2290912a1974057a6d00bb9c614c5065}
+      \strng{bibnamehash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{authorbibnamehash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{authornamehash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{authorfullhash}{2290912a1974057a6d00bb9c614c5065}
+      \strng{authorfullhashraw}{2290912a1974057a6d00bb9c614c5065}
       \field{sortinit}{B}
       \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
-      \field{labelnamesource}{editor}
+      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{series}{Advanced Structured Materials}
       \field{title}{Mechanics of Strain Gradient Materials}
-      \field{volume}{142}
       \field{year}{2020}
     \endentry
     \entry{bigoni-non-associative}{article}{}{}
@@ -302,8 +288,8 @@
         {{hash=0ce95ffc5ae563017fd6c88d680d05fc}{%
            family={Wood},
            familyi={W\bibinitperiod},
-           given={R.D.},
-           giveni={R\bibinitperiod}}}%
+           given={R.\bibnamedelimi D.},
+           giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Cambridge University Press}%
@@ -360,13 +346,13 @@
         {{hash=f6ebde3b55aa3c90b00e60b26bc5db67}{%
            family={Brenner},
            familyi={B\bibinitperiod},
-           given={S.C.},
-           giveni={S\bibinitperiod}}}%
+           given={S.\bibnamedelimi C.},
+           giveni={S\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
         {{hash=1519566cac7c44547865618819bdf6de}{%
            family={Scott},
            familyi={S\bibinitperiod},
-           given={L.R.},
-           giveni={L\bibinitperiod}}}%
+           given={L.\bibnamedelimi R.},
+           giveni={L\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -413,7 +399,7 @@
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{ESAIM Control Optim. Calc. Var.}
+      \field{journaltitle}{ESAIM: Control, Optimisation and Calculus of Variations}
       \field{title}{A rate-independent model for geomaterials under compression coupling strain gradient plasticity and damage}
       \field{year}{2025}
       \true{nocite}
@@ -444,8 +430,8 @@
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{SIAM}
-      \field{title}{Balanced viscosity solutions to a rate-indpendent coupled elasto-plastic damage system}
+      \field{journaltitle}{SIAM Journal on Mathematical Analysis}
+      \field{title}{Balanced viscosity solutions to a rate-independent coupled elasto-plastic damage system}
       \field{year}{2021}
     \endentry
     \entry{ciarlet}{book}{}{}
@@ -453,8 +439,8 @@
         {{hash=8f4868678b32f146658519d06d8e44f6}{%
            family={Ciarlet},
            familyi={C\bibinitperiod},
-           given={P.G.},
-           giveni={P\bibinitperiod}}}%
+           given={P.\bibnamedelimi G.},
+           giveni={P\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {SIAM}%
@@ -496,40 +482,33 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Annales des Ponts et Chaussées}
-      \field{series}{9}
       \field{title}{Mémoire sur l'emploi du fer et de l'acier dans les constructions}
-      \field{volume}{10}
       \field{year}{1885}
-      \field{pages}{574\bibrangedash 775}
-      \range{pages}{202}
     \endentry
     \entry{cosserat1909}{book}{}{}
       \name{author}{2}{}{%
-        {{hash=a733067ca3fff54dadbc180880f8e116}{%
+        {{hash=3daed9d2250fddabc73dc21ba4a42c96}{%
            family={Cosserat},
            familyi={C\bibinitperiod},
-           given={Eugène},
+           given={E.},
            giveni={E\bibinitperiod}}}%
-        {{hash=9b6627a37cd2e95d57ebd25c37577e52}{%
+        {{hash=235a7df53e410cd09693ecc871479b87}{%
            family={Cosserat},
            familyi={C\bibinitperiod},
-           given={François},
+           given={F.},
            giveni={F\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Paris}%
       }
       \list{publisher}{1}{%
         {Hermann}%
       }
-      \strng{namehash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{fullhash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{fullhashraw}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{bibnamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{authorbibnamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{authornamehash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{authorfullhash}{3ac62c07d3beb9f157936e7a2b02ee86}
-      \strng{authorfullhashraw}{3ac62c07d3beb9f157936e7a2b02ee86}
+      \strng{namehash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{fullhash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{fullhashraw}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{bibnamehash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{authorbibnamehash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{authornamehash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{authorfullhash}{ad8a9063e7c5acc51770edbde4adbea5}
+      \strng{authorfullhashraw}{ad8a9063e7c5acc51770edbde4adbea5}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
@@ -539,30 +518,27 @@
     \endentry
     \entry{Coulomb1776}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=fe34d16fd720539dcf8e4f8d0eee6720}{%
+        {{hash=04a87c4a0bea53bd6987c7d4ff43eeba}{%
            family={Coulomb},
            familyi={C\bibinitperiod},
-           given={Charles-Augustin},
+           given={C.-A.},
            giveni={C\bibinithyphendelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{fullhash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{fullhashraw}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{bibnamehash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{authorbibnamehash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{authornamehash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{authorfullhash}{fe34d16fd720539dcf8e4f8d0eee6720}
-      \strng{authorfullhashraw}{fe34d16fd720539dcf8e4f8d0eee6720}
+      \strng{namehash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{fullhash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{fullhashraw}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{bibnamehash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{authorbibnamehash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{authornamehash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{authorfullhash}{04a87c4a0bea53bd6987c7d4ff43eeba}
+      \strng{authorfullhashraw}{04a87c4a0bea53bd6987c7d4ff43eeba}
       \field{sortinit}{C}
       \field{sortinithash}{4d103a86280481745c9c897c925753c0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Mémoires de Mathématique et de Physique, présentés à l'Académie Royale des Sciences}
-      \field{title}{Essai sur une application des règles de maximis et minimis à quelques problèmes de statique relatifs à l'architecture}
-      \field{volume}{7}
+      \field{title}{Essai sur une application des règles de maximis et minimis à quelques problèmes di statique relatifs à l'architecture}
       \field{year}{1776}
-      \field{pages}{343\bibrangedash 382}
-      \range{pages}{40}
     \endentry
     \entry{energetic-geomaterials}{article}{}{}
       \name{author}{1}{}{%
@@ -619,98 +595,87 @@
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Calc Var PDEs}
+      \field{journaltitle}{Calculus of Variations and Partial Differential Equations}
       \field{title}{Quasistatic evolution for Cam-Clay plasticity: a weak formulation via viscoplastic regularization and time rescaling}
       \field{year}{2011}
     \endentry
     \entry{DavoliFrancfort2021}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=0fc583f437354369050c78a35db6ac5b}{%
+        {{hash=afa86db1778401d1269ad409f9c900f4}{%
            family={Davoli},
            familyi={D\bibinitperiod},
-           given={Elisa},
+           given={E.},
            giveni={E\bibinitperiod}}}%
-        {{hash=b23cad793c678bb95db87089decd5ac6}{%
+        {{hash=2962f5df2868345eac7f3a5c9f41ef5a}{%
            family={Francfort},
            familyi={F\bibinitperiod},
-           given={Gilles\bibnamedelima A.},
+           given={G.\bibnamedelimi A.},
            giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{fullhash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{fullhashraw}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{bibnamehash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{authorbibnamehash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{authornamehash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{authorfullhash}{01048bd9d7a594ce50a3b40a2420d34f}
-      \strng{authorfullhashraw}{01048bd9d7a594ce50a3b40a2420d34f}
+      \strng{namehash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{fullhash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{fullhashraw}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{bibnamehash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{authorbibnamehash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{authornamehash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{authorfullhash}{8e721efd2866e4fd00e313f7020576bd}
+      \strng{authorfullhashraw}{8e721efd2866e4fd00e313f7020576bd}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Archive for Rational Mechanics and Analysis}
-      \field{number}{3}
       \field{title}{A Critical Revisiting of Finite Elasto-Plasticity}
-      \field{volume}{239}
       \field{year}{2021}
-      \field{pages}{1509\bibrangedash 1580}
-      \range{pages}{72}
     \endentry
     \entry{DruckerPrager1952}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=ee0ce5a321d8116708e710d9fe4b5dc9}{%
+        {{hash=59631dafba48309bfd52b8715944de00}{%
            family={Drucker},
            familyi={D\bibinitperiod},
-           given={Daniel\bibnamedelima C.},
+           given={D.\bibnamedelimi C.},
            giveni={D\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
-        {{hash=c0483a0bba8a1e0da1e84571466d6340}{%
+        {{hash=cbb877ae013459e5f5e15a484ab0d8d8}{%
            family={Prager},
            familyi={P\bibinitperiod},
-           given={William},
+           given={W.},
            giveni={W\bibinitperiod}}}%
       }
-      \strng{namehash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{fullhash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{fullhashraw}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{bibnamehash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{authorbibnamehash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{authornamehash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{authorfullhash}{14cc48aaa79eecea7ede862347681d8c}
-      \strng{authorfullhashraw}{14cc48aaa79eecea7ede862347681d8c}
+      \strng{namehash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{fullhash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{fullhashraw}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{bibnamehash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{authorbibnamehash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{authornamehash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{authorfullhash}{02845c7f0fdca08dd5513f0ebedebcf4}
+      \strng{authorfullhashraw}{02845c7f0fdca08dd5513f0ebedebcf4}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Quarterly of Applied Mathematics}
-      \field{number}{2}
       \field{title}{Soil Mechanics and Plastic Analysis or Limit Design}
-      \field{volume}{10}
       \field{year}{1952}
-      \field{pages}{157\bibrangedash 165}
-      \range{pages}{9}
     \endentry
     \entry{duhem1906}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=3d107dc63a0d35184e791430f6a92380}{%
+        {{hash=ffdc8248c18da0f5656cccefc60c7132}{%
            family={Duhem},
            familyi={D\bibinitperiod},
-           given={Pierre},
+           given={P.},
            giveni={P\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Paris}%
       }
       \list{publisher}{1}{%
         {Librairie Marcel Rivière}%
       }
-      \strng{namehash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{fullhash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{fullhashraw}{3d107dc63a0d35184e791430f6a92380}
-      \strng{bibnamehash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{authorbibnamehash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{authornamehash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{authorfullhash}{3d107dc63a0d35184e791430f6a92380}
-      \strng{authorfullhashraw}{3d107dc63a0d35184e791430f6a92380}
+      \strng{namehash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{fullhash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{fullhashraw}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{bibnamehash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{authorbibnamehash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{authornamehash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{authorfullhash}{ffdc8248c18da0f5656cccefc60c7132}
+      \strng{authorfullhashraw}{ffdc8248c18da0f5656cccefc60c7132}
       \field{sortinit}{D}
       \field{sortinithash}{6f385f66841fb5e82009dc833c761848}
       \field{labelnamesource}{author}
@@ -727,9 +692,6 @@
            given={G.},
            giveni={G\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
       \strng{namehash}{a7ac03ced13d8d4362967bf64f415427}
       \strng{fullhash}{a7ac03ced13d8d4362967bf64f415427}
       \strng{fullhashraw}{a7ac03ced13d8d4362967bf64f415427}
@@ -742,17 +704,9 @@
       \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0025-2611}
       \field{journaltitle}{Manuscripta Mathematica}
-      \field{number}{1}
       \field{title}{A selection lemma for sequences of measurable sets, and lower semicontinuity of multiple integrals}
-      \field{volume}{27}
       \field{year}{1979}
-      \field{pages}{73\bibrangedash 79}
-      \range{pages}{7}
-      \verb{doi}
-      \verb 10.1007/BF01297974
-      \endverb
     \endentry
     \entry{ekeland-temam}{book}{}{}
       \name{author}{2}{}{%
@@ -785,6 +739,58 @@
       \field{title}{Convex Analysis and Variational Problems}
       \field{year}{1999}
     \endentry
+    \entry{engel2002continuous}{article}{}{}
+      \name{author}{6}{}{%
+        {{hash=02520b5fc238f4c5d83dab9e76ee79e3}{%
+           family={Engel},
+           familyi={E\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+        {{hash=746be5dfe175cf4e33ec88802c1a575a}{%
+           family={Garikipati},
+           familyi={G\bibinitperiod},
+           given={K.},
+           giveni={K\bibinitperiod}}}%
+        {{hash=5e1970f22545520a3ba022e9e9d84d97}{%
+           family={Hughes},
+           familyi={H\bibinitperiod},
+           given={T.\bibnamedelimi J.\bibnamedelimi R.},
+           giveni={T\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=5ab3f0d6d17abed19cf5bbdd41ea1519}{%
+           family={Larson},
+           familyi={L\bibinitperiod},
+           given={M.\bibnamedelimi G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=ff920bf957dabf1968f752ca7d412aad}{%
+           family={Mazzei},
+           familyi={M\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=fa0d47f60ae7f01abc8f3496d43fdb11}{%
+           family={Taylor},
+           familyi={T\bibinitperiod},
+           given={R.\bibnamedelimi L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{c3fdd618e85f382d0d7026f094f33862}
+      \strng{fullhash}{b7410b9c43c879d970e1f8e25dfd8836}
+      \strng{fullhashraw}{b7410b9c43c879d970e1f8e25dfd8836}
+      \strng{bibnamehash}{c3fdd618e85f382d0d7026f094f33862}
+      \strng{authorbibnamehash}{c3fdd618e85f382d0d7026f094f33862}
+      \strng{authornamehash}{c3fdd618e85f382d0d7026f094f33862}
+      \strng{authorfullhash}{b7410b9c43c879d970e1f8e25dfd8836}
+      \strng{authorfullhashraw}{b7410b9c43c879d970e1f8e25dfd8836}
+      \field{sortinit}{E}
+      \field{sortinithash}{8da8a182d344d5b9047633dfc0cc9131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
+      \field{title}{Continuous/discontinuous finite element approximations of fourth-order elliptic problems in structural and continuum mechanics with applications to thin beams and plates, and strain gradient elasticity}
+      \field{year}{2002}
+    \endentry
     \entry{FleckHutchinson1993}{article}{}{}
       \name{author}{2}{}{%
         {{hash=e2b30fe12c7d9bde635a5c2346741c56}{%
@@ -811,28 +817,21 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
-      \field{number}{12}
       \field{title}{A phenomenological theory for strain gradient effects in plasticity}
-      \field{volume}{41}
       \field{year}{1993}
-      \field{pages}{1825\bibrangedash 1857}
-      \range{pages}{33}
     \endentry
     \entry{francfort}{article}{}{}
       \name{author}{2}{}{%
         {{hash=2962f5df2868345eac7f3a5c9f41ef5a}{%
            family={Francfort},
            familyi={F\bibinitperiod},
-           given={G.A.},
-           giveni={G\bibinitperiod}}}%
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
         {{hash=ef9126649c813582bd42a81657d1d9e9}{%
            family={Mielke},
            familyi={M\bibinitperiod},
            given={A.},
            giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Walter de Gruyter}%
       }
       \strng{namehash}{baf456d733e105cd71235091bc936390}
       \strng{fullhash}{baf456d733e105cd71235091bc936390}
@@ -855,13 +854,13 @@
         {{hash=2962f5df2868345eac7f3a5c9f41ef5a}{%
            family={Francfort},
            familyi={F\bibinitperiod},
-           given={G.A.},
-           giveni={G\bibinitperiod}}}%
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
         {{hash=630048a59c3ba15ac29a216c38897624}{%
            family={Mora},
            familyi={M\bibinitperiod},
-           given={M.G.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi G.},
+           giveni={M\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
       }
       \strng{namehash}{dfe5454e24c840cc8213b4a1dd08d873}
       \strng{fullhash}{dfe5454e24c840cc8213b4a1dd08d873}
@@ -875,6 +874,7 @@
       \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{journaltitle}{Calculus of Variations and Partial Differential Equations}
       \field{title}{Quasistatic evolution in non-associative plasticity revisited}
       \field{year}{2017}
     \endentry
@@ -924,7 +924,7 @@
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{J. de Mécanique}
+      \field{journaltitle}{Journal de Mécanique}
       \field{title}{La méthode des puissances virtuelles en mécanique des milieux continus, Première partie : théorie du second gradient}
       \field{year}{1974}
     \endentry
@@ -933,8 +933,8 @@
         {{hash=282dc14781708c08359a404ba6b869cf}{%
            family={Gurtin},
            familyi={G\bibinitperiod},
-           given={M.E.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Academic Press, Inc.}%
@@ -960,8 +960,8 @@
         {{hash=282dc14781708c08359a404ba6b869cf}{%
            family={Gurtin},
            familyi={G\bibinitperiod},
-           given={M.E.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
         {{hash=9fb636623b2df5eba21f3c1cf6d15f6a}{%
            family={Anand},
            familyi={A\bibinitperiod},
@@ -990,8 +990,8 @@
         {{hash=282dc14781708c08359a404ba6b869cf}{%
            family={Gurtin},
            familyi={G\bibinitperiod},
-           given={M.E.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
         {{hash=9fb636623b2df5eba21f3c1cf6d15f6a}{%
            family={Anand},
            familyi={A\bibinitperiod},
@@ -1020,8 +1020,8 @@
         {{hash=282dc14781708c08359a404ba6b869cf}{%
            family={Gurtin},
            familyi={G\bibinitperiod},
-           given={M.E.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
         {{hash=94020b1b13632c0ee1b72899148da51f}{%
            family={Fried},
            familyi={F\bibinitperiod},
@@ -1036,6 +1036,7 @@
       \strng{authornamehash}{7d1e8432ea974ba7a271cbec6190ad52}
       \strng{authorfullhash}{7d1e8432ea974ba7a271cbec6190ad52}
       \strng{authorfullhashraw}{7d1e8432ea974ba7a271cbec6190ad52}
+      \field{extraname}{1}
       \field{sortinit}{G}
       \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
       \field{labelnamesource}{author}
@@ -1044,13 +1045,43 @@
       \field{title}{A continuum mechanical theory for turbulence: a generalized Navier–Stokes-$\alpha$ equation with boundary conditions}
       \field{year}{2008}
     \endentry
+    \entry{gurtin-fried}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=282dc14781708c08359a404ba6b869cf}{%
+           family={Gurtin},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=94020b1b13632c0ee1b72899148da51f}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{fullhash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{fullhashraw}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{bibnamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorbibnamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authornamehash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorfullhash}{7d1e8432ea974ba7a271cbec6190ad52}
+      \strng{authorfullhashraw}{7d1e8432ea974ba7a271cbec6190ad52}
+      \field{extraname}{2}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Archive for Rational Mechanics and Analysis}
+      \field{title}{Tractions, Balances, and Boundary Conditions for Nonsimple Materials with Application to Liquid Flow at Small-Length Scales}
+      \field{year}{2006}
+    \endentry
     \entry{gurtin-anand-fried}{book}{}{}
       \name{author}{3}{}{%
         {{hash=282dc14781708c08359a404ba6b869cf}{%
            family={Gurtin},
            familyi={G\bibinitperiod},
-           given={M.E.},
-           giveni={M\bibinitperiod}}}%
+           given={M.\bibnamedelimi E.},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
         {{hash=94020b1b13632c0ee1b72899148da51f}{%
            family={Fried},
            familyi={F\bibinitperiod},
@@ -1080,72 +1111,40 @@
       \field{title}{The Mechanics and Thermodynamics of Continua}
       \field{year}{2010}
     \endentry
-    \entry{gurtin-fried}{article}{}{}
-      \name{author}{1}{}{%
-        {{hash=fc6704b76395aee77eb27fb4e718af73}{%
-           family={Gurtin\bibnamedelima M.E.},
-           familyi={G\bibinitperiod\bibinitdelim M\bibinitperiod},
-           given={F.},
-           giveni={F\bibinitperiod},
-           suffix={Fried},
-           suffixi={F\bibinitperiod}}}%
-      }
-      \strng{namehash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{fullhash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{fullhashraw}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{bibnamehash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{authorbibnamehash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{authornamehash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{authorfullhash}{fc6704b76395aee77eb27fb4e718af73}
-      \strng{authorfullhashraw}{fc6704b76395aee77eb27fb4e718af73}
-      \field{sortinit}{G}
-      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Archive for Rational Mechanics and Analysis}
-      \field{title}{Tractions, Balances, and Boundary Conditions for Nonsimple Materials with Application to Liquid Flow at Small-Length Scales}
-      \field{year}{2006}
-    \endentry
     \entry{hairer1993solving}{book}{}{}
       \name{author}{3}{}{%
-        {{hash=83e9309b497414bd7c7550110d37b3d7}{%
+        {{hash=547b6b3ff11140a2b5bf2c1abb588ff2}{%
            family={Hairer},
            familyi={H\bibinitperiod},
-           given={Ernst},
+           given={E.},
            giveni={E\bibinitperiod}}}%
-        {{hash=e2a327e4bae8c663573f99fda9abbf8e}{%
+        {{hash=2022911c866658548b251693c43f6264}{%
            family={N{ø}rsett},
            familyi={N\bibinitperiod},
-           given={Syvert\bibnamedelima P.},
+           given={S.\bibnamedelimi P.},
            giveni={S\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=6715424cc951a02c09b3082a661642ab}{%
+        {{hash=3e09cc0a538f0a4c1d061b9c36e20ac9}{%
            family={Wanner},
            familyi={W\bibinitperiod},
-           given={Gerhard},
+           given={G.},
            giveni={G\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Berlin Heidelberg}%
       }
       \list{publisher}{1}{%
         {Springer-Verlag}%
       }
-      \strng{namehash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{fullhash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{fullhashraw}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{bibnamehash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{authorbibnamehash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{authornamehash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{authorfullhash}{421fb1b1a33804a98ee63d6fca553680}
-      \strng{authorfullhashraw}{421fb1b1a33804a98ee63d6fca553680}
+      \strng{namehash}{6e58183d374501151925967144b76608}
+      \strng{fullhash}{6e58183d374501151925967144b76608}
+      \strng{fullhashraw}{6e58183d374501151925967144b76608}
+      \strng{bibnamehash}{6e58183d374501151925967144b76608}
+      \strng{authorbibnamehash}{6e58183d374501151925967144b76608}
+      \strng{authornamehash}{6e58183d374501151925967144b76608}
+      \strng{authorfullhash}{6e58183d374501151925967144b76608}
+      \strng{authorfullhashraw}{6e58183d374501151925967144b76608}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{edition}{Second Revised Edition}
-      \field{series}{Springer Series in Computational Mathematics}
       \field{title}{Solving Ordinary Differential Equations I: Nonstiff Problems}
-      \field{volume}{8}
       \field{year}{1993}
     \endentry
     \entry{han-reddy}{book}{}{}
@@ -1155,23 +1154,23 @@
            familyi={H\bibinitperiod},
            given={W.},
            giveni={W\bibinitperiod}}}%
-        {{hash=828feff9218c30e6037cfcce377d3a7a}{%
-           family={B.D.},
-           familyi={B\bibinitperiod},
-           given={Reddy},
-           giveni={R\bibinitperiod}}}%
+        {{hash=9c3312dd316d914d8cb5c88cd2e50478}{%
+           family={Reddy},
+           familyi={R\bibinitperiod},
+           given={B.\bibnamedelimi D.},
+           giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{fullhash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{fullhashraw}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{bibnamehash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{authorbibnamehash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{authornamehash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{authorfullhash}{2768d57d7da894b8281f3fa81d1a9058}
-      \strng{authorfullhashraw}{2768d57d7da894b8281f3fa81d1a9058}
+      \strng{namehash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{fullhash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{fullhashraw}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{bibnamehash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{authorbibnamehash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{authornamehash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{authorfullhash}{4cd71e6ffe432d820cdea2761a434e85}
+      \strng{authorfullhashraw}{4cd71e6ffe432d820cdea2761a434e85}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -1181,93 +1180,76 @@
     \endentry
     \entry{Hill1958}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=1ee940c47b96678a68e23a600218952a}{%
+        {{hash=60286b65464dd5283f2ab92cce74d04f}{%
            family={Hill},
            familyi={H\bibinitperiod},
-           given={Rodney},
+           given={R.},
            giveni={R\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{1ee940c47b96678a68e23a600218952a}
-      \strng{fullhash}{1ee940c47b96678a68e23a600218952a}
-      \strng{fullhashraw}{1ee940c47b96678a68e23a600218952a}
-      \strng{bibnamehash}{1ee940c47b96678a68e23a600218952a}
-      \strng{authorbibnamehash}{1ee940c47b96678a68e23a600218952a}
-      \strng{authornamehash}{1ee940c47b96678a68e23a600218952a}
-      \strng{authorfullhash}{1ee940c47b96678a68e23a600218952a}
-      \strng{authorfullhashraw}{1ee940c47b96678a68e23a600218952a}
+      \strng{namehash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{fullhash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{fullhashraw}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{bibnamehash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{authorbibnamehash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{authornamehash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{authorfullhash}{60286b65464dd5283f2ab92cce74d04f}
+      \strng{authorfullhashraw}{60286b65464dd5283f2ab92cce74d04f}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
-      \field{number}{3}
       \field{title}{A general theory of uniqueness and stability in elastic-plastic solids}
-      \field{volume}{6}
       \field{year}{1958}
-      \field{pages}{236\bibrangedash 249}
-      \range{pages}{14}
     \endentry
     \entry{HillHutchinson1975}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=1ee940c47b96678a68e23a600218952a}{%
+        {{hash=60286b65464dd5283f2ab92cce74d04f}{%
            family={Hill},
            familyi={H\bibinitperiod},
-           given={Rodney},
+           given={R.},
            giveni={R\bibinitperiod}}}%
-        {{hash=7f10bc8978e05ed377464951f9d14434}{%
+        {{hash=dfda9f1f34f1f8c03d374c8319680911}{%
            family={Hutchinson},
            familyi={H\bibinitperiod},
-           given={John\bibnamedelima W.},
+           given={J.\bibnamedelimi W.},
            giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{fullhash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{fullhashraw}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{bibnamehash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{authorbibnamehash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{authornamehash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{authorfullhash}{338eb748a415fc1b67285b3ad76bdd23}
-      \strng{authorfullhashraw}{338eb748a415fc1b67285b3ad76bdd23}
+      \strng{namehash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{fullhash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{fullhashraw}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{bibnamehash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{authorbibnamehash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{authornamehash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{authorfullhash}{e984a684976bc7ba72f2bda8713c3057}
+      \strng{authorfullhashraw}{e984a684976bc7ba72f2bda8713c3057}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
-      \field{number}{4}
       \field{title}{Bifurcation phenomena in the plane tension test}
-      \field{volume}{23}
       \field{year}{1975}
-      \field{pages}{239\bibrangedash 264}
-      \range{pages}{26}
     \endentry
     \entry{hintermuller2011semismooth}{incollection}{}{}
       \name{author}{1}{}{%
-        {{hash=dd1462c8449f0d93707a2a574ae0fa01}{%
+        {{hash=bbac70322d7d3c7a2d03528fa04a15ea}{%
            family={Hintermüller},
            familyi={H\bibinitperiod},
-           given={Michael},
+           given={M.},
            giveni={M\bibinitperiod}}}%
-      }
-      \list{institution}{1}{%
-        {Department of Mathematics, Humboldt-University of Berlin}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{fullhash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{fullhashraw}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{bibnamehash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{authorbibnamehash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{authornamehash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{authorfullhash}{dd1462c8449f0d93707a2a574ae0fa01}
-      \strng{authorfullhashraw}{dd1462c8449f0d93707a2a574ae0fa01}
+      \strng{namehash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{fullhash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{fullhashraw}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{bibnamehash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{authorbibnamehash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{authornamehash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{authorfullhash}{bbac70322d7d3c7a2d03528fa04a15ea}
+      \strng{authorfullhashraw}{bbac70322d7d3c7a2d03528fa04a15ea}
       \field{sortinit}{H}
       \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
       \field{labelnamesource}{author}
@@ -1275,8 +1257,6 @@
       \field{booktitle}{Nonsmooth Optimization and Variational Analysis}
       \field{title}{Semismooth {N}ewton Methods and Applications}
       \field{year}{2011}
-      \field{pages}{37\bibrangedash 44}
-      \range{pages}{8}
     \endentry
     \entry{HutchinsonMiles1974}{article}{}{}
       \name{author}{2}{}{%
@@ -1291,9 +1271,6 @@
            given={J.\bibnamedelimi P.},
            giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
       \strng{namehash}{a615248afddce02a0cf6559414225ad7}
       \strng{fullhash}{a615248afddce02a0cf6559414225ad7}
       \strng{fullhashraw}{a615248afddce02a0cf6559414225ad7}
@@ -1307,37 +1284,33 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
-      \field{number}{1}
       \field{title}{Bifurcation analysis of the onset of necking in an elastic/plastic cylinder under uniaxial tension}
-      \field{volume}{22}
       \field{year}{1974}
-      \field{pages}{61\bibrangedash 71}
-      \range{pages}{11}
     \endentry
     \entry{ppv-encyclopedia}{inbook}{}{}
       \name{author}{2}{}{%
-        {{hash=7895f17e01b82bfb1f2718667b570232}{%
+        {{hash=ca9487bdfd534a723c322920e949d5dd}{%
            family={Isola},
            familyi={I\bibinitperiod},
-           given={Francesco},
+           given={F.},
            giveni={F\bibinitperiod}}}%
-        {{hash=61110c30709cf1b5c84ffa99b1277e2c}{%
+        {{hash=3d43d41f3ecb5366099600a4810689ad}{%
            family={Della\bibnamedelima Corte},
            familyi={D\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Alessandro},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
       }
-      \strng{namehash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{fullhash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{fullhashraw}{83dfcf8c26298b880246326785dfca7e}
-      \strng{bibnamehash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{authorbibnamehash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{authornamehash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{authorfullhash}{83dfcf8c26298b880246326785dfca7e}
-      \strng{authorfullhashraw}{83dfcf8c26298b880246326785dfca7e}
+      \strng{namehash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{fullhash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{fullhashraw}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{bibnamehash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{authorbibnamehash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{authornamehash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{authorfullhash}{ed0f777578419dd96baf3d5b8a6a8197}
+      \strng{authorfullhashraw}{ed0f777578419dd96baf3d5b8a6a8197}
       \field{sortinit}{I}
       \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
       \field{labelnamesource}{author}
@@ -1345,7 +1318,43 @@
       \field{booktitle}{Encyclopedia of continuum mechanics}
       \field{title}{History of the Principle of Virtual Work}
       \field{year}{2020}
-      \field{dateera}{ce}
+    \endentry
+    \entry{kim2009numerical}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=56942c940e222bc74532321e20bd644a}{%
+           family={Kim},
+           familyi={K\bibinitperiod},
+           given={T.-Y.},
+           giveni={T\bibinithyphendelim Y\bibinitperiod}}}%
+        {{hash=d6528321e3302b1295d4624ca2c1b6e1}{%
+           family={Dolbow},
+           familyi={D\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=94020b1b13632c0ee1b72899148da51f}{%
+           family={Fried},
+           familyi={F\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{62e327767d5c664c8061893ecd98f540}
+      \strng{fullhash}{62e327767d5c664c8061893ecd98f540}
+      \strng{fullhashraw}{62e327767d5c664c8061893ecd98f540}
+      \strng{bibnamehash}{62e327767d5c664c8061893ecd98f540}
+      \strng{authorbibnamehash}{62e327767d5c664c8061893ecd98f540}
+      \strng{authornamehash}{62e327767d5c664c8061893ecd98f540}
+      \strng{authorfullhash}{62e327767d5c664c8061893ecd98f540}
+      \strng{authorfullhashraw}{62e327767d5c664c8061893ecd98f540}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
+      \field{title}{A numerical method for a second-gradient theory of incompressible fluid flow}
+      \field{year}{2009}
     \endentry
     \entry{Laborde1987}{article}{}{}
       \name{author}{1}{}{%
@@ -1369,140 +1378,119 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{International Journal of Engineering Science}
       \field{title}{Analysis of the strain--stress relation in plasticity with non-associative laws}
-      \field{volume}{25}
       \field{year}{1987}
-      \field{pages}{655\bibrangedash 666}
-      \range{pages}{12}
-      \verb{doi}
-      \verb 10.1016/0020-7225(87)90051-0
-      \endverb
     \endentry
     \entry{Levy1871}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=a622ea7b796dc22666b3a8e15c145f10}{%
+        {{hash=8fc4196b237ed543e88cdc86dcd03de5}{%
            family={Lévy},
            familyi={L\bibinitperiod},
-           given={Maurice},
+           given={M.},
            giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{fullhash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{fullhashraw}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{bibnamehash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{authorbibnamehash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{authornamehash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{authorfullhash}{a622ea7b796dc22666b3a8e15c145f10}
-      \strng{authorfullhashraw}{a622ea7b796dc22666b3a8e15c145f10}
+      \strng{namehash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{fullhash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{fullhashraw}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{bibnamehash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{authorbibnamehash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{authornamehash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{authorfullhash}{8fc4196b237ed543e88cdc86dcd03de5}
+      \strng{authorfullhashraw}{8fc4196b237ed543e88cdc86dcd03de5}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal de Mathématiques Pures et Appliquées}
       \field{title}{Extrait du mémoire sur les équations générales des mouvements intérieurs des corps solides ductiles au delà des limites où l'élasticité pourrait les ramener à leur premier état}
-      \field{volume}{16}
       \field{year}{1871}
-      \field{pages}{369\bibrangedash 372}
-      \range{pages}{4}
     \endentry
     \entry{lewandowski2023multifield}{article}{}{}
       \name{author}{9}{}{%
-        {{hash=94c03362b70d6061480454a087c4c362}{%
+        {{hash=43164d855106190dbd857dee80ccd05b}{%
            family={Lewandowski},
            familyi={L\bibinitperiod},
-           given={Karol},
+           given={K.},
            giveni={K\bibinitperiod}}}%
-        {{hash=9efdd27bae1fc624a03b17d8291a22b0}{%
+        {{hash=a5b08e80578a2c33261d41898321c2a4}{%
            family={Barbera},
            familyi={B\bibinitperiod},
-           given={Daniele},
+           given={D.},
            giveni={D\bibinitperiod}}}%
-        {{hash=a454fcbe1d52d1fae5dcbb30bd95e81b}{%
+        {{hash=8b1bbf9fdb4efd5091b07ada12a97752}{%
            family={Blackwell},
            familyi={B\bibinitperiod},
-           given={Paul},
+           given={P.},
            giveni={P\bibinitperiod}}}%
-        {{hash=153e6953303fbb34c7e4ccc3f6a2e2f1}{%
+        {{hash=57cfc2078b2e5aeacd0c6872aef6a4c6}{%
            family={Roohi},
            familyi={R\bibinitperiod},
-           given={Amir\bibnamedelima H.},
+           given={A.\bibnamedelimi H.},
            giveni={A\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
-        {{hash=ab475d613db40559c7c3de1fac06a4f0}{%
+        {{hash=a2ace4f4e07e92c003deb20b96a3da38}{%
            family={Athanasiadis},
            familyi={A\bibinitperiod},
-           given={Ignatios},
+           given={I.},
            giveni={I\bibinitperiod}}}%
-        {{hash=ac4aa8f51a47a9ae8386540a1dc1a4cf}{%
+        {{hash=176cb53e852bf368b5e1c94ae17d03e5}{%
            family={McBride},
            familyi={M\bibinitperiod},
-           given={Andrew},
+           given={A.},
            giveni={A\bibinitperiod}}}%
-        {{hash=85eb99c254587a8b351349f7be9aa3f1}{%
+        {{hash=739b5211a74ef2edea73c48b1cef79d7}{%
            family={Steinmann},
            familyi={S\bibinitperiod},
-           given={Paul},
+           given={P.},
            giveni={P\bibinitperiod}}}%
-        {{hash=2f298fe236a21651dd3abc83008c87a8}{%
+        {{hash=d8adfd3f9cffdaf286a068421c8b915a}{%
            family={Pearce},
            familyi={P\bibinitperiod},
-           given={Chris},
+           given={C.},
            giveni={C\bibinitperiod}}}%
-        {{hash=27a86909bdfd47b1b780de7f3300ae3e}{%
+        {{hash=e372c54e46f18c96c47e94624c13f392}{%
            family={Kaczmarczyk},
            familyi={K\bibinitperiod},
-           given={{Ł}ukasz},
+           given={{Ł}.},
            giveni={Ł\bibinitperiod}}}%
       }
-      \strng{namehash}{c8c84c5d182bec0674b3b0ce615bfebf}
-      \strng{fullhash}{549b58362853d771a83a05ef11d42d8d}
-      \strng{fullhashraw}{549b58362853d771a83a05ef11d42d8d}
-      \strng{bibnamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
-      \strng{authorbibnamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
-      \strng{authornamehash}{c8c84c5d182bec0674b3b0ce615bfebf}
-      \strng{authorfullhash}{549b58362853d771a83a05ef11d42d8d}
-      \strng{authorfullhashraw}{549b58362853d771a83a05ef11d42d8d}
+      \strng{namehash}{745279b8b6c174e5d59c290e046fd8c9}
+      \strng{fullhash}{6a9d01cdbaf2b071c88f76919062d2d1}
+      \strng{fullhashraw}{6a9d01cdbaf2b071c88f76919062d2d1}
+      \strng{bibnamehash}{745279b8b6c174e5d59c290e046fd8c9}
+      \strng{authorbibnamehash}{745279b8b6c174e5d59c290e046fd8c9}
+      \strng{authornamehash}{745279b8b6c174e5d59c290e046fd8c9}
+      \strng{authorfullhash}{6a9d01cdbaf2b071c88f76919062d2d1}
+      \strng{authorfullhashraw}{6a9d01cdbaf2b071c88f76919062d2d1}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issn}{0045-7825}
       \field{journaltitle}{Computer Methods in Applied Mechanics and Engineering}
       \field{title}{Multifield finite strain plasticity: Theory and numerics}
-      \field{volume}{414}
       \field{year}{2023}
-      \field{pages}{116101}
-      \range{pages}{1}
-      \verb{doi}
-      \verb 10.1016/j.cma.2023.116101
-      \endverb
     \endentry
     \entry{Lubliner1990}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=f5d7f161a3a77393ad650b142b30cef6}{%
+        {{hash=b68f1c8665003d044c8be6729cc477c2}{%
            family={Lubliner},
            familyi={L\bibinitperiod},
-           given={Jacob},
+           given={J.},
            giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{2}{%
-        {New York}%
-        {London}%
       }
       \list{publisher}{1}{%
         {Macmillan}%
       }
-      \strng{namehash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{fullhash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{fullhashraw}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{bibnamehash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{authorbibnamehash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{authornamehash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{authorfullhash}{f5d7f161a3a77393ad650b142b30cef6}
-      \strng{authorfullhashraw}{f5d7f161a3a77393ad650b142b30cef6}
+      \strng{namehash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{fullhash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{fullhashraw}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{bibnamehash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{authorbibnamehash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{authornamehash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{authorfullhash}{b68f1c8665003d044c8be6729cc477c2}
+      \strng{authorfullhashraw}{b68f1c8665003d044c8be6729cc477c2}
       \field{sortinit}{L}
       \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{isbn}{0023721618}
       \field{title}{Plasticity Theory}
       \field{year}{1990}
     \endentry
@@ -1518,9 +1506,6 @@
            familyi={M\bibinitperiod},
            given={A.},
            giveni={A\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Springer}%
       }
       \strng{namehash}{a7d46c65ab042b48a5cd4efb8f5723df}
       \strng{fullhash}{a7d46c65ab042b48a5cd4efb8f5723df}
@@ -1540,25 +1525,25 @@
     \endentry
     \entry{micro-geo}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=0ad36821ee31f8959c184d9979424244}{%
+        {{hash=eac7a0464e976bcc882b9e949db1a894}{%
            family={Marigo},
            familyi={M\bibinitperiod},
-           given={J.J.},
-           giveni={J\bibinitperiod}}}%
+           given={J.-J.},
+           giveni={J\bibinithyphendelim J\bibinitperiod}}}%
         {{hash=61169826232b9f79592c3412f4fb8212}{%
            family={Kazymyrenko},
            familyi={K\bibinitperiod},
            given={K.},
            giveni={K\bibinitperiod}}}%
       }
-      \strng{namehash}{2b2d9485524473962b29f13524028ea0}
-      \strng{fullhash}{2b2d9485524473962b29f13524028ea0}
-      \strng{fullhashraw}{2b2d9485524473962b29f13524028ea0}
-      \strng{bibnamehash}{2b2d9485524473962b29f13524028ea0}
-      \strng{authorbibnamehash}{2b2d9485524473962b29f13524028ea0}
-      \strng{authornamehash}{2b2d9485524473962b29f13524028ea0}
-      \strng{authorfullhash}{2b2d9485524473962b29f13524028ea0}
-      \strng{authorfullhashraw}{2b2d9485524473962b29f13524028ea0}
+      \strng{namehash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{fullhash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{fullhashraw}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{bibnamehash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{authorbibnamehash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{authornamehash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{authorfullhash}{db01d715c1c5d7a87495331d9d34f64f}
+      \strng{authorfullhashraw}{db01d715c1c5d7a87495331d9d34f64f}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -1587,7 +1572,7 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Continuum Mech. Thermodyn.}
+      \field{journaltitle}{Continuum Mechanics and Thermodynamics}
       \field{title}{The principle of virtual power: from eliminating metaphysical forces to providing an efficient modelling tool}
       \field{year}{2019}
     \endentry
@@ -1616,12 +1601,12 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Arch. Rational Mech. Anal.}
+      \field{journaltitle}{Archive for Rational Mechanics and Analysis}
       \field{title}{Balanced-Viscosity Solutions to Infinite-Dimensional Multi-Rate Systems}
       \field{year}{2023}
       \true{nocite}
     \endentry
-    \entry{MieRosSav13}{misc}{}{}
+    \entry{MieRosSav13}{article}{}{}
       \name{author}{3}{}{%
         {{hash=ef9126649c813582bd42a81657d1d9e9}{%
            family={Mielke},
@@ -1651,15 +1636,9 @@
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{note}{cvgmt preprint}
+      \field{journaltitle}{Journal of the European Mathematical Society}
       \field{title}{Balanced Viscosity (BV) solutions to infinite-dimensional rate-independent systems}
       \field{year}{2013}
-      \verb{urlraw}
-      \verb http://cvgmt.sns.it/paper/2242/
-      \endverb
-      \verb{url}
-      \verb http://cvgmt.sns.it/paper/2242/
-      \endverb
     \endentry
     \entry{rate-independent-systems}{book}{}{}
       \name{author}{2}{}{%
@@ -1694,49 +1673,28 @@
     \endentry
     \entry{mielke1999mathematical}{inproceedings}{}{}
       \name{author}{2}{}{%
-        {{hash=a5814e325cb8249271101b7b7a9c6599}{%
+        {{hash=ef9126649c813582bd42a81657d1d9e9}{%
            family={Mielke},
            familyi={M\bibinitperiod},
-           given={Alexander},
+           given={A.},
            giveni={A\bibinitperiod}}}%
-        {{hash=ede8fafe99234954b785b5ce89358f7c}{%
+        {{hash=8a8f980e4ce7ee5d4de1186cec880cca}{%
            family={Theil},
            familyi={T\bibinitperiod},
-           given={Florian},
+           given={F.},
            giveni={F\bibinitperiod}}}%
-      }
-      \name{editor}{3}{}{%
-        {{hash=200394d45c8d97b25583b5007b2b440e}{%
-           family={Alber},
-           familyi={A\bibinitperiod},
-           given={Hans-Dieter},
-           giveni={H\bibinithyphendelim D\bibinitperiod}}}%
-        {{hash=bed2ff564b9f366353219aeac35cab26}{%
-           family={Balean},
-           familyi={B\bibinitperiod},
-           given={Robin},
-           giveni={R\bibinitperiod}}}%
-        {{hash=4a25c0a5f26fbf01dc1b3ecaefe09175}{%
-           family={Farwig},
-           familyi={F\bibinitperiod},
-           given={Reinhard},
-           giveni={R\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Shaker--Verlag}%
       }
-      \strng{namehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{fullhash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{fullhashraw}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{bibnamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{authorbibnamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{authornamehash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{authorfullhash}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{authorfullhashraw}{f2dddb6dc4c79281af8e70e2b3ccbb71}
-      \strng{editorbibnamehash}{0f10d682cb63c8e991837dc1ac571280}
-      \strng{editornamehash}{0f10d682cb63c8e991837dc1ac571280}
-      \strng{editorfullhash}{0f10d682cb63c8e991837dc1ac571280}
-      \strng{editorfullhashraw}{0f10d682cb63c8e991837dc1ac571280}
+      \strng{namehash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{fullhash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{fullhashraw}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{bibnamehash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{authorbibnamehash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{authornamehash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{authorfullhash}{b21b3cee2c22b1bc277587ed9979b754}
+      \strng{authorfullhashraw}{b21b3cee2c22b1bc277587ed9979b754}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
@@ -1744,193 +1702,163 @@
       \field{booktitle}{Proceedings of the Workshop on ``Models of Continuum Mechanics in Analysis and Engineering''}
       \field{title}{A Mathematical Model for Rate--Independent Phase Transformations with Hysteresis}
       \field{year}{1999}
-      \field{pages}{117\bibrangedash 129}
-      \range{pages}{13}
     \endentry
     \entry{mindlin1964microstructure}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=5d1d065ce925c326532034101e0df546}{%
+        {{hash=28ca7dfbf513b4a14284ae8c1ad267a3}{%
            family={Mindlin},
            familyi={M\bibinitperiod},
-           given={Raymond\bibnamedelima D.},
+           given={R.\bibnamedelimi D.},
            giveni={R\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
       }
-      \strng{namehash}{5d1d065ce925c326532034101e0df546}
-      \strng{fullhash}{5d1d065ce925c326532034101e0df546}
-      \strng{fullhashraw}{5d1d065ce925c326532034101e0df546}
-      \strng{bibnamehash}{5d1d065ce925c326532034101e0df546}
-      \strng{authorbibnamehash}{5d1d065ce925c326532034101e0df546}
-      \strng{authornamehash}{5d1d065ce925c326532034101e0df546}
-      \strng{authorfullhash}{5d1d065ce925c326532034101e0df546}
-      \strng{authorfullhashraw}{5d1d065ce925c326532034101e0df546}
+      \strng{namehash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{fullhash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{fullhashraw}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{bibnamehash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{authorbibnamehash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{authornamehash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{authorfullhash}{28ca7dfbf513b4a14284ae8c1ad267a3}
+      \strng{authorfullhashraw}{28ca7dfbf513b4a14284ae8c1ad267a3}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Archive for Rational Mechanics and Analysis}
-      \field{month}{1}
-      \field{number}{1}
       \field{title}{Micro-structure in linear elasticity}
-      \field{volume}{16}
       \field{year}{1964}
-      \field{pages}{51\bibrangedash 78}
-      \range{pages}{28}
     \endentry
     \entry{vonMises1928}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=0eb6cc94aafd19c812968094cfc92598}{%
+        {{hash=4a91495f361bc51f787270563c102012}{%
            family={Mises},
            familyi={M\bibinitperiod},
-           given={Richard},
+           given={R.},
            giveni={R\bibinitperiod},
            prefix={von},
            prefixi={v\bibinitperiod}}}%
       }
-      \strng{namehash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{fullhash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{fullhashraw}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{bibnamehash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{authorbibnamehash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{authornamehash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{authorfullhash}{0eb6cc94aafd19c812968094cfc92598}
-      \strng{authorfullhashraw}{0eb6cc94aafd19c812968094cfc92598}
+      \strng{namehash}{4a91495f361bc51f787270563c102012}
+      \strng{fullhash}{4a91495f361bc51f787270563c102012}
+      \strng{fullhashraw}{4a91495f361bc51f787270563c102012}
+      \strng{bibnamehash}{4a91495f361bc51f787270563c102012}
+      \strng{authorbibnamehash}{4a91495f361bc51f787270563c102012}
+      \strng{authornamehash}{4a91495f361bc51f787270563c102012}
+      \strng{authorfullhash}{4a91495f361bc51f787270563c102012}
+      \strng{authorfullhashraw}{4a91495f361bc51f787270563c102012}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Zeitschrift für Angewandte Mathematik und Mechanik}
       \field{title}{Mechanik der plastischen Formänderung von Kristallen}
-      \field{volume}{8}
       \field{year}{1928}
-      \field{pages}{161\bibrangedash 185}
-      \range{pages}{25}
     \endentry
     \entry{Mohr1900}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=03154bca52dadcf46d2972bf1086aa8a}{%
+        {{hash=20ab6ba6c53bcd6090ac56d64a7c57a8}{%
            family={Mohr},
            familyi={M\bibinitperiod},
-           given={Otto},
+           given={O.},
            giveni={O\bibinitperiod}}}%
       }
-      \strng{namehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{fullhash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{fullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{bibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorbibnamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authornamehash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorfullhash}{03154bca52dadcf46d2972bf1086aa8a}
-      \strng{authorfullhashraw}{03154bca52dadcf46d2972bf1086aa8a}
+      \strng{namehash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{fullhash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{fullhashraw}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{bibnamehash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{authorbibnamehash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{authornamehash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{authorfullhash}{20ab6ba6c53bcd6090ac56d64a7c57a8}
+      \strng{authorfullhashraw}{20ab6ba6c53bcd6090ac56d64a7c57a8}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Zeitschrift des Vereines Deutscher Ingenieure}
       \field{title}{Welche Umstände bedingen die Elastizitätsgrenze und den Bruch eines Materials?}
-      \field{volume}{44}
       \field{year}{1900}
-      \field{pages}{1524\bibrangedash 1530}
-      \range{pages}{7}
     \endentry
     \entry{Moreau1974}{incollection}{}{}
       \name{author}{1}{}{%
-        {{hash=3ab5575c7a7215d0a3736289ee185e16}{%
+        {{hash=bb3f0620aac10ffb07aff0ef35790733}{%
            family={Moreau},
            familyi={M\bibinitperiod},
-           given={Jean{-}Jacques},
-           giveni={J\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Bressanone}%
+           given={J.-J.},
+           giveni={J\bibinithyphendelim J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Edizioni Cremonese}%
       }
-      \strng{namehash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{fullhash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{fullhashraw}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{bibnamehash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{authorbibnamehash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{authornamehash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{authorfullhash}{3ab5575c7a7215d0a3736289ee185e16}
-      \strng{authorfullhashraw}{3ab5575c7a7215d0a3736289ee185e16}
+      \strng{namehash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{fullhash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{fullhashraw}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{bibnamehash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{authorbibnamehash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{authornamehash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{authorfullhash}{bb3f0620aac10ffb07aff0ef35790733}
+      \strng{authorfullhashraw}{bb3f0620aac10ffb07aff0ef35790733}
       \field{sortinit}{M}
       \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{New Variational Techniques in Mathematical Physics}
-      \field{note}{Lectures given in 1973}
-      \field{series}{Centro Internazionale Matematico Estivo (C.I.M.E.) -- II Ciclo}
       \field{title}{On unilateral constraints, friction and plasticity}
       \field{year}{1974}
-      \field{pages}{171\bibrangedash 322}
-      \range{pages}{152}
     \endentry
     \entry{Naghdi1990}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=6c1613573851be3fcdf7ba843cd3c442}{%
+        {{hash=2f54c54fa2cb72466a64f71b1aadab0e}{%
            family={Naghdi},
            familyi={N\bibinitperiod},
-           given={Paul\bibnamedelima M.},
+           given={P.\bibnamedelimi M.},
            giveni={P\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \strng{namehash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{fullhash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{fullhashraw}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{bibnamehash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{authorbibnamehash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{authornamehash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{authorfullhash}{6c1613573851be3fcdf7ba843cd3c442}
-      \strng{authorfullhashraw}{6c1613573851be3fcdf7ba843cd3c442}
+      \strng{namehash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{fullhash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{fullhashraw}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{bibnamehash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{authorbibnamehash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{authornamehash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{authorfullhash}{2f54c54fa2cb72466a64f71b1aadab0e}
+      \strng{authorfullhashraw}{2f54c54fa2cb72466a64f71b1aadab0e}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Zeitschrift für Angewandte Mathematik und Physik}
-      \field{number}{3}
       \field{title}{A critical review of the state of finite plasticity}
-      \field{volume}{41}
       \field{year}{1990}
-      \field{pages}{315\bibrangedash 394}
-      \range{pages}{80}
     \endentry
     \entry{Needleman1972}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=18a8a727ccf35bfa1616aba286c0a123}{%
+        {{hash=bb3cadd51f42493b5af8b831e0361c6c}{%
            family={Needleman},
            familyi={N\bibinitperiod},
-           given={Alan},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Elsevier}%
-      }
-      \strng{namehash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{fullhash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{fullhashraw}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{bibnamehash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{authorbibnamehash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{authornamehash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{authorfullhash}{18a8a727ccf35bfa1616aba286c0a123}
-      \strng{authorfullhashraw}{18a8a727ccf35bfa1616aba286c0a123}
+      \strng{namehash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{fullhash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{fullhashraw}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{bibnamehash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{authorbibnamehash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{authornamehash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{authorfullhash}{bb3cadd51f42493b5af8b831e0361c6c}
+      \strng{authorfullhashraw}{bb3cadd51f42493b5af8b831e0361c6c}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal of the Mechanics and Physics of Solids}
       \field{title}{A Numerical Study of Necking in Circular Cylindrical Bars}
-      \field{volume}{20}
       \field{year}{1972}
-      \field{pages}{111\bibrangedash 127}
-      \range{pages}{17}
     \endentry
     \entry{nicolaides}{article}{}{}
       \name{author}{1}{}{%
         {{hash=ebf2d012a62b1ab7022382a1b4abd94a}{%
            family={Nicolaides},
            familyi={N\bibinitperiod},
-           given={R.A.},
-           giveni={R\bibinitperiod}}}%
+           given={R.\bibnamedelimi A.},
+           giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \strng{namehash}{ebf2d012a62b1ab7022382a1b4abd94a}
       \strng{fullhash}{ebf2d012a62b1ab7022382a1b4abd94a}
@@ -1950,8 +1878,8 @@
     \endentry
     \entry{niremberg}{book}{}{}
       \name{author}{1}{}{%
-        {{hash=a49640bceb4b60e2a712ef4a25ce9fff}{%
-           family={Niremberg},
+        {{hash=27c0c653f53c456e0ae908a82fbeb329}{%
+           family={Nirenberg},
            familyi={N\bibinitperiod},
            given={L.},
            giveni={L\bibinitperiod}}}%
@@ -1959,14 +1887,14 @@
       \list{publisher}{1}{%
         {AMS/Courant Institute of Mathematical Sciences}%
       }
-      \strng{namehash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{fullhash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{fullhashraw}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{bibnamehash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{authorbibnamehash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{authornamehash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{authorfullhash}{a49640bceb4b60e2a712ef4a25ce9fff}
-      \strng{authorfullhashraw}{a49640bceb4b60e2a712ef4a25ce9fff}
+      \strng{namehash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{fullhash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{fullhashraw}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{bibnamehash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{authorbibnamehash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{authornamehash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{authorfullhash}{27c0c653f53c456e0ae908a82fbeb329}
+      \strng{authorfullhashraw}{27c0c653f53c456e0ae908a82fbeb329}
       \field{sortinit}{N}
       \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
       \field{labelnamesource}{author}
@@ -2009,13 +1937,13 @@
         {{hash=3e4da628b38f39c88d9813a634f8ecbe}{%
            family={Pollard},
            familyi={P\bibinitperiod},
-           given={D.D.},
-           giveni={D\bibinitperiod}}}%
+           given={D.\bibnamedelimi D.},
+           giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
         {{hash=04aabaf32937c31ee5825c9328efcb0f}{%
            family={Martel},
            familyi={M\bibinitperiod},
-           given={S.J.},
-           giveni={S\bibinitperiod}}}%
+           given={S.\bibnamedelimi J.},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Cambridge University Press}%
@@ -2038,23 +1966,20 @@
     \endentry
     \entry{Prandtl1924}{inproceedings}{}{}
       \name{author}{1}{}{%
-        {{hash=c9c5a29c29c124de95fa1b6fabde8022}{%
+        {{hash=e19e37cecf5be937367242cc920fa34f}{%
            family={Prandtl},
            familyi={P\bibinitperiod},
-           given={Ludwig},
+           given={L.},
            giveni={L\bibinitperiod}}}%
       }
-      \list{location}{1}{%
-        {Delft}%
-      }
-      \strng{namehash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{fullhash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{fullhashraw}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{bibnamehash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{authorbibnamehash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{authornamehash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{authorfullhash}{c9c5a29c29c124de95fa1b6fabde8022}
-      \strng{authorfullhashraw}{c9c5a29c29c124de95fa1b6fabde8022}
+      \strng{namehash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{fullhash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{fullhashraw}{e19e37cecf5be937367242cc920fa34f}
+      \strng{bibnamehash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{authorbibnamehash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{authornamehash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{authorfullhash}{e19e37cecf5be937367242cc920fa34f}
+      \strng{authorfullhashraw}{e19e37cecf5be937367242cc920fa34f}
       \field{sortinit}{P}
       \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
       \field{labelnamesource}{author}
@@ -2062,44 +1987,35 @@
       \field{booktitle}{Proceedings of the First International Congress for Applied Mechanics}
       \field{title}{Spannungsverteilung in plastischen Körpern}
       \field{year}{1924}
-      \field{pages}{43\bibrangedash 54}
-      \range{pages}{12}
     \endentry
     \entry{qi1993nonsmooth}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=c931fdb4bb790f8636f8b72f38e6f09e}{%
+        {{hash=52995cbbe9327f96b3dcf652255656d3}{%
            family={Qi},
            familyi={Q\bibinitperiod},
-           given={Liqun},
+           given={L.},
            giveni={L\bibinitperiod}}}%
-        {{hash=93b1ba7220c247c8eeee203940d19435}{%
+        {{hash=2d21a4c5b1b7b1da5165b2f8f62e700c}{%
            family={Sun},
            familyi={S\bibinitperiod},
-           given={Jie},
+           given={J.},
            giveni={J\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Springer}%
-      }
-      \strng{namehash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{fullhash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{fullhashraw}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{bibnamehash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{authorbibnamehash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{authornamehash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{authorfullhash}{d333bbcfb771398a2e79b7acc957e9cb}
-      \strng{authorfullhashraw}{d333bbcfb771398a2e79b7acc957e9cb}
+      \strng{namehash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{fullhash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{fullhashraw}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{bibnamehash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{authorbibnamehash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{authornamehash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{authorfullhash}{73e3805567efe2b415c3fe39ecb72d0b}
+      \strng{authorfullhashraw}{73e3805567efe2b415c3fe39ecb72d0b}
       \field{sortinit}{Q}
       \field{sortinithash}{ce69a400a872ddd02ee7fdb3b38c6abd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Mathematical Programming}
-      \field{number}{1-3}
       \field{title}{A nonsmooth version of {N}ewton's method}
-      \field{volume}{58}
       \field{year}{1993}
-      \field{pages}{353\bibrangedash 367}
-      \range{pages}{15}
     \endentry
     \entry{quarteronivalli}{book}{}{}
       \name{author}{2}{}{%
@@ -2143,8 +2059,8 @@
         {{hash=0543f444ab083739d07fc13a5d7e0fa5}{%
            family={Rogers},
            familyi={R\bibinitperiod},
-           given={R.C.},
-           giveni={R\bibinitperiod}}}%
+           given={R.\bibnamedelimi C.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
         {Springer}%
@@ -2186,44 +2102,31 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Zeitschrift für Angewandte Mathematik und Mechanik}
       \field{title}{Berücksichtigung der elastischen Formänderung in der Plastizitätstheorie}
-      \field{volume}{10}
       \field{year}{1930}
-      \field{pages}{266\bibrangedash 274}
-      \range{pages}{9}
     \endentry
     \entry{rivlin1948large}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=2bc62ffaa0da679ec32a5739984f3af4}{%
+        {{hash=b816f92e12e29d5843dfbea512592d68}{%
            family={Rivlin},
            familyi={R\bibinitperiod},
-           given={Ronald\bibnamedelima S.},
+           given={R.\bibnamedelimi S.},
            giveni={R\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Royal Society}%
-      }
-      \strng{namehash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{fullhash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{fullhashraw}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{bibnamehash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{authorbibnamehash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{authornamehash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{authorfullhash}{2bc62ffaa0da679ec32a5739984f3af4}
-      \strng{authorfullhashraw}{2bc62ffaa0da679ec32a5739984f3af4}
+      \strng{namehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{fullhash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{fullhashraw}{b816f92e12e29d5843dfbea512592d68}
+      \strng{bibnamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authorbibnamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authornamehash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authorfullhash}{b816f92e12e29d5843dfbea512592d68}
+      \strng{authorfullhashraw}{b816f92e12e29d5843dfbea512592d68}
       \field{sortinit}{R}
       \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Philosophical Transactions of the Royal Society of London. Series A, Mathematical and Physical Sciences}
-      \field{number}{835}
       \field{title}{Large elastic deformations of isotropic materials. {IV}. {F}urther developments of the general theory}
-      \field{volume}{241}
-      \field{year}{1948}
-      \field{pages}{379\bibrangedash 397}
-      \range{pages}{19}
-      \verb{doi}
-      \verb 10.1098/rsta.1948.0024
-      \endverb
+      \field{year}{1848}
     \endentry
     \entry{roubicek-pde}{book}{}{}
       \name{author}{1}{}{%
@@ -2253,30 +2156,29 @@
     \endentry
     \entry{SaintVenant1871}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=950bda69d31eefa8be72d824cf190499}{%
+        {{hash=b4c7ace5edc936802826f5c90b89170a}{%
            family={Saint-Venant},
            familyi={S\bibinithyphendelim V\bibinitperiod},
-           given={Adhémar\bibnamedelimb Jean\bibnamedelimb Claude\bibnamedelimb Barré\bibnamedelima de},
-           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+           given={A.\bibnamedelimi J.\bibnamedelimi C.\bibnamedelimi B.},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim C\bibinitperiod\bibinitdelim B\bibinitperiod},
+           prefix={de},
+           prefixi={d\bibinitperiod}}}%
       }
-      \strng{namehash}{950bda69d31eefa8be72d824cf190499}
-      \strng{fullhash}{950bda69d31eefa8be72d824cf190499}
-      \strng{fullhashraw}{950bda69d31eefa8be72d824cf190499}
-      \strng{bibnamehash}{950bda69d31eefa8be72d824cf190499}
-      \strng{authorbibnamehash}{950bda69d31eefa8be72d824cf190499}
-      \strng{authornamehash}{950bda69d31eefa8be72d824cf190499}
-      \strng{authorfullhash}{950bda69d31eefa8be72d824cf190499}
-      \strng{authorfullhashraw}{950bda69d31eefa8be72d824cf190499}
+      \strng{namehash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{fullhash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{fullhashraw}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{bibnamehash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{authorbibnamehash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{authornamehash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{authorfullhash}{b4c7ace5edc936802826f5c90b89170a}
+      \strng{authorfullhashraw}{b4c7ace5edc936802826f5c90b89170a}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Journal de Mathématiques Pures et Appliquées}
       \field{title}{Mémoire sur l'établissement des équations différentielles des mouvements intérieurs opérés dans les corps solides ductiles}
-      \field{volume}{16}
       \field{year}{1871}
-      \field{pages}{308\bibrangedash 316}
-      \range{pages}{9}
     \endentry
     \entry{steffranc}{article}{}{}
       \name{author}{2}{}{%
@@ -2288,8 +2190,8 @@
         {{hash=2962f5df2868345eac7f3a5c9f41ef5a}{%
            family={Francfort},
            familyi={F\bibinitperiod},
-           given={G.A.},
-           giveni={G\bibinitperiod}}}%
+           given={G.\bibnamedelimi A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
       \strng{namehash}{d60bf8dea098fcba226ae30fa0cc3280}
       \strng{fullhash}{d60bf8dea098fcba226ae30fa0cc3280}
@@ -2309,94 +2211,80 @@
     \endentry
     \entry{StefanelliVikelis2024}{article}{}{}
       \name{author}{2}{}{%
-        {{hash=fd2675cf6df143fc4754c08408d7e227}{%
+        {{hash=83d84a094150e8fb893dd29fd60a3a0d}{%
            family={Stefanelli},
            familyi={S\bibinitperiod},
-           given={Ulisse},
+           given={U.},
            giveni={U\bibinitperiod}}}%
-        {{hash=d683a9d6bb5aab1775aeffd14f93d937}{%
+        {{hash=592cca28ce33acd915cc29d1d198fdab}{%
            family={Vikelis},
            familyi={V\bibinitperiod},
-           given={Andreas},
+           given={A.},
            giveni={A\bibinitperiod}}}%
       }
-      \strng{namehash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{fullhash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{fullhashraw}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{bibnamehash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{authorbibnamehash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{authornamehash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{authorfullhash}{8c65c37b858eef43afde4506c435d0c5}
-      \strng{authorfullhashraw}{8c65c37b858eef43afde4506c435d0c5}
+      \strng{namehash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{fullhash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{fullhashraw}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{bibnamehash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{authorbibnamehash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{authornamehash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{authorfullhash}{ea84205e0ed0c295734f6d7861fcaf99}
+      \strng{authorfullhashraw}{ea84205e0ed0c295734f6d7861fcaf99}
       \field{sortinit}{S}
       \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ESAIM: Control, Optimisation and Calculus of Variations}
       \field{title}{Quasistatic Nonassociative Plasticity at Finite Strains}
-      \field{volume}{30}
       \field{year}{2024}
-      \field{pages}{Paper No. 17\bibrangessep 1\bibrangedash 33}
-      \range{pages}{-1}
-      \verb{doi}
-      \verb 10.1051/cocv/2024017
-      \endverb
     \endentry
     \entry{toupin1962elastic}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=fd1dcb1ba674039feb2ed3a3d5140453}{%
+        {{hash=6c1ff735aa2b4fa48ee55429d327c63a}{%
            family={Toupin},
            familyi={T\bibinitperiod},
-           given={Richard\bibnamedelima A.},
+           given={R.\bibnamedelimi A.},
            giveni={R\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
       }
-      \strng{namehash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{fullhash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{fullhashraw}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{bibnamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{authorbibnamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{authornamehash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{authorfullhash}{fd1dcb1ba674039feb2ed3a3d5140453}
-      \strng{authorfullhashraw}{fd1dcb1ba674039feb2ed3a3d5140453}
+      \strng{namehash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{fullhash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{fullhashraw}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{bibnamehash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{authorbibnamehash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{authornamehash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{authorfullhash}{6c1ff735aa2b4fa48ee55429d327c63a}
+      \strng{authorfullhashraw}{6c1ff735aa2b4fa48ee55429d327c63a}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Archive for Rational Mechanics and Analysis}
-      \field{month}{1}
-      \field{number}{1}
       \field{title}{Elastic materials with couple-stresses}
-      \field{volume}{11}
       \field{year}{1962}
-      \field{pages}{385\bibrangedash 414}
-      \range{pages}{30}
     \endentry
     \entry{Tresca1872}{article}{}{}
       \name{author}{1}{}{%
-        {{hash=01c4a77d519f8bfca4d102170d0cca10}{%
+        {{hash=f6ac5a9fa76140c30aecac3482bd68ba}{%
            family={Tresca},
            familyi={T\bibinitperiod},
-           given={Henri\bibnamedelima Édouard},
+           given={H.\bibnamedelimi É.},
            giveni={H\bibinitperiod\bibinitdelim É\bibinitperiod}}}%
       }
-      \strng{namehash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{fullhash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{fullhashraw}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{bibnamehash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{authorbibnamehash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{authornamehash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{authorfullhash}{01c4a77d519f8bfca4d102170d0cca10}
-      \strng{authorfullhashraw}{01c4a77d519f8bfca4d102170d0cca10}
+      \strng{namehash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{fullhash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{fullhashraw}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{bibnamehash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{authorbibnamehash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{authornamehash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{authorfullhash}{f6ac5a9fa76140c30aecac3482bd68ba}
+      \strng{authorfullhashraw}{f6ac5a9fa76140c30aecac3482bd68ba}
       \field{sortinit}{T}
       \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Mémoires présentés par divers savants à l'Académie des Sciences de Paris}
-      \field{title}{Mémoire sur l'écoulement des corps solides}
-      \field{volume}{20}
+      \field{title}{Mémoire sur l'écoulement des corps solids}
       \field{year}{1872}
-      \field{pages}{75\bibrangedash 135}
-      \range{pages}{61}
     \endentry
     \entry{bifurcation-geomechanics}{book}{}{}
       \name{author}{2}{}{%
