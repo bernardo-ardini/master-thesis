@@ -2425,7 +2425,7 @@ where $\chi_1\colon(0,L)\to\mathbb{R}$ satisfies $\chi_1'>0$ and $\chi_2\colon(0
 \[
 F=\begin{pmatrix}
 \chi_1' & 0 \\
-\chi_2'y & \chi_2I
+\chi_2'y & \chi_2I_{(d-1)\times(d-1)}
 \end{pmatrix}.
 \]
 The plastic distortion is assumed to be of the form
@@ -2433,18 +2433,18 @@ The plastic distortion is assumed to be of the form
 \label{eqn:necking-large:plastic}
 F_p=\begin{pmatrix}
 P & 0 \\
-0 & P^{-\frac{1}{d-1}}I
+0 & P^{-\frac{1}{d-1}}I_{(d-1)\times(d-1)}
 \end{pmatrix}
 \end{equation}
 where $P\colon(0,L)\to(0,\infty)$. This choice implies plastic incompressibility. The elastic distortion is then given by the Kroner--Lee multiplicative decomposition
 \[
 F_e=FF_p^{-1}=\begin{pmatrix}
 \chi_1'P^{-1} & 0 \\
-\chi_2'P^{-1}y & \chi_2P^\frac{1}{d-1}I
+\chi_2'P^{-1}y & \chi_2P^\frac{1}{d-1}I_{(d-1)\times(d-1)}
 \end{pmatrix}=
 \begin{pmatrix}
 E_1 & 0 \\
-E_3y & E_2I
+E_3y & E_2I_{(d-1)\times(d-1)}
 \end{pmatrix},
 \]
 where we have defined $E_1=\chi_1'P^{-1}$, $E_2=\chi_2P^{\frac{1}{d-1}}$ and $E_3=\chi_2'P^{-1}$.
@@ -4007,7 +4007,7 @@ by assuming that the plastic distortion field is of the form
 \[
 F_p(x,y)=\begin{pmatrix}
 P_1(x) & 0 \\
-P_2(x)y & P_1(x)^{-\frac{1}{d-1}}I
+P_2(x)y & P_1(x)^{-\frac{1}{d-1}}I_{(d-1)\times(d-1)}
 \end{pmatrix}
 \]
 where, alongside the already considered axial (and longitudinal due to plastic 
