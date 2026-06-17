@@ -87,12 +87,16 @@ classdef modeloldold < handle
             colormap parula(30);
             colorbar;
             %clim([0,1.5e-3]);
+            daspect([1,1,1]);
+            pbaspect([1,1,1]);
             title("\pi");
 
             subplot(2,2,2);
             obj.unk.p.plot(1,@(p) p);
             colormap parula(30);
             colorbar;
+            daspect([1,1,1]);
+            pbaspect([1,1,1]);
             title("p");
 
             subplot(2,2,3);
@@ -100,6 +104,8 @@ classdef modeloldold < handle
             colormap parula(30);
             colorbar;
             %clim([0,1.5e-3]);
+            daspect([1,1,1]);
+            pbaspect([1,1,1]);
             title("\alpha");
 
             subplot(2,2,4);
@@ -107,6 +113,8 @@ classdef modeloldold < handle
             colormap parula(30);
             colorbar;
             %clim([0,1.5e-3]);
+            daspect([1,1,1]);
+            pbaspect([1,1,1]);
             title("\lambda");
 
             sgtitle(sprintf("t=%.4f",obj.t));

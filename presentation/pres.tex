@@ -1,0 +1,933 @@
+\documentclass[8pt]{beamer}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amssymb,amsmath,amsthm,amsfonts,mathtools,eucal}
+\numberwithin{equation}{section}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subfig}
+\usepackage{algorithm,algpseudocode}
+\usepackage{url}
+\usepackage{appendix}
+\usepackage{enumitem}
+\usepackage{setspace}
+\setlist[itemize]{noitemsep}
+
+\usepackage{microtype}
+\usepackage{parskip}
+
+\usepackage{pgfplots}
+\usetikzlibrary{hobby,patterns,patterns,decorations.pathmorphing,calc}
+
+\usepackage{newpxtext,eulerpx}
+
+\usefonttheme{serif}
+\usefonttheme{professionalfonts}
+
+\usepackage{float}
+\floatstyle{plaintop}
+\newfloat{alg}{tbp}{loc}
+\floatname{alg}{Algorithm}
+
+\usepackage{quoting}
+\quotingsetup{font=small}
+
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{../Report/bib.bib}
+
+\usepackage{tikz}
+\usetikzlibrary{hobby,patterns,calc}
+
+\usetheme{default}
+\useinnertheme{circles}
+\useoutertheme{infolines}
+
+\definecolor{padova}{RGB}{155,0,20}
+\definecolor{padova-nero}{RGB}{72,79.,89}
+\definecolor{grigio}{gray}{0.97}
+\setbeamercolor{palette primary}{fg=white,bg=padova}
+\setbeamercolor{palette secondary}{fg=white,bg=padova}
+\setbeamercolor{palette tertiary}{fg=white,bg=padova}
+\setbeamercolor{titlelike}{fg=white,bg=padova-nero}
+\setbeamercolor{title}{fg=black,bg=white}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block title}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=black,bg=white}
+\setbeamercolor{local structure}{fg=padova,bg=white}
+
+\setbeamerfont{block title}{series=\bfseries,size=\normalsize}
+\setbeamerfont{alerted text}{series=\bfseries,size=\normalsize}
+
+\setbeamertemplate{navigation symbols}{}
+
+\title[]{}
+\author[]{Bernardo Ardini}
+\date{Padova, 9 luglio 2026}
+
+\theoremstyle{definition}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{defi}[prop]{Definition}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{cor}[prop]{Corollary}
+\newtheorem{lem}[prop]{Lemma}
+\newtheorem{rmk}[prop]{Remark}
+\newtheorem*{cod*}{Code}
+\newtheorem{ex}[prop]{Example}
+\newtheorem{prb}[prop]{Problem}
+\newtheorem*{prb*}{Problem}
+\newtheorem*{rmk*}{Remark}
+\newtheorem*{lemma*}{Lemma}
+\newtheorem*{ex*}{Example}
+
+\DeclareMathOperator{\epi}{epi}
+\DeclareMathOperator{\inter}{int}
+\DeclareMathOperator{\dev}{dev}
+\DeclareMathOperator{\cof}{cof}
+\DeclareMathOperator{\dom}{dom}
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\Grad}{Grad}
+\DeclareMathOperator{\diver}{div}
+\DeclareMathOperator{\Diver}{Div}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\are}{area}
+\DeclareMathOperator{\supp}{supp}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\so}{SO}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sym}{sym}
+\DeclareMathOperator{\ske}{skew}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\essinf}{essinf}
+\DeclareMathOperator{\codim}{codim}
+\DeclareMathOperator{\Iso}{Iso}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\diam}{diam}
+
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\dual}{\langle}{\rangle}
+
+\newcommand{\dind}[2]{\frac{\partial #1}{\partial #2}}
+
+\newcommand{\omissis}{[\textellipsis\unkern]}
+\newcommand{\threedots}{\mathbin{\vdots}}
+
+\begin{document}
+
+\begin{frame}
+\centering
+\begin{minipage}[c]{0.8\textwidth}
+\centering
+{\textbf{UNIVERSITÀ DEGLI STUDI DI PADOVA}} \\
+{\small Department of Civil, Environmental and Architectural Engineering} \\\vspace{0.2cm}
+
+% Corso di Laurea e Indirizzo
+{\small Master's Degree in Mathematical Engineering} \\
+{\small \textit{Mathematical Modelling for Engineering and Science}} \\
+
+\vspace{0.2cm}
+
+\includegraphics[width=0.2\textwidth]{../text/figures/logounipd}
+\vspace{0.2cm} 
+
+{\textsc{Master's Thesis}} \\
+
+\vspace{0.2cm}
+
+% Titolo della tesi (Adattato al tuo nuovo titolo)
+{\large\textbf{Investigations on some models in gradient elastoplasticity}} \\
+
+\vspace{0.5cm}
+
+\small
+\begin{minipage}[t]{0.5\textwidth}
+\begin{flushleft}
+\begin{spacing}{1.2}
+\textbf{Supervisor:} \\
+Prof. Filip Rindler \\
+\textit{University of Warwick} \\
+\vspace{0.5cm}
+\textbf{Co-supervisor:} \\
+Prof. Giulio Giusteri \\
+\textit{Università di Padova}
+\end{spacing}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\begin{flushright}
+\begin{spacing}{1.2}
+\textbf{Candidate:} \\
+Bernardo Ardini \\
+2146900
+\end{spacing}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+{Academic Year 2025/2026}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Aims and results of the thesis}
+
+DA FARE
+\end{frame}
+
+\begin{frame}
+\centering
+\large\textbf{Some introductory notions}
+\end{frame}
+
+\begin{frame}
+\frametitle{Developing mechanical models through the principle of virtual powers}
+\centering
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Description of a mechanical system}
+\\[0.5em]
+The systems are the elements $z$ of a separable and reflexive Banach space $Z$.
+\\[0.5em]
+Generalized forces are the elements $\mathcal{F}$ of the dual space $Z^*$.
+\\[1em]
+\textbf{Equilibrium}
+\\[0.5em]
+Equilibrium is the balance
+\[
+-\mathcal{I}(t)+\mathcal{X}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}
+\]
+between internal forces $\mathcal{I}\colon(0,T)\to Z^*$ and external forces $\mathcal{X}\colon(0,T)\to Z^*$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Constitutive relations}
+\\[0.5em]
+Let $\Psi\colon Z\to\mathbb{R}\cup\{0\}$ be the free energy and $\Phi\colon Z\to[0,\infty]$ the dissipation potential.
+\\[0.5em]
+Internal forces are related to the evolution $z\colon[0,T]\to Z$ with a constitutive relation
+\[
+\mathcal{I}(t)\in D\Psi(z(t))+\partial\Phi(\dot z(t))\quad\text{for a.e.\ $t\in(0,T)$}.
+\]
+\textsc{Definition.} $\xi\in\partial\Phi(v)$ if $\Phi(w)\ge\Phi(v)+\dual{\xi,w-v}$ for all $w\in Z$.
+\\[0.5em]
+\textsc{Proposition.} If $\Phi$ is convex and $\Phi(0)=0$ then $\dual{\xi,v}\ge0$ for all $\xi\in\partial\Phi(v)$.
+\\[0.5em]
+\textsc{Corollary.} $\frac{d}{dt}\Psi(z(t))\le\dual{\mathcal{I}(t),\dot z(t)}=\dual{\mathcal{X}(t),\dot z(t)}$.
+\end{minipage}
+\\[2em]
+\begin{minipage}[c]{0.4\textwidth}
+\textsc{Problem.} Given $z_0\in Z$ and $\mathcal{X}$ find $z$ such that $z(0)=z_0$ and equilibrium holds.
+\end{minipage}
+$\qquad\implies\qquad$
+\begin{minipage}[c]{0.4\textwidth}
+Doubly nonlinear equation
+\[
+D\Psi(z(t))+\partial\Phi(\dot z(t))\ni\mathcal{X}(t)
+\]
+for a.e.\ $t\in(0,T)$
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{A simple example}
+\centering
+\begin{minipage}[c]{0.5\textwidth}
+A block on the plane with friction pulled with a spring.
+\vspace{1em}
+\begin{center}
+\begin{tikzpicture}[thick, scale=0.8]
+% Connessioni verticali
+\draw (0,-1) -- (0.5,-1);
+
+\draw (0.5,-1) -- (0.571,-0.75) -- (0.714,-1.25) -- (0.857,-0.75) -- (1,-1.25) -- (1.143,-0.75) -- (1.286,-1.25) -- (1.429,-0.75) -- (1.5,-1);
+\draw (1.5,-1) -- (2,-1);
+\draw[-latex] (2.1,-1) -- (3.1,-1);
+\node[anchor=south] at (2.6,-1) {$F=F_1t$};
+
+\draw (-1.4,-1.7) rectangle (0,-0.3);
+\draw[pattern=bricks] (3.5,-2.4) rectangle (-2.2,-1.7);
+
+\draw[fill=black] (0,-1) circle (0.03);
+\node[anchor=east] at (0,-1) {$x_b$};
+
+\draw[fill=black] (2,-1) circle (0.03);
+\node[anchor=north] at (2,-1) {$x$};
+\end{tikzpicture}
+\end{center}
+\vspace{1em}
+The space of configurations is $Z=\{z=(x,x_b)\in\mathbb{R}^2\}$. Let $w=(v,v_b)$ the generic rate of the system.
+\\[0.5em]
+The free energy is $\Psi(z)=\frac{\kappa}{2}|x-x_b|^2$ while the dissipation potential is $\Phi(w)=Y|v_b|+\frac{\eta}{2}|v_b|^2$.
+\\[0.5em]
+Start with $z(0)=(0,0)$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.45\textwidth}
+\textsc{Proposition.} It holds that
+\[
+\partial\Phi(v_b)=\begin{cases}
+[-Y,Y] & \text{if $v_b=0$} \\
+\{Y\sign v_b+\eta v_b\} & \text{if $v_b\neq0$}.
+\end{cases}
+\]
+\begin{center}
+\begin{tikzpicture}[scale=0.6,line cap=round,line join=round]
+\draw (0,-0.5)--(0,4);
+\draw (-2,0)--(2,0);
+\node[anchor=west] at (2,0) {$v_b$};
+\node[anchor=south] at (0,4) {$\Phi(v_b)$};
+\draw[thick,blue] plot[domain=-2:2,samples=25] (\x,{abs(\x)+0.5*\x*\x});
+\draw[dashed] plot[domain=-0.5:0,samples=2] (\x,{\x});
+\draw[dashed] plot[domain=0:0.5,samples=2] (\x,{-\x});
+\draw plot[domain=-1.3:1.3,samples=2] (\x,{0.2*\x});
+\draw plot[domain=0.5:1.9,samples=2] (\x,{2.2*(\x-1.2)+1.92});
+\draw[fill=black] (1.2,1.92) circle (0.05);
+\draw[fill=black] (0,0) circle (0.05);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\\[2em]
+\begin{minipage}[c]{0.4\textwidth}
+\textsc{Solution.} It holds that $x=x_b+\frac{F}{\kappa}$. Moreover $\dot x_b=0$ when $F<Y$ while $F=Y+\eta\dot x_b$ when $F\ge Y$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Treating constraints with the method of Lagrange multipliers}
+\centering
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Constrained kinematics}
+\\[0.5em]
+Let $K\subset Z$ closed and convex and impose the constraint $z(t)\in K$ for all $t\in[0,T]$.
+\\[1em]
+\textbf{Reaction force}
+\\[0.5em]
+Add a reaction force $\mathcal{P}\colon(0,T)\to Z^*$ satisfying $\mathcal{P}(t)\in-N_K(z(t))=-\partial\iota_K(z(t))$ for a.e.\ $t\in(0,T)$.
+\\[1em]
+\textbf{Equilibrium}
+\\[0.5em]
+The equilibrium now reads
+\[
+-\mathcal{I}(t)+\mathcal{X}(t)+\mathcal{P}(t)=0\quad\text{for a.e.\ $t\in(0,T)$}.
+\]
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Constitutive relations}
+\\[0.5em]
+Let again $\Psi\colon Z\to\mathbb{R}\cup\{0\}$ be the free energy.
+\\[0.5em]
+Now the dissipation potential $\Phi\colon Z^*\times Z\to[0,\infty],\;(\mathcal{P},w)\mapsto\Phi(\mathcal{P},w)$ can depend on the reaction force.
+\\[0.5em]
+The constitutive relations become
+\[
+\mathcal{I}(t)\in D\Psi(z(t))+\partial_w\Phi(\mathcal{P}(t),\dot z(t))
+\]
+for a.e.\ $t\in(0,T)$.
+\end{minipage}
+\\[1em]
+\begin{minipage}[c]{0.4\textwidth}
+\textsc{Problem.} Given $z_0\in Z$ and $\mathcal{X}$ find $z$ and $\mathcal{P}$ such that $z(0)=z_0$, $z(t)\in K$ for all $t\in[0,T]$, $\mathcal{P}(t)\in-N_K(z(t))$ for a.e.\ $t\in(0,T)$ and equilibrium holds.
+\end{minipage}
+$\qquad\implies\qquad$
+\begin{minipage}[c]{0.4\textwidth}
+Constrained doubly nonlinear equation
+\begin{gather*}
+z(t)\in K\quad\text{for all $t\in[0,T]$} \\
+\mathcal{P}(t)\in-N_K(z(t)) \\
+D\Psi(z(t))+\partial\Phi(\mathcal{P}(t),\dot z(t))\ni\mathcal{X}(t)+\mathcal{P}(t)
+\end{gather*}
+for a.e.\ $t\in(0,T)$
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\centering
+\large\textbf{Necking of a metallic cylindrical bar}
+\end{frame}
+
+\begin{frame}
+\centering
+\large\textbf{Modeling dilatant and pressure sensitive elastoplastic materials}
+\end{frame}
+
+\begin{frame}
+\frametitle{Classical approach}
+\centering
+\begin{minipage}[c]{0.6\textwidth}
+\textbf{Kinematics}
+\\[0.5em]
+The space of configurations is $Z=\{(u,E_p)\}$ with the displacement $u\in H^1(\Omega,\mathbb{R}^d)$ and the plastic strain $E_p\in H^1(\Omega,\text{Sym})$. The elastic strain is $E_e=Eu-E_p$.
+\\[0.5em]
+The generic rate is $w=(v,V_p)$ and the elastic rate is $V_e=Ev-V_p$.
+\\[1em]
+\textbf{Statics}
+\\[0.5ex]
+The internal generalized force is
+\[
+\dual{\mathcal{I},w}=\int_\Omega\left[T_e:V_e+T_p:\grad V_p+K_p\threedots\grad V_p\right]dx
+\]
+with $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{Sym}$ the plastic force and $K_p\colon\Omega\to\text{Sym}\otimes\mathbb{R}$ the plastic stress. The external generalized force is
+\[
+\dual{\mathcal{X},w}=\int_\Omega f\cdot vdx+\int_{\partial\Omega}h\cdot vdx.
+\]
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.33\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[fill=lime]
+plot [smooth cycle, tension=1] coordinates {
+(-0.05,0) (-1,1) (-3,0.5) (-2.5,-1.5) (-1,-2) (-0.2,-1)
+};
+\node at (-2.9,-1.6) {$\Omega$};
+\draw[fill=green] (-1.6,0.1) circle (0.2);
+\draw[-latex] (-1.6,0.1) -- (-1.1,0.4);
+\draw[fill] (-1.6,0.1) circle (0.05);
+\node[anchor=south] at (-1.1,0.32) {$u(x)$};
+\node[anchor=north east] at (-1.68,0) {$x$};
+\draw[rotate around={30:(0.8,0.9)},fill=green] (0.8,0.9) ellipse (0.25 and 0.19);
+\draw[fill] (0.8,0.9) circle (0.05);
+\node[anchor=north] at (0.8,0.7) {$E_p(x)$};
+\end{tikzpicture}
+\end{center}
+\vspace{2em}
+\textsc{Proposition.} The strong form of the equilibrium is
+\[
+\begin{gathered}
+\diver T_e+f=0\\
+T_e-T_p+\diver K_p=0
+\end{gathered}
+\quad\text{in $\Omega$}
+\]
+and $T_en=h$, $K_pn=0$ in $\partial\Omega$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Classical approach}
+\centering
+\begin{minipage}[c]{0.45\textwidth}
+\textbf{Constitutive relations}
+\\[0.5ex]
+Let the free energy
+\[
+\Psi(z)=\int_\Omega\left[\frac{1}{2}\mathfrak{C}E_e:E_e+\frac{1}{2}\mathfrak{b}|K_p|^2\right]dx
+\]
+that implies
+\[
+T_e=\mathfrak{C}E_e\quad\text{and}\quad K_p=\mathfrak{b}\grad E_p.
+\]
+\textbf{Yield condition and non-associated flow rule}
+\\[0.5em]
+Fix $f,g\colon\text{Sym}\to\mathbb{R}$ convex. Let $C=\{f\le0\}$ and $L=\{g\le0\}$.
+\\[0.5em]
+Impose that $T_p\in C$. The yield condition is $T_p\in\partial C$ and the flow rule is
+\[
+\dot E_p\in
+\begin{cases}
+\{0\} & \text{if $T_p\in\inter C$} \\
+N_{L}(T_p) & \text{if $T_p\in\partial C$}.
+\end{cases}
+\]
+\textsc{Proposition}. If $f=g$, is equivalent to $T_p\in\partial\sigma_C(\dot E_p)$ with $\sigma_C(\dot E_p)=\sup_{T_p\in C}T_p:\dot E_p$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.45\textwidth}
+\textsc{Example.} Drucker--Prager yield criterion
+\begin{gather*}
+f(T_p)=|\dev T_p|-\left(f_0-a\frac{\tr T_p}{d}\right) \\
+g(T_p)=|\dev T_p|+b\frac{\tr T_p}{d}
+\end{gather*}
+with $0\le b\le a$.
+\vspace{1em}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw (-2,0)--(2,0);
+\draw (0,0)--(0,2);
+\fill[violet,opacity=0.5] (1.5,0)--(-1.7,1.5)--(-1.7,0)--cycle;
+\draw[thick] (1.5,0)--(-1.7,1.5);
+\node[anchor=west] at (2,0) {$\dfrac{\tr T_p}{d}$};
+\node[anchor=south] at (0,2) {$|\dev T_p|$};
+\draw[dashed] ({0.5},{-1.0/2.1333*(0.5-1.5)})--++(0.3,0.3*2.1333);
+\draw ({0.5},{-1.0/2.1333*(0.5-1.5)})--++({atan(2.1333)-90}:0.2)--++({atan(2.1333)}:0.2)--++({atan(2.1333)+90}:0.2);
+\draw[-latex] ({0.5},{-1.0/2.1333*(0.5-1.5)})--++(0.15,0.15*6);
+\node[anchor=west] at ({0.5+0.15},{-1.0/2.1333*(0.5-1.5)+0.15*6}) {$(\tr\dot E_p,|\dev\dot E_p|)$};
+\node[anchor=north] at (1.5,0) {$\frac{f_0}{a}$};
+\end{tikzpicture}
+\end{center}
+\vspace{1em}
+The flow rule $\dot E_p=\gamma\dind{g}{T_p}(T_p)$ implies
+\[
+\dev\dot E_p=\gamma\frac{\dev T_p}{|\dev T_p|},\quad\tr\dot E_p=b|\dev\dot E_p|
+\]
+with $\gamma f(T_p)=0$, $f(T_p)\le0$ and $\gamma\ge0$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal of an alternative approach}
+\centering
+\begin{minipage}[c]{0.53\textwidth}
+\textbf{Kinematics}
+\\[0.5em]
+The space of configurations is $Z=\{(u,\pi,\alpha,\lambda)\}$ with the displacement $u\in H^2(\Omega,\mathbb{R}^d)$ the deviatoric plastic strain $\pi\in H^1(\Omega,\text{DevSym})$, the damage variable $\alpha\in H^1(\Omega)$ and the volumetric plastic strain $\lambda\in L^2(\Omega)$. The total plastic strain is $E_p=\pi+\frac{\lambda}{d}$ and the elastic strain is $E_e=Eu-E_p$.
+\\[0.5em]
+The generic rate is $w=(v,\rho,\beta,\mu)$, the plastic rate is $V_p=\rho+\frac{\mu}{d}I$ and the elastic rate is $V_e=Ev-V_p$.
+\\[0.5em]
+Add the kinematic constrain $z\in K=\{\lambda=L(\alpha)\}$ with $L\colon\mathbb{R}\to\mathbb{R}$
+\[
+\int_\Omega(\lambda-L(\alpha))qdx=0\quad\text{for all $q\in L^2(\Omega)$}.
+\]
+\textbf{Micropressure}
+\\[0.5em]
+Parametrize the constraint reaction $\mathcal{P}\in-N_K(z)$ as
+\[
+\dual{\mathcal{P},w}=\int_\Omega p(\mu-L'(\alpha)\beta)dx
+\]
+with $p\in L^2(\Omega)$ the micropressure.
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}[c]{0.4\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
+\draw[fill=lime]
+plot [smooth cycle, tension=1] coordinates {
+(-0.05,0) (-1,1) (-3,0.5) (-2.5,-1.5) (-1,-2) (-0.2,-1)
+};
+\node at (-2.9,-1.6) {$\Omega$};
+\draw[fill=green] (-1.6,0.1) circle (0.2);
+\draw[-latex] (-1.6,0.1) -- (-1.1,0.4);
+\draw[fill] (-1.6,0.1) circle (0.05);
+\node[anchor=south] at (-1.1,0.32) {$u(x)$};
+\node[anchor=north east] at (-1.68,0) {$x$};
+\draw[rotate around={30:(0.8,0.9)},fill=green] (0.8,0.9) ellipse (0.25 and 0.19);
+\draw[rotate around={30:(0.8,0.9)},pattern=north east lines] (0.8,0.9) ellipse (0.25 and 0.19);
+\draw[fill] (0.8,0.9) circle (0.05);
+\node[anchor=north] at (0.8,0.7) {$\pi(x)$};
+\node[anchor=south] at (0.8,1.1) {$\alpha(x)$};
+\end{tikzpicture}
+\end{center}
+\vspace{1em}
+\textbf{Notation}
+\\[0.5em]
+Define
+\begin{gather*}
+Y=\{y=(u,\pi,\alpha)\} \\
+\Lambda=\{\lambda\} \\
+\Lambda^*=\{p\}.
+\end{gather*}
+and $\mathcal{L}\colon Y\to\Lambda$ by $\mathcal{L}(y)=L(\alpha)$. Denote the virtual rate as $w=(h,\mu)$ with $h=(v,\rho,\beta)\in Y$ and $\mu\in\Lambda$. Then
+\begin{gather*}
+\lambda=\mathcal{L}(y) \\
+\dual{\mathcal{P},w}=\dual{p,\mu}-\dual{\mathcal{L}'(y)^*p,h}.
+\end{gather*}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal of an alternative approach}
+\centering
+\begin{minipage}[c]{0.58\textwidth}
+\textbf{Statics}
+\\[0.5ex]
+The internal generalized force is
+\[
+\dual{\mathcal{I},w}=
+\begin{multlined}[t]
+\int_\Omega\left[T:Ev+K\threedots\grad^2u\right]dx+\\
++\int_\Omega\left[T_e:V_e+T_p:\rho+K_p\threedots\grad\rho\right]dx+\\
++\int_\Omega\left[\tau\beta+\kappa\cdot\grad\beta\right]dx
+\end{multlined}
+\]
+with $T\colon\Omega\to\text{Sym}$ the macroscopic stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ the macroscopic hyperstress, $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ the plastic force, $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ the plastic stress, $\tau\colon\Omega\to\mathbb{R}$ the damage force and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage stress. The external generalized force is
+\[
+\dual{\mathcal{X},w}=\int_\Omega f\cdot vdx+\int_{\partial\Omega}h\cdot vdx.
+\]
+The equilibrium is $-\mathcal{I}+\mathcal{X}+\mathcal{P}=0$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.38\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.4]
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(0.3,3.1)(0.6,3.3)(1.1,3.4)(1.8,3.3)(2.5,3.1)(2.4,2.5)(2.8,2.1)(2.5,1.7)(1.8,1.6)(1.4,1.8)(1.1,2.0)(0.9,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.5,3.3)(2.9,3.5)(3.3,3.6)(3.9,3.5)(4.4,3.1)(4.3,2.6)(3.9,2.4)(3.4,2.4)(2.9,2.5)(2.6,2.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.6,3.3)(5.1,3.4)(5.6,3.4)(6.1,3.1)(6.2,2.5)(5.9,2.0)(5.2,1.9)(4.7,2.1)(4.5,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.1,1.6)(2.7,1.8)(3.2,1.8)(3.8,1.5)(4.1,0.9)(3.7,0.4)(3.2,0.2)(2.7,0.4)(2.6,0.9)(2.1,1.2)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(3.4,2.3)(4.0,2.2)(4.8,2.1)(5.0,1.7)(4.9,1.3)(4.3,1.3)(3.6,1.5)(3.4,1.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(5.1,2.1)(5.7,2.2)(6.4,2.0)(6.8,1.7)(6.7,1.3)(6.0,1.2)(5.4,1.4)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.3,1.3)(4.8,1.3)(5.6,1.0)(6.1,1.2)(6.3,0.8)(6.1,0.4)(5.5,0.2)(4.8,0.3)(4.4,0.7)};
+\end{tikzpicture}
+\end{center}
+\vspace{2em}
+\textsc{Proposition.} The strong form of the equilibrium is
+\[
+\begin{gathered}
+\diver(T+T_e-\diver K)+f=0 \\
+\dev T_e-T_p+\diver K_p=0 \\
+-\tau+\diver\kappa-L'(\alpha)p=0 \\
+p=-\frac{\tr T_e}{d}
+\end{gathered}
+\;\text{in $\Omega$}
+\]
+and $K_pn=0$, $\kappa\cdot n$ in $\partial\Omega$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal of an alternative approach}
+\centering
+\begin{minipage}[c]{0.57\textwidth}
+\textbf{Constitutive relations}
+\\[0.5ex]
+Let the free energy be $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}y,y}$ with
+\[
+\Psi_0(z)=\int_\Omega\left[\frac{1}{2}\mathfrak{C}E_e:E_e+W_d(\alpha)\right]dx
+\]
+and
+\begin{multline*}
+\frac{1}{2}\dual{\mathcal{A}y,y}=\\
+\frac{1}{2}\int_\Omega\left[\mathfrak{a}|\grad^2u|^2+\mathfrak{b}|\grad\pi|^2+\mathfrak{c}|\grad\alpha|^2\right]dx.
+\end{multline*}
+Let the dissipation potential be $\Phi(p,w)=\Phi_0(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ with
+\[
+\Phi_0(p,h)=\int_\Omega\left[R(p,\rho)+Q(\rho,\beta)\right]dx
+\]
+and
+\[
+\frac{1}{2}\dual{\mathcal{D}h,h}=\frac{1}{2}\int_\Omega\left[\mathfrak{D}Ev:Ev+\mathfrak{d}|\rho|^2+\mathfrak{e}|\beta|^2\right]dx.
+\]
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}[c]{0.32\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(0.3,3.1)(0.6,3.3)(1.1,3.4)(1.8,3.3)(2.5,3.1)(2.4,2.5)(2.8,2.1)(2.5,1.7)(1.8,1.6)(1.4,1.8)(1.1,2.0)(0.9,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.5,3.3)(2.9,3.5)(3.3,3.6)(3.9,3.5)(4.4,3.1)(4.3,2.6)(3.9,2.4)(3.4,2.4)(2.9,2.5)(2.6,2.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.6,3.3)(5.1,3.4)(5.6,3.4)(6.1,3.1)(6.2,2.5)(5.9,2.0)(5.2,1.9)(4.7,2.1)(4.5,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.1,1.6)(2.7,1.8)(3.2,1.8)(3.8,1.5)(4.1,0.9)(3.7,0.4)(3.2,0.2)(2.7,0.4)(2.6,0.9)(2.1,1.2)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(3.4,2.3)(4.0,2.2)(4.8,2.1)(5.0,1.7)(4.9,1.3)(4.3,1.3)(3.6,1.5)(3.4,1.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(5.1,2.1)(5.7,2.2)(6.4,2.0)(6.8,1.7)(6.7,1.3)(6.0,1.2)(5.4,1.4)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.3,1.3)(4.8,1.3)(5.6,1.0)(6.1,1.2)(6.3,0.8)(6.1,0.4)(5.5,0.2)(4.8,0.3)(4.4,0.7)};
+\end{tikzpicture}
+\end{center}
+\vspace{0.5em}
+\textsc{Example.} From the micromechanical picture
+\begin{gather*}
+L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right] \\
+W_d(\alpha)=f_0\alpha_1\left[1-\exp\left(-\frac{\alpha}{\alpha_1}\right)\right] \\
+R(p,\rho)=Yp|\rho| \\
+Q(\rho,\beta)=\begin{cases}
+0 & \text{if $\beta\ge|\rho|$} \\
+\infty & \text{if $\beta<|\rho|$}.
+\end{cases}
+\end{gather*}
+Thus $\dot\alpha\ge|\dot\pi|$.
+\vspace{0.5em}
+\begin{center}
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw (0,-0.5)--(0,2);
+\draw (-0.5,0)--(3,0);
+\node[anchor=west] at (3,0) {$\alpha$};
+\node[anchor=south] at (0,2) {$W_d(\alpha)$};
+\draw[thick,blue] plot[domain=0:3,samples=25] (\x,{1.6*(1-exp(-2*\x))});
+\draw plot[domain=0:0.6,samples=2] (\x,{1.6*2*\x});
+\draw plot[domain=0.3:3,samples=2] (\x,{1.6*(1-exp(-2*1.5))+1.6*2*exp(-2*1.5)*(\x-1.5)});
+\draw[dashed] plot[domain=0:2.7,samples=2] (\x,1.6);
+%\draw plot[domain=0.5:1.9,samples=2] (\x,{2.2*(\x-1.2)+1.92});
+%\draw[fill=black] (1.2,1.92) circle (0.05);
+%\draw[fill=black] (0,0) circle (0.05);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal of an alternative approach}
+\centering
+\begin{minipage}[c]{0.57\textwidth}
+\textbf{Constitutive relations}
+\\[0.5ex]
+Then
+\begin{gather*}
+T=\mathfrak{D}E\dot u \\
+T_e=\mathfrak{C}E_e \\
+T_p\in\partial_\rho R(p,\dot\pi)+\partial_\rho Q(\dot\pi,\dot\alpha)+\mathfrak{d}\dot\pi \\
+\tau\in W_d'(\alpha)+\partial_\beta Q(\dot\pi,\dot\alpha)+\mathfrak{e}\dot\alpha
+\end{gather*}
+and
+\begin{gather*}
+K=\mathfrak{a}\grad^2u \\
+K_p=\mathfrak{b}\grad\pi \\
+\kappa=\mathfrak{c}\grad\alpha.
+\end{gather*}
+\textbf{Interpretation}
+\\[0.5em]
+$Q$ links the evolution of $\alpha$ to that of $\pi$. $W_d$ is the energy needed to create damage. $R$ model the pressure dependent friction between the grains.
+\\[0.5em]
+The viscous and gradient terms regularize the solution. 
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}[c]{0.32\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(0.3,3.1)(0.6,3.3)(1.1,3.4)(1.8,3.3)(2.5,3.1)(2.4,2.5)(2.8,2.1)(2.5,1.7)(1.8,1.6)(1.4,1.8)(1.1,2.0)(0.9,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.5,3.3)(2.9,3.5)(3.3,3.6)(3.9,3.5)(4.4,3.1)(4.3,2.6)(3.9,2.4)(3.4,2.4)(2.9,2.5)(2.6,2.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.6,3.3)(5.1,3.4)(5.6,3.4)(6.1,3.1)(6.2,2.5)(5.9,2.0)(5.2,1.9)(4.7,2.1)(4.5,2.6)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(2.1,1.6)(2.7,1.8)(3.2,1.8)(3.8,1.5)(4.1,0.9)(3.7,0.4)(3.2,0.2)(2.7,0.4)(2.6,0.9)(2.1,1.2)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(3.4,2.3)(4.0,2.2)(4.8,2.1)(5.0,1.7)(4.9,1.3)(4.3,1.3)(3.6,1.5)(3.4,1.8)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(5.1,2.1)(5.7,2.2)(6.4,2.0)(6.8,1.7)(6.7,1.3)(6.0,1.2)(5.4,1.4)};
+\draw[fill=lightgray]plot[smooth cycle]coordinates{(4.3,1.3)(4.8,1.3)(5.6,1.0)(6.1,1.2)(6.3,0.8)(6.1,0.4)(5.5,0.2)(4.8,0.3)(4.4,0.7)};
+\end{tikzpicture}
+\end{center}
+\vspace{0.5em}
+\textsc{Example.} From the micromechanical picture
+\begin{gather*}
+L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right] \\
+W_d(\alpha)=f_0\alpha_1\left[1-\exp\left(-\frac{\alpha}{\alpha_1}\right)\right] \\
+R(p,\rho)=Yp|\rho| \\
+Q(\rho,\beta)=\begin{cases}
+0 & \text{if $\beta\ge|\rho|$} \\
+\infty & \text{if $\beta<|\rho|$}.
+\end{cases}
+\end{gather*}
+Thus $\dot\alpha\ge|\dot\pi|$.
+\vspace{0.5em}
+\begin{center}
+\begin{tikzpicture}[scale=0.5,line cap=round,line join=round]
+\draw (0,-0.5)--(0,2);
+\draw (-0.5,0)--(3,0);
+\node[anchor=west] at (3,0) {$\alpha$};
+\node[anchor=south] at (0,2) {$W_d(\alpha)$};
+\draw[thick,blue] plot[domain=0:3,samples=25] (\x,{1.6*(1-exp(-2*\x))});
+\draw plot[domain=0:0.6,samples=2] (\x,{1.6*2*\x});
+\draw plot[domain=0.3:3,samples=2] (\x,{1.6*(1-exp(-2*1.5))+1.6*2*exp(-2*1.5)*(\x-1.5)});
+\draw[dashed] plot[domain=0:2.7,samples=2] (\x,1.6);
+%\draw plot[domain=0.5:1.9,samples=2] (\x,{2.2*(\x-1.2)+1.92});
+%\draw[fill=black] (1.2,1.92) circle (0.05);
+%\draw[fill=black] (0,0) circle (0.05);
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Proposal of an alternative approach}
+\centering
+\begin{minipage}[c]{0.57\textwidth}
+\textbf{Recovering the Ducker--Prager model}
+\\[0.5ex]
+\textsc{Proposition}. Letting $L(\alpha)=b\alpha$, $W_d=f_0\alpha$ and $Y=a-b$ we recover the Ducker--Prager model.
+\\[0.5ex]
+\textsc{Sketch of the proof}. For simplicity disregard viscous and gradient terms. Recall the balance
+\begin{gather*}
+\dev T_e-T_p=0 \\
+-\tau-L'(\alpha)p=0.
+\end{gather*}
+This becomes
+\begin{gather*}
+\dev T_e\in(a-b)\partial|\cdot|(\dot\pi)+\partial_\rho Q(\dot\pi,\dot\alpha) \\
+f_0+bp\in-\partial_\beta Q(\dot\pi,\dot\alpha).
+\end{gather*}
+The choice $Y=a-b$ weights correctly the contributions of plastic deviatoric and damage resistance to provide the right yield condition
+\[
+|\dev T_e|\le f_0+ap.
+\]
+The flow rule is satisfied since $\dot\lambda=b\dot\alpha=b|\dot\pi|$.\qed
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}[c]{0.32\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=0.65]
+\draw (-2,0)--(2,0);
+\draw (0,-0.5)--(0,2.5);
+\fill[violet,opacity=0.5] (0,0)--(2,2)--(-2,2)--cycle;
+\draw[thick] (0,0)--(2,2);
+\draw[thick] (0,0)--(-2,2);
+\node[anchor=south] at (0,2.5) {$\beta$};
+\node[anchor=west] at (2,0) {$|\rho|$};
+\node[anchor=east] at (-1.3,1) {$\dom Q$};
+\draw[-latex] (1,1)--++(-45:0.7);
+\draw[dashed] (0,0)--++(-45:0.6);
+\draw[dashed] (0,0)--++(-135:0.6);
+\draw[-latex] (0,0)--++(-70:0.7);
+\end{tikzpicture}
+\end{center}
+\vspace{2em}
+\textsc{Lemma.} When $\dot\pi\neq0$ and $\dot\alpha=|\dot\pi|$ the generic element of $\partial Q(\dot\pi,\dot\alpha)$ is $\left(-\theta\frac{\dot\pi}{|\dot\pi|},\theta\right)$ with $\theta\le0$. When $\dot\pi=0$ and $\dot\alpha=0$ is $(\Theta,\theta)$ with $\theta\le0$ and $\Theta\in\text{DevSym}$ with $|\Theta|\le|\theta|$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Existence and uniqueness}
+\centering
+\begin{minipage}[c]{0.43\textwidth}
+\textbf{Formulation of the problem}
+\\[0.5em]
+Assume homogeneous boundary conditions. Given $f\in H^1((0,T),H^{-1}(\Omega,\mathbb{R}^d))$ let
+\[
+\dual{\mathscr{X}(t),h}=\dual{f(t),v}
+\]
+\textsc{Problem.} Find $z=(y,\lambda)\colon[0,T]\to Z$ and $p\colon[0,T]\to\Lambda^*$ such that $z(0)=0$ and
+\begin{gather*}
+\begin{multlined}
+D_y\Psi_0(z(t))+\mathcal{A}y(t)+\\
++\partial_h\Phi_0(p(t),\dot y(t))+\mathcal{D}\dot y(t)-\\
+-\mathscr{L}'(y(t))^*p(t)\ni\mathscr{X}(t)
+\end{multlined} \\[0.5em]
+D_\lambda\Psi_0(z(t))+p(t)=0 \\[0.5em]
+\lambda(t)=\mathscr{L}(y(t))
+\end{gather*}
+for a.e.\ $t\in(0,T)$.
+\end{minipage}
+\hspace{0.03\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Existence and uniqueness theorem}
+\\[0.5ex]
+Let $H=\{y=(u,\pi,\alpha)\}$ with $u\in H^1(\Omega,\mathbb{R}^d)$, $\pi\in L^2(\Omega,\text{DevSym})$ and $\alpha\in L^2(\Omega)$.
+\\[0.5em]
+Assume that
+\begin{itemize}
+\item[$\bullet$] $L$ is bounded, differentiable and with bounded and Lipschitz derivative
+\item[$\bullet$] $W_d$ is differentiable with Lipschitz derivative
+\item[$\bullet$] $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y$ positive and Lipschitz, $\tilde R$ positive, convex, Lipschitz and $\tilde R(0)=0$
+\item[$\bullet$] $Q$ is positive convex, l.s.c.\ and $Q(0,0)=0$.
+\end{itemize}
+\vspace{0.5em}
+\textsc{Theorem.} There exist a unique solution $z=(y,\lambda)$ and $p$ with $z(0)=0$, $y\in W^{1,\infty}((0,T);Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$. Moreover these quantities depend continuously on the data with respect to the norms of their spaces.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Numerical approximation}
+
+DA FARE
+\end{frame}
+
+\begin{frame}
+\centering
+\large\textbf{Supplementary material}
+\end{frame}
+
+\begin{frame}
+\frametitle{Abstract existence and uniqueness for constrained doubly nonlinear equations}
+\centering
+\begin{minipage}[c]{0.7\textwidth}
+\textbf{Assumptions}
+\\[0.5ex]
+Let $Z=Y\times\Lambda$ with $Y,\Lambda$ separable and reflexive Banach spaces. Let $H$ a separable and reflexive and Banach space such that $Y\subset H$ with compact and dense inclusion and
+\[
+c_P\norm{y}_Y\le\norm{y}_H+|y|_Y\le C_P\norm{y}_Y.
+\]
+Let $\mathscr{L}\colon H\to\Lambda$ bounded, differentiable with bounded and Lipschitz differential.
+\\[0.5em]
+Let $\Psi(z)=\Psi_0(z)+\frac{1}{2}\dual{\mathcal{A}y,y}$ and $\Phi(p,h)=\Phi_p(p,h)+\frac{1}{2}\dual{\mathcal{D}h,h}$ with
+\begin{itemize}[itemsep=0.5em]
+\item[$\bullet$]  $\Psi_0\colon H\times\Lambda\to\mathbb{R}$ Frèchet differentiable with Lipschitz differential
+\item[$\bullet$] $\mathcal{A}\in\mathscr{L}(Y,Y^*)$ self-adjoint and $\dual{\mathcal{A}y,y}\ge C_A|y|_V^2$
+\item[$\bullet$] $\Phi_0\colon\Lambda^*\times H\to[0,\infty]$ with $\Phi_0(p,\cdot)$ convex, $\Phi_0(p,0)=0$, $|\Phi_0(p,h_1)-\Phi_0(p,h_2)|\le C_\Phi(\norm{p}_\Lambda+1)\norm{h_1-h_2}_H$, $|\Phi_0(p_1,h)-\Phi_0(p_2,h)|\le C_\Phi\norm{p_1-p_2}_{\Lambda^*}\norm{h}_H$, $|\Phi_0(p_1,h_1)-\Phi_0(p_1,h_2)+\Phi_0(p_2,h_2)-\Phi_p(p_2,h_1)|\le C_\Phi\norm{p_1-p_2}_{\Lambda^*}\norm{h_1-h_2}_H$
+\item[$\bullet$] $\mathcal{D}\in\mathscr{L}(H,H^*)$ self-adjoint and $\dual{\mathcal{D}h,h}\ge C_D\norm{h}_H^2$
+\end{itemize}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Abstract existence and uniqueness for constrained doubly nonlinear equations}
+\centering
+\begin{minipage}[c]{0.47\textwidth}
+\textbf{Formulation of the problem}
+\\[0.5ex]
+Let $\mathscr{X}\in H^1((0,T),H^*)$ assigned.
+\\[0.5em]
+\textsc{Problem.} Find $z=(y,\lambda)\colon[0,T]\to Z$ and $p\colon[0,T]\to\Lambda^*$ such that $z(0)=0$ and
+\begin{gather*}
+\begin{multlined}
+D_y\Psi_0(z(t))+\mathcal{A}y(t)+\\
++\partial_h\Phi_0(p(t),\dot y(t))+\mathcal{D}\dot y(t)-\\
+-\mathscr{L}'(y(t))^*p(t)\ni\mathscr{X}(t)
+\end{multlined} \\[0.5em]
+D_\lambda\Psi_0(z(t))+p(t)=0 \\[0.5em]
+\lambda(t)=\mathscr{L}(y(t))
+\end{gather*}
+for a.e.\ $t\in(0,T)$.
+\\[1ex]
+\textbf{Existence and uniqueness theoem}
+\\[0.5ex]
+\textsc{Theorem.} There exist a unique solution $z=(y,\lambda)$ and $p$ with $z(0)=0$, $y\in W^{1,\infty}((0,T);Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$. Moreover these quantities depend continuously on the data with respect to the norms of their spaces.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+\textsc{Sketch of the proof.} Discretize in time.
+\begin{gather*}
+\begin{multlined}
+D_y\Psi_0(z_N^k)+\mathcal{A}y_N^k+\\
++\partial_h\Phi_0\left(p_N^k,\frac{y_N^k-y_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{y_N^k-y_N^{k-1}}{\tau_N}-\\
+-\mathscr{L}'(y_N^k)^*p_N^k\ni\mathscr{X}_N^k
+\end{multlined} \\[0.5em]
+D_\lambda\Psi_0(z_N^k)+p_N^k=0 \\[0.5em]
+\lambda_N^k=\mathscr{L}(y_N^k).
+\end{gather*}
+Substitute the constraint in the first equation and consider the equation in $y_N^k$ for each $p_N^k$ fixed
+\[
+\begin{multlined}
+D_y\Psi_0(\mathscr{L}(y_N^k),y_N^k)+\mathcal{A}y_N^k+\\
++\partial_h\Phi_0\left(p_N^k,\frac{y_N^k-y_N^{k-1}}{\tau_N}\right)+\mathcal{D}\frac{y_N^k-y_N^{k-1}}{\tau_N}-\\
+-\mathscr{L}'(y_N^k)^*p_N^k\ni\mathscr{X}_N^k.
+\end{multlined}
+\]
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Abstract existence and uniqueness for constrained doubly nonlinear equations}
+\centering
+\begin{minipage}[c]{0.47\textwidth}
+Is of the form $F(y)+\partial\Xi(y)\ni0$ with $F\colon H\to H^*$ continuous and $\Xi\colon Y\to[0,\infty]$ convex. Coercivity
+\[
+\lim_{\norm{y}_Y\to\infty}\frac{\Xi(y)+\dual{F(y),y}}{\norm{y}_Y}=\infty
+\]
+if $\tau$ is small thanks to viscosity. Minty--Browder theorem ensures that the solution $y_N^k=\mathcal{U}(p_N^k)$ exists unique for all $p_N^k$.
+\\[0.5em]
+The second equation becomes
+\[
+p_N^k=-D_\lambda\Psi_0(\mathcal{L}(\mathcal{U}(p_N^k)),\mathcal{U}(p_N^k))=\mathcal{T}(p_N^k).
+\]
+Existence is established with Schauder fixed-point theorem.
+\\[0.5em]
+The discrete solution has been constructed. Let $\bar y_N$, $y_N$ be the piecewise constant and affine interpolations of $y_N^k$. Let $\hat y_N$ be the piecewise constant interpolation of $\dot y_N^k$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+%\begin{gather*}
+%\begin{multlined}
+%D_y\Psi_0(z_N^k)+\mathcal{A}y_N^k+\\
+%+\partial_h\Phi_0(p_N^k,\dot y_N^k)+\mathcal{D}\dot y_N^k-\\
+%-\mathscr{L}'(y_N^k)^*p_N^k\ni\mathscr{X}_N^k
+%\end{multlined} \\[0.5em]
+%D_\lambda\Psi_0(z_N^k)+p_N^k=0 \\[0.5em]
+%\lambda_N^k=\mathscr{L}(y_N^k)
+%\end{gather*}
+A priori estimates gives $y_N$ bounded in $W^{1,\infty}((0,T),Y)$ and $\dot{\hat y}_N$ bounded in $L^2((0,T),H)$. By compactness
+\begin{gather*}
+y_N\overset{*}{\rightharpoonup}y\quad\text{in $W^{1,\infty}((0,T),Y)$} \\
+y_N\to y\quad\text{in $C^0([0,T],Y)$} \\
+\bar y_N\to y\quad\text{in $L^2((0,T),Y)$} \\
+\hat y_N\to\dot y\quad\text{in $L^2([0,T],H)$}.
+\end{gather*}
+Letting $\lambda_N=\mathcal{L}(y_N)$, $\bar\lambda_N=\mathcal{L}(\bar y_N)$, $\lambda=\mathcal{L}(y)$, $p_N=-D_\lambda\Psi_0(z_N)$, $\bar p_N=-D_\lambda\Psi_0(\bar z_N)$, $p=-D_\lambda\Psi_0(z)$,
+\begin{gather*}
+\lambda_N\to\lambda\quad\text{in $C^0([0,T],\Lambda)$} \\
+\bar\lambda_N\to\lambda\quad\text{in $L^2((0,T),\Lambda)$} \\
+p_N\to p\quad\text{in $C^0([0,T],\Lambda^*)$} \\
+\bar p_N\to p\quad\text{in $L^2((0,T),\Lambda^*)$}.
+\end{gather*}
+This allows to pass to the limit.\qed
+\end{minipage}
+\end{frame}
+
+\end{document}
