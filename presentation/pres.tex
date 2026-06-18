@@ -795,8 +795,8 @@ Assume that
 \begin{itemize}
 \item[$\bullet$] $L$ is bounded, differentiable and with bounded and Lipschitz derivative
 \item[$\bullet$] $W_d$ is differentiable with Lipschitz derivative
-\item[$\bullet$] $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y$ positive and Lipschitz, $\tilde R$ positive, convex, Lipschitz and $\tilde R(0)=0$
-\item[$\bullet$] $Q$ is positive convex, l.s.c.\ and $Q(0,0)=0$.
+\item[$\bullet$] $R(p,\rho)=Y(p)\tilde R(\rho)$ with $Y$ positive and Lipschitz, $\tilde R\colon\text{DevSym}\to[0,\infty)$ convex, Lipschitz and $\tilde R(0)=0$
+\item[$\bullet$] $Q\colon\text{DevSym}\times\mathbb{R}\to[0,\infty]$ is positive convex, l.s.c.\, Lipschitz on its domain and $Q(0,0)=0$.
 \end{itemize}
 \vspace{0.5em}
 \textsc{Theorem.} There exist a unique solution $z=(y,\lambda)$ and $p$ with $z(0)=0$, $y\in W^{1,\infty}((0,T);Y)$, $\dot y\in C^0([0,T],H)$, $\lambda\in C^0([0,T],\Lambda)$ and $p\in C^0([0,T],\Lambda^*)$. Moreover these quantities depend continuously on the data with respect to the norms of their spaces.
@@ -805,8 +805,320 @@ Assume that
 
 \begin{frame}
 \frametitle{Numerical approximation}
+\centering
+\begin{minipage}[c]{0.5\textwidth}
+\textbf{Contact torque as Lagrange multiplier}
+\\[0.5em]
+Let $\Sigma\subset\Omega$ be an oriented smooth surface. Remove the constraint of continuity of $\dind{u}{n}$ across $\Sigma$ and impose it with the method of Lagrange multipliers
+\[
+\int_\Sigma\left[\!\!\left[\dind{u}{n}\right]\!\!\right]\cdot ldx=0,\quad\dual{\mathcal{M},h}=\int_\Sigma m\cdot\left[\!\!\left[\dind{v}{n}\right]\!\!\right]dx.
+\]
+for all $l\in H^{-1/2}(\Sigma,\mathbb{R}^d)$. Here $m\in H^{-1/2}(\Sigma,\mathbb{R}^d)$ is the contact torque.
+\\[0.5em]
+\begin{center}
+\begin{tikzpicture}[scale=0.67]
+\draw[fill=lime]
+plot [smooth cycle, tension=1] coordinates {
+(-0.05,0) (-1,1) (-3,0.5) (-2.5,-1.5) (-1,-2) (-0.2,-1)
+};
+\node at (-2.9,-1.6) {$\Omega$};
+\draw plot [smooth, tension=0.6] coordinates {
+(-2.3,0.4) (-1.8,0.1) (-1.4,-0.3) (-1.1,-0.8) (-0.9,-1.2) };
+%\draw[help lines] (-3,-2) grid (0,1);
+\node[anchor=north] at (-0.9,-1.2) {$\Sigma$};
+\node[anchor=north,rotate=130] at (-1.4,-0.3) {$\circlearrowright$};
+\node[anchor=north,rotate=-50] at (-1.4,-0.3) {$\circlearrowleft$};
+\node[anchor=north,rotate=140] at (-1.8,0.1) {$\circlearrowright$};
+\node[anchor=north,rotate=-40] at (-1.8,0.1) {$\circlearrowleft$};
+\node[anchor=north,rotate=120] at (-1.1,-0.8) {$\circlearrowright$};
+\node[anchor=north,rotate=-60] at (-1.1,-0.8) {$\circlearrowleft$};
+\node[anchor=west] at (-1.4,0.5) {$Pm$};
+\end{tikzpicture}
+\hspace{0.06\textwidth}
+\begin{tikzpicture}[scale=0.67]
+\draw[fill=lime]
+plot [smooth cycle, tension=1] coordinates {
+(-0.05,0) (-1,1) (-3,0.5) (-2.5,-1.5) (-1,-2) (-0.2,-1)
+};
+\draw plot [smooth, tension=0.6] coordinates {
+(-2.3,0.4) (-1.8,0.1) (-1.4,-0.3) (-1.1,-0.8) (-0.9,-1.2) };
+%\draw[help lines] (-3,-2) grid (0,1);
+\tiny
+\node[anchor=west,rotate=40] at (-1.4,-0.3) {$\leftarrow\rightarrow$};
+\node[anchor=west,rotate=-140] at (-1.4,-0.3) {$\rightarrow\leftarrow$};
+\node[anchor=west,rotate=50] at (-1.8,0.1) {$\leftarrow\rightarrow$};
+\node[anchor=west,rotate=-130] at (-1.8,0.1) {$\rightarrow\leftarrow$};
+\node[anchor=west,rotate=30] at (-1.1,-0.8) {$\leftarrow\rightarrow$};
+\node[anchor=west,rotate=-150] at (-1.1,-0.8) {$\rightarrow\leftarrow$};
+\normalsize
+\node[anchor=west] at (-1.47,0.4) {$m\cdot n$};
+\node at (-2.9,-1.6) {$\Omega$};
+\node[anchor=north] at (-0.9,-1.2) {$\Sigma$};
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.45\textwidth}
+Let $Y_\Sigma=\{y=(u,\pi,\alpha)\}$ with $u\in H^1(\Omega,\mathbb{R}^d)\cap H^2(\Omega\setminus\Sigma,\mathbb{R}^d)$ and $\pi$, $\alpha$ as before.
+\\[0.5em]
+\textsc{Problem.} Find $z=(y,\lambda)\colon[0,T]\to Y_\Sigma\times\Lambda$ and $p\colon[0,T]\to\Lambda^*$ such that $z(0)=0$ and
+\begin{gather*}
+\begin{multlined}
+D_y\Psi_0(z(t))+\mathcal{A}y(t)+\\
++\partial_h\Phi_0(p(t),\dot y(t))+\mathcal{D}\dot y(t)-\\
+-\mathscr{L}'(y(t))^*p(t)\ni\mathscr{X}(t)+\mathcal{M}(t)
+\end{multlined} \\[0.5em]
+D_\lambda\Psi_0(z(t))+p(t)=0 \\[0.5em]
+\lambda(t)=\mathscr{L}(y(t)) \\[0.5em]
+\left[\!\!\left[\dind{u}{n}(t)\right]\!\!\right]=0\quad\text{on $\Sigma$}
+\end{gather*}
+for a.e.\ $t\in(0,T)$.
+\end{minipage}
+\end{frame}
 
-DA FARE
+\begin{frame}
+\frametitle{Numerical approximation}
+\centering
+\begin{minipage}[c]{0.4\textwidth}
+\textbf{Finite element spaces}
+\\[0.5em]
+Fix a triangulation $\mathcal{T}_l=\{K\}$ and define $\Sigma_l=\Omega\cap\bigcup_{K\in\mathcal{T}_l}\partial K$. Let
+\begin{align*}
+u\in H^1_0(\Omega,\mathbb{R}^2)&\quad\text{P2} \\
+\pi\in H^1(\Omega,\text{DevSym})\}&\quad\text{P1} \\
+\alpha\in H^1(\Omega)&\quad\text{P1} \\
+\lambda\in L^2(\Omega)&\quad\text{P0} \\
+p\in L^2(\Omega)&\quad\text{P0} \\
+m\in H^{-1/2}(\Sigma_l,\mathbb{R}^d)&\quad\text{P0}
+\end{align*}
+and consider the finite element spaces $Y_l=\{y=(u,\pi,\alpha)\}$, $\Lambda_l=\{\lambda\}$, $P_l=\{p\}$ and $M_l=\{m\}$.
+\\[0em]
+\begin{center}
+\begin{tikzpicture}[scale=0.3]
+\draw[fill=yellow] (-0.4,1) -- (3,0) -- (2,3) -- cycle;
+\draw[fill=yellow] (3,0) -- (2,3) -- (5.5,2) -- cycle;
+\node[anchor=north,rotate=-75] at (2.5,1.5) {$\circlearrowright$};
+\node[anchor=north,rotate=105] at (2.5,1.5) {$\circlearrowleft$};
+\end{tikzpicture}
+\hspace{0.06\textwidth}
+\begin{tikzpicture}[scale=0.3]
+\draw[fill=yellow] (-0.4,1) -- (3,0) -- (2,3) -- cycle;
+\draw[fill=yellow] (3,0) -- (2,3) -- (5.5,2) -- cycle;
+\node[anchor=west,rotate=-165] at (2.5,1.5) {\tiny$\leftarrow\rightarrow$};
+\node[anchor=west,rotate=15] at (2.5,1.5) {\tiny$\rightarrow\leftarrow$};
+\end{tikzpicture}
+\end{center}
+\vspace{0.5em}
+Notice that $u\in H^2_0(\Omega\setminus\Sigma_l,\mathbb{R}^2)$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.55\textwidth}
+\textbf{Numerical scheme}
+\\[0.5em]
+Fix time steps $\tau^k$ with $k\in\{1,\dots,N\}$.
+\\[0.5em]
+\textsc{Problem.} Find $z_\tau^k=(y_\tau^k,\lambda_\tau^k)\in Y_l\times\Lambda_l$, $p_\tau^k\in P_l$ and $m_\tau^k\in M_l$ such that $z^0=0$ and
+\begin{gather*}
+\begin{multlined}
+\Big\langle D_y\Psi_0(z^k)+\mathcal{A}y^k+\\
++D_h\Phi_0\left(p^k,\frac{y^k-y^{k-1}}{\tau^k}\right)+\mathcal{D}\frac{y^k-y^{k-1}}{\tau^k}-\\
+-\mathscr{L}'(y^k)^*p^k-\mathscr{X}^k-\mathcal{M}^k,h\Big\rangle=0
+\end{multlined} \\[0.5em]
+\dual{D_\lambda\Psi_0(z^k)+p^k,\mu}=0 \\[0.5em]
+\dual{\lambda^k-\mathscr{L}(y^k),q}=0 \\[0.5em]
+\Big\langle l,\left[\!\!\left[\dind{u^k}{n}\right]\!\!\right]\Big\rangle=0
+\end{gather*}
+for all $h\in Y_l$, $\mu\in\Lambda_l$, $q\in P_l$, $l\in M_l$ and $k\in\{1,\dots,N\}$.
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Numerical approximation}
+\centering
+\begin{minipage}[c]{0.4\textwidth}
+\textbf{Validation}
+\\[0.5em]
+Validate comparing with an analytical solution.
+\\[0em]
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[fill=lime](-2,-1)rectangle(2,1);
+\foreach\x in{-2,-1.3333,-0.6667,0,0.6667,1.3333,2}{
+\begin{scope}[shift={(\x,-1)}]
+\draw[thin](0,0)--(-0.15,-0.2)--(0.15,-0.2)--cycle;
+\draw[thin](-0.08,-0.24)circle(0.04);
+\draw[thin](0.08,-0.24)circle(0.04);
+\end{scope}
+}
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\begin{scope}[shift={(-2,\y)}]
+\draw[thin](0,0)--(-0.2,0.15)--(-0.2,-0.15)--cycle;
+\draw[thin](-0.24,0.08)circle(0.04);
+\draw[thin](-0.24,-0.08)circle(0.04);
+\end{scope}
+}
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\begin{scope}[shift={(2,\y)}]
+\draw[thin](0,0)--(0.2,0.15)--(0.2,-0.15)--cycle;
+\draw[thin](0.24,0.08)circle(0.04);
+\draw[thin](0.24,-0.08)circle(0.04);
+\end{scope}
+}
+\draw[very thin](-2.28,-1)--(-2.28,1);
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\draw[very thin,->](-2.78,\y)--(-2.28,\y);
+}
+\draw[very thin](2.28,-1)--(2.28,1);
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\draw[very thin,->](2.78,\y)--(2.28,\y);
+}
+\footnotesize
+\node[anchor=north east]at(2,1){$(2,1)$};
+\node[anchor=south east]at(2,-1){$(2,-1)$};
+\node[anchor=south west]at(-2,-1){$(-2,-1)$};
+\node[anchor=north west]at(-2,1){$(-2,1)$};
+\end{tikzpicture}
+\end{center}
+\vspace{0.5em}
+The solution is spatially homogeneous.
+\\[0.5em]
+Regularize the dissipation potentials with the Yosida approximation
+\begin{gather*}
+\tilde R_\eta(\rho)=\inf_{\xi\in\text{DevSym}}\left[\frac{|\rho-\xi|^2}{2\eta}+|\xi|\right] \\[0.5em] Q_\eta=\frac{1}{2\eta}\text{dist}_{\dom Q}(\rho,\beta)^2.
+\end{gather*}
+with $\eta>0$.
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.55\textwidth}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$t$},ylabel={$\alpha$},xmin=0,xmax=60,width=0.81\textwidth,legend pos=north west,legend style={font=\tiny}]
+\addplot[color=black,solid,thick]table[x index=0,y index=1]{../text/figures/validation/3.dat};
+\addlegendentry{exact};
+\addplot[color=black,dotted]table[x index=0,y index=2]{../text/figures/validation/3.dat};
+\addlegendentry{$\eta=10^{-3}$};
+\addplot[color=black,dashdotdotted]table[x index=0,y index=2]{../text/figures/validation/4.dat};
+\addlegendentry{$\eta=10^{-4}$};
+\addplot[color=black,dashdotted]table[x index=0,y index=2]{../text/figures/validation/5.dat};
+\addlegendentry{$\eta=10^{-5}$};
+\addplot[color=black,dashed]table[x index=0,y index=2]{../text/figures/validation/6.dat};
+\addlegendentry{$\eta=10^{-6}$};
+\addplot[color=black,loosely dashed]table[x index=0,y index=2]{../text/figures/validation/7.dat};
+\addlegendentry{$\eta=10^{-7}$};
+\end{axis}
+\end{tikzpicture}
+\vspace{0em}
+\begin{tikzpicture}
+\begin{axis}[xlabel={$t$},ylabel={$p$},xmin=0,xmax=60,width=0.81\textwidth,legend pos=south east,,legend style={font=\tiny}]
+\addplot[color=black,solid,thick]table[x index=0,y index=5]{../text/figures/validation/3.dat};
+\addlegendentry{exact};
+\addplot[color=black,dotted]table[x index=0,y index=6]{../text/figures/validation/3.dat};
+\addlegendentry{$\eta=10^{-3}$};
+\addplot[color=black,dashdotdotted]table[x index=0,y index=6]{../text/figures/validation/4.dat};
+\addlegendentry{$\eta=10^{-4}$};
+\addplot[color=black,dashdotted]table[x index=0,y index=6]{../text/figures/validation/5.dat};
+\addlegendentry{$\eta=10^{-5}$};
+\addplot[color=black,dashed]table[x index=0,y index=6]{../text/figures/validation/6.dat};
+\addlegendentry{$\eta=10^{-6}$};
+\addplot[color=black,loosely dashed]table[x index=0,y index=6]{../text/figures/validation/7.dat};
+\addlegendentry{$\eta=10^{-7}$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{frame}
+
+\begin{frame}
+\frametitle{Numerical approximation}
+\centering
+\begin{minipage}[c]{0.5\textwidth}
+\textbf{An example}
+\\[0.5em]
+The aim is to show the formation of a shear band.
+\\[-0.5em]
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[fill=lime](-2,-1)rectangle(2,1);
+\foreach\x in{-2,-1.3333,-0.6667,0,0.6667,1.3333,2}{
+\begin{scope}[shift={(\x,-1)}]
+\draw[thin](0,0)--(-0.15,-0.2)--(0.15,-0.2)--cycle;
+\draw[thin](-0.08,-0.24)circle(0.04);
+\draw[thin](0.08,-0.24)circle(0.04);
+\end{scope}
+}
+\foreach\y in{-1,-0.3333,0.3333,1}{
+\begin{scope}[shift={(-2,\y)}]
+\draw[thin](0,0)--(-0.2,0.15)--(-0.2,-0.15)--cycle;
+\draw[thin](-0.24,0.08)circle(0.04);
+\draw[thin](-0.24,-0.08)circle(0.04);
+\end{scope}
+}
+\foreach\x in{0,0.6667,1.3333,2}{
+\begin{scope}[shift={(\x,1)}]
+\draw[thin](0,0)--(-0.15,0.2)--(0.15,0.2)--cycle;
+\draw[thin](-0.08,0.24)circle(0.04);
+\draw[thin](0.08,0.24)circle(0.04);
+\end{scope}
+}
+\draw[very thin](0,1.28)--(2,1.28);
+\foreach\x in{0,0.6667,1.3333,2}{
+\draw[very thin,->](\x,1.78)--(\x,1.28);
+}
+\footnotesize
+\node[anchor=north east]at(2,1){$(2,1)$};
+\node[anchor=south east]at(2,-1){$(2,-1)$};
+\node[anchor=south west]at(-2,-1){$(-2,-1)$};
+\node[anchor=north west]at(-2,1){$(-2,1)$};
+\node[anchor=north]at(0,1){$(0,1)$};
+\end{tikzpicture}
+\end{center}
+\vspace{0.5em}
+\begin{center}
+\includegraphics[trim=18mm 110mm 18mm 100mm, clip, width=0.6\textwidth]{../text/figures/mesh.pdf}
+\end{center}
+\vspace{0.5em}
+Let $\zeta>0$ a multiplier of the gradient coefficients $\mathfrak{a}$, $\mathfrak{b}$, $\mathfrak{c}$.
+\\[0.5em]
+Choose
+\[
+a=\sqrt{2}\sin\phi\quad
+b=\sqrt{2}\sin\psi\quad
+f_0=\sqrt{2}c\cos\phi
+\]
+with $c>0$ the cohesion, $\phi,\psi\in[0,90^\circ)$ the friction and dilatancy angle. 
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.45\textwidth}
+\begin{center}
+\footnotesize
+\begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (image) at (0,0) {\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.8\textwidth]{../text/figures/alpha4.pdf}};
+  \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \node[text=white, anchor=south] at (0.25,0.5) {$\zeta=0.7$};
+\node[text=white, anchor=north] at (0.25,0.5) {$\phi=30^\circ$};
+\node[text=white, anchor=north] at (0.25,0.35) {$\psi=5^\circ$};
+  \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (image) at (0,0) {\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.8\textwidth]{../text/figures/alpha2.pdf}};
+  \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \node[text=white, anchor=south] at (0.25,0.5) {$\zeta=2$};
+\node[text=white, anchor=north] at (0.25,0.5) {$\phi=30^\circ$};
+\node[text=white, anchor=north] at (0.25,0.35) {$\psi=5^\circ$};
+  \end{scope}
+\end{tikzpicture}
+
+\begin{tikzpicture}
+  \node[anchor=south west, inner sep=0] (image) at (0,0) {\includegraphics[trim=18mm 95mm 18mm 90mm, clip, width=0.8\textwidth]{../text/figures/alpha.pdf}};
+  \begin{scope}[x={(image.south east)},y={(image.north west)}]
+    \node[text=white, anchor=south] at (0.25,0.5) {$\zeta=2$};
+\node[text=white, anchor=north] at (0.25,0.5) {$\phi=0^\circ$};
+\node[text=white, anchor=north] at (0.25,0.35) {$\psi=0^\circ$};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
 \end{frame}
 
 \begin{frame}

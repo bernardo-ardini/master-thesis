@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  17 JUN 2026 03:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2025/dev/Debian) (preloaded format=pdflatex 2026.3.27)  18 JUN 2026 04:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2207,15 +2207,120 @@ LaTeX Font Info:    Font shape `U/zeus/m/n' will be
 [16
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 877--877
+
+ []
+
+
 
 [17
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 933--933
+
+ []
+
+
 
 [18
 
 ]
-Underfull \hbox (badness 1009) in paragraph at lines 837--837
+Underfull \hbox (badness 10000) in paragraph at lines 1029--1029
+
+ []
+
+LaTeX Font Info:    Font shape `T1/zpltlf/m/n' will be
+(Font)              scaled to size 6.0pt on input line 1029.
+LaTeX Font Info:    Font shape `OT1/minzpl/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `OML/npxmi/m/it' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `LMS/npxsy/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `LMX/npxexx/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/npxmia/m/it' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/npxsym/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/npxsyc/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/npxexa/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/zeur/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/zeus/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+LaTeX Font Info:    Font shape `U/euf/m/n' will be
+(Font)              scaled to size 6.5pt on input line 1029.
+PGFPlots: reading {../text/figures/validation/3.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/3.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/4.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/5.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/6.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/7.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/3.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/3.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/4.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/5.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/6.dat}
+Missing character: There is no ; in font nullfont!
+PGFPlots: reading {../text/figures/validation/7.dat}
+Missing character: There is no ; in font nullfont!
+
+Overfull \vbox (12.69275pt too high) detected at line 1029
+ []
+
+
+
+[19
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 1122--1122
+
+ []
+
+<../text/figures/mesh.pdf, id=173, 614.295pt x 794.97pt>
+File: ../text/figures/mesh.pdf Graphic file (type pdf)
+<use ../text/figures/mesh.pdf>
+Package pdftex.def Info: ../text/figures/mesh.pdf  used on input line 1122.
+(pdftex.def)             Requested size: 104.1609pt x 40.18172pt.
+<../text/figures/alpha4.pdf, id=175, 614.295pt x 794.97pt>
+File: ../text/figures/alpha4.pdf Graphic file (type pdf)
+<use ../text/figures/alpha4.pdf>
+Package pdftex.def Info: ../text/figures/alpha4.pdf  used on input line 1122.
+(pdftex.def)             Requested size: 124.99144pt x 65.58684pt.
+<../text/figures/alpha2.pdf, id=177, 614.295pt x 794.97pt>
+File: ../text/figures/alpha2.pdf Graphic file (type pdf)
+<use ../text/figures/alpha2.pdf>
+Package pdftex.def Info: ../text/figures/alpha2.pdf  used on input line 1122.
+(pdftex.def)             Requested size: 124.99144pt x 65.58684pt.
+<../text/figures/alpha.pdf, id=179, 614.295pt x 794.97pt>
+File: ../text/figures/alpha.pdf Graphic file (type pdf)
+<use ../text/figures/alpha.pdf>
+Package pdftex.def Info: ../text/figures/alpha.pdf  used on input line 1122.
+(pdftex.def)             Requested size: 124.99144pt x 65.58684pt.
+
+
+[20
+
+ <../text/figures/mesh.pdf> <../text/figures/alpha4.pdf> <../text/figures/alpha
+2.pdf> <../text/figures/alpha.pdf>]
+
+[21
+
+]
+Underfull \hbox (badness 1009) in paragraph at lines 1149--1149
 \OT1/minzpl/m/n/8 0$\T1/zpltlf/m/n/8 (+20) , $\LMS/npxsy/m/n/8 j\U/zeur/m/n/8 ^
 ^H[]\LMS/npxsy/m/n/8 ¹\U/zeur/m/n/8 p\OT1/minzpl/m/n/8 , \U/zeur/m/n/8 h[]\LMS/
 npxsy/m/n/8 º ^^@ \U/zeur/m/n/8 ^^H[]\LMS/npxsy/m/n/8 ¹\U/zeur/m/n/8 p\OT1/minz
@@ -2227,20 +2332,20 @@ S/npxsy/m/n/8 k[]$\T1/zpltlf/m/n/8 (+20) ,
 
 
 
-[19
+[22
 
 ]
 
-[20
+[23
 
 ]
-Underfull \hbox (badness 4940) in paragraph at lines 931--931
+Underfull \hbox (badness 4940) in paragraph at lines 1243--1243
 []\T1/zpltlf/m/n/8 (+20) A pri-ori es-ti-mates gives $\U/zeur/m/n/8 y[]$ \T1/zp
 ltlf/m/n/8 (+20) bounded
  []
 
 
-Underfull \hbox (badness 3323) in paragraph at lines 931--931
+Underfull \hbox (badness 3323) in paragraph at lines 1243--1243
 \T1/zpltlf/m/n/8 (+20) in $\U/zeur/m/n/8 W[]\LMS/npxsy/m/n/8 ¹¹\OT1/minzpl/m/n/
 8 0, \U/zeur/m/n/8 T\LMS/npxsy/m/n/8 º\OT1/minzpl/m/n/8 , \U/zeur/m/n/8 Y\LMS/n
 pxsy/m/n/8 º$ \T1/zpltlf/m/n/8 (+20) and $[]\U/zeur/m/n/8 y[]$ \T1/zpltlf/m/n/8
@@ -2249,7 +2354,7 @@ pxsy/m/n/8 º$ \T1/zpltlf/m/n/8 (+20) and $[]\U/zeur/m/n/8 y[]$ \T1/zpltlf/m/n/8
 
 
 
-[21
+[24
 
 ]
 \tf@nav=\write7
@@ -2273,13 +2378,13 @@ Package logreq Info: Writing requests to 'pres.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 56481 strings out of 473197
- 1279936 string characters out of 5718605
- 2143253 words of memory out of 5000000
- 78638 multiletter control sequences out of 15000+600000
- 648941 words of font info for 221 fonts, out of 8000000 for 9000
+ 57034 strings out of 473197
+ 1294610 string characters out of 5718605
+ 2216450 words of memory out of 5000000
+ 79155 multiletter control sequences out of 15000+600000
+ 660607 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,23n,123p,1001b,1108s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,23n,123p,1001b,2288s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/newpx/NewPXMI_gnu.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/sha
 re/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurm5.pfb></usr/share/t
@@ -2292,10 +2397,10 @@ f-dist/fonts/type1/public/newpx/pxmiaX.pfb></usr/share/texlive/texmf-dist/fonts
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newpx/zplb.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/newpx/zplr.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/newpx/zplri.pfb>
-Output written on pres.pdf (21 pages, 450959 bytes).
+Output written on pres.pdf (24 pages, 657653 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 43 named destinations out of 1000 (max. 500000)
- 30264 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 322 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
+ 49 named destinations out of 1000 (max. 500000)
+ 32868 words of extra memory for PDF output out of 35830 (max. 10000000)
 
