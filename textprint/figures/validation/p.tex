@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+\begin{axis}[xlabel={$t$},ylabel={$p$},xmin=0,xmax=60,width=0.44\textwidth,legend pos=south east]
+\addplot[color=black,solid,thick]table[x index=0,y index=5]{figures/validation/3.dat};
+\addlegendentry{exact};
+\addplot[color=black,dotted]table[x index=0,y index=6]{figures/validation/3.dat};
+\addlegendentry{$\eta=10^{-3}$};
+\addplot[color=black,dashdotdotted]table[x index=0,y index=6]{figures/validation/4.dat};
+\addlegendentry{$\eta=10^{-4}$};
+\addplot[color=black,dashdotted]table[x index=0,y index=6]{figures/validation/5.dat};
+\addlegendentry{$\eta=10^{-5}$};
+\addplot[color=black,dashed]table[x index=0,y index=6]{figures/validation/6.dat};
+\addlegendentry{$\eta=10^{-6}$};
+\addplot[color=black,loosely dashed]table[x index=0,y index=6]{figures/validation/7.dat};
+\addlegendentry{$\eta=10^{-7}$};
+\end{axis}
+\end{tikzpicture}

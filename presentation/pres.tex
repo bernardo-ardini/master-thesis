@@ -63,6 +63,8 @@
 
 \setbeamerfont{block title}{series=\bfseries,size=\normalsize}
 \setbeamerfont{alerted text}{series=\bfseries,size=\normalsize}
+\setbeamerfont{caption name}{shape=\scshape,size=\normalsize}
+\setbeamercolor{caption name}{fg=black}
 
 \setbeamertemplate{navigation symbols}{}
 
@@ -175,9 +177,21 @@ Bernardo Ardini \\
 \end{frame}
 
 \begin{frame}
-\frametitle{Aims and results of the thesis}
-
-DA FARE
+\frametitle{Aims of the thesis}
+\centering
+\begin{minipage}[c]{0.47\textwidth}
+\begin{figure}
+\includegraphics[width=\textwidth]{considere.png}
+\caption{\normalsize Illustration of necking from A. Considère's mémoire \emph{"Mémoire sur l'emploi du fer et de l'acier dans les constructions"} (1885).}
+\end{figure}
+\end{minipage}
+\hspace{0.02\textwidth}
+\begin{minipage}[c]{0.47\textwidth}
+\begin{figure}
+\includegraphics[width=0.6\textwidth]{shear-band.png}
+\caption{\normalsize Example of a shear band in geomaterials.}
+\end{figure}
+\end{minipage}
 \end{frame}
 
 \begin{frame}
@@ -346,10 +360,10 @@ for a.e.\ $t\in(0,T)$
 \end{minipage}
 \end{frame}
 
-\begin{frame}
-\centering
-\large\textbf{Necking of a metallic cylindrical bar}
-\end{frame}
+%\begin{frame}
+%\centering
+%\large\textbf{Necking of a metallic cylindrical bar}
+%\end{frame}
 
 \begin{frame}
 \centering
@@ -362,7 +376,12 @@ for a.e.\ $t\in(0,T)$
 \begin{minipage}[c]{0.6\textwidth}
 \textbf{Kinematics}
 \\[0.5em]
-The space of configurations is $Z=\{(u,E_p)\}$ with the displacement $u\in H^1(\Omega,\mathbb{R}^d)$ and the plastic strain $E_p\in H^1(\Omega,\text{Sym})$. The elastic strain is $E_e=Eu-E_p$.
+The space of configurations is $Z=\{(u,E_p)\}$ with
+\begin{itemize}[topsep=0.5em,itemsep=0.5em]
+\item[] the displacement $u\in H^1(\Omega,\mathbb{R}^d)$
+\item[] the plastic strain $E_p\in H^1(\Omega,\text{Sym})$.
+\end{itemize}
+The elastic strain is $E_e=Eu-E_p$.
 \\[0.5em]
 The generic rate is $w=(v,V_p)$ and the elastic rate is $V_e=Ev-V_p$.
 \\[1em]
@@ -370,9 +389,9 @@ The generic rate is $w=(v,V_p)$ and the elastic rate is $V_e=Ev-V_p$.
 \\[0.5ex]
 The internal generalized force is
 \[
-\dual{\mathcal{I},w}=\int_\Omega\left[T_e:V_e+T_p:\grad V_p+K_p\threedots\grad V_p\right]dx
+\dual{\mathcal{I},w}=\int_\Omega\left[T_e:V_e+T_p:V_p\right]dx
 \]
-with $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{Sym}$ the plastic force and $K_p\colon\Omega\to\text{Sym}\otimes\mathbb{R}$ the plastic stress. The external generalized force is
+with $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{Sym}$ the plastic force. The external generalized force is
 \[
 \dual{\mathcal{X},w}=\int_\Omega f\cdot vdx+\int_{\partial\Omega}h\cdot vdx.
 \]
@@ -401,41 +420,43 @@ plot [smooth cycle, tension=1] coordinates {
 \[
 \begin{gathered}
 \diver T_e+f=0\\
-T_e-T_p+\diver K_p=0
+T_e-T_p=0
 \end{gathered}
 \quad\text{in $\Omega$}
 \]
-and $T_en=h$, $K_pn=0$ in $\partial\Omega$.
+and $T_en=h$ in $\partial\Omega$.
 \end{minipage}
 \end{frame}
 
 \begin{frame}
 \frametitle{Classical approach}
 \centering
-\begin{minipage}[c]{0.45\textwidth}
+\begin{minipage}[c]{0.49\textwidth}
 \textbf{Constitutive relations}
 \\[0.5ex]
 Let the free energy
 \[
-\Psi(z)=\int_\Omega\left[\frac{1}{2}\mathfrak{C}E_e:E_e+\frac{1}{2}\mathfrak{b}|K_p|^2\right]dx
-\]
-that implies
-\[
-T_e=\mathfrak{C}E_e\quad\text{and}\quad K_p=\mathfrak{b}\grad E_p.
+\begin{gathered}
+\Psi(z)=\int_\Omega\frac{1}{2}\mathfrak{C}E_e:E_edx, \\
+\text{so that}\quad T_e=\mathfrak{C}E_e.
+\end{gathered}
 \]
 \textbf{Yield condition and non-associated flow rule}
 \\[0.5em]
-Fix $f,g\colon\text{Sym}\to\mathbb{R}$ convex. Let $C=\{f\le0\}$ and $L=\{g\le0\}$.
+Fix $f,g\colon\text{Sym}\to\mathbb{R}$ convex. Let $C=\{f\le0\}$ and $L(T_p)=\{g\le g(T_p)\}$.
 \\[0.5em]
 Impose that $T_p\in C$. The yield condition is $T_p\in\partial C$ and the flow rule is
 \[
 \dot E_p\in
 \begin{cases}
 \{0\} & \text{if $T_p\in\inter C$} \\
-N_{L}(T_p) & \text{if $T_p\in\partial C$}.
+N_{L(T_p)}(T_p) & \text{if $T_p\in\partial C$}.
 \end{cases}
 \]
-\textsc{Proposition}. If $f=g$, is equivalent to $T_p\in\partial\sigma_C(\dot E_p)$ with $\sigma_C(\dot E_p)=\sup_{T_p\in C}T_p:\dot E_p$.
+\textsc{Proposition}. If $f=g$, is equivalent to $T_p\in\partial\sigma_C(\dot E_p)$ with $\sigma_C(\dot E_p)=\sup_{T_p\in C}T_p:\dot E_p$ so that
+\[
+\Phi(w)=\int_\Omega\sigma_C(V_p)dx.
+\].
 \end{minipage}
 \hspace{0.02\textwidth}
 \begin{minipage}[c]{0.45\textwidth}
@@ -473,14 +494,21 @@ with $\gamma f(T_p)=0$, $f(T_p)\le0$ and $\gamma\ge0$.
 \begin{frame}
 \frametitle{Proposal of an alternative approach}
 \centering
-\begin{minipage}[c]{0.53\textwidth}
+\begin{minipage}[c]{0.55\textwidth}
 \textbf{Kinematics}
 \\[0.5em]
-The space of configurations is $Z=\{(u,\pi,\alpha,\lambda)\}$ with the displacement $u\in H^2(\Omega,\mathbb{R}^d)$ the deviatoric plastic strain $\pi\in H^1(\Omega,\text{DevSym})$, the damage variable $\alpha\in H^1(\Omega)$ and the volumetric plastic strain $\lambda\in L^2(\Omega)$. The total plastic strain is $E_p=\pi+\frac{\lambda}{d}$ and the elastic strain is $E_e=Eu-E_p$.
+The space of configurations is $Z=\{(u,\pi,\alpha,\lambda)\}$
+\begin{itemize}[topsep=0.4em,itemsep=0.4em]
+\item[] the displacement $u\in H^1(\Omega,\mathbb{R}^d)$
+\item[] the deviatoric plastic strain $\pi\in H^1(\Omega,\text{DevSym})$
+\item[] the damage variable $\alpha\in H^1(\Omega)$
+\item[] the volumetric plastic strain $\lambda\in L^2(\Omega)$
+\end{itemize}
+Let $E_p=\pi+\frac{\lambda}{d}$ and $E_e=Eu-E_p$.
 \\[0.5em]
 The generic rate is $w=(v,\rho,\beta,\mu)$, the plastic rate is $V_p=\rho+\frac{\mu}{d}I$ and the elastic rate is $V_e=Ev-V_p$.
 \\[0.5em]
-Add the kinematic constrain $z\in K=\{\lambda=L(\alpha)\}$ with $L\colon\mathbb{R}\to\mathbb{R}$
+Add the constrain $z\in K=\{\lambda=L(\alpha)\}$ with $L\colon\mathbb{R}\to\mathbb{R}$
 \[
 \int_\Omega(\lambda-L(\alpha))qdx=0\quad\text{for all $q\in L^2(\Omega)$}.
 \]
@@ -540,7 +568,7 @@ The internal generalized force is
 \[
 \dual{\mathcal{I},w}=
 \begin{multlined}[t]
-\int_\Omega\left[T:Ev+K\threedots\grad^2u\right]dx+\\
+\int_\Omega\left[T:Ev+K\threedots\grad^2v\right]dx+\\
 +\int_\Omega\left[T_e:V_e+T_p:\rho+K_p\threedots\grad\rho\right]dx+\\
 +\int_\Omega\left[\tau\beta+\kappa\cdot\grad\beta\right]dx
 \end{multlined}
@@ -573,9 +601,8 @@ The equilibrium is $-\mathcal{I}+\mathcal{X}+\mathcal{P}=0$.
 -\tau+\diver\kappa-L'(\alpha)p=0 \\
 p=-\frac{\tr T_e}{d}
 \end{gathered}
-\;\text{in $\Omega$}
 \]
-and $K_pn=0$, $\kappa\cdot n$ in $\partial\Omega$.
+in $\Omega$ and $T_en=h$, $K_pn=0$, $\kappa\cdot n$ in $\partial\Omega$.
 \end{minipage}
 \end{frame}
 
@@ -621,7 +648,7 @@ and
 \begin{gather*}
 L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right] \\
 W_d(\alpha)=f_0\alpha_1\left[1-\exp\left(-\frac{\alpha}{\alpha_1}\right)\right] \\
-R(p,\rho)=Yp|\rho| \\
+R(p,\rho)=Yp^+|\rho| \\
 Q(\rho,\beta)=\begin{cases}
 0 & \text{if $\beta\ge|\rho|$} \\
 \infty & \text{if $\beta<|\rho|$}.
@@ -690,7 +717,7 @@ The viscous and gradient terms regularize the solution.
 \begin{gather*}
 L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right] \\
 W_d(\alpha)=f_0\alpha_1\left[1-\exp\left(-\frac{\alpha}{\alpha_1}\right)\right] \\
-R(p,\rho)=Yp|\rho| \\
+R(p,\rho)=Yp^+|\rho| \\
 Q(\rho,\beta)=\begin{cases}
 0 & \text{if $\beta\ge|\rho|$} \\
 \infty & \text{if $\beta<|\rho|$}.
@@ -722,7 +749,7 @@ Thus $\dot\alpha\ge|\dot\pi|$.
 \begin{minipage}[c]{0.57\textwidth}
 \textbf{Recovering the Ducker--Prager model}
 \\[0.5ex]
-\textsc{Proposition}. Letting $L(\alpha)=b\alpha$, $W_d=f_0\alpha$ and $Y=a-b$ we recover the Ducker--Prager model.
+\textsc{Proposition}. Letting $L(\alpha)=b\alpha$, $W_d(\alpha)=f_0\alpha$ and $Y=a-b$ we recover the Ducker--Prager model.
 \\[0.5ex]
 \textsc{Sketch of the proof}. For simplicity disregard viscous and gradient terms. Recall the balance
 \begin{gather*}
