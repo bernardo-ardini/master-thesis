@@ -243,7 +243,7 @@ Gradient elastoplasticity
 \\[0.5em]
 The systems are the elements $z$ of a separable and reflexive Banach space $Z$.
 \\[0.5em]
-Generalized forces are the elements $\mathcal{F}$ of the dual space $Z^*$.
+Generalized forces are the elements $\mathcal{F}$ of the dual space $Z^*$. Given a virtual rate $w\in Z$ the corresponding power is $\dual{\mathcal{F},w}$.
 }\\[1em]%
 \onslide<2->{%
 \textbf{Equilibrium}
@@ -283,7 +283,7 @@ Internal forces are related to the evolution $z\colon[0,T]\to Z$ with a constitu
 \end{minipage}
 $\qquad\implies\qquad$
 \begin{minipage}[c]{0.4\textwidth}
-Doubly nonlinear equation
+Doubly nonlinear inclusion
 \[
 D\Psi(z(t))+\partial\Phi(\dot z(t))\ni\mathcal{X}(t)
 \]
@@ -316,11 +316,11 @@ The generic rate is $w=(v,V_p)$ and the elastic rate is $V_e=Ev-V_p$.
 \onslide<2->{%
 \textbf{Statics}
 \\[0.5ex]
-The internal generalized force is
+The internal virtual power is
 \[
 \dual{\mathcal{I},w}=\int_\Omega\left[T_e:V_e+T_p:V_p\right]dx
 \]
-with $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{Sym}$ the plastic force. The external generalized force is
+with $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{Sym}$ the plastic force. The external virtual power is
 \[
 \dual{\mathcal{X},w}=\int_\Omega f\cdot vdx+\int_{\partial\Omega}h\cdot vdx.
 \]
@@ -377,8 +377,9 @@ and $T_en=h$ in $\partial\Omega$.
 \begin{frame}
 \frametitle{Classical approach}
 \centering
-\begin{minipage}[c]{0.49\textwidth}
+\begin{minipage}[c]{0.51\textwidth}
 \onslide<1->{
+\linespread{0.8}\selectfont
 \textbf{Constitutive relations}
 \\[0.5ex]
 Let the free energy
@@ -392,14 +393,17 @@ Let the free energy
 \onslide<1->{%
 \textbf{Yield condition and non-associated flow rule}
 \\[0.5em]
-Fix $f,g\colon\text{Sym}\to\mathbb{R}$ convex. Let $C=\{f\le0\}$ and $L(T_p)=\{g\le g(T_p)\}$.
-\\[0.5em]
+Fix $f,g\colon\text{Sym}\to\mathbb{R}$ convex. Let
+\begin{gather*}
+C=\{A\in\text{Sym}|f(A)\le0\}\\
+B(T_p)=\{A\in\text{Sym}|g(A)\le g(T_p)\}.
+\end{gather*}
 Impose that $T_p\in C$. The yield condition is $T_p\in\partial C$ and the flow rule is
 \[
 \dot E_p\in
 \begin{cases}
 \{0\} & \text{if $T_p\in\inter C$} \\
-N_{L(T_p)}(T_p) & \text{if $T_p\in\partial C$}.
+N_{B(T_p)}(T_p) & \text{if $T_p\in\partial C$}.
 \end{cases}
 \]
 \textsc{Proposition}. If $f=g$, is equivalent to $T_p\in\partial\sigma_C(\dot E_p)$ with $\sigma_C(\dot E_p)=\sup_{T_p\in C}T_p:\dot E_p$ so that
@@ -431,6 +435,7 @@ with $0\le b\le a$.
 \draw[-latex] ({0.5},{-1.0/2.1333*(0.5-1.5)})--++(0.15,0.15*6);
 \node[anchor=west] at ({0.5+0.15},{-1.0/2.1333*(0.5-1.5)+0.15*6}) {$(\tr\dot E_p,|\dev\dot E_p|)$};
 \node[anchor=north] at (1.5,0) {$\frac{f_0}{a}$};
+\node at (-1,0.6) {$C$};
 \end{tikzpicture}
 \end{center}
 \vspace{1em}
@@ -540,7 +545,7 @@ L(\alpha)=b\alpha_0\left[1-\exp\left(-\frac{\alpha}{\alpha_0}\right)\right]$}
 \begin{minipage}[c]{0.58\textwidth}
 \textbf{Statics}
 \\[0.5ex]
-The internal generalized force is
+The internal virtual power is
 \[
 \dual{\mathcal{I},w}=
 \begin{multlined}[t]
@@ -549,7 +554,7 @@ The internal generalized force is
 +\int_\Omega\left[\tau\beta+\kappa\cdot\grad\beta\right]dx
 \end{multlined}
 \]
-with $T\colon\Omega\to\text{Sym}$ the macroscopic stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ the macroscopic hyperstress, $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ the plastic force, $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ the plastic stress, $\tau\colon\Omega\to\mathbb{R}$ the damage force and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage stress. The external generalized force is
+with $T\colon\Omega\to\text{Sym}$ the macroscopic stress, $K\colon\Omega\to\text{Lin}\otimes\mathbb{R}$ the macroscopic hyperstress, $T_e\colon\Omega\to\text{Sym}$ the elastic stress, $T_p\colon\Omega\to\text{DevSym}$ the plastic force, $K_p\colon\Omega\to\text{DevSym}\otimes\mathbb{R}$ the plastic stress, $\tau\colon\Omega\to\mathbb{R}$ the damage force and $\kappa\colon\Omega\to\mathbb{R}^d$ the damage stress. The external virtual power is
 \[
 \dual{\mathcal{X},w}=\int_\Omega f\cdot vdx+\int_{\partial\Omega}h\cdot vdx.
 \]
@@ -650,7 +655,7 @@ Q(\rho,\beta)=\begin{cases}
 \infty & \text{if $\beta<|\rho|$}.
 \end{cases}
 \end{gather*}
-\textsc{Remark.} This impose $\dot\alpha\ge|\dot\pi|$.
+\textsc{Remark.} This impose $\dot\alpha\ge|\dot\pi|$ so that $\dot\lambda\ge L'(\alpha)\dot\alpha|\dot\pi|$.
 \end{minipage}
 \end{frame}
 
@@ -743,12 +748,12 @@ D_\lambda\Psi_0(z(t))+p(t)=0 \\[0.5em]
 \end{column}
 \begin{column}{0.43\textwidth}
 \centering
-\textbf{Equivalence with the classical approach}
+\textbf{Recovering the classical approach}
 \\[0.5em]
 If suitable constitutive relations are chosen then
 \[
 \text{our approach}
-\iff
+\implies
 \parbox[c]{0.5\textwidth}{\centering Drucker--Prager model}
 \]
 \\[3em]
@@ -875,7 +880,7 @@ for a.e.\ $t\in(0,T)$.
 \end{minipage}
 $\qquad\implies\qquad$
 \begin{minipage}[c]{0.4\textwidth}
-Constrained doubly nonlinear equation
+Constrained doubly nonlinear inclusion
 \begin{gather*}
 z(t)\in K\quad\text{for all $t\in[0,T]$} \\
 \mathcal{P}(t)\in-N_K(z(t)) \\
@@ -1218,12 +1223,12 @@ for a.e.\ $t\in(0,T)$.
 \begin{frame}
 \frametitle{Numerical approximation}
 \centering
-\begin{minipage}[c]{0.4\textwidth}
+\begin{minipage}[c]{0.42\textwidth}
 \textbf{Finite element spaces}
 \\[0.5em]
 Fix a triangulation $\mathcal{T}_l=\{K\}$ and define $\Sigma_l=\Omega\cap\bigcup_{K\in\mathcal{T}_l}\partial K$. Let
 \begin{align*}
-u\in H^1_0(\Omega,\mathbb{R}^2)&\quad\text{P2} \\
+u\in H^1_0(\Omega,\mathbb{R}^d)\cap H^2(\Omega\setminus\Sigma_l,\mathbb{R}^d)&\quad\text{P2} \\
 \pi\in H^1(\Omega,\text{DevSym})\}&\quad\text{P1} \\
 \alpha\in H^1(\Omega)&\quad\text{P1} \\
 \lambda\in L^2(\Omega)&\quad\text{P0} \\
@@ -1247,16 +1252,16 @@ and consider the finite element spaces $Y_l=\{y=(u,\pi,\alpha)\}$, $\Lambda_l=\{
 \node[anchor=west,rotate=15] at (2.5,1.5) {\tiny$\rightarrow\leftarrow$};
 \end{tikzpicture}
 \end{center}
-\vspace{0.5em}
-Notice that $u\in H^2_0(\Omega\setminus\Sigma_l,\mathbb{R}^2)$.
+%\vspace{0.5em}
+%Notice that $u\in H^2_0(\Omega\setminus\Sigma_l,\mathbb{R}^2)$.
 \end{minipage}
 \hspace{0.02\textwidth}
-\begin{minipage}[c]{0.55\textwidth}
+\begin{minipage}[c]{0.54\textwidth}
 \textbf{Numerical scheme}
 \\[0.5em]
 Fix time steps $\tau^k$ with $k\in\{1,\dots,N\}$.
 \\[0.5em]
-\textsc{Problem.} Find $z_\tau^k=(y_\tau^k,\lambda_\tau^k)\in Y_l\times\Lambda_l$, $p_\tau^k\in P_l$ and $m_\tau^k\in M_l$ such that $z^0=0$ and
+\textsc{Problem.} Find $z^k=(y^k,\lambda^k)\in Y_l\times\Lambda_l$, $p_\tau^k\in P_l$ and $m^k\in M_l$ such that $z^0=0$ and
 \begin{gather*}
 \begin{multlined}
 \Big\langle D_y\Psi_0(z^k)+\mathcal{A}y^k+\\
@@ -1323,7 +1328,7 @@ The solution is spatially homogeneous.
 \\[0.5em]
 Regularize the dissipation potentials with the Yosida approximation
 \begin{gather*}
-\tilde R_\eta(\rho)=\inf_{\xi\in\text{DevSym}}\left[\frac{|\rho-\xi|^2}{2\eta}+|\xi|\right] \\[0.5em] Q_\eta=\frac{1}{2\eta}\text{dist}_{\dom Q}(\rho,\beta)^2.
+\tilde R_\eta(\rho)=\inf_{\xi\in\text{DevSym}}\left[\frac{|\rho-\xi|^2}{2\eta}+|\xi|\right] \\[0.5em] Q_\eta(\rho,\beta)=\frac{1}{2\eta}\text{dist}_{\dom Q}(\rho,\beta)^2.
 \end{gather*}
 with $\eta>0$.
 \end{minipage}
@@ -1460,9 +1465,9 @@ with $c>0$ the cohesion, $\phi,\psi\in[0,90^\circ)$ the friction and dilatancy a
 \end{minipage}
 \end{frame}
 
-\begin{frame}
-\centering
-\large\textbf{Necking of a metallic cylindrical bar}
-\end{frame}
+%\begin{frame}
+%\centering
+%\large\textbf{Necking of a metallic cylindrical bar}
+%\end{frame}
 
 \end{document}
